@@ -38,7 +38,7 @@
     <link href="http://yoursite.com/2015/05/26/test/"/>
     <id>http://yoursite.com/2015/05/26/test/</id>
     <published>2015-05-26T05:07:16.000Z</published>
-    <updated>2015-05-27T03:46:05.515Z</updated>
+    <updated>2015-05-27T03:46:05.796Z</updated>
     <content type="html"><![CDATA[<h1 id="一级标题">一级标题</h1><h2 id="二级标题">二级标题</h2><pre><code>这是一段不加格式的代码
 <span class="preprocessor">#<span class="keyword">include</span>&lt;iostream&gt;</span>
 <span class="preprocessor">#<span class="keyword">include</span>&lt;cstdio&gt;</span>
@@ -161,7 +161,7 @@
     <link href="http://yoursite.com/2014/09/06/2014-09-06-HDU-2489-Minimal-Ratio-Tree/"/>
     <id>http://yoursite.com/2014/09/06/2014-09-06-HDU-2489-Minimal-Ratio-Tree/</id>
     <published>2014-09-06T12:57:00.000Z</published>
-    <updated>2015-05-27T03:48:56.624Z</updated>
+    <updated>2015-05-27T03:48:56.936Z</updated>
     <content type="html"><![CDATA[<h1 id="Minimal_Ratio_Tree">Minimal Ratio Tree</h1><p>Time Limit: 2000/1000 MS (Java/Others)    Memory Limit: 32768/32768 K (Java/Others)</p>
 <h2 id="【Problem_Description】">【Problem Description】</h2><p>For a tree, which nodes and edges are all weighted, the ratio of it is calculated according to the following equation.</p>
 <p>Given a complete graph of n nodes with all nodes and edges weighted, your task is to find a tree, which is a sub-graph of the original graph, with m nodes and whose ratio is the smallest among all the trees of m nodes in the graph.</p>
