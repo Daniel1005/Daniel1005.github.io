@@ -47,7 +47,7 @@
     <link href="http://jcf94.github.io/2015/05/26/test/"/>
     <id>http://jcf94.github.io/2015/05/26/test/</id>
     <published>2015-05-26T05:07:16.000Z</published>
-    <updated>2015-05-27T03:46:05.796Z</updated>
+    <updated>2015-05-27T06:26:01.720Z</updated>
     <content type="html"><![CDATA[<h1 id="一级标题">一级标题</h1><h2 id="二级标题">二级标题</h2><pre><code>这是一段不加格式的代码
 <span class="preprocessor">#<span class="keyword">include</span>&lt;iostream&gt;</span>
 <span class="preprocessor">#<span class="keyword">include</span>&lt;cstdio&gt;</span>
