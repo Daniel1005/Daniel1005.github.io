@@ -4,7 +4,7 @@
   <subtitle><![CDATA[It's the way I choose.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2015-05-26T07:44:11.804Z</updated>
+  <updated>2015-05-27T03:48:25.452Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://yoursite.com/2015/05/26/2015-05-26-start/"/>
     <id>http://yoursite.com/2015/05/26/2015-05-26-start/</id>
     <published>2015-05-26T07:34:31.000Z</published>
-    <updated>2015-05-26T07:44:11.804Z</updated>
+    <updated>2015-05-27T03:48:25.452Z</updated>
     <content type="html"><![CDATA[<p>之前的博客都是写在博客园上的，现在转移至github。</p>
 ]]></content>
     <summary type="html">
@@ -29,6 +29,8 @@
     
       <category term="随笔" scheme="http://yoursite.com/tags/%E9%9A%8F%E7%AC%94/"/>
     
+      <category term="日常" scheme="http://yoursite.com/categories/%E6%97%A5%E5%B8%B8/"/>
+    
   </entry>
   
   <entry>
@@ -36,8 +38,9 @@
     <link href="http://yoursite.com/2015/05/26/test/"/>
     <id>http://yoursite.com/2015/05/26/test/</id>
     <published>2015-05-26T05:07:16.000Z</published>
-    <updated>2015-05-26T07:13:09.292Z</updated>
-    <content type="html"><![CDATA[<h1 id="一级标题">一级标题</h1><h2 id="二级标题">二级标题</h2><pre><code><span class="preprocessor">#<span class="keyword">include</span>&lt;iostream&gt;</span>
+    <updated>2015-05-27T03:46:05.515Z</updated>
+    <content type="html"><![CDATA[<h1 id="一级标题">一级标题</h1><h2 id="二级标题">二级标题</h2><pre><code>这是一段不加格式的代码
+<span class="preprocessor">#<span class="keyword">include</span>&lt;iostream&gt;</span>
 <span class="preprocessor">#<span class="keyword">include</span>&lt;cstdio&gt;</span>
 
 <span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;
@@ -49,12 +52,68 @@
     <span class="keyword">return</span> <span class="number">0</span>;
 }
 </code></pre><h3 id="三级标题">三级标题</h3><a id="more"></a>
-<h4 id="四级标题">四级标题</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span>&lt;iostream&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span>&lt;cstdio&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"Helloworld\n"</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">good</span><br></pre></td></tr></table></figure>
-<p>$$e=mc^2$$</p>
+<h4 id="四级标题">四级标题</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">这是一段正常的代码</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span>&lt;iostream&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span>&lt;cstdio&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"Helloworld\n"</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>$$这是一串数学公式$$<br>$$e=mc^2$$</p>
+<blockquote>
+<p>这是一堆<br>引用</p>
+<blockquote>
+<p>这是一堆<br>引用</p>
+<blockquote>
+<p>这是一堆<br>引用</p>
+<blockquote>
+<p>这是一堆<br>引用</p>
+<blockquote>
+<p>又名块注释</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<p><em>这是一句斜体</em></p>
+<p><em>这也是一句斜体</em></p>
+<p><strong>这是一句加粗</strong></p>
+<p><strong>这也是一句加粗</strong></p>
+<ul>
+<li>这是无序列表</li>
+</ul>
+<ul>
+<li>这也是无序列表</li>
+</ul>
+<ul>
+<li>这还是无序列表</li>
+</ul>
+<ol>
+<li>这是有序列表</li>
+<li>这也是有序列表</li>
+</ol>
+<p>这是一个<a href="http://baidu.com" target="_blank" rel="external">链接</a></p>
+<p>这是一堆链接<a href="http://google.com" target="_blank" rel="external">Google</a>，<a href="http://baidu.com" target="_blank" rel="external">baidu</a></p>
+<blockquote>
+<p>下面来测试一下带图</p>
+</blockquote>
+<p><img src="/images/photo.jpg" alt="alt text" title="图片测试"></p>
+<p><del>删除线</del></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">这是一个</th>
+<th style="text-align:center">表格</th>
+<th style="text-align:right">OK</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">左对齐</td>
+<td style="text-align:center">居中</td>
+<td style="text-align:right">右对齐</td>
+</tr>
+</tbody>
+</table>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h1 id="一级标题">一级标题</h1><h2 id="二级标题">二级标题</h2><pre><code><span class="preprocessor">#<span class="keyword">include</span>&lt;iostream&gt;</span>
+    <![CDATA[<h1 id="一级标题">一级标题</h1><h2 id="二级标题">二级标题</h2><pre><code>这是一段不加格式的代码
+<span class="preprocessor">#<span class="keyword">include</span>&lt;iostream&gt;</span>
 <span class="preprocessor">#<span class="keyword">include</span>&lt;cstdio&gt;</span>
 
 <span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;
@@ -102,7 +161,7 @@
     <link href="http://yoursite.com/2014/09/06/2014-09-06-HDU-2489-Minimal-Ratio-Tree/"/>
     <id>http://yoursite.com/2014/09/06/2014-09-06-HDU-2489-Minimal-Ratio-Tree/</id>
     <published>2014-09-06T12:57:00.000Z</published>
-    <updated>2015-05-26T15:36:36.279Z</updated>
+    <updated>2015-05-27T03:48:56.624Z</updated>
     <content type="html"><![CDATA[<h1 id="Minimal_Ratio_Tree">Minimal Ratio Tree</h1><p>Time Limit: 2000/1000 MS (Java/Others)    Memory Limit: 32768/32768 K (Java/Others)</p>
 <h2 id="【Problem_Description】">【Problem Description】</h2><p>For a tree, which nodes and edges are all weighted, the ratio of it is calculated according to the following equation.</p>
 <p>Given a complete graph of n nodes with all nodes and edges weighted, your task is to find a tree, which is a sub-graph of the original graph, with m nodes and whose ratio is the smallest among all the trees of m nodes in the graph.</p>
@@ -129,6 +188,8 @@
     </summary>
     
       <category term="最小生成树" scheme="http://yoursite.com/tags/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/"/>
+    
+      <category term="ACM" scheme="http://yoursite.com/categories/ACM/"/>
     
   </entry>
   
