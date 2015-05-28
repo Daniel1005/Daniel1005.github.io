@@ -4,7 +4,7 @@
   <subtitle><![CDATA[It's the way I choose.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://jcf94.github.io/"/>
-  <updated>2015-05-27T04:54:28.317Z</updated>
+  <updated>2015-05-28T12:17:39.016Z</updated>
   <id>http://jcf94.github.io/</id>
   
   <author>
@@ -13,6 +13,25 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[通宵那些事]]></title>
+    <link href="http://jcf94.github.io/2015/05/28/2015-05-28-diary/"/>
+    <id>http://jcf94.github.io/2015/05/28/2015-05-28-diary/</id>
+    <published>2015-05-28T12:14:10.000Z</published>
+    <updated>2015-05-28T12:17:39.016Z</updated>
+    <content type="html"><![CDATA[<p>$$e=mc^2$$</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>$$e=mc^2$$</p>
+]]>
+    </summary>
+    
+      <category term="随笔" scheme="http://jcf94.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+      <category term="日常" scheme="http://jcf94.github.io/categories/%E6%97%A5%E5%B8%B8/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[开始使用Github]]></title>
@@ -47,7 +66,7 @@
     <link href="http://jcf94.github.io/2015/05/26/test/"/>
     <id>http://jcf94.github.io/2015/05/26/test/</id>
     <published>2015-05-26T05:07:16.000Z</published>
-    <updated>2015-05-27T06:26:01.720Z</updated>
+    <updated>2015-05-27T06:26:02.204Z</updated>
     <content type="html"><![CDATA[<h1 id="一级标题">一级标题</h1><h2 id="二级标题">二级标题</h2><pre><code>这是一段不加格式的代码
 <span class="preprocessor">#<span class="keyword">include</span>&lt;iostream&gt;</span>
 <span class="preprocessor">#<span class="keyword">include</span>&lt;cstdio&gt;</span>
