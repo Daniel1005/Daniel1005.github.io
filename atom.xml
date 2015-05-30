@@ -4,7 +4,7 @@
   <subtitle><![CDATA[It's the way I choose.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://jcf94.github.io/"/>
-  <updated>2015-05-30T13:45:17.242Z</updated>
+  <updated>2015-05-30T13:46:51.317Z</updated>
   <id>http://jcf94.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://jcf94.github.io/2015/05/30/2015-05-30-shuzishipin/"/>
     <id>http://jcf94.github.io/2015/05/30/2015-05-30-shuzishipin/</id>
     <published>2015-05-30T13:42:29.000Z</published>
-    <updated>2015-05-30T13:45:17.242Z</updated>
+    <updated>2015-05-30T13:46:51.317Z</updated>
     <content type="html"><![CDATA[<h2 id="第一章_绪论">第一章 绪论</h2><h3 id="视频图像处理的概念">视频图像处理的概念</h3><p>视频是一组图像在<strong>时间轴</strong>上的<strong>有序排列</strong>，是二维图像在一维时间轴上构成的<strong>图像序列</strong>，又称<strong>动态图像、活动图像、运动图像</strong>。不止包含了静止图像的内容，还包含了目标的<strong>运动信息</strong>和<strong>客观世界随时间变化的信息</strong>。</p>
 <p>序列&gt;帧&gt;像素</p>
 <h3 id="视频图像处理系统的组成">视频图像处理系统的组成</h3><ol>
@@ -29,6 +29,7 @@
 <li>图像<strong>通信</strong></li>
 <li>图像<strong>处理和分析</strong></li>
 </ol>
+<a id="more"></a>
 <p>图像处理和分析：</p>
 <ol>
 <li>图像变换</li>
@@ -176,7 +177,16 @@
 </table>
 <h2 id="第三章_图像变换">第三章 图像变换</h2><h2 id="第六章_视频图像分割">第六章 视频图像分割</h2><h2 id="第九章_视频跟踪">第九章 视频跟踪</h2><h2 id="第十章_视频压缩编码">第十章 视频压缩编码</h2>]]></content>
     <summary type="html">
-    <![CDATA[<h2 id="第一章_绪论">第一章 绪论</h2><h3 id="视频图像处理的概念">视频图像处理的概念</h3><p>视频是一组图像在<strong>时间轴</strong>上的<strong>有序排列</strong>，是二维图像在一维时间轴上构成的<strong>图像]]>
+    <![CDATA[<h2 id="第一章_绪论">第一章 绪论</h2><h3 id="视频图像处理的概念">视频图像处理的概念</h3><p>视频是一组图像在<strong>时间轴</strong>上的<strong>有序排列</strong>，是二维图像在一维时间轴上构成的<strong>图像序列</strong>，又称<strong>动态图像、活动图像、运动图像</strong>。不止包含了静止图像的内容，还包含了目标的<strong>运动信息</strong>和<strong>客观世界随时间变化的信息</strong>。</p>
+<p>序列&gt;帧&gt;像素</p>
+<h3 id="视频图像处理系统的组成">视频图像处理系统的组成</h3><ol>
+<li>图像<strong>采集</strong></li>
+<li>图像<strong>显示</strong></li>
+<li>图像<strong>存储</strong></li>
+<li>图像<strong>通信</strong></li>
+<li>图像<strong>处理和分析</strong></li>
+</ol>]]>
+    
     </summary>
     
       <category term="复习笔记" scheme="http://jcf94.github.io/tags/%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
