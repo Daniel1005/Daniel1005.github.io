@@ -4,7 +4,7 @@
   <subtitle><![CDATA[It's the way I choose.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://jcf94.github.io/"/>
-  <updated>2015-05-30T13:46:51.317Z</updated>
+  <updated>2015-05-30T13:55:03.984Z</updated>
   <id>http://jcf94.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://jcf94.github.io/2015/05/30/2015-05-30-shuzishipin/"/>
     <id>http://jcf94.github.io/2015/05/30/2015-05-30-shuzishipin/</id>
     <published>2015-05-30T13:42:29.000Z</published>
-    <updated>2015-05-30T13:46:51.317Z</updated>
+    <updated>2015-05-30T13:55:03.984Z</updated>
     <content type="html"><![CDATA[<h2 id="第一章_绪论">第一章 绪论</h2><h3 id="视频图像处理的概念">视频图像处理的概念</h3><p>视频是一组图像在<strong>时间轴</strong>上的<strong>有序排列</strong>，是二维图像在一维时间轴上构成的<strong>图像序列</strong>，又称<strong>动态图像、活动图像、运动图像</strong>。不止包含了静止图像的内容，还包含了目标的<strong>运动信息</strong>和<strong>客观世界随时间变化的信息</strong>。</p>
 <p>序列&gt;帧&gt;像素</p>
 <h3 id="视频图像处理系统的组成">视频图像处理系统的组成</h3><ol>
