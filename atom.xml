@@ -4,7 +4,7 @@
   <subtitle><![CDATA[It's the way I choose.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://jcf94.github.io/"/>
-  <updated>2015-05-29T03:07:36.400Z</updated>
+  <updated>2015-05-30T13:43:53.781Z</updated>
   <id>http://jcf94.github.io/</id>
   
   <author>
@@ -13,6 +13,177 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[2015-05-30-shuzishipin]]></title>
+    <link href="http://jcf94.github.io/2015/05/30/2015-05-30-shuzishipin/"/>
+    <id>http://jcf94.github.io/2015/05/30/2015-05-30-shuzishipin/</id>
+    <published>2015-05-30T13:42:29.000Z</published>
+    <updated>2015-05-30T13:43:53.781Z</updated>
+    <content type="html"><![CDATA[<h2 id="第一章_绪论">第一章 绪论</h2><h3 id="视频图像处理的概念">视频图像处理的概念</h3><p>视频是一组图像在<strong>时间轴</strong>上的<strong>有序排列</strong>，是二维图像在一维时间轴上构成的<strong>图像序列</strong>，又称<strong>动态图像、活动图像、运动图像</strong>。不止包含了静止图像的内容，还包含了目标的<strong>运动信息</strong>和<strong>客观世界随时间变化的信息</strong>。</p>
+<p>序列&gt;帧&gt;像素</p>
+<h3 id="视频图像处理系统的组成">视频图像处理系统的组成</h3><ol>
+<li>图像<strong>采集</strong></li>
+<li>图像<strong>显示</strong></li>
+<li>图像<strong>存储</strong></li>
+<li>图像<strong>通信</strong></li>
+<li>图像<strong>处理和分析</strong></li>
+</ol>
+<p>图像处理和分析：</p>
+<ol>
+<li>图像变换</li>
+<li>图像编码压缩</li>
+<li>图像增强复原</li>
+<li>图像分割</li>
+<li>图像理解和识别</li>
+</ol>
+<hr>
+<h2 id="第二章_视频图象的表示">第二章 视频图象的表示</h2><h3 id="图像的基本概念">图像的基本概念</h3><ol>
+<li>光通量：光源辐射出来的光功率，单位流明（lm）</li>
+<li>照度：单位面积上的光通量，单位勒克斯（lx，$1ls=1lm/m^2$）</li>
+<li>亮度：观察者感觉光的量度，有主管性，又称辉度</li>
+<li>视敏度：人眼对不同波长可见光的敏感程度</li>
+<li>亮度适应级：一定条件下，人眼的亮度适应区间</li>
+</ol>
+<h3 id="分辨率">分辨率</h3><ol>
+<li>图像分辨率<br>图像中存储的信息，单位像素/英寸（pixel per inch, ppi）</li>
+<li>显示分辨率<br>构成画面像素点的多少，用宽高像素*像素表示</li>
+<li>打印分辨率<br>又叫输出分辨率，决定打印机打印的惊喜程度，单位点/英寸（dot per inch, dpi）</li>
+</ol>
+<h3 id="人眼的视觉特性">人眼的视觉特性</h3><table>
+<thead>
+<tr>
+<th>—-</th>
+<th>锥状细胞</th>
+<th>柱状细胞</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>结构</td>
+<td>一个细胞连一个神经末梢</td>
+<td>几个细胞连一个神经末梢</td>
+</tr>
+<tr>
+<td>功能</td>
+<td>感光/感色，区分细节</td>
+<td>感光，提供整体形象</td>
+</tr>
+<tr>
+<td>作用时间</td>
+<td>强光下、白天</td>
+<td>弱光下、黑夜</td>
+</tr>
+<tr>
+<td>视觉</td>
+<td>亮视觉</td>
+<td>暗视觉</td>
+</tr>
+</tbody>
+</table>
+<p>锥状细胞分为<strong>红敏、绿敏、蓝敏</strong>。</p>
+<p>三基色原理。</p>
+<p>影响人眼分辨力的因素：<strong>环境照度、景物相对对比度、被观察物体的距离和运动状态</strong></p>
+<ol>
+<li>人眼对亮度响应有<strong>非线性特性，对灰度误差不敏感</strong></li>
+<li>人眼对<strong>亮度</strong>信号的空间分辨率大于对色度信号的空间分辨率</li>
+<li>人眼容易感觉到<strong>边缘位置</strong>的变化，而对于边缘部分的灰度误差不敏感</li>
+<li>时间域的<strong>掩蔽效应</strong>，当视频图像序列中相邻画面的变化剧烈（如场景切换）时，人眼的分辨率会突然剧烈的下降</li>
+<li><strong>视觉惰性</strong>，人眼的亮度感觉总是滞后于实际亮度，<strong>视觉暂留</strong></li>
+<li><strong>闪烁感觉</strong>，周期性光脉冲频率高到一定程度后人眼无法区分</li>
+</ol>
+<h3 id="颜色模型">颜色模型</h3><table>
+<thead>
+<tr>
+<th>—-</th>
+<th>RGB</th>
+<th>HSI</th>
+<th>YUV</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>主要用于</td>
+<td>计算机显示器</td>
+<td>描述人眼的视觉特性</td>
+<td>电视信号，彩色兼容黑白</td>
+</tr>
+<tr>
+<td>说明</td>
+<td>分别表示红绿蓝三色的分解采样量</td>
+<td>色调H，饱和度S，密度I（对应亮度和灰度）</td>
+<td>亮度Y，色度U、V</td>
+</tr>
+</tbody>
+</table>
+<p><strong>真彩色</strong>：每个像素值都用三基色分量描述</p>
+<p><strong>伪彩色</strong>：每个像素颜色采用颜色查找表表现</p>
+<p><strong>直接色</strong>：每个像素点的RGB值分别用查找表表现</p>
+<h3 id="图像的数字化">图像的数字化</h3><p>视频图象数字化两种方法：</p>
+<ol>
+<li>复合编码：先数字化再分离<br>先用高速模/数转换器对模拟视频（彩色全电视信号）进行数字化，再在数字域中分离</li>
+<li>分量编码：先分离再数字化<br>从模拟视频（彩色电视信号）中分离出彩色分量的亮度和色度，得到YUV或YIQ分量，再用3个模/数转换器对3个分量分别数字化</li>
+</ol>
+<p>采样方式：隔行采样</p>
+<h3 id="图像量化">图像量化</h3><ol>
+<li>有记忆量化和无记忆量化：取样点是否独立</li>
+<li>均匀量化和非均匀量化：量化步长是否一致</li>
+<li>标量量化和矢量量化：<br>标量量化：一维量化，所有取样使用同一个量化器进行量化，每个取样的量化都和其他所有取样无关(无记忆量化)，常用均方误差量化器<br>矢量量化：多维量化，先将K个取样值序列形成K维空间中的一个矢量,然后将此矢量进行量化</li>
+</ol>
+<p>非均匀量化：</p>
+<ol>
+<li>基于人的视觉特性特点，对于亮度值急剧变化的部分，粗量化；对亮度值变化比较平缓的部分，细量化。</li>
+<li>计算所有可能的亮度值出现的概率分布，对于出现概率大的那些亮度值，细量化；对于出现概率小的那些亮度值，粗量化</li>
+</ol>
+<p>非均匀采样：在细节多区域采样密，在平滑区域采样少</p>
+<p>空间分辨率：图像的大小，空间分辨率=最大行数*每行的最大像素数。</p>
+<p>灰度分辨率：一个像素值单位幅度上包含的灰度级，用一个字节存储一个像素值，则灰度级数为256</p>
+<h3 id="图像格式">图像格式</h3><table>
+<thead>
+<tr>
+<th>—-</th>
+<th>矢量图形</th>
+<th>位图图像</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>定义</td>
+<td>图形，指用一组绘图指令描述和记录的各种图形，包括直线、弧线、圆、矩形的大小形状等</td>
+<td>图像，由一组计算机内存位组成，这些位定义了图像中每个像素点的亮度和颜色</td>
+</tr>
+<tr>
+<td>文件内容</td>
+<td>图形指令</td>
+<td>图像点阵数据</td>
+</tr>
+<tr>
+<td>生成</td>
+<td>相应软件生成</td>
+<td>用绘图软件生成；用彩色扫描仪扫描二维图片；用摄像机以及帧捕获设备获得数字化画面</td>
+</tr>
+<tr>
+<td>所需磁盘空间</td>
+<td>小</td>
+<td>大</td>
+</tr>
+<tr>
+<td>常用格式</td>
+<td>WHF、DRW、CDR、DXF、EPS、FLI、FLC、CGM等</td>
+<td>BMP、PCX、GIF、TIFF</td>
+</tr>
+</tbody>
+</table>
+<h2 id="第三章_图像变换">第三章 图像变换</h2><h2 id="第六章_视频图像分割">第六章 视频图像分割</h2><h2 id="第九章_视频跟踪">第九章 视频跟踪</h2><h2 id="第十章_视频压缩编码">第十章 视频压缩编码</h2>]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="第一章_绪论">第一章 绪论</h2><h3 id="视频图像处理的概念">视频图像处理的概念</h3><p>视频是一组图像在<strong>时间轴</strong>上的<strong>有序排列</strong>，是二维图像在一维时间轴上构成的<strong>图像]]>
+    </summary>
+    
+      <category term="复习笔记" scheme="http://jcf94.github.io/tags/%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="学校" scheme="http://jcf94.github.io/categories/%E5%AD%A6%E6%A0%A1/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[现代交换原理复习笔记]]></title>
@@ -821,8 +992,8 @@
   
   <entry>
     <title><![CDATA[test]]></title>
-    <link href="http://jcf94.github.io/2015/05/26/test/"/>
-    <id>http://jcf94.github.io/2015/05/26/test/</id>
+    <link href="http://jcf94.github.io/2015/05/26/2015-05-26-test/"/>
+    <id>http://jcf94.github.io/2015/05/26/2015-05-26-test/</id>
     <published>2015-05-26T05:07:16.000Z</published>
     <updated>2015-05-27T06:26:02.204Z</updated>
     <content type="html"><![CDATA[<h1 id="一级标题">一级标题</h1><h2 id="二级标题">二级标题</h2><pre><code>这是一段不加格式的代码
@@ -920,8 +1091,8 @@
   
   <entry>
     <title><![CDATA[Hello World]]></title>
-    <link href="http://jcf94.github.io/2015/05/26/hello-world/"/>
-    <id>http://jcf94.github.io/2015/05/26/hello-world/</id>
+    <link href="http://jcf94.github.io/2015/05/26/2015-05-26-hello-world/"/>
+    <id>http://jcf94.github.io/2015/05/26/2015-05-26-hello-world/</id>
     <published>2015-05-26T02:00:00.000Z</published>
     <updated>2015-05-26T05:58:19.609Z</updated>
     <content type="html"><![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
