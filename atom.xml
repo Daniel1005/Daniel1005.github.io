@@ -4,7 +4,7 @@
   <subtitle><![CDATA[It's the way I choose.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://jcf94.github.io/"/>
-  <updated>2015-06-13T08:28:46.437Z</updated>
+  <updated>2015-06-13T08:33:03.478Z</updated>
   <id>http://jcf94.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://jcf94.github.io/2015/06/13/2015-06-13-tuiyi/"/>
     <id>http://jcf94.github.io/2015/06/13/2015-06-13-tuiyi/</id>
     <published>2015-06-13T05:20:32.000Z</published>
-    <updated>2015-06-13T08:28:46.437Z</updated>
+    <updated>2015-06-13T08:33:03.478Z</updated>
     <content type="html"><![CDATA[<blockquote class="blockquote-center"><br>曾经为之付出过这么多的努力，在这个圈子中也认识了这么多优秀的人<br>要我怎么说放手？<br></blockquote>
 
 <p>之前最后一次外出参赛是今年的省赛，也就是上周的这个时候吧，还正坐在赛场上苦思冥想中。。。</p>
@@ -142,9 +142,7 @@
     
       <category term="随笔" scheme="http://jcf94.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
     
-      <category term="日常" scheme="http://jcf94.github.io/categories/%E6%97%A5%E5%B8%B8/"/>
-    
-      <category term="ACM" scheme="http://jcf94.github.io/categories/%E6%97%A5%E5%B8%B8/ACM/"/>
+      <category term="ACM" scheme="http://jcf94.github.io/categories/ACM/"/>
     
   </entry>
   
