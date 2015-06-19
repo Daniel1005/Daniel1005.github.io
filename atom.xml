@@ -4,7 +4,7 @@
   <subtitle><![CDATA[It's the way I choose.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://jcf94.github.io/"/>
-  <updated>2015-06-19T06:14:21.159Z</updated>
+  <updated>2015-06-19T08:32:58.512Z</updated>
   <id>http://jcf94.github.io/</id>
   
   <author>
@@ -19,8 +19,8 @@
     <link href="http://jcf94.github.io/2015/06/19/2015-06-19-sbt/"/>
     <id>http://jcf94.github.io/2015/06/19/2015-06-19-sbt/</id>
     <published>2015-06-19T01:27:28.000Z</published>
-    <updated>2015-06-19T06:14:21.159Z</updated>
-    <content type="html"><![CDATA[<blockquote class="blockquote-center"><br>这是你踏入高级数据结构的第一步。<br></blockquote>
+    <updated>2015-06-19T08:32:58.512Z</updated>
+    <content type="html"><![CDATA[<blockquote class="blockquote-center"><br>这将是你踏入高级数据结构的第一步。<br></blockquote>
 
 <p>终于要开始给队里面讲这种比较高级的数据结构了，也趁此机会自己好好理理。</p>
 <p>首先要讲的是这个：</p>
@@ -171,7 +171,7 @@
 <p>SBT效率高，但是扩展性似乎并没有特别强。真正想要神器的，请见Treap和Splay。</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<blockquote class="blockquote-center"><br>这是你踏入高级数据结构的第一步。<br></blockquote>
+    <![CDATA[<blockquote class="blockquote-center"><br>这将是你踏入高级数据结构的第一步。<br></blockquote>
 
 <p>终于要开始给队里面讲这种比较高级的数据结构了，也趁此机会自己好好理理。</p>
 <p>首先要讲的是这个：</p>
