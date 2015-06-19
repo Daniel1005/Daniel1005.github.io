@@ -253,9 +253,29 @@
 <h1 id="SBT">SBT</h1><p>节点大小平衡树(Size Balanced Tree)是一种自平衡二叉查找树。</p>
 <p>它是由中国广东中山纪念中学的<strong>陈启峰</strong>（也是个神人，本来那年拿到了北美地区的ACM冠军，结果封神之路上遇到了Watashi）发明的。陈启峰于2006年底完成论文《<a href="http://7xjh3j.com1.z0.glb.clouddn.com/2015-06-19-sbt-Qifeng-Chen《Size Balanced Tree》.pdf" target="_blank" rel="external">Size Balanced Tree</a>》，并在2007年的全国青少年信息学奥林匹克竞赛冬令营中发表。</p>
 <p>相比红黑树、AVL树等自平衡二叉查找树，SBT更易于实现。据陈启峰在论文中称，SBT是“目前为止速度最快的高级二叉搜索树”。</p>
-<h2 id="旋转">旋转</h2><p>首先是所有平衡树中都会用到的旋转操作，平衡树需要不断改变树的结构，但是改变结构的同时又必须保证的是整棵树的二叉查找树性质<strong>不能被破坏掉</strong>，</p>
+<h2 id="旋转">旋转</h2><p>首先是所有平衡树中都会用到的旋转操作，平衡树需要不断改变树的结构，但是改变结构的同时又必须保证的是整棵树的二叉查找树性质<strong>不能被破坏掉</strong>（要是二叉查找树性质都没了，下面就不用玩了）。</p>
+<p>调整方式就是逐点进行左旋或者右旋：</p>
 <p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-06-19-sbt-1.png" alt="rotate"></p>
-
+<p>以上图作为例子，左右旋实现起来其实也很简单，就是交换一下x、y的父子关系，然后调整B子树的连接情况，且能够保证整体的二叉搜素性质不改变。</p>
+<h2 id="SBT的特殊性质">SBT的特殊性质</h2><p>我们给二叉搜索树的结点增加一个size域，用来保存以该节点为根的子树中一共有多少个结点。</p>
+<p>上面说了，SBT是通过结点大小(Size)来调整整棵树的平衡性的，它相比一般的二叉搜索树多出来的性质有两条：</p>
+<p>对于SBT中的每一个结点t，有：</p>
+<ol>
+<li><p>$size[right[t]]&gt;=size[left[left[t]]],size[right[left[t]]]$</p>
+</li>
+<li><p>$size[left[t]]&gt;=size[left[right[t]]],size[right[right[t]]]$</p>
+</li>
+</ol>
+<p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-06-19-sbt-2.png" alt="maintain"></p>
+<p>以上图为例，性质是：</p>
+<ol>
+<li>$size[R]&gt;=size[A]$</li>
+<li>$size[R]&gt;=size[B]$</li>
+<li>$size[L]&gt;=size[C]$</li>
+<li>$size[L]&gt;=size[D]$</li>
+</ol>
+<h2 id="如何维护这种性质？Maintain">如何维护这种性质？Maintain</h2><p>我们把整棵树的结构分成几种情况来看：</p>
+<h3 id="Case_1：size[left[left[t]]]&gt;size[right[t]]">Case 1：size[left[left[t]]]&gt;size[right[t]]</h3><h3 id="Case_2:_size[right[left[t]]]&gt;size[right[t]]">Case 2: size[right[left[t]]]&gt;size[right[t]]</h3><h3 id="Case_3:_size[right[right[t]]]&gt;size[left[t]]">Case 3: size[right[right[t]]]&gt;size[left[t]]</h3><h3 id="Case_4:_size[left[right[t]]]&gt;size[left[t]]">Case 4: size[left[right[t]]]&gt;size[left[t]]</h3>
       
     </div>
 
@@ -433,7 +453,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#二叉搜索树"><span class="nav-number">1.</span> <span class="nav-text">二叉搜索树</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#普通的二叉搜索树存在的问题"><span class="nav-number">1.1.</span> <span class="nav-text">普通的二叉搜索树存在的问题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#平衡树"><span class="nav-number">2.</span> <span class="nav-text">平衡树</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SBT"><span class="nav-number">3.</span> <span class="nav-text">SBT</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#旋转"><span class="nav-number">3.1.</span> <span class="nav-text">旋转</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#二叉搜索树"><span class="nav-number">1.</span> <span class="nav-text">二叉搜索树</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#普通的二叉搜索树存在的问题"><span class="nav-number">1.1.</span> <span class="nav-text">普通的二叉搜索树存在的问题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#平衡树"><span class="nav-number">2.</span> <span class="nav-text">平衡树</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SBT"><span class="nav-number">3.</span> <span class="nav-text">SBT</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#旋转"><span class="nav-number">3.1.</span> <span class="nav-text">旋转</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SBT的特殊性质"><span class="nav-number">3.2.</span> <span class="nav-text">SBT的特殊性质</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何维护这种性质？Maintain"><span class="nav-number">3.3.</span> <span class="nav-text">如何维护这种性质？Maintain</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Case_1：size[left[left[t]]]>size[right[t]]"><span class="nav-number">3.3.1.</span> <span class="nav-text">Case 1：size[left[left[t]]]>size[right[t]]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Case_2:_size[right[left[t]]]>size[right[t]]"><span class="nav-number">3.3.2.</span> <span class="nav-text">Case 2: size[right[left[t]]]>size[right[t]]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Case_3:_size[right[right[t]]]>size[left[t]]"><span class="nav-number">3.3.3.</span> <span class="nav-text">Case 3: size[right[right[t]]]>size[left[t]]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Case_4:_size[left[right[t]]]>size[left[t]]"><span class="nav-number">3.3.4.</span> <span class="nav-text">Case 4: size[left[right[t]]]>size[left[t]]</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
