@@ -4,7 +4,7 @@
   <subtitle><![CDATA[It's the way I choose.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://jcf94.github.io/"/>
-  <updated>2015-06-19T05:29:14.012Z</updated>
+  <updated>2015-06-19T05:49:14.043Z</updated>
   <id>http://jcf94.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://jcf94.github.io/2015/06/19/2015-06-19-sbt/"/>
     <id>http://jcf94.github.io/2015/06/19/2015-06-19-sbt/</id>
     <published>2015-06-19T01:27:28.000Z</published>
-    <updated>2015-06-19T05:29:14.012Z</updated>
+    <updated>2015-06-19T05:49:14.043Z</updated>
     <content type="html"><![CDATA[<blockquote class="blockquote-center"><br>这是你踏入高级数据结构的第一步。<br></blockquote>
 
 <p>终于要开始给队里面讲这种比较高级的数据结构了，也趁此机会自己好好理理。</p>
@@ -188,9 +188,7 @@
     
       <category term="SBT" scheme="http://jcf94.github.io/tags/SBT/"/>
     
-      <category term="平衡树" scheme="http://jcf94.github.io/tags/%E5%B9%B3%E8%A1%A1%E6%A0%91/"/>
-    
-      <category term="ACM" scheme="http://jcf94.github.io/categories/ACM/"/>
+      <category term="ACM_平衡树" scheme="http://jcf94.github.io/categories/ACM-%E5%B9%B3%E8%A1%A1%E6%A0%91/"/>
     
   </entry>
   
@@ -547,11 +545,28 @@
   </entry>
   
   <entry>
+    <title><![CDATA[HDU 4006 The kth great number 优先队列、平衡树模板题（SBT）]]></title>
+    <link href="http://jcf94.github.io/2015/03/08/2015-03-08-HDU-4006-The-kth-great-number/"/>
+    <id>http://jcf94.github.io/2015/03/08/2015-03-08-HDU-4006-The-kth-great-number/</id>
+    <published>2015-03-08T12:27:54.000Z</published>
+    <updated>2015-06-19T05:47:24.770Z</updated>
+    <content type="html"></content>
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="SBT" scheme="http://jcf94.github.io/tags/SBT/"/>
+    
+      <category term="ACM_平衡树" scheme="http://jcf94.github.io/categories/ACM-%E5%B9%B3%E8%A1%A1%E6%A0%91/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[HDU 2489 Minimal Ratio Tree 最小生成树+DFS]]></title>
     <link href="http://jcf94.github.io/2014/09/06/2014-09-06-HDU-2489-Minimal-Ratio-Tree/"/>
     <id>http://jcf94.github.io/2014/09/06/2014-09-06-HDU-2489-Minimal-Ratio-Tree/</id>
     <published>2014-09-06T12:57:00.000Z</published>
-    <updated>2015-06-19T05:40:38.600Z</updated>
+    <updated>2015-06-19T05:48:10.349Z</updated>
     <content type="html"><![CDATA[<h1 id="Minimal_Ratio_Tree">Minimal Ratio Tree</h1><p>Time Limit: 2000/1000 MS (Java/Others)    Memory Limit: 32768/32768 K (Java/Others)</p>
 <h2 id="Problem_Description">Problem Description</h2><p>For a tree, which nodes and edges are all weighted, the ratio of it is calculated according to the following equation.</p>
 <p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2014-09-06-HDU-2489-Minimal-Ratio-Tree-1.jpg" alt="1"></p>
@@ -582,7 +597,7 @@
     
       <category term="最小生成树" scheme="http://jcf94.github.io/tags/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/"/>
     
-      <category term="ACM" scheme="http://jcf94.github.io/categories/ACM/"/>
+      <category term="ACM_最小生成树" scheme="http://jcf94.github.io/categories/ACM-%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/"/>
     
   </entry>
   
