@@ -20,7 +20,7 @@
 
 
 
-  <meta name="keywords" content="测试," />
+  <meta name="keywords" content="复习笔记," />
 
 
 
@@ -45,7 +45,7 @@
 
 
 
-  <title> Hello World // Chenfan's blog </title>
+  <title> 微波技术与天线 复习笔记 // Chenfan's blog </title>
 </head>
 
 <body>
@@ -156,7 +156,7 @@
           
           
             
-              Hello World
+              微波技术与天线 复习笔记
             
           
         </h1>
@@ -164,17 +164,28 @@
 
       <div class="post-meta">
         <span class="post-time">
-          發表於 2015-05-26
+          發表於 2015-06-27
         </span>
 
+        
+          <span class="post-category">
+            &nbsp; | &nbsp; 分類於
+            
+              <a href="/categories/我的大学/">我的大学</a>
+
+              
+              
+
+            
+          </span>
         
 
         
           
             <span class="post-comments-count">
             &nbsp; | &nbsp;
-            <a href="/2015/05/26/2015-05-26-hello-world/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2015/05/26/2015-05-26-hello-world/"></span>
+            <a href="/2015/06/27/2015-06-27-weibojishuyutianxian/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2015/06/27/2015-06-27-weibojishuyutianxian/"></span>
             </a>
           </span>
           
@@ -188,15 +199,153 @@
       
 
       
-        <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <h1 id="绪论">绪论</h1><hr>
+<ul>
+<li><p><strong>微波</strong>是电磁波谱中介于超短波与红外线之间的波段，频率范围从<strong>300MHz（波长1m）</strong>至<strong>3000GHz（波长0.1mm）</strong></p>
+</li>
+<li><p>微波、天线与电波：三者的共同基础都是<strong>电磁场理论</strong>，是电磁场在<strong>不同边界值条件下</strong>的应用</p>
+</li>
+</ul>
+<p>微波：研究如何<strong>导引</strong>电磁波在微波传输系统中的有效传输</p>
+<p>天线：1.有效地辐射或者接受电磁波；2.把无线电波能量转换为导行波能量</p>
+<p>电波：分析和研究电波在空间的传播方式和特点</p>
+<a id="more"></a>
+<h1 id="第一章_均匀传输线理论">第一章 均匀传输线理论</h1><hr>
+<ul>
+<li><p>微波传输线是用传输<strong>微波信息和能量</strong>的各种形式传输系统的总称，它的作用是<strong>引导</strong>电磁波沿一定方向传输，因此又称为<strong>导波系统</strong>，其所引导的电磁波被称为<strong>导行波</strong></p>
+</li>
+<li><p>一般将截面尺寸、形状、媒质分布、材料及边界条件均不变的导波系统称为<strong>规则导波系统</strong></p>
+</li>
+<li><p>微波无源器件、均匀传输线、有源元器件以及天线一起构成微波系统</p>
+</li>
+</ul>
+<hr>
+<ul>
+<li><p>将传输线上导行波的<strong>电压与电流之比</strong>定义为传输线的<strong>特性阻抗</strong>，用 $Z_0$ 来表示，其倒数称为特性导纳，用 $Y_0$ 来表示</p>
+</li>
+<li><p>常用平行双导线传输线的特性阻抗有<strong>250欧、400欧和600欧</strong>三种</p>
+</li>
+<li><p>传输线上<strong>任意一点的电压与电流之比</strong>称为传输线在该点的<strong>阻抗</strong></p>
+</li>
+<li><p>均匀无耗传输线上任意一点的<strong>输入阻抗</strong>与<strong>观察点的位置</strong>、传输线的<strong>特性阻抗</strong>、<strong>终端负载阻抗</strong>及<strong>工作频率</strong>有关</p>
+</li>
+<li><p>无耗传输线上任意相距<strong>${1 \over 2}$波长阻抗相同，${1 \over 4}$波长阻抗变换</strong></p>
+</li>
+<li><p>定义传输线上任意一点的<strong>反射波电压（或电流）与入射波电压（或电流）</strong>之比为<strong>电压（或电流）的反射系数</strong></p>
+</li>
+<li><p>反射系数也具有<strong>${1 \over 2}$波长重复性</strong></p>
+</li>
+<li><p>当传输线<strong>特性阻抗一定</strong>时，输入阻抗与反射系数有<strong>一一对应</strong>的关系</p>
+</li>
+<li><p>当$Z_1=Z_2$时，反射系数为0，即终端无反射，称为<strong>负载匹配</strong></p>
+</li>
+<li><p>定义传输线上<strong>波腹点电压振幅与波节点电压振幅之比</strong>为<strong>电压驻波比</strong></p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>无耗传输线的状态</th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>行波状态</td>
+<td>$Z_1=Z_2$</td>
+<td>反射系数为0</td>
+<td>终端无反射</td>
+<td>负载匹配</td>
+</tr>
+<tr>
+<td>纯驻波状态</td>
+<td></td>
+<td>反射系数为1</td>
+<td>终端全反射</td>
+<td></td>
+</tr>
+<tr>
+<td>行驻波状态</td>
+<td>终端接任意负数阻抗负载</td>
+<td></td>
+<td></td>
+<td>既有行波又有纯驻波</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<ul>
+<li><p><strong>负载阻抗匹配</strong>：<strong>负载阻抗</strong>等于传输线的特性阻抗，传输线上只有从信源到负载的入射波，而无反射波。<strong>匹配负载完全吸收了由信源入射来的微博功率。</strong></p>
+</li>
+<li><p><strong>源阻抗匹配</strong>：<strong>电源内阻</strong>等于传输线的特性阻抗。<strong>入射功率不随负载变化。</strong></p>
+</li>
+<li><p><strong>共轭阻抗匹配</strong>：不匹配电源，当<strong>负载阻抗折合到电源参考面上的输入阻抗</strong>为电源内阻的共轭值时，<strong>负载能得到最大的功率值</strong></p>
+</li>
+</ul>
+<h1 id="第二章_规则金属波导">第二章 规则金属波导</h1><hr>
+<ul>
+<li><p>当工作波长<strong>小于</strong>截止波长时，此模可以在波导中传输，称为传导模</p>
+</li>
+<li><p>当工作波长<strong>大于</strong>截止波长时，此模不能在波导中传输，称为截止模</p>
+</li>
+<li><p>激励波导的三种方法：<strong>电激励、磁激励和电流激励</strong></p>
+</li>
+</ul>
+<h1 id="第三章_微波集成传输线">第三章 微波集成传输线</h1><hr>
+<ul>
+<li>各种集成微波传输系统：</li>
+</ul>
+<ol>
+<li><strong>准TEM波传输线</strong>，主要包括微带传输线和共面波导等</li>
+<li><strong>非TEM波传输线</strong>，主要包括槽线、鳍线等</li>
+<li><strong>开放式介质波导传输线</strong>，主要包括介质波导、镜像波导等</li>
+<li><strong>半开放式介质波导</strong>，主要包括H形波导、G形波导等</li>
+</ol>
+<ul>
+<li>对于耦合微带线，可以将激励分为<strong>奇模激励和偶模激励</strong></li>
+</ul>
+<p>设两线的激励电压分别为$U_1、U_2$，则可表示为两个<strong>等幅同相</strong>电压激励$U_e（奇模激励）$和两个<strong>等幅反相</strong>电压激励$U_o$</p>
+<h1 id="第四章_微波网络基础">第四章 微波网络基础</h1><hr>
+<ul>
+<li>阻抗矩阵：</li>
+</ul>
+<p>$$U<em>1=Z</em>{11}I<em>1+Z</em>{12}I_2$$</p>
+<p>$$U<em>2=Z</em>{21}I<em>1+Z</em>{22}I_2$$</p>
+<p>$$[U]=[Z][I]$$</p>
+<p>其中$[U]$为电压矩阵，$[I]$为电流矩阵，$[Z]$为阻抗矩阵，其中$Z<em>{11}、Z</em>{22}$分别是端口1和端口2的自阻抗，$Z<em>{12}、Z</em>{21}$分别是端口1和端口2的互阻抗。</p>
+<ul>
+<li>导纳矩阵</li>
+</ul>
+<p>$$I<em>1=Y</em>{11}U<em>1+Y</em>{12}U_2$$</p>
+<p>$$I<em>2=Y</em>{21}U<em>1+Y</em>{22}U_2$$</p>
+<p>$$[I]=[Y][U]$$</p>
+<ul>
+<li>散射矩阵</li>
+</ul>
+<p>对于线性网络，归一化入射波和归一化反射射波之间是线性关系，故友线性方程：</p>
+<p>$$b<em>1=S</em>{11}a<em>1+S</em>{12}a_2$$</p>
+<p>$$b<em>2=S</em>{21}a<em>1+S</em>{22}a_2$$</p>
+<p>$$[b]=[S][a]$$</p>
+<p>对于互易网络：$S<em>{12}=S</em>{21}$</p>
+<p>对于对称网络：$S<em>{11}=S</em>{22}$</p>
+<p>对于无耗网络：$[S]^+[S]=[E]$<br>其中$[S]^+$是$[S]$的转置共轭矩阵，$[E]$为单位矩阵</p>
+<h1 id="第五章_微波元器件">第五章 微波元器件</h1><hr>
+<ul>
+<li><strong>定向耦合器</strong>，是一种具有<strong>定向传输特性</strong>的四端口元件。</li>
+</ul>
+<p>端口1：输入端</p>
+<p>端口2：直通输出端</p>
+<p>端口3：耦合输出端</p>
+<p>端口4：隔离端</p>
+<p>性能指标：耦合度、隔离度、定向度、输入驻波比和工作带宽</p>
+<h1 id="第六章_天线辐射与接收的基本理论">第六章 天线辐射与接收的基本理论</h1><p>*　天线应具有以下功能：</p>
+<ol>
+<li>天线应能将导波能量尽可能多转变为电磁波能量</li>
+<li>天线应使电磁波尽可能集中于确定的方向上，即<strong>天线具有方向性</strong></li>
+</ol>
 
       
     </div>
@@ -205,7 +354,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/测试/"> #测试 </a>
+            <a href="/tags/复习笔记/"> #复习笔记 </a>
           
         </div>
       
@@ -214,13 +363,11 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/05/26/2015-05-26-test/">test</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/03/23/2015-03-23-HDU-3726-Graph-and-Queries/">HDU 3726 Graph and Queries 平衡树+前向星+并查集+离线操作+逆向思维 数据结构大综合题</a>
+              <a href="/2015/06/25/2015-06-25-baoyan/">小记</a>
             
           </div>
         </div>
@@ -263,8 +410,8 @@
     
       <div class="comments" id="comments">
         
-          <div class="ds-thread" data-thread-key="2015/05/26/2015-05-26-hello-world/"
-               data-title="Hello World" data-url="http://jcf94.github.io/2015/05/26/2015-05-26-hello-world/">
+          <div class="ds-thread" data-thread-key="2015/06/27/2015-06-27-weibojishuyutianxian/"
+               data-title="微波技术与天线 复习笔记" data-url="http://jcf94.github.io/2015/06/27/2015-06-27-weibojishuyutianxian/">
           </div>
         
       </div>
@@ -381,7 +528,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick_Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create_a_new_post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run_server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate_static_files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy_to_remote_sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#绪论"><span class="nav-number">1.</span> <span class="nav-text">绪论</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第一章_均匀传输线理论"><span class="nav-number">2.</span> <span class="nav-text">第一章 均匀传输线理论</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第二章_规则金属波导"><span class="nav-number">3.</span> <span class="nav-text">第二章 规则金属波导</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第三章_微波集成传输线"><span class="nav-number">4.</span> <span class="nav-text">第三章 微波集成传输线</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第四章_微波网络基础"><span class="nav-number">5.</span> <span class="nav-text">第四章 微波网络基础</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第五章_微波元器件"><span class="nav-number">6.</span> <span class="nav-text">第五章 微波元器件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第六章_天线辐射与接收的基本理论"><span class="nav-number">7.</span> <span class="nav-text">第六章 天线辐射与接收的基本理论</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>

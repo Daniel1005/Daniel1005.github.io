@@ -4,7 +4,7 @@
   <subtitle><![CDATA[It's the way I choose.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://jcf94.github.io/"/>
-  <updated>2015-06-26T14:17:43.716Z</updated>
+  <updated>2015-06-27T05:58:14.203Z</updated>
   <id>http://jcf94.github.io/</id>
   
   <author>
@@ -15,11 +15,185 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[微波技术与天线 复习笔记]]></title>
+    <link href="http://jcf94.github.io/2015/06/27/2015-06-27-weibojishuyutianxian/"/>
+    <id>http://jcf94.github.io/2015/06/27/2015-06-27-weibojishuyutianxian/</id>
+    <published>2015-06-27T04:25:35.000Z</published>
+    <updated>2015-06-27T05:58:14.203Z</updated>
+    <content type="html"><![CDATA[<h1 id="绪论">绪论</h1><hr>
+<ul>
+<li><p><strong>微波</strong>是电磁波谱中介于超短波与红外线之间的波段，频率范围从<strong>300MHz（波长1m）</strong>至<strong>3000GHz（波长0.1mm）</strong></p>
+</li>
+<li><p>微波、天线与电波：三者的共同基础都是<strong>电磁场理论</strong>，是电磁场在<strong>不同边界值条件下</strong>的应用</p>
+</li>
+</ul>
+<p>微波：研究如何<strong>导引</strong>电磁波在微波传输系统中的有效传输</p>
+<p>天线：1.有效地辐射或者接受电磁波；2.把无线电波能量转换为导行波能量</p>
+<p>电波：分析和研究电波在空间的传播方式和特点</p>
+<a id="more"></a>
+<h1 id="第一章_均匀传输线理论">第一章 均匀传输线理论</h1><hr>
+<ul>
+<li><p>微波传输线是用传输<strong>微波信息和能量</strong>的各种形式传输系统的总称，它的作用是<strong>引导</strong>电磁波沿一定方向传输，因此又称为<strong>导波系统</strong>，其所引导的电磁波被称为<strong>导行波</strong></p>
+</li>
+<li><p>一般将截面尺寸、形状、媒质分布、材料及边界条件均不变的导波系统称为<strong>规则导波系统</strong></p>
+</li>
+<li><p>微波无源器件、均匀传输线、有源元器件以及天线一起构成微波系统</p>
+</li>
+</ul>
+<hr>
+<ul>
+<li><p>将传输线上导行波的<strong>电压与电流之比</strong>定义为传输线的<strong>特性阻抗</strong>，用 $Z_0$ 来表示，其倒数称为特性导纳，用 $Y_0$ 来表示</p>
+</li>
+<li><p>常用平行双导线传输线的特性阻抗有<strong>250欧、400欧和600欧</strong>三种</p>
+</li>
+<li><p>传输线上<strong>任意一点的电压与电流之比</strong>称为传输线在该点的<strong>阻抗</strong></p>
+</li>
+<li><p>均匀无耗传输线上任意一点的<strong>输入阻抗</strong>与<strong>观察点的位置</strong>、传输线的<strong>特性阻抗</strong>、<strong>终端负载阻抗</strong>及<strong>工作频率</strong>有关</p>
+</li>
+<li><p>无耗传输线上任意相距<strong>${1 \over 2}$波长阻抗相同，${1 \over 4}$波长阻抗变换</strong></p>
+</li>
+<li><p>定义传输线上任意一点的<strong>反射波电压（或电流）与入射波电压（或电流）</strong>之比为<strong>电压（或电流）的反射系数</strong></p>
+</li>
+<li><p>反射系数也具有<strong>${1 \over 2}$波长重复性</strong></p>
+</li>
+<li><p>当传输线<strong>特性阻抗一定</strong>时，输入阻抗与反射系数有<strong>一一对应</strong>的关系</p>
+</li>
+<li><p>当$Z_1=Z_2$时，反射系数为0，即终端无反射，称为<strong>负载匹配</strong></p>
+</li>
+<li><p>定义传输线上<strong>波腹点电压振幅与波节点电压振幅之比</strong>为<strong>电压驻波比</strong></p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>无耗传输线的状态</th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>行波状态</td>
+<td>$Z_1=Z_2$</td>
+<td>反射系数为0</td>
+<td>终端无反射</td>
+<td>负载匹配</td>
+</tr>
+<tr>
+<td>纯驻波状态</td>
+<td></td>
+<td>反射系数为1</td>
+<td>终端全反射</td>
+<td></td>
+</tr>
+<tr>
+<td>行驻波状态</td>
+<td>终端接任意负数阻抗负载</td>
+<td></td>
+<td></td>
+<td>既有行波又有纯驻波</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<ul>
+<li><p><strong>负载阻抗匹配</strong>：<strong>负载阻抗</strong>等于传输线的特性阻抗，传输线上只有从信源到负载的入射波，而无反射波。<strong>匹配负载完全吸收了由信源入射来的微博功率。</strong></p>
+</li>
+<li><p><strong>源阻抗匹配</strong>：<strong>电源内阻</strong>等于传输线的特性阻抗。<strong>入射功率不随负载变化。</strong></p>
+</li>
+<li><p><strong>共轭阻抗匹配</strong>：不匹配电源，当<strong>负载阻抗折合到电源参考面上的输入阻抗</strong>为电源内阻的共轭值时，<strong>负载能得到最大的功率值</strong></p>
+</li>
+</ul>
+<h1 id="第二章_规则金属波导">第二章 规则金属波导</h1><hr>
+<ul>
+<li><p>当工作波长<strong>小于</strong>截止波长时，此模可以在波导中传输，称为传导模</p>
+</li>
+<li><p>当工作波长<strong>大于</strong>截止波长时，此模不能在波导中传输，称为截止模</p>
+</li>
+<li><p>激励波导的三种方法：<strong>电激励、磁激励和电流激励</strong></p>
+</li>
+</ul>
+<h1 id="第三章_微波集成传输线">第三章 微波集成传输线</h1><hr>
+<ul>
+<li>各种集成微波传输系统：</li>
+</ul>
+<ol>
+<li><strong>准TEM波传输线</strong>，主要包括微带传输线和共面波导等</li>
+<li><strong>非TEM波传输线</strong>，主要包括槽线、鳍线等</li>
+<li><strong>开放式介质波导传输线</strong>，主要包括介质波导、镜像波导等</li>
+<li><strong>半开放式介质波导</strong>，主要包括H形波导、G形波导等</li>
+</ol>
+<ul>
+<li>对于耦合微带线，可以将激励分为<strong>奇模激励和偶模激励</strong></li>
+</ul>
+<p>设两线的激励电压分别为$U_1、U_2$，则可表示为两个<strong>等幅同相</strong>电压激励$U_e（奇模激励）$和两个<strong>等幅反相</strong>电压激励$U_o$</p>
+<h1 id="第四章_微波网络基础">第四章 微波网络基础</h1><hr>
+<ul>
+<li>阻抗矩阵：</li>
+</ul>
+<p>$$U<em>1=Z</em>{11}I<em>1+Z</em>{12}I_2$$</p>
+<p>$$U<em>2=Z</em>{21}I<em>1+Z</em>{22}I_2$$</p>
+<p>$$[U]=[Z][I]$$</p>
+<p>其中$[U]$为电压矩阵，$[I]$为电流矩阵，$[Z]$为阻抗矩阵，其中$Z<em>{11}、Z</em>{22}$分别是端口1和端口2的自阻抗，$Z<em>{12}、Z</em>{21}$分别是端口1和端口2的互阻抗。</p>
+<ul>
+<li>导纳矩阵</li>
+</ul>
+<p>$$I<em>1=Y</em>{11}U<em>1+Y</em>{12}U_2$$</p>
+<p>$$I<em>2=Y</em>{21}U<em>1+Y</em>{22}U_2$$</p>
+<p>$$[I]=[Y][U]$$</p>
+<ul>
+<li>散射矩阵</li>
+</ul>
+<p>对于线性网络，归一化入射波和归一化反射射波之间是线性关系，故友线性方程：</p>
+<p>$$b<em>1=S</em>{11}a<em>1+S</em>{12}a_2$$</p>
+<p>$$b<em>2=S</em>{21}a<em>1+S</em>{22}a_2$$</p>
+<p>$$[b]=[S][a]$$</p>
+<p>对于互易网络：$S<em>{12}=S</em>{21}$</p>
+<p>对于对称网络：$S<em>{11}=S</em>{22}$</p>
+<p>对于无耗网络：$[S]^+[S]=[E]$<br>其中$[S]^+$是$[S]$的转置共轭矩阵，$[E]$为单位矩阵</p>
+<h1 id="第五章_微波元器件">第五章 微波元器件</h1><hr>
+<ul>
+<li><strong>定向耦合器</strong>，是一种具有<strong>定向传输特性</strong>的四端口元件。</li>
+</ul>
+<p>端口1：输入端</p>
+<p>端口2：直通输出端</p>
+<p>端口3：耦合输出端</p>
+<p>端口4：隔离端</p>
+<p>性能指标：耦合度、隔离度、定向度、输入驻波比和工作带宽</p>
+<h1 id="第六章_天线辐射与接收的基本理论">第六章 天线辐射与接收的基本理论</h1><p>*　天线应具有以下功能：</p>
+<ol>
+<li>天线应能将导波能量尽可能多转变为电磁波能量</li>
+<li>天线应使电磁波尽可能集中于确定的方向上，即<strong>天线具有方向性</strong></li>
+</ol>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h1 id="绪论">绪论</h1><hr>
+<ul>
+<li><p><strong>微波</strong>是电磁波谱中介于超短波与红外线之间的波段，频率范围从<strong>300MHz（波长1m）</strong>至<strong>3000GHz（波长0.1mm）</strong></p>
+</li>
+<li><p>微波、天线与电波：三者的共同基础都是<strong>电磁场理论</strong>，是电磁场在<strong>不同边界值条件下</strong>的应用</p>
+</li>
+</ul>
+<p>微波：研究如何<strong>导引</strong>电磁波在微波传输系统中的有效传输</p>
+<p>天线：1.有效地辐射或者接受电磁波；2.把无线电波能量转换为导行波能量</p>
+<p>电波：分析和研究电波在空间的传播方式和特点</p>]]>
+    
+    </summary>
+    
+      <category term="复习笔记" scheme="http://jcf94.github.io/tags/%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="我的大学" scheme="http://jcf94.github.io/categories/%E6%88%91%E7%9A%84%E5%A4%A7%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[小记]]></title>
     <link href="http://jcf94.github.io/2015/06/25/2015-06-25-baoyan/"/>
     <id>http://jcf94.github.io/2015/06/25/2015-06-25-baoyan/</id>
     <published>2015-06-25T15:34:09.000Z</published>
-    <updated>2015-06-26T14:17:43.716Z</updated>
+    <updated>2015-06-26T14:17:43.000Z</updated>
     <content type="html"><![CDATA[<blockquote class="blockquote-center"><br>直面现实的时候，才会觉得害怕<br>总有一天我们是要离开象牙塔的<br></blockquote>
 
 <p>今晚被拉去听了我们学院的考研解读会。</p>
@@ -109,7 +283,7 @@
     <link href="http://jcf94.github.io/2015/06/19/2015-06-19-sbt/"/>
     <id>http://jcf94.github.io/2015/06/19/2015-06-19-sbt/</id>
     <published>2015-06-19T09:27:28.000Z</published>
-    <updated>2015-06-19T09:32:43.000Z</updated>
+    <updated>2015-06-19T09:32:43.012Z</updated>
     <content type="html"><![CDATA[<blockquote class="blockquote-center"><br>这将会是你踏入高级数据结构的第一步。<br></blockquote>
 
 <p>终于要开始给队里面讲这种比较高级的数据结构了，也趁此机会自己好好理理。</p>
@@ -296,7 +470,7 @@
     <link href="http://jcf94.github.io/2015/06/19/2015-06-19-zhuanye/"/>
     <id>http://jcf94.github.io/2015/06/19/2015-06-19-zhuanye/</id>
     <published>2015-06-19T02:15:23.000Z</published>
-    <updated>2015-06-22T02:20:12.000Z</updated>
+    <updated>2015-06-27T04:26:29.304Z</updated>
     <content type="html"><![CDATA[<p>昨天刚开了大三大四的专业班会，本来是几个大四的讲解保研、考研、工作经验的，最后系主任吴老大站起来总结陈词。。。</p>
 <blockquote>
 <p>不愧是吴老大啊！一下就抓住了问题的关键，连着又把我们教育了一通。。。</p>
@@ -314,9 +488,14 @@
 <p>2012-2013学年<br>秋<br><del>[24050010]计算机应用基础</del><br><del>[12070060]机械制图</del><br><del>[14030010]体育（1）</del><br><del>[64050010]军事理论</del><br><del>[11070010]思想道德修养与法律基础</del><br><del>[13030011]大学英语（1）</del><br>[12031011]高等数学(1)<br><del>[24040010]通信技术导论</del><br><del>[2404001S]入学教育与毕业教育</del><br><del>[6405001S]军训</del><br>春<br><del>[12040011]大学物理（1）</del><br><del>[14030020]体育（2）</del><br><del>[11160010]中国近现代史纲要</del><br><del>[13030012]大学英语（2）</del><br>[12031012]高等数学(2)<br>[24050030]C语言程序设计<br><del>[33<strong>**</strong>]公共艺术类课</del><br>[24040020]数据库原理及应用<br><del>[24040030]计算机软件技术基础</del></p>
 <p>2013-2014学年<br>秋<br><del>[11050010]马克思主义基本原理概论</del><br><del>[13030013]大学英语（3）</del><br>[12031030]线性代数<br><del>[12040012]大学物理（2）</del><br><del>[14030030]体育（3）</del><br>[12031110]复变函数与积分变换<br><del>[12040110]物理实验</del><br><del>[11080440]文献检索</del><br>[32051010]电路分析基础<br>[24040040]电磁场与电磁波<br>[24040050]信号与系统<br><del>[2404031S]公益劳动</del><br>春<br><del>[11060010]毛泽东思想和中国特色社会主义理论体系概论</del><br><del>[13030014]大学英语（4）</del><br>[12031040]概率论与数理统计<br><del>[14030040]体育（4）</del><br>[32053010]模拟电子技术基础<br>[24040060]数字信号处理<br>[24040070]自动控制概论<br>[24040080]传感器基础<br><del>[11<strong>**</strong>]思想政治理论课实践</del><br><del>[2404006S]数字信号处理课程设计</del></p>
 <p>2014-2015学年<br>秋<br>[24040090]微机原理与接口技术<br>[24040100]高频电子线路<br>[24040110]通信系统原理<br>[32054010]数字电子技术基础<br>[24040130]信息论与编码技术<br><del>[24040120]专业英语</del><br>[24040150]数字图像处理<br><del>[2404009S]微机原理与接口技术课程设计</del><br><del>[3205702S]电子技术基础课程设计</del><br><del>[2404010S]高频电子线路课程设计</del><br>春<br>[24040160]数字光纤通信<br>[24040170]微波技术与天线<br>[24040180]现代交换技术<br>[24040190]移动通信<br>[24040230]数据通信与计算机网络<br>[24040210]单片机原理<br>[24040220]VHDL语言与数字EDA设计<br>[24040200]数字视频技术<br><del>[2404032S]电装实习</del><br><del>[2404022S]EDA课程设计</del></p>
-<h1 id="数学相关">数学相关</h1><hr>
-<h2 id="高等数学">高等数学</h2><h2 id="线性代数">线性代数</h2><h2 id="复变函数与积分变换">复变函数与积分变换</h2><h2 id="概率论与数理统计">概率论与数理统计</h2><h1 id="专业课">专业课</h1><p>—</p>
-<h2 id="电学/无线电">电学/无线电</h2><h3 id="电路分析基础">电路分析基础</h3><h3 id="模拟电子技术基础">模拟电子技术基础</h3><h3 id="数字电子技术基础">数字电子技术基础</h3><h3 id="高频电子线路">高频电子线路</h3><h3 id="电磁场与电磁波">电磁场与电磁波</h3><h3 id="微波技术与天线">微波技术与天线</h3><h2 id="信号/通信">信号/通信</h2><h3 id="信号与系统">信号与系统</h3><h3 id="数字信号处理">数字信号处理</h3><h3 id="通信系统原理">通信系统原理</h3><h3 id="信息论与编码技术">信息论与编码技术</h3><h3 id="数字光纤通信">数字光纤通信</h3><h3 id="现代交换技术">现代交换技术</h3><h3 id="移动通信">移动通信</h3><h2 id="计算机应用/硬件">计算机应用/硬件</h2><h3 id="C语言程序设计">C语言程序设计</h3><h3 id="数据库原理及应用">数据库原理及应用</h3><h3 id="微机原理与接口技术">微机原理与接口技术</h3><h3 id="数据通信与计算机网络">数据通信与计算机网络</h3><h3 id="单片机原理">单片机原理</h3><h3 id="VHDL语言与数字EDA设计">VHDL语言与数字EDA设计</h3><h2 id="自动化">自动化</h2><h3 id="自动控制概论">自动控制概论</h3><h3 id="传感器基础">传感器基础</h3><h2 id="图像处理">图像处理</h2><h3 id="数字图像处理">数字图像处理</h3><h3 id="数字视频技术">数字视频技术</h3>]]></content>
+<hr>
+<h1 id="数学相关">数学相关</h1><h2 id="高等数学">高等数学</h2><h2 id="线性代数">线性代数</h2><h2 id="复变函数与积分变换">复变函数与积分变换</h2><h2 id="概率论与数理统计">概率论与数理统计</h2><hr>
+<h1 id="专业课">专业课</h1><hr>
+<h2 id="电学/无线电">电学/无线电</h2><h3 id="电路分析基础">电路分析基础</h3><h3 id="模拟电子技术基础">模拟电子技术基础</h3><h3 id="数字电子技术基础">数字电子技术基础</h3><h3 id="高频电子线路">高频电子线路</h3><h3 id="电磁场与电磁波">电磁场与电磁波</h3><h3 id="微波技术与天线">微波技术与天线</h3><hr>
+<h2 id="信号/通信">信号/通信</h2><h3 id="信号与系统">信号与系统</h3><h3 id="数字信号处理">数字信号处理</h3><h3 id="通信系统原理">通信系统原理</h3><h3 id="信息论与编码技术">信息论与编码技术</h3><h3 id="数字光纤通信">数字光纤通信</h3><h3 id="现代交换技术">现代交换技术</h3><h3 id="移动通信">移动通信</h3><hr>
+<h2 id="计算机应用/硬件">计算机应用/硬件</h2><h3 id="C语言程序设计">C语言程序设计</h3><h3 id="数据库原理及应用">数据库原理及应用</h3><h3 id="微机原理与接口技术">微机原理与接口技术</h3><h3 id="数据通信与计算机网络">数据通信与计算机网络</h3><h3 id="单片机原理">单片机原理</h3><h3 id="VHDL语言与数字EDA设计">VHDL语言与数字EDA设计</h3><hr>
+<h2 id="自动化">自动化</h2><h3 id="自动控制概论">自动控制概论</h3><h3 id="传感器基础">传感器基础</h3><hr>
+<h2 id="图像处理">图像处理</h2><h3 id="数字图像处理">数字图像处理</h3><h3 id="数字视频技术">数字视频技术</h3>]]></content>
     <summary type="html">
     <![CDATA[<p>昨天刚开了大三大四的专业班会，本来是几个大四的讲解保研、考研、工作经验的，最后系主任吴老大站起来总结陈词。。。</p>
 <blockquote>
@@ -332,6 +511,8 @@
     
     </summary>
     
+      <category term="复习笔记" scheme="http://jcf94.github.io/tags/%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
       <category term="随笔" scheme="http://jcf94.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
     
       <category term="我的大学" scheme="http://jcf94.github.io/categories/%E6%88%91%E7%9A%84%E5%A4%A7%E5%AD%A6/"/>
@@ -343,7 +524,7 @@
     <link href="http://jcf94.github.io/2015/06/13/2015-06-13-tuiyi/"/>
     <id>http://jcf94.github.io/2015/06/13/2015-06-13-tuiyi/</id>
     <published>2015-06-13T05:20:32.000Z</published>
-    <updated>2015-06-19T07:41:34.000Z</updated>
+    <updated>2015-06-19T07:41:34.153Z</updated>
     <content type="html"><![CDATA[<blockquote class="blockquote-center"><br>曾经为之付出过这么多的努力，在这个圈子中也认识了这么多优秀的人<br>要我怎么说放手？<br></blockquote>
 
 <p>之前最后一次外出参赛是今年的省赛，也就是上周的这个时候吧，还正坐在赛场上苦思冥想中。。。</p>
@@ -480,7 +661,7 @@
     <link href="http://jcf94.github.io/2015/06/02/2015-06-02-birthday/"/>
     <id>http://jcf94.github.io/2015/06/02/2015-06-02-birthday/</id>
     <published>2015-06-02T15:22:58.000Z</published>
-    <updated>2015-06-13T08:27:27.000Z</updated>
+    <updated>2015-06-13T08:27:27.148Z</updated>
     <content type="html"><![CDATA[<p>不知不觉已经到了第21个生日，真心不想承认，又老了一岁……</p>
 <p>然后就想着，去年的今天我在干什么？</p>
 <p>明年的今天我会在干什么？明年大概就是快到了大家都要离开的日子了吧，嗯，我想明年一定不会放过这个日子！</p>
@@ -572,7 +753,7 @@
     <link href="http://jcf94.github.io/2015/05/26/2015-05-26-test/"/>
     <id>http://jcf94.github.io/2015/05/26/2015-05-26-test/</id>
     <published>2015-05-26T05:07:16.000Z</published>
-    <updated>2015-06-13T05:19:32.000Z</updated>
+    <updated>2015-06-13T05:19:32.611Z</updated>
     <content type="html"><![CDATA[<h1 id="一级标题">一级标题</h1><h2 id="二级标题">二级标题</h2><pre><code>这是一段不加格式的代码
 <span class="preprocessor">#<span class="keyword">include</span>&lt;iostream&gt;</span>
 <span class="preprocessor">#<span class="keyword">include</span>&lt;cstdio&gt;</span>
@@ -695,7 +876,7 @@
     <link href="http://jcf94.github.io/2015/03/23/2015-03-23-HDU-3726-Graph-and-Queries/"/>
     <id>http://jcf94.github.io/2015/03/23/2015-03-23-HDU-3726-Graph-and-Queries/</id>
     <published>2015-03-23T11:29:27.000Z</published>
-    <updated>2015-06-19T06:34:04.000Z</updated>
+    <updated>2015-06-19T06:34:04.926Z</updated>
     <content type="html"><![CDATA[<h1 id="Graph_and_Queries">Graph and Queries</h1><p>Time Limit: 10000/5000 MS (Java/Others)    Memory Limit: 32768/32768 K (Java/Others) </p>
 <h2 id="Problem_Description">Problem Description</h2><p>You are given an undirected graph with N vertexes and M edges. Every vertex in this graph has an integer value assigned to it at the beginning. You’re also given a sequence of operations and you need to process them as requested. Here’s a list of the possible operations that you might encounter:</p>
 <p>1)  Deletes an edge from the graph. The format is [D X], where X is an integer from 1 to M, indicating the ID of the edge that you should delete. It is guaranteed that no edge will be deleted more than once.</p>
@@ -752,7 +933,7 @@
     <link href="http://jcf94.github.io/2015/03/16/2015-03-16-vijos-p1081/"/>
     <id>http://jcf94.github.io/2015/03/16/2015-03-16-vijos-p1081/</id>
     <published>2015-03-16T08:04:00.000Z</published>
-    <updated>2015-06-19T06:26:48.000Z</updated>
+    <updated>2015-06-19T06:26:48.901Z</updated>
     <content type="html"><![CDATA[<h1 id="野生动物园">野生动物园</h1><h2 id="描述">描述</h2><p>cjBBteam拥有一个很大的野生动物园。这个动物园坐落在一个狭长的山谷内，这个区域从南到北被划分成N个区域，每个区域都饲养着一头狮子。这些狮子从北到南编号为1,2,3,…,N。每头狮子都有一个觅食能力值Ai，Ai越小觅食能力越强。饲养员cmdButtons决定对狮子进行M次投喂，每次投喂都选择一个区间[I,J]，从中选取觅食能力值第K强的狮子进行投喂。值得注意的是，cmdButtons不愿意对某些区域进行过多的投喂，他认为这样有悖公平。因此cmdButtons的投喂区间是互不包含的。你的任务就是算出每次投喂后，食物被哪头狮子吃掉了。</p>
 <a id="more"></a>
 <h2 id="输入格式">输入格式</h2><p>输入第一行有两个数N和M。此后一行有N个数，从南到北描述狮子的觅食能力值。此后M行，每行描述一次投喂。第t+2的三个数I,J,K表示在第t次投喂中，cmdButtons选择了区间[I,J]内觅食能力值第K强的狮子进行投喂。</p>
@@ -792,7 +973,7 @@
     <link href="http://jcf94.github.io/2015/03/15/2015-03-15-vijos-p1647/"/>
     <id>http://jcf94.github.io/2015/03/15/2015-03-15-vijos-p1647/</id>
     <published>2015-03-15T08:03:37.000Z</published>
-    <updated>2015-06-19T06:13:21.000Z</updated>
+    <updated>2015-06-19T06:13:21.183Z</updated>
     <content type="html"><![CDATA[<h1 id="不差钱">不差钱</h1><h2 id="描述">描述</h2><p>同学们一起看了小品《不差钱》，LX神突发奇想，想刁难一下十八居士，他让十八居士模拟一下点菜的过程。</p>
 <h2 id="输入格式">输入格式</h2><p>输入第一行为一个数price，表示价钱大于price的菜赵本山都不要。</p>
 <p>以下几行表示点菜的过程，每行两个整数p，n</p>
@@ -839,7 +1020,7 @@
     <link href="http://jcf94.github.io/2015/03/08/2015-03-08-HDU-4006-The-kth-great-number/"/>
     <id>http://jcf94.github.io/2015/03/08/2015-03-08-HDU-4006-The-kth-great-number/</id>
     <published>2015-03-08T12:27:54.000Z</published>
-    <updated>2015-06-19T06:13:41.000Z</updated>
+    <updated>2015-06-19T06:13:41.748Z</updated>
     <content type="html"><![CDATA[<h1 id="The_kth_great_number">The kth great number</h1><p>Time Limit: 2000/1000 MS (Java/Others)    Memory Limit: 65768/65768 K (Java/Others)</p>
 <h2 id="Problem_Description">Problem Description</h2><p>Xiao  Ming  and  Xiao  Bao  are  playing  a  simple  Numbers  game.  In  a  round  Xiao  Ming  can choose  to  write  down  a  number,  or  ask  Xiao  Bao  what  the  kth  great  number  is.  Because  the number written by Xiao Ming is too much, Xiao Bao is feeling giddy. Now, try to help Xiao Bao.</p>
 <a id="more"></a>
@@ -884,7 +1065,7 @@
     <link href="http://jcf94.github.io/2014/09/12/2014-09-12-HDU-1068-Girls-and-Boys/"/>
     <id>http://jcf94.github.io/2014/09/12/2014-09-12-HDU-1068-Girls-and-Boys/</id>
     <published>2014-09-12T13:30:27.000Z</published>
-    <updated>2015-06-19T07:58:03.000Z</updated>
+    <updated>2015-06-19T07:58:03.283Z</updated>
     <content type="html"><![CDATA[<h1 id="Girls_and_Boys">Girls and Boys</h1><p>Time Limit: 20000/10000 MS (Java/Others)    Memory Limit: 65536/32768 K (Java/Others)</p>
 <h2 id="Problem_Description">Problem Description</h2><p>the second year of the university somebody started a study on the romantic relations between the students. The relation “romantically involved” is defined between one girl and one boy. For the study reasons it is necessary to find out the maximum set satisfying the condition: there are no two students in the set who have been “romantically involved”. The result of the program is the number of students in such a set.</p>
 <a id="more"></a>
@@ -920,7 +1101,7 @@
     <link href="http://jcf94.github.io/2014/09/09/2014-09-09-HDU-3367-Pseudoforest/"/>
     <id>http://jcf94.github.io/2014/09/09/2014-09-09-HDU-3367-Pseudoforest/</id>
     <published>2014-09-09T11:13:35.000Z</published>
-    <updated>2015-06-19T07:37:15.000Z</updated>
+    <updated>2015-06-19T07:37:15.777Z</updated>
     <content type="html"><![CDATA[<h1 id="Pseudoforest">Pseudoforest</h1><p>Time Limit: 10000/5000 MS (Java/Others)    Memory Limit: 65536/65536 K (Java/Others)</p>
 <h2 id="Problem_Description">Problem Description</h2><p>In graph theory, a pseudoforest is an undirected graph in which every connected component has at most one cycle. The maximal pseudoforests of G are the pseudoforest subgraphs of G that are not contained within any larger pseudoforest of G. A pesudoforest is larger than another if and only if the total value of the edges is greater than another one’s.</p>
 <a id="more"></a>
@@ -954,7 +1135,7 @@
     <link href="http://jcf94.github.io/2014/09/08/2014-09-08-The-2014-ACM-ICPC-Asia-Mudanjiang-Regional-First-Round/"/>
     <id>http://jcf94.github.io/2014/09/08/2014-09-08-The-2014-ACM-ICPC-Asia-Mudanjiang-Regional-First-Round/</id>
     <published>2014-09-08T03:24:57.000Z</published>
-    <updated>2015-06-19T07:32:49.000Z</updated>
+    <updated>2015-06-19T07:32:49.457Z</updated>
     <content type="html"><![CDATA[<p><del>【A】签到题</del></p>
 <p><del>【B】构造</del></p>
 <p><del>【C】遍历+floodfill染色或并查集</del></p>
@@ -1114,7 +1295,7 @@
     <link href="http://jcf94.github.io/2014/09/07/2014-09-07-HDU-1811-Rank-of-Tetris/"/>
     <id>http://jcf94.github.io/2014/09/07/2014-09-07-HDU-1811-Rank-of-Tetris/</id>
     <published>2014-09-07T08:03:38.000Z</published>
-    <updated>2015-06-19T07:05:17.000Z</updated>
+    <updated>2015-06-19T07:05:17.665Z</updated>
     <content type="html"><![CDATA[<h1 id="Rank_of_Tetris">Rank of Tetris</h1><p>Time Limit: 1000/1000 MS (Java/Others)    Memory Limit: 32768/32768 K (Java/Others) </p>
 <h2 id="Problem_Description">Problem Description</h2><p>自从Lele开发了Rating系统，他的Tetris事业更是如虎添翼，不久他遍把这个游戏推向了全球。</p>
 <p>为了更好的符合那些爱好者的喜好，Lele又想了一个新点子：他将制作一个全球Tetris高手排行榜，定时更新，名堂要比福布斯富豪榜还响。关于如何排名，这个不用说都知道是根据Rating从高到低来排，如果两个人具有相同的Rating，那就按这几个人的RP从高到低来排。</p>
@@ -1156,7 +1337,7 @@
     <link href="http://jcf94.github.io/2014/09/07/2014-09-07-HDU-1589-Find-The-Most-Comfortable-Road/"/>
     <id>http://jcf94.github.io/2014/09/07/2014-09-07-HDU-1589-Find-The-Most-Comfortable-Road/</id>
     <published>2014-09-07T08:00:57.000Z</published>
-    <updated>2015-06-19T06:56:07.000Z</updated>
+    <updated>2015-06-19T06:56:07.904Z</updated>
     <content type="html"><![CDATA[<h1 id="find_the_most_comfortable_road">find the most comfortable road</h1><p>Time Limit: 1000/1000 MS (Java/Others)    Memory Limit: 32768/32768 K (Java/Others) </p>
 <h2 id="Problem_Description">Problem Description</h2><p>XX星有许多城市，城市之间通过一种奇怪的高速公路SARS(Super Air Roam Structure—-超级空中漫游结构）进行交流，每条SARS都对行驶在上面的Flycar限制了固定的Speed，同时XX星人对 Flycar的“舒适度”有特殊要求，即乘坐过程中最高速度与最低速度的差越小乘坐越舒服 ,(理解为SARS的限速要求，flycar必须瞬间提速/降速，痛苦呀 ), 但XX星人对时间却没那么多要求。要你找出一条城市间的最舒适的路径。(SARS是双向的）。</p>
 <h2 id="Input">Input</h2><a id="more"></a>
@@ -1194,7 +1375,7 @@
     <link href="http://jcf94.github.io/2014/09/06/2014-09-06-stl-queue/"/>
     <id>http://jcf94.github.io/2014/09/06/2014-09-06-stl-queue/</id>
     <published>2014-09-06T13:17:41.000Z</published>
-    <updated>2015-06-19T06:49:15.000Z</updated>
+    <updated>2015-06-19T06:49:15.867Z</updated>
     <content type="html"><![CDATA[<p>STL中有一个优先队列的容器可以使用。</p>
 <ul>
 <li>头文件</li>
@@ -1286,46 +1467,6 @@
       <category term="优先队列" scheme="http://jcf94.github.io/tags/%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97/"/>
     
       <category term="ACM_算法学习" scheme="http://jcf94.github.io/categories/ACM-%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[HDU 2489 Minimal Ratio Tree 最小生成树+DFS]]></title>
-    <link href="http://jcf94.github.io/2014/09/06/2014-09-06-HDU-2489-Minimal-Ratio-Tree/"/>
-    <id>http://jcf94.github.io/2014/09/06/2014-09-06-HDU-2489-Minimal-Ratio-Tree/</id>
-    <published>2014-09-06T12:57:00.000Z</published>
-    <updated>2015-06-19T06:12:38.000Z</updated>
-    <content type="html"><![CDATA[<h1 id="Minimal_Ratio_Tree">Minimal Ratio Tree</h1><p>Time Limit: 2000/1000 MS (Java/Others)    Memory Limit: 32768/32768 K (Java/Others)</p>
-<h2 id="Problem_Description">Problem Description</h2><p>For a tree, which nodes and edges are all weighted, the ratio of it is calculated according to the following equation.</p>
-<p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2014-09-06-HDU-2489-Minimal-Ratio-Tree-1.jpg" alt="1"></p>
-<p>Given a complete graph of n nodes with all nodes and edges weighted, your task is to find a tree, which is a sub-graph of the original graph, with m nodes and whose ratio is the smallest among all the trees of m nodes in the graph.</p>
-<a id="more"></a>
-<p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2014-09-06-HDU-2489-Minimal-Ratio-Tree-2.jpg" alt="2"></p>
-<h2 id="Input">Input</h2><p>Input contains multiple test cases. The first line of each test case contains two integers n (2&lt;=n&lt;=15) and m (2&lt;=m&lt;=n), which stands for the number of nodes in the graph and the number of nodes in the minimal ratio tree. Two zeros end the input. The next line contains n numbers which stand for the weight of each node. The following n lines contain a diagonally symmetrical n×n connectivity matrix with each element shows the weight of the edge connecting one node with another. Of course, the diagonal will be all 0, since there is no edge connecting a node with itself.</p>
-<p>All the weights of both nodes and edges (except for the ones on the diagonal of the matrix) are integers and in the range of [1, 100].<br>The figure below illustrates the first test case in sample input. Node 1 and Node 3 form the minimal ratio tree.</p>
-<h2 id="Output">Output</h2><p>For each test case output one line contains a sequence of the m nodes which constructs the minimal ratio tree. Nodes should be arranged in ascending order. If there are several such sequences, pick the one which has the smallest node number; if there’s a tie, look at the second smallest node number, etc. Please note that the nodes are numbered from 1 .</p>
-<h2 id="Sample_Input">Sample Input</h2><blockquote>
-<p>3 2<br>30 20 10<br>0 6 2<br>6 0 3<br>2 3 0<br>2 2<br>1 1<br>0 2<br>2 0<br>0 0</p>
-</blockquote>
-<h2 id="Sample_Output">Sample Output</h2><blockquote>
-<p>1 3<br>1 2</p>
-</blockquote>
-<h2 id="题意">题意</h2><p>给出一张n个点的图，图中的每一个结点以及每一条边都有其权值，要求从中选出m个点，找到m-1条边将其连接，使得边权值与点权值的比值达到最小。</p>
-<h2 id="分析">分析</h2><p>要使得比值最小，则点权值和尽可能地大同时边权值和尽可能地小。直接上考虑，边权值和尽可能小即对这m个点作最小生成树。</p>
-<p>而题目给定的n不大，故可以用DFS搜出需要的m个点，然后对m个点进行最小生成树，中间注意判断和保存即可。</p>
-<p>我用了一个dijkstra+优先队列的prim去找MST，这也是我第一次尝试使用STL的优先队列。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span>&lt;iostream&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span>&lt;cstdio&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span>&lt;cstring&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span>&lt;queue&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">bool</span> flag[<span class="number">16</span>],outp[<span class="number">16</span>];</span><br><span class="line"><span class="keyword">int</span> n,m,node[<span class="number">16</span>];</span><br><span class="line"><span class="keyword">int</span> ma[<span class="number">16</span>][<span class="number">16</span>];</span><br><span class="line"><span class="keyword">double</span> mi;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> heaptyp</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">int</span> num,key;</span><br><span class="line">    <span class="keyword">friend</span> <span class="keyword">bool</span> <span class="keyword">operator</span> &lt; (heaptyp a,heaptyp b)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> a.num&gt;b.num;</span><br><span class="line">    &#125;</span><br><span class="line">&#125; heaptype;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">prim</span><span class="params">(<span class="keyword">int</span> s,<span class="keyword">int</span> tot)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i,j,now,ans;</span><br><span class="line">    <span class="keyword">bool</span> fla[<span class="number">16</span>];</span><br><span class="line">    priority_queue&lt;heaptype&gt;heap;</span><br><span class="line">    heaptype aaa;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">memset</span>(fla,<span class="number">0</span>,<span class="keyword">sizeof</span>(fla));</span><br><span class="line">    fla[s]=<span class="keyword">true</span>;</span><br><span class="line">    ans=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (i=<span class="number">1</span>;i&lt;=n;i++) </span><br><span class="line">    <span class="keyword">if</span> (flag[i]&amp;&amp;ma[s][i])</span><br><span class="line">    &#123;</span><br><span class="line">        heaptype temp;</span><br><span class="line">        temp.num=ma[s][i];</span><br><span class="line">        temp.key=i;</span><br><span class="line">        heap.push(temp);</span><br><span class="line">        aaa=heap.top();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (j=<span class="number">1</span>;j&lt;m;j++)</span><br><span class="line">    &#123;</span><br><span class="line">        heaptype h=heap.top();</span><br><span class="line">        heap.pop();</span><br><span class="line">        aaa=heap.top();</span><br><span class="line">        <span class="keyword">while</span> (fla[h.key])</span><br><span class="line">        &#123;</span><br><span class="line">            h=heap.top();</span><br><span class="line">            heap.pop();</span><br><span class="line">        &#125;</span><br><span class="line">        now=h.key;</span><br><span class="line">        fla[now]=<span class="keyword">true</span>;</span><br><span class="line">        ans+=h.num;</span><br><span class="line">        <span class="keyword">for</span> (i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">        <span class="keyword">if</span> (flag[i]&amp;&amp;ma[now][i])</span><br><span class="line">        <span class="keyword">if</span> (!fla[i])</span><br><span class="line">        &#123;</span><br><span class="line">            heaptype temp;</span><br><span class="line">            temp.num=ma[now][i];</span><br><span class="line">            temp.key=i;</span><br><span class="line">            heap.push(temp);</span><br><span class="line">            aaa=heap.top();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">double</span> rat=(<span class="keyword">double</span>)ans/tot;</span><br><span class="line">    <span class="keyword">if</span> (mi-rat&gt;<span class="number">0.0000001</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        mi=rat;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) outp[i]=fla[i];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> now,<span class="keyword">int</span> last,<span class="keyword">int</span> tot)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">     <span class="keyword">if</span> (now==m)</span><br><span class="line">     &#123;</span><br><span class="line">         <span class="keyword">int</span> i;</span><br><span class="line">         <span class="keyword">for</span> (i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">         <span class="keyword">if</span> (flag[i]) <span class="keyword">break</span>;</span><br><span class="line">         prim(i,tot);</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="keyword">else</span> </span><br><span class="line">     &#123;</span><br><span class="line">         now++;</span><br><span class="line">         <span class="keyword">for</span> (<span class="keyword">int</span> i=last+<span class="number">1</span>;i&lt;=n-m+now;i++)</span><br><span class="line">         &#123;</span><br><span class="line">             flag[i]=<span class="keyword">true</span>;</span><br><span class="line">             dfs(now,i,tot+node[i]);</span><br><span class="line">             flag[i]=<span class="keyword">false</span>;</span><br><span class="line">         &#125;</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;m);</span><br><span class="line">    <span class="keyword">while</span> (!(n==<span class="number">0</span>&amp;&amp;m==<span class="number">0</span>))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;node[i]);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=n;j++) <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;ma[i][j]);</span><br><span class="line">        </span><br><span class="line">        mi=<span class="number">2147483647</span>;</span><br><span class="line">        <span class="built_in">memset</span>(flag,<span class="number">0</span>,<span class="keyword">sizeof</span>(flag));</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n-m+<span class="number">1</span>;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            flag[i]=<span class="keyword">true</span>;</span><br><span class="line">            dfs(<span class="number">1</span>,i,node[i]);</span><br><span class="line">            flag[i]=<span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> i;</span><br><span class="line">        <span class="keyword">for</span> (i=<span class="number">1</span>;i&lt;=n;i++) </span><br><span class="line">        <span class="keyword">if</span> (outp[i]) </span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%d"</span>,i);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j=i+<span class="number">1</span>;j&lt;=n;j++)</span><br><span class="line">        <span class="keyword">if</span> (outp[j]) <span class="built_in">printf</span>(<span class="string">" %d"</span>,j);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;m);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    <summary type="html">
-    <![CDATA[<h1 id="Minimal_Ratio_Tree">Minimal Ratio Tree</h1><p>Time Limit: 2000/1000 MS (Java/Others)    Memory Limit: 32768/32768 K (Java/Others)</p>
-<h2 id="Problem_Description">Problem Description</h2><p>For a tree, which nodes and edges are all weighted, the ratio of it is calculated according to the following equation.</p>
-<p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2014-09-06-HDU-2489-Minimal-Ratio-Tree-1.jpg" alt="1"></p>
-<p>Given a complete graph of n nodes with all nodes and edges weighted, your task is to find a tree, which is a sub-graph of the original graph, with m nodes and whose ratio is the smallest among all the trees of m nodes in the graph.</p>]]>
-    
-    </summary>
-    
-      <category term="最小生成树" scheme="http://jcf94.github.io/tags/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/"/>
-    
-      <category term="ACM_训练" scheme="http://jcf94.github.io/categories/ACM-%E8%AE%AD%E7%BB%83/"/>
     
   </entry>
   
