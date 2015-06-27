@@ -4,7 +4,7 @@
   <subtitle><![CDATA[It's the way I choose.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://jcf94.github.io/"/>
-  <updated>2015-06-27T05:58:14.203Z</updated>
+  <updated>2015-06-27T06:04:31.395Z</updated>
   <id>http://jcf94.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://jcf94.github.io/2015/06/27/2015-06-27-weibojishuyutianxian/"/>
     <id>http://jcf94.github.io/2015/06/27/2015-06-27-weibojishuyutianxian/</id>
     <published>2015-06-27T04:25:35.000Z</published>
-    <updated>2015-06-27T05:58:14.203Z</updated>
+    <updated>2015-06-27T06:04:31.395Z</updated>
     <content type="html"><![CDATA[<h1 id="绪论">绪论</h1><hr>
 <ul>
 <li><p><strong>微波</strong>是电磁波谱中介于超短波与红外线之间的波段，频率范围从<strong>300MHz（波长1m）</strong>至<strong>3000GHz（波长0.1mm）</strong></p>
@@ -136,7 +136,7 @@
 <p>$$U<em>1=Z</em>{11}I<em>1+Z</em>{12}I_2$$</p>
 <p>$$U<em>2=Z</em>{21}I<em>1+Z</em>{22}I_2$$</p>
 <p>$$[U]=[Z][I]$$</p>
-<p>其中$[U]$为电压矩阵，$[I]$为电流矩阵，$[Z]$为阻抗矩阵，其中$Z<em>{11}、Z</em>{22}$分别是端口1和端口2的自阻抗，$Z<em>{12}、Z</em>{21}$分别是端口1和端口2的互阻抗。</p>
+<p>其中$[U]$为电压矩阵，$[I]$为电流矩阵，$[Z]$为阻抗矩阵，其中$Z<em>{11}$、$Z</em>{22}$分别是端口1和端口2的自阻抗，$Z<em>{12}、Z</em>{21}$分别是端口1和端口2的互阻抗。</p>
 <ul>
 <li>导纳矩阵</li>
 </ul>
@@ -146,7 +146,7 @@
 <ul>
 <li>散射矩阵</li>
 </ul>
-<p>对于线性网络，归一化入射波和归一化反射射波之间是线性关系，故友线性方程：</p>
+<p>对于线性网络，归一化入射波和归一化反射射波之间是线性关系，故有线性方程：</p>
 <p>$$b<em>1=S</em>{11}a<em>1+S</em>{12}a_2$$</p>
 <p>$$b<em>2=S</em>{21}a<em>1+S</em>{22}a_2$$</p>
 <p>$$[b]=[S][a]$$</p>
