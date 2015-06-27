@@ -4,7 +4,7 @@
   <subtitle><![CDATA[It's the way I choose.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://jcf94.github.io/"/>
-  <updated>2015-06-27T08:07:20.886Z</updated>
+  <updated>2015-06-27T08:48:16.011Z</updated>
   <id>http://jcf94.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://jcf94.github.io/2015/06/27/2015-06-27-weibojishuyutianxian/"/>
     <id>http://jcf94.github.io/2015/06/27/2015-06-27-weibojishuyutianxian/</id>
     <published>2015-06-27T04:25:35.000Z</published>
-    <updated>2015-06-27T08:07:20.886Z</updated>
+    <updated>2015-06-27T08:48:16.011Z</updated>
     <content type="html"><![CDATA[<h1 id="绪论">绪论</h1><hr>
 <ul>
 <li><p><strong>微波</strong>是电磁波谱中介于超短波与红外线之间的波段，频率范围从<strong>300MHz（波长1m）</strong>至<strong>3000GHz（波长0.1mm）</strong></p>
@@ -54,8 +54,26 @@
 </li>
 <li><p>定义传输线上任意一点的<strong>反射波电压（或电流）与入射波电压（或电流）</strong>之比为<strong>电压（或电流）的反射系数$\Gamma$</strong></p>
 </li>
-<li><p>$\Gamma_1=\frac {Z_1-Z_0}{Z_1+Z_0}$称为终端反射系数</p>
+<li><p>终端反射系数：</p>
 </li>
+</ul>
+<p>$$\Gamma_1=\frac {Z_1-Z_0}{Z_1+Z_0}=|\Gamma_1|e^{j\phi_1}$$</p>
+<ul>
+<li>反射系数：</li>
+</ul>
+<p>$$\Gamma(z)=|\Gamma_1|e^{-j2\beta z}=|\Gamma_1|e^{j(\phi_1-2\beta z)}$$</p>
+<p>$$\Gamma(0)=\Gamma_1$$</p>
+<ul>
+<li>输入阻抗与反射系数的关系：</li>
+</ul>
+<p>$$Z_{in}(z)=Z_0\frac{1+\Gamma(z)}{1-\Gamma(z)}$$</p>
+<p>$$\Gamma(z)=\frac{Z_{in}(z)-Z_0}{Z_{in}(z)+Z_0}$$</p>
+<ul>
+<li>相移常数</li>
+</ul>
+<p>$$\beta=\frac{2\pi f}{c}$$</p>
+<p>默认取$2\pi$即可</p>
+<ul>
 <li><p>反射系数也具有<strong>${1 \over 2}$波长重复性</strong></p>
 </li>
 <li><p>当传输线<strong>特性阻抗一定</strong>时，输入阻抗与反射系数有<strong>一一对应</strong>的关系</p>
@@ -101,7 +119,7 @@
 </table>
 <hr>
 <ul>
-<li><p><strong>负载阻抗匹配</strong>：<strong>负载阻抗</strong>等于传输线的特性阻抗，传输线上只有从信源到负载的入射波，而无反射波。<strong>匹配负载完全吸收了由信源入射来的微博功率。</strong></p>
+<li><p><strong>负载阻抗匹配</strong>：<strong>负载阻抗</strong>等于传输线的特性阻抗，传输线上只有从信源到负载的入射波，而无反射波。<strong>匹配负载完全吸收了由信源入射来的微波功率。</strong></p>
 </li>
 <li><p><strong>源阻抗匹配</strong>：<strong>电源内阻</strong>等于传输线的特性阻抗。<strong>入射功率不随负载变化。</strong></p>
 </li>
@@ -230,6 +248,10 @@
 <li><p>为了加强天线的<strong>方向性</strong>，将若干<strong>辐射单元</strong>按某种方式排列所构成的系统称为<strong>天线阵列</strong></p>
 </li>
 <li><p>相似元：各阵元的形状与尺寸相同，且以相同的姿态排列</p>
+</li>
+<li><p><strong>元因子</strong>$|F(\theta,\varphi)|$表示组成天线阵的<strong>单个辐射元</strong>的方向图函数，其值<strong>仅取决于天线元本身的类型和尺寸</strong>，体现了天线元的方向性对天线阵方向性的影响</p>
+</li>
+<li><p><strong>阵因子</strong>表示<strong>各向同性元</strong>所组成的天线阵的方向性，其值取决于天线阵的排列方式及其天线元上激励电流的相对振幅和相位</p>
 </li>
 <li><p>在各天线元为相似元的条件下，天线阵的方向图函数是<strong>单元因子与阵因子之积</strong>，这个特性称为<strong>方向图乘积定理</strong></p>
 </li>
