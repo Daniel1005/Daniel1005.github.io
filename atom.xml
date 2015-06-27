@@ -4,7 +4,7 @@
   <subtitle><![CDATA[It's the way I choose.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://jcf94.github.io/"/>
-  <updated>2015-06-27T07:03:05.207Z</updated>
+  <updated>2015-06-27T07:15:05.116Z</updated>
   <id>http://jcf94.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://jcf94.github.io/2015/06/27/2015-06-27-weibojishuyutianxian/"/>
     <id>http://jcf94.github.io/2015/06/27/2015-06-27-weibojishuyutianxian/</id>
     <published>2015-06-27T04:25:35.000Z</published>
-    <updated>2015-06-27T07:03:05.207Z</updated>
+    <updated>2015-06-27T07:15:05.116Z</updated>
     <content type="html"><![CDATA[<h1 id="绪论">绪论</h1><hr>
 <ul>
 <li><p><strong>微波</strong>是电磁波谱中介于超短波与红外线之间的波段，频率范围从<strong>300MHz（波长1m）</strong>至<strong>3000GHz（波长0.1mm）</strong></p>
@@ -76,14 +76,14 @@
 <tbody>
 <tr>
 <td>行波状态</td>
-<td>$Z_1=Z_2$</td>
+<td>$Z_1=Z_0$</td>
 <td>反射系数为0</td>
 <td>终端无反射</td>
 <td>负载匹配</td>
 </tr>
 <tr>
 <td>纯驻波状态</td>
-<td></td>
+<td>$\frac {Z_1-Z_0}{Z_1+Z_0}=1$</td>
 <td>反射系数为1</td>
 <td>终端全反射</td>
 <td></td>
@@ -515,7 +515,7 @@
     <link href="http://jcf94.github.io/2015/06/19/2015-06-19-zhuanye/"/>
     <id>http://jcf94.github.io/2015/06/19/2015-06-19-zhuanye/</id>
     <published>2015-06-19T02:15:23.000Z</published>
-    <updated>2015-06-27T07:06:10.216Z</updated>
+    <updated>2015-06-27T07:08:48.498Z</updated>
     <content type="html"><![CDATA[<p>昨天刚开了大三大四的专业班会，本来是几个大四的讲解保研、考研、工作经验的，最后系主任吴老大站起来总结陈词。。。</p>
 <blockquote>
 <p>不愧是吴老大啊！一下就抓住了问题的关键，连着又把我们教育了一通。。。</p>
