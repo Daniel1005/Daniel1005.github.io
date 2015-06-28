@@ -4,7 +4,7 @@
   <subtitle><![CDATA[It's the way I choose.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://jcf94.github.io/"/>
-  <updated>2015-06-28T02:11:43.691Z</updated>
+  <updated>2015-06-28T04:56:26.815Z</updated>
   <id>http://jcf94.github.io/</id>
   
   <author>
@@ -19,10 +19,10 @@
     <link href="http://jcf94.github.io/2015/06/27/2015-06-27-weibojishuyutianxian/"/>
     <id>http://jcf94.github.io/2015/06/27/2015-06-27-weibojishuyutianxian/</id>
     <published>2015-06-27T04:25:35.000Z</published>
-    <updated>2015-06-28T02:11:43.691Z</updated>
+    <updated>2015-06-28T04:56:26.815Z</updated>
     <content type="html"><![CDATA[<h1 id="绪论">绪论</h1><hr>
 <ul>
-<li><p><strong>微波</strong>是电磁波谱中介于超短波与红外线之间的波段，频率范围从<strong>300MHz（波长1m）</strong>至<strong>3000GHz（波长0.1mm）</strong></p>
+<li><p>++<strong>微波</strong>是电磁波谱中介于超短波与红外线之间的波段，频率范围从<strong>300MHz（波长1m）</strong>至<strong>3000GHz（波长0.1mm）</strong>++</p>
 </li>
 <li><p>微波、天线与电波：三者的共同基础都是<strong>电磁场理论</strong>，是电磁场在<strong>不同边界值条件下</strong>的应用</p>
 </li>
@@ -33,7 +33,7 @@
 <a id="more"></a>
 <h1 id="第一章_均匀传输线理论">第一章 均匀传输线理论</h1><hr>
 <ul>
-<li><p>微波传输线是用传输<strong>微波信息和能量</strong>的各种形式传输系统的总称，它的作用是<strong>引导</strong>电磁波沿一定方向传输，因此又称为<strong>导波系统</strong>，其所引导的电磁波被称为<strong>导行波</strong></p>
+<li><p>++微波传输线是用传输<strong>微波信息和能量</strong>的各种形式传输系统的总称，它的作用是<strong>引导</strong>电磁波沿一定方向传输，因此又称为<strong>导波系统</strong>，其所引导的电磁波被称为<strong>导行波</strong>++</p>
 </li>
 <li><p>一般将截面尺寸、形状、媒质分布、材料及边界条件均不变的导波系统称为<strong>规则导波系统</strong></p>
 </li>
@@ -42,7 +42,7 @@
 </ul>
 <hr>
 <ul>
-<li><p>将传输线上导行波的<strong>电压与电流之比</strong>定义为传输线的<strong>特性阻抗</strong>，用 $Z_0$ 来表示，其倒数称为特性导纳，用 $Y_0$ 来表示</p>
+<li><p>++将传输线上导行波的<strong>电压与电流之比</strong>定义为传输线的<strong>特性阻抗</strong>，用 $Z_0$ 来表示，其倒数称为特性导纳，用$Y_0$来表示++</p>
 </li>
 <li><p>常用平行双导线传输线的特性阻抗有<strong>250$\Omega$、400$\Omega$和600$\Omega$</strong>三种</p>
 </li>
@@ -52,7 +52,7 @@
 </li>
 <li><p>无耗传输线上任意相距<strong>${1 \over 2}$波长阻抗相同，${1 \over 4}$波长阻抗变换</strong></p>
 </li>
-<li><p>定义传输线上任意一点的<strong>反射波电压（或电流）与入射波电压（或电流）</strong>之比为<strong>电压（或电流）的反射系数$\Gamma$</strong></p>
+<li><p>++定义传输线上任意一点的<strong>反射波电压（或电流）与入射波电压（或电流）</strong>之比为<strong>电压（或电流）的反射系数$\Gamma$</strong>++</p>
 </li>
 <li><p>终端反射系数：</p>
 </li>
@@ -227,25 +227,25 @@
 <li>天线应有足够的<strong>工作频带</strong></li>
 </ol>
 <ul>
-<li><p>电基本振子是一段长度$l$<strong>远小于波长</strong>、电流$I$<strong>振幅均匀分布、相位相同</strong>的直线电流元。它是线天线的基本组成部分，任意线天线均可看成是由一系列电基本振子组成的。</p>
+<li><p>++电基本振子是一段长度$l$<strong>远小于波长</strong>、电流$I$<strong>振幅均匀分布、相位相同</strong>的直线电流元。它是线天线的基本组成部分，任意线天线均可看成是由一系列电基本振子组成的。++</p>
 </li>
 <li><p>天线的电参数：</p>
 </li>
 </ul>
 <ol>
-<li><strong>天线方向图</strong>：指在<strong>离天线一定距离处</strong>，辐射场的<strong>相对场强（归一化模值）</strong>随方向变化的曲线图，通常采用通过天线最大辐射方向上的<strong>两个相互垂直的</strong>平面方向图来表示</li>
-<li><strong>天线效率</strong>：定义为天线<strong>辐射功率与输入功率</strong>之比</li>
-<li><strong>增益系数</strong>：是综合衡量天线<strong>能量转换和方向特性</strong>的参数，它是<strong>方向系数与天线效率的乘积</strong>，记为G</li>
-<li><strong>极化和交叉极化电平</strong>：极化特性是指天线在<strong>最大辐射方向</strong>上电场矢量的方向<strong>随时间变化</strong>的规律。有线极化、圆极化、椭圆极化等。引入交叉极化电平来表征<strong>线极化的纯度</strong>。</li>
-<li><strong>频带宽度</strong>：当工作频率变化时，天线的<strong>有关电参数不超出规定范围的频率范围</strong>称为天线的频带宽度，简称天线的带宽</li>
-<li><strong>输入阻抗与驻波比</strong></li>
-<li><strong>有效长度</strong>：在保持实际天线最大辐射方向上的<strong>场强值不变</strong>的条件下，假设天线上<strong>电流分布为均匀分布</strong>时天线的<strong>等效长度</strong>。有效长度越长，表明天线的辐射能力越强。</li>
+<li>++<strong>天线方向图</strong>：指在<strong>离天线一定距离处</strong>，辐射场的<strong>相对场强（归一化模值）</strong>随方向变化的曲线图，通常采用通过天线最大辐射方向上的<strong>两个相互垂直的</strong>平面方向图来表示++</li>
+<li>++<strong>天线效率</strong>：定义为天线<strong>辐射功率与输入功率</strong>之比++</li>
+<li>++<strong>增益系数</strong>：是综合衡量天线<strong>能量转换和方向特性</strong>的参数，它是<strong>方向系数与天线效率的乘积</strong>，记为G++</li>
+<li>++<strong>极化和交叉极化电平</strong>：极化特性是指天线在<strong>最大辐射方向</strong>上电场矢量的方向<strong>随时间变化</strong>的规律。有线极化、圆极化、椭圆极化等。引入交叉极化电平来表征<strong>线极化的纯度</strong>。++</li>
+<li>++<strong>频带宽度</strong>：当工作频率变化时，天线的<strong>有关电参数不超出规定范围的频率范围</strong>称为天线的频带宽度，简称天线的带宽++</li>
+<li>++<strong>输入阻抗与驻波比</strong>++</li>
+<li>++<strong>有效长度</strong>：在保持实际天线最大辐射方向上的<strong>场强值不变</strong>的条件下，假设天线上<strong>电流分布为均匀分布</strong>时天线的<strong>等效长度</strong>。有效长度越长，表明天线的辐射能力越强。++</li>
 </ol>
 <h1 id="第七章_电波传播概论"><del>第七章 电波传播概论</del></h1><h1 id="第八章_线天线">第八章 线天线</h1><hr>
 <ul>
 <li><p>横向尺寸<strong>远小于</strong>纵向尺寸并<strong>小于波长</strong>的细长结构的天线称为线天线</p>
 </li>
-<li><p>为了加强天线的<strong>方向性</strong>，将若干<strong>辐射单元</strong>按某种方式排列所构成的系统称为<strong>天线阵列</strong></p>
+<li><p>++为了加强天线的<strong>方向性</strong>，将若干<strong>辐射单元</strong>按某种方式排列所构成的系统称为<strong>天线阵列</strong>++</p>
 </li>
 <li><p>相似元：各阵元的形状与尺寸相同，且以相同的姿态排列</p>
 </li>
@@ -266,7 +266,7 @@
 <ul>
 <li><p>面天线又称口径天线，它所载的电流<strong>沿天线体的金属表面</strong>分布，且面天线的口径尺寸<strong>远大于</strong>工作波长</p>
 </li>
-<li><p><strong>惠更斯-菲涅尔原理</strong>：在空间任意一点的场，是包围天线的<strong>封闭曲面</strong>上各点的<strong>电磁扰动产生的次级辐射</strong>在该点<strong>叠加</strong>的结果</p>
+<li><p>++<strong>惠更斯-菲涅尔原理</strong>：在空间任意一点的场，是包围天线的<strong>封闭曲面</strong>上各点的<strong>电磁扰动产生的次级辐射</strong>在该点<strong>叠加</strong>的结果++</p>
 </li>
 <li><p><strong>旋转抛物面天线</strong>由两部分组成：1.抛物线绕其焦轴旋转而成的抛物反射面；2.置于抛物面焦点处的馈源（照射器）</p>
 </li>
@@ -276,7 +276,7 @@
     <summary type="html">
     <![CDATA[<h1 id="绪论">绪论</h1><hr>
 <ul>
-<li><p><strong>微波</strong>是电磁波谱中介于超短波与红外线之间的波段，频率范围从<strong>300MHz（波长1m）</strong>至<strong>3000GHz（波长0.1mm）</strong></p>
+<li><p>++<strong>微波</strong>是电磁波谱中介于超短波与红外线之间的波段，频率范围从<strong>300MHz（波长1m）</strong>至<strong>3000GHz（波长0.1mm）</strong>++</p>
 </li>
 <li><p>微波、天线与电波：三者的共同基础都是<strong>电磁场理论</strong>，是电磁场在<strong>不同边界值条件下</strong>的应用</p>
 </li>
