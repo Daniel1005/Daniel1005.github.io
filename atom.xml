@@ -4,7 +4,7 @@
   <subtitle><![CDATA[It's the way I choose.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://jcf94.github.io/"/>
-  <updated>2015-06-28T04:56:26.815Z</updated>
+  <updated>2015-06-28T05:02:21.595Z</updated>
   <id>http://jcf94.github.io/</id>
   
   <author>
@@ -19,10 +19,10 @@
     <link href="http://jcf94.github.io/2015/06/27/2015-06-27-weibojishuyutianxian/"/>
     <id>http://jcf94.github.io/2015/06/27/2015-06-27-weibojishuyutianxian/</id>
     <published>2015-06-27T04:25:35.000Z</published>
-    <updated>2015-06-28T04:56:26.815Z</updated>
+    <updated>2015-06-28T05:02:21.595Z</updated>
     <content type="html"><![CDATA[<h1 id="绪论">绪论</h1><hr>
 <ul>
-<li><p>++<strong>微波</strong>是电磁波谱中介于超短波与红外线之间的波段，频率范围从<strong>300MHz（波长1m）</strong>至<strong>3000GHz（波长0.1mm）</strong>++</p>
+<li><p><u><strong>微波</strong>是电磁波谱中介于超短波与红外线之间的波段，频率范围从<strong>300MHz（波长1m）</strong>至<strong>3000GHz（波长0.1mm）</strong></u></p>
 </li>
 <li><p>微波、天线与电波：三者的共同基础都是<strong>电磁场理论</strong>，是电磁场在<strong>不同边界值条件下</strong>的应用</p>
 </li>
@@ -72,7 +72,6 @@
 <li>相移常数</li>
 </ul>
 <p>$$\beta=\frac{2\pi f}{c}$$</p>
-<p>默认取$2\pi$即可</p>
 <ul>
 <li><p>反射系数也具有<strong>${1 \over 2}$波长重复性</strong></p>
 </li>
@@ -276,7 +275,7 @@
     <summary type="html">
     <![CDATA[<h1 id="绪论">绪论</h1><hr>
 <ul>
-<li><p>++<strong>微波</strong>是电磁波谱中介于超短波与红外线之间的波段，频率范围从<strong>300MHz（波长1m）</strong>至<strong>3000GHz（波长0.1mm）</strong>++</p>
+<li><p><u><strong>微波</strong>是电磁波谱中介于超短波与红外线之间的波段，频率范围从<strong>300MHz（波长1m）</strong>至<strong>3000GHz（波长0.1mm）</strong></u></p>
 </li>
 <li><p>微波、天线与电波：三者的共同基础都是<strong>电磁场理论</strong>，是电磁场在<strong>不同边界值条件下</strong>的应用</p>
 </li>
