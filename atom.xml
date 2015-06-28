@@ -4,7 +4,7 @@
   <subtitle><![CDATA[It's the way I choose.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://jcf94.github.io/"/>
-  <updated>2015-06-28T07:05:49.728Z</updated>
+  <updated>2015-06-28T07:41:54.003Z</updated>
   <id>http://jcf94.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://jcf94.github.io/2015/06/27/2015-06-27-weibojishuyutianxian/"/>
     <id>http://jcf94.github.io/2015/06/27/2015-06-27-weibojishuyutianxian/</id>
     <published>2015-06-27T04:25:35.000Z</published>
-    <updated>2015-06-28T07:05:49.728Z</updated>
+    <updated>2015-06-28T07:41:54.003Z</updated>
     <content type="html"><![CDATA[<h1 id="绪论">绪论</h1><hr>
 <ul>
 <li><p><u><strong>微波</strong>是电磁波谱中介于超短波与红外线之间的波段，频率范围从<strong>300MHz（波长1m）</strong>至<strong>3000GHz（波长0.1mm）</strong></u></p>
@@ -237,24 +237,56 @@
 <p>$$\begin{bmatrix}U_1\\U_2\end{bmatrix}=\begin{bmatrix}Z_{11}&amp;Z_{12}\\Z_{21}&amp;Z_{22}\end{bmatrix}\begin{bmatrix}I_1\\I_2\end{bmatrix}$$</p>
 <p>$$[U]=[Z][I]$$</p>
 <p>其中$[U]$为电压矩阵，$[I]$为电流矩阵，$[Z]$为阻抗矩阵，其中$Z_{11}$、$Z_{22}$分别是端口1和端口2的自阻抗，$Z_{12}$、$Z_{21}$分别是端口1和端口2的互阻抗。</p>
-<p>$\left.Z_{11}=\frac{U_1}{I_1}\right|_{I_2=0}$</p>
+<p>$\left.Z_{11}=\frac{U_1}{I_1}\right|_{I_2=0}$为$T<em>2$面开路时，端口1的输入阻抗<br>$\left.Z\</em>{12}=\frac{U_1}{I_2}\right|_{I_1=0}$为$T<em>1$面开路时，端口2至端口1的转移阻抗<br>$\left.Z\</em>{21}=\frac{U_2}{I_1}\right|_{I_2=0}$为$T<em>2$面开路时，端口1至端口2的转移阻抗<br>$\left.Z\</em>{22}=\frac{U_2}{I_2}\right|_{I_1=0}$为$T_1$面开路时，端口2的输入阻抗</p>
 <ul>
 <li>导纳矩阵</li>
 </ul>
 <p>$$I_1=Y_{11}U_1+Y_{12}U_2$$</p>
 <p>$$I_2=Y_{21}U_1+Y_{22}U_2$$</p>
+<p>$$\begin{bmatrix}I_1\\I_2\end{bmatrix}=\begin{bmatrix}Y_{11}&amp;Y_{12}\\Y_{21}&amp;Y_{22}\end{bmatrix}\begin{bmatrix}U_1\\U_2\end{bmatrix}$$</p>
 <p>$$[I]=[Y][U]$$</p>
+<p>$\left.Y_{11}=\frac{I_1}{U_1}\right|_{U_2=0}$为$T<em>2$面短路时，端口1的输入导纳<br>$\left.Y\</em>{12}=\frac{I_1}{U_2}\right|_{U_1=0}$为$T<em>1$面短路时，端口2至端口1的转移导纳<br>$\left.Y\</em>{21}=\frac{I_2}{U_1}\right|_{U_2=0}$为$T<em>2$面短路时，端口1至端口2的转移导纳<br>$\left.Y\</em>{22}=\frac{I_2}{U_2}\right|_{U_1=0}$为$T_1$面短路时，端口2的输入导纳</p>
+<p>$$[Z][Y]=[E]$$</p>
+<p>$$[Y]=[Z]^{-1}$$</p>
+<ul>
+<li>转移矩阵</li>
+</ul>
+<p>转移矩阵也称为A矩阵</p>
+<p>$$U_1=AU_2+B(-I_2)$$</p>
+<p>$$I_1=CU_2+D(-I_2)$$</p>
+<p>$$\begin{bmatrix}U_1\\I_1\end{bmatrix}=\begin{bmatrix}A&amp;B\\C&amp;D\end{bmatrix}\begin{bmatrix}U_2\-I_2\end{bmatrix}$$</p>
+<p>$\left.A=\frac{U_1}{U_2}\right|_{I_2=0}$为$T<em>2$开路时电压的转移参数<br>$\left.B=\frac{U_1}{-I_2}\right|\</em>{U_2=0}$为$T<em>2$短路时转移阻抗<br>$\left.C=\frac{I_1}{U_2}\right|\</em>{I_2=0}$为$T<em>2$开路时转移导纳<br>$\left.D=\frac{I_1}{-I_2}\right|\</em>{U_2=0}$为$T_2$短路时电流的转移参数</p>
+<p>n个双端口网络级联，则有：</p>
+<p>$$[A]=[A_1][A_2]…[A_n]$$</p>
 <ul>
 <li>散射矩阵</li>
 </ul>
 <p>对于线性网络，归一化入射波和归一化反射射波之间是线性关系，故有线性方程：</p>
 <p>$$b_1=S_{11}a_1+S_{12}a_2$$</p>
 <p>$$b_2=S_{21}a_1+S_{22}a_2$$</p>
+<p>$$\begin{bmatrix}b_1\\b_2\end{bmatrix}=\begin{bmatrix}S_{11}&amp;S_{12}\\S_{21}&amp;S_{22}\end{bmatrix}\begin{bmatrix}a_1\\a_2\end{bmatrix}$$</p>
 <p>$$[b]=[S][a]$$</p>
+<p>$\left.S_{11}=\frac{b_1}{a_1}\right|_{a_2=0}$表示端口2匹配时，端口1的反射系数<br>$\left.S_{12}=\frac{b_1}{a_2}\right|_{a_1=0}$表示端口1匹配时，端口2到端口1的反向传输系数<br>$\left.S_{21}=\frac{b_2}{a_1}\right|_{a_2=0}$表示端口2匹配时，端口1到端口2的正向传输系数<br>$\left.S_{22}=\frac{b_2}{a_2}\right|_{a_1=0}$表示端口1匹配时，端口2的反射系数</p>
 <p>对于互易网络：$S_{12}=S_{21}$</p>
 <p>对于对称网络：$S_{11}=S_{22}$</p>
 <p>对于无耗网络：$[S]^+[S]=[E]$<br>其中$[S]^+$是$[S]$的转置共轭矩阵，$[E]$为单位矩阵</p>
 <h1 id="第五章_微波元器件">第五章 微波元器件</h1><hr>
+<ul>
+<li>理想衰减器</li>
+</ul>
+<p>$$\begin{bmatrix}S_\alpha\end{bmatrix}=\begin{bmatrix}0&amp;e^{-\alpha l}\\e^{-\alpha l}&amp;0\end{bmatrix}$$</p>
+<ul>
+<li>理想相移器</li>
+</ul>
+<p>$$\begin{bmatrix}S_\theta\end{bmatrix}=\begin{bmatrix}0&amp;e^{-j\theta}\\e^{-j\theta}&amp;0\end{bmatrix}$$</p>
+<ul>
+<li>理想隔离器</li>
+</ul>
+<p>$$\begin{bmatrix}S\end{bmatrix}=\begin{bmatrix}0&amp;0\\1&amp;0\end{bmatrix}$$</p>
+<ul>
+<li>Y形结环形器</li>
+</ul>
+<p>$$\begin{bmatrix}S\end{bmatrix}=\begin{bmatrix}S_{11}&amp;S_{12}&amp;S_{13}\\S_{21}&amp;S_{22}&amp;S_{23}\\S_{31}&amp;S_{32}&amp;S_{33}\end{bmatrix}$$</p>
 <ul>
 <li><strong>定向耦合器</strong>，是一种具有<strong>定向传输特性</strong>的四端口元件。</li>
 </ul>
