@@ -250,7 +250,7 @@
 <ul>
 <li>相移常数</li>
 </ul>
-<p>$$\beta=\frac{2\pi f}{c}$$</p>
+<p>$$\beta=\frac{2\pi f}{c}=\frac{2\pi}{\lambda}$$</p>
 <ul>
 <li><p>反射系数也具有<strong>${1 \over 2}$波长重复性</strong></p>
 </li>
@@ -329,6 +329,8 @@
 </table>
 <p>可见：</p>
 <p>$$R_{max}R_{min}=Z_0^2$$</p>
+<p>匹配传输线的特性阻抗：</p>
+<p>$$Z_{01}=\sqrt{Z_0R}$$</p>
 <hr>
 <ul>
 <li><p><strong>负载阻抗匹配</strong>：<strong>负载阻抗</strong>等于传输线的特性阻抗，传输线上只有从信源到负载的入射波，而无反射波。<strong>匹配负载完全吸收了由信源入射来的微波功率。</strong></p>
@@ -358,6 +360,14 @@
 <li>截止波长：</li>
 </ul>
 <p>$$\lambda_{cTE_{mn}}=\lambda_{cTM_{mn}}=\frac{2\pi}{k_{cmn}}=\frac{2}{\sqrt{(\frac{m}{a})^2+(\frac{n}{b})^2}}$$</p>
+<ul>
+<li>相移常数</li>
+</ul>
+<p>$$\beta=\frac{2\pi}{\lambda}\sqrt{1-(\frac{\lambda}{\lambda_c})^2}=\sqrt{k^2-k_c^2}$$</p>
+<ul>
+<li>相速与波导波长</li>
+</ul>
+<p>$$\nu_p=\frac{\omega}{\beta}$$<br>$$\lambda_g=\frac{2\pi}{\beta}$$</p>
 <ul>
 <li>例如：</li>
 </ul>
@@ -403,6 +413,7 @@
 </ul>
 <p>$$U_1=Z_{11}I_1+Z_{12}I_2$$</p>
 <p>$$U_2=Z_{21}I_1+Z_{22}I_2$$</p>
+<p>$$\begin{bmatrix}U_1\\U_2\end{bmatrix}=\begin{bmatrix}Z_{11}&amp;Z_{12}\\Z_{21}&amp;Z_{22}\end{bmatrix}\begin{bmatrix}I_1\\I_2\end{bmatrix}$$</p>
 <p>$$[U]=[Z][I]$$</p>
 <p>其中$[U]$为电压矩阵，$[I]$为电流矩阵，$[Z]$为阻抗矩阵，其中$Z_{11}$、$Z_{22}$分别是端口1和端口2的自阻抗，$Z_{12}$、$Z_{21}$分别是端口1和端口2的互阻抗。</p>
 <ul>
