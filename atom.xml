@@ -4,7 +4,7 @@
   <subtitle><![CDATA[It's the way I choose.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://jcf94.github.io/"/>
-  <updated>2015-06-28T05:06:43.480Z</updated>
+  <updated>2015-06-28T05:38:25.640Z</updated>
   <id>http://jcf94.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://jcf94.github.io/2015/06/27/2015-06-27-weibojishuyutianxian/"/>
     <id>http://jcf94.github.io/2015/06/27/2015-06-27-weibojishuyutianxian/</id>
     <published>2015-06-27T04:25:35.000Z</published>
-    <updated>2015-06-28T05:06:43.480Z</updated>
+    <updated>2015-06-28T05:38:25.640Z</updated>
     <content type="html"><![CDATA[<h1 id="绪论">绪论</h1><hr>
 <ul>
 <li><p><u><strong>微波</strong>是电磁波谱中介于超短波与红外线之间的波段，频率范围从<strong>300MHz（波长1m）</strong>至<strong>3000GHz（波长0.1mm）</strong></u></p>
@@ -42,7 +42,7 @@
 </ul>
 <hr>
 <ul>
-<li><p>++将传输线上导行波的<strong>电压与电流之比</strong>定义为传输线的<strong>特性阻抗</strong>，用 $Z_0$ 来表示，其倒数称为特性导纳，用$Y_0$来表示++</p>
+<li><p><u>将传输线上导行波的<strong>电压与电流之比</strong>定义为传输线的<strong>特性阻抗</strong>，用 $Z_0$ 来表示，其倒数称为特性导纳，用$Y_0$来表示</u></p>
 </li>
 <li><p>常用平行双导线传输线的特性阻抗有<strong>250$\Omega$、400$\Omega$和600$\Omega$</strong>三种</p>
 </li>
@@ -77,34 +77,36 @@
 </li>
 <li><p>当传输线<strong>特性阻抗一定</strong>时，输入阻抗与反射系数有<strong>一一对应</strong>的关系</p>
 </li>
-<li><p>当$Z_1=Z_2$时，反射系数为0，即终端无反射，称为<strong>负载匹配</strong></p>
+<li><p>当$Z_1=Z_0$时，反射系数为0，即终端无反射，称为<strong>负载匹配</strong></p>
 </li>
 <li><p>定义传输线上<strong>波腹点电压振幅与波节点电压振幅之比</strong>为<strong>电压驻波比</strong></p>
 </li>
 </ul>
+<p>$$\rho=\frac{|U|_{max}}{|U|_{min}}=\frac{1+|\Gamma_1|}{1-|\Gamma_1|}$$</p>
+<p>$$\Gamma_1=\frac{\rho-1}{\rho+1}$$</p>
 <table>
 <thead>
 <tr>
 <th>无耗传输线的状态</th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
+<th>负载阻抗</th>
+<th>任意一点的输入阻抗</th>
+<th>反射系数</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>行波状态</td>
 <td>$Z_1=Z_0$</td>
-<td>反射系数为0</td>
-<td>终端无反射</td>
+<td>$Z_{in}(z)=Z_0$</td>
+<td>$\Gamma_1=0$，终端无反射</td>
 <td>负载匹配</td>
 </tr>
 <tr>
 <td>纯驻波状态</td>
-<td>$\frac {Z_1-Z_0}{Z_1+Z_0}=1$</td>
-<td>反射系数为1</td>
-<td>终端全反射</td>
+<td>短路、开路或纯电抗</td>
+<td></td>
+<td>$\Gamma_1=1$，终端全反射</td>
 <td></td>
 </tr>
 <tr>
@@ -116,6 +118,38 @@
 </tr>
 </tbody>
 </table>
+<ul>
+<li>行驻波状态时的波腹点和波节点</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>电压幅度</th>
+<th>电流幅度</th>
+<th>位置</th>
+<th>阻抗</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>波腹点</td>
+<td>最大</td>
+<td>最小</td>
+<td>$z_{max}=\frac{\lambda}{4\pi}\phi_1+n\frac{\lambda}{2}(n=0,1,2,…)$</td>
+<td>$R_{max}=Z_0\rho$</td>
+</tr>
+<tr>
+<td>波节点</td>
+<td>最小</td>
+<td>最大</td>
+<td>$z_{min}=\frac{\lambda}{4\pi}\phi_1+(2n\pm 1)\frac{\lambda}{4}(n=0,1,2,…)$</td>
+<td>$R_{min}=\frac{Z_0}{\rho}$</td>
+</tr>
+</tbody>
+</table>
+<p>可见：</p>
+<p>$$R_{max}R_{min}=Z_0^2$$</p>
 <hr>
 <ul>
 <li><p><strong>负载阻抗匹配</strong>：<strong>负载阻抗</strong>等于传输线的特性阻抗，传输线上只有从信源到负载的入射波，而无反射波。<strong>匹配负载完全吸收了由信源入射来的微波功率。</strong></p>
