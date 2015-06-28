@@ -4,7 +4,7 @@
   <subtitle><![CDATA[It's the way I choose.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://jcf94.github.io/"/>
-  <updated>2015-06-28T06:59:04.903Z</updated>
+  <updated>2015-06-28T07:03:03.069Z</updated>
   <id>http://jcf94.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://jcf94.github.io/2015/06/27/2015-06-27-weibojishuyutianxian/"/>
     <id>http://jcf94.github.io/2015/06/27/2015-06-27-weibojishuyutianxian/</id>
     <published>2015-06-27T04:25:35.000Z</published>
-    <updated>2015-06-28T06:59:04.903Z</updated>
+    <updated>2015-06-28T07:03:03.069Z</updated>
     <content type="html"><![CDATA[<h1 id="绪论">绪论</h1><hr>
 <ul>
 <li><p><u><strong>微波</strong>是电磁波谱中介于超短波与红外线之间的波段，频率范围从<strong>300MHz（波长1m）</strong>至<strong>3000GHz（波长0.1mm）</strong></u></p>
@@ -237,7 +237,7 @@
 <p>$$\begin{bmatrix}U_1\\U_2\end{bmatrix}=\begin{bmatrix}Z_{11}&amp;Z_{12}\\Z_{21}&amp;Z_{22}\end{bmatrix}\begin{bmatrix}I_1\\I_2\end{bmatrix}$$</p>
 <p>$$[U]=[Z][I]$$</p>
 <p>其中$[U]$为电压矩阵，$[I]$为电流矩阵，$[Z]$为阻抗矩阵，其中$Z_{11}$、$Z_{22}$分别是端口1和端口2的自阻抗，$Z_{12}$、$Z_{21}$分别是端口1和端口2的互阻抗。</p>
-<p>$Z_{11}=\frac{U_1}{I_1}|_{I_2=0}$</p>
+<p>$Z_{11}=\frac{U_1}{I_1}\mid_{I_2=0}$</p>
 <ul>
 <li>导纳矩阵</li>
 </ul>
