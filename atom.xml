@@ -664,7 +664,7 @@
     <link href="http://jcf94.github.io/2015/06/19/2015-06-19-zhuanye/"/>
     <id>http://jcf94.github.io/2015/06/19/2015-06-19-zhuanye/</id>
     <published>2015-06-19T02:15:23.000Z</published>
-    <updated>2015-06-30T15:02:25.187Z</updated>
+    <updated>2015-06-30T15:03:02.773Z</updated>
     <content type="html"><![CDATA[<p>昨天刚开了大三大四的专业班会，本来是几个大四的讲解保研、考研、工作经验的，最后系主任吴老大站起来总结陈词。。。</p>
 <blockquote>
 <p>不愧是吴老大啊！一下就抓住了问题的关键，连着又把我们教育了一通。。。</p>
@@ -710,7 +710,7 @@
 </ul>
 <p>$$f_1(t)*f_2(t)=\int_{-\infty}^{+\infty}f_1(\tau)f_2(t-\tau)d\tau$$</p>
 <p>$$\mathscr{F}[f_1(t)*f_2(t)]=F_1(w)F_2(w)$$</p>
-<p>$$\mathscr{F}^{-1}[f_1(t)f_2(t)]=\frac{1}{2\pi}F_1(w)*F_2(w)$$</p>
+<p>$$\mathscr{F}[f_1(t)f_2(t)]=\frac{1}{2\pi}F_1(w)*F_2(w)$$</p>
 <ul>
 <li>帕塞瓦尔等式</li>
 </ul>
