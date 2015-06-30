@@ -227,14 +227,34 @@
 <ul>
 <li>傅里叶变换</li>
 </ul>
-<p>$$F(w)=\int_{-\infty}^{+\infty}f(t)e^{-jwt}dt$$</p>
-<p>$$f(t)=\frac{1}{2\pi}\int_{-\infty}^{+\infty}F(w)e^{jwt}dw$$</p>
+<p>$$\mathscr{F}[f(t)]=F(w)=\int_{-\infty}^{+\infty}f(t)e^{-jwt}dt$$</p>
+<p>$$\mathscr{F}^{-1}[F(w)]=f(t)=\frac{1}{2\pi}\int_{-\infty}^{+\infty}F(w)e^{jwt}dw$$</p>
 <ul>
 <li>冲激函数$\delta(t)$</li>
 </ul>
 <p>定义：</p>
-<p>$$\delta(t)=\begin{cases}\infty,&amp;t=0\\0,&amp;t\neq0\end{cases}\tag{1}$$</p>
-<p>$$\int_{-\infty}^{+\infty}\delta(t)dt=1\tag{2}$$</p>
+<p>$$\delta(t)=\begin{cases}\infty,&amp;t=0\\0,&amp;t\neq0\end{cases}$$</p>
+<p>$$\int_{-\infty}^{+\infty}\delta(t)dt=1$$</p>
+<p>性质：</p>
+<p>$$\int_{-\infty}^{+\infty}\delta(t-t_0)f(t)dt=f(t_0)$$</p>
+<p>$$\mathscr{F}[\delta(t)]=1$$</p>
+<p>$$\mathscr{F}[1]=2\pi\delta(w)$$</p>
+<ul>
+<li>卷积</li>
+</ul>
+<p>$$f_1(t)*f_2(t)=\int_{-\infty}^{+\infty}f_1(\tau)f_2(t-\tau)d\tau$$</p>
+<p>$$\mathscr{F}[f_1(t)*f_2(t)]=F_1(w)F_2(w)$$</p>
+<p>$$\mathscr{F}^{-1}[f_1(t)f_2(t)]=\frac{1}{2\pi}F_1(w)*F_2(w)$$</p>
+<ul>
+<li>帕塞瓦尔等式</li>
+</ul>
+<p>又作能量积分公式。</p>
+<p>$$\int_{-\infty}^{+\infty}[f(t)]^2dt=\frac{1}{2\pi}|F(w)|^2dw$$</p>
+<ul>
+<li>拉普拉斯变换</li>
+</ul>
+<p>$$\mathscr{L}[f(t)]=F(s)=\int_0^{+\infty}f(t)e^{-st}dt$$</p>
+<p>$$\mathscr{L}^{-1}[F(s)]=f(t)$$</p>
 <h2 id="概率论与数理统计">概率论与数理统计</h2><hr>
 <h1 id="专业课">专业课</h1><hr>
 <h2 id="电学/无线电">电学/无线电</h2><h3 id="电路分析基础">电路分析基础</h3><h3 id="模拟电子技术基础">模拟电子技术基础</h3><h3 id="数字电子技术基础">数字电子技术基础</h3><h3 id="高频电子线路">高频电子线路</h3><h3 id="电磁场与电磁波">电磁场与电磁波</h3><h3 id="微波技术与天线">微波技术与天线</h3><p>主要内容是研究由电磁场与电磁波衍生出来的无线电技术，微波、天线与电波传播</p>
