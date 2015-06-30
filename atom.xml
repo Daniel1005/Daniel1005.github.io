@@ -4,7 +4,7 @@
   <subtitle><![CDATA[It's the way I choose.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://jcf94.github.io/"/>
-  <updated>2015-06-28T08:14:51.722Z</updated>
+  <updated>2015-06-28T08:16:32.000Z</updated>
   <id>http://jcf94.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://jcf94.github.io/2015/06/27/2015-06-27-weibojishuyutianxian/"/>
     <id>http://jcf94.github.io/2015/06/27/2015-06-27-weibojishuyutianxian/</id>
     <published>2015-06-27T04:25:35.000Z</published>
-    <updated>2015-06-28T08:14:51.722Z</updated>
+    <updated>2015-06-28T08:16:32.000Z</updated>
     <content type="html"><![CDATA[<h1 id="绪论">绪论</h1><hr>
 <ul>
 <li><p><u><strong>微波</strong>是电磁波谱中介于超短波与红外线之间的波段，频率范围从<strong>300MHz（波长1m）</strong>至<strong>3000GHz（波长0.1mm）</strong></u></p>
@@ -387,7 +387,7 @@
     <link href="http://jcf94.github.io/2015/06/25/2015-06-25-baoyan/"/>
     <id>http://jcf94.github.io/2015/06/25/2015-06-25-baoyan/</id>
     <published>2015-06-25T15:34:09.000Z</published>
-    <updated>2015-06-26T14:17:43.000Z</updated>
+    <updated>2015-06-26T14:17:43.716Z</updated>
     <content type="html"><![CDATA[<blockquote class="blockquote-center"><br>直面现实的时候，才会觉得害怕<br>总有一天我们是要离开象牙塔的<br></blockquote>
 
 <p>今晚被拉去听了我们学院的考研解读会。</p>
@@ -477,7 +477,7 @@
     <link href="http://jcf94.github.io/2015/06/19/2015-06-19-sbt/"/>
     <id>http://jcf94.github.io/2015/06/19/2015-06-19-sbt/</id>
     <published>2015-06-19T09:27:28.000Z</published>
-    <updated>2015-06-19T09:32:43.012Z</updated>
+    <updated>2015-06-19T09:32:43.000Z</updated>
     <content type="html"><![CDATA[<blockquote class="blockquote-center"><br>这将会是你踏入高级数据结构的第一步。<br></blockquote>
 
 <p>终于要开始给队里面讲这种比较高级的数据结构了，也趁此机会自己好好理理。</p>
@@ -664,7 +664,7 @@
     <link href="http://jcf94.github.io/2015/06/19/2015-06-19-zhuanye/"/>
     <id>http://jcf94.github.io/2015/06/19/2015-06-19-zhuanye/</id>
     <published>2015-06-19T02:15:23.000Z</published>
-    <updated>2015-06-28T04:46:54.986Z</updated>
+    <updated>2015-06-30T14:17:49.506Z</updated>
     <content type="html"><![CDATA[<p>昨天刚开了大三大四的专业班会，本来是几个大四的讲解保研、考研、工作经验的，最后系主任吴老大站起来总结陈词。。。</p>
 <blockquote>
 <p>不愧是吴老大啊！一下就抓住了问题的关键，连着又把我们教育了一通。。。</p>
@@ -683,7 +683,25 @@
 <p>2013-2014学年<br>秋<br><del>[11050010]马克思主义基本原理概论</del><br><del>[13030013]大学英语（3）</del><br>[12031030]线性代数<br><del>[12040012]大学物理（2）</del><br><del>[14030030]体育（3）</del><br>[12031110]复变函数与积分变换<br><del>[12040110]物理实验</del><br><del>[11080440]文献检索</del><br>[32051010]电路分析基础<br>[24040040]电磁场与电磁波<br>[24040050]信号与系统<br><del>[2404031S]公益劳动</del><br>春<br><del>[11060010]毛泽东思想和中国特色社会主义理论体系概论</del><br><del>[13030014]大学英语（4）</del><br>[12031040]概率论与数理统计<br><del>[14030040]体育（4）</del><br>[32053010]模拟电子技术基础<br>[24040060]数字信号处理<br>[24040070]自动控制概论<br>[24040080]传感器基础<br><del>[11<strong>**</strong>]思想政治理论课实践</del><br><del>[2404006S]数字信号处理课程设计</del></p>
 <p>2014-2015学年<br>秋<br>[24040090]微机原理与接口技术<br>[24040100]高频电子线路<br>[24040110]通信系统原理<br>[32054010]数字电子技术基础<br>[24040130]信息论与编码技术<br><del>[24040120]专业英语</del><br>[24040150]数字图像处理<br><del>[2404009S]微机原理与接口技术课程设计</del><br><del>[3205702S]电子技术基础课程设计</del><br><del>[2404010S]高频电子线路课程设计</del><br>春<br>[24040160]数字光纤通信<br>[24040170]微波技术与天线<br>[24040180]现代交换技术<br>[24040190]移动通信<br>[24040230]数据通信与计算机网络<br>[24040210]单片机原理<br>[24040220]VHDL语言与数字EDA设计<br>[24040200]数字视频技术<br><del>[2404032S]电装实习</del><br><del>[2404022S]EDA课程设计</del></p>
 <hr>
-<h1 id="数学相关">数学相关</h1><h2 id="高等数学">高等数学</h2><h2 id="线性代数">线性代数</h2><h2 id="复变函数与积分变换">复变函数与积分变换</h2><h2 id="概率论与数理统计">概率论与数理统计</h2><hr>
+<h1 id="数学相关">数学相关</h1><h2 id="高等数学">高等数学</h2><h2 id="线性代数">线性代数</h2><h2 id="复变函数与积分变换">复变函数与积分变换</h2><ul>
+<li>欧拉公式：</li>
+</ul>
+<p>二维平面中点的坐标：$(r\cos\theta,r\sin\theta)$</p>
+<p>$$x=r\cos\theta$$</p>
+<p>$$y=r\sin\theta$$</p>
+<p>$$z=r(\cos\theta+i\sin\theta)=re^{i\theta}$$</p>
+<ul>
+<li>傅里叶变换</li>
+</ul>
+<p>$$F(w)=\int_{-\infty}^{+\infty}f(t)e^{-jwt}dt$$</p>
+<p>$$f(t)=\frac{1}{2\pi}\int_{-\infty}^{+\infty}F(w)e^{jwt}dw$$</p>
+<ul>
+<li>冲激函数$\delta(t)$</li>
+</ul>
+<p>定义：</p>
+<p>$$\delta(t)=\begin{cases}\infty,&amp;t=0\\0,&amp;t\neq0\end{cases}\tag{1}$$</p>
+<p>$$\int_{-\infty}^{+\infty}\delta(t)dt=1\tag{2}$$</p>
+<h2 id="概率论与数理统计">概率论与数理统计</h2><hr>
 <h1 id="专业课">专业课</h1><hr>
 <h2 id="电学/无线电">电学/无线电</h2><h3 id="电路分析基础">电路分析基础</h3><h3 id="模拟电子技术基础">模拟电子技术基础</h3><h3 id="数字电子技术基础">数字电子技术基础</h3><h3 id="高频电子线路">高频电子线路</h3><h3 id="电磁场与电磁波">电磁场与电磁波</h3><h3 id="微波技术与天线">微波技术与天线</h3><p>主要内容是研究由电磁场与电磁波衍生出来的无线电技术，微波、天线与电波传播</p>
 <p>详见 <a href="/2015/06/27/2015-06-27-weibojishuyutianxian/">微波技术与天线 复习笔记</a></p>
@@ -724,7 +742,7 @@
     <link href="http://jcf94.github.io/2015/06/13/2015-06-13-tuiyi/"/>
     <id>http://jcf94.github.io/2015/06/13/2015-06-13-tuiyi/</id>
     <published>2015-06-13T05:20:32.000Z</published>
-    <updated>2015-06-19T07:41:34.153Z</updated>
+    <updated>2015-06-19T07:41:34.000Z</updated>
     <content type="html"><![CDATA[<blockquote class="blockquote-center"><br>曾经为之付出过这么多的努力，在这个圈子中也认识了这么多优秀的人<br>要我怎么说放手？<br></blockquote>
 
 <p>之前最后一次外出参赛是今年的省赛，也就是上周的这个时候吧，还正坐在赛场上苦思冥想中。。。</p>
@@ -861,7 +879,7 @@
     <link href="http://jcf94.github.io/2015/06/02/2015-06-02-birthday/"/>
     <id>http://jcf94.github.io/2015/06/02/2015-06-02-birthday/</id>
     <published>2015-06-02T15:22:58.000Z</published>
-    <updated>2015-06-13T08:27:27.148Z</updated>
+    <updated>2015-06-13T08:27:27.000Z</updated>
     <content type="html"><![CDATA[<p>不知不觉已经到了第21个生日，真心不想承认，又老了一岁……</p>
 <p>然后就想着，去年的今天我在干什么？</p>
 <p>明年的今天我会在干什么？明年大概就是快到了大家都要离开的日子了吧，嗯，我想明年一定不会放过这个日子！</p>
@@ -905,7 +923,7 @@
     <link href="http://jcf94.github.io/2015/05/30/2015-05-30-shuzishipin/"/>
     <id>http://jcf94.github.io/2015/05/30/2015-05-30-shuzishipin/</id>
     <published>2015-05-30T13:42:29.000Z</published>
-    <updated>2015-06-28T04:46:23.125Z</updated>
+    <updated>2015-06-28T04:46:23.000Z</updated>
     <content type="html"><![CDATA[<h2 id="第一章_绪论">第一章 绪论</h2><h3 id="视频图像处理的概念">视频图像处理的概念</h3><p>视频是一组图像在<strong>时间轴</strong>上的<strong>有序排列</strong>，是二维图像在一维时间轴上构成的<strong>图像序列</strong>，又称<strong>动态图像、活动图像、运动图像</strong>。不止包含了静止图像的内容，还包含了目标的<strong>运动信息</strong>和<strong>客观世界随时间变化的信息</strong>。</p>
 <p>序列&gt;帧&gt;像素</p>
 <h3 id="视频图像处理系统的组成">视频图像处理系统的组成</h3><ol>
@@ -1154,7 +1172,7 @@
     <link href="http://jcf94.github.io/2015/05/28/2015-05-28-xiandaijiaohuan/"/>
     <id>http://jcf94.github.io/2015/05/28/2015-05-28-xiandaijiaohuan/</id>
     <published>2015-05-28T15:56:10.000Z</published>
-    <updated>2015-06-28T04:39:22.880Z</updated>
+    <updated>2015-06-28T04:39:22.000Z</updated>
     <content type="html"><![CDATA[<p>感觉我也是醉醉的，人比较懒，愿意打字都不愿意动笔了……</p>
 <hr>
 <h2 id="第1章_绪论">第1章 绪论</h2><h3 id="交换">交换</h3><p>所谓交换，就是在通信网上，负责在通信的源和目的终端之间建立通信信道，传送通信信息的机制，也就是根据目的地，在源和目的终端之间传送通信信息。网内的任一个用户可以按着自己的要求与网内的其他用户进行信息交换</p>
@@ -1953,7 +1971,7 @@
     <link href="http://jcf94.github.io/2015/05/26/2015-05-26-test/"/>
     <id>http://jcf94.github.io/2015/05/26/2015-05-26-test/</id>
     <published>2015-05-26T05:07:16.000Z</published>
-    <updated>2015-06-13T05:19:32.611Z</updated>
+    <updated>2015-06-13T05:19:32.000Z</updated>
     <content type="html"><![CDATA[<h1 id="一级标题">一级标题</h1><h2 id="二级标题">二级标题</h2><pre><code>这是一段不加格式的代码
 <span class="preprocessor">#<span class="keyword">include</span>&lt;iostream&gt;</span>
 <span class="preprocessor">#<span class="keyword">include</span>&lt;cstdio&gt;</span>
@@ -2076,7 +2094,7 @@
     <link href="http://jcf94.github.io/2015/03/23/2015-03-23-HDU-3726-Graph-and-Queries/"/>
     <id>http://jcf94.github.io/2015/03/23/2015-03-23-HDU-3726-Graph-and-Queries/</id>
     <published>2015-03-23T11:29:27.000Z</published>
-    <updated>2015-06-19T06:34:04.926Z</updated>
+    <updated>2015-06-19T06:34:04.000Z</updated>
     <content type="html"><![CDATA[<h1 id="Graph_and_Queries">Graph and Queries</h1><p>Time Limit: 10000/5000 MS (Java/Others)    Memory Limit: 32768/32768 K (Java/Others) </p>
 <h2 id="Problem_Description">Problem Description</h2><p>You are given an undirected graph with N vertexes and M edges. Every vertex in this graph has an integer value assigned to it at the beginning. You’re also given a sequence of operations and you need to process them as requested. Here’s a list of the possible operations that you might encounter:</p>
 <p>1)  Deletes an edge from the graph. The format is [D X], where X is an integer from 1 to M, indicating the ID of the edge that you should delete. It is guaranteed that no edge will be deleted more than once.</p>
@@ -2133,7 +2151,7 @@
     <link href="http://jcf94.github.io/2015/03/16/2015-03-16-vijos-p1081/"/>
     <id>http://jcf94.github.io/2015/03/16/2015-03-16-vijos-p1081/</id>
     <published>2015-03-16T08:04:00.000Z</published>
-    <updated>2015-06-19T06:26:48.901Z</updated>
+    <updated>2015-06-19T06:26:48.000Z</updated>
     <content type="html"><![CDATA[<h1 id="野生动物园">野生动物园</h1><h2 id="描述">描述</h2><p>cjBBteam拥有一个很大的野生动物园。这个动物园坐落在一个狭长的山谷内，这个区域从南到北被划分成N个区域，每个区域都饲养着一头狮子。这些狮子从北到南编号为1,2,3,…,N。每头狮子都有一个觅食能力值Ai，Ai越小觅食能力越强。饲养员cmdButtons决定对狮子进行M次投喂，每次投喂都选择一个区间[I,J]，从中选取觅食能力值第K强的狮子进行投喂。值得注意的是，cmdButtons不愿意对某些区域进行过多的投喂，他认为这样有悖公平。因此cmdButtons的投喂区间是互不包含的。你的任务就是算出每次投喂后，食物被哪头狮子吃掉了。</p>
 <a id="more"></a>
 <h2 id="输入格式">输入格式</h2><p>输入第一行有两个数N和M。此后一行有N个数，从南到北描述狮子的觅食能力值。此后M行，每行描述一次投喂。第t+2的三个数I,J,K表示在第t次投喂中，cmdButtons选择了区间[I,J]内觅食能力值第K强的狮子进行投喂。</p>
@@ -2173,7 +2191,7 @@
     <link href="http://jcf94.github.io/2015/03/15/2015-03-15-vijos-p1647/"/>
     <id>http://jcf94.github.io/2015/03/15/2015-03-15-vijos-p1647/</id>
     <published>2015-03-15T08:03:37.000Z</published>
-    <updated>2015-06-19T06:13:21.183Z</updated>
+    <updated>2015-06-19T06:13:21.000Z</updated>
     <content type="html"><![CDATA[<h1 id="不差钱">不差钱</h1><h2 id="描述">描述</h2><p>同学们一起看了小品《不差钱》，LX神突发奇想，想刁难一下十八居士，他让十八居士模拟一下点菜的过程。</p>
 <h2 id="输入格式">输入格式</h2><p>输入第一行为一个数price，表示价钱大于price的菜赵本山都不要。</p>
 <p>以下几行表示点菜的过程，每行两个整数p，n</p>
@@ -2220,7 +2238,7 @@
     <link href="http://jcf94.github.io/2015/03/08/2015-03-08-HDU-4006-The-kth-great-number/"/>
     <id>http://jcf94.github.io/2015/03/08/2015-03-08-HDU-4006-The-kth-great-number/</id>
     <published>2015-03-08T12:27:54.000Z</published>
-    <updated>2015-06-19T06:13:41.748Z</updated>
+    <updated>2015-06-19T06:13:41.000Z</updated>
     <content type="html"><![CDATA[<h1 id="The_kth_great_number">The kth great number</h1><p>Time Limit: 2000/1000 MS (Java/Others)    Memory Limit: 65768/65768 K (Java/Others)</p>
 <h2 id="Problem_Description">Problem Description</h2><p>Xiao  Ming  and  Xiao  Bao  are  playing  a  simple  Numbers  game.  In  a  round  Xiao  Ming  can choose  to  write  down  a  number,  or  ask  Xiao  Bao  what  the  kth  great  number  is.  Because  the number written by Xiao Ming is too much, Xiao Bao is feeling giddy. Now, try to help Xiao Bao.</p>
 <a id="more"></a>
@@ -2265,7 +2283,7 @@
     <link href="http://jcf94.github.io/2014/09/12/2014-09-12-HDU-1068-Girls-and-Boys/"/>
     <id>http://jcf94.github.io/2014/09/12/2014-09-12-HDU-1068-Girls-and-Boys/</id>
     <published>2014-09-12T13:30:27.000Z</published>
-    <updated>2015-06-19T07:58:03.283Z</updated>
+    <updated>2015-06-19T07:58:03.000Z</updated>
     <content type="html"><![CDATA[<h1 id="Girls_and_Boys">Girls and Boys</h1><p>Time Limit: 20000/10000 MS (Java/Others)    Memory Limit: 65536/32768 K (Java/Others)</p>
 <h2 id="Problem_Description">Problem Description</h2><p>the second year of the university somebody started a study on the romantic relations between the students. The relation “romantically involved” is defined between one girl and one boy. For the study reasons it is necessary to find out the maximum set satisfying the condition: there are no two students in the set who have been “romantically involved”. The result of the program is the number of students in such a set.</p>
 <a id="more"></a>
@@ -2301,7 +2319,7 @@
     <link href="http://jcf94.github.io/2014/09/09/2014-09-09-HDU-3367-Pseudoforest/"/>
     <id>http://jcf94.github.io/2014/09/09/2014-09-09-HDU-3367-Pseudoforest/</id>
     <published>2014-09-09T11:13:35.000Z</published>
-    <updated>2015-06-19T07:37:15.777Z</updated>
+    <updated>2015-06-19T07:37:15.000Z</updated>
     <content type="html"><![CDATA[<h1 id="Pseudoforest">Pseudoforest</h1><p>Time Limit: 10000/5000 MS (Java/Others)    Memory Limit: 65536/65536 K (Java/Others)</p>
 <h2 id="Problem_Description">Problem Description</h2><p>In graph theory, a pseudoforest is an undirected graph in which every connected component has at most one cycle. The maximal pseudoforests of G are the pseudoforest subgraphs of G that are not contained within any larger pseudoforest of G. A pesudoforest is larger than another if and only if the total value of the edges is greater than another one’s.</p>
 <a id="more"></a>
@@ -2335,7 +2353,7 @@
     <link href="http://jcf94.github.io/2014/09/08/2014-09-08-The-2014-ACM-ICPC-Asia-Mudanjiang-Regional-First-Round/"/>
     <id>http://jcf94.github.io/2014/09/08/2014-09-08-The-2014-ACM-ICPC-Asia-Mudanjiang-Regional-First-Round/</id>
     <published>2014-09-08T03:24:57.000Z</published>
-    <updated>2015-06-19T07:32:49.457Z</updated>
+    <updated>2015-06-19T07:32:49.000Z</updated>
     <content type="html"><![CDATA[<p><del>【A】签到题</del></p>
 <p><del>【B】构造</del></p>
 <p><del>【C】遍历+floodfill染色或并查集</del></p>
@@ -2495,7 +2513,7 @@
     <link href="http://jcf94.github.io/2014/09/07/2014-09-07-HDU-1811-Rank-of-Tetris/"/>
     <id>http://jcf94.github.io/2014/09/07/2014-09-07-HDU-1811-Rank-of-Tetris/</id>
     <published>2014-09-07T08:03:38.000Z</published>
-    <updated>2015-06-19T07:05:17.665Z</updated>
+    <updated>2015-06-19T07:05:17.000Z</updated>
     <content type="html"><![CDATA[<h1 id="Rank_of_Tetris">Rank of Tetris</h1><p>Time Limit: 1000/1000 MS (Java/Others)    Memory Limit: 32768/32768 K (Java/Others) </p>
 <h2 id="Problem_Description">Problem Description</h2><p>自从Lele开发了Rating系统，他的Tetris事业更是如虎添翼，不久他遍把这个游戏推向了全球。</p>
 <p>为了更好的符合那些爱好者的喜好，Lele又想了一个新点子：他将制作一个全球Tetris高手排行榜，定时更新，名堂要比福布斯富豪榜还响。关于如何排名，这个不用说都知道是根据Rating从高到低来排，如果两个人具有相同的Rating，那就按这几个人的RP从高到低来排。</p>
