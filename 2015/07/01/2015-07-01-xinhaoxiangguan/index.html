@@ -20,7 +20,7 @@
 
 
 
-  <meta name="keywords" content="二分图匹配," />
+  <meta name="keywords" content="复习笔记," />
 
 
 
@@ -45,7 +45,7 @@
 
 
 
-  <title> HDU 1068 Girls and Boys 二分图最大独立集（最大二分匹配） // Chenfan's blog </title>
+  <title> 信号相关专业复习 // Chenfan's blog </title>
 </head>
 
 <body>
@@ -156,7 +156,7 @@
           
           
             
-              HDU 1068 Girls and Boys 二分图最大独立集（最大二分匹配）
+              信号相关专业复习
             
           
         </h1>
@@ -164,14 +164,14 @@
 
       <div class="post-meta">
         <span class="post-time">
-          發表於 2014-09-12
+          發表於 2015-07-01
         </span>
 
         
           <span class="post-category">
             &nbsp; | &nbsp; 分類於
             
-              <a href="/categories/ACM-训练/">ACM_训练</a>
+              <a href="/categories/我的大学/">我的大学</a>
 
               
               
@@ -184,8 +184,8 @@
           
             <span class="post-comments-count">
             &nbsp; | &nbsp;
-            <a href="/2014/09/12/2014-09-12-HDU-1068-Girls-and-Boys/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2014/09/12/2014-09-12-HDU-1068-Girls-and-Boys/"></span>
+            <a href="/2015/07/01/2015-07-01-xinhaoxiangguan/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/01/2015-07-01-xinhaoxiangguan/"></span>
             </a>
           </span>
           
@@ -199,24 +199,136 @@
       
 
       
-        <h1 id="Girls_and_Boys">Girls and Boys</h1><p>Time Limit: 20000/10000 MS (Java/Others)    Memory Limit: 65536/32768 K (Java/Others)</p>
-<h2 id="Problem_Description">Problem Description</h2><p>the second year of the university somebody started a study on the romantic relations between the students. The relation “romantically involved” is defined between one girl and one boy. For the study reasons it is necessary to find out the maximum set satisfying the condition: there are no two students in the set who have been “romantically involved”. The result of the program is the number of students in such a set.</p>
-<a id="more"></a>
-<p>The input contains several data sets in text format. Each data set represents one set of subjects of the study, with the following description:</p>
-<p>the number of students<br>the description of each student, in the following format<br>student_identifier:(number_of_romantic_relations) student_identifier1 student_identifier2 student_identifier3 …<br>or<br>student_identifier:(0)</p>
-<p>The student_identifier is an integer number between 0 and n-1, for n subjects.<br>For each given data set, the program should write to standard output a line containing the result.</p>
-<h2 id="Sample_Input">Sample Input</h2><blockquote>
-<p>7<br>0: (3) 4 5 6<br>1: (2) 4 6<br>2: (0)<br>3: (0)<br>4: (2) 0 1<br>5: (1) 0<br>6: (2) 0 1<br>3<br>0: (2) 1 2<br>1: (1) 0<br>2: (1) 0</p>
-</blockquote>
-<h2 id="Sample_Output">Sample Output</h2><blockquote>
-<p>5<br>2</p>
-</blockquote>
-<h2 id="题意">题意</h2><p>题目给定一些男女生之间相互的romantic关系，要求找出一个最大的集合，使得该集合中的所有男女生之间都不存在romantic关系。</p>
-<h2 id="分析">分析</h2><p>一个二分图的最大独立集点数与最大二分匹配个数有直接的关系：</p>
-<p>最大独立集点数 = 顶点数 - 最大二分匹配对数</p>
-<p>故本题直接转化为求最大二分匹配即可，需要注意的是，题中给出的条件是1指向2，2也会指向1，所以最终算出来的匹配数其实是实际对数的两倍，最终被顶点数减去之前首先需要折半。</p>
-<p>基础二分匹配练手题。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span><br><span class="line">ID:   Chen Fan</span><br><span class="line">PROG: hdu1068</span><br><span class="line">LANG: G++</span><br><span class="line">*/</span></span><br><span class="line"></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span>&lt;iostream&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span>&lt;cstdio&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span>&lt;cstring&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span>&lt;algorithm&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> nod</span><br><span class="line">&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> a,b;</span><br><span class="line">&#125; node;</span><br><span class="line">node a[<span class="number">1000</span>];</span><br><span class="line"><span class="keyword">int</span> result[<span class="number">1000</span>],start[<span class="number">1000</span>],num[<span class="number">1000</span>];</span><br><span class="line"><span class="keyword">bool</span> flag[<span class="number">1000</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">op</span><span class="params">(node a,node b)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (a.a==b.a) <span class="keyword">return</span> a.b&lt;b.b;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> a.a&lt;b.a;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> s)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;num[s];i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> now=a[start[s]+i].b;</span><br><span class="line">        <span class="keyword">if</span> (!flag[now])</span><br><span class="line">        &#123;</span><br><span class="line">            flag[now]=<span class="keyword">true</span>;</span><br><span class="line">            <span class="keyword">if</span> (result[now]==-<span class="number">1</span>||find(result[now]))</span><br><span class="line">            &#123;</span><br><span class="line">                result[now]=s;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">&#125;</span><br><span class="line">    </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n)!=EOF)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> tail=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> x,p;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d: (%d"</span>,&amp;x,&amp;p);</span><br><span class="line">            getchar();</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=p;j++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">int</span> y;</span><br><span class="line">                <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;y);</span><br><span class="line">                tail++;</span><br><span class="line">                a[tail].a=x;</span><br><span class="line">                a[tail].b=y;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        sort(&amp;a[<span class="number">1</span>],&amp;a[tail+<span class="number">1</span>],op);</span><br><span class="line">        <span class="keyword">int</span> o=-<span class="number">1</span>;</span><br><span class="line">        <span class="built_in">memset</span>(num,<span class="number">0</span>,<span class="keyword">sizeof</span>(num));</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=tail;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (o!=a[i].a)</span><br><span class="line">            &#123;</span><br><span class="line">                o=a[i].a;</span><br><span class="line">                start[o]=i;</span><br><span class="line">            &#125;</span><br><span class="line">            num[o]++;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">memset</span>(result,-<span class="number">1</span>,<span class="keyword">sizeof</span>(result));</span><br><span class="line">        <span class="keyword">int</span> ans=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">memset</span>(flag,<span class="number">0</span>,<span class="keyword">sizeof</span>(flag));</span><br><span class="line">            <span class="keyword">if</span> (find(i)) ans++;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,n-ans/<span class="number">2</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p>信号系列是通信工程的重点内容，以<strong>复变函数与积分变换</strong>作为基础的数学课程，主要包含<strong>信号与系统</strong>、升级版<strong>数字信号处理</strong>、然后是以<strong>概率论与数理统计</strong>为数学基础课的<strong>信息论</strong>作为通信方面数学上的理论基础、最后得到<strong>通信原理</strong>、应用方面有<strong>移动通信</strong>。</p>
+<h1 id="复变函数与积分变换">复变函数与积分变换</h1><ul>
+<li>欧拉公式：</li>
+</ul>
+<p>二维平面中点的坐标：$(r\cos\theta,r\sin\theta)$</p>
+<p>$$x=r\cos\theta$$</p>
+<p>$$y=r\sin\theta$$</p>
+<p>$$z=r(\cos\theta+i\sin\theta)=re^{i\theta}$$</p>
+<ul>
+<li>傅里叶变换</li>
+</ul>
+<p>$$\mathscr{F}[f(t)]=F(w)=\int_{-\infty}^{+\infty}f(t)e^{-jwt}dt$$</p>
+<p>$$\mathscr{F}^{-1}[F(w)]=f(t)=\frac{1}{2\pi}\int_{-\infty}^{+\infty}F(w)e^{jwt}dw$$</p>
+<ul>
+<li>冲激函数$\delta(t)$</li>
+</ul>
+<p>定义：</p>
+<p>$$\delta(t)=\begin{cases}\infty,&amp;t=0\\0,&amp;t\neq0\end{cases}$$</p>
+<p>$$\int_{-\infty}^{+\infty}\delta(t)dt=1$$</p>
+<p>性质：</p>
+<p>$$\int_{-\infty}^{+\infty}\delta(t-t_0)f(t)dt=f(t_0)$$</p>
+<p>$$\mathscr{F}[\delta(t)]=1$$</p>
+<p>$$\mathscr{F}[1]=2\pi\delta(w)$$</p>
+<ul>
+<li>卷积积分</li>
+</ul>
+<p>$$f_1(t)*f_2(t)=\int_{-\infty}^{+\infty}f_1(\tau)f_2(t-\tau)d\tau$$</p>
+<p>$$\mathscr{F}[f_1(t)*f_2(t)]=F_1(w)F_2(w)$$</p>
+<p>$$\mathscr{F}[f_1(t)f_2(t)]=\frac{1}{2\pi}F_1(w)*F_2(w)$$</p>
+<ul>
+<li>帕塞瓦尔等式</li>
+</ul>
+<p>又作能量积分公式。</p>
+<p>$$\int_{-\infty}^{+\infty}[f(t)]^2dt=\frac{1}{2\pi}|F(w)|^2dw$$</p>
+<ul>
+<li>拉普拉斯变换</li>
+</ul>
+<p>$$\mathscr{L}[f(t)]=F(s)=\int_0^{+\infty}f(t)e^{-st}dt$$</p>
+<p>$$\mathscr{L}^{-1}[F(s)]=f(t)$$</p>
+<ul>
+<li>Z变换</li>
+</ul>
+<p>$$\mathscr{Z}[f(n)]=F(z)=\sum_{i=0}^nf(n)z^{-n}$$</p>
+<h1 id="信号与系统">信号与系统</h1><ul>
+<li>阶跃函数$\epsilon(t)$</li>
+</ul>
+<p>定义：</p>
+<p>$$\epsilon(t)=\begin{cases}0,&amp;t<0\\\frac{1}{2},&t=0\\1,&t>0\end{cases}$$</0\\\frac{1}{2},&t=0\\1,&t></p>
+<p>$$\delta(t)=\frac{d\epsilon(t)}{dt}$$</p>
+<p>$$\epsilon(t)=\int_{-\infty}^{t}\delta(x)dx$$</p>
+<ul>
+<li><p>系统的数学模型：描述连续系统的数学模型是微分方程，描述离散系统的数学模型是差分方程。</p>
+</li>
+<li><p>一个既具有分解特性、又具有零状态线性和零输入线性的系统称为线性系统。</p>
+</li>
+<li><p>如果系统的参数都是常数，不随时间变化，则称该系统为时不变系统。</p>
+</li>
+<li><p>线性时不变系统（LTI系统）用常系数微分方程和差分方程来描述。</p>
+</li>
+</ul>
+<p>微分：</p>
+<p>$$y^{(n)}(t)+a_{n-1}y^{(n-1)}(t)+…+a_1y^{(1)}(t)+a_0y(t)=b_mf^{(m)}(t)+b_{m-1}f^{(m-1)}(t)+…+b_1f^{(1)}(t)+b_0f(t)$$</p>
+<p>或写为：</p>
+<p>$$\sum_{j=0}^na_jy^{(j)}(t)=\sum_{i=0}^mb_if^{(i)}(t)$$</p>
+<p>差分：</p>
+<p>$$y(k)+a_{n-1}y(k-1)+…+a_0y(k-n)=b_mf(k)+b_{m-1}f(k-1)+…+b_0f(k-m)$$</p>
+<p>或写为：</p>
+<p>$$\sum_{j=0}^na_{n-j}y(k-j)=\sum_{i=0}^mb_{m-i}f(k-i)$$</p>
+<ul>
+<li>微分方程的齐次解和特解</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th>函数形式</th>
+<th>系数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>齐次解</td>
+<td>自由响应、瞬态响应</td>
+<td>系统本身</td>
+<td>激励</td>
+</tr>
+<tr>
+<td>特解</td>
+<td>强迫响应、稳态响应</td>
+<td>激励</td>
+<td>激励</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>零输入响应：激励为零时，仅有系统初始状态引起的响应</li>
+</ul>
+<p>零输入条件下，微分方程右端为零：</p>
+<p>$$\sum_{j=0}^na_jy_{zi}^{(j)}(t)=0$$</p>
+<ul>
+<li><p>零状态响应：系统初始状态为零时，仅由输入信号引起的响应</p>
+</li>
+<li><p>全响应：初始状态不为零时LTI系统的响应</p>
+</li>
+</ul>
+<p>$$\overbrace{y(t)}^{全响应}=\rlap{\overbrace{\phantom{\sum_{j=1}^nC_{zij}e^{\lambda jt}}}^{零输入响应}}\underbrace{\sum_{j=1}^nC_{zij}e^{\lambda jt}+\rlap{\overbrace{\phantom{\sum_{j=1}^nC_{zsj}e^{\lambda jt}+y_p(t)}}^{零状态响应}}\sum_{j=1}^nC_{zsj}e^{\lambda jt}}_{自由响应}+\underbrace{y_p(t)}_{强迫响应}$$</p>
+<ul>
+<li>冲激响应：是激励为单位冲激函数$\delta(t)$时，系统的零状态响应。</li>
+</ul>
+<p>$$h(t)=T[{0},\delta(t)]$$</p>
+<p>激励信号$\delta(t)$的作用是<strong>在$t=0$的瞬间给系统输入了若干能量，储存在系统中</strong>，而<strong>在$t&gt;0$时系统的激励为零，只有冲激引入的那些储能在起作用</strong>，因而系统的冲激响应应由上述储能唯一地确定，因此系统的冲激响应在$t&gt;0$时与该系统的零输入响应具有相同的函数形式。</p>
+<ul>
+<li>阶跃响应：是激励为单位阶跃函数$\epsilon(t)$时，系统的零状态响应。</li>
+</ul>
+<p>$$g(t)=T[{0},\epsilon(t)]$$</p>
+<p>$$h(t)=\frac{dg(t)}{dt}$$</p>
+<p>$$g(t)=\int_{-\infty}^th(x)dx$$</p>
+<ul>
+<li>卷积积分</li>
+</ul>
+<p><strong><u>由于LTI系统的线性性质，可将输入信号分解为一系列的冲激函数之和（或积分），利用冲激函数对LTI系统的冲激响应，求解LTI系统任意激励的零状态响应。</u></strong></p>
+<p>$$f(t-t_1)<em>\delta(t-t_2)=f(t-t_2)</em>\delta(t-t_1)=f(t-t1-t2)$$</p>
+<p>$$f_1(t-t_1)<em>f_2(t-t_2)=f_1(t-t_2)</em>f_2(t-t_1)=f(t-t1-t2)$$</p>
+<p>$$f^{(i)}(t)=f_1^{(j)}(t)*f_2^{(i-j)}(t)$$</p>
+<ul>
+<li>卷积的物理意义</li>
+</ul>
+<p>详见知乎：<a href="http://www.zhihu.com/question/21686447" target="_blank" rel="external">卷积的物理意义是什么？</a></p>
+
       
     </div>
 
@@ -224,7 +336,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/二分图匹配/"> #二分图匹配 </a>
+            <a href="/tags/复习笔记/"> #复习笔记 </a>
           
         </div>
       
@@ -233,13 +345,11 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/03/08/2015-03-08-HDU-4006-The-kth-great-number/">HDU 4006 The kth great number 优先队列、平衡树模板题（SBT）</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2014/09/09/2014-09-09-HDU-3367-Pseudoforest/">HDU 3367 Pseudoforest 最大生成树</a>
+              <a href="/2015/06/27/2015-06-27-weibojishuyutianxian/">微波技术与天线 复习笔记</a>
             
           </div>
         </div>
@@ -282,8 +392,8 @@
     
       <div class="comments" id="comments">
         
-          <div class="ds-thread" data-thread-key="2014/09/12/2014-09-12-HDU-1068-Girls-and-Boys/"
-               data-title="HDU 1068 Girls and Boys 二分图最大独立集（最大二分匹配）" data-url="http://jcf94.github.io/2014/09/12/2014-09-12-HDU-1068-Girls-and-Boys/">
+          <div class="ds-thread" data-thread-key="2015/07/01/2015-07-01-xinhaoxiangguan/"
+               data-title="信号相关专业复习" data-url="http://jcf94.github.io/2015/07/01/2015-07-01-xinhaoxiangguan/">
           </div>
         
       </div>
@@ -400,7 +510,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Girls_and_Boys"><span class="nav-number">1.</span> <span class="nav-text">Girls and Boys</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Problem_Description"><span class="nav-number">1.1.</span> <span class="nav-text">Problem Description</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample_Input"><span class="nav-number">1.2.</span> <span class="nav-text">Sample Input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample_Output"><span class="nav-number">1.3.</span> <span class="nav-text">Sample Output</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题意"><span class="nav-number">1.4.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分析"><span class="nav-number">1.5.</span> <span class="nav-text">分析</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#复变函数与积分变换"><span class="nav-number">1.</span> <span class="nav-text">复变函数与积分变换</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#信号与系统"><span class="nav-number">2.</span> <span class="nav-text">信号与系统</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>

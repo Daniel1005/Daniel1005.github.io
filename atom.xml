@@ -4,7 +4,7 @@
   <subtitle><![CDATA[It's the way I choose.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://jcf94.github.io/"/>
-  <updated>2015-06-28T08:16:32.000Z</updated>
+  <updated>2015-07-01T14:44:46.974Z</updated>
   <id>http://jcf94.github.io/</id>
   
   <author>
@@ -13,6 +13,152 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[信号相关专业复习]]></title>
+    <link href="http://jcf94.github.io/2015/07/01/2015-07-01-xinhaoxiangguan/"/>
+    <id>http://jcf94.github.io/2015/07/01/2015-07-01-xinhaoxiangguan/</id>
+    <published>2015-07-01T12:36:56.000Z</published>
+    <updated>2015-07-01T14:44:46.974Z</updated>
+    <content type="html"><![CDATA[<p>信号系列是通信工程的重点内容，以<strong>复变函数与积分变换</strong>作为基础的数学课程，主要包含<strong>信号与系统</strong>、升级版<strong>数字信号处理</strong>、然后是以<strong>概率论与数理统计</strong>为数学基础课的<strong>信息论</strong>作为通信方面数学上的理论基础、最后得到<strong>通信原理</strong>、应用方面有<strong>移动通信</strong>。</p>
+<h1 id="复变函数与积分变换">复变函数与积分变换</h1><ul>
+<li>欧拉公式：</li>
+</ul>
+<p>二维平面中点的坐标：$(r\cos\theta,r\sin\theta)$</p>
+<p>$$x=r\cos\theta$$</p>
+<p>$$y=r\sin\theta$$</p>
+<p>$$z=r(\cos\theta+i\sin\theta)=re^{i\theta}$$</p>
+<ul>
+<li>傅里叶变换</li>
+</ul>
+<p>$$\mathscr{F}[f(t)]=F(w)=\int_{-\infty}^{+\infty}f(t)e^{-jwt}dt$$</p>
+<p>$$\mathscr{F}^{-1}[F(w)]=f(t)=\frac{1}{2\pi}\int_{-\infty}^{+\infty}F(w)e^{jwt}dw$$</p>
+<ul>
+<li>冲激函数$\delta(t)$</li>
+</ul>
+<p>定义：</p>
+<p>$$\delta(t)=\begin{cases}\infty,&amp;t=0\\0,&amp;t\neq0\end{cases}$$</p>
+<p>$$\int_{-\infty}^{+\infty}\delta(t)dt=1$$</p>
+<p>性质：</p>
+<p>$$\int_{-\infty}^{+\infty}\delta(t-t_0)f(t)dt=f(t_0)$$</p>
+<p>$$\mathscr{F}[\delta(t)]=1$$</p>
+<p>$$\mathscr{F}[1]=2\pi\delta(w)$$</p>
+<ul>
+<li>卷积积分</li>
+</ul>
+<p>$$f_1(t)*f_2(t)=\int_{-\infty}^{+\infty}f_1(\tau)f_2(t-\tau)d\tau$$</p>
+<p>$$\mathscr{F}[f_1(t)*f_2(t)]=F_1(w)F_2(w)$$</p>
+<p>$$\mathscr{F}[f_1(t)f_2(t)]=\frac{1}{2\pi}F_1(w)*F_2(w)$$</p>
+<ul>
+<li>帕塞瓦尔等式</li>
+</ul>
+<p>又作能量积分公式。</p>
+<p>$$\int_{-\infty}^{+\infty}[f(t)]^2dt=\frac{1}{2\pi}|F(w)|^2dw$$</p>
+<ul>
+<li>拉普拉斯变换</li>
+</ul>
+<p>$$\mathscr{L}[f(t)]=F(s)=\int_0^{+\infty}f(t)e^{-st}dt$$</p>
+<p>$$\mathscr{L}^{-1}[F(s)]=f(t)$$</p>
+<ul>
+<li>Z变换</li>
+</ul>
+<p>$$\mathscr{Z}[f(n)]=F(z)=\sum_{i=0}^nf(n)z^{-n}$$</p>
+<h1 id="信号与系统">信号与系统</h1><ul>
+<li>阶跃函数$\epsilon(t)$</li>
+</ul>
+<p>定义：</p>
+<p>$$\epsilon(t)=\begin{cases}0,&amp;t<0\\\frac{1}{2},&t=0\\1,&t>0\end{cases}$$</0\\\frac{1}{2},&t=0\\1,&t></p>
+<p>$$\delta(t)=\frac{d\epsilon(t)}{dt}$$</p>
+<p>$$\epsilon(t)=\int_{-\infty}^{t}\delta(x)dx$$</p>
+<ul>
+<li><p>系统的数学模型：描述连续系统的数学模型是微分方程，描述离散系统的数学模型是差分方程。</p>
+</li>
+<li><p>一个既具有分解特性、又具有零状态线性和零输入线性的系统称为线性系统。</p>
+</li>
+<li><p>如果系统的参数都是常数，不随时间变化，则称该系统为时不变系统。</p>
+</li>
+<li><p>线性时不变系统（LTI系统）用常系数微分方程和差分方程来描述。</p>
+</li>
+</ul>
+<p>微分：</p>
+<p>$$y^{(n)}(t)+a_{n-1}y^{(n-1)}(t)+…+a_1y^{(1)}(t)+a_0y(t)=b_mf^{(m)}(t)+b_{m-1}f^{(m-1)}(t)+…+b_1f^{(1)}(t)+b_0f(t)$$</p>
+<p>或写为：</p>
+<p>$$\sum_{j=0}^na_jy^{(j)}(t)=\sum_{i=0}^mb_if^{(i)}(t)$$</p>
+<p>差分：</p>
+<p>$$y(k)+a_{n-1}y(k-1)+…+a_0y(k-n)=b_mf(k)+b_{m-1}f(k-1)+…+b_0f(k-m)$$</p>
+<p>或写为：</p>
+<p>$$\sum_{j=0}^na_{n-j}y(k-j)=\sum_{i=0}^mb_{m-i}f(k-i)$$</p>
+<ul>
+<li>微分方程的齐次解和特解</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th>函数形式</th>
+<th>系数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>齐次解</td>
+<td>自由响应、瞬态响应</td>
+<td>系统本身</td>
+<td>激励</td>
+</tr>
+<tr>
+<td>特解</td>
+<td>强迫响应、稳态响应</td>
+<td>激励</td>
+<td>激励</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>零输入响应：激励为零时，仅有系统初始状态引起的响应</li>
+</ul>
+<p>零输入条件下，微分方程右端为零：</p>
+<p>$$\sum_{j=0}^na_jy_{zi}^{(j)}(t)=0$$</p>
+<ul>
+<li><p>零状态响应：系统初始状态为零时，仅由输入信号引起的响应</p>
+</li>
+<li><p>全响应：初始状态不为零时LTI系统的响应</p>
+</li>
+</ul>
+<p>$$\overbrace{y(t)}^{全响应}=\rlap{\overbrace{\phantom{\sum_{j=1}^nC_{zij}e^{\lambda jt}}}^{零输入响应}}\underbrace{\sum_{j=1}^nC_{zij}e^{\lambda jt}+\rlap{\overbrace{\phantom{\sum_{j=1}^nC_{zsj}e^{\lambda jt}+y_p(t)}}^{零状态响应}}\sum_{j=1}^nC_{zsj}e^{\lambda jt}}_{自由响应}+\underbrace{y_p(t)}_{强迫响应}$$</p>
+<ul>
+<li>冲激响应：是激励为单位冲激函数$\delta(t)$时，系统的零状态响应。</li>
+</ul>
+<p>$$h(t)=T[{0},\delta(t)]$$</p>
+<p>激励信号$\delta(t)$的作用是<strong>在$t=0$的瞬间给系统输入了若干能量，储存在系统中</strong>，而<strong>在$t&gt;0$时系统的激励为零，只有冲激引入的那些储能在起作用</strong>，因而系统的冲激响应应由上述储能唯一地确定，因此系统的冲激响应在$t&gt;0$时与该系统的零输入响应具有相同的函数形式。</p>
+<ul>
+<li>阶跃响应：是激励为单位阶跃函数$\epsilon(t)$时，系统的零状态响应。</li>
+</ul>
+<p>$$g(t)=T[{0},\epsilon(t)]$$</p>
+<p>$$h(t)=\frac{dg(t)}{dt}$$</p>
+<p>$$g(t)=\int_{-\infty}^th(x)dx$$</p>
+<ul>
+<li>卷积积分</li>
+</ul>
+<p><strong><u>由于LTI系统的线性性质，可将输入信号分解为一系列的冲激函数之和（或积分），利用冲激函数对LTI系统的冲激响应，求解LTI系统任意激励的零状态响应。</u></strong></p>
+<p>$$f(t-t_1)<em>\delta(t-t_2)=f(t-t_2)</em>\delta(t-t_1)=f(t-t1-t2)$$</p>
+<p>$$f_1(t-t_1)<em>f_2(t-t_2)=f_1(t-t_2)</em>f_2(t-t_1)=f(t-t1-t2)$$</p>
+<p>$$f^{(i)}(t)=f_1^{(j)}(t)*f_2^{(i-j)}(t)$$</p>
+<ul>
+<li>卷积的物理意义</li>
+</ul>
+<p>详见知乎：<a href="http://www.zhihu.com/question/21686447" target="_blank" rel="external">卷积的物理意义是什么？</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>信号系列是通信工程的重点内容，以<strong>复变函数与积分变换</strong>作为基础的数学课程，主要包含<strong>信号与系统</strong>、升级版<strong>数字信号处理</strong>、然后是以<strong>概率论与数理统计</strong>为数]]>
+    </summary>
+    
+      <category term="复习笔记" scheme="http://jcf94.github.io/tags/%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="我的大学" scheme="http://jcf94.github.io/categories/%E6%88%91%E7%9A%84%E5%A4%A7%E5%AD%A6/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[微波技术与天线 复习笔记]]></title>
@@ -664,7 +810,7 @@
     <link href="http://jcf94.github.io/2015/06/19/2015-06-19-zhuanye/"/>
     <id>http://jcf94.github.io/2015/06/19/2015-06-19-zhuanye/</id>
     <published>2015-06-19T02:15:23.000Z</published>
-    <updated>2015-06-30T15:07:37.598Z</updated>
+    <updated>2015-07-01T12:46:55.486Z</updated>
     <content type="html"><![CDATA[<p>昨天刚开了大三大四的专业班会，本来是几个大四的讲解保研、考研、工作经验的，最后系主任吴老大站起来总结陈词。。。</p>
 <blockquote>
 <p>不愧是吴老大啊！一下就抓住了问题的关键，连着又把我们教育了一通。。。</p>
@@ -683,54 +829,15 @@
 <p>2013-2014学年<br>秋<br><del>[11050010]马克思主义基本原理概论</del><br><del>[13030013]大学英语（3）</del><br>[12031030]线性代数<br><del>[12040012]大学物理（2）</del><br><del>[14030030]体育（3）</del><br>[12031110]复变函数与积分变换<br><del>[12040110]物理实验</del><br><del>[11080440]文献检索</del><br>[32051010]电路分析基础<br>[24040040]电磁场与电磁波<br>[24040050]信号与系统<br><del>[2404031S]公益劳动</del><br>春<br><del>[11060010]毛泽东思想和中国特色社会主义理论体系概论</del><br><del>[13030014]大学英语（4）</del><br>[12031040]概率论与数理统计<br><del>[14030040]体育（4）</del><br>[32053010]模拟电子技术基础<br>[24040060]数字信号处理<br>[24040070]自动控制概论<br>[24040080]传感器基础<br><del>[11<strong>**</strong>]思想政治理论课实践</del><br><del>[2404006S]数字信号处理课程设计</del></p>
 <p>2014-2015学年<br>秋<br>[24040090]微机原理与接口技术<br>[24040100]高频电子线路<br>[24040110]通信系统原理<br>[32054010]数字电子技术基础<br>[24040130]信息论与编码技术<br><del>[24040120]专业英语</del><br>[24040150]数字图像处理<br><del>[2404009S]微机原理与接口技术课程设计</del><br><del>[3205702S]电子技术基础课程设计</del><br><del>[2404010S]高频电子线路课程设计</del><br>春<br>[24040160]数字光纤通信<br>[24040170]微波技术与天线<br>[24040180]现代交换技术<br>[24040190]移动通信<br>[24040230]数据通信与计算机网络<br>[24040210]单片机原理<br>[24040220]VHDL语言与数字EDA设计<br>[24040200]数字视频技术<br><del>[2404032S]电装实习</del><br><del>[2404022S]EDA课程设计</del></p>
 <hr>
-<h1 id="数学相关">数学相关</h1><h2 id="高等数学">高等数学</h2><h2 id="线性代数">线性代数</h2><h2 id="复变函数与积分变换">复变函数与积分变换</h2><ul>
-<li>欧拉公式：</li>
-</ul>
-<p>二维平面中点的坐标：$(r\cos\theta,r\sin\theta)$</p>
-<p>$$x=r\cos\theta$$</p>
-<p>$$y=r\sin\theta$$</p>
-<p>$$z=r(\cos\theta+i\sin\theta)=re^{i\theta}$$</p>
-<ul>
-<li>傅里叶变换</li>
-</ul>
-<p>$$\mathscr{F}[f(t)]=F(w)=\int_{-\infty}^{+\infty}f(t)e^{-jwt}dt$$</p>
-<p>$$\mathscr{F}^{-1}[F(w)]=f(t)=\frac{1}{2\pi}\int_{-\infty}^{+\infty}F(w)e^{jwt}dw$$</p>
-<ul>
-<li>冲激函数$\delta(t)$</li>
-</ul>
-<p>定义：</p>
-<p>$$\delta(t)=\begin{cases}\infty,&amp;t=0\\0,&amp;t\neq0\end{cases}$$</p>
-<p>$$\int_{-\infty}^{+\infty}\delta(t)dt=1$$</p>
-<p>性质：</p>
-<p>$$\int_{-\infty}^{+\infty}\delta(t-t_0)f(t)dt=f(t_0)$$</p>
-<p>$$\mathscr{F}[\delta(t)]=1$$</p>
-<p>$$\mathscr{F}[1]=2\pi\delta(w)$$</p>
-<ul>
-<li>卷积</li>
-</ul>
-<p>$$f_1(t)*f_2(t)=\int_{-\infty}^{+\infty}f_1(\tau)f_2(t-\tau)d\tau$$</p>
-<p>$$\mathscr{F}[f_1(t)*f_2(t)]=F_1(w)F_2(w)$$</p>
-<p>$$\mathscr{F}[f_1(t)f_2(t)]=\frac{1}{2\pi}F_1(w)*F_2(w)$$</p>
-<ul>
-<li>帕塞瓦尔等式</li>
-</ul>
-<p>又作能量积分公式。</p>
-<p>$$\int_{-\infty}^{+\infty}[f(t)]^2dt=\frac{1}{2\pi}|F(w)|^2dw$$</p>
-<ul>
-<li>拉普拉斯变换</li>
-</ul>
-<p>$$\mathscr{L}[f(t)]=F(s)=\int_0^{+\infty}f(t)e^{-st}dt$$</p>
-<p>$$\mathscr{L}^{-1}[F(s)]=f(t)$$</p>
-<ul>
-<li>Z变换</li>
-</ul>
-<p>$$\mathscr{Z}[f(n)]=F(z)=\sum_{i=0}^nf(n)z^{-n}$$</p>
+<h1 id="数学相关">数学相关</h1><h2 id="高等数学">高等数学</h2><h2 id="线性代数">线性代数</h2><h2 id="复变函数与积分变换">复变函数与积分变换</h2><p>作为信号系列的数学基础课，向上支撑信号系统、数字信号处理之类的课。</p>
+<p>详见 <a href="/2015/07/01/2015-07-01-xinhaoxiangguan/">信号相关专业复习</a></p>
 <h2 id="概率论与数理统计">概率论与数理统计</h2><hr>
 <h1 id="专业课">专业课</h1><hr>
 <h2 id="电学/无线电">电学/无线电</h2><h3 id="电路分析基础">电路分析基础</h3><h3 id="模拟电子技术基础">模拟电子技术基础</h3><h3 id="数字电子技术基础">数字电子技术基础</h3><h3 id="高频电子线路">高频电子线路</h3><h3 id="电磁场与电磁波">电磁场与电磁波</h3><h3 id="微波技术与天线">微波技术与天线</h3><p>主要内容是研究由电磁场与电磁波衍生出来的无线电技术，微波、天线与电波传播</p>
 <p>详见 <a href="/2015/06/27/2015-06-27-weibojishuyutianxian/">微波技术与天线 复习笔记</a></p>
 <hr>
-<h2 id="信号/通信">信号/通信</h2><h3 id="信号与系统">信号与系统</h3><h3 id="数字信号处理">数字信号处理</h3><h3 id="通信系统原理">通信系统原理</h3><h3 id="信息论与编码技术">信息论与编码技术</h3><h3 id="数字光纤通信">数字光纤通信</h3><h3 id="现代交换技术">现代交换技术</h3><p>介绍一些交换网中使用的技术，程控交换机等。</p>
+<h2 id="信号/通信">信号/通信</h2><h3 id="信号与系统">信号与系统</h3><h3 id="数字信号处理">数字信号处理</h3><h3 id="信息论与编码技术">信息论与编码技术</h3><h3 id="通信系统原理">通信系统原理</h3><p>详见 <a href="/2015/07/01/2015-07-01-xinhaoxiangguan/">信号相关专业复习</a></p>
+<h3 id="数字光纤通信">数字光纤通信</h3><h3 id="现代交换技术">现代交换技术</h3><p>介绍一些交换网中使用的技术，程控交换机等。</p>
 <p>详见 <a href="/2015/05/28/2015-05-28-xiandaijiaohuan/">现代交换原理 复习笔记 部分</a></p>
 <h3 id="移动通信">移动通信</h3><hr>
 <h2 id="计算机应用/硬件">计算机应用/硬件</h2><h3 id="C语言程序设计">C语言程序设计</h3><h3 id="数据库原理及应用">数据库原理及应用</h3><h3 id="微机原理与接口技术">微机原理与接口技术</h3><h3 id="数据通信与计算机网络">数据通信与计算机网络</h3><h3 id="单片机原理">单片机原理</h3><h3 id="VHDL语言与数字EDA设计">VHDL语言与数字EDA设计</h3><hr>
@@ -2529,48 +2636,6 @@
       <category term="ACM-ICPC" scheme="http://jcf94.github.io/tags/ACM-ICPC/"/>
     
       <category term="ACM_比赛" scheme="http://jcf94.github.io/categories/ACM-%E6%AF%94%E8%B5%9B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[HDU 1811 Rank of Tetris 拓扑排序+并查集]]></title>
-    <link href="http://jcf94.github.io/2014/09/07/2014-09-07-HDU-1811-Rank-of-Tetris/"/>
-    <id>http://jcf94.github.io/2014/09/07/2014-09-07-HDU-1811-Rank-of-Tetris/</id>
-    <published>2014-09-07T08:03:38.000Z</published>
-    <updated>2015-06-19T07:05:17.000Z</updated>
-    <content type="html"><![CDATA[<h1 id="Rank_of_Tetris">Rank of Tetris</h1><p>Time Limit: 1000/1000 MS (Java/Others)    Memory Limit: 32768/32768 K (Java/Others) </p>
-<h2 id="Problem_Description">Problem Description</h2><p>自从Lele开发了Rating系统，他的Tetris事业更是如虎添翼，不久他遍把这个游戏推向了全球。</p>
-<p>为了更好的符合那些爱好者的喜好，Lele又想了一个新点子：他将制作一个全球Tetris高手排行榜，定时更新，名堂要比福布斯富豪榜还响。关于如何排名，这个不用说都知道是根据Rating从高到低来排，如果两个人具有相同的Rating，那就按这几个人的RP从高到低来排。</p>
-<p>终于，Lele要开始行动了，对N个人进行排名。为了方便起见，每个人都已经被编号，分别从0到N-1,并且编号越大，RP就越高。 同时Lele从狗仔队里取得一些（M个）关于Rating的信息。这些信息可能有三种情况，分别是”A &gt; B”,”A = B”,”A &lt; B”，分别表示A的Rating高于B,等于B,小于B。</p>
-<a id="more"></a>
-<p>现在Lele并不是让你来帮他制作这个高手榜，他只是想知道，根据这些信息是否能够确定出这个高手榜，是的话就输出”OK”。否则就请你判断出错的原因，到底是因为信息不完全（输出”UNCERTAIN”），还是因为这些信息中包含冲突（输出”CONFLICT”）。</p>
-<p>注意，如果信息中同时包含冲突且信息不完全，就输出”CONFLICT”。</p>
-<h2 id="Input">Input</h2><p>本题目包含多组测试，请处理到文件结束。</p>
-<p>每组测试第一行包含两个整数N,M(0&lt;=N&lt;=10000,0&lt;=M&lt;=20000),分别表示要排名的人数以及得到的关系数。 接下来有M行，分别表示这些关系</p>
-<h2 id="Output">Output</h2><p>对于每组测试，在一行里按题目要求输出</p>
-<h2 id="Sample_Input">Sample Input</h2><blockquote>
-<p>3<br>> 1<br>&lt; 2<br>> 2<br>4<br>= 2<br>> 3<br>> 0<br>> 1<br>3<br>> 0<br>> 2<br>&lt; 1</p>
-</blockquote>
-<h2 id="Sample_Output">Sample Output</h2><blockquote>
-<p>OK<br>CONFLICT<br>UNCERTAIN</p>
-</blockquote>
-<h2 id="题意">题意</h2><p>给定一些点对之间的关系（大于小于相等），判断是否发生冲突。</p>
-<h2 id="分析">分析</h2><p>对于冲突判断，直观的想法就是拓扑排序。以大于号或者小于号方向作为拓扑序的方向，如果处理时出现违反拓扑序列的情况则可判断为冲突。</p>
-<p>然后这道题还有另外一个问题就是相等情况的处理，如果直接按照拓扑排序对其进行分析，则可能发生错误。为了解决这个问题，可以用并查集进行预处理，将所有相等的点缩成1个点，然后进行后序的拓扑排序。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span>&lt;iostream&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span>&lt;cstdio&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span>&lt;algorithm&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> father[<span class="number">10001</span>]; </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">clean_father</span><span class="params">(<span class="keyword">int</span> n)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++) father[i]=i;</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getfather</span><span class="params">(<span class="keyword">int</span> x)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (father[x]!=x) father[x]=getfather(father[x]);</span><br><span class="line">    <span class="keyword">return</span> father[x];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">link</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    father[getfather(x)]=getfather(y);</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> x[<span class="number">20001</span>],y[<span class="number">20001</span>],rd[<span class="number">10001</span>],num[<span class="number">10001</span>],start[<span class="number">10001</span>];</span><br><span class="line"><span class="keyword">char</span> z[<span class="number">20001</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> &#123;</span><br><span class="line">    <span class="keyword">int</span> a,b;</span><br><span class="line">&#125; node;</span><br><span class="line">node a[<span class="number">20001</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">op</span><span class="params">(node a,node b)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a.a&lt;b.a;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> <span class="built_in">stack</span>[<span class="number">10001</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n,m;</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;m)!=EOF)</span><br><span class="line">    &#123;</span><br><span class="line">        clean_father(n);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d %c %d"</span>,&amp;x[i],&amp;z[i],&amp;y[i]);</span><br><span class="line">            <span class="keyword">if</span> (z[i]==<span class="string">'='</span>) link(x[i],y[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> tail=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++) rd[i]=-<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> tot=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++) </span><br><span class="line">        &#123;</span><br><span class="line">            rd[getfather(i)]=<span class="number">0</span>;</span><br><span class="line">            <span class="keyword">if</span> (rd[i]==<span class="number">0</span>) tot++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;i++)</span><br><span class="line">        <span class="keyword">switch</span>(z[i])</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'&gt;'</span>:</span><br><span class="line">                tail++;</span><br><span class="line">                a[tail].a=getfather(x[i]);</span><br><span class="line">                a[tail].b=getfather(y[i]);</span><br><span class="line">                rd[getfather(y[i])]++;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'&lt;'</span>:</span><br><span class="line">                tail++;</span><br><span class="line">                a[tail].a=getfather(y[i]);</span><br><span class="line">                a[tail].b=getfather(x[i]);</span><br><span class="line">                rd[getfather(x[i])]++;</span><br><span class="line">        &#125;</span><br><span class="line">        sort(&amp;a[<span class="number">1</span>],&amp;a[tail+<span class="number">1</span>],op);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> o=-<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++) num[i]=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=tail;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (a[i].a!=o)</span><br><span class="line">            &#123;</span><br><span class="line">                o=a[i].a;</span><br><span class="line">                start[o]=i;</span><br><span class="line">            &#125;</span><br><span class="line">            num[o]++;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> top=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">        <span class="keyword">if</span> (rd[i]==<span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            top++;</span><br><span class="line">            <span class="built_in">stack</span>[top]=i;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (top==<span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"CONFLICT\n"</span>);</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">bool</span> flag=<span class="keyword">false</span>,done=<span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">while</span> (top&gt;<span class="number">0</span>&amp;&amp;(!done))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (top&gt;<span class="number">1</span>) flag=<span class="keyword">true</span>;</span><br><span class="line">            <span class="keyword">int</span> now=<span class="built_in">stack</span>[top];</span><br><span class="line">            top--;tot--;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;num[now];i++)</span><br><span class="line">            &#123;</span><br><span class="line">                rd[a[start[now]+i].b]--;</span><br><span class="line">                <span class="keyword">if</span> (rd[a[start[now]+i].b]==<span class="number">0</span>) </span><br><span class="line">                &#123;</span><br><span class="line">                    top++;</span><br><span class="line">                    <span class="built_in">stack</span>[top]=a[start[now]+i].b;</span><br><span class="line">                &#125; <span class="keyword">else</span></span><br><span class="line">                <span class="keyword">if</span> (rd[a[start[now]+i].b]&lt;<span class="number">0</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    done=<span class="keyword">true</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            num[now]=<span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (tot&gt;<span class="number">0</span>||done) <span class="built_in">printf</span>(<span class="string">"CONFLICT\n"</span>);</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (flag) <span class="built_in">printf</span>(<span class="string">"UNCERTAIN\n"</span>);</span><br><span class="line">        <span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">"OK\n"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    <summary type="html">
-    <![CDATA[<h1 id="Rank_of_Tetris">Rank of Tetris</h1><p>Time Limit: 1000/1000 MS (Java/Others)    Memory Limit: 32768/32768 K (Java/Others) </p>
-<h2 id="Problem_Description">Problem Description</h2><p>自从Lele开发了Rating系统，他的Tetris事业更是如虎添翼，不久他遍把这个游戏推向了全球。</p>
-<p>为了更好的符合那些爱好者的喜好，Lele又想了一个新点子：他将制作一个全球Tetris高手排行榜，定时更新，名堂要比福布斯富豪榜还响。关于如何排名，这个不用说都知道是根据Rating从高到低来排，如果两个人具有相同的Rating，那就按这几个人的RP从高到低来排。</p>
-<p>终于，Lele要开始行动了，对N个人进行排名。为了方便起见，每个人都已经被编号，分别从0到N-1,并且编号越大，RP就越高。 同时Lele从狗仔队里取得一些（M个）关于Rating的信息。这些信息可能有三种情况，分别是”A &gt; B”,”A = B”,”A &lt; B”，分别表示A的Rating高于B,等于B,小于B。</p>]]>
-    
-    </summary>
-    
-      <category term="并查集" scheme="http://jcf94.github.io/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/"/>
-    
-      <category term="拓扑排序" scheme="http://jcf94.github.io/tags/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/"/>
-    
-      <category term="ACM_训练" scheme="http://jcf94.github.io/categories/ACM-%E8%AE%AD%E7%BB%83/"/>
     
   </entry>
   
