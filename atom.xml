@@ -4,7 +4,7 @@
   <subtitle><![CDATA[It's the way I choose.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://jcf94.github.io/"/>
-  <updated>2015-07-01T14:44:46.974Z</updated>
+  <updated>2015-07-01T14:52:46.836Z</updated>
   <id>http://jcf94.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://jcf94.github.io/2015/07/01/2015-07-01-xinhaoxiangguan/"/>
     <id>http://jcf94.github.io/2015/07/01/2015-07-01-xinhaoxiangguan/</id>
     <published>2015-07-01T12:36:56.000Z</published>
-    <updated>2015-07-01T14:44:46.974Z</updated>
+    <updated>2015-07-01T14:52:46.836Z</updated>
     <content type="html"><![CDATA[<p>信号系列是通信工程的重点内容，以<strong>复变函数与积分变换</strong>作为基础的数学课程，主要包含<strong>信号与系统</strong>、升级版<strong>数字信号处理</strong>、然后是以<strong>概率论与数理统计</strong>为数学基础课的<strong>信息论</strong>作为通信方面数学上的理论基础、最后得到<strong>通信原理</strong>、应用方面有<strong>移动通信</strong>。</p>
 <h1 id="复变函数与积分变换">复变函数与积分变换</h1><ul>
 <li>欧拉公式：</li>
@@ -28,6 +28,7 @@
 <p>$$x=r\cos\theta$$</p>
 <p>$$y=r\sin\theta$$</p>
 <p>$$z=r(\cos\theta+i\sin\theta)=re^{i\theta}$$</p>
+<a id="more"></a>
 <ul>
 <li>傅里叶变换</li>
 </ul>
@@ -151,7 +152,15 @@
 <p>详见知乎：<a href="http://www.zhihu.com/question/21686447" target="_blank" rel="external">卷积的物理意义是什么？</a></p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>信号系列是通信工程的重点内容，以<strong>复变函数与积分变换</strong>作为基础的数学课程，主要包含<strong>信号与系统</strong>、升级版<strong>数字信号处理</strong>、然后是以<strong>概率论与数理统计</strong>为数]]>
+    <![CDATA[<p>信号系列是通信工程的重点内容，以<strong>复变函数与积分变换</strong>作为基础的数学课程，主要包含<strong>信号与系统</strong>、升级版<strong>数字信号处理</strong>、然后是以<strong>概率论与数理统计</strong>为数学基础课的<strong>信息论</strong>作为通信方面数学上的理论基础、最后得到<strong>通信原理</strong>、应用方面有<strong>移动通信</strong>。</p>
+<h1 id="复变函数与积分变换">复变函数与积分变换</h1><ul>
+<li>欧拉公式：</li>
+</ul>
+<p>二维平面中点的坐标：$(r\cos\theta,r\sin\theta)$</p>
+<p>$$x=r\cos\theta$$</p>
+<p>$$y=r\sin\theta$$</p>
+<p>$$z=r(\cos\theta+i\sin\theta)=re^{i\theta}$$</p>]]>
+    
     </summary>
     
       <category term="复习笔记" scheme="http://jcf94.github.io/tags/%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
@@ -810,7 +819,7 @@
     <link href="http://jcf94.github.io/2015/06/19/2015-06-19-zhuanye/"/>
     <id>http://jcf94.github.io/2015/06/19/2015-06-19-zhuanye/</id>
     <published>2015-06-19T02:15:23.000Z</published>
-    <updated>2015-07-01T12:46:55.486Z</updated>
+    <updated>2015-07-01T12:47:12.790Z</updated>
     <content type="html"><![CDATA[<p>昨天刚开了大三大四的专业班会，本来是几个大四的讲解保研、考研、工作经验的，最后系主任吴老大站起来总结陈词。。。</p>
 <blockquote>
 <p>不愧是吴老大啊！一下就抓住了问题的关键，连着又把我们教育了一通。。。</p>
