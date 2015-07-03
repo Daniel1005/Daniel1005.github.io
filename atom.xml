@@ -4,7 +4,7 @@
   <subtitle><![CDATA[It's the way I choose.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://jcf94.github.io/"/>
-  <updated>2015-07-03T09:24:55.953Z</updated>
+  <updated>2015-07-03T13:40:43.044Z</updated>
   <id>http://jcf94.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://jcf94.github.io/2015/07/01/2015-07-01-xinhaoxiangguan/"/>
     <id>http://jcf94.github.io/2015/07/01/2015-07-01-xinhaoxiangguan/</id>
     <published>2015-07-01T12:36:56.000Z</published>
-    <updated>2015-07-03T09:24:55.953Z</updated>
+    <updated>2015-07-03T13:40:43.044Z</updated>
     <content type="html"><![CDATA[<p>信号系列是通信工程的重点内容，以<strong>复变函数与积分变换</strong>作为基础的数学课程，主要包含<strong>信号与系统</strong>、升级版<strong>数字信号处理</strong>、然后是以<strong>概率论与数理统计</strong>为数学基础课的<strong>信息论</strong>作为通信方面数学上的理论基础、最后得到<strong>通信原理</strong>、应用方面有<strong>移动通信</strong>。</p>
 <h1 id="复变函数与积分变换">复变函数与积分变换</h1><ul>
 <li>欧拉公式：</li>
@@ -234,6 +234,28 @@
 <li>冲激串序列的傅里叶变换</li>
 </ul>
 <p>$$\mathscr{F}[\delta_T(t)]=\mathscr{F}[\sum_{m=-\infty}^{\infty}\delta(t-mT)]=\Omega\sum_{n=-\infty}^{\infty}\delta(\omega-n\Omega)=\Omega\delta_{\Omega}(\omega)$$</p>
+<ul>
+<li>LTI系统的频率响应</li>
+</ul>
+<p>$$\begin{matrix}f(t)&amp;*&amp;h(t)&amp;=&amp;y(t)\\ \updownarrow&amp;&amp;\updownarrow&amp;&amp;\updownarrow\\ F(j\omega)&amp;\cdot&amp;H(j\omega)&amp;=&amp;Y(j\omega)\end{matrix}$$</p>
+<ul>
+<li>奈奎斯特采样定理</li>
+</ul>
+<p>采样：</p>
+<p>$$f(t)\times\delta_{T_s}(t)=f_s(t)$$</p>
+<p>$$F(j\omega)*\omega_s\delta_{T_s}(\omega)=F_s(j\omega)$$</p>
+<p>&gt;</p>
+<p>频域上，相当于对原信号进行了无数次搬移，为了防止信号发生混叠，搬移之后的频谱不能重叠。故$\omega_s\geq2\omega_m$。</p>
+<p><strong>但这只是充分条件。</strong></p>
+<p>压缩采样：<br>1.原始信号在某正交基底上是稀疏的；<br>2.利用观测矩阵对该正交基底进行观测，得到观测值；（也可理解为一种采样，但是采样率可以不受奈奎斯特定理约束）<br>3.传输观测之后的数据；<br>4.恢复原始信号。</p>
+<p>类似。。小波变换</p>
+<p>知乎上<a href="http://www.zhihu.com/question/24913651" target="_blank" rel="external">对于压缩感知的问题</a></p>
+<ul>
+<li>拉普拉斯变换与Z变换</li>
+</ul>
+<p>都是傅里叶变换的几种特殊形式。</p>
+<p>拉普拉斯变换-处理连续系统</p>
+<p>Z变换-处理离散系统</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>信号系列是通信工程的重点内容，以<strong>复变函数与积分变换</strong>作为基础的数学课程，主要包含<strong>信号与系统</strong>、升级版<strong>数字信号处理</strong>、然后是以<strong>概率论与数理统计</strong>为数学基础课的<strong>信息论</strong>作为通信方面数学上的理论基础、最后得到<strong>通信原理</strong>、应用方面有<strong>移动通信</strong>。</p>
