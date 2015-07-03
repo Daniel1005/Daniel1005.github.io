@@ -4,7 +4,7 @@
   <subtitle><![CDATA[It's the way I choose.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://jcf94.github.io/"/>
-  <updated>2015-07-01T14:52:46.836Z</updated>
+  <updated>2015-07-03T08:58:33.469Z</updated>
   <id>http://jcf94.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://jcf94.github.io/2015/07/01/2015-07-01-xinhaoxiangguan/"/>
     <id>http://jcf94.github.io/2015/07/01/2015-07-01-xinhaoxiangguan/</id>
     <published>2015-07-01T12:36:56.000Z</published>
-    <updated>2015-07-01T14:52:46.836Z</updated>
+    <updated>2015-07-03T08:58:33.469Z</updated>
     <content type="html"><![CDATA[<p>信号系列是通信工程的重点内容，以<strong>复变函数与积分变换</strong>作为基础的数学课程，主要包含<strong>信号与系统</strong>、升级版<strong>数字信号处理</strong>、然后是以<strong>概率论与数理统计</strong>为数学基础课的<strong>信息论</strong>作为通信方面数学上的理论基础、最后得到<strong>通信原理</strong>、应用方面有<strong>移动通信</strong>。</p>
 <h1 id="复变函数与积分变换">复变函数与积分变换</h1><ul>
 <li>欧拉公式：</li>
@@ -143,13 +143,82 @@
 <li>卷积积分</li>
 </ul>
 <p><strong><u>由于LTI系统的线性性质，可将输入信号分解为一系列的冲激函数之和（或积分），利用冲激函数对LTI系统的冲激响应，求解LTI系统任意激励的零状态响应。</u></strong></p>
-<p>$$f(t-t_1)<em>\delta(t-t_2)=f(t-t_2)</em>\delta(t-t_1)=f(t-t1-t2)$$</p>
-<p>$$f_1(t-t_1)<em>f_2(t-t_2)=f_1(t-t_2)</em>f_2(t-t_1)=f(t-t1-t2)$$</p>
+<p>$$f(t-t_1)*\delta(t-t_2)=f(t-t_2)*\delta(t-t_1)=f(t-t1-t2)$$</p>
+<p>$$f_1(t-t_1)*f_2(t-t_2)=f_1(t-t_2)*f_2(t-t_1)=f(t-t1-t2)$$</p>
 <p>$$f^{(i)}(t)=f_1^{(j)}(t)*f_2^{(i-j)}(t)$$</p>
 <ul>
 <li>卷积的物理意义</li>
 </ul>
 <p>详见知乎：<a href="http://www.zhihu.com/question/21686447" target="_blank" rel="external">卷积的物理意义是什么？</a></p>
+<ul>
+<li>信号的分解</li>
+</ul>
+<p>在信号空间中可以找到若干个相互正交的信号作为基本信号，使得信号空间中任一信号均可表示成它们的线性组合。</p>
+<ul>
+<li>周期信号的傅里叶级数</li>
+</ul>
+<p>对周期信号进行分解：</p>
+<p>$$f(t)=\frac{1}{2}\sum_{n=-\infty}^{\infty}A_ne^{j\psi_n}e^{jn\Omega t}=\sum_{n=-\infty}^{\infty}F_ne^{jn\Omega t}$$</p>
+<p>傅里叶系数：</p>
+<p>$$F<em>n=\frac{1}{T}\int\</em>{-\frac{2}{T}}^{\frac{2}{T}}f(t)e^{jn\Omega t}dt,n=0,\pm1,\pm2$$</p>
+<p>表明任意周期信号$f(t)$可分解为许多不同频率的虚指数信号$e^{jn\Omega t}$之和，其各分量的复数幅度为$F_n$</p>
+<ul>
+<li>帕塞瓦尔方程：</li>
+</ul>
+<p>$$\int_{t_1}^{t_2}f^2(t)dt=\sum_{j=1}^{\infty}C_j^2K_j$$</p>
+<p>表明在区间$t_1$和$t_2$之间信号所含有的能量恒等于此信号在完备正交函数集中各正交分量能量的总和</p>
+<ul>
+<li>频谱密度与傅里叶变换</li>
+</ul>
+<p>定义频谱密度函数为：</p>
+<p>$$F(j\omega)=\lim_{T\to\infty}F_nT=\int_{-\infty}^{\infty}f(t)e^{-j\omega t}dt$$</p>
+<p>上式称为傅里叶变换。</p>
+<p>$$f(t)=\frac{1}{2\pi}\int_{-\infty}^{\infty}F(j\omega)e^{j\omega t}d\omega$$</p>
+<p>$$F(j\omega)=|F(j\omega)|e^{j\psi(\omega)}=R(\omega)+jX(\omega)$$</p>
+<ul>
+<li>狄里赫利条件</li>
+</ul>
+<p>傅里叶变换存在的<strong>充分条件</strong>：在无限区间内$f(t)$绝对可积，即：</p>
+<p>$$\int_{-\infty}^{\infty}|f(t)|dt&lt;\infty$$</p>
+<ul>
+<li>变换</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>时域</th>
+<th>频域</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>连续</td>
+<td>非周期</td>
+</tr>
+<tr>
+<td>离散</td>
+<td>周期</td>
+</tr>
+<tr>
+<td>周期</td>
+<td>离散</td>
+</tr>
+<tr>
+<td>非周期</td>
+<td>连续</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>频移特性/调制特性</li>
+</ul>
+<p>若：</p>
+<p>$$f(t)\leftrightarrow F(j\omega)$$</p>
+<p>且$\omega_0$为常数，则：</p>
+<p>$$f(t)e^{\pm j\omega_0t}\leftrightarrow F[j(\omega\pm\omega_0)]$$</p>
+<ul>
+<li>信号的能量谱与其自相关函数是一堆傅里叶变换</li>
+</ul>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>信号系列是通信工程的重点内容，以<strong>复变函数与积分变换</strong>作为基础的数学课程，主要包含<strong>信号与系统</strong>、升级版<strong>数字信号处理</strong>、然后是以<strong>概率论与数理统计</strong>为数学基础课的<strong>信息论</strong>作为通信方面数学上的理论基础、最后得到<strong>通信原理</strong>、应用方面有<strong>移动通信</strong>。</p>
