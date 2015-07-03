@@ -4,7 +4,7 @@
   <subtitle><![CDATA[It's the way I choose.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://jcf94.github.io/"/>
-  <updated>2015-07-03T08:58:33.469Z</updated>
+  <updated>2015-07-03T09:24:55.953Z</updated>
   <id>http://jcf94.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://jcf94.github.io/2015/07/01/2015-07-01-xinhaoxiangguan/"/>
     <id>http://jcf94.github.io/2015/07/01/2015-07-01-xinhaoxiangguan/</id>
     <published>2015-07-01T12:36:56.000Z</published>
-    <updated>2015-07-03T08:58:33.469Z</updated>
+    <updated>2015-07-03T09:24:55.953Z</updated>
     <content type="html"><![CDATA[<p>信号系列是通信工程的重点内容，以<strong>复变函数与积分变换</strong>作为基础的数学课程，主要包含<strong>信号与系统</strong>、升级版<strong>数字信号处理</strong>、然后是以<strong>概率论与数理统计</strong>为数学基础课的<strong>信息论</strong>作为通信方面数学上的理论基础、最后得到<strong>通信原理</strong>、应用方面有<strong>移动通信</strong>。</p>
 <h1 id="复变函数与积分变换">复变函数与积分变换</h1><ul>
 <li>欧拉公式：</li>
@@ -160,7 +160,7 @@
 <p>对周期信号进行分解：</p>
 <p>$$f(t)=\frac{1}{2}\sum_{n=-\infty}^{\infty}A_ne^{j\psi_n}e^{jn\Omega t}=\sum_{n=-\infty}^{\infty}F_ne^{jn\Omega t}$$</p>
 <p>傅里叶系数：</p>
-<p>$$F<em>n=\frac{1}{T}\int\</em>{-\frac{2}{T}}^{\frac{2}{T}}f(t)e^{jn\Omega t}dt,n=0,\pm1,\pm2$$</p>
+<p>$$F_n=\frac{1}{T}\int_{-\frac{2}{T}}^{\frac{2}{T}}f(t)e^{jn\Omega t}dt,n=0,\pm1,\pm2$$</p>
 <p>表明任意周期信号$f(t)$可分解为许多不同频率的虚指数信号$e^{jn\Omega t}$之和，其各分量的复数幅度为$F_n$</p>
 <ul>
 <li>帕塞瓦尔方程：</li>
@@ -217,8 +217,23 @@
 <p>且$\omega_0$为常数，则：</p>
 <p>$$f(t)e^{\pm j\omega_0t}\leftrightarrow F[j(\omega\pm\omega_0)]$$</p>
 <ul>
-<li>信号的能量谱与其自相关函数是一堆傅里叶变换</li>
+<li><p>信号的能量谱与其自相关函数是一对傅里叶变换</p>
+</li>
+<li><p>正余弦函数的傅里叶变换</p>
+</li>
 </ul>
+<p>已知常数1的傅里叶变换：</p>
+<p>$$\mathscr{F}[1]=2\pi\delta(w)$$</p>
+<p>根据频移特性：</p>
+<p>$$\mathscr{F}[e^{j\omega_0t}]=2\pi\delta(\omega-\omega_0)$$</p>
+<p>$$\mathscr{F}[e^{-j\omega_0t}]=2\pi\delta(\omega+\omega_0)$$</p>
+<p>则：</p>
+<p>$$\mathscr{F}[cos(\omega_0t)]=\mathscr{F}[\frac{1}{2}(e^{j\omega_0t}+e^{-j\omega_0t})]=\pi[\delta(\omega-\omega_0)+\delta(\omega+\omega_0)]$$</p>
+<p>$$\mathscr{F}[sin(\omega_0t)]=\mathscr{F}[\frac{1}{2j}(e^{j\omega_0t}-e^{-j\omega_0t})]=j\pi[\delta(\omega+\omega_0)-\delta(\omega-\omega_0)]$$</p>
+<ul>
+<li>冲激串序列的傅里叶变换</li>
+</ul>
+<p>$$\mathscr{F}[\delta_T(t)]=\mathscr{F}[\sum_{m=-\infty}^{\infty}\delta(t-mT)]=\Omega\sum_{n=-\infty}^{\infty}\delta(\omega-n\Omega)=\Omega\delta_{\Omega}(\omega)$$</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>信号系列是通信工程的重点内容，以<strong>复变函数与积分变换</strong>作为基础的数学课程，主要包含<strong>信号与系统</strong>、升级版<strong>数字信号处理</strong>、然后是以<strong>概率论与数理统计</strong>为数学基础课的<strong>信息论</strong>作为通信方面数学上的理论基础、最后得到<strong>通信原理</strong>、应用方面有<strong>移动通信</strong>。</p>
