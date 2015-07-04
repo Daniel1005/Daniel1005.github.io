@@ -4,7 +4,7 @@
   <subtitle><![CDATA[It's the way I choose.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://jcf94.github.io/"/>
-  <updated>2015-07-03T13:40:43.044Z</updated>
+  <updated>2015-07-04T12:10:29.112Z</updated>
   <id>http://jcf94.github.io/</id>
   
   <author>
@@ -19,9 +19,10 @@
     <link href="http://jcf94.github.io/2015/07/01/2015-07-01-xinhaoxiangguan/"/>
     <id>http://jcf94.github.io/2015/07/01/2015-07-01-xinhaoxiangguan/</id>
     <published>2015-07-01T12:36:56.000Z</published>
-    <updated>2015-07-03T13:40:43.044Z</updated>
+    <updated>2015-07-04T12:10:29.112Z</updated>
     <content type="html"><![CDATA[<p>信号系列是通信工程的重点内容，以<strong>复变函数与积分变换</strong>作为基础的数学课程，主要包含<strong>信号与系统</strong>、升级版<strong>数字信号处理</strong>、然后是以<strong>概率论与数理统计</strong>为数学基础课的<strong>信息论</strong>作为通信方面数学上的理论基础、最后得到<strong>通信原理</strong>、应用方面有<strong>移动通信</strong>。</p>
-<h1 id="复变函数与积分变换">复变函数与积分变换</h1><ul>
+<h1 id="复变函数与积分变换">复变函数与积分变换</h1><hr>
+<ul>
 <li>欧拉公式：</li>
 </ul>
 <p>二维平面中点的坐标：$(r\cos\theta,r\sin\theta)$</p>
@@ -64,7 +65,8 @@
 <li>Z变换</li>
 </ul>
 <p>$$\mathscr{Z}[f(n)]=F(z)=\sum_{i=0}^nf(n)z^{-n}$$</p>
-<h1 id="信号与系统">信号与系统</h1><ul>
+<h1 id="信号与系统">信号与系统</h1><hr>
+<ul>
 <li>阶跃函数$\epsilon(t)$</li>
 </ul>
 <p>定义：</p>
@@ -256,10 +258,40 @@
 <p>都是傅里叶变换的几种特殊形式。</p>
 <p>拉普拉斯变换-处理连续系统</p>
 <p>Z变换-处理离散系统</p>
+<h1 id="数字信号处理">数字信号处理</h1><hr>
+<ul>
+<li>CTFT</li>
+</ul>
+<p>假设有原始信号：$x(t)$</p>
+<p>频率：$f_0$</p>
+<p>周期：$T_0=\frac{1}{f_0}$</p>
+<p>$\Omega_0=2\pi f_0=\frac{2\pi}{T_0}$</p>
+<p>定义连续傅里叶变换：</p>
+<p>$$X(j\Omega)=\int_{-\infty}^{\infty}x(t)e^{-j\Omega t}dt$$</p>
+<ul>
+<li>DTFT</li>
+</ul>
+<p>令：$x[n]=x(nT_s)$</p>
+<p>采样频率：$f_s$</p>
+<p>采样周期：$T_s=\frac{1}{f_s}$</p>
+<p>$\omega_s=2\pi f_s=\frac{2\pi}{f_s}$</p>
+<p>定义离散时间傅里叶变换：</p>
+<p>$$X(j\omega)=\sum_{n=-\infty}^{\infty}x[n]e^{-j\omega n}$$</p>
+<blockquote>
+<p>不是CTFT乘上冲激串序列采样得到的！！！！DTFT直接是函数值，而$f(t)$乘上冲激串序列后变成了一个冲激串序列和函数</p>
+</blockquote>
+<ul>
+<li>DFT</li>
+</ul>
+<p>把有限长序列看成是周期序列的一个周期，则作N点DFT：</p>
+<p>$$X[K]=\sum_{n=0}^{N-1}x[n]e^{-j\frac{2\pi K}{N}n}$$</p>
+<p>$$\omega=\frac{2\pi K}{N}$$</p>
+<p>$$K=\frac{\omega N}{2\pi}$$</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>信号系列是通信工程的重点内容，以<strong>复变函数与积分变换</strong>作为基础的数学课程，主要包含<strong>信号与系统</strong>、升级版<strong>数字信号处理</strong>、然后是以<strong>概率论与数理统计</strong>为数学基础课的<strong>信息论</strong>作为通信方面数学上的理论基础、最后得到<strong>通信原理</strong>、应用方面有<strong>移动通信</strong>。</p>
-<h1 id="复变函数与积分变换">复变函数与积分变换</h1><ul>
+<h1 id="复变函数与积分变换">复变函数与积分变换</h1><hr>
+<ul>
 <li>欧拉公式：</li>
 </ul>
 <p>二维平面中点的坐标：$(r\cos\theta,r\sin\theta)$</p>
