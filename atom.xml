@@ -4,7 +4,7 @@
   <subtitle><![CDATA[It's the way I choose.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://jcf94.github.io/"/>
-  <updated>2015-07-05T08:41:27.253Z</updated>
+  <updated>2015-07-05T08:45:34.387Z</updated>
   <id>http://jcf94.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://jcf94.github.io/2015/07/05/2015-07-05-fft/"/>
     <id>http://jcf94.github.io/2015/07/05/2015-07-05-fft/</id>
     <published>2015-07-05T06:59:09.000Z</published>
-    <updated>2015-07-05T08:41:27.253Z</updated>
+    <updated>2015-07-05T08:45:34.387Z</updated>
     <content type="html"><![CDATA[<p>正好复习信号到FFT了，想起来前段时间放了挺久的FFT大数乘法，顺便研究下。</p>
 <p>普通的高精度乘法的复杂度需要$O(n^2)$，用了押位之后，一般押4位的话能够达到$O(n^2/16)$，看上去可能效果不错，但仍然是同一个数量级的。</p>
 <p>对付更大一点的变态数据（。。。ACM赛场上很少有卡这货的吧。。。-_-////）就需要用的$O(nlogn)$的FFT大数乘法算法了。</p>
@@ -56,7 +56,7 @@
 <p>关于变量$x$的多项式可以表示成：</p>
 <p>$$A(x)=a_0+a_1x+a_2x^2+…+a_{n-1}x^{n-1}=\sum_{j=0}^{n-1}a_jx^j$$</p>
 <p>多项式是个广泛的概念，如果把大数对应到多项式上面去那就是类似这样：</p>
-<p>$$1234=4+3<em>10+2</em>10^2+1*10^3$$</p>
+<p>$$1234=4+3*10+2*10^2+1*10^3$$</p>
 <p>若有：</p>
 <p>$$B(x)=\sum_{j=0}^{n-1}b_jx^j$$</p>
 <p>则：</p>
@@ -64,6 +64,8 @@
 <p>$$c_j=a_j+b_j$$</p>
 <p>$$A(x)\cdot B(x)\Rightarrow C(x)=\sum_{j=0}^{2n-2}c_jx^j$$</p>
 <p>$$c<em>j=\sum\</em>{k=0}^{j}a_kb_{j-k}$$</p>
+<p>分别是多项式加法和多项式乘法。</p>
+<p>注意：多项式加法的过程就是<strong>多项式系数卷积</strong></p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>正好复习信号到FFT了，想起来前段时间放了挺久的FFT大数乘法，顺便研究下。</p>
