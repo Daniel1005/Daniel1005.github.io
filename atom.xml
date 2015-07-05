@@ -4,7 +4,7 @@
   <subtitle><![CDATA[It's the way I choose.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://jcf94.github.io/"/>
-  <updated>2015-07-05T09:08:55.987Z</updated>
+  <updated>2015-07-05T09:14:04.431Z</updated>
   <id>http://jcf94.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://jcf94.github.io/2015/07/05/2015-07-05-fft/"/>
     <id>http://jcf94.github.io/2015/07/05/2015-07-05-fft/</id>
     <published>2015-07-05T06:59:09.000Z</published>
-    <updated>2015-07-05T09:08:55.987Z</updated>
+    <updated>2015-07-05T09:14:04.431Z</updated>
     <content type="html"><![CDATA[<p>正好复习信号到FFT了，想起来前段时间放了挺久的FFT大数乘法，顺便研究下。</p>
 <p>普通的高精度乘法的复杂度需要$O(n^2)$，用了押位之后，一般押4位的话能够达到$O(n^2/16)$，看上去可能效果不错，但仍然是同一个数量级的。</p>
 <p>对付更大一点的变态数据（。。。ACM赛场上很少有卡这货的吧。。。-_-////）就需要用的$O(nlogn)$的FFT大数乘法算法了。</p>
@@ -74,10 +74,10 @@
 <p>然而用点值确定系数就是个线性求解的过程，称为插值，也是可以算的。</p>
 <p>那么点值表示法有什么好处呢？</p>
 <p>设上面的点值表示是$A(x)$的，如果已知$B(x)$的是：</p>
-<p>$${(x_0,y’_0),(x_1,y’_1),…,(x_{n-1},y’_{n-1})}$$</p>
+<p>$$\{(x_0,y’_0),(x_1,y’_1),…,(x_{n-1},y’_{n-1})\}$$</p>
 <p>那么：</p>
-<p>$$A(x)+B(x)\Rightarrow C(x)={(x_0,y_0+y’_0),(x_1,y_1+y’_1),…,(x_{n-1},y_{n-1}+y’_{n-1})}$$</p>
-<p>$$A(x)\cdot B(x)\Rightarrow C(x)={(x_0,y_0y’_0),(x_1,y_1y’_1),…,(x_{n-1},y_{n-1}y’_{n-1})}$$</p>
+<p>$$A(x)+B(x)\Rightarrow C(x)=\{(x_0,y_0+y’_0),(x_1,y_1+y’_1),…,(x_{n-1},y_{n-1}+y’_{n-1})\}$$</p>
+<p>$$A(x)\cdot B(x)\Rightarrow C(x)=\{(x_0,y_0y’_0),(x_1,y_1y’_1),…,(x_{n-1},y_{n-1}y’_{n-1})\}$$</p>
 <p>分别是多项式加法和多项式乘法</p>
 <p>关键在于，这里的多项式乘法的复杂度是$O(n)$！！！！！</p>
 <blockquote>
