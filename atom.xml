@@ -4,7 +4,7 @@
   <subtitle><![CDATA[It's the way I choose.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://jcf94.github.io/"/>
-  <updated>2015-07-05T07:51:47.569Z</updated>
+  <updated>2015-07-05T08:29:43.244Z</updated>
   <id>http://jcf94.github.io/</id>
   
   <author>
@@ -19,17 +19,20 @@
     <link href="http://jcf94.github.io/2015/07/05/2015-07-05-fft/"/>
     <id>http://jcf94.github.io/2015/07/05/2015-07-05-fft/</id>
     <published>2015-07-05T06:59:09.000Z</published>
-    <updated>2015-07-05T07:51:47.569Z</updated>
-    <content type="html"><![CDATA[<p>正好复习信号到FFT了，想起来前段时间放了挺久的FFT大数算法，顺便研究下。</p>
-<h1 id="数学基础">数学基础</h1><p>首先基础是DFT，FFT是DFT的一种快速算法。</p>
+    <updated>2015-07-05T08:29:43.244Z</updated>
+    <content type="html"><![CDATA[<p>正好复习信号到FFT了，想起来前段时间放了挺久的FFT大数乘法，顺便研究下。</p>
+<p>普通的高精度乘法的复杂度需要$O(n^2)$，用了押位之后，一般押4位的话能够达到$O(n^2/16)$，看上去可能效果不错，但仍然是同一个数量级的。</p>
+<p>对付更大一点的变态数据（。。。ACM赛场上很少有卡这货的吧。。。-_-////）就需要用的$O(nlogn)$的FFT大数乘法算法了。</p>
+<h1 id="数学基础">数学基础</h1><hr>
+<p>首先基础是DFT，FFT是DFT的一种快速算法。</p>
 <p>从N点DFT出发：</p>
-<p>$$\begin{align}<br>X[K]&amp;=\sum_{n=0}^{N-1}x[n]e^{-j\frac{2\pi K}{N}n}\\<br>&amp;=\sum_{n=0}^{\frac{N}{2}-1}x[2n]e^{-j\frac{2\pi K}{N}2n}+\sum_{n=0}^{\frac{N}{2}-1}x[2n+1]e^{-j\frac{2\pi K}{N}(2n+1)}\\<br>&amp;=\sum_{n=0}^{\frac{N}{2}-1}x_1[n]e^{-j\frac{2\pi K}{\frac{N}{2}}n}+\sum_{n=0}^{\frac{N}{2}-1}x_2[n]e^{-j\frac{2\pi K}{\frac{N}{2}}n}e^{-j\frac{2\pi K}{N}}\\<br>&amp;=X_1[K]+e^{-j\frac{2\pi K}{N}}X_2[K]<br>\end{align}$$</p>
 <a id="more"></a>
+<p>$$\begin{align}<br>X[K]&amp;=\sum_{n=0}^{N-1}x[n]e^{-j\frac{2\pi K}{N}n}\\<br>&amp;=\sum_{n=0}^{\frac{N}{2}-1}x[2n]e^{-j\frac{2\pi K}{N}2n}+\sum_{n=0}^{\frac{N}{2}-1}x[2n+1]e^{-j\frac{2\pi K}{N}(2n+1)}\\<br>&amp;=\sum_{n=0}^{\frac{N}{2}-1}x_1[n]e^{-j\frac{2\pi K}{\frac{N}{2}}n}+\sum_{n=0}^{\frac{N}{2}-1}x_2[n]e^{-j\frac{2\pi K}{\frac{N}{2}}n}e^{-j\frac{2\pi K}{N}}\\<br>&amp;=X_1[K]+e^{-j\frac{2\pi K}{N}}X_2[K]<br>\end{align}$$</p>
 <p>也就是说，通过上述变换，我们成功地将一个N点得DFT拆成了2个$\frac{N}{2}$点的DFT</p>
 <p>分析一下复杂度：</p>
 <p>首先N点DFT的结果$X[K]$有N点，每个点的计算都要对$x[n]$的n个序列值乘上负指数求和，复杂度是$O(n^2)$</p>
 <p>如果每一步都采用上面的那种变换方式，那么可以把多出来的一维降掉，变成$O(nlogn)$，这也就是<strong>快速傅里叶变换（FFT）</strong>了！</p>
-<h1 id="更进一步">更进一步</h1><p>然而上面这个式子简化到最后是有问题的。</p>
+<h2 id="更进一步">更进一步</h2><p>然而上面这个式子简化到最后是有问题的。</p>
 <p>我们把一个N点的DFT拆成$\frac{N}{2}$点的DFT之后，下面得到的两个序列$X_1[K]$和$X_2[K]$都只有$\frac{N}{2}$点。</p>
 <p>也就是说直接这么写，当K大于$\frac{N}{2}-1$之后，放在代码里面，后面部分就会出现<u><strong>数组越界</strong></u>的问题！！</p>
 <p>继续分析后面部分：</p>
@@ -46,14 +49,18 @@
 <p>或者：</p>
 <p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-07-05-fft1.jpg" alt="16"></p>
 <p>16点FFT</p>
-<p>综上，FFT就是专门为计算机快速运算而设计的，1点变2点，2点变4点，4点变8点……这样就能在原始数据（原数组）的基础上不断计算下一层的结果，最终完成整个DFT的快速计算。</p>
+<h2 id="FFT的用途">FFT的用途</h2><p>综上，FFT就是专门为计算机快速运算而设计的，1点变2点，2点变4点，4点变8点……这样就能在原始数据（原数组）的基础上不断计算下一层的结果，最终完成整个DFT的快速计算。</p>
 <p>写代码的话，第一步是处理一下最左边一排原始数据的摆放顺序，是按照二进制逆序排过来的，然后一层一层求和迭代即可。</p>
+<h1 id="多项式">多项式</h1><hr>
+<p>重点来了，下面就是讲解</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>正好复习信号到FFT了，想起来前段时间放了挺久的FFT大数算法，顺便研究下。</p>
-<h1 id="数学基础">数学基础</h1><p>首先基础是DFT，FFT是DFT的一种快速算法。</p>
-<p>从N点DFT出发：</p>
-<p>$$\begin{align}<br>X[K]&amp;=\sum_{n=0}^{N-1}x[n]e^{-j\frac{2\pi K}{N}n}\\<br>&amp;=\sum_{n=0}^{\frac{N}{2}-1}x[2n]e^{-j\frac{2\pi K}{N}2n}+\sum_{n=0}^{\frac{N}{2}-1}x[2n+1]e^{-j\frac{2\pi K}{N}(2n+1)}\\<br>&amp;=\sum_{n=0}^{\frac{N}{2}-1}x_1[n]e^{-j\frac{2\pi K}{\frac{N}{2}}n}+\sum_{n=0}^{\frac{N}{2}-1}x_2[n]e^{-j\frac{2\pi K}{\frac{N}{2}}n}e^{-j\frac{2\pi K}{N}}\\<br>&amp;=X_1[K]+e^{-j\frac{2\pi K}{N}}X_2[K]<br>\end{align}$$</p>]]>
+    <![CDATA[<p>正好复习信号到FFT了，想起来前段时间放了挺久的FFT大数乘法，顺便研究下。</p>
+<p>普通的高精度乘法的复杂度需要$O(n^2)$，用了押位之后，一般押4位的话能够达到$O(n^2/16)$，看上去可能效果不错，但仍然是同一个数量级的。</p>
+<p>对付更大一点的变态数据（。。。ACM赛场上很少有卡这货的吧。。。-_-////）就需要用的$O(nlogn)$的FFT大数乘法算法了。</p>
+<h1 id="数学基础">数学基础</h1><hr>
+<p>首先基础是DFT，FFT是DFT的一种快速算法。</p>
+<p>从N点DFT出发：</p>]]>
     
     </summary>
     
@@ -70,7 +77,7 @@
     <link href="http://jcf94.github.io/2015/07/01/2015-07-01-xinhaoxiangguan/"/>
     <id>http://jcf94.github.io/2015/07/01/2015-07-01-xinhaoxiangguan/</id>
     <published>2015-07-01T12:36:56.000Z</published>
-    <updated>2015-07-05T07:04:24.772Z</updated>
+    <updated>2015-07-05T08:23:11.725Z</updated>
     <content type="html"><![CDATA[<p>信号系列是通信工程的重点内容，以<strong>复变函数与积分变换</strong>作为基础的数学课程，主要包含<strong>信号与系统</strong>、升级版<strong>数字信号处理</strong>、然后是以<strong>概率论与数理统计</strong>为数学基础课的<strong>信息论</strong>作为通信方面数学上的理论基础、最后得到<strong>通信原理</strong>、应用方面有<strong>移动通信</strong>。</p>
 <h1 id="复变函数与积分变换">复变函数与积分变换</h1><hr>
 <ul>
@@ -202,6 +209,9 @@
 <ul>
 <li>卷积的物理意义</li>
 </ul>
+<p>从数学上来说卷积就是定义两个函数的一种乘法。</p>
+<p>对离散序列来说就是两个多项式的<strong>乘法</strong>。</p>
+<p>物理意义就是冲激响应的线性叠加，所谓冲激响应可以看作是两个函数，另一个函数按冲激信号正交展开。</p>
 <p>详见知乎：<a href="http://www.zhihu.com/question/21686447" target="_blank" rel="external">卷积的物理意义是什么？</a></p>
 <ul>
 <li>信号的分解</li>
@@ -338,6 +348,10 @@
 <p>$$X[K]=\sum_{n=0}^{N-1}x[n]e^{-j\frac{2\pi K}{N}n}$$</p>
 <p>$$\omega=\frac{2\pi K}{N}$$</p>
 <p>$$K=\frac{\omega N}{2\pi}$$</p>
+<ul>
+<li>FFT</li>
+</ul>
+<p>参见 <a href="/2015/07/05/2015-07-05-fft/">快速傅里叶变换FFT算法的用途</a></p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>信号系列是通信工程的重点内容，以<strong>复变函数与积分变换</strong>作为基础的数学课程，主要包含<strong>信号与系统</strong>、升级版<strong>数字信号处理</strong>、然后是以<strong>概率论与数理统计</strong>为数学基础课的<strong>信息论</strong>作为通信方面数学上的理论基础、最后得到<strong>通信原理</strong>、应用方面有<strong>移动通信</strong>。</p>

@@ -199,16 +199,19 @@
       
 
       
-        <p>正好复习信号到FFT了，想起来前段时间放了挺久的FFT大数算法，顺便研究下。</p>
-<h1 id="数学基础">数学基础</h1><p>首先基础是DFT，FFT是DFT的一种快速算法。</p>
+        <p>正好复习信号到FFT了，想起来前段时间放了挺久的FFT大数乘法，顺便研究下。</p>
+<p>普通的高精度乘法的复杂度需要$O(n^2)$，用了押位之后，一般押4位的话能够达到$O(n^2/16)$，看上去可能效果不错，但仍然是同一个数量级的。</p>
+<p>对付更大一点的变态数据（。。。ACM赛场上很少有卡这货的吧。。。-_-////）就需要用的$O(nlogn)$的FFT大数乘法算法了。</p>
+<h1 id="数学基础">数学基础</h1><hr>
+<p>首先基础是DFT，FFT是DFT的一种快速算法。</p>
 <p>从N点DFT出发：</p>
-<p>$$\begin{align}<br>X[K]&amp;=\sum_{n=0}^{N-1}x[n]e^{-j\frac{2\pi K}{N}n}\\<br>&amp;=\sum_{n=0}^{\frac{N}{2}-1}x[2n]e^{-j\frac{2\pi K}{N}2n}+\sum_{n=0}^{\frac{N}{2}-1}x[2n+1]e^{-j\frac{2\pi K}{N}(2n+1)}\\<br>&amp;=\sum_{n=0}^{\frac{N}{2}-1}x_1[n]e^{-j\frac{2\pi K}{\frac{N}{2}}n}+\sum_{n=0}^{\frac{N}{2}-1}x_2[n]e^{-j\frac{2\pi K}{\frac{N}{2}}n}e^{-j\frac{2\pi K}{N}}\\<br>&amp;=X_1[K]+e^{-j\frac{2\pi K}{N}}X_2[K]<br>\end{align}$$</p>
 <a id="more"></a>
+<p>$$\begin{align}<br>X[K]&amp;=\sum_{n=0}^{N-1}x[n]e^{-j\frac{2\pi K}{N}n}\\<br>&amp;=\sum_{n=0}^{\frac{N}{2}-1}x[2n]e^{-j\frac{2\pi K}{N}2n}+\sum_{n=0}^{\frac{N}{2}-1}x[2n+1]e^{-j\frac{2\pi K}{N}(2n+1)}\\<br>&amp;=\sum_{n=0}^{\frac{N}{2}-1}x_1[n]e^{-j\frac{2\pi K}{\frac{N}{2}}n}+\sum_{n=0}^{\frac{N}{2}-1}x_2[n]e^{-j\frac{2\pi K}{\frac{N}{2}}n}e^{-j\frac{2\pi K}{N}}\\<br>&amp;=X_1[K]+e^{-j\frac{2\pi K}{N}}X_2[K]<br>\end{align}$$</p>
 <p>也就是说，通过上述变换，我们成功地将一个N点得DFT拆成了2个$\frac{N}{2}$点的DFT</p>
 <p>分析一下复杂度：</p>
 <p>首先N点DFT的结果$X[K]$有N点，每个点的计算都要对$x[n]$的n个序列值乘上负指数求和，复杂度是$O(n^2)$</p>
 <p>如果每一步都采用上面的那种变换方式，那么可以把多出来的一维降掉，变成$O(nlogn)$，这也就是<strong>快速傅里叶变换（FFT）</strong>了！</p>
-<h1 id="更进一步">更进一步</h1><p>然而上面这个式子简化到最后是有问题的。</p>
+<h2 id="更进一步">更进一步</h2><p>然而上面这个式子简化到最后是有问题的。</p>
 <p>我们把一个N点的DFT拆成$\frac{N}{2}$点的DFT之后，下面得到的两个序列$X_1[K]$和$X_2[K]$都只有$\frac{N}{2}$点。</p>
 <p>也就是说直接这么写，当K大于$\frac{N}{2}-1$之后，放在代码里面，后面部分就会出现<u><strong>数组越界</strong></u>的问题！！</p>
 <p>继续分析后面部分：</p>
@@ -225,8 +228,10 @@
 <p>或者：</p>
 <p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-07-05-fft1.jpg" alt="16"></p>
 <p>16点FFT</p>
-<p>综上，FFT就是专门为计算机快速运算而设计的，1点变2点，2点变4点，4点变8点……这样就能在原始数据（原数组）的基础上不断计算下一层的结果，最终完成整个DFT的快速计算。</p>
+<h2 id="FFT的用途">FFT的用途</h2><p>综上，FFT就是专门为计算机快速运算而设计的，1点变2点，2点变4点，4点变8点……这样就能在原始数据（原数组）的基础上不断计算下一层的结果，最终完成整个DFT的快速计算。</p>
 <p>写代码的话，第一步是处理一下最左边一排原始数据的摆放顺序，是按照二进制逆序排过来的，然后一层一层求和迭代即可。</p>
+<h1 id="多项式">多项式</h1><hr>
+<p>重点来了，下面就是讲解</p>
 
       
     </div>
@@ -411,7 +416,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#数学基础"><span class="nav-number">1.</span> <span class="nav-text">数学基础</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#更进一步"><span class="nav-number">2.</span> <span class="nav-text">更进一步</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#数学基础"><span class="nav-number">1.</span> <span class="nav-text">数学基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#更进一步"><span class="nav-number">1.1.</span> <span class="nav-text">更进一步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FFT的用途"><span class="nav-number">1.2.</span> <span class="nav-text">FFT的用途</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多项式"><span class="nav-number">2.</span> <span class="nav-text">多项式</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>

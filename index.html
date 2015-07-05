@@ -204,10 +204,12 @@
 
       
         
-          <p>正好复习信号到FFT了，想起来前段时间放了挺久的FFT大数算法，顺便研究下。</p>
-<h1 id="数学基础">数学基础</h1><p>首先基础是DFT，FFT是DFT的一种快速算法。</p>
+          <p>正好复习信号到FFT了，想起来前段时间放了挺久的FFT大数乘法，顺便研究下。</p>
+<p>普通的高精度乘法的复杂度需要$O(n^2)$，用了押位之后，一般押4位的话能够达到$O(n^2/16)$，看上去可能效果不错，但仍然是同一个数量级的。</p>
+<p>对付更大一点的变态数据（。。。ACM赛场上很少有卡这货的吧。。。-_-////）就需要用的$O(nlogn)$的FFT大数乘法算法了。</p>
+<h1 id="数学基础">数学基础</h1><hr>
+<p>首先基础是DFT，FFT是DFT的一种快速算法。</p>
 <p>从N点DFT出发：</p>
-<p>$$\begin{align}<br>X[K]&amp;=\sum_{n=0}^{N-1}x[n]e^{-j\frac{2\pi K}{N}n}\\<br>&amp;=\sum_{n=0}^{\frac{N}{2}-1}x[2n]e^{-j\frac{2\pi K}{N}2n}+\sum_{n=0}^{\frac{N}{2}-1}x[2n+1]e^{-j\frac{2\pi K}{N}(2n+1)}\\<br>&amp;=\sum_{n=0}^{\frac{N}{2}-1}x_1[n]e^{-j\frac{2\pi K}{\frac{N}{2}}n}+\sum_{n=0}^{\frac{N}{2}-1}x_2[n]e^{-j\frac{2\pi K}{\frac{N}{2}}n}e^{-j\frac{2\pi K}{N}}\\<br>&amp;=X_1[K]+e^{-j\frac{2\pi K}{N}}X_2[K]<br>\end{align}$$</p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2015/07/05/2015-07-05-fft/#more">
               閱讀全文 &raquo;
