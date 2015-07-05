@@ -20,7 +20,7 @@
 
 
 
-  <meta name="keywords" content="二分图匹配," />
+  <meta name="keywords" content="FFT,复习笔记," />
 
 
 
@@ -45,7 +45,7 @@
 
 
 
-  <title> HDU 1068 Girls and Boys 二分图最大独立集（最大二分匹配） // Chenfan's blog </title>
+  <title> 快速傅里叶变换FFT算法的用途 // Chenfan's blog </title>
 </head>
 
 <body>
@@ -156,7 +156,7 @@
           
           
             
-              HDU 1068 Girls and Boys 二分图最大独立集（最大二分匹配）
+              快速傅里叶变换FFT算法的用途
             
           
         </h1>
@@ -164,14 +164,14 @@
 
       <div class="post-meta">
         <span class="post-time">
-          發表於 2014-09-12
+          發表於 2015-07-05
         </span>
 
         
           <span class="post-category">
             &nbsp; | &nbsp; 分類於
             
-              <a href="/categories/ACM-训练/">ACM_训练</a>
+              <a href="/categories/ACM-算法学习/">ACM_算法学习</a>
 
               
               
@@ -184,8 +184,8 @@
           
             <span class="post-comments-count">
             &nbsp; | &nbsp;
-            <a href="/2014/09/12/2014-09-12-HDU-1068-Girls-and-Boys/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2014/09/12/2014-09-12-HDU-1068-Girls-and-Boys/"></span>
+            <a href="/2015/07/05/2015-07-05-fft/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/05/2015-07-05-fft/"></span>
             </a>
           </span>
           
@@ -199,24 +199,35 @@
       
 
       
-        <h1 id="Girls_and_Boys">Girls and Boys</h1><p>Time Limit: 20000/10000 MS (Java/Others)    Memory Limit: 65536/32768 K (Java/Others)</p>
-<h2 id="Problem_Description">Problem Description</h2><p>the second year of the university somebody started a study on the romantic relations between the students. The relation “romantically involved” is defined between one girl and one boy. For the study reasons it is necessary to find out the maximum set satisfying the condition: there are no two students in the set who have been “romantically involved”. The result of the program is the number of students in such a set.</p>
+        <p>正好复习信号到FFT了，想起来前段时间放了挺久的FFT大数算法，顺便研究下。</p>
+<h1 id="数学基础">数学基础</h1><p>首先基础是DFT，FFT是DFT的一种快速算法。</p>
+<p>从N点DFT出发：</p>
+<p>$$\begin{align}<br>X[K]&amp;=\sum_{n=0}^{N-1}x[n]e^{-j\frac{2\pi K}{N}n}\\<br>&amp;=\sum_{n=0}^{\frac{N}{2}-1}x[2n]e^{-j\frac{2\pi K}{N}2n}+\sum_{n=0}^{\frac{N}{2}-1}x[2n+1]e^{-j\frac{2\pi K}{N}(2n+1)}\\<br>&amp;=\sum_{n=0}^{\frac{N}{2}-1}x_1[n]e^{-j\frac{2\pi K}{\frac{N}{2}}n}+\sum_{n=0}^{\frac{N}{2}-1}x_2[n]e^{-j\frac{2\pi K}{\frac{N}{2}}n}e^{-j\frac{2\pi K}{N}}\\<br>&amp;=X_1[K]+e^{-j\frac{2\pi K}{N}}X_2[K]<br>\end{align}$$</p>
 <a id="more"></a>
-<p>The input contains several data sets in text format. Each data set represents one set of subjects of the study, with the following description:</p>
-<p>the number of students<br>the description of each student, in the following format<br>student_identifier:(number_of_romantic_relations) student_identifier1 student_identifier2 student_identifier3 …<br>or<br>student_identifier:(0)</p>
-<p>The student_identifier is an integer number between 0 and n-1, for n subjects.<br>For each given data set, the program should write to standard output a line containing the result.</p>
-<h2 id="Sample_Input">Sample Input</h2><blockquote>
-<p>7<br>0: (3) 4 5 6<br>1: (2) 4 6<br>2: (0)<br>3: (0)<br>4: (2) 0 1<br>5: (1) 0<br>6: (2) 0 1<br>3<br>0: (2) 1 2<br>1: (1) 0<br>2: (1) 0</p>
-</blockquote>
-<h2 id="Sample_Output">Sample Output</h2><blockquote>
-<p>5<br>2</p>
-</blockquote>
-<h2 id="题意">题意</h2><p>题目给定一些男女生之间相互的romantic关系，要求找出一个最大的集合，使得该集合中的所有男女生之间都不存在romantic关系。</p>
-<h2 id="分析">分析</h2><p>一个二分图的最大独立集点数与最大二分匹配个数有直接的关系：</p>
-<p>最大独立集点数 = 顶点数 - 最大二分匹配对数</p>
-<p>故本题直接转化为求最大二分匹配即可，需要注意的是，题中给出的条件是1指向2，2也会指向1，所以最终算出来的匹配数其实是实际对数的两倍，最终被顶点数减去之前首先需要折半。</p>
-<p>基础二分匹配练手题。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span><br><span class="line">ID:   Chen Fan</span><br><span class="line">PROG: hdu1068</span><br><span class="line">LANG: G++</span><br><span class="line">*/</span></span><br><span class="line"></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span>&lt;iostream&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span>&lt;cstdio&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span>&lt;cstring&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span>&lt;algorithm&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> nod</span><br><span class="line">&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> a,b;</span><br><span class="line">&#125; node;</span><br><span class="line">node a[<span class="number">1000</span>];</span><br><span class="line"><span class="keyword">int</span> result[<span class="number">1000</span>],start[<span class="number">1000</span>],num[<span class="number">1000</span>];</span><br><span class="line"><span class="keyword">bool</span> flag[<span class="number">1000</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">op</span><span class="params">(node a,node b)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (a.a==b.a) <span class="keyword">return</span> a.b&lt;b.b;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> a.a&lt;b.a;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> s)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;num[s];i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> now=a[start[s]+i].b;</span><br><span class="line">        <span class="keyword">if</span> (!flag[now])</span><br><span class="line">        &#123;</span><br><span class="line">            flag[now]=<span class="keyword">true</span>;</span><br><span class="line">            <span class="keyword">if</span> (result[now]==-<span class="number">1</span>||find(result[now]))</span><br><span class="line">            &#123;</span><br><span class="line">                result[now]=s;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">&#125;</span><br><span class="line">    </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n)!=EOF)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> tail=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> x,p;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d: (%d"</span>,&amp;x,&amp;p);</span><br><span class="line">            getchar();</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=p;j++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">int</span> y;</span><br><span class="line">                <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;y);</span><br><span class="line">                tail++;</span><br><span class="line">                a[tail].a=x;</span><br><span class="line">                a[tail].b=y;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        sort(&amp;a[<span class="number">1</span>],&amp;a[tail+<span class="number">1</span>],op);</span><br><span class="line">        <span class="keyword">int</span> o=-<span class="number">1</span>;</span><br><span class="line">        <span class="built_in">memset</span>(num,<span class="number">0</span>,<span class="keyword">sizeof</span>(num));</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=tail;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (o!=a[i].a)</span><br><span class="line">            &#123;</span><br><span class="line">                o=a[i].a;</span><br><span class="line">                start[o]=i;</span><br><span class="line">            &#125;</span><br><span class="line">            num[o]++;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">memset</span>(result,-<span class="number">1</span>,<span class="keyword">sizeof</span>(result));</span><br><span class="line">        <span class="keyword">int</span> ans=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">memset</span>(flag,<span class="number">0</span>,<span class="keyword">sizeof</span>(flag));</span><br><span class="line">            <span class="keyword">if</span> (find(i)) ans++;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,n-ans/<span class="number">2</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>也就是说，通过上述变换，我们成功地将一个N点得DFT拆成了2个$\frac{N}{2}$点的DFT</p>
+<p>分析一下复杂度：</p>
+<p>首先N点DFT的结果$X[K]$有N点，每个点的计算都要对$x[n]$的n个序列值乘上负指数求和，复杂度是$O(n^2)$</p>
+<p>如果每一步都采用上面的那种变换方式，那么可以把多出来的一维降掉，变成$O(nlogn)$，这也就是<strong>快速傅里叶变换（FFT）</strong>了！</p>
+<h1 id="更进一步">更进一步</h1><p>然而上面这个式子简化到最后是有问题的。</p>
+<p>我们把一个N点的DFT拆成$\frac{N}{2}$点的DFT之后，下面得到的两个序列$X_1[K]$和$X_2[K]$都只有$\frac{N}{2}$点。</p>
+<p>也就是说直接这么写，当K大于$\frac{N}{2}-1$之后，放在代码里面，后面部分就会出现<u><strong>数组越界</strong></u>的问题！！</p>
+<p>继续分析后面部分：</p>
+<p>$$\begin{align}<br>X_1[K]&amp;=\sum_{n=0}^{\frac{N}{2}-1}x_1[n]e^{-j\frac{2\pi K}{\frac{N}{2}}n}\\<br>X_1[\frac{N}{2}+K]&amp;=\sum_{n=0}^{\frac{N}{2}-1}x_1[n]e^{-j\frac{2\pi}{\frac{N}{2}}(\frac{N}{2}+K)n}\\<br>&amp;=\sum_{n=0}^{\frac{N}{2}-1}x_1[n]e^{-j\frac{2\pi K}{\frac{N}{2}}n}e^{-j2\pi n}\\<br>&amp;=-\sum_{n=0}^{\frac{N}{2}-1}x_1[n]e^{-j\frac{2\pi K}{\frac{N}{2}}n}\\<br>&amp;=-X_1[K]<br>\end{align}$$</p>
+<p>好，这样问题就解决了。</p>
+<p>令：</p>
+<p>$$W_N^K=e^{-j\frac{2\pi K}{N}}$$</p>
+<p>则重新整理上面的运算单元可以得到：</p>
+<p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-07-05-fft1.png" alt="蝶形运算"></p>
+<p>这就是著名的蝶形运算了。</p>
+<p>然后整个图画出来是这样的：</p>
+<p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-07-05-fft1.gif" alt="8"></p>
+<p>8点FFT</p>
+<p>或者：</p>
+<p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-07-05-fft1.jpg" alt="16"></p>
+<p>16点FFT</p>
+<p>综上，FFT就是专门为计算机快速运算而设计的，1点变2点，2点变4点，4点变8点……这样就能在原始数据（原数组）的基础上不断计算下一层的结果，最终完成整个DFT的快速计算。</p>
+<p>写代码的话，第一步是处理一下最左边一排原始数据的摆放顺序，是按照二进制逆序排过来的，然后一层一层求和迭代即可。</p>
+
       
     </div>
 
@@ -224,7 +235,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/二分图匹配/"> #二分图匹配 </a>
+            <a href="/tags/FFT/"> #FFT </a>
+          
+            <a href="/tags/复习笔记/"> #复习笔记 </a>
           
         </div>
       
@@ -233,13 +246,11 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/03/08/2015-03-08-HDU-4006-The-kth-great-number/">HDU 4006 The kth great number 优先队列、平衡树模板题（SBT）</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2014/09/09/2014-09-09-HDU-3367-Pseudoforest/">HDU 3367 Pseudoforest 最大生成树</a>
+              <a href="/2015/07/01/2015-07-01-xinhaoxiangguan/">信号相关专业复习</a>
             
           </div>
         </div>
@@ -282,8 +293,8 @@
     
       <div class="comments" id="comments">
         
-          <div class="ds-thread" data-thread-key="2014/09/12/2014-09-12-HDU-1068-Girls-and-Boys/"
-               data-title="HDU 1068 Girls and Boys 二分图最大独立集（最大二分匹配）" data-url="http://jcf94.github.io/2014/09/12/2014-09-12-HDU-1068-Girls-and-Boys/">
+          <div class="ds-thread" data-thread-key="2015/07/05/2015-07-05-fft/"
+               data-title="快速傅里叶变换FFT算法的用途" data-url="http://jcf94.github.io/2015/07/05/2015-07-05-fft/">
           </div>
         
       </div>
@@ -400,7 +411,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Girls_and_Boys"><span class="nav-number">1.</span> <span class="nav-text">Girls and Boys</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Problem_Description"><span class="nav-number">1.1.</span> <span class="nav-text">Problem Description</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample_Input"><span class="nav-number">1.2.</span> <span class="nav-text">Sample Input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample_Output"><span class="nav-number">1.3.</span> <span class="nav-text">Sample Output</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题意"><span class="nav-number">1.4.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分析"><span class="nav-number">1.5.</span> <span class="nav-text">分析</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#数学基础"><span class="nav-number">1.</span> <span class="nav-text">数学基础</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#更进一步"><span class="nav-number">2.</span> <span class="nav-text">更进一步</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
