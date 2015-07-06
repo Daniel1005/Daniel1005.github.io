@@ -64,7 +64,7 @@
     <link href="http://jcf94.github.io/2015/07/05/2015-07-05-fft/"/>
     <id>http://jcf94.github.io/2015/07/05/2015-07-05-fft/</id>
     <published>2015-07-05T06:59:09.000Z</published>
-    <updated>2015-07-06T02:52:09.446Z</updated>
+    <updated>2015-07-06T13:41:09.432Z</updated>
     <content type="html"><![CDATA[<p>正好复习信号到FFT了，想起来前段时间放了挺久的FFT大数乘法，顺便研究下。</p>
 <p>普通的高精度乘法的复杂度需要$O(n^2)$，用了押位之后，一般押4位的话能够达到$O(n^2/16)$，看上去可能效果不错，但仍然是同一个数量级的。</p>
 <p>对付更大一点的变态数据（。。。ACM赛场上很少有卡这货的吧。。。-_-////）就需要用的$O(nlogn)$的FFT大数乘法算法了。</p>
@@ -140,7 +140,7 @@
 <li>逐个相乘得到$C(\omega)$</li>
 <li>再做一次FFT，求逆傅里叶变换得到$C(x)$</li>
 </ol>
-<p>实现代码详见模板题</p>
+<p>实现代码详见模板题：<a href="/2015/07/06/2015-07-06-HDU-1402/">HDU 1402 A * B Problem Plus 快速高精度乘法（FFT）</a></p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>正好复习信号到FFT了，想起来前段时间放了挺久的FFT大数乘法，顺便研究下。</p>
@@ -2527,7 +2527,7 @@
     <link href="http://jcf94.github.io/2015/05/08/2015-05-08-HDU-5044/"/>
     <id>http://jcf94.github.io/2015/05/08/2015-05-08-HDU-5044/</id>
     <published>2015-05-08T13:25:10.000Z</published>
-    <updated>2015-07-06T13:27:54.539Z</updated>
+    <updated>2015-07-06T13:27:54.754Z</updated>
     <content type="html"><![CDATA[<h1 id="Tree">Tree</h1><p>Time Limit: 10000/5000 MS (Java/Others)    Memory Limit: 65536/65536 K (Java/Others)</p>
 <h2 id="Problem_Description">Problem Description</h2><p>You are given a tree (an acyclic undirected connected graph) with N nodes. The tree nodes are numbered from 1 to N</p>
 <p>There are N - 1 edges numbered from 1 to N - 1.</p>
@@ -2577,7 +2577,7 @@
     <link href="http://jcf94.github.io/2015/04/27/2015-04-27-HDU-3966/"/>
     <id>http://jcf94.github.io/2015/04/27/2015-04-27-HDU-3966/</id>
     <published>2015-04-27T13:19:48.000Z</published>
-    <updated>2015-07-06T13:24:48.684Z</updated>
+    <updated>2015-07-06T13:24:48.864Z</updated>
     <content type="html"><![CDATA[<h1 id="Aragorn’s_Story">Aragorn’s Story</h1><p>Time Limit: 10000/3000 MS (Java/Others)    Memory Limit: 32768/32768 K (Java/Others)</p>
 <h2 id="Problem_Description">Problem Description</h2><p>Our protagonist is the handsome human prince Aragorn comes from The Lord of the Rings. One day Aragorn finds a lot of enemies who want to invade his kingdom. As Aragorn knows, the enemy has N camps out of his kingdom and M edges connect them. It is guaranteed that for any two camps, there is one and only one path connect them. At first Aragorn know the number of enemies in every camp. But the enemy is cunning , they will increase or decrease the number of soldiers in camps. Every time the enemy change the number of soldiers, they will set two camps C1 and C2. Then, for C1, C2 and all camps on the path from C1 to C2, they will increase or decrease K soldiers to these camps. Now Aragorn wants to know the number of soldiers in some particular camps real-time.</p>
 <a id="more"></a>
@@ -2681,7 +2681,7 @@
     <link href="http://jcf94.github.io/2015/03/28/2015-03-28-HDU-3487/"/>
     <id>http://jcf94.github.io/2015/03/28/2015-03-28-HDU-3487/</id>
     <published>2015-03-28T13:11:28.000Z</published>
-    <updated>2015-07-06T13:14:19.383Z</updated>
+    <updated>2015-07-06T13:14:19.949Z</updated>
     <content type="html"><![CDATA[<h1 id="Play_with_Chain">Play with Chain</h1><p>Time Limit: 6000/2000 MS (Java/Others)    Memory Limit: 65536/32768 K (Java/Others)</p>
 <h2 id="Problem_Description">Problem Description</h2><p>YaoYao is fond of playing his chains. He has a chain containing n diamonds on it. Diamonds are numbered from 1 to n. At first, the diamonds on the chain is a sequence: 1, 2, 3, …, n. He will perform two types of operations:</p>
 <a id="more"></a>
