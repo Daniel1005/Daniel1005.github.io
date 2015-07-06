@@ -1,0 +1,716 @@
+<!doctype html>
+<html class="theme-next use-motion theme-next-mist">
+<head>
+  
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.2"/>
+
+
+
+
+  <meta name="keywords" content="Splay,伸展树," />
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Chenfan's blog" type="application/atom+xml" />
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.2" />
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    analytics: {
+      google: ''
+    },
+    sidebar: 'post'
+  };
+</script>
+
+
+
+
+  <title> NOI2004 郁闷的出纳员 Splay // Chenfan's blog </title>
+</head>
+
+<body>
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <div id="header" class="header">
+      <div class="header-inner">
+        <h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/" class="brand">
+      <span class="logo">
+        <i class="icon-logo"></i>
+      </span>
+      <span class="site-title">Chenfan's blog</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<div class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/">
+            <i class="menu-item-icon icon-home"></i> <br />
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            <i class="menu-item-icon icon-archives"></i> <br />
+            歸檔
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            <i class="menu-item-icon icon-categories"></i> <br />
+            分類
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            <i class="menu-item-icon icon-tags"></i> <br />
+            標籤
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            <i class="menu-item-icon icon-about"></i> <br />
+            關於
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+</div>
+
+
+      </div>
+    </div>
+
+    <div id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content">
+          
+
+  <div id="posts" class="posts-expand">
+    
+
+  <div class="post post-type-normal ">
+    <div class="post-header">
+
+      
+      
+        <h1 class="post-title">
+          
+          
+            
+              NOI2004 郁闷的出纳员 Splay
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於 2015-03-12
+        </span>
+
+        
+          <span class="post-category">
+            &nbsp; | &nbsp; 分類於
+            
+              <a href="/categories/ACM-训练/">ACM_训练</a>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2015/03/12/2015-03-12-NOI-2004-yumendechunayuan/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2015/03/12/2015-03-12-NOI-2004-yumendechunayuan/"></span>
+            </a>
+          </span>
+          
+        
+      </div>
+    </div>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <h1 id="郁闷的出纳员">郁闷的出纳员</h1><h2 id="问题描述">问题描述</h2><p>OIER公司是一家大型专业化软件公司，有着数以万计的员工。作为一名出纳员，我的任务之一便是统计每位员工的工资。这本来是一份不错的工作，但是令人郁闷的是，我们的老板反复无常，经常调整员工的工资。如果他心情好，就可能把每位员工的工资加上一个相同的量。反之，如果心情不好，就可能把他们的工资扣除一个相同的量。我真不知道除了调工资他还做什么其它事情。</p>
+<a id="more"></a>
+<p>工资的频繁调整很让员工反感，尤其是集体扣除工资的时候，一旦某位员工发现自己的工资已经低于了合同规定的工资下界，他就会立刻气愤地离开公司，并且再也不会回来了。每位员工的工资下界都是统一规定的。每当一个人离开公司，我就要从电脑中把他的工资档案删去，同样，每当公司招聘了一位新员工，我就得为他新建一个工资档案。</p>
+<p>老板经常到我这边来询问工资情况，他并不问具体某位员工的工资情况，而是问现在工资第k多的员工拿多少工资。每当这时，我就不得不对数万个员工进行一次漫长的排序，然后告诉他答案。</p>
+<p>好了，现在你已经对我的工作了解不少了。正如你猜的那样，我想请你编一个工资统计程序。怎么样，不是很困难吧？</p>
+<h2 id="输入文件">输入文件</h2><p>第一行有两个非负整数n和min。n表示下面有多少条命令，min表示工资下界。</p>
+<p>接下来的n行，每行表示一条命令。命令可以是以下四种之一：</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>格式</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>I命令</td>
+<td>I_k</td>
+<td>新建一个工资档案，初始工资为k。如果某员工的初始工资低于工资下界，他将立刻离开公司。</td>
+</tr>
+<tr>
+<td>A命令</td>
+<td>A_k</td>
+<td>把每位员工的工资加上k</td>
+</tr>
+<tr>
+<td>S命令</td>
+<td>S_k</td>
+<td>把每位员工的工资扣除k</td>
+</tr>
+<tr>
+<td>F命令</td>
+<td>F_k</td>
+<td>查询第k多的工资</td>
+</tr>
+</tbody>
+</table>
+<p>_（下划线）表示一个空格，I命令、A命令、S命令中的k是一个非负整数，F命令中的k是一个正整数。</p>
+<p>在初始时，可以认为公司里一个员工也没有。</p>
+<h2 id="输出文件">输出文件</h2><p>输出文件的行数为F命令的条数加一。</p>
+<p>对于每条F命令，你的程序要输出一行，仅包含一个整数，为当前工资第k多的员工所拿的工资数，如果k大于目前员工的数目，则输出-1。</p>
+<p>输出文件的最后一行包含一个整数，为离开公司的员工的总数。</p>
+<h2 id="样例输入">样例输入</h2><blockquote>
+<p>9 10<br>I 60<br>I 70<br>S 50<br>F 2<br>I 30<br>S 15<br>A 5<br>F 1<br>F 2</p>
+</blockquote>
+<h2 id="样例输出">样例输出</h2><blockquote>
+<p>10<br>20<br>-1<br>2</p>
+</blockquote>
+<h2 id="约定">约定</h2><p>l  I命令的条数不超过100000</p>
+<p>l  A命令和S命令的总条数不超过100</p>
+<p>l  F命令的条数不超过100000</p>
+<p>l  每次工资调整的调整量不超过1000</p>
+<p>l  新员工的工资不超过100000</p>
+<h2 id="题意">题意</h2><p>要求设计一种数据结构，能够快速进行以上4种操作，完成对整个工资单的动态维护。</p>
+<h2 id="分析">分析</h2><p>这种动态问题，很明显的要用到动态的数据结构来维护，可以使用一般的线段树或者平衡树进行解决，而本题的特点非常适合Splay的发挥。</p>
+<p>首先是看到A和S命令，都是针对整个工资单中的所有员工进行操作的，因此可以考虑不改变每个员工单独的值（n个员工就要改n次，开玩笑……），而是用另外一个独立的变量把所有的加减操作都记录下来，判断员工出局的时候再结合题目给定的最低值计算出下限。这里要注意的是，但是当一个员工新加入时，之前的调工资操作应该对他是不产生影响的，因为那时候这个人还不在，但是用来记录工资加减的独立变量只有一个，所以在新员工加入的时候要把之前的工资加减情况减掉，这样最后计算时才可以把前面的部分抵消掉。</p>
+<p>另，若一个人的初始工资小于底线，则这个人的离开不算到最后的答案中。</p>
+<p>插入和找第k值都是基本的二叉树很容易解决，删除操作是本题的重点：</p>
+<p>测试模板和修改删除部分花了大把的时间..T_T</p>
+<p>根据上面的思路，用mi表示给定的底线，tot记录工资加减情况，则最后mi-tot就是初始工资的相对底线，每次出现S，也就是减了工资之后，就需要把树中低于mi-tot的所有值都删掉。但是splay在实际使用过程中，若树中存在多个mi-tot的值，则由于中间有各种旋转、splay操作，直接查找mi-tot得到的位置不能够确定剩下的是在左子树还是右子树还是两个都有。于是采取的方案：</p>
+<p>1.搜索mi-tot-1</p>
+<p>2.若不存在，则插入一个mi-tot-1，将其旋转到根，然后把根和左子树都删掉！！！树中剩下的就是大于mi-tot-1，也就是大于等于mi-tot的值了，注意计数时不要忘记这个根是自己加进去的，不要算进去。</p>
+<p>3.若存在mi-tot-1，则同样将根和左子树都删掉，然后在右子树中搜索mi-tot-1，旋转到根删掉，不断重复直到整棵树中不存在mi-tot-1</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* ***********************************************</span><br><span class="line">MYID    : Chen Fan</span><br><span class="line">LANG    : G++</span><br><span class="line">PROG    : cashier</span><br><span class="line">************************************************ */</span></span><br><span class="line"></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;iostream&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;cstdio&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;cstring&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;algorithm&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> MAXN 100010</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> sons[MAXN][<span class="number">2</span>];</span><br><span class="line"><span class="keyword">int</span> father[MAXN],size[MAXN],data[MAXN];</span><br><span class="line"><span class="keyword">int</span> spt=<span class="number">0</span>,spttail=<span class="number">0</span>,tot=<span class="number">0</span>,men=<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">rotate</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> w)</span> <span class="comment">//rotate(node,0/1)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> y=father[x];</span><br><span class="line">    sons[y][<span class="number">1</span>-w]=sons[x][w];</span><br><span class="line">    <span class="keyword">if</span> (sons[x][w]) father[sons[x][w]]=y;</span><br><span class="line"></span><br><span class="line">    father[x]=father[y];</span><br><span class="line">    <span class="keyword">if</span> (father[y])</span><br><span class="line">    <span class="keyword">if</span> (y==sons[father[y]][<span class="number">0</span>]) sons[father[y]][<span class="number">0</span>]=x;</span><br><span class="line">    <span class="keyword">else</span> sons[father[y]][<span class="number">1</span>]=x;</span><br><span class="line"></span><br><span class="line">    sons[x][w]=y;</span><br><span class="line">    father[y]=x;</span><br><span class="line"></span><br><span class="line">    size[x]=size[y];</span><br><span class="line">    size[y]=size[sons[y][<span class="number">0</span>]]+size[sons[y][<span class="number">1</span>]]+<span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">splay</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span> <span class="comment">//splay(node,position)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!x) <span class="keyword">return</span> ;</span><br><span class="line">    <span class="keyword">while</span>(father[x]!=y)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (father[father[x]]==y)</span><br><span class="line">            <span class="keyword">if</span> (x==sons[father[x]][<span class="number">0</span>]) rotate(x,<span class="number">1</span>);</span><br><span class="line">            <span class="keyword">else</span> rotate(x,<span class="number">0</span>);</span><br><span class="line">        <span class="keyword">else</span> </span><br><span class="line">            <span class="keyword">if</span> (father[x]==sons[father[father[x]]][<span class="number">0</span>])</span><br><span class="line">                <span class="keyword">if</span> (x==sons[father[x]][<span class="number">0</span>])</span><br><span class="line">                &#123;</span><br><span class="line">                    rotate(father[x],<span class="number">1</span>);</span><br><span class="line">                    rotate(x,<span class="number">1</span>);</span><br><span class="line">                &#125; <span class="keyword">else</span> </span><br><span class="line">                &#123;</span><br><span class="line">                    rotate(x,<span class="number">0</span>);</span><br><span class="line">                    rotate(x,<span class="number">1</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            <span class="keyword">else</span> </span><br><span class="line">                <span class="keyword">if</span> (x==sons[father[x]][<span class="number">1</span>])</span><br><span class="line">                &#123;</span><br><span class="line">                    rotate(father[x],<span class="number">0</span>);</span><br><span class="line">                    rotate(x,<span class="number">0</span>);</span><br><span class="line">                &#125; <span class="keyword">else</span> </span><br><span class="line">                &#123;</span><br><span class="line">                    rotate(x,<span class="number">1</span>);</span><br><span class="line">                    rotate(x,<span class="number">0</span>);</span><br><span class="line">                &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (!y) spt=x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">search</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> w)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(data[x]!=w)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (w&lt;data[x])</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (sons[x][<span class="number">0</span>]) x=sons[x][<span class="number">0</span>];</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">break</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (w&gt;data[x])</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (sons[x][<span class="number">1</span>]) x=sons[x][<span class="number">1</span>];</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    splay(x,<span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">insert</span><span class="params">(<span class="keyword">int</span> w)</span> <span class="comment">//insert(value)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    spttail++;</span><br><span class="line">    data[spttail]=w;</span><br><span class="line">    size[spttail]=<span class="number">1</span>;</span><br><span class="line">    sons[spttail][<span class="number">0</span>]=<span class="number">0</span>;</span><br><span class="line">    sons[spttail][<span class="number">1</span>]=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span> (!spt)</span><br><span class="line">    &#123;</span><br><span class="line">        father[spttail]=<span class="number">0</span>;</span><br><span class="line">        spt=spttail;</span><br><span class="line">    &#125; <span class="keyword">else</span> </span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> x=spt;</span><br><span class="line">        <span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            size[x]++;</span><br><span class="line">            <span class="keyword">if</span> (w&lt;data[x])</span><br><span class="line">                <span class="keyword">if</span> (sons[x][<span class="number">0</span>]) x=sons[x][<span class="number">0</span>];</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">else</span> </span><br><span class="line">                <span class="keyword">if</span> (sons[x][<span class="number">1</span>]) x=sons[x][<span class="number">1</span>];</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        father[spttail]=x;</span><br><span class="line">        <span class="keyword">if</span> (w&lt;data[x]) sons[x][<span class="number">0</span>]=spttail;</span><br><span class="line">        <span class="keyword">else</span> sons[x][<span class="number">1</span>]=spttail;</span><br><span class="line">        splay(spttail,<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">select</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> v)</span> <span class="comment">//select(root,k)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(v!=size[sons[x][<span class="number">0</span>]]+<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (v&lt;=size[sons[x][<span class="number">0</span>]]) x=sons[x][<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">else</span> </span><br><span class="line">        &#123;</span><br><span class="line">            v-=size[sons[x][<span class="number">0</span>]]+<span class="number">1</span>;</span><br><span class="line">            x=sons[x][<span class="number">1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    splay(x,<span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    freopen(<span class="string">"cashier.in"</span>,<span class="string">"r"</span>,stdin);</span><br><span class="line">    freopen(<span class="string">"cashier.out"</span>,<span class="string">"w"</span>,stdout);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> n,mi;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;mi);</span><br><span class="line"></span><br><span class="line">    spt=<span class="number">0</span>;</span><br><span class="line">    spttail=<span class="number">0</span>;</span><br><span class="line">    tot=<span class="number">0</span>;</span><br><span class="line">    men=<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">char</span> c;</span><br><span class="line">        c=getchar();</span><br><span class="line">        <span class="keyword">while</span>(c!=<span class="string">'I'</span>&amp;&amp;c!=<span class="string">'A'</span>&amp;&amp;c!=<span class="string">'S'</span>&amp;&amp;c!=<span class="string">'F'</span>) c=getchar();</span><br><span class="line">        <span class="keyword">int</span> k;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;k);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (c==<span class="string">'I'</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (k&gt;=mi) insert(k-tot);</span><br><span class="line">        &#125; <span class="keyword">else</span> </span><br><span class="line">        <span class="keyword">if</span> (c==<span class="string">'A'</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            tot+=k;</span><br><span class="line">        &#125; <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">if</span> (c==<span class="string">'S'</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            tot-=k;</span><br><span class="line"></span><br><span class="line">            search(spt,mi-tot-<span class="number">1</span>);</span><br><span class="line">            <span class="keyword">if</span> (data[spt]!=mi-tot-<span class="number">1</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                insert(mi-tot-<span class="number">1</span>);</span><br><span class="line">                men+=size[sons[spt][<span class="number">0</span>]];</span><br><span class="line">                spt=sons[spt][<span class="number">1</span>];</span><br><span class="line">                father[spt]=<span class="number">0</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                men+=size[sons[spt][<span class="number">0</span>]]+<span class="number">1</span>;</span><br><span class="line">                spt=sons[spt][<span class="number">1</span>];</span><br><span class="line">                father[spt]=<span class="number">0</span>;</span><br><span class="line">                search(spt,mi-tot-<span class="number">1</span>);</span><br><span class="line">                <span class="keyword">while</span>(data[spt]==mi-tot-<span class="number">1</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    men++;</span><br><span class="line">                    spt=sons[spt][<span class="number">1</span>];</span><br><span class="line">                    father[spt]=<span class="number">0</span>;</span><br><span class="line">                    search(spt,mi-tot-<span class="number">1</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> </span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (k&gt;size[spt]) <span class="built_in">printf</span>(<span class="string">"-1\n"</span>);</span><br><span class="line">            <span class="keyword">else</span> </span><br><span class="line">            &#123;</span><br><span class="line">                select(spt,size[spt]-k+<span class="number">1</span>);</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,data[spt]+tot);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//printf("Size:%d mi-tot+1:%d\n",size[spt],mi-tot); //debug</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//printf("%d\n",men-size[spt]);</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,men);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    <div class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Splay/"> #Splay </a>
+          
+            <a href="/tags/伸展树/"> #伸展树 </a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/03/13/2015-03-13-HDU-1890/">HDU 1890 Robotic Sort | Splay</a>
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/03/08/2015-03-08-HDU-4006-The-kth-great-number/">HDU 4006 The kth great number 优先队列、平衡树模板题（SBT）</a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </div>
+  </div>
+
+
+
+    
+      <div class="post-spread">
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      </div>
+    
+
+    
+      <div class="comments" id="comments">
+        
+          <div class="ds-thread" data-thread-key="2015/03/12/2015-03-12-NOI-2004-yumendechunayuan/"
+               data-title="NOI2004 郁闷的出纳员 Splay" data-url="http://jcf94.github.io/2015/03/12/2015-03-12-NOI-2004-yumendechunayuan/">
+          </div>
+        
+      </div>
+    
+  </div>
+
+
+        </div>
+
+        
+      </div>
+
+
+      
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <div class="site-overview">
+        <div class="site-author motion-element">
+          <img class="site-author-image" src="/images/photo.jpg" alt="Jcf94" />
+          <p class="site-author-name">Jcf94</p>
+          <p class="site-subtitle">It's the way I choose.</p>
+        </div>
+        <p class="site-description motion-element"></p>
+        <div class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">57</span>
+              <span class="site-state-item-name">文章</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-name">分類</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">33</span>
+              <span class="site-state-item-name">標籤</span>
+              </a>
+          </div>
+
+        </div>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml">
+              <i class="menu-item-icon icon-feed"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+              <a href="https://github.com/jcf94" target="_blank">Github</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://weibo.com/jcf94" target="_blank">Weibo</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://www.zhihu.com/people/jcf94" target="_blank">Zhihu</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="mailto:jcf94@outlook.com" target="_blank">Mail</a>
+            </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element">
+            <a href="http://creativecommons.org/licenses/by-nc-sa/4.0" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+      </div>
+
+      
+        <div class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#郁闷的出纳员"><span class="nav-number">1.</span> <span class="nav-text">郁闷的出纳员</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题描述"><span class="nav-number">1.1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输入文件"><span class="nav-number">1.2.</span> <span class="nav-text">输入文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输出文件"><span class="nav-number">1.3.</span> <span class="nav-text">输出文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#样例输入"><span class="nav-number">1.4.</span> <span class="nav-text">样例输入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#样例输出"><span class="nav-number">1.5.</span> <span class="nav-text">样例输出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#约定"><span class="nav-number">1.6.</span> <span class="nav-text">约定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题意"><span class="nav-number">1.7.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分析"><span class="nav-number">1.8.</span> <span class="nav-text">分析</span></a></li></ol></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </div>
+      
+
+    </div>
+  </div>
+
+
+    </div>
+
+    <div id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; &nbsp; 
+  2015
+  <span class="with-love">
+    <i class="icon-heart"></i>
+  </span>
+  <span class="author">Jcf94</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 強力驅動
+</div>
+
+<div class="theme-info">
+  主題 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+      </div>
+    </div>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.2"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.2"></script>
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.2" id="motion.global"></script>
+
+
+
+  <script type="text/javascript" src="/js/search-toggle.js"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.2" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var $sidebarInner = $('.sidebar-inner');
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.didShow', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+          var self = this;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      $(indicator).velocity('stop').velocity({
+        opacity: action === 'show' ? 0.4 : 0
+      }, { duration: 100 });
+    }
+
+  });
+</script>
+
+
+  <script type="text/javascript" id="sidebar.nav">
+    $(document).ready(function () {
+      var html = $('html');
+
+      $('.sidebar-nav li').on('click', function () {
+        var item = $(this);
+        var activeTabClassName = 'sidebar-nav-active';
+        var activePanelClassName = 'sidebar-panel-active';
+        if (item.hasClass(activeTabClassName)) {
+          return;
+        }
+
+        var currentTarget = $('.' + activePanelClassName);
+        var target = $('.' + item.data('target'));
+
+        currentTarget.velocity('transition.slideUpOut', 200, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', 200)
+            .addClass(activePanelClassName);
+        });
+
+        item.siblings().removeClass(activeTabClassName);
+        item.addClass(activeTabClassName);
+      });
+
+      $('.post-toc a').on('click', function (e) {
+        e.preventDefault();
+        var offset = $(escapeSelector(this.getAttribute('href'))).offset().top;
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        });
+      });
+
+      // Expand sidebar on post detail page by default, when post has a toc.
+      var $tocContent = $('.post-toc-content');
+      if (isDesktop() && CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          displaySidebar();
+        }
+      }
+    });
+  </script>
+
+
+
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      if (CONFIG.sidebar === 'always') {
+        displaySidebar();
+      }
+    });
+  </script>
+
+  
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+  
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"jcf94"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+
+
+  
+  
+
+</body>
+</html>
