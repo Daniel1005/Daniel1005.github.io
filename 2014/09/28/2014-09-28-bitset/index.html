@@ -1,0 +1,687 @@
+<!doctype html>
+<html class="theme-next use-motion theme-next-mist">
+<head>
+  
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.2"/>
+
+
+
+
+  <meta name="keywords" content="STL,bitset," />
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Chenfan's blog" type="application/atom+xml" />
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.2" />
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    analytics: {
+      google: ''
+    },
+    sidebar: 'post'
+  };
+</script>
+
+
+
+
+  <title> 黑科技--位集--bitset // Chenfan's blog </title>
+</head>
+
+<body>
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <div id="header" class="header">
+      <div class="header-inner">
+        <h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/" class="brand">
+      <span class="logo">
+        <i class="icon-logo"></i>
+      </span>
+      <span class="site-title">Chenfan's blog</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<div class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/">
+            <i class="menu-item-icon icon-home"></i> <br />
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            <i class="menu-item-icon icon-archives"></i> <br />
+            歸檔
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            <i class="menu-item-icon icon-categories"></i> <br />
+            分類
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            <i class="menu-item-icon icon-tags"></i> <br />
+            標籤
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            <i class="menu-item-icon icon-about"></i> <br />
+            關於
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+</div>
+
+
+      </div>
+    </div>
+
+    <div id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content">
+          
+
+  <div id="posts" class="posts-expand">
+    
+
+  <div class="post post-type-normal ">
+    <div class="post-header">
+
+      
+      
+        <h1 class="post-title">
+          
+          
+            
+              黑科技--位集--bitset
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於 2014-09-28
+        </span>
+
+        
+          <span class="post-category">
+            &nbsp; | &nbsp; 分類於
+            
+              <a href="/categories/ACM-算法学习/">ACM_算法学习</a>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2014/09/28/2014-09-28-bitset/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2014/09/28/2014-09-28-bitset/"></span>
+            </a>
+          </span>
+          
+        
+      </div>
+    </div>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <p>自从上次网赛发现这么个东西之后，深深地感受到了bitset的强大，0.0。</p>
+<p>正常的bool占用1字节空间，bitset可以把这个缩到1bit，空间上8倍优化。正常用起来可能会跟位运算状态压缩类似，但是其中的每个位又能进行单独操作，所以确实相当方便。</p>
+<p>下面是原版的文档：</p>
+<p>class template</p>
+<bitset>
+
+<h1 id="std::bitset">std::bitset</h1><a id="more"></a>
+<p>template <size_t n=""> class bitset;</size_t></p>
+<h2 id="Bitset">Bitset</h2><p>Abtsetstores bits (elements with only two possible values: 0 or 1, true or false, …).　　//位集用于存储0、1元素。</p>
+<p>The class emulates an array of bool elements, but optimized for space allocation: generally, each element occupies only one bit (which, on most systems, is eight times less than the smallest elemental type: char).　　//这种类模拟了bool数组，但是单个元素占空间只有1bit。（！！好东西有木有！！）</p>
+<p>Each bit position can be accessed individually: for example, for a given bitset named foo, the expression foo[3] accesses its fourth bit, just like a regular array accesses its elements. But because no elemental type is a single bit in most C++ environments, the individual elements are accessed as special references type (seebitset::reference).　　//每个位都能被独立访问。（！！好东西有木有！！）</p>
+<p>Bitsets have the feature of being able to be constructed from and converted to both integer values and binary strings (see its constructor and membersto_ulong andto_string ). They can also be directly inserted and extracted from streams in binary format (see applicable operators).　　//这货还提供转化成其他类型的函数（！！好东西有木有！！）</p>
+<p>Thesize of a bitset is fixed at compile-time (determined by its template parameter). For a class that also optimizes for space allocation and allows for dynamic resizing, see the bool specialization ofvector (vector<bool>).</bool></p>
+<h2 id="Template_parameters">Template parameters</h2><p>N</p>
+<p>Size of the bitset, in terms of number of bits. It is returned by member functionbitset::size.size_t is an unsigned integral type.　　//大小由位数决定，并且可以引用内置函数直接查询某一bitset的大小</p>
+<h2 id="Member_types">Member types</h2><p>referenceReference-like type (public member class )</p>
+<h2 id="Member_functions">Member functions</h2><p>(constructor)<br>Construct bitset (public member function )</p>
+<p>applicable operators<br>Bitset operators (function )</p>
+<h3 id="Bit_access">Bit access</h3><p>operator[]<br>Access bit (public member function )　　//访问位集中的元素可以直接像访问数组一样完成</p>
+<p>count<br>Count bits set (public member function )　　//计数有多少位</p>
+<p>size<br>Return size (public member function )　　//返回空间大小</p>
+<p>test<br>Return bit value (public member function )　　//返回…这什么东西？</p>
+<p>any<br>Test if any bit is set (public member function )　　//返回位集中是否有元素1</p>
+<p>none<br>Test if no bit is set (public member function )　　//返回位集是否全空</p>
+<p>all<br>Test if all bits are set (public member function )　　//返回位集是否全满</p>
+<h3 id="Bit_operations">Bit operations</h3><p>set<br>Set bits (public member function )　　//设置位</p>
+<p>reset<br>Reset bits (public member function )　　//清空位集</p>
+<p>flip<br>Flip bits (public member function )　　//位集元素置反</p>
+<h3 id="Bitset_operations">Bitset operations</h3><p>to_string<br>Convert to string (public member function )</p>
+<p>to_ulong<br>Convert to unsigned long integer (public member function )</p>
+<p>to_ullong<br>Convert to unsigned long long (public member function )</p>
+<h2 id="Non-member_function_overloads">Non-member function overloads</h2><p>applicable operatorsBitset operators (function )</p>
+<h2 id="Non-member_class_specializations">Non-member class specializations</h2><p>hash<bitset> Hash for bitset (class template specialization )</bitset></p>
+<h1 id="主要操作测试">主要操作测试</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span>&lt;iostream&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span>&lt;cstdio&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span>&lt;bitset&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="built_in">bitset</span>&lt;1000&gt; a;</span><br><span class="line">    </span><br><span class="line">    a[<span class="number">100</span>]=<span class="number">1</span>;    <span class="comment">//直接赋值 </span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; a.count() &lt;&lt; endl;    <span class="comment">//计数1的个数 </span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; a.size() &lt;&lt; endl;    <span class="comment">//返回空间大小 </span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; a.test(<span class="number">1</span>) &lt;&lt; endl;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; a.test(<span class="number">100</span>) &lt;&lt; endl;    <span class="comment">//判断第i位是否为1 </span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; a.any() &lt;&lt; endl;    <span class="comment">//是否非空 </span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; a.none() &lt;&lt; endl;    <span class="comment">//是否全空 </span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; a.all() &lt;&lt; endl;    <span class="comment">//是否全满 </span></span><br><span class="line">    </span><br><span class="line">    a.<span class="built_in">set</span>(<span class="number">2</span>);    <span class="comment">//与赋值相同 </span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; a[<span class="number">2</span>] &lt;&lt; endl;    <span class="comment">//直接访问，与test相同 </span></span><br><span class="line">    </span><br><span class="line">    a.reset();    <span class="comment">//清空 </span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; a.count() &lt;&lt; endl;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; a.none() &lt;&lt; endl;</span><br><span class="line">    </span><br><span class="line">    a.flip();    <span class="comment">//反置 </span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; a.count() &lt;&lt; endl;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; a.all() &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果如下：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">1</span><br><span class="line">1000</span><br><span class="line">0</span><br><span class="line">1</span><br><span class="line">1</span><br><span class="line">0</span><br><span class="line">0</span><br><span class="line">1</span><br><span class="line">0</span><br><span class="line">1</span><br><span class="line">1000</span><br><span class="line">1</span><br></pre></td></tr></table></figure></bitset>
+      
+    </div>
+
+    <div class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/STL/"> #STL </a>
+          
+            <a href="/tags/bitset/"> #bitset </a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2014/09/28/2014-09-28-The-2014-ACMICPC-Asia-Regional-Shanghai-Online/">The 2014 ACMICPC Asia Regional Shanghai Online</a>
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2014/09/23/2014-09-23-The-2014-ACMICPC-Asia-Regional-Guangzhou-Online/">The 2014 ACMICPC Asia Regional Guangzhou Online</a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </div>
+  </div>
+
+
+
+    
+      <div class="post-spread">
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      </div>
+    
+
+    
+      <div class="comments" id="comments">
+        
+          <div class="ds-thread" data-thread-key="2014/09/28/2014-09-28-bitset/"
+               data-title="黑科技--位集--bitset" data-url="http://jcf94.github.io/2014/09/28/2014-09-28-bitset/">
+          </div>
+        
+      </div>
+    
+  </div>
+
+
+        </div>
+
+        
+      </div>
+
+
+      
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <div class="site-overview">
+        <div class="site-author motion-element">
+          <img class="site-author-image" src="/images/photo.jpg" alt="Jcf94" />
+          <p class="site-author-name">Jcf94</p>
+          <p class="site-subtitle">It's the way I choose.</p>
+        </div>
+        <p class="site-description motion-element"></p>
+        <div class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">34</span>
+              <span class="site-state-item-name">文章</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-name">分類</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">19</span>
+              <span class="site-state-item-name">標籤</span>
+              </a>
+          </div>
+
+        </div>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml">
+              <i class="menu-item-icon icon-feed"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+              <a href="https://github.com/jcf94" target="_blank">Github</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://weibo.com/jcf94" target="_blank">Weibo</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://www.zhihu.com/people/jcf94" target="_blank">Zhihu</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="mailto:jcf94@outlook.com" target="_blank">Mail</a>
+            </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element">
+            <a href="http://creativecommons.org/licenses/by-nc-sa/4.0" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+      </div>
+
+      
+        <div class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#std::bitset"><span class="nav-number">1.</span> <span class="nav-text">std::bitset</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Bitset"><span class="nav-number">1.1.</span> <span class="nav-text">Bitset</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Template_parameters"><span class="nav-number">1.2.</span> <span class="nav-text">Template parameters</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Member_types"><span class="nav-number">1.3.</span> <span class="nav-text">Member types</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Member_functions"><span class="nav-number">1.4.</span> <span class="nav-text">Member functions</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Bit_access"><span class="nav-number">1.4.1.</span> <span class="nav-text">Bit access</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bit_operations"><span class="nav-number">1.4.2.</span> <span class="nav-text">Bit operations</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bitset_operations"><span class="nav-number">1.4.3.</span> <span class="nav-text">Bitset operations</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Non-member_function_overloads"><span class="nav-number">1.5.</span> <span class="nav-text">Non-member function overloads</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Non-member_class_specializations"><span class="nav-number">1.6.</span> <span class="nav-text">Non-member class specializations</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#主要操作测试"><span class="nav-number">2.</span> <span class="nav-text">主要操作测试</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </div>
+      
+
+    </div>
+  </div>
+
+
+    </div>
+
+    <div id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; &nbsp; 
+  2015
+  <span class="with-love">
+    <i class="icon-heart"></i>
+  </span>
+  <span class="author">Jcf94</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 強力驅動
+</div>
+
+<div class="theme-info">
+  主題 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+      </div>
+    </div>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.2"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.2"></script>
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.2" id="motion.global"></script>
+
+
+
+  <script type="text/javascript" src="/js/search-toggle.js"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.2" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var $sidebarInner = $('.sidebar-inner');
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.didShow', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+          var self = this;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      $(indicator).velocity('stop').velocity({
+        opacity: action === 'show' ? 0.4 : 0
+      }, { duration: 100 });
+    }
+
+  });
+</script>
+
+
+  <script type="text/javascript" id="sidebar.nav">
+    $(document).ready(function () {
+      var html = $('html');
+
+      $('.sidebar-nav li').on('click', function () {
+        var item = $(this);
+        var activeTabClassName = 'sidebar-nav-active';
+        var activePanelClassName = 'sidebar-panel-active';
+        if (item.hasClass(activeTabClassName)) {
+          return;
+        }
+
+        var currentTarget = $('.' + activePanelClassName);
+        var target = $('.' + item.data('target'));
+
+        currentTarget.velocity('transition.slideUpOut', 200, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', 200)
+            .addClass(activePanelClassName);
+        });
+
+        item.siblings().removeClass(activeTabClassName);
+        item.addClass(activeTabClassName);
+      });
+
+      $('.post-toc a').on('click', function (e) {
+        e.preventDefault();
+        var offset = $(escapeSelector(this.getAttribute('href'))).offset().top;
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        });
+      });
+
+      // Expand sidebar on post detail page by default, when post has a toc.
+      var $tocContent = $('.post-toc-content');
+      if (isDesktop() && CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          displaySidebar();
+        }
+      }
+    });
+  </script>
+
+
+
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      if (CONFIG.sidebar === 'always') {
+        displaySidebar();
+      }
+    });
+  </script>
+
+  
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+  
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"jcf94"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+
+
+  
+  
+
+</body>
+</html>
