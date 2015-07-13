@@ -1,11 +1,15 @@
 <!doctype html>
 <html class="theme-next use-motion theme-next-mist">
 <head>
-  
+    
 
 <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
 
 
@@ -16,8 +20,10 @@
 
 
 
+  <link href='//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 
-<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.2"/>
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.3"/>
 
 
 
@@ -30,28 +36,41 @@
 
 
 
-  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.2" />
+  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.3" />
 
+
+<meta name="description" content="2题继续遗憾收场，每次都是只差最后一步。这一场却是之前那么多场中感觉距离奖牌最近的时候。好好总结一下经验教训，复盘之后好好准备下一场北京的最后一战吧。
+一开始的状态非常不错，10分钟跟榜完成1A，第二个题是K，虽说开始的时候卡了不少时间，后来还是努力在1小时左右的时候出了，算是跟榜跟的还行。最终的问题应该是出在后面的3小时的策略上。
+教训：
+1.把3小时全部赌在一题上，现在想想确实是有点冒险，下次">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The 2014 ACMICPC Asia Regional Xian">
+<meta property="og:url" content="http://jcf94.github.io/2014/10/27/2014/2014-10-27-The-2014-ACMICPC-Asia-Regional-Xian/index.html">
+<meta property="og:site_name" content="Chenfan's blog">
+<meta property="og:description" content="2题继续遗憾收场，每次都是只差最后一步。这一场却是之前那么多场中感觉距离奖牌最近的时候。好好总结一下经验教训，复盘之后好好准备下一场北京的最后一战吧。
+一开始的状态非常不错，10分钟跟榜完成1A，第二个题是K，虽说开始的时候卡了不少时间，后来还是努力在1小时左右的时候出了，算是跟榜跟的还行。最终的问题应该是出在后面的3小时的策略上。
+教训：
+1.把3小时全部赌在一题上，现在想想确实是有点冒险，下次">
+<meta property="og:updated_time" content="2015-07-13T01:39:42.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="The 2014 ACMICPC Asia Regional Xian">
+<meta name="twitter:description" content="2题继续遗憾收场，每次都是只差最后一步。这一场却是之前那么多场中感觉距离奖牌最近的时候。好好总结一下经验教训，复盘之后好好准备下一场北京的最后一战吧。
+一开始的状态非常不错，10分钟跟榜完成1A，第二个题是K，虽说开始的时候卡了不少时间，后来还是努力在1小时左右的时候出了，算是跟榜跟的还行。最终的问题应该是出在后面的3小时的策略上。
+教训：
+1.把3小时全部赌在一题上，现在想想确实是有点冒险，下次">
 
 
 <script type="text/javascript" id="hexo.configuration">
   var CONFIG = {
     scheme: 'Mist',
-    analytics: {
-      google: ''
-    },
     sidebar: 'post'
   };
 </script>
 
-
-
-
-  <title> The 2014 ACMICPC Asia Regional Xian // Chenfan's blog </title>
+    <title> The 2014 ACMICPC Asia Regional Xian // Chenfan's blog </title>
 </head>
-
-<body>
-  <!--[if lte IE 8]>
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
+<!--[if lte IE 8]>
   <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
     <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
       <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
@@ -61,14 +80,15 @@
   </div>
 <![endif]-->
 
-  <div class="container one-column page-post-detail">
-    <div class="headband"></div>
 
-    <div id="header" class="header">
-      <div class="header-inner">
-        <h1 class="site-meta">
+
+
+<div class="container one-column page-post-detail">
+    <div class="headband"></div>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner"><h1 class="site-meta">
   <span class="logo-line-before"><i></i></span>
-  <a href="/" class="brand">
+  <a href="/" class="brand" rel="start">
       <span class="logo">
         <i class="icon-logo"></i>
       </span>
@@ -85,7 +105,7 @@
   </button>
 </div>
 
-<div class="site-nav">
+<nav class="site-nav">
   
 
   
@@ -93,7 +113,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/">
+          <a href="/" rel="section">
             <i class="menu-item-icon icon-home"></i> <br />
             首頁
           </a>
@@ -101,7 +121,7 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives">
+          <a href="/archives" rel="section">
             <i class="menu-item-icon icon-archives"></i> <br />
             歸檔
           </a>
@@ -109,7 +129,7 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories">
+          <a href="/categories" rel="section">
             <i class="menu-item-icon icon-categories"></i> <br />
             分類
           </a>
@@ -117,7 +137,7 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags">
+          <a href="/tags" rel="section">
             <i class="menu-item-icon icon-tags"></i> <br />
             標籤
           </a>
@@ -125,7 +145,7 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about">
+          <a href="/about" rel="section">
             <i class="menu-item-icon icon-about"></i> <br />
             關於
           </a>
@@ -135,26 +155,26 @@
   
 
   
-</div>
+</nav>
 
 
-      </div>
-    </div>
+        </div>
+    </header>
 
-    <div id="main" class="main">
-      <div class="main-inner">
-        <div id="content" class="content">
-          
+    <main id="main" class="main">
+        <div class="main-inner">
+            <div id="content" class="content">
+                
 
   <div id="posts" class="posts-expand">
     
 
-  <div class="post post-type-normal ">
-    <div class="post-header">
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
 
       
       
-        <h1 class="post-title">
+        <h1 class="post-title" itemprop="name headline">
           
           
             
@@ -166,14 +186,17 @@
 
       <div class="post-meta">
         <span class="post-time">
-          發表於 2014-10-27
+          發表於
+          <time itemprop="dateCreated" datetime="2014-10-27T16:37:26+08:00" content="2014-10-27">
+            2014-10-27
+          </time>
         </span>
 
         
-          <span class="post-category">
+          <span class="post-category" >
             &nbsp; | &nbsp; 分類於
             
-              <a href="/categories/ACM/">ACM</a>
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/ACM/" itemprop="url" rel="index"><span itemprop="name">ACM</span></a></span>
 
               
               
@@ -181,7 +204,7 @@
               
 
             
-              <a href="/categories/ACM/比赛/">比赛</a>
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/ACM/比赛/" itemprop="url" rel="index"><span itemprop="name">比赛</span></a></span>
 
               
               
@@ -193,15 +216,15 @@
         
           
             <span class="post-comments-count">
-            &nbsp; | &nbsp;
-            <a href="/2014/10/27/2014/2014-10-27-The-2014-ACMICPC-Asia-Regional-Xian/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2014/10/27/2014/2014-10-27-The-2014-ACMICPC-Asia-Regional-Xian/"></span>
-            </a>
-          </span>
+              &nbsp; | &nbsp;
+              <a href="/2014/10/27/2014/2014-10-27-The-2014-ACMICPC-Asia-Regional-Xian/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2014/10/27/2014/2014-10-27-The-2014-ACMICPC-Asia-Regional-Xian/" itemprop="commentsCount"></span>
+              </a>
+            </span>
           
         
       </div>
-    </div>
+    </header>
 
     <div class="post-body">
 
@@ -209,7 +232,7 @@
       
 
       
-        <p>2题继续遗憾收场，每次都是只差最后一步。这一场却是之前那么多场中感觉距离奖牌最近的时候。好好总结一下经验教训，复盘之后好好准备下一场北京的最后一战吧。</p>
+        <span itemprop="articleBody"><p>2题继续遗憾收场，每次都是只差最后一步。这一场却是之前那么多场中感觉距离奖牌最近的时候。好好总结一下经验教训，复盘之后好好准备下一场北京的最后一战吧。</p>
 <p>一开始的状态非常不错，10分钟跟榜完成1A，第二个题是K，虽说开始的时候卡了不少时间，后来还是努力在1小时左右的时候出了，算是跟榜跟的还行。最终的问题应该是出在后面的3小时的策略上。</p>
 <p>教训：</p>
 <p>1.把3小时全部赌在一题上，现在想想确实是有点冒险，下次应该最多留一人或者两人继续磕题就好，剩下的可以看下别的。从这一点上来说，从一开始一个队友一人做F，然后一个还在看计算几何，我是把各道题差不多都翻了一遍，但是没有看到明显可出的题。这个时候状态还没算偏了太多。下面就是第二个教训；</p>
@@ -237,15 +260,15 @@
 <h2 id="启发-1">启发</h2><p>还是做题量太少，思维跟不上。想不到转化为图做这是第一点，第二点是就算当时想到了这个方案，估计我也写不出来……</p>
 <h1 id="K">K</h1><h2 id="分析-3">分析</h2><p>类似GCD的辗转相除相减，开始时思考方向有点不对，本来还打算从两个数找规律的角度去考虑。好在后来还是努力分析出来了，一开始想的东西也恰好有一些能够用上。</p>
 <h2 id="启发-2">启发</h2><p>把数据抽象成A、B去考虑会好一点，能比较快地发现问题的本质。除非能明显确认是要从找规律的方面出发，要不最好不要直接从数据本身开始凑。</p>
-
+</span>
       
     </div>
 
-    <div class="post-footer">
+    <footer class="post-footer">
       
         <div class="post-tags">
           
-            <a href="/tags/ACM-ICPC/"> #ACM-ICPC </a>
+            <a href="/tags/ACM-ICPC/" rel="tag">#ACM-ICPC</a>
           
         </div>
       
@@ -254,13 +277,13 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2014/10/27/2014/2014-10-27-The-2013-ACMICPC-Asia-Regional-Chengdu/">The 2013 ACMICPC Asia Regional Chengdu</a>
+              <a href="/2014/10/27/2014/2014-10-27-The-2013-ACMICPC-Asia-Regional-Chengdu/" rel="prev">The 2013 ACMICPC Asia Regional Chengdu</a>
             
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2014/10/24/2014/2014-10-24-The-2014-ACMICPC-Asia-Invitational-Xian/">The 2014 ACMICPC Asia Invitational Xian</a>
+              <a href="/2014/10/24/2014/2014-10-24-The-2014-ACMICPC-Asia-Invitational-Xian/" rel="next">The 2014 ACMICPC Asia Invitational Xian</a>
             
           </div>
         </div>
@@ -268,8 +291,8 @@
 
       
       
-    </div>
-  </div>
+    </footer>
+  </article>
 
 
 
@@ -301,7 +324,7 @@
     </div>
 
     
-      <div class="comments" id="comments">
+      <div class="comments" id="comments" itemscope itemtype="http://schema.org/UserComments">
         
           <div class="ds-thread" data-thread-key="2014/10/27/2014/2014-10-27-The-2014-ACMICPC-Asia-Regional-Xian/"
                data-title="The 2014 ACMICPC Asia Regional Xian" data-url="http://jcf94.github.io/2014/10/27/2014/2014-10-27-The-2014-ACMICPC-Asia-Regional-Xian/">
@@ -312,13 +335,11 @@
   </div>
 
 
-        </div>
+            </div>
+
+            
 
         
-      </div>
-
-
-      
   
   <div class="sidebar-toggle">
     <div class="sidebar-toggle-line-wrap">
@@ -328,12 +349,12 @@
     </div>
   </div>
 
-  <div id="sidebar" class="sidebar">
+  <aside id="sidebar" class="sidebar">
     <div class="sidebar-inner">
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
             文章目錄
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -342,14 +363,13 @@
         </ul>
       
 
-      <div class="site-overview">
-        <div class="site-author motion-element">
-          <img class="site-author-image" src="/images/photo.jpg" alt="Jcf94" />
-          <p class="site-author-name">Jcf94</p>
-          <p class="site-subtitle">It's the way I choose.</p>
+      <section class="site-overview">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="/images/photo.jpg" alt="Jcf94" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">Jcf94</p>
         </div>
-        <p class="site-description motion-element"></p>
-        <div class="site-state motion-element">
+        <p class="site-description motion-element" itemprop="description"></p>
+        <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
               <span class="site-state-item-count">63</span>
@@ -371,11 +391,11 @@
               </a>
           </div>
 
-        </div>
+        </nav>
 
         
           <div class="feed-link motion-element">
-            <a href="/atom.xml">
+            <a href="/atom.xml" rel="alternate">
               <i class="menu-item-icon icon-feed"></i>
               RSS
             </a>
@@ -386,27 +406,27 @@
           
             
               <span class="links-of-author-item">
-              <a href="https://github.com/jcf94" target="_blank">Github</a>
-            </span>
+                <a href="https://github.com/jcf94" target="_blank">Github</a>
+              </span>
             
               <span class="links-of-author-item">
-              <a href="http://weibo.com/jcf94" target="_blank">Weibo</a>
-            </span>
+                <a href="http://weibo.com/jcf94" target="_blank">Weibo</a>
+              </span>
             
               <span class="links-of-author-item">
-              <a href="http://www.zhihu.com/people/jcf94" target="_blank">Zhihu</a>
-            </span>
+                <a href="http://www.zhihu.com/people/jcf94" target="_blank">Zhihu</a>
+              </span>
             
               <span class="links-of-author-item">
-              <a href="mailto:jcf94@outlook.com" target="_blank">Mail</a>
-            </span>
+                <a href="mailto:jcf94@outlook.com" target="_blank">Mail</a>
+              </span>
             
           
         </div>
 
         
         
-          <div class="cc-license motion-element">
+          <div class="cc-license motion-element" itemprop="license">
             <a href="http://creativecommons.org/licenses/by-nc-sa/4.0" class="cc-opacity" target="_blank">
               <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
             </a>
@@ -416,11 +436,11 @@
         <div class="links-of-author motion-element">
           
         </div>
-        
-      </div>
+
+      </section>
 
       
-        <div class="post-toc-wrap sidebar-panel-active">
+        <section class="post-toc-wrap sidebar-panel-active">
           <div class="post-toc-indicator-top post-toc-indicator"></div>
           <div class="post-toc">
             
@@ -429,25 +449,25 @@
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
-        </div>
+        </section>
       
 
     </div>
-  </div>
+  </aside>
 
 
-    </div>
+    </main>
 
-    <div id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">
+    <footer id="footer" class="footer">
+        <div class="footer-inner">
+            <div class="copyright" >
   
   &copy; &nbsp; 
-  2015
+  <span itemprop="copyrightYear">2015</span>
   <span class="with-love">
     <i class="icon-heart"></i>
   </span>
-  <span class="author">Jcf94</span>
+  <span class="author" itemprop="copyrightHolder">Jcf94</span>
 </div>
 
 <div class="powered-by">
@@ -463,37 +483,57 @@
 
 
 
-      </div>
-    </div>
+        </div>
+    </footer>
 
     <div class="back-to-top"></div>
-  </div>
+</div>
 
-  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+<script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
 
   
   
+  
+    
 
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"jcf94"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+    
+  
   
   <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
-  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.2"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.3"></script>
 
 
-  <script type="text/javascript" src="/js/helpers.js?v=0.4.2"></script>
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.3"></script>
   
 
   <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
   <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
 
-  <script type="text/javascript" src="/js/motion_global.js?v=0.4.2" id="motion.global"></script>
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.3" id="motion.global"></script>
 
 
 
   <script type="text/javascript" src="/js/search-toggle.js"></script>
 
+
   
-  
-<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.2" id="bootstrap.scrollspy.custom"></script>
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.3" id="bootstrap.scrollspy.custom"></script>
 
 
 <script type="text/javascript" id="sidebar.toc.highlight">
@@ -632,15 +672,15 @@
 
 
 
-  <script type="text/javascript">
+<script type="text/javascript">
     $(document).ready(function () {
-      if (CONFIG.sidebar === 'always') {
-        displaySidebar();
-      }
+        if (CONFIG.sidebar === 'always') {
+            displaySidebar();
+        }
     });
-  </script>
+</script>
 
-  
+
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     tex2jax: {
@@ -663,41 +703,20 @@
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
 
-  
-  
-
-  
-    
-  
-
-  <script type="text/javascript">
-    var duoshuoQuery = {short_name:"jcf94"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
-
-  
 
 
-  
-  
 
-  
-  <!-- lazyload -->
-  <script type="text/javascript" src="/js/lazyload.js"></script>
-      <script type="text/javascript">
-        jQuery(function() {          
-            jQuery("#posts img").lazyload({
-              placeholder:"http://www.arao.me/loading.gif",  
-                effect:"fadeIn"
-              });
-            });
-    </script>   
+
+
+<!-- lazyload -->
+<script type="text/javascript" src="/js/lazyload.js"></script>
+<script type="text/javascript">
+    jQuery(function () {
+        jQuery("#posts img").lazyload({
+            placeholder: "/images/loading.gif",
+            effect: "fadeIn"
+        });
+    });
+</script>
 </body>
 </html>

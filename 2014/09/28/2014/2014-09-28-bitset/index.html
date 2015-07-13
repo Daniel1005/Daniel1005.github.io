@@ -1,11 +1,15 @@
 <!doctype html>
 <html class="theme-next use-motion theme-next-mist">
 <head>
-  
+    
 
 <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
 
 
@@ -16,8 +20,10 @@
 
 
 
+  <link href='//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 
-<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.2"/>
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.3"/>
 
 
 
@@ -30,28 +36,50 @@
 
 
 
-  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.2" />
+  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.3" />
 
+
+<meta name="description" content="自从上次网赛发现这么个东西之后，深深地感受到了bitset的强大，0.0。
+正常的bool占用1字节空间，bitset可以把这个缩到1bit，空间上8倍优化。正常用起来可能会跟位运算状态压缩类似，但是其中的每个位又能进行单独操作，所以确实相当方便。
+下面是原版的文档：
+class template
+
+
+std::bitset">
+<meta property="og:type" content="article">
+<meta property="og:title" content="黑科技--位集--bitset">
+<meta property="og:url" content="http://jcf94.github.io/2014/09/28/2014/2014-09-28-bitset/index.html">
+<meta property="og:site_name" content="Chenfan's blog">
+<meta property="og:description" content="自从上次网赛发现这么个东西之后，深深地感受到了bitset的强大，0.0。
+正常的bool占用1字节空间，bitset可以把这个缩到1bit，空间上8倍优化。正常用起来可能会跟位运算状态压缩类似，但是其中的每个位又能进行单独操作，所以确实相当方便。
+下面是原版的文档：
+class template
+
+
+std::bitset">
+<meta property="og:updated_time" content="2015-07-13T01:38:52.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="黑科技--位集--bitset">
+<meta name="twitter:description" content="自从上次网赛发现这么个东西之后，深深地感受到了bitset的强大，0.0。
+正常的bool占用1字节空间，bitset可以把这个缩到1bit，空间上8倍优化。正常用起来可能会跟位运算状态压缩类似，但是其中的每个位又能进行单独操作，所以确实相当方便。
+下面是原版的文档：
+class template
+
+
+std::bitset">
 
 
 <script type="text/javascript" id="hexo.configuration">
   var CONFIG = {
     scheme: 'Mist',
-    analytics: {
-      google: ''
-    },
     sidebar: 'post'
   };
 </script>
 
-
-
-
-  <title> 黑科技--位集--bitset // Chenfan's blog </title>
+    <title> 黑科技--位集--bitset // Chenfan's blog </title>
 </head>
-
-<body>
-  <!--[if lte IE 8]>
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
+<!--[if lte IE 8]>
   <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
     <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
       <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
@@ -61,14 +89,15 @@
   </div>
 <![endif]-->
 
-  <div class="container one-column page-post-detail">
-    <div class="headband"></div>
 
-    <div id="header" class="header">
-      <div class="header-inner">
-        <h1 class="site-meta">
+
+
+<div class="container one-column page-post-detail">
+    <div class="headband"></div>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner"><h1 class="site-meta">
   <span class="logo-line-before"><i></i></span>
-  <a href="/" class="brand">
+  <a href="/" class="brand" rel="start">
       <span class="logo">
         <i class="icon-logo"></i>
       </span>
@@ -85,7 +114,7 @@
   </button>
 </div>
 
-<div class="site-nav">
+<nav class="site-nav">
   
 
   
@@ -93,7 +122,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/">
+          <a href="/" rel="section">
             <i class="menu-item-icon icon-home"></i> <br />
             首頁
           </a>
@@ -101,7 +130,7 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives">
+          <a href="/archives" rel="section">
             <i class="menu-item-icon icon-archives"></i> <br />
             歸檔
           </a>
@@ -109,7 +138,7 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories">
+          <a href="/categories" rel="section">
             <i class="menu-item-icon icon-categories"></i> <br />
             分類
           </a>
@@ -117,7 +146,7 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags">
+          <a href="/tags" rel="section">
             <i class="menu-item-icon icon-tags"></i> <br />
             標籤
           </a>
@@ -125,7 +154,7 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about">
+          <a href="/about" rel="section">
             <i class="menu-item-icon icon-about"></i> <br />
             關於
           </a>
@@ -135,26 +164,26 @@
   
 
   
-</div>
+</nav>
 
 
-      </div>
-    </div>
+        </div>
+    </header>
 
-    <div id="main" class="main">
-      <div class="main-inner">
-        <div id="content" class="content">
-          
+    <main id="main" class="main">
+        <div class="main-inner">
+            <div id="content" class="content">
+                
 
   <div id="posts" class="posts-expand">
     
 
-  <div class="post post-type-normal ">
-    <div class="post-header">
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
 
       
       
-        <h1 class="post-title">
+        <h1 class="post-title" itemprop="name headline">
           
           
             
@@ -166,14 +195,17 @@
 
       <div class="post-meta">
         <span class="post-time">
-          發表於 2014-09-28
+          發表於
+          <time itemprop="dateCreated" datetime="2014-09-28T15:47:35+08:00" content="2014-09-28">
+            2014-09-28
+          </time>
         </span>
 
         
-          <span class="post-category">
+          <span class="post-category" >
             &nbsp; | &nbsp; 分類於
             
-              <a href="/categories/ACM/">ACM</a>
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/ACM/" itemprop="url" rel="index"><span itemprop="name">ACM</span></a></span>
 
               
               
@@ -181,7 +213,7 @@
               
 
             
-              <a href="/categories/ACM/算法学习/">算法学习</a>
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/ACM/算法学习/" itemprop="url" rel="index"><span itemprop="name">算法学习</span></a></span>
 
               
               
@@ -193,15 +225,15 @@
         
           
             <span class="post-comments-count">
-            &nbsp; | &nbsp;
-            <a href="/2014/09/28/2014/2014-09-28-bitset/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2014/09/28/2014/2014-09-28-bitset/"></span>
-            </a>
-          </span>
+              &nbsp; | &nbsp;
+              <a href="/2014/09/28/2014/2014-09-28-bitset/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2014/09/28/2014/2014-09-28-bitset/" itemprop="commentsCount"></span>
+              </a>
+            </span>
           
         
       </div>
-    </div>
+    </header>
 
     <div class="post-body">
 
@@ -209,7 +241,7 @@
       
 
       
-        <p>自从上次网赛发现这么个东西之后，深深地感受到了bitset的强大，0.0。</p>
+        <span itemprop="articleBody"><p>自从上次网赛发现这么个东西之后，深深地感受到了bitset的强大，0.0。</p>
 <p>正常的bool占用1字节空间，bitset可以把这个缩到1bit，空间上8倍优化。正常用起来可能会跟位运算状态压缩类似，但是其中的每个位又能进行单独操作，所以确实相当方便。</p>
 <p>下面是原版的文档：</p>
 <p>class template</p>
@@ -244,17 +276,17 @@
 <h2 id="Non-member_class_specializations">Non-member class specializations</h2><p>hash<bitset> Hash for bitset (class template specialization )</bitset></p>
 <h1 id="主要操作测试">主要操作测试</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span>&lt;iostream&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span>&lt;cstdio&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span>&lt;bitset&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="built_in">bitset</span>&lt;1000&gt; a;</span><br><span class="line">    </span><br><span class="line">    a[<span class="number">100</span>]=<span class="number">1</span>;    <span class="comment">//直接赋值 </span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; a.count() &lt;&lt; endl;    <span class="comment">//计数1的个数 </span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; a.size() &lt;&lt; endl;    <span class="comment">//返回空间大小 </span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; a.test(<span class="number">1</span>) &lt;&lt; endl;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; a.test(<span class="number">100</span>) &lt;&lt; endl;    <span class="comment">//判断第i位是否为1 </span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; a.any() &lt;&lt; endl;    <span class="comment">//是否非空 </span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; a.none() &lt;&lt; endl;    <span class="comment">//是否全空 </span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; a.all() &lt;&lt; endl;    <span class="comment">//是否全满 </span></span><br><span class="line">    </span><br><span class="line">    a.<span class="built_in">set</span>(<span class="number">2</span>);    <span class="comment">//与赋值相同 </span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; a[<span class="number">2</span>] &lt;&lt; endl;    <span class="comment">//直接访问，与test相同 </span></span><br><span class="line">    </span><br><span class="line">    a.reset();    <span class="comment">//清空 </span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; a.count() &lt;&lt; endl;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; a.none() &lt;&lt; endl;</span><br><span class="line">    </span><br><span class="line">    a.flip();    <span class="comment">//反置 </span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; a.count() &lt;&lt; endl;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; a.all() &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>输出结果如下：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">1</span><br><span class="line">1000</span><br><span class="line">0</span><br><span class="line">1</span><br><span class="line">1</span><br><span class="line">0</span><br><span class="line">0</span><br><span class="line">1</span><br><span class="line">0</span><br><span class="line">1</span><br><span class="line">1000</span><br><span class="line">1</span><br></pre></td></tr></table></figure></bitset>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">1</span><br><span class="line">1000</span><br><span class="line">0</span><br><span class="line">1</span><br><span class="line">1</span><br><span class="line">0</span><br><span class="line">0</span><br><span class="line">1</span><br><span class="line">0</span><br><span class="line">1</span><br><span class="line">1000</span><br><span class="line">1</span><br></pre></td></tr></table></figure></bitset></span>
       
     </div>
 
-    <div class="post-footer">
+    <footer class="post-footer">
       
         <div class="post-tags">
           
-            <a href="/tags/STL/"> #STL </a>
+            <a href="/tags/STL/" rel="tag">#STL</a>
           
-            <a href="/tags/bitset/"> #bitset </a>
+            <a href="/tags/bitset/" rel="tag">#bitset</a>
           
         </div>
       
@@ -263,13 +295,13 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2014/09/28/2014/2014-09-28-The-2014-ACMICPC-Asia-Regional-Shanghai-Online/">The 2014 ACMICPC Asia Regional Shanghai Online</a>
+              <a href="/2014/09/28/2014/2014-09-28-The-2014-ACMICPC-Asia-Regional-Shanghai-Online/" rel="prev">The 2014 ACMICPC Asia Regional Shanghai Online</a>
             
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2014/09/23/2014/2014-09-23-The-2014-ACMICPC-Asia-Regional-Guangzhou-Online/">The 2014 ACMICPC Asia Regional Guangzhou Online</a>
+              <a href="/2014/09/23/2014/2014-09-23-The-2014-ACMICPC-Asia-Regional-Guangzhou-Online/" rel="next">The 2014 ACMICPC Asia Regional Guangzhou Online</a>
             
           </div>
         </div>
@@ -277,8 +309,8 @@
 
       
       
-    </div>
-  </div>
+    </footer>
+  </article>
 
 
 
@@ -310,7 +342,7 @@
     </div>
 
     
-      <div class="comments" id="comments">
+      <div class="comments" id="comments" itemscope itemtype="http://schema.org/UserComments">
         
           <div class="ds-thread" data-thread-key="2014/09/28/2014/2014-09-28-bitset/"
                data-title="黑科技--位集--bitset" data-url="http://jcf94.github.io/2014/09/28/2014/2014-09-28-bitset/">
@@ -321,13 +353,11 @@
   </div>
 
 
-        </div>
+            </div>
+
+            
 
         
-      </div>
-
-
-      
   
   <div class="sidebar-toggle">
     <div class="sidebar-toggle-line-wrap">
@@ -337,12 +367,12 @@
     </div>
   </div>
 
-  <div id="sidebar" class="sidebar">
+  <aside id="sidebar" class="sidebar">
     <div class="sidebar-inner">
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
             文章目錄
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -351,14 +381,13 @@
         </ul>
       
 
-      <div class="site-overview">
-        <div class="site-author motion-element">
-          <img class="site-author-image" src="/images/photo.jpg" alt="Jcf94" />
-          <p class="site-author-name">Jcf94</p>
-          <p class="site-subtitle">It's the way I choose.</p>
+      <section class="site-overview">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="/images/photo.jpg" alt="Jcf94" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">Jcf94</p>
         </div>
-        <p class="site-description motion-element"></p>
-        <div class="site-state motion-element">
+        <p class="site-description motion-element" itemprop="description"></p>
+        <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
               <span class="site-state-item-count">63</span>
@@ -380,11 +409,11 @@
               </a>
           </div>
 
-        </div>
+        </nav>
 
         
           <div class="feed-link motion-element">
-            <a href="/atom.xml">
+            <a href="/atom.xml" rel="alternate">
               <i class="menu-item-icon icon-feed"></i>
               RSS
             </a>
@@ -395,27 +424,27 @@
           
             
               <span class="links-of-author-item">
-              <a href="https://github.com/jcf94" target="_blank">Github</a>
-            </span>
+                <a href="https://github.com/jcf94" target="_blank">Github</a>
+              </span>
             
               <span class="links-of-author-item">
-              <a href="http://weibo.com/jcf94" target="_blank">Weibo</a>
-            </span>
+                <a href="http://weibo.com/jcf94" target="_blank">Weibo</a>
+              </span>
             
               <span class="links-of-author-item">
-              <a href="http://www.zhihu.com/people/jcf94" target="_blank">Zhihu</a>
-            </span>
+                <a href="http://www.zhihu.com/people/jcf94" target="_blank">Zhihu</a>
+              </span>
             
               <span class="links-of-author-item">
-              <a href="mailto:jcf94@outlook.com" target="_blank">Mail</a>
-            </span>
+                <a href="mailto:jcf94@outlook.com" target="_blank">Mail</a>
+              </span>
             
           
         </div>
 
         
         
-          <div class="cc-license motion-element">
+          <div class="cc-license motion-element" itemprop="license">
             <a href="http://creativecommons.org/licenses/by-nc-sa/4.0" class="cc-opacity" target="_blank">
               <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
             </a>
@@ -425,11 +454,11 @@
         <div class="links-of-author motion-element">
           
         </div>
-        
-      </div>
+
+      </section>
 
       
-        <div class="post-toc-wrap sidebar-panel-active">
+        <section class="post-toc-wrap sidebar-panel-active">
           <div class="post-toc-indicator-top post-toc-indicator"></div>
           <div class="post-toc">
             
@@ -438,25 +467,25 @@
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
-        </div>
+        </section>
       
 
     </div>
-  </div>
+  </aside>
 
 
-    </div>
+    </main>
 
-    <div id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">
+    <footer id="footer" class="footer">
+        <div class="footer-inner">
+            <div class="copyright" >
   
   &copy; &nbsp; 
-  2015
+  <span itemprop="copyrightYear">2015</span>
   <span class="with-love">
     <i class="icon-heart"></i>
   </span>
-  <span class="author">Jcf94</span>
+  <span class="author" itemprop="copyrightHolder">Jcf94</span>
 </div>
 
 <div class="powered-by">
@@ -472,37 +501,57 @@
 
 
 
-      </div>
-    </div>
+        </div>
+    </footer>
 
     <div class="back-to-top"></div>
-  </div>
+</div>
 
-  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+<script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
 
   
   
+  
+    
 
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"jcf94"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+    
+  
   
   <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
-  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.2"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.3"></script>
 
 
-  <script type="text/javascript" src="/js/helpers.js?v=0.4.2"></script>
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.3"></script>
   
 
   <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
   <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
 
-  <script type="text/javascript" src="/js/motion_global.js?v=0.4.2" id="motion.global"></script>
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.3" id="motion.global"></script>
 
 
 
   <script type="text/javascript" src="/js/search-toggle.js"></script>
 
+
   
-  
-<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.2" id="bootstrap.scrollspy.custom"></script>
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.3" id="bootstrap.scrollspy.custom"></script>
 
 
 <script type="text/javascript" id="sidebar.toc.highlight">
@@ -641,15 +690,15 @@
 
 
 
-  <script type="text/javascript">
+<script type="text/javascript">
     $(document).ready(function () {
-      if (CONFIG.sidebar === 'always') {
-        displaySidebar();
-      }
+        if (CONFIG.sidebar === 'always') {
+            displaySidebar();
+        }
     });
-  </script>
+</script>
 
-  
+
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     tex2jax: {
@@ -672,41 +721,20 @@
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
 
-  
-  
-
-  
-    
-  
-
-  <script type="text/javascript">
-    var duoshuoQuery = {short_name:"jcf94"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
-
-  
 
 
-  
-  
 
-  
-  <!-- lazyload -->
-  <script type="text/javascript" src="/js/lazyload.js"></script>
-      <script type="text/javascript">
-        jQuery(function() {          
-            jQuery("#posts img").lazyload({
-              placeholder:"http://www.arao.me/loading.gif",  
-                effect:"fadeIn"
-              });
-            });
-    </script>   
+
+
+<!-- lazyload -->
+<script type="text/javascript" src="/js/lazyload.js"></script>
+<script type="text/javascript">
+    jQuery(function () {
+        jQuery("#posts img").lazyload({
+            placeholder: "/images/loading.gif",
+            effect: "fadeIn"
+        });
+    });
+</script>
 </body>
 </html>

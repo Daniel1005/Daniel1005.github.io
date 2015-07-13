@@ -1,11 +1,15 @@
 <!doctype html>
 <html class="theme-next use-motion theme-next-mist">
 <head>
-  
+    
 
 <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
 
 
@@ -16,8 +20,10 @@
 
 
 
+  <link href='//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 
-<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.2"/>
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.3"/>
 
 
 
@@ -30,28 +36,137 @@
 
 
 
-  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.2" />
+  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.3" />
 
+
+<meta name="description" content="STL中有一个优先队列的容器可以使用。
+
+头文件
+
+queue 队列容器
+vector 向量容器
+
+操作
+
+优先级队列支持的操作
+
+
+
+调用
+功能
+
+
+
+
+q.empty()
+如果队列为空，则返回true，否则返回false
+
+
+q.size()
+返回队列中元素的个数
+
+
+q.pop()
+删除队首元素，但不返回其值
+
+
+q.top()
+返回具有最高优先级的元素值，但不删除该元素
+
+
+q.push(">
+<meta property="og:type" content="article">
+<meta property="og:title" content="STL中优先队列的使用">
+<meta property="og:url" content="http://jcf94.github.io/2014/09/06/2014/2014-09-06-stl-queue/index.html">
+<meta property="og:site_name" content="Chenfan's blog">
+<meta property="og:description" content="STL中有一个优先队列的容器可以使用。
+
+头文件
+
+queue 队列容器
+vector 向量容器
+
+操作
+
+优先级队列支持的操作
+
+
+
+调用
+功能
+
+
+
+
+q.empty()
+如果队列为空，则返回true，否则返回false
+
+
+q.size()
+返回队列中元素的个数
+
+
+q.pop()
+删除队首元素，但不返回其值
+
+
+q.top()
+返回具有最高优先级的元素值，但不删除该元素
+
+
+q.push(">
+<meta property="og:updated_time" content="2015-07-13T01:34:45.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="STL中优先队列的使用">
+<meta name="twitter:description" content="STL中有一个优先队列的容器可以使用。
+
+头文件
+
+queue 队列容器
+vector 向量容器
+
+操作
+
+优先级队列支持的操作
+
+
+
+调用
+功能
+
+
+
+
+q.empty()
+如果队列为空，则返回true，否则返回false
+
+
+q.size()
+返回队列中元素的个数
+
+
+q.pop()
+删除队首元素，但不返回其值
+
+
+q.top()
+返回具有最高优先级的元素值，但不删除该元素
+
+
+q.push(">
 
 
 <script type="text/javascript" id="hexo.configuration">
   var CONFIG = {
     scheme: 'Mist',
-    analytics: {
-      google: ''
-    },
     sidebar: 'post'
   };
 </script>
 
-
-
-
-  <title> STL中优先队列的使用 // Chenfan's blog </title>
+    <title> STL中优先队列的使用 // Chenfan's blog </title>
 </head>
-
-<body>
-  <!--[if lte IE 8]>
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
+<!--[if lte IE 8]>
   <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
     <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
       <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
@@ -61,14 +176,15 @@
   </div>
 <![endif]-->
 
-  <div class="container one-column page-post-detail">
-    <div class="headband"></div>
 
-    <div id="header" class="header">
-      <div class="header-inner">
-        <h1 class="site-meta">
+
+
+<div class="container one-column page-post-detail">
+    <div class="headband"></div>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner"><h1 class="site-meta">
   <span class="logo-line-before"><i></i></span>
-  <a href="/" class="brand">
+  <a href="/" class="brand" rel="start">
       <span class="logo">
         <i class="icon-logo"></i>
       </span>
@@ -85,7 +201,7 @@
   </button>
 </div>
 
-<div class="site-nav">
+<nav class="site-nav">
   
 
   
@@ -93,7 +209,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/">
+          <a href="/" rel="section">
             <i class="menu-item-icon icon-home"></i> <br />
             首頁
           </a>
@@ -101,7 +217,7 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives">
+          <a href="/archives" rel="section">
             <i class="menu-item-icon icon-archives"></i> <br />
             歸檔
           </a>
@@ -109,7 +225,7 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories">
+          <a href="/categories" rel="section">
             <i class="menu-item-icon icon-categories"></i> <br />
             分類
           </a>
@@ -117,7 +233,7 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags">
+          <a href="/tags" rel="section">
             <i class="menu-item-icon icon-tags"></i> <br />
             標籤
           </a>
@@ -125,7 +241,7 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about">
+          <a href="/about" rel="section">
             <i class="menu-item-icon icon-about"></i> <br />
             關於
           </a>
@@ -135,26 +251,26 @@
   
 
   
-</div>
+</nav>
 
 
-      </div>
-    </div>
+        </div>
+    </header>
 
-    <div id="main" class="main">
-      <div class="main-inner">
-        <div id="content" class="content">
-          
+    <main id="main" class="main">
+        <div class="main-inner">
+            <div id="content" class="content">
+                
 
   <div id="posts" class="posts-expand">
     
 
-  <div class="post post-type-normal ">
-    <div class="post-header">
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
 
       
       
-        <h1 class="post-title">
+        <h1 class="post-title" itemprop="name headline">
           
           
             
@@ -166,14 +282,17 @@
 
       <div class="post-meta">
         <span class="post-time">
-          發表於 2014-09-06
+          發表於
+          <time itemprop="dateCreated" datetime="2014-09-06T21:17:41+08:00" content="2014-09-06">
+            2014-09-06
+          </time>
         </span>
 
         
-          <span class="post-category">
+          <span class="post-category" >
             &nbsp; | &nbsp; 分類於
             
-              <a href="/categories/ACM/">ACM</a>
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/ACM/" itemprop="url" rel="index"><span itemprop="name">ACM</span></a></span>
 
               
               
@@ -181,7 +300,7 @@
               
 
             
-              <a href="/categories/ACM/算法学习/">算法学习</a>
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/ACM/算法学习/" itemprop="url" rel="index"><span itemprop="name">算法学习</span></a></span>
 
               
               
@@ -193,15 +312,15 @@
         
           
             <span class="post-comments-count">
-            &nbsp; | &nbsp;
-            <a href="/2014/09/06/2014/2014-09-06-stl-queue/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2014/09/06/2014/2014-09-06-stl-queue/"></span>
-            </a>
-          </span>
+              &nbsp; | &nbsp;
+              <a href="/2014/09/06/2014/2014-09-06-stl-queue/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2014/09/06/2014/2014-09-06-stl-queue/" itemprop="commentsCount"></span>
+              </a>
+            </span>
           
         
       </div>
-    </div>
+    </header>
 
     <div class="post-body">
 
@@ -209,7 +328,7 @@
       
 
       
-        <p>STL中有一个优先队列的容器可以使用。</p>
+        <span itemprop="articleBody"><p>STL中有一个优先队列的容器可以使用。</p>
 <ul>
 <li>头文件</li>
 </ul>
@@ -252,15 +371,15 @@
 <a id="more"></a>
 <p>对于Pascal留下来的手打堆习惯来说，其实对我用处不大，不过好像STL里面的复杂度更低，代码长度也能少点，以后尽量用STL好了。</p>
 <p>测试如下：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span>&lt;iostream&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span>&lt;cstdio&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span>&lt;queue&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> cmp</span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">operator</span><span class="params">()</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span><br><span class="line">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> x&gt;y;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> nod</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">int</span> x,y;</span><br><span class="line">    <span class="keyword">friend</span> <span class="keyword">bool</span> <span class="keyword">operator</span> &lt; (nod a,nod b)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> a.y&gt;b.y;</span><br><span class="line">    &#125;</span><br><span class="line">&#125; node;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    priority_queue&lt;<span class="keyword">int</span>&gt;simple;</span><br><span class="line">    priority_queue&lt;<span class="keyword">int</span>,<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;,cmp&gt;define;</span><br><span class="line">    priority_queue&lt;node&gt;heap;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> a[<span class="number">10</span>]=&#123;<span class="number">20</span>,<span class="number">50</span>,<span class="number">3202</span>,<span class="number">20</span>,<span class="number">503</span>,<span class="number">12</span>,<span class="number">56</span>,<span class="number">62</span>,<span class="number">50</span>,<span class="number">80</span>&#125;;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"Simple Test:\n"</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++) simple.push(a[i]);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">10</span>;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> temp=simple.top();</span><br><span class="line">        simple.pop();</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,temp);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"Define Test:\n"</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++) define.push(a[i]);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">10</span>;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> temp=define.top();</span><br><span class="line">        define.pop();</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,temp);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"Heap Test:\n"</span>);</span><br><span class="line">    node b[<span class="number">10</span>]=&#123;&#123;<span class="number">1</span>,<span class="number">2</span>&#125;,&#123;<span class="number">2</span>,<span class="number">100</span>&#125;,&#123;<span class="number">3</span>,<span class="number">4</span>&#125;,&#123;<span class="number">4</span>,<span class="number">50</span>&#125;,&#123;<span class="number">5</span>,<span class="number">6</span>&#125;,&#123;<span class="number">6</span>,<span class="number">7</span>&#125;,&#123;<span class="number">7</span>,<span class="number">8</span>&#125;,&#123;<span class="number">8</span>,<span class="number">9</span>&#125;,&#123;<span class="number">9</span>,<span class="number">10</span>&#125;,&#123;<span class="number">10</span>,<span class="number">11</span>&#125;&#125;;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++) heap.push(b[i]);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">10</span>;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        node temp=heap.top();</span><br><span class="line">        heap.pop();</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d %d\n"</span>,temp.x,temp.y);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>,<span class="number">2</span>&lt;<span class="number">1</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span>&lt;iostream&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span>&lt;cstdio&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span>&lt;queue&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> cmp</span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">operator</span><span class="params">()</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span><br><span class="line">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> x&gt;y;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> nod</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">int</span> x,y;</span><br><span class="line">    <span class="keyword">friend</span> <span class="keyword">bool</span> <span class="keyword">operator</span> &lt; (nod a,nod b)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> a.y&gt;b.y;</span><br><span class="line">    &#125;</span><br><span class="line">&#125; node;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    priority_queue&lt;<span class="keyword">int</span>&gt;simple;</span><br><span class="line">    priority_queue&lt;<span class="keyword">int</span>,<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;,cmp&gt;define;</span><br><span class="line">    priority_queue&lt;node&gt;heap;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> a[<span class="number">10</span>]=&#123;<span class="number">20</span>,<span class="number">50</span>,<span class="number">3202</span>,<span class="number">20</span>,<span class="number">503</span>,<span class="number">12</span>,<span class="number">56</span>,<span class="number">62</span>,<span class="number">50</span>,<span class="number">80</span>&#125;;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"Simple Test:\n"</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++) simple.push(a[i]);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">10</span>;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> temp=simple.top();</span><br><span class="line">        simple.pop();</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,temp);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"Define Test:\n"</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++) define.push(a[i]);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">10</span>;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> temp=define.top();</span><br><span class="line">        define.pop();</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,temp);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"Heap Test:\n"</span>);</span><br><span class="line">    node b[<span class="number">10</span>]=&#123;&#123;<span class="number">1</span>,<span class="number">2</span>&#125;,&#123;<span class="number">2</span>,<span class="number">100</span>&#125;,&#123;<span class="number">3</span>,<span class="number">4</span>&#125;,&#123;<span class="number">4</span>,<span class="number">50</span>&#125;,&#123;<span class="number">5</span>,<span class="number">6</span>&#125;,&#123;<span class="number">6</span>,<span class="number">7</span>&#125;,&#123;<span class="number">7</span>,<span class="number">8</span>&#125;,&#123;<span class="number">8</span>,<span class="number">9</span>&#125;,&#123;<span class="number">9</span>,<span class="number">10</span>&#125;,&#123;<span class="number">10</span>,<span class="number">11</span>&#125;&#125;;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++) heap.push(b[i]);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">10</span>;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        node temp=heap.top();</span><br><span class="line">        heap.pop();</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d %d\n"</span>,temp.x,temp.y);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>,<span class="number">2</span>&lt;<span class="number">1</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></span>
       
     </div>
 
-    <div class="post-footer">
+    <footer class="post-footer">
       
         <div class="post-tags">
           
-            <a href="/tags/优先队列/"> #优先队列 </a>
+            <a href="/tags/优先队列/" rel="tag">#优先队列</a>
           
         </div>
       
@@ -269,13 +388,13 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2014/09/07/2014/2014-09-07-HDU-1589-Find-The-Most-Comfortable-Road/">HDU 1589 Find The Most Comfortable Road 最小生成树+枚举</a>
+              <a href="/2014/09/07/2014/2014-09-07-HDU-1589-Find-The-Most-Comfortable-Road/" rel="prev">HDU 1589 Find The Most Comfortable Road 最小生成树+枚举</a>
             
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2014/09/06/2014/2014-09-06-HDU-2489-Minimal-Ratio-Tree/">HDU 2489 Minimal Ratio Tree 最小生成树+DFS</a>
+              <a href="/2014/09/06/2014/2014-09-06-HDU-2489-Minimal-Ratio-Tree/" rel="next">HDU 2489 Minimal Ratio Tree 最小生成树+DFS</a>
             
           </div>
         </div>
@@ -283,8 +402,8 @@
 
       
       
-    </div>
-  </div>
+    </footer>
+  </article>
 
 
 
@@ -316,7 +435,7 @@
     </div>
 
     
-      <div class="comments" id="comments">
+      <div class="comments" id="comments" itemscope itemtype="http://schema.org/UserComments">
         
           <div class="ds-thread" data-thread-key="2014/09/06/2014/2014-09-06-stl-queue/"
                data-title="STL中优先队列的使用" data-url="http://jcf94.github.io/2014/09/06/2014/2014-09-06-stl-queue/">
@@ -327,13 +446,11 @@
   </div>
 
 
-        </div>
+            </div>
+
+            
 
         
-      </div>
-
-
-      
   
   <div class="sidebar-toggle">
     <div class="sidebar-toggle-line-wrap">
@@ -343,12 +460,12 @@
     </div>
   </div>
 
-  <div id="sidebar" class="sidebar">
+  <aside id="sidebar" class="sidebar">
     <div class="sidebar-inner">
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
             文章目錄
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -357,14 +474,13 @@
         </ul>
       
 
-      <div class="site-overview">
-        <div class="site-author motion-element">
-          <img class="site-author-image" src="/images/photo.jpg" alt="Jcf94" />
-          <p class="site-author-name">Jcf94</p>
-          <p class="site-subtitle">It's the way I choose.</p>
+      <section class="site-overview">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="/images/photo.jpg" alt="Jcf94" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">Jcf94</p>
         </div>
-        <p class="site-description motion-element"></p>
-        <div class="site-state motion-element">
+        <p class="site-description motion-element" itemprop="description"></p>
+        <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
               <span class="site-state-item-count">63</span>
@@ -386,11 +502,11 @@
               </a>
           </div>
 
-        </div>
+        </nav>
 
         
           <div class="feed-link motion-element">
-            <a href="/atom.xml">
+            <a href="/atom.xml" rel="alternate">
               <i class="menu-item-icon icon-feed"></i>
               RSS
             </a>
@@ -401,27 +517,27 @@
           
             
               <span class="links-of-author-item">
-              <a href="https://github.com/jcf94" target="_blank">Github</a>
-            </span>
+                <a href="https://github.com/jcf94" target="_blank">Github</a>
+              </span>
             
               <span class="links-of-author-item">
-              <a href="http://weibo.com/jcf94" target="_blank">Weibo</a>
-            </span>
+                <a href="http://weibo.com/jcf94" target="_blank">Weibo</a>
+              </span>
             
               <span class="links-of-author-item">
-              <a href="http://www.zhihu.com/people/jcf94" target="_blank">Zhihu</a>
-            </span>
+                <a href="http://www.zhihu.com/people/jcf94" target="_blank">Zhihu</a>
+              </span>
             
               <span class="links-of-author-item">
-              <a href="mailto:jcf94@outlook.com" target="_blank">Mail</a>
-            </span>
+                <a href="mailto:jcf94@outlook.com" target="_blank">Mail</a>
+              </span>
             
           
         </div>
 
         
         
-          <div class="cc-license motion-element">
+          <div class="cc-license motion-element" itemprop="license">
             <a href="http://creativecommons.org/licenses/by-nc-sa/4.0" class="cc-opacity" target="_blank">
               <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
             </a>
@@ -431,11 +547,11 @@
         <div class="links-of-author motion-element">
           
         </div>
-        
-      </div>
+
+      </section>
 
       
-        <div class="post-toc-wrap sidebar-panel-active">
+        <section class="post-toc-wrap sidebar-panel-active">
           <div class="post-toc-indicator-top post-toc-indicator"></div>
           <div class="post-toc">
             
@@ -444,25 +560,25 @@
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
-        </div>
+        </section>
       
 
     </div>
-  </div>
+  </aside>
 
 
-    </div>
+    </main>
 
-    <div id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">
+    <footer id="footer" class="footer">
+        <div class="footer-inner">
+            <div class="copyright" >
   
   &copy; &nbsp; 
-  2015
+  <span itemprop="copyrightYear">2015</span>
   <span class="with-love">
     <i class="icon-heart"></i>
   </span>
-  <span class="author">Jcf94</span>
+  <span class="author" itemprop="copyrightHolder">Jcf94</span>
 </div>
 
 <div class="powered-by">
@@ -478,37 +594,57 @@
 
 
 
-      </div>
-    </div>
+        </div>
+    </footer>
 
     <div class="back-to-top"></div>
-  </div>
+</div>
 
-  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+<script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
 
   
   
+  
+    
 
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"jcf94"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+    
+  
   
   <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
-  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.2"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.3"></script>
 
 
-  <script type="text/javascript" src="/js/helpers.js?v=0.4.2"></script>
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.3"></script>
   
 
   <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
   <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
 
-  <script type="text/javascript" src="/js/motion_global.js?v=0.4.2" id="motion.global"></script>
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.3" id="motion.global"></script>
 
 
 
   <script type="text/javascript" src="/js/search-toggle.js"></script>
 
+
   
-  
-<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.2" id="bootstrap.scrollspy.custom"></script>
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.3" id="bootstrap.scrollspy.custom"></script>
 
 
 <script type="text/javascript" id="sidebar.toc.highlight">
@@ -647,15 +783,15 @@
 
 
 
-  <script type="text/javascript">
+<script type="text/javascript">
     $(document).ready(function () {
-      if (CONFIG.sidebar === 'always') {
-        displaySidebar();
-      }
+        if (CONFIG.sidebar === 'always') {
+            displaySidebar();
+        }
     });
-  </script>
+</script>
 
-  
+
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     tex2jax: {
@@ -678,41 +814,20 @@
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
 
-  
-  
-
-  
-    
-  
-
-  <script type="text/javascript">
-    var duoshuoQuery = {short_name:"jcf94"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
-
-  
 
 
-  
-  
 
-  
-  <!-- lazyload -->
-  <script type="text/javascript" src="/js/lazyload.js"></script>
-      <script type="text/javascript">
-        jQuery(function() {          
-            jQuery("#posts img").lazyload({
-              placeholder:"http://www.arao.me/loading.gif",  
-                effect:"fadeIn"
-              });
-            });
-    </script>   
+
+
+<!-- lazyload -->
+<script type="text/javascript" src="/js/lazyload.js"></script>
+<script type="text/javascript">
+    jQuery(function () {
+        jQuery("#posts img").lazyload({
+            placeholder: "/images/loading.gif",
+            effect: "fadeIn"
+        });
+    });
+</script>
 </body>
 </html>

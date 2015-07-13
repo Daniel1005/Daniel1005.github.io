@@ -1,11 +1,15 @@
 <!doctype html>
 <html class="theme-next use-motion theme-next-mist">
 <head>
-  
+    
 
 <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
 
 
@@ -16,8 +20,10 @@
 
 
 
+  <link href='//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 
-<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.2"/>
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.3"/>
 
 
 
@@ -30,28 +36,35 @@
 
 
 
-  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.2" />
+  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.3" />
 
+
+<meta name="description" content="The Experience of LoveTime Limit: 4000/2000 MS (Java/Others)    Memory Limit: 65536/65536 K (Java/Others)
+Problem DescriptionA girl named Gorwin and a boy named Vivin is a couple. They arrived at a co">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HDU 5176 The Experience of Love 带权并查集">
+<meta property="og:url" content="http://jcf94.github.io/2015/02/27/2015/2015-02-27-HDU-5176/index.html">
+<meta property="og:site_name" content="Chenfan's blog">
+<meta property="og:description" content="The Experience of LoveTime Limit: 4000/2000 MS (Java/Others)    Memory Limit: 65536/65536 K (Java/Others)
+Problem DescriptionA girl named Gorwin and a boy named Vivin is a couple. They arrived at a co">
+<meta property="og:updated_time" content="2015-07-13T01:43:29.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HDU 5176 The Experience of Love 带权并查集">
+<meta name="twitter:description" content="The Experience of LoveTime Limit: 4000/2000 MS (Java/Others)    Memory Limit: 65536/65536 K (Java/Others)
+Problem DescriptionA girl named Gorwin and a boy named Vivin is a couple. They arrived at a co">
 
 
 <script type="text/javascript" id="hexo.configuration">
   var CONFIG = {
     scheme: 'Mist',
-    analytics: {
-      google: ''
-    },
     sidebar: 'post'
   };
 </script>
 
-
-
-
-  <title> HDU 5176 The Experience of Love 带权并查集 // Chenfan's blog </title>
+    <title> HDU 5176 The Experience of Love 带权并查集 // Chenfan's blog </title>
 </head>
-
-<body>
-  <!--[if lte IE 8]>
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
+<!--[if lte IE 8]>
   <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
     <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
       <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
@@ -61,14 +74,15 @@
   </div>
 <![endif]-->
 
-  <div class="container one-column page-post-detail">
-    <div class="headband"></div>
 
-    <div id="header" class="header">
-      <div class="header-inner">
-        <h1 class="site-meta">
+
+
+<div class="container one-column page-post-detail">
+    <div class="headband"></div>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner"><h1 class="site-meta">
   <span class="logo-line-before"><i></i></span>
-  <a href="/" class="brand">
+  <a href="/" class="brand" rel="start">
       <span class="logo">
         <i class="icon-logo"></i>
       </span>
@@ -85,7 +99,7 @@
   </button>
 </div>
 
-<div class="site-nav">
+<nav class="site-nav">
   
 
   
@@ -93,7 +107,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/">
+          <a href="/" rel="section">
             <i class="menu-item-icon icon-home"></i> <br />
             首頁
           </a>
@@ -101,7 +115,7 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives">
+          <a href="/archives" rel="section">
             <i class="menu-item-icon icon-archives"></i> <br />
             歸檔
           </a>
@@ -109,7 +123,7 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories">
+          <a href="/categories" rel="section">
             <i class="menu-item-icon icon-categories"></i> <br />
             分類
           </a>
@@ -117,7 +131,7 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags">
+          <a href="/tags" rel="section">
             <i class="menu-item-icon icon-tags"></i> <br />
             標籤
           </a>
@@ -125,7 +139,7 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about">
+          <a href="/about" rel="section">
             <i class="menu-item-icon icon-about"></i> <br />
             關於
           </a>
@@ -135,26 +149,26 @@
   
 
   
-</div>
+</nav>
 
 
-      </div>
-    </div>
+        </div>
+    </header>
 
-    <div id="main" class="main">
-      <div class="main-inner">
-        <div id="content" class="content">
-          
+    <main id="main" class="main">
+        <div class="main-inner">
+            <div id="content" class="content">
+                
 
   <div id="posts" class="posts-expand">
     
 
-  <div class="post post-type-normal ">
-    <div class="post-header">
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
 
       
       
-        <h1 class="post-title">
+        <h1 class="post-title" itemprop="name headline">
           
           
             
@@ -166,14 +180,17 @@
 
       <div class="post-meta">
         <span class="post-time">
-          發表於 2015-02-27
+          發表於
+          <time itemprop="dateCreated" datetime="2015-02-27T20:50:48+08:00" content="2015-02-27">
+            2015-02-27
+          </time>
         </span>
 
         
-          <span class="post-category">
+          <span class="post-category" >
             &nbsp; | &nbsp; 分類於
             
-              <a href="/categories/ACM/">ACM</a>
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/ACM/" itemprop="url" rel="index"><span itemprop="name">ACM</span></a></span>
 
               
               
@@ -181,7 +198,7 @@
               
 
             
-              <a href="/categories/ACM/训练/">训练</a>
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/ACM/训练/" itemprop="url" rel="index"><span itemprop="name">训练</span></a></span>
 
               
               
@@ -193,15 +210,15 @@
         
           
             <span class="post-comments-count">
-            &nbsp; | &nbsp;
-            <a href="/2015/02/27/2015/2015-02-27-HDU-5176/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2015/02/27/2015/2015-02-27-HDU-5176/"></span>
-            </a>
-          </span>
+              &nbsp; | &nbsp;
+              <a href="/2015/02/27/2015/2015-02-27-HDU-5176/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/02/27/2015/2015-02-27-HDU-5176/" itemprop="commentsCount"></span>
+              </a>
+            </span>
           
         
       </div>
-    </div>
+    </header>
 
     <div class="post-body">
 
@@ -209,7 +226,7 @@
       
 
       
-        <h1 id="The_Experience_of_Love">The Experience of Love</h1><p>Time Limit: 4000/2000 MS (Java/Others)    Memory Limit: 65536/65536 K (Java/Others)</p>
+        <span itemprop="articleBody"><h1 id="The_Experience_of_Love">The Experience of Love</h1><p>Time Limit: 4000/2000 MS (Java/Others)    Memory Limit: 65536/65536 K (Java/Others)</p>
 <h2 id="Problem_Description">Problem Description</h2><p>A girl named Gorwin and a boy named Vivin is a couple. They arrived at a country named LOVE. The country consisting of N cities and only N−1 edges (just like a tree), every edge has a value means the distance of two cities. They select two cities to live，Gorwin living in a city and Vivin living in another. First date, Gorwin go to visit Vivin, she would write down the longest edge on this path(maxValue).Second date, Vivin go to Gorwin, he would write down the shortest edge on this path(minValue),then calculate the result of maxValue subtracts minValue as the experience of love, and then reselect two cities to live and calculate new experience of love, repeat again and again.</p>
 <a id="more"></a>
 <p>Please help them to calculate the sum of all experience of love after they have selected all cases.</p>
@@ -237,15 +254,15 @@
 <p>根据这个想法，可以首先对所有边进行排序，用并查集维护点对集关系，用权保存下每个点集中点的总数，用于每次得到一条边两端连接的点的个数。</p>
 <p>最长边总和与最短边总和的思路完全一样，改一下代码方向即可。</p>
 <h2 id="注意">注意</h2><p>这里还有个坑是注意数据范围，要开到unsigned long long</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* ***********************************************</span><br><span class="line">MYID    : Chen Fan</span><br><span class="line">LANG    : G++</span><br><span class="line">PROG    : HDU5176</span><br><span class="line">************************************************ */</span></span><br><span class="line"></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;iostream&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;cstdio&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;cstring&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;algorithm&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> nod</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">int</span> a,b,c;</span><br><span class="line">&#125; node;</span><br><span class="line"></span><br><span class="line">node a[<span class="number">150010</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">op</span><span class="params">(node a,node b)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (a.c==b.c) <span class="keyword">return</span> a.a&lt;b.a;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> a.c&lt;b.c;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> father[<span class="number">150010</span>],rank[<span class="number">150010</span>]; </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">clean_father</span><span class="params">(<span class="keyword">int</span> n)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        father[i]=i;</span><br><span class="line">        rank[i]=<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getfather</span><span class="params">(<span class="keyword">int</span> x)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (father[x]!=x) father[x]=getfather(father[x]);</span><br><span class="line">    <span class="keyword">return</span> father[x];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">link</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> xx=getfather(x),yy=getfather(y);</span><br><span class="line">    father[xx]=yy;</span><br><span class="line">    rank[yy]+=rank[xx];</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n,t=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n)==<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;n;i++)</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>,&amp;a[i].a,&amp;a[i].b,&amp;a[i].c);</span><br><span class="line">        </span><br><span class="line">        sort(&amp;a[<span class="number">1</span>],&amp;a[n],op);</span><br><span class="line">        clean_father(n);</span><br><span class="line">        <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> ans1=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;n;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> x=getfather(a[i].a),y=getfather(a[i].b);</span><br><span class="line">            ans1+=(<span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span>)rank[x]*rank[y]*a[i].c;</span><br><span class="line">            link(x,y);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        clean_father(n);</span><br><span class="line">        <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> ans2=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=n-<span class="number">1</span>;i&gt;=<span class="number">1</span>;i--)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> x=getfather(a[i].a),y=getfather(a[i].b);</span><br><span class="line">            ans2+=(<span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span>)rank[x]*rank[y]*a[i].c;</span><br><span class="line">            link(x,y);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        t++;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"Case #%d: %llu\n"</span>,t,ans1-ans2);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* ***********************************************</span><br><span class="line">MYID    : Chen Fan</span><br><span class="line">LANG    : G++</span><br><span class="line">PROG    : HDU5176</span><br><span class="line">************************************************ */</span></span><br><span class="line"></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;iostream&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;cstdio&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;cstring&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;algorithm&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> nod</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">int</span> a,b,c;</span><br><span class="line">&#125; node;</span><br><span class="line"></span><br><span class="line">node a[<span class="number">150010</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">op</span><span class="params">(node a,node b)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (a.c==b.c) <span class="keyword">return</span> a.a&lt;b.a;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> a.c&lt;b.c;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> father[<span class="number">150010</span>],rank[<span class="number">150010</span>]; </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">clean_father</span><span class="params">(<span class="keyword">int</span> n)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        father[i]=i;</span><br><span class="line">        rank[i]=<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getfather</span><span class="params">(<span class="keyword">int</span> x)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (father[x]!=x) father[x]=getfather(father[x]);</span><br><span class="line">    <span class="keyword">return</span> father[x];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">link</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> xx=getfather(x),yy=getfather(y);</span><br><span class="line">    father[xx]=yy;</span><br><span class="line">    rank[yy]+=rank[xx];</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n,t=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n)==<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;n;i++)</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>,&amp;a[i].a,&amp;a[i].b,&amp;a[i].c);</span><br><span class="line">        </span><br><span class="line">        sort(&amp;a[<span class="number">1</span>],&amp;a[n],op);</span><br><span class="line">        clean_father(n);</span><br><span class="line">        <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> ans1=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;n;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> x=getfather(a[i].a),y=getfather(a[i].b);</span><br><span class="line">            ans1+=(<span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span>)rank[x]*rank[y]*a[i].c;</span><br><span class="line">            link(x,y);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        clean_father(n);</span><br><span class="line">        <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> ans2=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=n-<span class="number">1</span>;i&gt;=<span class="number">1</span>;i--)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> x=getfather(a[i].a),y=getfather(a[i].b);</span><br><span class="line">            ans2+=(<span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span>)rank[x]*rank[y]*a[i].c;</span><br><span class="line">            link(x,y);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        t++;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"Case #%d: %llu\n"</span>,t,ans1-ans2);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></span>
       
     </div>
 
-    <div class="post-footer">
+    <footer class="post-footer">
       
         <div class="post-tags">
           
-            <a href="/tags/并查集/"> #并查集 </a>
+            <a href="/tags/并查集/" rel="tag">#并查集</a>
           
         </div>
       
@@ -254,13 +271,13 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/03/08/2015/2015-03-08-HDU-4006-The-kth-great-number/">HDU 4006 The kth great number 优先队列、平衡树模板题（SBT）</a>
+              <a href="/2015/03/08/2015/2015-03-08-HDU-4006-The-kth-great-number/" rel="prev">HDU 4006 The kth great number 优先队列、平衡树模板题（SBT）</a>
             
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/02/16/2015/2015-02-16-HDU-5172/">HDU 5172 GTY's gay friends 线段树</a>
+              <a href="/2015/02/16/2015/2015-02-16-HDU-5172/" rel="next">HDU 5172 GTY's gay friends 线段树</a>
             
           </div>
         </div>
@@ -268,8 +285,8 @@
 
       
       
-    </div>
-  </div>
+    </footer>
+  </article>
 
 
 
@@ -301,7 +318,7 @@
     </div>
 
     
-      <div class="comments" id="comments">
+      <div class="comments" id="comments" itemscope itemtype="http://schema.org/UserComments">
         
           <div class="ds-thread" data-thread-key="2015/02/27/2015/2015-02-27-HDU-5176/"
                data-title="HDU 5176 The Experience of Love 带权并查集" data-url="http://jcf94.github.io/2015/02/27/2015/2015-02-27-HDU-5176/">
@@ -312,13 +329,11 @@
   </div>
 
 
-        </div>
+            </div>
+
+            
 
         
-      </div>
-
-
-      
   
   <div class="sidebar-toggle">
     <div class="sidebar-toggle-line-wrap">
@@ -328,12 +343,12 @@
     </div>
   </div>
 
-  <div id="sidebar" class="sidebar">
+  <aside id="sidebar" class="sidebar">
     <div class="sidebar-inner">
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
             文章目錄
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -342,14 +357,13 @@
         </ul>
       
 
-      <div class="site-overview">
-        <div class="site-author motion-element">
-          <img class="site-author-image" src="/images/photo.jpg" alt="Jcf94" />
-          <p class="site-author-name">Jcf94</p>
-          <p class="site-subtitle">It's the way I choose.</p>
+      <section class="site-overview">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="/images/photo.jpg" alt="Jcf94" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">Jcf94</p>
         </div>
-        <p class="site-description motion-element"></p>
-        <div class="site-state motion-element">
+        <p class="site-description motion-element" itemprop="description"></p>
+        <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
               <span class="site-state-item-count">63</span>
@@ -371,11 +385,11 @@
               </a>
           </div>
 
-        </div>
+        </nav>
 
         
           <div class="feed-link motion-element">
-            <a href="/atom.xml">
+            <a href="/atom.xml" rel="alternate">
               <i class="menu-item-icon icon-feed"></i>
               RSS
             </a>
@@ -386,27 +400,27 @@
           
             
               <span class="links-of-author-item">
-              <a href="https://github.com/jcf94" target="_blank">Github</a>
-            </span>
+                <a href="https://github.com/jcf94" target="_blank">Github</a>
+              </span>
             
               <span class="links-of-author-item">
-              <a href="http://weibo.com/jcf94" target="_blank">Weibo</a>
-            </span>
+                <a href="http://weibo.com/jcf94" target="_blank">Weibo</a>
+              </span>
             
               <span class="links-of-author-item">
-              <a href="http://www.zhihu.com/people/jcf94" target="_blank">Zhihu</a>
-            </span>
+                <a href="http://www.zhihu.com/people/jcf94" target="_blank">Zhihu</a>
+              </span>
             
               <span class="links-of-author-item">
-              <a href="mailto:jcf94@outlook.com" target="_blank">Mail</a>
-            </span>
+                <a href="mailto:jcf94@outlook.com" target="_blank">Mail</a>
+              </span>
             
           
         </div>
 
         
         
-          <div class="cc-license motion-element">
+          <div class="cc-license motion-element" itemprop="license">
             <a href="http://creativecommons.org/licenses/by-nc-sa/4.0" class="cc-opacity" target="_blank">
               <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
             </a>
@@ -416,11 +430,11 @@
         <div class="links-of-author motion-element">
           
         </div>
-        
-      </div>
+
+      </section>
 
       
-        <div class="post-toc-wrap sidebar-panel-active">
+        <section class="post-toc-wrap sidebar-panel-active">
           <div class="post-toc-indicator-top post-toc-indicator"></div>
           <div class="post-toc">
             
@@ -429,25 +443,25 @@
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
-        </div>
+        </section>
       
 
     </div>
-  </div>
+  </aside>
 
 
-    </div>
+    </main>
 
-    <div id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">
+    <footer id="footer" class="footer">
+        <div class="footer-inner">
+            <div class="copyright" >
   
   &copy; &nbsp; 
-  2015
+  <span itemprop="copyrightYear">2015</span>
   <span class="with-love">
     <i class="icon-heart"></i>
   </span>
-  <span class="author">Jcf94</span>
+  <span class="author" itemprop="copyrightHolder">Jcf94</span>
 </div>
 
 <div class="powered-by">
@@ -463,37 +477,57 @@
 
 
 
-      </div>
-    </div>
+        </div>
+    </footer>
 
     <div class="back-to-top"></div>
-  </div>
+</div>
 
-  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+<script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
 
   
   
+  
+    
 
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"jcf94"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+    
+  
   
   <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
-  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.2"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.3"></script>
 
 
-  <script type="text/javascript" src="/js/helpers.js?v=0.4.2"></script>
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.3"></script>
   
 
   <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
   <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
 
-  <script type="text/javascript" src="/js/motion_global.js?v=0.4.2" id="motion.global"></script>
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.3" id="motion.global"></script>
 
 
 
   <script type="text/javascript" src="/js/search-toggle.js"></script>
 
+
   
-  
-<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.2" id="bootstrap.scrollspy.custom"></script>
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.3" id="bootstrap.scrollspy.custom"></script>
 
 
 <script type="text/javascript" id="sidebar.toc.highlight">
@@ -632,15 +666,15 @@
 
 
 
-  <script type="text/javascript">
+<script type="text/javascript">
     $(document).ready(function () {
-      if (CONFIG.sidebar === 'always') {
-        displaySidebar();
-      }
+        if (CONFIG.sidebar === 'always') {
+            displaySidebar();
+        }
     });
-  </script>
+</script>
 
-  
+
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     tex2jax: {
@@ -663,41 +697,20 @@
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
 
-  
-  
-
-  
-    
-  
-
-  <script type="text/javascript">
-    var duoshuoQuery = {short_name:"jcf94"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
-
-  
 
 
-  
-  
 
-  
-  <!-- lazyload -->
-  <script type="text/javascript" src="/js/lazyload.js"></script>
-      <script type="text/javascript">
-        jQuery(function() {          
-            jQuery("#posts img").lazyload({
-              placeholder:"http://www.arao.me/loading.gif",  
-                effect:"fadeIn"
-              });
-            });
-    </script>   
+
+
+<!-- lazyload -->
+<script type="text/javascript" src="/js/lazyload.js"></script>
+<script type="text/javascript">
+    jQuery(function () {
+        jQuery("#posts img").lazyload({
+            placeholder: "/images/loading.gif",
+            effect: "fadeIn"
+        });
+    });
+</script>
 </body>
 </html>
