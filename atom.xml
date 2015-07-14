@@ -4,7 +4,7 @@
   <subtitle><![CDATA[It's the way I choose.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://jcf94.github.io/"/>
-  <updated>2015-07-13T12:43:12.995Z</updated>
+  <updated>2015-07-14T01:33:29.123Z</updated>
   <id>http://jcf94.github.io/</id>
   
   <author>
@@ -19,17 +19,20 @@
     <link href="http://jcf94.github.io/2015/07/13/2015-07-13-makefile/"/>
     <id>http://jcf94.github.io/2015/07/13/2015-07-13-makefile/</id>
     <published>2015-07-13T12:30:54.000Z</published>
-    <updated>2015-07-13T12:43:12.995Z</updated>
+    <updated>2015-07-14T01:33:29.123Z</updated>
     <content type="html"><![CDATA[<p>之前啃内核的时候就见过这个东西，整理项目的时候正好用到，顺便好好学习一下。</p>
+<p>详见：<a href="http://blog.csdn.net/ruglcc/article/details/7814546/" target="_blank" rel="external">Makefile经典教程(掌握这些足够)</a></p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>之前啃内核的时候就见过这个东西，整理项目的时候正好用到，顺便好好学习一下。</p>
-]]>
+<p>详见：<a href="http://blog.csdn.net/ruglcc/article/details/7814546/" target="_blank" rel="exter]]>
     </summary>
     
       <category term="Linux" scheme="http://jcf94.github.io/tags/Linux/"/>
     
       <category term="Makefile" scheme="http://jcf94.github.io/tags/Makefile/"/>
+    
+      <category term="shell" scheme="http://jcf94.github.io/tags/shell/"/>
     
       <category term="内核编译" scheme="http://jcf94.github.io/tags/%E5%86%85%E6%A0%B8%E7%BC%96%E8%AF%91/"/>
     
@@ -44,18 +47,29 @@
     <link href="http://jcf94.github.io/2015/07/12/2015-07-12-uzebox/"/>
     <id>http://jcf94.github.io/2015/07/12/2015-07-12-uzebox/</id>
     <published>2015-07-12T12:30:40.000Z</published>
-    <updated>2015-07-13T12:43:47.873Z</updated>
+    <updated>2015-07-14T06:30:34.860Z</updated>
     <content type="html"><![CDATA[<p>大二开始几个小伙伴一起跟<a href="http://john101.jimdo.com/" target="_blank" rel="external">杨俊老师</a>做了个单片机的小东西</p>
 <p>最后感觉也就是水过了</p>
 <p>这几天准备重新把资料理出来看看，没准面试可以用一下。</p>
 <p>Orz</p>
+<p>基本原理:</p>
+<p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-07-12-uzebox-1.jpg" alt="基本原理"></p>
 <a id="more"></a>
+<p>从核心部分开始：</p>
+<p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-07-12-uzebox-2.jpg" alt="总图"></p>
+<h1 id="UZEBOX主机">UZEBOX主机</h1><hr>
+<p>从github上把源代码down下来，打开之后，里面有用的目录有这么几个：</p>
+<blockquote>
+<p>demos 存放的是一些游戏示例<br>gfx 字体、颜色等资源文件<br>kernel 游戏机内核，包括图像引擎和声音引擎<br>tools 编译工具<br>Makefile 编译控制文件</p>
+</blockquote>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>大二开始几个小伙伴一起跟<a href="http://john101.jimdo.com/">杨俊老师</a>做了个单片机的小东西</p>
 <p>最后感觉也就是水过了</p>
 <p>这几天准备重新把资料理出来看看，没准面试可以用一下。</p>
-<p>Orz</p>]]>
+<p>Orz</p>
+<p>基本原理:</p>
+<p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-07-12-uzebox-1.jpg" alt="基本原理"></p>]]>
     
     </summary>
     
