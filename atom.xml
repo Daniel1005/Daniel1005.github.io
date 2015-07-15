@@ -47,7 +47,7 @@
     <link href="http://jcf94.github.io/2015/07/12/2015-07-12-uzebox/"/>
     <id>http://jcf94.github.io/2015/07/12/2015-07-12-uzebox/</id>
     <published>2015-07-12T12:30:40.000Z</published>
-    <updated>2015-07-15T12:17:43.656Z</updated>
+    <updated>2015-07-15T13:19:20.400Z</updated>
     <content type="html"><![CDATA[<p>大二开始几个小伙伴一起跟<a href="http://john101.jimdo.com/" target="_blank" rel="external">杨俊</a>做了个单片机的小东西</p>
 <p>最后感觉也就是水过了</p>
 <p>这几天准备重新把资料理出来看看，没准面试可以用一下。</p>
@@ -95,9 +95,26 @@
 <p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-07-12-uzebox-3.jpg" alt="中断"></p>
 <h3 id="视频引擎">视频引擎</h3><p>内核提供12种不同的工作模式，每种都有不同的特点，用于实现视频绘制</p>
 <h3 id="声音引擎">声音引擎</h3><p>音乐处理涉及到音乐乐谱的读取和波封的处理，这里使用的是MIDI这种紧凑格式的音频，纯软件完成</p>
-<h2 id="详细">详细</h2><p>从github上下到完整的包是这样的</p>
+<h2 id="游戏载入">游戏载入</h2><p>从github上下到完整的包是这样的</p>
 <figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">demos         <span class="comment">//各种运行工具以及游戏包</span></span><br><span class="line">gfx           <span class="comment">//颜色以及图像资源等</span></span><br><span class="line">kernel        <span class="comment">//内核，包括初始化、运行主程序、中断、视频/音频引擎等</span></span><br><span class="line">tools         <span class="comment">//编译工具</span></span><br><span class="line">Makefile      <span class="comment">//编译文件</span></span><br></pre></td></tr></table></figure>
-<p>执行make之后，会产生</p>
+<p>执行make之后，会在Rom目录下生成一些.hex和.uze的文件</p>
+<p>.uze文件是原本生成了.hex文件之后加上首部打包而成</p>
+<p>载入的过程可以有两种：</p>
+<ol>
+<li>直接将游戏包生成好的.hex文件烧录进Atmega644即可</li>
+<li>往单片机中烧录gameloader的.hex文件，之后通过读取SD卡中的.uze文件来载入游戏。gameloader占内存4K，剩下还有60K的内存可供游戏调用</li>
+</ol>
+<h1 id="改进部分">改进部分</h1><hr>
+<p>游戏机制作完成之后，我们对其进行了两方面的改进</p>
+<h2 id="无线传输">无线传输</h2><p><a href="http://anarchy.translocal.jp/radio/micro/howtotx.html" target="_blank" rel="external">参考Tetsuo Kogawa的网站</a></p>
+<p>将视频信号通过一个简易的无线电路发射出去，可以通过一般的CRT电视来接收</p>
+<p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-07-12-uzebox-4.jpg" alt="无线"></p>
+<p>该电路非常简化，制作该电路的时候也是使用双面覆铜板完成</p>
+<p>所有暴露在外面的导线都是尽可能地贴近覆铜板，使高频信号尽可能地衰减掉</p>
+<p>选择一个电视频道，并调节可调电感来使得两个设备相互适配</p>
+<p>当发射机与电视机的距离、频率都调整到一个合适的位置时候，电视机上可以清晰地收到显示的游戏画面</p>
+<h2 id="无线控制">无线控制</h2><p>通过三轴加速度传感器来对感知空间三维姿态，并通过无线的方式将其传递到另一台主机上，主机进一步向外输出控制信号</p>
+<p>这一部分可以代替原始设计中的手柄部分</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>大二开始几个小伙伴一起跟<a href="http://john101.jimdo.com/">杨俊</a>做了个单片机的小东西</p>
