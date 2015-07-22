@@ -4,7 +4,7 @@
   <subtitle><![CDATA[It's the way I choose.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://jcf94.github.io/"/>
-  <updated>2015-07-15T14:07:45.243Z</updated>
+  <updated>2015-07-22T13:30:47.456Z</updated>
   <id>http://jcf94.github.io/</id>
   
   <author>
@@ -15,11 +15,57 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[2015-07-22-ustc]]></title>
+    <link href="http://jcf94.github.io/2015/07/22/2015-07-22-ustc/"/>
+    <id>http://jcf94.github.io/2015/07/22/2015-07-22-ustc/</id>
+    <published>2015-07-22T13:12:30.000Z</published>
+    <updated>2015-07-22T13:30:47.456Z</updated>
+    <content type="html"><![CDATA[<blockquote class="blockquote-center"><br>多图预警，千万不要用流量打开本帖。<br></blockquote>
+
+<p>7月19日到达USTC中科大，开始为期5天的夏令营。</p>
+<p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-07-22-ustc-P50719-150859.jpg" alt="营服"></p>
+<a id="more"></a>
+<hr>
+<h1 id="Day_One">Day One</h1><hr>
+<p>上午开营仪式</p>
+<p>下午参观先研院、科大讯飞</p>
+<h1 id="Day_Two">Day Two</h1><hr>
+<p>上午计算机学院开营仪式以及各实验室宣讲<br>下午西区实验室参观</p>
+<h1 id="Day_Three">Day Three</h1><hr>
+<p>上午东区实验室、超算中心参观<br>下午冷餐会</p>
+<h1 id="Day_Four">Day Four</h1><hr>
+<p>面试</p>
+<h1 id="Day_Five">Day Five</h1><hr>
+<p>面试</p>
+<hr>
+<p>离开</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<blockquote class="blockquote-center"><br>多图预警，千万不要用流量打开本帖。<br></blockquote>
+
+<p>7月19日到达USTC中科大，开始为期5天的夏令营。</p>
+<p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-07-22-ustc-P50719-150859.jpg" alt="营服"></p>]]>
+    
+    </summary>
+    
+      <category term="USTC" scheme="http://jcf94.github.io/tags/USTC/"/>
+    
+      <category term="保研" scheme="http://jcf94.github.io/tags/%E4%BF%9D%E7%A0%94/"/>
+    
+      <category term="图集" scheme="http://jcf94.github.io/tags/%E5%9B%BE%E9%9B%86/"/>
+    
+      <category term="随笔" scheme="http://jcf94.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+      <category term="日常" scheme="http://jcf94.github.io/categories/%E6%97%A5%E5%B8%B8/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[Next]]></title>
     <link href="http://jcf94.github.io/2015/07/15/2015-07-15-next/"/>
     <id>http://jcf94.github.io/2015/07/15/2015-07-15-next/</id>
     <published>2015-07-15T13:42:19.000Z</published>
-    <updated>2015-07-15T14:07:45.243Z</updated>
+    <updated>2015-07-15T14:07:45.000Z</updated>
     <content type="html"><![CDATA[<blockquote class="blockquote-center"><br>Just as the 26 letters of the English alphabet do not limit how much can be written,<br>the two letters of the computer alphabet do not limit how what computers can do.<br></blockquote>
 
 <p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-07-15-next-jingli.jpg" alt="锦鲤"></p>
@@ -49,7 +95,7 @@
     <link href="http://jcf94.github.io/2015/07/13/2015-07-13-makefile/"/>
     <id>http://jcf94.github.io/2015/07/13/2015-07-13-makefile/</id>
     <published>2015-07-13T12:30:54.000Z</published>
-    <updated>2015-07-14T01:33:29.123Z</updated>
+    <updated>2015-07-14T01:33:29.000Z</updated>
     <content type="html"><![CDATA[<p>之前啃内核的时候就见过这个东西，整理项目的时候正好用到，顺便好好学习一下。</p>
 <p>详见：<a href="http://blog.csdn.net/ruglcc/article/details/7814546/" target="_blank" rel="external">Makefile经典教程(掌握这些足够)</a></p>
 ]]></content>
@@ -77,7 +123,7 @@
     <link href="http://jcf94.github.io/2015/07/12/2015-07-12-uzebox/"/>
     <id>http://jcf94.github.io/2015/07/12/2015-07-12-uzebox/</id>
     <published>2015-07-12T12:30:40.000Z</published>
-    <updated>2015-07-15T13:41:26.010Z</updated>
+    <updated>2015-07-15T13:41:26.000Z</updated>
     <content type="html"><![CDATA[<p>大二开始几个小伙伴一起跟<a href="http://john101.jimdo.com/" target="_blank" rel="external">杨俊</a>做了个单片机的小东西</p>
 <p>最后感觉也就是水过了</p>
 <p>这几天准备重新把资料理出来看看，没准面试可以用一下。</p>
@@ -167,7 +213,7 @@
     <link href="http://jcf94.github.io/2015/07/09/2015-07-09-qiyue/"/>
     <id>http://jcf94.github.io/2015/07/09/2015-07-09-qiyue/</id>
     <published>2015-07-09T15:12:48.000Z</published>
-    <updated>2015-07-15T13:43:34.328Z</updated>
+    <updated>2015-07-15T13:43:34.000Z</updated>
     <content type="html"><![CDATA[<blockquote class="blockquote-center"><br>这是一年中最火热的日子，<br>我将完成这个很大程度上决定我下半生人生走向的选择<br></blockquote>
 
 <p>骨子里面还是个小人物，我一向是个不愿对自己倾注太多信心的人</p>
@@ -224,7 +270,7 @@
     <link href="http://jcf94.github.io/2015/07/06/2015-07-06-HDU-1402/"/>
     <id>http://jcf94.github.io/2015/07/06/2015-07-06-HDU-1402/</id>
     <published>2015-07-06T02:50:03.000Z</published>
-    <updated>2015-07-13T01:47:14.000Z</updated>
+    <updated>2015-07-13T01:47:14.149Z</updated>
     <content type="html"><![CDATA[<h1 id="A_*_B_Problem_Plus">A * B Problem Plus</h1><p>Time Limit: 2000/1000 MS (Java/Others)    Memory Limit: 65536/32768 K (Java/Others)</p>
 <h2 id="Problem_Description">Problem Description</h2><p>Calculate A * B.</p>
 <h2 id="Input">Input</h2><p>Each line will contain two integers A and B. Process to end of file.</p>
@@ -271,7 +317,7 @@
     <link href="http://jcf94.github.io/2015/07/05/2015-07-05-fft/"/>
     <id>http://jcf94.github.io/2015/07/05/2015-07-05-fft/</id>
     <published>2015-07-05T06:59:09.000Z</published>
-    <updated>2015-07-13T01:47:02.000Z</updated>
+    <updated>2015-07-13T01:47:02.261Z</updated>
     <content type="html"><![CDATA[<p>正好复习信号到FFT了，想起来前段时间放了挺久的FFT大数乘法，顺便研究下。</p>
 <p>普通的高精度乘法的复杂度需要$O(n^2)$，用了押位之后，一般押4位的话能够达到$O(n^2/16)$，看上去可能效果不错，但仍然是同一个数量级的。</p>
 <p>对付更大一点的变态数据（。。。ACM赛场上很少有卡这货的吧。。。-_-////）就需要用的$O(nlogn)$的FFT大数乘法算法了。</p>
@@ -374,7 +420,7 @@
     <link href="http://jcf94.github.io/2015/07/01/2015-07-01-xinhaoxiangguan/"/>
     <id>http://jcf94.github.io/2015/07/01/2015-07-01-xinhaoxiangguan/</id>
     <published>2015-07-01T12:36:56.000Z</published>
-    <updated>2015-07-05T08:23:11.725Z</updated>
+    <updated>2015-07-05T08:23:11.000Z</updated>
     <content type="html"><![CDATA[<p>信号系列是通信工程的重点内容，以<strong>复变函数与积分变换</strong>作为基础的数学课程，主要包含<strong>信号与系统</strong>、升级版<strong>数字信号处理</strong>、然后是以<strong>概率论与数理统计</strong>为数学基础课的<strong>信息论</strong>作为通信方面数学上的理论基础、最后得到<strong>通信原理</strong>、应用方面有<strong>移动通信</strong>。</p>
 <h1 id="复变函数与积分变换">复变函数与积分变换</h1><hr>
 <ul>
@@ -676,7 +722,7 @@
     <link href="http://jcf94.github.io/2015/07/01/2015-07-01-oj-hexo/"/>
     <id>http://jcf94.github.io/2015/07/01/2015-07-01-oj-hexo/</id>
     <published>2015-07-01T12:16:35.000Z</published>
-    <updated>2015-07-13T12:22:04.143Z</updated>
+    <updated>2015-07-13T12:22:04.000Z</updated>
     <content type="html"><![CDATA[<p>之前找Lwy童鞋做的主页用的时间太久了，响应速度等方面现在都出现了一定的问题</p>
 <p>正好前段时间搞自己博客的时候看到个带首页的Hexo主题，测试了一下，响应速度各方面都挺适合</p>
 <p>顺手给换上了，顺便博文部分可以作为日常通知什么的</p>
@@ -705,7 +751,7 @@
     <link href="http://jcf94.github.io/2015/06/27/2015-06-27-weibojishuyutianxian/"/>
     <id>http://jcf94.github.io/2015/06/27/2015-06-27-weibojishuyutianxian/</id>
     <published>2015-06-27T04:25:35.000Z</published>
-    <updated>2015-06-28T08:16:32.000Z</updated>
+    <updated>2015-06-28T08:16:32.564Z</updated>
     <content type="html"><![CDATA[<h1 id="绪论">绪论</h1><hr>
 <ul>
 <li><p><u><strong>微波</strong>是电磁波谱中介于超短波与红外线之间的波段，频率范围从<strong>300MHz（波长1m）</strong>至<strong>3000GHz（波长0.1mm）</strong></u></p>
@@ -1073,7 +1119,7 @@
     <link href="http://jcf94.github.io/2015/06/25/2015-06-25-baoyan/"/>
     <id>http://jcf94.github.io/2015/06/25/2015-06-25-baoyan/</id>
     <published>2015-06-25T15:34:09.000Z</published>
-    <updated>2015-06-26T14:17:43.716Z</updated>
+    <updated>2015-06-26T14:17:43.000Z</updated>
     <content type="html"><![CDATA[<blockquote class="blockquote-center"><br>直面现实的时候，才会觉得害怕<br>总有一天我们是要离开象牙塔的<br></blockquote>
 
 <p>今晚被拉去听了我们学院的考研解读会。</p>
@@ -1163,7 +1209,7 @@
     <link href="http://jcf94.github.io/2015/06/19/2015-06-19-sbt/"/>
     <id>http://jcf94.github.io/2015/06/19/2015-06-19-sbt/</id>
     <published>2015-06-19T09:27:28.000Z</published>
-    <updated>2015-07-13T01:46:44.000Z</updated>
+    <updated>2015-07-13T01:46:44.549Z</updated>
     <content type="html"><![CDATA[<blockquote class="blockquote-center"><br>这将会是你踏入高级数据结构的第一步。<br></blockquote>
 
 <p>终于要开始给队里面讲这种比较高级的数据结构了，也趁此机会自己好好理理。</p>
@@ -1352,7 +1398,7 @@
     <link href="http://jcf94.github.io/2015/06/19/2015-06-19-zhuanye/"/>
     <id>http://jcf94.github.io/2015/06/19/2015-06-19-zhuanye/</id>
     <published>2015-06-19T02:15:23.000Z</published>
-    <updated>2015-07-01T12:47:12.790Z</updated>
+    <updated>2015-07-01T12:47:12.000Z</updated>
     <content type="html"><![CDATA[<p>昨天刚开了大三大四的专业班会，本来是几个大四的讲解保研、考研、工作经验的，最后系主任吴老大站起来总结陈词。。。</p>
 <blockquote>
 <p>不愧是吴老大啊！一下就抓住了问题的关键，连着又把我们教育了一通。。。</p>
@@ -1415,7 +1461,7 @@
     <link href="http://jcf94.github.io/2015/06/13/2015-06-13-tuiyi/"/>
     <id>http://jcf94.github.io/2015/06/13/2015-06-13-tuiyi/</id>
     <published>2015-06-13T05:20:32.000Z</published>
-    <updated>2015-06-19T07:41:34.000Z</updated>
+    <updated>2015-06-19T07:41:34.153Z</updated>
     <content type="html"><![CDATA[<blockquote class="blockquote-center"><br>曾经为之付出过这么多的努力，在这个圈子中也认识了这么多优秀的人<br>要我怎么说放手？<br></blockquote>
 
 <p>之前最后一次外出参赛是今年的省赛，也就是上周的这个时候吧，还正坐在赛场上苦思冥想中。。。</p>
@@ -1552,7 +1598,7 @@
     <link href="http://jcf94.github.io/2015/06/02/2015-06-02-birthday/"/>
     <id>http://jcf94.github.io/2015/06/02/2015-06-02-birthday/</id>
     <published>2015-06-02T15:22:58.000Z</published>
-    <updated>2015-06-13T08:27:27.000Z</updated>
+    <updated>2015-06-13T08:27:27.148Z</updated>
     <content type="html"><![CDATA[<p>不知不觉已经到了第21个生日，真心不想承认，又老了一岁……</p>
 <p>然后就想着，去年的今天我在干什么？</p>
 <p>明年的今天我会在干什么？明年大概就是快到了大家都要离开的日子了吧，嗯，我想明年一定不会放过这个日子！</p>
@@ -1596,7 +1642,7 @@
     <link href="http://jcf94.github.io/2015/05/30/2015/2015-05-30-shuzishipin/"/>
     <id>http://jcf94.github.io/2015/05/30/2015/2015-05-30-shuzishipin/</id>
     <published>2015-05-30T13:42:29.000Z</published>
-    <updated>2015-06-28T04:46:23.000Z</updated>
+    <updated>2015-06-28T04:46:23.125Z</updated>
     <content type="html"><![CDATA[<h2 id="第一章_绪论">第一章 绪论</h2><h3 id="视频图像处理的概念">视频图像处理的概念</h3><p>视频是一组图像在<strong>时间轴</strong>上的<strong>有序排列</strong>，是二维图像在一维时间轴上构成的<strong>图像序列</strong>，又称<strong>动态图像、活动图像、运动图像</strong>。不止包含了静止图像的内容，还包含了目标的<strong>运动信息</strong>和<strong>客观世界随时间变化的信息</strong>。</p>
 <p>序列&gt;帧&gt;像素</p>
 <h3 id="视频图像处理系统的组成">视频图像处理系统的组成</h3><ol>
@@ -1845,7 +1891,7 @@
     <link href="http://jcf94.github.io/2015/05/28/2015/2015-05-28-xiandaijiaohuan/"/>
     <id>http://jcf94.github.io/2015/05/28/2015/2015-05-28-xiandaijiaohuan/</id>
     <published>2015-05-28T15:56:10.000Z</published>
-    <updated>2015-06-28T04:39:22.000Z</updated>
+    <updated>2015-06-28T04:39:22.880Z</updated>
     <content type="html"><![CDATA[<p>感觉我也是醉醉的，人比较懒，愿意打字都不愿意动笔了……</p>
 <hr>
 <h2 id="第1章_绪论">第1章 绪论</h2><h3 id="交换">交换</h3><p>所谓交换，就是在通信网上，负责在通信的源和目的终端之间建立通信信道，传送通信信息的机制，也就是根据目的地，在源和目的终端之间传送通信信息。网内的任一个用户可以按着自己的要求与网内的其他用户进行信息交换</p>
@@ -2644,7 +2690,7 @@
     <link href="http://jcf94.github.io/2015/05/26/2015/2015-05-26-test/"/>
     <id>http://jcf94.github.io/2015/05/26/2015/2015-05-26-test/</id>
     <published>2015-05-26T05:07:16.000Z</published>
-    <updated>2015-06-13T05:19:32.000Z</updated>
+    <updated>2015-06-13T05:19:32.611Z</updated>
     <content type="html"><![CDATA[<h1 id="一级标题">一级标题</h1><h2 id="二级标题">二级标题</h2><pre><code>这是一段不加格式的代码
 <span class="preprocessor">#<span class="keyword">include</span>&lt;iostream&gt;</span>
 <span class="preprocessor">#<span class="keyword">include</span>&lt;cstdio&gt;</span>
@@ -2732,30 +2778,6 @@
 }
 </code></pre><h3 id="三级标题">三级标题</h3>]]>
     
-    </summary>
-    
-      <category term="测试" scheme="http://jcf94.github.io/tags/%E6%B5%8B%E8%AF%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Hello World]]></title>
-    <link href="http://jcf94.github.io/2015/05/26/2015/2015-05-26-hello-world/"/>
-    <id>http://jcf94.github.io/2015/05/26/2015/2015-05-26-hello-world/</id>
-    <published>2015-05-26T02:00:00.000Z</published>
-    <updated>2015-05-26T05:58:19.000Z</updated>
-    <content type="html"><![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io]]>
     </summary>
     
       <category term="测试" scheme="http://jcf94.github.io/tags/%E6%B5%8B%E8%AF%95/"/>
