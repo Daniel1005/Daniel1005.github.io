@@ -4,7 +4,7 @@
   <subtitle><![CDATA[It's the way I choose.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://jcf94.github.io/"/>
-  <updated>2015-08-01T13:08:04.915Z</updated>
+  <updated>2015-08-16T08:03:32.711Z</updated>
   <id>http://jcf94.github.io/</id>
   
   <author>
@@ -13,6 +13,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[2015-08-16-cherry]]></title>
+    <link href="http://jcf94.github.io/2015/08/16/2015-08-16-cherry/"/>
+    <id>http://jcf94.github.io/2015/08/16/2015-08-16-cherry/</id>
+    <published>2015-08-16T07:42:32.000Z</published>
+    <updated>2015-08-16T08:03:32.711Z</updated>
+    <content type="html"><![CDATA[<blockquote class="blockquote-center"><br>人生中的第一块原厂红轴<br>0.0<br>默默地入坑了<br></blockquote>
+
+<p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-08-16-cherry-P50816-154734.jpg" alt="cherry"></p>
+<a id="more"></a>
+]]></content>
+    <summary type="html">
+    <![CDATA[<blockquote class="blockquote-center"><br>人生中的第一块原厂红轴<br>0.0<br>默默地入坑了<br></blockquote>
+
+<p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-08-16-cherry-P50816-154734.jpg" alt="cherry"></p>]]>
+    
+    </summary>
+    
+      <category term="cherry" scheme="http://jcf94.github.io/tags/cherry/"/>
+    
+      <category term="机械键盘" scheme="http://jcf94.github.io/tags/%E6%9C%BA%E6%A2%B0%E9%94%AE%E7%9B%98/"/>
+    
+      <category term="随笔" scheme="http://jcf94.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+      <category term="日常" scheme="http://jcf94.github.io/categories/%E6%97%A5%E5%B8%B8/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[中山卡内基in广州]]></title>
@@ -2888,34 +2916,6 @@
     <summary type="html">
     <![CDATA[<p>已经快要忘了上一次通宵是在什么时候了，曾经做数学建模的时候是通过的，最后应该也是在期末的某次，一边要弄课设，一边又有考试，然后想着通宵赶紧把课设做做完，留出白天的时间来好好复习。</p>
 <p>说起来还是自己平时的执行效率太低，总是没有办法全心全意地复习，拖啊拖啊拖啊的，就]]>
-    </summary>
-    
-      <category term="随笔" scheme="http://jcf94.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
-    
-      <category term="日常" scheme="http://jcf94.github.io/categories/%E6%97%A5%E5%B8%B8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[开始使用Github]]></title>
-    <link href="http://jcf94.github.io/2015/05/26/2015/2015-05-26-start/"/>
-    <id>http://jcf94.github.io/2015/05/26/2015/2015-05-26-start/</id>
-    <published>2015-05-26T07:34:31.000Z</published>
-    <updated>2015-05-27T04:54:28.000Z</updated>
-    <content type="html"><![CDATA[<p>之前的博客都是写在博客园上的，现在转移至github。</p>
-<p>第一次用Markdown这种语法，真心简洁明了，短小精悍啊~ 各种格式也是帅爆</p>
-<p>算是从5月26号正式开始跑这个博客吧，27号最后换了个比较喜欢的主题，然后开始慢慢改自己的东西，估计以后一段时间用的都是这个样式了。</p>
-<p>然后有空会开始把博客园的东西一篇一篇移回到这里来。</p>
-<hr>
-<p>最近一周各种考试+实验+写报告，满满的都是事情…</p>
-<p>然而这么忙，我发现我还是控制不住自己啊啊…就开始折腾这个博客了…这种自己都觉得坑爹啊的奇怪习惯真得改改了啊啊啊（捂脸）</p>
-<p>好好复习去了……</p>
-<p>最后吐槽一句，这学期的考试真的好难啊啊啊啊啊啊啊~~~</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>之前的博客都是写在博客园上的，现在转移至github。</p>
-<p>第一次用Markdown这种语法，真心简洁明了，短小精悍啊~ 各种格式也是帅爆</p>
-<p>算是从5月26号正式开始跑这个博客吧，27号最后换了个比较喜欢的主题，然后开始慢慢改自己的东西，估计以后一段时]]>
     </summary>
     
       <category term="随笔" scheme="http://jcf94.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
