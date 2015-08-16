@@ -4,7 +4,7 @@
   <subtitle><![CDATA[It's the way I choose.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://jcf94.github.io/"/>
-  <updated>2015-08-16T08:14:40.086Z</updated>
+  <updated>2015-08-16T09:08:47.447Z</updated>
   <id>http://jcf94.github.io/</id>
   
   <author>
@@ -13,6 +13,45 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[编译原理]]></title>
+    <link href="http://jcf94.github.io/2015/08/16/2015-08-16-compilers/"/>
+    <id>http://jcf94.github.io/2015/08/16/2015-08-16-compilers/</id>
+    <published>2015-08-16T08:34:00.000Z</published>
+    <updated>2015-08-16T09:08:47.447Z</updated>
+    <content type="html"><![CDATA[<p>缺的东西只能自己补上，开始补编译原理。</p>
+<p>刚买了的龙书还在路上，先从 Coursera 上找个公开课看着。</p>
+<a id="more"></a>
+<h1 id="介绍">介绍</h1><p>用来执行程序的工具一般分为两种：编译器（Compilers）和解释器（Interpreters）</p>
+<p>编译器是将程序代码首先编译生成可执行文件，然后将数据输入可执行文件得到输出结果，也称为离线执行方式</p>
+<p>解释器是将程序和数据输入解释器中，直接得到输出结果，过程是相当于程序代码代码指导解释器来完成对输入数据的处理，也称为在线执行方式</p>
+<p>常把编译的过程分成5个阶段：</p>
+<ol>
+<li>Lexical Analysis        词法分析</li>
+<li>Parsing                语法分析</li>
+<li>Semantic Analysis    语义分析</li>
+<li>Optimization            优化</li>
+<li>Code Generation        代码生成</li>
+</ol>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>缺的东西只能自己补上，开始补编译原理。</p>
+<p>刚买了的龙书还在路上，先从 Coursera 上找个公开课看着。</p>]]>
+    
+    </summary>
+    
+      <category term="Coursera" scheme="http://jcf94.github.io/tags/Coursera/"/>
+    
+      <category term="StandFord" scheme="http://jcf94.github.io/tags/StandFord/"/>
+    
+      <category term="公开课" scheme="http://jcf94.github.io/tags/%E5%85%AC%E5%BC%80%E8%AF%BE/"/>
+    
+      <category term="编译原理" scheme="http://jcf94.github.io/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/"/>
+    
+      <category term="我的大学" scheme="http://jcf94.github.io/categories/%E6%88%91%E7%9A%84%E5%A4%A7%E5%AD%A6/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[MX-BOARD 3.0 红轴]]></title>
@@ -2899,26 +2938,6 @@
       <category term="复习笔记" scheme="http://jcf94.github.io/tags/%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
       <category term="我的大学" scheme="http://jcf94.github.io/categories/%E6%88%91%E7%9A%84%E5%A4%A7%E5%AD%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[通宵那些事]]></title>
-    <link href="http://jcf94.github.io/2015/05/28/2015/2015-05-28-diary/"/>
-    <id>http://jcf94.github.io/2015/05/28/2015/2015-05-28-diary/</id>
-    <published>2015-05-28T12:14:10.000Z</published>
-    <updated>2015-05-28T12:33:39.000Z</updated>
-    <content type="html"><![CDATA[<p>已经快要忘了上一次通宵是在什么时候了，曾经做数学建模的时候是通过的，最后应该也是在期末的某次，一边要弄课设，一边又有考试，然后想着通宵赶紧把课设做做完，留出白天的时间来好好复习。</p>
-<p>说起来还是自己平时的执行效率太低，总是没有办法全心全意地复习，拖啊拖啊拖啊的，就拖成了现在这个样子。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>已经快要忘了上一次通宵是在什么时候了，曾经做数学建模的时候是通过的，最后应该也是在期末的某次，一边要弄课设，一边又有考试，然后想着通宵赶紧把课设做做完，留出白天的时间来好好复习。</p>
-<p>说起来还是自己平时的执行效率太低，总是没有办法全心全意地复习，拖啊拖啊拖啊的，就]]>
-    </summary>
-    
-      <category term="随笔" scheme="http://jcf94.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
-    
-      <category term="日常" scheme="http://jcf94.github.io/categories/%E6%97%A5%E5%B8%B8/"/>
     
   </entry>
   
