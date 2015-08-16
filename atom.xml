@@ -139,7 +139,7 @@
     <link href="http://jcf94.github.io/2015/07/22/2015-07-22-ustc/"/>
     <id>http://jcf94.github.io/2015/07/22/2015-07-22-ustc/</id>
     <published>2015-07-22T13:12:30.000Z</published>
-    <updated>2015-07-31T05:53:26.200Z</updated>
+    <updated>2015-07-31T05:53:26.000Z</updated>
     <content type="html"><![CDATA[<blockquote class="blockquote-center"><br>多图预警！！！<br>千万不要用流量打开本帖！！！<br>0.0<br></blockquote>
 
 <p>7月19日到达USTC中科大，开始为期5天的夏令营。</p>
@@ -509,7 +509,7 @@
     <link href="http://jcf94.github.io/2015/07/06/2015-07-06-HDU-1402/"/>
     <id>http://jcf94.github.io/2015/07/06/2015-07-06-HDU-1402/</id>
     <published>2015-07-06T02:50:03.000Z</published>
-    <updated>2015-07-13T01:47:14.149Z</updated>
+    <updated>2015-07-13T01:47:14.000Z</updated>
     <content type="html"><![CDATA[<h1 id="A_*_B_Problem_Plus">A * B Problem Plus</h1><p>Time Limit: 2000/1000 MS (Java/Others)    Memory Limit: 65536/32768 K (Java/Others)</p>
 <h2 id="Problem_Description">Problem Description</h2><p>Calculate A * B.</p>
 <h2 id="Input">Input</h2><p>Each line will contain two integers A and B. Process to end of file.</p>
@@ -556,7 +556,7 @@
     <link href="http://jcf94.github.io/2015/07/05/2015-07-05-fft/"/>
     <id>http://jcf94.github.io/2015/07/05/2015-07-05-fft/</id>
     <published>2015-07-05T06:59:09.000Z</published>
-    <updated>2015-07-13T01:47:02.261Z</updated>
+    <updated>2015-07-13T01:47:02.000Z</updated>
     <content type="html"><![CDATA[<p>正好复习信号到FFT了，想起来前段时间放了挺久的FFT大数乘法，顺便研究下。</p>
 <p>普通的高精度乘法的复杂度需要$O(n^2)$，用了押位之后，一般押4位的话能够达到$O(n^2/16)$，看上去可能效果不错，但仍然是同一个数量级的。</p>
 <p>对付更大一点的变态数据（。。。ACM赛场上很少有卡这货的吧。。。-_-////）就需要用的$O(nlogn)$的FFT大数乘法算法了。</p>
@@ -990,7 +990,7 @@
     <link href="http://jcf94.github.io/2015/06/27/2015-06-27-weibojishuyutianxian/"/>
     <id>http://jcf94.github.io/2015/06/27/2015-06-27-weibojishuyutianxian/</id>
     <published>2015-06-27T04:25:35.000Z</published>
-    <updated>2015-06-28T08:16:32.564Z</updated>
+    <updated>2015-06-28T08:16:32.000Z</updated>
     <content type="html"><![CDATA[<h1 id="绪论">绪论</h1><hr>
 <ul>
 <li><p><u><strong>微波</strong>是电磁波谱中介于超短波与红外线之间的波段，频率范围从<strong>300MHz（波长1m）</strong>至<strong>3000GHz（波长0.1mm）</strong></u></p>
@@ -1448,7 +1448,7 @@
     <link href="http://jcf94.github.io/2015/06/19/2015-06-19-sbt/"/>
     <id>http://jcf94.github.io/2015/06/19/2015-06-19-sbt/</id>
     <published>2015-06-19T09:27:28.000Z</published>
-    <updated>2015-07-13T01:46:44.549Z</updated>
+    <updated>2015-07-13T01:46:44.000Z</updated>
     <content type="html"><![CDATA[<blockquote class="blockquote-center"><br>这将会是你踏入高级数据结构的第一步。<br></blockquote>
 
 <p>终于要开始给队里面讲这种比较高级的数据结构了，也趁此机会自己好好理理。</p>
@@ -1700,7 +1700,7 @@
     <link href="http://jcf94.github.io/2015/06/13/2015-06-13-tuiyi/"/>
     <id>http://jcf94.github.io/2015/06/13/2015-06-13-tuiyi/</id>
     <published>2015-06-13T05:20:32.000Z</published>
-    <updated>2015-06-19T07:41:34.153Z</updated>
+    <updated>2015-06-19T07:41:34.000Z</updated>
     <content type="html"><![CDATA[<blockquote class="blockquote-center"><br>曾经为之付出过这么多的努力，在这个圈子中也认识了这么多优秀的人<br>要我怎么说放手？<br></blockquote>
 
 <p>之前最后一次外出参赛是今年的省赛，也就是上周的这个时候吧，还正坐在赛场上苦思冥想中。。。</p>
@@ -1837,7 +1837,7 @@
     <link href="http://jcf94.github.io/2015/06/02/2015-06-02-birthday/"/>
     <id>http://jcf94.github.io/2015/06/02/2015-06-02-birthday/</id>
     <published>2015-06-02T15:22:58.000Z</published>
-    <updated>2015-06-13T08:27:27.148Z</updated>
+    <updated>2015-06-13T08:27:27.000Z</updated>
     <content type="html"><![CDATA[<p>不知不觉已经到了第21个生日，真心不想承认，又老了一岁……</p>
 <p>然后就想着，去年的今天我在干什么？</p>
 <p>明年的今天我会在干什么？明年大概就是快到了大家都要离开的日子了吧，嗯，我想明年一定不会放过这个日子！</p>
@@ -1881,7 +1881,7 @@
     <link href="http://jcf94.github.io/2015/05/30/2015/2015-05-30-shuzishipin/"/>
     <id>http://jcf94.github.io/2015/05/30/2015/2015-05-30-shuzishipin/</id>
     <published>2015-05-30T13:42:29.000Z</published>
-    <updated>2015-06-28T04:46:23.125Z</updated>
+    <updated>2015-06-28T04:46:23.000Z</updated>
     <content type="html"><![CDATA[<h2 id="第一章_绪论">第一章 绪论</h2><h3 id="视频图像处理的概念">视频图像处理的概念</h3><p>视频是一组图像在<strong>时间轴</strong>上的<strong>有序排列</strong>，是二维图像在一维时间轴上构成的<strong>图像序列</strong>，又称<strong>动态图像、活动图像、运动图像</strong>。不止包含了静止图像的内容，还包含了目标的<strong>运动信息</strong>和<strong>客观世界随时间变化的信息</strong>。</p>
 <p>序列&gt;帧&gt;像素</p>
 <h3 id="视频图像处理系统的组成">视频图像处理系统的组成</h3><ol>
@@ -2130,7 +2130,7 @@
     <link href="http://jcf94.github.io/2015/05/28/2015/2015-05-28-xiandaijiaohuan/"/>
     <id>http://jcf94.github.io/2015/05/28/2015/2015-05-28-xiandaijiaohuan/</id>
     <published>2015-05-28T15:56:10.000Z</published>
-    <updated>2015-06-28T04:39:22.880Z</updated>
+    <updated>2015-06-28T04:39:22.000Z</updated>
     <content type="html"><![CDATA[<p>感觉我也是醉醉的，人比较懒，愿意打字都不愿意动笔了……</p>
 <hr>
 <h2 id="第1章_绪论">第1章 绪论</h2><h3 id="交换">交换</h3><p>所谓交换，就是在通信网上，负责在通信的源和目的终端之间建立通信信道，传送通信信息的机制，也就是根据目的地，在源和目的终端之间传送通信信息。网内的任一个用户可以按着自己的要求与网内的其他用户进行信息交换</p>

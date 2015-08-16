@@ -39,16 +39,19 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.3" />
 
 
-<meta name="description" content="花了点时间搭了我们自己的OJ，先占个坑，回头补上。">
+<meta name="description" content="OJ是跑在LAMP的环境中，Linux+Apache+Mysql+Php">
 <meta property="og:type" content="article">
 <meta property="og:title" content="长大OJ诞生记（一）HUSTOJ搭建">
 <meta property="og:url" content="http://jcf94.github.io/2014/12/22/2014/2014-12-22-oj-hustoj/index.html">
 <meta property="og:site_name" content="Chenfan's blog">
-<meta property="og:description" content="花了点时间搭了我们自己的OJ，先占个坑，回头补上。">
-<meta property="og:updated_time" content="2015-07-13T12:19:15.000Z">
+<meta property="og:description" content="OJ是跑在LAMP的环境中，Linux+Apache+Mysql+Php">
+<meta property="og:image" content="http://7xjh3j.com1.z0.glb.clouddn.com/2014-12-22-oj-hustoj-1.apache2.jpg">
+<meta property="og:image" content="http://7xjh3j.com1.z0.glb.clouddn.com/2014-12-22-oj-hustoj-2.mysql.jpg">
+<meta property="og:image" content="http://7xjh3j.com1.z0.glb.clouddn.com/2014-12-22-oj-hustoj-3.mysql.jpg">
+<meta property="og:updated_time" content="2015-08-16T07:35:52.024Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="长大OJ诞生记（一）HUSTOJ搭建">
-<meta name="twitter:description" content="花了点时间搭了我们自己的OJ，先占个坑，回头补上。">
+<meta name="twitter:description" content="OJ是跑在LAMP的环境中，Linux+Apache+Mysql+Php">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -215,7 +218,72 @@
       
 
       
-        <span itemprop="articleBody"><p>花了点时间搭了我们自己的OJ，先占个坑，回头补上。</p>
+        <span itemprop="articleBody"><p>OJ是跑在LAMP的环境中，Linux+Apache+Mysql+Php</p>
+<a id="more"></a>
+<h1 id="搭建运行环境">搭建运行环境</h1><hr>
+<h2 id="Apache2">Apache2</h2><p>Apache用来解释html的请求。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ apt-get install apache2</span><br></pre></td></tr></table></figure>
+<p>装好之后再浏览器中访问 <a href="http://localhost" target="_blank" rel="external">http://localhost</a></p>
+<p>看到如下页面就是正常工作了：</p>
+<p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2014-12-22-oj-hustoj-1.apache2.jpg" alt="Apache正常工作"></p>
+<p>Apache2的配置信息在：</p>
+<blockquote>
+<p>/etc/apache2</p>
+</blockquote>
+<p>默认目录在：</p>
+<blockquote>
+<p>/var/www/html</p>
+</blockquote>
+<p>浏览器访问本台Ubuntu的时候就是读取这个目录下面的index.html网页</p>
+<h2 id="Mysql">Mysql</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ apt-get install mysql-server mysql-client</span><br></pre></td></tr></table></figure>
+<p>安装过程中需要设置root账号的密码：</p>
+<p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2014-12-22-oj-hustoj-2.mysql.jpg" alt="设置密码"></p>
+<p>装好之后，配置信息在：</p>
+<blockquote>
+<p>/etc/mysql</p>
+</blockquote>
+<p>可以测试一下mysql是否正常运行。</p>
+<p>我上面设的密码是root，所以下面的指令就是：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mysql -uroot -proot</span><br></pre></td></tr></table></figure>
+<p>然后Mysql的默认字符集是latin1，中文可能会有乱码的情况，因此需要修改下字符集：</p>
+<p>找到：</p>
+<blockquote>
+<p>/etc/mysql/my.cnf</p>
+</blockquote>
+<p>在最下面添加：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[client]</span><br><span class="line">default-character-<span class="operator"><span class="keyword">set</span>=utf8</span><br><span class="line"></span><br><span class="line">[mysql]</span><br><span class="line"><span class="keyword">default</span>-<span class="built_in">character</span>-<span class="keyword">set</span>=utf8</span><br><span class="line"></span><br><span class="line">[mysqld]</span><br><span class="line"><span class="keyword">collation</span>-<span class="keyword">server</span> = utf8_unicode_ci</span><br><span class="line">init-<span class="keyword">connect</span>=<span class="string">'SET NAMES utf8'</span></span><br><span class="line"><span class="built_in">character</span>-<span class="keyword">set</span>-<span class="keyword">server</span> = utf8</span></span><br></pre></td></tr></table></figure>
+<p>然后重启mysql：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ /etc/init.d/mysql restart</span><br></pre></td></tr></table></figure>
+<p>重新打开mysql，输入</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#62; show variables like &#39;char%&#39;;</span><br></pre></td></tr></table></figure>
+<p>出现：</p>
+<p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2014-12-22-oj-hustoj-3.mysql.jpg" alt="编码"></p>
+<p>看到编码都是utf8就正常了</p>
+<h2 id="php5">php5</h2><p>安装php5以及Apache的php5模块</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ apt-get install php5 libapache2-mod-php5</span><br></pre></td></tr></table></figure>
+<p>装好之后重启apache，因为我们需要的是apache与php的连通</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ /etc/init.d/apache2 restart</span><br></pre></td></tr></table></figure>
+<p>然后测试一下php：</p>
+<p>在</p>
+<blockquote>
+<p>/var/www/html/</p>
+</blockquote>
+<p>下新建 info.php 文件，内容只有一句：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">&lt;?php</span> phpinfo() <span class="preprocessor">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p>然后在浏览器中访问 <a href="http://localhost/info.php" target="_blank" rel="external">http://localhost/info.php</a> ，看到php版本信息即正常了</p>
+<p>Apache2已经能够正常与php5进行通信了，但是mysql与php5之间连通还需要另外的模块：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ apt-get install php5-mysql php5-curl php5-gd php5-intl php-pear php5-imagick php5-imap php5-mcrypt php5-memcache php5-ming php5-ps php5-pspell php5-recode php5-snmp php5-sqlite php5-tidy php5-xmlrpc php5-xsl</span><br></pre></td></tr></table></figure>
+<p>重启apache2，然后继续在</p>
+<blockquote>
+<p>/var/www/html/</p>
+</blockquote>
+<p>下新建 test.php 文件，内容是：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">&lt;?php</span></span><br><span class="line">    <span class="variable">$link</span> = mysql_connect(<span class="string">"localhost"</span>, <span class="string">"root"</span>, <span class="string">"root"</span>);</span><br><span class="line">    <span class="keyword">if</span> (!<span class="variable">$link</span>)</span><br><span class="line">    &#123;</span><br><span class="line">            <span class="keyword">die</span>(<span class="string">'Could not connect: '</span>.mysql_error());</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">echo</span> <span class="string">"MySQL连接成功"</span>;</span><br><span class="line">    mysql_close(<span class="variable">$link</span>);</span><br><span class="line"><span class="preprocessor">?&gt;</span></span><br><span class="line">```php</span><br><span class="line"></span><br><span class="line">访问 http:<span class="comment">//localhost/test.php</span></span><br><span class="line"></span><br><span class="line">返回连接成功即可</span><br><span class="line"></span><br><span class="line">另外也可以安装一下 phpmyadmin 来管理</span><br><span class="line"></span><br><span class="line"><span class="comment">## svn、make、以及其他编译软件</span></span><br><span class="line"></span><br><span class="line">```bash</span><br><span class="line">$ apt-get install subversion make</span><br></pre></td></tr></table></figure>
+<p>然后根据需要安装好java、fpc等等编译器的包</p>
+<h1 id="Hustoj本体的安装">Hustoj本体的安装</h1><p>直接从github上把整个项目包checkout到本地</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">svn checkout https://github.com/zhblue/hustoj/trunk/trunk/install hustoj</span><br></pre></td></tr></table></figure>
+<p>修改 install.sh 以及 judge.conf 中数据库的账号和密码，前面设置的是root/root，刚好这里默认的就是root/root</p>
+<p>然后运行 install.sh ，缺少的包会在安装时自己补上</p>
 </span>
       
     </div>
@@ -404,7 +472,7 @@
           <div class="post-toc">
             
             
-              <p class="post-toc-empty">此文章未包含目錄</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#搭建运行环境"><span class="nav-number">1.</span> <span class="nav-text">搭建运行环境</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Apache2"><span class="nav-number">1.1.</span> <span class="nav-text">Apache2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mysql"><span class="nav-number">1.2.</span> <span class="nav-text">Mysql</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#php5"><span class="nav-number">1.3.</span> <span class="nav-text">php5</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hustoj本体的安装"><span class="nav-number">2.</span> <span class="nav-text">Hustoj本体的安装</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
