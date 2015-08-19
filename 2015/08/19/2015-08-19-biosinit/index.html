@@ -50,7 +50,10 @@
 内核载入之前的工作
 1981年IBM PC刚推出时，系统只带有640K的的RAM，内存寻址范围最大也只有1M。现如今基本的32位机都能寻址到4G，经过CPU的新特性更是可以支持到64G的物理内存。但是为了与原来的PC想兼容，系统1M一下物理内存使用分配上仍然保持与原来一致。ROM BIOS都在物理内存能寻址的最高端位置处，所以在大于1M">
 <meta property="og:image" content="http://7xjh3j.com1.z0.glb.clouddn.com/2015-08-19-biosinit-1.jpg">
-<meta property="og:updated_time" content="2015-08-19T10:43:48.039Z">
+<meta property="og:image" content="http://7xjh3j.com1.z0.glb.clouddn.com/2015-08-19-biosinit-2.jpg">
+<meta property="og:image" content="http://7xjh3j.com1.z0.glb.clouddn.com/2015-08-19-biosinit-3.jpg">
+<meta property="og:image" content="http://7xjh3j.com1.z0.glb.clouddn.com/2015-08-19-biosinit-4.jpg">
+<meta property="og:updated_time" content="2015-08-19T11:50:51.272Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="BIOS内核载入的方式（引导实验）">
 <meta name="twitter:description" content="之前花了点时间稍微研究了下系统内核载入，重新翻出来整理一下：
@@ -231,8 +234,119 @@
 <p>后续内核载入之后会重新分配，以后再研究。</p>
 <p>x86体系的PC启动之后由BIOS完成自检，然后开始搜索外存上的引导信息，查找设备进行系统启动。BIOS会把硬盘等设备的头512字节数据复制到内存，检查这512字节是不是以16进制的0x55和0xaa结尾，这是启动引导程序的标记。</p>
 <h1 id="用汇编写一个简易的引导程序">用汇编写一个简易的引导程序</h1><hr>
-<p>下面是一个简单的引导程序：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.global start&#10;.code16&#10;.text&#10;start:&#10;&#9;&#9;movw $0xb800,%ax&#10;        movw %ax,%ds&#10;        movb $0x41,(0)&#10;        movb $0x1f,(1)&#10;hlt</span><br></pre></td></tr></table></figure>
+<p>下面是一个简单的程序：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">.global start</span><br><span class="line">.code16</span><br><span class="line">.text</span><br><span class="line">start:</span><br><span class="line">        movw $<span class="number">0xb800</span>,%ax</span><br><span class="line">        movw %ax,%ds</span><br><span class="line">        movb $<span class="number">0x41</span>,(<span class="number">0</span>)</span><br><span class="line">        movb $<span class="number">0x1f</span>,(<span class="number">1</span>)</span><br><span class="line">hlt</span><br></pre></td></tr></table></figure>
+<p><code>.global start</code> 这一句把start标签做全局符号导出，后面链接的时候会用到。</p>
+<p>把代码保存为boot.s文件。然后用gas的as.exe和ld.exe两个程序真正把这段汇编代码处理成机器码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">as -o boot.o boot.s</span><br><span class="line"></span><br><span class="line">ld -Ttext <span class="number">0</span>x200 <span class="operator">-s</span> -o boot --entry start  boot.o</span><br></pre></td></tr></table></figure>
+<p><code>-Ttext 0x200</code> 的作用是让输出的代码设置为从boot输出文件的0x200位置开头，否则我们就很难确定我们得到的boot文件从哪开始才是代码，一会写入的时候也从这里写就行。</p>
+<p>ld 命令里的 <code>--entry start</code> 这段就是我们之前的汇编文件中需要写 <code>.global start</code> 这句声明的原因。指定入口。</p>
+<p>在保护模式启动之前，微机处于实地址模式，这个时候需要先设定数据段段寄存器的地址，然后就可以用一个16位的地址来访问内存开头的1M空间了。</p>
+<p><code>.code16</code> 这一句声明是为了让gas了解到这段程序是为实模式编写的，且限定为16位的汇编编译。</p>
+<p>首先把数据段寄存器设置成0xb800，这样，地址0就会指向PC的CPU中用来显示屏幕的一段内存的开头。在这个CPU的最初的阶段，一般屏幕有80行，25列，而当我们把数据段寄存器赋予值0xb800，地址0所指向的字节就代表第一行第一个字符，这里是ascii码中的大写字母A，即0x41。地址1现在指向的字节代表了第一行第一个字符的字体颜色和背景颜色，格式与windows命令行的color命令一样。</p>
+<p>详细如下：</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">颜色设置</span><br><span class="line">颜色属性由两个十六进制数字指定 -- 第一个为背景，第二个则为前景。每个数字可以为以下任何值之一:</span><br><span class="line"><span class="constant">0</span> = 黑色</span><br><span class="line"><span class="constant">1</span> = 蓝色</span><br><span class="line"><span class="constant">2</span> = 绿色</span><br><span class="line"><span class="constant">3</span> = 浅绿色</span><br><span class="line"><span class="constant">4</span> = 红色</span><br><span class="line"><span class="constant">5</span> = 紫色</span><br><span class="line"><span class="constant">6</span> = 黄色</span><br><span class="line"><span class="constant">7</span> = 白色</span><br><span class="line"><span class="constant">8</span> = 灰色</span><br><span class="line"><span class="constant">9</span> = 淡蓝色</span><br><span class="line"><span class="constant">A</span> = 淡绿色</span><br><span class="line"><span class="constant">B</span> = 淡浅绿色</span><br><span class="line"><span class="constant">C</span> = 淡红色</span><br><span class="line"><span class="constant">D</span> = 淡紫色</span><br><span class="line"><span class="constant">E</span> = 淡黄色</span><br><span class="line"><span class="constant">F</span> = 亮白色</span><br></pre></td></tr></table></figure>
+<p>如果把上面这段程序作为一个引导写进硬盘，则之后理论上将能够看到运行结果是屏幕上出现一个蓝底白字的A。</p>
+<h1 id="准备写入存储设备，了解一下BIOS启动的流程，主要是MBR">准备写入存储设备，了解一下BIOS启动的流程，主要是MBR</h1><hr>
+<p>完成编译之后需要把这块写入硬盘/U盘等存储设备。</p>
+<p>刚开始我是拿U盘来试的，结果差点把我的U盘给毁了……汗……后来想到在VMware虚拟机里面直接新建一块硬盘来做。</p>
+<p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-08-19-biosinit-2.jpg" alt="vmware1"></p>
+<p>此时这块新建的磁盘里面什么都没有，但是用winhex打开磁盘1，看到的是这样的：</p>
+<p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-08-19-biosinit-3.jpg" alt="vmware2"></p>
+<p>winhex是一个16进制的编辑器，可以直接用来查看文件或者读取硬盘，免费版只能查看不能修改，不过这个对我们来说已经够了，因为之后的写硬盘操作我们要用C语言直接完成。</p>
+<p>不管硬盘上设定的一扇区有多大，第一个扇区的引导都是固定512B，可以看到前512B的最后两个字节是 <code>55 AA</code>，即引导结束标志。然后开始部分是一些初始程序和找不到操作系统的提示信息。</p>
+<p>这些东西都是在硬盘格式化的时候由Windows系统自己完成的，即如果对此块硬盘进行引导的话，返回错误信息。</p>
+<hr>
+<p>下面解释一下MBR的相关知识：</p>
+<p>MBR全称是Master Boot Record，硬盘主引导记录，它存在于硬盘的第一个物理扇区，也就是0面0磁道1扇区。</p>
+<p>软盘上的引导扇区的作用是把软盘上存放的真正的操作系统内核读到内存中，然后跳到内核去执行。而MBR的作用却是找到硬盘上的活动分区，然后把活动分区上的引导记录读到内存中，然后再跳到此引导记录中去执行，后面的过程就与从软盘启动计算机一致了。</p>
+<p>这里，可以把硬盘上的活动分区都看成一是个软盘。我们知道一个硬盘可以分成多个分区，也就是说一个硬盘可以视为由多个软盘组成，每一个分区都可以有自己的引导记录，这就如每个软盘上都有自己的引导记录一样。那么哪一个分区（软盘）用来真正引导计算机呢？这就由MBR来完成，MBR查看每个分区记录，当找到一个活动分区时，就把此活动分区的引导记录载入。</p>
+<p>显然，必须有一个地方来存放硬盘的分区记录，这就是所谓的硬盘分区表。这个硬盘分区表也在MBR中，不过MBR只有一个扇区大小，既要有用来查找硬盘分区表的代码，还要包含硬盘分区表，所以这个硬盘分区表不可能很大。实际上，这个表只有四个表项，也就是说在一块硬盘里，最多有4个分区能用来引导电脑。</p>
+<p>再来完整的看看<strong>MBR载入的流程</strong>，计算机启动的时候，MBR先把自己搬移到0x0600处，随后MBR开始查找内部的硬盘分区表表项，之后找到的引导程序会被BIOS载入到内存的0x7C00处，然后BIOS跳转到0x7C00处执行。</p>
+<p>每个硬盘分区表表项的第一个字节只能是0x80或者0x00。如果是0×80表示这是一个活动分区，然后MBR再从这个表项中读出此分区在硬盘上的位置，将此分区的第一个扇区（含有此分区的引导记录）读入0x7C00处，然后跳到0x7C00处执行。如果表项的第一个字节是0x00，则查找下一个表项，直到四个表项都找完为止。如果此第一个字节既不是0x80又不是0x00，则打印一条错误信息。</p>
+<p>MBR的整个结构，总长度上面说过了，一共512字节：</p>
+<table>
+<thead>
+<tr>
+<th>地址</th>
+<th>说明</th>
+<th>长度（Byte）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0x000（0）</td>
+<td>MBR中的执行代码</td>
+<td>440</td>
+</tr>
+<tr>
+<td>0x1B8（440）</td>
+<td>磁盘商标（可选）</td>
+<td>6</td>
+</tr>
+<tr>
+<td>0X1BE（446）</td>
+<td>分区表（共4项，每项16字节）</td>
+<td>4*16=64</td>
+</tr>
+<tr>
+<td>0X1FE（510）</td>
+<td>引导记录标志（55AA）</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<p>分区表表项结构如图所示，总长度一共16字节：</p>
+<table>
+<thead>
+<tr>
+<th>地址偏移量</th>
+<th>说明</th>
+<th>长度（Byte）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0x0</td>
+<td>状态码，0x80表示为活动分区，0x00表示为非活动分区，其他值无效</td>
+<td>1</td>
+</tr>
+<tr>
+<td>0x1</td>
+<td>分区的第一个扇区的CHS地址（磁头、柱面、扇区）</td>
+<td>3</td>
+</tr>
+<tr>
+<td>0x4</td>
+<td>分区类型（FAT、NTFS、ext2、ext3等）</td>
+<td>1</td>
+</tr>
+<tr>
+<td>0x5</td>
+<td>分区的最后一个扇区的CHS地址</td>
+<td>3</td>
+</tr>
+<tr>
+<td>0x8</td>
+<td>分区的第一个扇区的LBA地址</td>
+<td>4</td>
+</tr>
+<tr>
+<td>0xC</td>
+<td>分区的长度（多少个扇区）</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<p>所以写入前440个长度即可。后面的保持不变。</p>
+<p>……之前拿U盘试的时候直接改了前面512B的所有内容，导致后来电脑直接读不出来U盘的东西了。因为分区表整个被破坏了。</p>
+<h1 id="把引导写入硬盘">把引导写入硬盘</h1><hr>
+<p>写硬盘用C语言来完成：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;stdio.h&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;string.h&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;windows.h&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    FILE *fp = NULL;</span><br><span class="line">    DWORD length;</span><br><span class="line">    HANDLE handle = NULL;</span><br><span class="line">    byte buff[<span class="number">512</span>],buf[<span class="number">512</span>];</span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//读取硬盘，并把原始的引导信息保存下来</span></span><br><span class="line">    handle = CreateFile(TEXT(<span class="string">"\\\\.\\PHYSICALDRIVE1"</span>),GENERIC_READ,<span class="number">0</span>,NULL,OPEN_EXISTING,<span class="number">0</span>,<span class="number">0</span>);</span><br><span class="line">	<span class="keyword">if</span> (handle == INVALID_HANDLE_VALUE)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"Cannot open the Device~!\n"</span>);</span><br><span class="line">		<span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">memset</span>(buff,<span class="number">0</span>,<span class="keyword">sizeof</span>(buff));</span><br><span class="line">	ReadFile(handle,buff,<span class="keyword">sizeof</span>(buff),&amp;length,NULL);</span><br><span class="line">	CloseHandle(handle);</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span> (i=<span class="number">0</span>;i&lt;length;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (i%<span class="number">16</span>==<span class="number">0</span>) <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%02X "</span>,buff[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//打开之前写好的引导文件</span></span><br><span class="line">    fp = fopen(<span class="string">"boot"</span>,<span class="string">"rb"</span>);</span><br><span class="line">	<span class="keyword">if</span> (fp == NULL)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"Cannot open the File~!\n"</span>);</span><br><span class="line">		<span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="built_in">memset</span>(buf,<span class="number">0</span>,<span class="keyword">sizeof</span>(buf));</span><br><span class="line">    fseek(fp,<span class="number">0x200</span>,SEEK_SET); <span class="comment">//之前编译的时候指定的文件位置在这里用上</span></span><br><span class="line">    fread(buf,<span class="keyword">sizeof</span>(buf),<span class="number">1</span>,fp);</span><br><span class="line">    fclose(fp);</span><br><span class="line">    <span class="keyword">for</span> (i=<span class="number">440</span>;i&lt;<span class="number">512</span>;i++) buf[i]=buff[i]; <span class="comment">//保留原有的引导的440以后的内容</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">//把整理好的引导信息写进硬盘</span></span><br><span class="line">    handle = CreateFile(TEXT(<span class="string">"\\\\.\\PHYSICALDRIVE1"</span>),GENERIC_WRITE,<span class="number">0</span>,NULL,OPEN_EXISTING,<span class="number">0</span>,<span class="number">0</span>);</span><br><span class="line">	<span class="keyword">if</span> (handle == INVALID_HANDLE_VALUE)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"Cannot open the Device~!\n"</span>);</span><br><span class="line">		<span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (!WriteFile(handle,buf,<span class="keyword">sizeof</span>(buf),&amp;length,NULL))</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"Writing Error~!"</span>);</span><br><span class="line">		<span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">"Writing Success~!"</span>);</span><br><span class="line">    CloseHandle(handle);</span><br><span class="line">    </span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>写入完成之后，重启虚拟机，把硬盘1的启动项调到硬盘0前面去，然后启动！</p>
+<p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-08-19-biosinit-4.jpg" alt="vmware3"></p>
+<p>BIOS闪了一下之后，果然左上角出现了预先设计的A，至此引导程序实验成功。然后重新恢复启动项正常进去之后硬盘1也没有出什么问题。</p>
+<p>最后…<a href="http://www.cnblogs.com/bombless/archive/2010/12/28/writing-x86-os-part1.html" target="_blank" rel="external">这篇文章</a>给了我很大的帮助</p>
 </span>
       
     </div>
@@ -421,7 +535,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#内核载入之前的工作"><span class="nav-number">1.</span> <span class="nav-text">内核载入之前的工作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#用汇编写一个简易的引导程序"><span class="nav-number">2.</span> <span class="nav-text">用汇编写一个简易的引导程序</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#内核载入之前的工作"><span class="nav-number">1.</span> <span class="nav-text">内核载入之前的工作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#用汇编写一个简易的引导程序"><span class="nav-number">2.</span> <span class="nav-text">用汇编写一个简易的引导程序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#准备写入存储设备，了解一下BIOS启动的流程，主要是MBR"><span class="nav-number">3.</span> <span class="nav-text">准备写入存储设备，了解一下BIOS启动的流程，主要是MBR</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#把引导写入硬盘"><span class="nav-number">4.</span> <span class="nav-text">把引导写入硬盘</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
