@@ -170,6 +170,103 @@
           
           
             
+              <a class="post-title-link" href="/2015/07/05/2015-07-05-fft/" itemprop="url">
+                快速傅里叶变换FFT算法的用途
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2015-07-05T14:59:09+08:00" content="2015-07-05">
+            2015-07-05
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分類於
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/ACM/" itemprop="url" rel="index"><span itemprop="name">ACM</span></a></span>
+
+              
+              
+                ， 
+              
+
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/ACM/算法学习/" itemprop="url" rel="index"><span itemprop="name">算法学习</span></a></span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2015/07/05/2015-07-05-fft/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/05/2015-07-05-fft/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <p>正好复习信号到FFT了，想起来前段时间放了挺久的FFT大数乘法，顺便研究下。</p>
+<p>普通的高精度乘法的复杂度需要$O(n^2)$，用了押位之后，一般押4位的话能够达到$O(n^2/16)$，看上去可能效果不错，但仍然是同一个数量级的。</p>
+<p>对付更大一点的变态数据（。。。ACM赛场上很少有卡这货的吧。。。-_-////）就需要用的$O(nlogn)$的FFT大数乘法算法了。</p>
+<h1 id="数学基础">数学基础</h1><hr>
+<p>首先基础是DFT，FFT是DFT的一种快速算法。</p>
+<p>从N点DFT出发：</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/07/05/2015-07-05-fft/#more" rel="contents">
+              閱讀全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2015/07/01/2015-07-01-xinhaoxiangguan/" itemprop="url">
                 信号相关专业复习
               </a>
@@ -987,92 +1084,6 @@
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/05/28/2015/2015-05-28-xiandaijiaohuan/" itemprop="url">
-                现代交换原理 复习笔记 部分
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          發表於
-          <time itemprop="dateCreated" datetime="2015-05-28T23:56:10+08:00" content="2015-05-28">
-            2015-05-28
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分類於
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/我的大学/" itemprop="url" rel="index"><span itemprop="name">我的大学</span></a></span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2015/05/28/2015/2015-05-28-xiandaijiaohuan/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/05/28/2015/2015-05-28-xiandaijiaohuan/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <p>感觉我也是醉醉的，人比较懒，愿意打字都不愿意动笔了……</p>
-<hr>
-<h2 id="第1章_绪论">第1章 绪论</h2><h3 id="交换">交换</h3><p>所谓交换，就是在通信网上，负责在通信的源和目的终端之间建立通信信道，传送通信信息的机制，也就是根据目的地，在源和目的终端之间传送通信信息。网内的任一个用户可以按着自己的要求与网内的其他用户进行信息交换</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/05/28/2015/2015-05-28-xiandaijiaohuan/#more" rel="contents">
-              閱讀全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1110,21 +1121,21 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">68</span>
+              <span class="site-state-item-count">69</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-count">12</span>
               <span class="site-state-item-name">分類</span>
               </a>
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">52</span>
+              <span class="site-state-item-count">54</span>
               <span class="site-state-item-name">標籤</span>
               </a>
           </div>
