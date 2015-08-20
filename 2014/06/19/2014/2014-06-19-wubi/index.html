@@ -30,7 +30,7 @@
 
 
 
-  <meta name="keywords" content="Ubuntu,runlevel," />
+  <meta name="keywords" content="Ubuntu,wubi," />
 
 
 
@@ -41,22 +41,22 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="Ubuntu是个不错的Linux发行版，至少当时我Linux启蒙的时候用的就是这个，也习惯了Debian的apt-get的软件库
-然而有时候吧，我开Linux只是做做服务器的实验什么的，开机自动进图形界面反而会有一些费时。因此我想让Ubuntu启动之后直接进tty1的代码界面。
-下面开始搞。">
+<meta name="description" content="主要用的笔记本上正常用的win8，但是有时候要切到linux下用，wubi的ubuntu对我来说就是再适合不过的东西了，也不需要另外分盘。
+（其实主要的问题是我电脑上的MBR主分区已经到4个了，没法再分盘了）
+电脑上最早装的12，后来换到13.10，再就是最近出了14.04，于是按照往常的方式wubi安装新的版本，但是14.04这个版本貌似在grub挂载文件系统的时候出现了权限问题，不知道后来的版">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ubuntu11.04之后的runlevel定义">
-<meta property="og:url" content="http://jcf94.github.io/2014/06/21/2014-06-21-runlevel/index.html">
+<meta property="og:title" content="Wubi方式安装Ubuntu14.04出错的解决办法">
+<meta property="og:url" content="http://jcf94.github.io/2014/06/19/2014/2014-06-19-wubi/index.html">
 <meta property="og:site_name" content="Chenfan's blog">
-<meta property="og:description" content="Ubuntu是个不错的Linux发行版，至少当时我Linux启蒙的时候用的就是这个，也习惯了Debian的apt-get的软件库
-然而有时候吧，我开Linux只是做做服务器的实验什么的，开机自动进图形界面反而会有一些费时。因此我想让Ubuntu启动之后直接进tty1的代码界面。
-下面开始搞。">
-<meta property="og:updated_time" content="2015-08-20T11:44:29.333Z">
+<meta property="og:description" content="主要用的笔记本上正常用的win8，但是有时候要切到linux下用，wubi的ubuntu对我来说就是再适合不过的东西了，也不需要另外分盘。
+（其实主要的问题是我电脑上的MBR主分区已经到4个了，没法再分盘了）
+电脑上最早装的12，后来换到13.10，再就是最近出了14.04，于是按照往常的方式wubi安装新的版本，但是14.04这个版本貌似在grub挂载文件系统的时候出现了权限问题，不知道后来的版">
+<meta property="og:updated_time" content="2015-08-20T11:51:04.036Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ubuntu11.04之后的runlevel定义">
-<meta name="twitter:description" content="Ubuntu是个不错的Linux发行版，至少当时我Linux启蒙的时候用的就是这个，也习惯了Debian的apt-get的软件库
-然而有时候吧，我开Linux只是做做服务器的实验什么的，开机自动进图形界面反而会有一些费时。因此我想让Ubuntu启动之后直接进tty1的代码界面。
-下面开始搞。">
+<meta name="twitter:title" content="Wubi方式安装Ubuntu14.04出错的解决办法">
+<meta name="twitter:description" content="主要用的笔记本上正常用的win8，但是有时候要切到linux下用，wubi的ubuntu对我来说就是再适合不过的东西了，也不需要另外分盘。
+（其实主要的问题是我电脑上的MBR主分区已经到4个了，没法再分盘了）
+电脑上最早装的12，后来换到13.10，再就是最近出了14.04，于是按照往常的方式wubi安装新的版本，但是14.04这个版本貌似在grub挂载文件系统的时候出现了权限问题，不知道后来的版">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -66,7 +66,7 @@
   };
 </script>
 
-  <title> Ubuntu11.04之后的runlevel定义 | Chenfan's blog </title>
+  <title> Wubi方式安装Ubuntu14.04出错的解决办法 | Chenfan's blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
@@ -212,7 +212,7 @@
           
           
             
-              Ubuntu11.04之后的runlevel定义
+              Wubi方式安装Ubuntu14.04出错的解决办法
             
           
         </h1>
@@ -221,8 +221,8 @@
       <div class="post-meta">
         <span class="post-time">
           發表於
-          <time itemprop="dateCreated" datetime="2014-06-21T19:36:44+08:00" content="2014-06-21">
-            2014-06-21
+          <time itemprop="dateCreated" datetime="2014-06-19T19:45:15+08:00" content="2014-06-19">
+            2014-06-19
           </time>
         </span>
 
@@ -247,8 +247,8 @@
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2014/06/21/2014-06-21-runlevel/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2014/06/21/2014-06-21-runlevel/" itemprop="commentsCount"></span>
+              <a href="/2014/06/19/2014/2014-06-19-wubi/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2014/06/19/2014/2014-06-19-wubi/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -262,30 +262,25 @@
       
 
       
-        <span itemprop="articleBody"><p>Ubuntu是个不错的Linux发行版，至少当时我Linux启蒙的时候用的就是这个，也习惯了Debian的<code>apt-get</code>的软件库</p>
-<p>然而有时候吧，我开Linux只是做做服务器的实验什么的，开机自动进图形界面反而会有一些费时。因此我想让Ubuntu启动之后直接进tty1的代码界面。</p>
-<p>下面开始搞。</p>
+        <span itemprop="articleBody"><p>主要用的笔记本上正常用的win8，但是有时候要切到linux下用，wubi的ubuntu对我来说就是再适合不过的东西了，也不需要另外分盘。</p>
+<p>（其实主要的问题是我电脑上的MBR主分区已经到4个了，没法再分盘了）</p>
+<p>电脑上最早装的12，后来换到13.10，再就是最近出了14.04，于是按照往常的方式wubi安装新的版本，但是14.04这个版本貌似在grub挂载文件系统的时候出现了权限问题，不知道后来的版本有没有改过来0.0（后来听说官方准备在以后的版本中都取消Wubi啦？Oh…不要啊）。。。总之导致的结果就是wubi的Ubuntu进系统时显示严重磁盘错误。</p>
+<p>最开始以为是系统冲突还是怎么样，后来Google了下，原来出错的不止我一个。百般搜索终于在国外一个论坛上找到了解决方案。</p>
 <a id="more"></a>
-<p>Debian的runlevel跟常见的一般Linux发行版有些与众不同，一般的定义为：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0</span> - Halt</span><br><span class="line"><span class="number">1</span> - Single</span><br><span class="line"><span class="number">2</span> - Full muti-user with display manager(GUI)</span><br><span class="line"><span class="number">3</span> - Full muti-user with display manager(GUI)</span><br><span class="line"><span class="number">4</span> - Full muti-user with display manager(GUI)</span><br><span class="line"><span class="number">5</span> - Full muti-user with display manager(GUI)</span><br><span class="line"><span class="number">6</span> - Reboot</span><br></pre></td></tr></table></figure>
-<p>系统默认启动进去是runlevel2</p>
-<p>2~5的运行级别被设定成完全相同，我一般习惯于把GUI关掉，默认用CLI进行登陆，但是又希望需要图形界面的时候能够很快启动，于是就可以从这里下手。默认用一个不带GUI的运行模式启动，需要的时候再切换成带有GUI的模式进行工作。</p>
-<h1 id="GUI启动配置">GUI启动配置</h1><hr>
-<p>Ubuntu11.04之后的版本GUI都使用Light Display Manager来进行管理，配置文件在：</p>
+<h1 id="首先要想办法进去">首先要想办法进去</h1><p>正如之前看到的错误提示，Wubi进不去是因为挂载文件系统的时候权限不正常。</p>
+<p>在Ubuntu的grub启动画面按e进入编辑模式，找到以“linux”开头的那行，将其中的<code>ro rootflags=sync</code>，改为<code>rw rootflags=sync</code>。</p>
+<p>修改完毕后再按F10启动。</p>
+<p>此时即可正常进入Ubuntu14.04，GUI也能正常调用出来。</p>
+<h1 id="修改grub的配置文件">修改grub的配置文件</h1><p>上面那一步只是正常地进去，接下来为了保证以后每次都能进，还需要再改一下grub的配置文件。</p>
+<p>编辑这个文件：</p>
 <blockquote>
-<p>/etc/init/lightdm.conf</p>
+<p>/etc/grub.d/10_lupin</p>
 </blockquote>
-<p>内容里面开头的一段，设置了在哪一运行级别下启动和停止：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">start on ((filesystem</span><br><span class="line"></span><br><span class="line">           and runlevel [!<span class="number">06</span>]</span><br><span class="line"></span><br><span class="line">           and started dbus</span><br><span class="line"></span><br><span class="line">           and plymouth-ready)</span><br><span class="line"></span><br><span class="line">          or runlevel PREVLEVEL=S)</span><br><span class="line"></span><br><span class="line">stop on runlevel [<span class="number">016</span>]</span><br></pre></td></tr></table></figure>
-<p>通过修改start on 中的内容，可以让其不在我们默认的运行级别中运行。</p>
-<h1 id="修改默认运行级别">修改默认运行级别</h1><hr>
-<p>默认运行级别的设置在这里：</p>
-<blockquote>
-<p>/etc/inittab</p>
-</blockquote>
-<p>可能有默认没有这个文件的情况，貌似我装14.04的时候就是这样，新建一个就好。</p>
-<p>在里面写上下面这句话，id后面的数字就是默认的启动级别。（注意最后的冒号不能少！！！）</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">id:<span class="number">3</span>:initdefault:</span><br></pre></td></tr></table></figure>
+<p>用vi、emacs，GUI下可以用gedit，就是注意需要root权限。</p>
+<p>找到第150行左右，吧”ro”改为”rw”</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">linux <span class="variable">$&#123;rel_dirname&#125;</span>/<span class="variable">$&#123;basename&#125;</span> root=<span class="variable">$&#123;LINUX_HOST_DEVICE&#125;</span> loop=<span class="variable">$&#123;loop_file_relative&#125;</span> ro <span class="variable">$&#123;args&#125;</span> //修改前</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">linux <span class="variable">$&#123;rel_dirname&#125;</span>/<span class="variable">$&#123;basename&#125;</span> root=<span class="variable">$&#123;LINUX_HOST_DEVICE&#125;</span> loop=<span class="variable">$&#123;loop_file_relative&#125;</span> rw <span class="variable">$&#123;args&#125;</span> //修改后</span><br></pre></td></tr></table></figure>
+<p>保存，更新配置文件即可</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo update-grub</span><br></pre></td></tr></table></figure>
 </span>
       
     </div>
@@ -296,7 +291,7 @@
           
             <a href="/tags/Ubuntu/" rel="tag">#Ubuntu</a>
           
-            <a href="/tags/runlevel/" rel="tag">#runlevel</a>
+            <a href="/tags/wubi/" rel="tag">#wubi</a>
           
         </div>
       
@@ -305,13 +300,11 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2014/07/20/2014/2014-07-20-oem/" rel="prev">品牌笔记本预装windows的OEM分区问题（联想）</a>
+              <a href="/2014/06/21/2014/2014-06-21-netframework/" rel="prev">Win8/8.1下NetFramework3.5的安装</a>
             
           </div>
 
           <div class="post-nav-next post-nav-item">
-            
-              <a href="/2014/06/21/2014/2014-06-21-netframework/" rel="next">Win8/8.1下NetFramework3.5的安装</a>
             
           </div>
         </div>
@@ -359,8 +352,8 @@
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="2014/06/21/2014-06-21-runlevel/"
-                   data-title="Ubuntu11.04之后的runlevel定义" data-url="http://jcf94.github.io/2014/06/21/2014-06-21-runlevel/">
+              <div class="ds-thread" data-thread-key="2014/06/19/2014/2014-06-19-wubi/"
+                   data-title="Wubi方式安装Ubuntu14.04出错的解决办法" data-url="http://jcf94.github.io/2014/06/19/2014/2014-06-19-wubi/">
               </div>
             
           </div>
@@ -400,21 +393,21 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">73</span>
+              <span class="site-state-item-count">75</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-count">14</span>
               <span class="site-state-item-name">分類</span>
               </a>
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">60</span>
+              <span class="site-state-item-count">62</span>
               <span class="site-state-item-name">標籤</span>
               </a>
           </div>
@@ -492,7 +485,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#GUI启动配置"><span class="nav-number">1.</span> <span class="nav-text">GUI启动配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改默认运行级别"><span class="nav-number">2.</span> <span class="nav-text">修改默认运行级别</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#首先要想办法进去"><span class="nav-number">1.</span> <span class="nav-text">首先要想办法进去</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改grub的配置文件"><span class="nav-number">2.</span> <span class="nav-text">修改grub的配置文件</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
@@ -508,7 +501,7 @@
     <footer id="footer" class="footer">
       <div class="footer-inner"> <div class="copyright" >
   
-  &copy; &nbsp; 
+  &copy; &nbsp;  2014 - 
   <span itemprop="copyrightYear">2015</span>
   <span class="with-love">
     <i class="icon-next-heart"></i>
