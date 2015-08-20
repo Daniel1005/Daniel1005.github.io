@@ -4,7 +4,7 @@
   <subtitle><![CDATA[It's the way I choose.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://jcf94.github.io/"/>
-  <updated>2015-08-19T12:17:12.010Z</updated>
+  <updated>2015-08-19T12:18:08.618Z</updated>
   <id>http://jcf94.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://jcf94.github.io/2015/08/19/2015-08-19-biosinit/"/>
     <id>http://jcf94.github.io/2015/08/19/2015-08-19-biosinit/</id>
     <published>2015-08-19T10:20:21.000Z</published>
-    <updated>2015-08-19T12:17:12.010Z</updated>
+    <updated>2015-08-19T12:18:08.618Z</updated>
     <content type="html"><![CDATA[<p>之前花了点时间稍微研究了下系统内核载入，重新翻出来整理一下：</p>
 <h1 id="内核载入之前的工作">内核载入之前的工作</h1><hr>
 <p>1981年IBM PC刚推出时，系统只带有640K的的RAM，内存寻址范围最大也只有1M。现如今基本的32位机都能寻址到4G，经过CPU的新特性更是可以支持到64G的物理内存。但是为了与原来的PC想兼容，系统1M一下物理内存使用分配上仍然保持与原来一致。ROM BIOS都在物理内存能寻址的最高端位置处，所以在大于1M内存的新计算机上，ROM BIOS最后会被映射到1M末尾的 Shadow 区域中。</p>
