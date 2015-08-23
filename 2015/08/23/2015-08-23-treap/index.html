@@ -61,7 +61,7 @@
 
 我心想…平衡树+堆…Tree+Heap…这不就是Treap嘛!!!
 然而几大平衡树里面我学了SBT">
-<meta property="og:updated_time" content="2015-08-23T12:16:38.912Z">
+<meta property="og:updated_time" content="2015-08-23T12:51:03.556Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Treap">
 <meta name="twitter:description" content="据说平衡树界最经典的三大树是SBT、Splay、Treap
@@ -316,8 +316,24 @@
 </blockquote>
 <p>那么另外一个问题来了，正常情况下我们只会得到a序列，b是哪里来的呢？</p>
 <p>答案是<strong>随机数</strong>！</p>
-<p>输入数据时，我们对于每一个a都给它生成一个随机数b，然后按照堆的性质去维护b。</p>
+<p>输入数据时，我们对于每一个a都给它生成一个随机数b，然后按照堆的性质去维护b。给a序列加了个b序列之后，剩下的部分就跟上面的笔试题一样了，实现起来也比较简单。</p>
 <p>数学上可以证明，随机数+堆的限定可以保证Treap达到$O(logn)$的期望深度。</p>
+<h1 id="后话">后话</h1><hr>
+<p>网上找到的一些资料上说Treap可以完成Splay的所有操作，我还没找到详细的说明。暂时还没有想明白。</p>
+<p>如果只是按照上面那种限定死了的树结构的话，完全不明白这货是怎么可能达到像Splay那样灵活的。</p>
+<hr>
+<p>上面的代码是上午临时打的，本来想好好改进下。</p>
+<p>…</p>
+<p>然后，网上搜了下别人的代码</p>
+<p>…</p>
+<p>找到一些版本的Treap是没有左右旋的！！</p>
+<p>顿时就又吓到了！！</p>
+<p>一个之前听说过，然而一直被吓到的新名词出现了：</p>
+<p><strong>可持久化数据结构</strong>！</p>
+<p><strong>可持久化Treap</strong>！</p>
+<p>没有左右旋，而是使用切分和合并来完成整个结构的维护。</p>
+<p>大概只有这种水平才能达到Splay的灵活性吧。</p>
+<p>于是瞬间就不想改原来那个左右旋的代码了。待日后有兴趣了，再把可持久化这部分补上吧。</p>
 </span>
       
     </div>
@@ -522,7 +538,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#从一道笔试题开始说起"><span class="nav-number">1.</span> <span class="nav-text">从一道笔试题开始说起</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Treap"><span class="nav-number">2.</span> <span class="nav-text">Treap</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么要加个堆？"><span class="nav-number">2.1.</span> <span class="nav-text">为什么要加个堆？</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#从一道笔试题开始说起"><span class="nav-number">1.</span> <span class="nav-text">从一道笔试题开始说起</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Treap"><span class="nav-number">2.</span> <span class="nav-text">Treap</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么要加个堆？"><span class="nav-number">2.1.</span> <span class="nav-text">为什么要加个堆？</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#后话"><span class="nav-number">3.</span> <span class="nav-text">后话</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
