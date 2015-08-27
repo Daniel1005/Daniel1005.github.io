@@ -207,6 +207,111 @@
           
           
             
+              <a class="post-title-link" href="/2014/11/01/2014/2014-11-01-shengchengshujishu/" itemprop="url">
+                生成树计数
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2014-11-01T19:50:36+08:00" content="2014-11-01">
+            2014-11-01
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分類於
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/ACM/" itemprop="url" rel="index">
+                  <span itemprop="name">ACM</span>
+                </a>
+              </span>
+
+              
+              
+                ， 
+              
+
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/ACM/算法学习/" itemprop="url" rel="index">
+                  <span itemprop="name">算法学习</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2014/11/01/2014/2014-11-01-shengchengshujishu/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2014/11/01/2014/2014-11-01-shengchengshujishu/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <p>(本帖排版有问题，回头需要重新整理)</p>
+<p>生成树计数就是统计一张图中一共有多少种构造生成树的方案。</p>
+<p>大概要用到组合数学等等的数学知识。</p>
+<h1 id="问题的引入">问题的引入</h1><p>以下内容均来自NOI2007国家集训队论文 周冬 《生成树的计数及其应用》：</p>
+<hr>
+<p>Matrix-Tree定理(Kirchhoff矩阵-树定理)。Matrix-Tree定理是解决生成树计数问题最有力的武器之一。它首先于1847年被Kirchhoff证明。在介绍定理之前，我们首先明确几个概念：</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2014/11/01/2014/2014-11-01-shengchengshujishu/#more" rel="contents">
+              閱讀全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2014/11/01/2014/2014-11-01-HDU-4009/" itemprop="url">
                 HDU 4009 Transfer water 最小树形图
               </a>
@@ -1154,112 +1259,6 @@
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2014/09/28/2014/2014-09-28-bitset/" itemprop="url">
-                黑科技--位集--bitset
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          發表於
-          <time itemprop="dateCreated" datetime="2014-09-28T15:47:35+08:00" content="2014-09-28">
-            2014-09-28
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分類於
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/ACM/" itemprop="url" rel="index">
-                  <span itemprop="name">ACM</span>
-                </a>
-              </span>
-
-              
-              
-                ， 
-              
-
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/ACM/算法学习/" itemprop="url" rel="index">
-                  <span itemprop="name">算法学习</span>
-                </a>
-              </span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2014/09/28/2014/2014-09-28-bitset/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2014/09/28/2014/2014-09-28-bitset/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <p>自从上次网赛发现这么个东西之后，深深地感受到了bitset的强大，0.0。</p>
-<p>正常的bool占用1字节空间，bitset可以把这个缩到1bit，空间上8倍优化。正常用起来可能会跟位运算状态压缩类似，但是其中的每个位又能进行单独操作，所以确实相当方便。</p>
-<p>下面是原版的文档：</p>
-<p>class template</p>
-<bitset>
-
-<h1 id="std::bitset">std::bitset</h1>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2014/09/28/2014/2014-09-28-bitset/#more" rel="contents">
-              閱讀全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1298,7 +1297,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">76</span>
+              <span class="site-state-item-count">77</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>
@@ -1312,7 +1311,7 @@
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">64</span>
+              <span class="site-state-item-count">65</span>
               <span class="site-state-item-name">標籤</span>
               </a>
           </div>
