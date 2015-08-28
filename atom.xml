@@ -4,7 +4,7 @@
   <subtitle><![CDATA[It's the way I choose.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://jcf94.github.io/"/>
-  <updated>2015-08-28T11:33:40.725Z</updated>
+  <updated>2015-08-28T11:41:56.461Z</updated>
   <id>http://jcf94.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://jcf94.github.io/2015/08/28/2015-08-28-manufactoria/"/>
     <id>http://jcf94.github.io/2015/08/28/2015-08-28-manufactoria/</id>
     <published>2015-08-28T11:25:48.000Z</published>
-    <updated>2015-08-28T11:33:40.725Z</updated>
+    <updated>2015-08-28T11:41:56.461Z</updated>
     <content type="html"><![CDATA[<p>自从在知乎上发现了这么个有意思的问题：</p>
 <p><a href="http://www.zhihu.com/question/27535591" target="_blank" rel="external">有哪些很有「工程师情怀」的游戏？</a></p>
 <p>，就时不时上去关注一下有没有新的回答。</p>
@@ -29,10 +29,14 @@
 <p>这是我所见过的程序设计类 Puzzle 游戏中最好玩的一个。它是真正意义上的程序设计游戏，游戏不但提供了完备的读写和流程控制功能，甚至还引入了随机测试数据。游戏很快就会引入算法的思想，因为玩家渐渐会发现，这些谜题并不是单靠模拟就能解决的；后面的谜题则越发困难，需要相当有技巧性的算法设计，对脑力绝对是一个大挑战。如果你热爱算法与程序设计，你一定会爱上这个游戏的。</p>
 </blockquote>
 <a id="more"></a>
-<object width="640" height="480" align="middle" id="flashobj" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000"><param name="allowScriptAccess" value="sameDomain"><param name="allowFullScreen" value="false"><param name="movie" value="http://www.matrix67.com/data/manufactoria.swf"><param name="quality" value="high"><embed name="flashcontent" width="640" height="480" align="middle" pluginspage="http://www.macromedia.com/go/getflashplayer" src="http://www.matrix67.com/data/manufactoria.swf" type="application/x-shockwave-flash" allowfullscreen="false" allowscriptaccess="sameDomain" quality="high"></object>
+<hr>
+<p>下面上游戏~这是个写得很简单的Flash游戏，整个swf就3M大小。</p>
+<p>然后吐槽一下：谁说静态博客不好用的>_&lt;/ ！！！兼容html格式之后，音乐、视频、Flash游戏……啥都能给你插进来哈哈~~~</p>
+<hr>
+<object width="640" height="480" align="middle" id="flashobj" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000"><param name="allowScriptAccess" value="sameDomain"><param name="allowFullScreen" value="false"><param name="movie" value="http://7xjh3j.com1.z0.glb.clouddn.com/2015-08-28-manufactoria-manufactoria.swf"><param name="quality" value="high"><embed name="flashcontent" width="640" height="480" align="middle" pluginspage="http://www.macromedia.com/go/getflashplayer" src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-08-28-manufactoria-manufactoria.swf" type="application/x-shockwave-flash" allowfullscreen="false" allowscriptaccess="sameDomain" quality="high"></object>
 
 <p>游戏来源：<a href="http://jayisgames.com/games/manufactoria/" target="_blank" rel="external">http://jayisgames.com/games/manufactoria/</a></p>
-<p>上面的Flash暂时引用了Matrix67原帖里面的地址，不知道七牛能不能支持swf的外链。</p>
+<hr>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>自从在知乎上发现了这么个有意思的问题：</p>
