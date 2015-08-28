@@ -59,7 +59,18 @@
 引用下 Matrix67 的评价：
 
 这是我所见过的程序设计类 Puzzle 游戏中最好玩的一个。它是真正意义上的程序设计游戏，游戏不但提供了完备的读写和流程控制功能，甚至还引入了随机测试数据。游">
-<meta property="og:updated_time" content="2015-08-28T11:41:56.461Z">
+<meta property="og:image" content="http://7xjh3j.com1.z0.glb.clouddn.com/2015-08-28-manufactoria-1.jpg">
+<meta property="og:image" content="http://7xjh3j.com1.z0.glb.clouddn.com/2015-08-28-manufactoria-2.jpg">
+<meta property="og:image" content="http://7xjh3j.com1.z0.glb.clouddn.com/2015-08-28-manufactoria-3.jpg">
+<meta property="og:image" content="http://7xjh3j.com1.z0.glb.clouddn.com/2015-08-28-manufactoria-4.1.jpg">
+<meta property="og:image" content="http://7xjh3j.com1.z0.glb.clouddn.com/2015-08-28-manufactoria-5.1.jpg">
+<meta property="og:image" content="http://7xjh3j.com1.z0.glb.clouddn.com/2015-08-28-manufactoria-6.1.jpg">
+<meta property="og:image" content="http://7xjh3j.com1.z0.glb.clouddn.com/2015-08-28-manufactoria-4.2.jpg">
+<meta property="og:image" content="http://7xjh3j.com1.z0.glb.clouddn.com/2015-08-28-manufactoria-5.2.jpg">
+<meta property="og:image" content="http://7xjh3j.com1.z0.glb.clouddn.com/2015-08-28-manufactoria-6.2.jpg">
+<meta property="og:image" content="http://7xjh3j.com1.z0.glb.clouddn.com/2015-08-28-manufactoria-7.1.jpg">
+<meta property="og:image" content="http://7xjh3j.com1.z0.glb.clouddn.com/2015-08-28-manufactoria-7.2.jpg">
+<meta property="og:updated_time" content="2015-08-28T13:18:47.780Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Manufactoria 一个好玩的自动机编程游戏">
 <meta name="twitter:description" content="自从在知乎上发现了这么个有意思的问题：
@@ -286,11 +297,44 @@
 <hr>
 <p>下面上游戏~这是个写得很简单的Flash游戏，整个swf就3M大小。</p>
 <p>然后吐槽一下：谁说静态博客不好用的>_&lt;/ ！！！兼容html格式之后，音乐、视频、Flash游戏……啥都能给你插进来哈哈~~~</p>
-<hr>
+<h1 id="游戏本体在此">游戏本体在此</h1><hr>
 <object width="640" height="480" align="middle" id="flashobj" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000"><param name="allowScriptAccess" value="sameDomain"><param name="allowFullScreen" value="false"><param name="movie" value="http://7xjh3j.com1.z0.glb.clouddn.com/2015-08-28-manufactoria-manufactoria.swf"><param name="quality" value="high"><embed name="flashcontent" width="640" height="480" align="middle" pluginspage="http://www.macromedia.com/go/getflashplayer" src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-08-28-manufactoria-manufactoria.swf" type="application/x-shockwave-flash" allowfullscreen="false" allowscriptaccess="sameDomain" quality="high"></object>
 
 <p>游戏来源：<a href="http://jayisgames.com/games/manufactoria/" target="_blank" rel="external">http://jayisgames.com/games/manufactoria/</a></p>
 <hr>
+<h1 id="我的游戏记录">我的游戏记录</h1><p>（话说不知道页面折叠这种东西能不能用html写出来…）</p>
+<hr>
+<h2 id="1-Robotoast！">1.Robotoast！</h2><p>就是从起点到终点。</p>
+<p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-08-28-manufactoria-1.jpg" alt="1"></p>
+<h2 id="2-Robocoffee！">2.Robocoffee！</h2><p>接收条件：起点是蓝色点。</p>
+<p>一个Branch进行判断选择即可。</p>
+<p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-08-28-manufactoria-2.jpg" alt="2"></p>
+<h2 id="3-Robolamp！">3.Robolamp！</h2><p>接收条件：至少三个蓝色点。</p>
+<p>这里我直接把Branch横着摆，红点则循环，蓝点通过，判断三次结束。</p>
+<p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-08-28-manufactoria-3.jpg" alt="3"></p>
+<h2 id="4-1-Robofish！">4.1.Robofish！</h2><p>接收条件：无红点。</p>
+<p>遇到红点直接结束，蓝点循环即可。</p>
+<p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-08-28-manufactoria-4.1.jpg" alt="4.1"></p>
+<h2 id="5-1-Robobugs！">5.1.Robobugs！</h2><p>接收条件：必须是红蓝点交替。</p>
+<p>正确的路径只有 红-&gt;蓝-&gt;红-&gt;循环 或者 蓝-&gt;红-&gt;蓝-&gt;循环，其他的都结束。</p>
+<p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-08-28-manufactoria-5.1.jpg" alt="5.1"></p>
+<h2 id="6-1-Robocats！">6.1.Robocats！</h2><p>接收条件：必须以两个蓝点结束。</p>
+<p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-08-28-manufactoria-6.1.jpg" alt="6.1"></p>
+<h2 id="4-2-RC_Cars！">4.2.RC Cars！</h2><p>从这里开始新增了一种设备：Writer。功能是能够在纸带上打印颜色点。</p>
+<p>输出：把第一个点放在最后，输出整个序列。</p>
+<p>只需处理第一个点，剩下的保持不变即可。</p>
+<p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-08-28-manufactoria-4.2.jpg" alt="4.2"></p>
+<h2 id="5-2-Robocars！">5.2.Robocars！</h2><p>输出：把蓝点替换成绿点，红点替换成黄点。</p>
+<p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-08-28-manufactoria-5.2.jpg" alt="5.2"></p>
+<h2 id="6-2-Robostilts">6.2.Robostilts</h2><p>输出：以绿点开始，黄点结束，中间是原始的输入序列。</p>
+<p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-08-28-manufactoria-6.2.jpg" alt="6.2"></p>
+<h2 id="7-1-Robobears！">7.1.Robobears！</h2><p>接收条件：起始点与结束点必须是相同颜色。</p>
+<p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-08-28-manufactoria-7.1.jpg" alt="7.1"></p>
+<h2 id="7-2-Milidogs！">7.2.Milidogs！</h2><p>接收条件：蓝点作为1，红点作为0，当纸袋表示的数字是奇数时才接收。</p>
+<p>其实就是要求最后一个点是蓝点，思路与 6.1.Robocats！ 类似。</p>
+<p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-08-28-manufactoria-7.2.jpg" alt="7.2"></p>
+<hr>
+<p>未完待续</p>
 </span>
       
     </div>
@@ -495,7 +539,7 @@
           <div class="post-toc">
             
             
-              <p class="post-toc-empty">此文章未包含目錄</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#游戏本体在此"><span class="nav-number">1.</span> <span class="nav-text">游戏本体在此</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#我的游戏记录"><span class="nav-number">2.</span> <span class="nav-text">我的游戏记录</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Robotoast！"><span class="nav-number">2.1.</span> <span class="nav-text">1.Robotoast！</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Robocoffee！"><span class="nav-number">2.2.</span> <span class="nav-text">2.Robocoffee！</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Robolamp！"><span class="nav-number">2.3.</span> <span class="nav-text">3.Robolamp！</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-Robofish！"><span class="nav-number">2.4.</span> <span class="nav-text">4.1.Robofish！</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-1-Robobugs！"><span class="nav-number">2.5.</span> <span class="nav-text">5.1.Robobugs！</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-1-Robocats！"><span class="nav-number">2.6.</span> <span class="nav-text">6.1.Robocats！</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-RC_Cars！"><span class="nav-number">2.7.</span> <span class="nav-text">4.2.RC Cars！</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-2-Robocars！"><span class="nav-number">2.8.</span> <span class="nav-text">5.2.Robocars！</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-2-Robostilts"><span class="nav-number">2.9.</span> <span class="nav-text">6.2.Robostilts</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-1-Robobears！"><span class="nav-number">2.10.</span> <span class="nav-text">7.1.Robobears！</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-2-Milidogs！"><span class="nav-number">2.11.</span> <span class="nav-text">7.2.Milidogs！</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>

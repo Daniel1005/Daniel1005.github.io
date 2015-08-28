@@ -4,7 +4,7 @@
   <subtitle><![CDATA[It's the way I choose.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://jcf94.github.io/"/>
-  <updated>2015-08-28T11:41:56.461Z</updated>
+  <updated>2015-08-28T13:18:47.780Z</updated>
   <id>http://jcf94.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://jcf94.github.io/2015/08/28/2015-08-28-manufactoria/"/>
     <id>http://jcf94.github.io/2015/08/28/2015-08-28-manufactoria/</id>
     <published>2015-08-28T11:25:48.000Z</published>
-    <updated>2015-08-28T11:41:56.461Z</updated>
+    <updated>2015-08-28T13:18:47.780Z</updated>
     <content type="html"><![CDATA[<p>自从在知乎上发现了这么个有意思的问题：</p>
 <p><a href="http://www.zhihu.com/question/27535591" target="_blank" rel="external">有哪些很有「工程师情怀」的游戏？</a></p>
 <p>，就时不时上去关注一下有没有新的回答。</p>
@@ -32,11 +32,44 @@
 <hr>
 <p>下面上游戏~这是个写得很简单的Flash游戏，整个swf就3M大小。</p>
 <p>然后吐槽一下：谁说静态博客不好用的>_&lt;/ ！！！兼容html格式之后，音乐、视频、Flash游戏……啥都能给你插进来哈哈~~~</p>
-<hr>
+<h1 id="游戏本体在此">游戏本体在此</h1><hr>
 <object width="640" height="480" align="middle" id="flashobj" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000"><param name="allowScriptAccess" value="sameDomain"><param name="allowFullScreen" value="false"><param name="movie" value="http://7xjh3j.com1.z0.glb.clouddn.com/2015-08-28-manufactoria-manufactoria.swf"><param name="quality" value="high"><embed name="flashcontent" width="640" height="480" align="middle" pluginspage="http://www.macromedia.com/go/getflashplayer" src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-08-28-manufactoria-manufactoria.swf" type="application/x-shockwave-flash" allowfullscreen="false" allowscriptaccess="sameDomain" quality="high"></object>
 
 <p>游戏来源：<a href="http://jayisgames.com/games/manufactoria/" target="_blank" rel="external">http://jayisgames.com/games/manufactoria/</a></p>
 <hr>
+<h1 id="我的游戏记录">我的游戏记录</h1><p>（话说不知道页面折叠这种东西能不能用html写出来…）</p>
+<hr>
+<h2 id="1-Robotoast！">1.Robotoast！</h2><p>就是从起点到终点。</p>
+<p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-08-28-manufactoria-1.jpg" alt="1"></p>
+<h2 id="2-Robocoffee！">2.Robocoffee！</h2><p>接收条件：起点是蓝色点。</p>
+<p>一个Branch进行判断选择即可。</p>
+<p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-08-28-manufactoria-2.jpg" alt="2"></p>
+<h2 id="3-Robolamp！">3.Robolamp！</h2><p>接收条件：至少三个蓝色点。</p>
+<p>这里我直接把Branch横着摆，红点则循环，蓝点通过，判断三次结束。</p>
+<p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-08-28-manufactoria-3.jpg" alt="3"></p>
+<h2 id="4-1-Robofish！">4.1.Robofish！</h2><p>接收条件：无红点。</p>
+<p>遇到红点直接结束，蓝点循环即可。</p>
+<p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-08-28-manufactoria-4.1.jpg" alt="4.1"></p>
+<h2 id="5-1-Robobugs！">5.1.Robobugs！</h2><p>接收条件：必须是红蓝点交替。</p>
+<p>正确的路径只有 红-&gt;蓝-&gt;红-&gt;循环 或者 蓝-&gt;红-&gt;蓝-&gt;循环，其他的都结束。</p>
+<p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-08-28-manufactoria-5.1.jpg" alt="5.1"></p>
+<h2 id="6-1-Robocats！">6.1.Robocats！</h2><p>接收条件：必须以两个蓝点结束。</p>
+<p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-08-28-manufactoria-6.1.jpg" alt="6.1"></p>
+<h2 id="4-2-RC_Cars！">4.2.RC Cars！</h2><p>从这里开始新增了一种设备：Writer。功能是能够在纸带上打印颜色点。</p>
+<p>输出：把第一个点放在最后，输出整个序列。</p>
+<p>只需处理第一个点，剩下的保持不变即可。</p>
+<p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-08-28-manufactoria-4.2.jpg" alt="4.2"></p>
+<h2 id="5-2-Robocars！">5.2.Robocars！</h2><p>输出：把蓝点替换成绿点，红点替换成黄点。</p>
+<p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-08-28-manufactoria-5.2.jpg" alt="5.2"></p>
+<h2 id="6-2-Robostilts">6.2.Robostilts</h2><p>输出：以绿点开始，黄点结束，中间是原始的输入序列。</p>
+<p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-08-28-manufactoria-6.2.jpg" alt="6.2"></p>
+<h2 id="7-1-Robobears！">7.1.Robobears！</h2><p>接收条件：起始点与结束点必须是相同颜色。</p>
+<p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-08-28-manufactoria-7.1.jpg" alt="7.1"></p>
+<h2 id="7-2-Milidogs！">7.2.Milidogs！</h2><p>接收条件：蓝点作为1，红点作为0，当纸袋表示的数字是奇数时才接收。</p>
+<p>其实就是要求最后一个点是蓝点，思路与 6.1.Robocats！ 类似。</p>
+<p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-08-28-manufactoria-7.2.jpg" alt="7.2"></p>
+<hr>
+<p>未完待续</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>自从在知乎上发现了这么个有意思的问题：</p>
