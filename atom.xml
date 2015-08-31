@@ -4,7 +4,7 @@
   <subtitle><![CDATA[It's the way I choose.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://jcf94.github.io/"/>
-  <updated>2015-08-28T13:18:47.780Z</updated>
+  <updated>2015-08-31T14:57:18.905Z</updated>
   <id>http://jcf94.github.io/</id>
   
   <author>
@@ -15,11 +15,43 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[ISCA 2014 会议论文整理]]></title>
+    <link href="http://jcf94.github.io/2015/08/31/2015-08-31-isca2014/"/>
+    <id>http://jcf94.github.io/2015/08/31/2015-08-31-isca2014/</id>
+    <published>2015-08-31T14:34:15.000Z</published>
+    <updated>2015-08-31T14:57:18.905Z</updated>
+    <content type="html"><![CDATA[<p>即将踏入 Computer Architecture 领域，准备从今年下半年开始把这个方向相关的国际顶级会议论文都下过来看看。</p>
+<p>从 ISCA 2014 开始：</p>
+<p>ISCA 是由 ACM 与 IEEE 共同主办的体系结构领域顶级会议，全名是 International Symposium on Computer Architecture 。</p>
+<blockquote>
+<p>话说，学校买了 IEEE 的刊文版权就是好哇~~~数字图书馆登上去直接就能下了，怀抱这么一个大金库，真是爽啊！！</p>
+</blockquote>
+<a id="more"></a>
+<h1 id="Session_1:_Machines_and_Prototypes">Session 1: Machines and Prototypes</h1><h1 id="Session_2A:_Resilience">Session 2A: Resilience</h1><h1 id="Session_2B:_Design_Space_Exploration">Session 2B: Design Space Exploration</h1><h1 id="Session_3A:_Caches">Session 3A: Caches</h1><h1 id="Session_3B:_GPUs_and_Parallelism">Session 3B: GPUs and Parallelism</h1><h1 id="Session_4:_Emerging_Technologies">Session 4: Emerging Technologies</h1><h1 id="Session_5A:_NVRAM">Session 5A: NVRAM</h1><h1 id="Session_5B:_Datacenters_and_Cloud">Session 5B: Datacenters and Cloud</h1><h1 id="Session_6A:_DRAM">Session 6A: DRAM</h1><h1 id="Session_6B:_Circuits_and_Architecture">Session 6B: Circuits and Architecture</h1><h1 id="Session_7A:_Coherence_and_Replay">Session 7A: Coherence and Replay</h1><h1 id="Session_7B:_Security/OOO_Processors">Session 7B: Security/OOO Processors</h1><h1 id="Session_8:_Accelerators">Session 8: Accelerators</h1>]]></content>
+    <summary type="html">
+    <![CDATA[<p>即将踏入 Computer Architecture 领域，准备从今年下半年开始把这个方向相关的国际顶级会议论文都下过来看看。</p>
+<p>从 ISCA 2014 开始：</p>
+<p>ISCA 是由 ACM 与 IEEE 共同主办的体系结构领域顶级会议，全名是 International Symposium on Computer Architecture 。</p>
+<blockquote>
+<p>话说，学校买了 IEEE 的刊文版权就是好哇~~~数字图书馆登上去直接就能下了，怀抱这么一个大金库，真是爽啊！！</p>
+</blockquote>]]>
+    
+    </summary>
+    
+      <category term="IEEE" scheme="http://jcf94.github.io/tags/IEEE/"/>
+    
+      <category term="ISCA" scheme="http://jcf94.github.io/tags/ISCA/"/>
+    
+      <category term="论文" scheme="http://jcf94.github.io/categories/%E8%AE%BA%E6%96%87/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[Manufactoria 一个好玩的自动机编程游戏]]></title>
     <link href="http://jcf94.github.io/2015/08/28/2015-08-28-manufactoria/"/>
     <id>http://jcf94.github.io/2015/08/28/2015-08-28-manufactoria/</id>
     <published>2015-08-28T11:25:48.000Z</published>
-    <updated>2015-08-28T13:18:47.780Z</updated>
+    <updated>2015-08-28T13:22:48.000Z</updated>
     <content type="html"><![CDATA[<p>自从在知乎上发现了这么个有意思的问题：</p>
 <p><a href="http://www.zhihu.com/question/27535591" target="_blank" rel="external">有哪些很有「工程师情怀」的游戏？</a></p>
 <p>，就时不时上去关注一下有没有新的回答。</p>
@@ -61,7 +93,7 @@
 <p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-08-28-manufactoria-4.2.jpg" alt="4.2"></p>
 <h2 id="5-2-Robocars！">5.2.Robocars！</h2><p>输出：把蓝点替换成绿点，红点替换成黄点。</p>
 <p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-08-28-manufactoria-5.2.jpg" alt="5.2"></p>
-<h2 id="6-2-Robostilts">6.2.Robostilts</h2><p>输出：以绿点开始，黄点结束，中间是原始的输入序列。</p>
+<h2 id="6-2-Robostilts！">6.2.Robostilts！</h2><p>输出：以绿点开始，黄点结束，中间是原始的输入序列。</p>
 <p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-08-28-manufactoria-6.2.jpg" alt="6.2"></p>
 <h2 id="7-1-Robobears！">7.1.Robobears！</h2><p>接收条件：起始点与结束点必须是相同颜色。</p>
 <p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-08-28-manufactoria-7.1.jpg" alt="7.1"></p>
@@ -96,7 +128,7 @@
     <link href="http://jcf94.github.io/2015/08/27/2015-08-27-multi1/"/>
     <id>http://jcf94.github.io/2015/08/27/2015-08-27-multi1/</id>
     <published>2015-08-27T13:12:43.000Z</published>
-    <updated>2015-08-27T14:06:09.592Z</updated>
+    <updated>2015-08-27T14:06:09.000Z</updated>
     <content type="html"><![CDATA[<p>暑假因为出去参加夏令营和各种事情，没有跟留在学校训练的小伙伴们一起打多校，想想还是挺惭愧的。</p>
 <p>从大一进校开始，ACM已经打了快4年了，如果所有事情都弄完了，下半年可能还有机会最后收个尾…（咳咳，话说我退役贴都早写过了…）</p>
 <p>试看了几题，发现这么长时间没有写题，思路都跟不上了。唉。</p>
@@ -143,7 +175,7 @@
     <link href="http://jcf94.github.io/2015/08/23/2015-08-23-treap/"/>
     <id>http://jcf94.github.io/2015/08/23/2015-08-23-treap/</id>
     <published>2015-08-23T08:45:01.000Z</published>
-    <updated>2015-08-23T12:51:03.556Z</updated>
+    <updated>2015-08-23T12:51:03.000Z</updated>
     <content type="html"><![CDATA[<blockquote class="blockquote-center"><br>据说平衡树界最经典的三大树是<br>SBT、Splay、Treap<br></blockquote>
 
 <h1 id="从一道笔试题开始说起">从一道笔试题开始说起</h1><p>上午帮舍友助攻阿里笔试的时候，遇上这么一道题：</p>
@@ -218,7 +250,7 @@
     <link href="http://jcf94.github.io/2015/08/22/2015-08-22-networkflow/"/>
     <id>http://jcf94.github.io/2015/08/22/2015-08-22-networkflow/</id>
     <published>2015-08-22T00:21:16.000Z</published>
-    <updated>2015-08-22T02:10:31.341Z</updated>
+    <updated>2015-08-22T02:10:31.000Z</updated>
     <content type="html"><![CDATA[<p>今天来整理一下网络流的相关内容。</p>
 <p>首先贴一个博客：<a href="http://mindlee.com/2011/11/19/network-flow/" target="_blank" rel="external">网络流(Network Flow)</a></p>
 <p>关于网络流的介绍，这里都讲得比较详细了。</p>
@@ -272,7 +304,7 @@
     <link href="http://jcf94.github.io/2015/08/19/2015-08-19-biosinit/"/>
     <id>http://jcf94.github.io/2015/08/19/2015-08-19-biosinit/</id>
     <published>2015-08-19T10:20:21.000Z</published>
-    <updated>2015-08-19T12:18:08.618Z</updated>
+    <updated>2015-08-19T12:18:08.000Z</updated>
     <content type="html"><![CDATA[<p>之前花了点时间稍微研究了下系统内核载入，重新翻出来整理一下：</p>
 <h1 id="内核载入之前的工作">内核载入之前的工作</h1><hr>
 <p>1981年IBM PC刚推出时，系统只带有640K的的RAM，内存寻址范围最大也只有1M。现如今基本的32位机都能寻址到4G，经过CPU的新特性更是可以支持到64G的物理内存。但是为了与原来的PC想兼容，系统1M一下物理内存使用分配上仍然保持与原来一致。ROM BIOS都在物理内存能寻址的最高端位置处，所以在大于1M内存的新计算机上，ROM BIOS最后会被映射到1M末尾的 Shadow 区域中。</p>
@@ -418,7 +450,7 @@
     <link href="http://jcf94.github.io/2015/08/16/2015-08-16-compilers/"/>
     <id>http://jcf94.github.io/2015/08/16/2015-08-16-compilers/</id>
     <published>2015-08-16T08:34:00.000Z</published>
-    <updated>2015-08-22T10:34:58.515Z</updated>
+    <updated>2015-08-22T10:34:58.000Z</updated>
     <content type="html"><![CDATA[<p>缺的东西只能自己补上，开始补编译原理。</p>
 <p>刚买了的龙书还在路上，先从 Coursera 上找个公开课看着。</p>
 <a id="more"></a>
@@ -460,7 +492,7 @@
     <link href="http://jcf94.github.io/2015/08/16/2015-08-16-cherry/"/>
     <id>http://jcf94.github.io/2015/08/16/2015-08-16-cherry/</id>
     <published>2015-08-16T07:42:32.000Z</published>
-    <updated>2015-08-16T08:14:40.086Z</updated>
+    <updated>2015-08-16T08:14:40.000Z</updated>
     <content type="html"><![CDATA[<blockquote class="blockquote-center"><br>人生中的第一块原厂红轴<br>0.0<br>默默地入坑了<br></blockquote>
 
 <p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-08-16-cherry-P50816-154734.jpg" alt="cherry"></p>
@@ -486,7 +518,7 @@
     <link href="http://jcf94.github.io/2015/07/27/2015-07-27-sysucmu/"/>
     <id>http://jcf94.github.io/2015/07/27/2015-07-27-sysucmu/</id>
     <published>2015-07-27T07:00:39.000Z</published>
-    <updated>2015-08-01T13:08:04.915Z</updated>
+    <updated>2015-08-01T13:08:04.000Z</updated>
     <content type="html"><![CDATA[<blockquote class="blockquote-center"><br>多图预警！！！<br>千万不要用流量打开本帖！！！<br>0.0<br></blockquote>
 
 <p>26号到的广州，27号报到。</p>
@@ -771,7 +803,7 @@
     <link href="http://jcf94.github.io/2015/07/21/2015-07-21-music/"/>
     <id>http://jcf94.github.io/2015/07/21/2015-07-21-music/</id>
     <published>2015-07-21T12:03:39.000Z</published>
-    <updated>2015-08-20T13:08:37.454Z</updated>
+    <updated>2015-08-20T13:08:37.000Z</updated>
     <content type="html"><![CDATA[<p>去年在Coursera上学过一段时间的基础乐理，可惜后来还是没完成…重新整理一下</p>
 <hr>
 <p><a href="http://mooc.guokr.com/course/841/Developing-Your-Musicianship/" target="_blank" rel="external">MOOC课程地址</a></p>
@@ -1014,7 +1046,7 @@
     <link href="http://jcf94.github.io/2015/07/13/2015-07-13-makefile/"/>
     <id>http://jcf94.github.io/2015/07/13/2015-07-13-makefile/</id>
     <published>2015-07-13T12:30:54.000Z</published>
-    <updated>2015-08-19T10:27:54.080Z</updated>
+    <updated>2015-08-19T10:27:54.000Z</updated>
     <content type="html"><![CDATA[<p>之前啃内核的时候就见过这个东西，整理项目的时候正好用到，顺便好好学习一下。</p>
 <p>详见：<a href="http://blog.csdn.net/ruglcc/article/details/7814546/" target="_blank" rel="external">Makefile经典教程(掌握这些足够)</a></p>
 ]]></content>
@@ -2030,96 +2062,6 @@
       <category term="复习笔记" scheme="http://jcf94.github.io/tags/%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
       <category term="我的大学" scheme="http://jcf94.github.io/categories/%E6%88%91%E7%9A%84%E5%A4%A7%E5%AD%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[小记]]></title>
-    <link href="http://jcf94.github.io/2015/06/25/2015/2015-06-25-baoyan/"/>
-    <id>http://jcf94.github.io/2015/06/25/2015/2015-06-25-baoyan/</id>
-    <published>2015-06-25T15:34:09.000Z</published>
-    <updated>2015-06-26T14:17:43.000Z</updated>
-    <content type="html"><![CDATA[<blockquote class="blockquote-center"><br>直面现实的时候，才会觉得害怕<br>总有一天我们是要离开象牙塔的<br></blockquote>
-
-<p>今晚被拉去听了我们学院的考研解读会。</p>
-<p>其实当初说要求每个班都有要去的人数指标的时候就已经想到了这可能会是个坑了，果然，我说我真没想到我听的第一个宣讲会会是我自己学校的。</p>
-<blockquote>
-<p>整个解读会的主题就是留本校留本校留本校留本校留本校…</p>
-</blockquote>
-<p>说真的，其实也是听了今晚院领导的各种“吹”，才赫然发现我们学校，<strong>真心不错</strong>！！也难怪分数线一年比一年高、、、</p>
-<p>然而人各有志，也是真心想离开这里。。。</p>
-<a id="more"></a>
-<hr>
-<p>开始投夏令营的时候投了3个，中科大、北大、中山卡耐基，直到今天似乎终于大部分的学校都截止报名了，然后幸而我也收到了第一个确认。</p>
-<p>之前想想还是挺忐忑的，虽然以前已经有了两年前PSW保去复旦的先例了，总还是对自己的学校不太有信心。</p>
-<blockquote>
-<p>知名度太低，谁知道你是个211？没当成<strong>民办三本</strong>就已经很好啦（虽然我们平时自己也是这么自黑的）</p>
-</blockquote>
-<p>而且纵观我们学院这几年保出去的那些，西交西电居多，如此大胆往这么高的地方投的，可能真的不多吧。</p>
-<hr>
-<blockquote>
-<p>然而我<strong>不甘心</strong>。不甘心我的星辰大海，只有这么点大吧？</p>
-</blockquote>
-<p>也是怪自己要求太高，直博的不想去，挑计算机，又重点想找自己想学的系统结构比较强的。。。然后最后就只剩几个了。</p>
-<p>一边考着试，一边忐忑地等着结果，今天考完了这学期的倒数第二门，距离告别大三只差最后一门仙姑的《微波技术与天线》啦~</p>
-<hr>
-<blockquote>
-<p>得到第一个接收回复算是终于稍微有点底了。</p>
-</blockquote>
-<p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-06-25-baoyan-1.jpg" alt="huifu"></p>
-<hr>
-<p>我现在最想拿的还是中山卡耐基的offer。</p>
-<blockquote>
-<p>在中大待一年，赴美卡耐基待一年，然后拿到两个学校的学位，留美打拼几年之后再回国。</p>
-</blockquote>
-<p>想想也是挺好的。</p>
-<hr>
-<p>日子过得挺累，或许好多事情原本就不应该我去多担心吧。</p>
-<p>就是自从去年家里掏空积蓄买了那套房开始，正好又碰上行业不景气，老爸的厂里生意巨差。</p>
-<p>也是真的不敢给他们再多压力了，也是想自己赶紧能够出来赚到自己的钱，每次一想到爸妈，就会觉得他们很累。</p>
-<blockquote>
-<p>之前花了好久考虑到底要不要读研？呵呵，直接毕业出去工作算了。。。</p>
-</blockquote>
-<p>结果弄到最后我居然想的是出国这条要花更多钱的路？</p>
-<p>或许这就是一条专属于程序员的路吧。</p>
-<p>我对自己尽最大的可能估测如果能拿到10k/月的薪资已经是很好了，然而这样给人打工能到什么时候？又能怎么还清背后的一屁股债啊。。。</p>
-<p>程序员在美帝整体的待遇还是很不错的，EE/CS毕业生平均大概能找到6W/年的工资吧，努力一点，节省一点，折合成RMB就能多很多。</p>
-<p>而且总的来说，这个行业在那边发展的也是更好一些，等到学成打拼几年之后带着积蓄归国，想想也是个不错的选择不是吗？</p>
-<hr>
-<p>也许我还是把事情想得太简单了吧，之前在知乎上搜了相关的问题也都是喜忧参半。</p>
-<ul>
-<li>这篇文章给了我很大的鼓舞</li>
-</ul>
-<p><a href="http://www.zhihu.com/question/24876778/answer/29381504" target="_blank" rel="external">家境一般如何出国留学？</a></p>
-<ul>
-<li>这个则是留给我更多的思考，当然我并不想留在美帝。。。情况应该能好一些</li>
-</ul>
-<p><a href="http://www.zhihu.com/question/27829455" target="_blank" rel="external">寒门学子能否通过赴美攻读研究生，最终留在美国？</a></p>
-<hr>
-<p>T_T 夜深了，想不明白的只有回头再考虑了</p>
-<p>明天中山卡耐基会在西交有个宣讲会，去听下再作打算吧。</p>
-<blockquote>
-<p>然而我还不一定能过人家的初审。。。。</p>
-</blockquote>
-]]></content>
-    <summary type="html">
-    <![CDATA[<blockquote class="blockquote-center"><br>直面现实的时候，才会觉得害怕<br>总有一天我们是要离开象牙塔的<br></blockquote>
-
-<p>今晚被拉去听了我们学院的考研解读会。</p>
-<p>其实当初说要求每个班都有要去的人数指标的时候就已经想到了这可能会是个坑了，果然，我说我真没想到我听的第一个宣讲会会是我自己学校的。</p>
-<blockquote>
-<p>整个解读会的主题就是留本校留本校留本校留本校留本校…</p>
-</blockquote>
-<p>说真的，其实也是听了今晚院领导的各种“吹”，才赫然发现我们学校，<strong>真心不错</strong>！！也难怪分数线一年比一年高、、、</p>
-<p>然而人各有志，也是真心想离开这里。。。</p>]]>
-    
-    </summary>
-    
-      <category term="保研" scheme="http://jcf94.github.io/tags/%E4%BF%9D%E7%A0%94/"/>
-    
-      <category term="随笔" scheme="http://jcf94.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
-    
-      <category term="日常" scheme="http://jcf94.github.io/categories/%E6%97%A5%E5%B8%B8/"/>
     
   </entry>
   
