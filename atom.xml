@@ -4,7 +4,7 @@
   <subtitle><![CDATA[It's the way I choose.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://jcf94.github.io/"/>
-  <updated>2015-09-07T15:14:52.981Z</updated>
+  <updated>2015-09-09T03:12:43.357Z</updated>
   <id>http://jcf94.github.io/</id>
   
   <author>
@@ -13,6 +13,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[计算机组成与设计.硬件/软件接口]]></title>
+    <link href="http://jcf94.github.io/2015/09/09/2015-09-09-cod/"/>
+    <id>http://jcf94.github.io/2015/09/09/2015-09-09-cod/</id>
+    <published>2015-09-09T02:56:01.000Z</published>
+    <updated>2015-09-09T03:12:43.357Z</updated>
+    <content type="html"><![CDATA[<p>《Computer Organization and Design, Hardware/Software Interface》以及《Computer Architecture: A Quantitative Approach》被誉为体系结构界的两本圣经。</p>
+<p>最近除了编译原理外，还在补的就是《硬件/软件接口》这一本了。</p>
+<p>这本书讲解得非常透彻。原本我只是对体系结构、CPU有个模糊的很难学的概念，，，书中由浅至深详细地解释了其中的工作原理，，，，真的好难啊Q_Q…</p>
+<a id="more"></a>]]></content>
+    <summary type="html">
+    <![CDATA[<p>《Computer Organization and Design, Hardware/Software Interface》以及《Computer Architecture: A Quantitative Approach》被誉为体系结构界的两本圣经。</p>
+<p>最近除了编译原理外，还在补的就是《硬件/软件接口》这一本了。</p>
+<p>这本书讲解得非常透彻。原本我只是对体系结构、CPU有个模糊的很难学的概念，，，书中由浅至深详细地解释了其中的工作原理，，，，真的好难啊Q_Q…</p>]]>
+    
+    </summary>
+    
+      <category term="体系结构" scheme="http://jcf94.github.io/tags/%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="学习笔记" scheme="http://jcf94.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="计算机系统结构" scheme="http://jcf94.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[杂记]]></title>
@@ -515,7 +540,7 @@
     <link href="http://jcf94.github.io/2015/08/19/2015-08-19-biosinit/"/>
     <id>http://jcf94.github.io/2015/08/19/2015-08-19-biosinit/</id>
     <published>2015-08-19T10:20:21.000Z</published>
-    <updated>2015-08-19T12:18:08.000Z</updated>
+    <updated>2015-09-09T03:10:13.086Z</updated>
     <content type="html"><![CDATA[<p>之前花了点时间稍微研究了下系统内核载入，重新翻出来整理一下：</p>
 <h1 id="内核载入之前的工作">内核载入之前的工作</h1><hr>
 <p>1981年IBM PC刚推出时，系统只带有640K的的RAM，内存寻址范围最大也只有1M。现如今基本的32位机都能寻址到4G，经过CPU的新特性更是可以支持到64G的物理内存。但是为了与原来的PC想兼容，系统1M一下物理内存使用分配上仍然保持与原来一致。ROM BIOS都在物理内存能寻址的最高端位置处，所以在大于1M内存的新计算机上，ROM BIOS最后会被映射到1M末尾的 Shadow 区域中。</p>
@@ -652,7 +677,7 @@
     
       <category term="引导" scheme="http://jcf94.github.io/tags/%E5%BC%95%E5%AF%BC/"/>
     
-      <category term="计算机体系结构" scheme="http://jcf94.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/"/>
+      <category term="计算机系统结构" scheme="http://jcf94.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
@@ -661,7 +686,7 @@
     <link href="http://jcf94.github.io/2015/08/16/2015-08-16-compilers/"/>
     <id>http://jcf94.github.io/2015/08/16/2015-08-16-compilers/</id>
     <published>2015-08-16T08:34:00.000Z</published>
-    <updated>2015-08-22T10:34:58.000Z</updated>
+    <updated>2015-09-09T03:09:45.077Z</updated>
     <content type="html"><![CDATA[<p>缺的东西只能自己补上，开始补编译原理。</p>
 <p>刚买了的龙书还在路上，先从 Coursera 上找个公开课看着。</p>
 <a id="more"></a>
@@ -694,7 +719,7 @@
     
       <category term="编译原理" scheme="http://jcf94.github.io/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/"/>
     
-      <category term="计算机体系结构" scheme="http://jcf94.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/"/>
+      <category term="计算机系统结构" scheme="http://jcf94.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
@@ -1876,35 +1901,6 @@
       <category term="复习笔记" scheme="http://jcf94.github.io/tags/%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
       <category term="我的大学" scheme="http://jcf94.github.io/categories/%E6%88%91%E7%9A%84%E5%A4%A7%E5%AD%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[长大OJ诞生记（三）用HEXO作为主页]]></title>
-    <link href="http://jcf94.github.io/2015/07/01/2015-07-01-oj-hexo/"/>
-    <id>http://jcf94.github.io/2015/07/01/2015-07-01-oj-hexo/</id>
-    <published>2015-07-01T12:16:35.000Z</published>
-    <updated>2015-07-13T12:22:04.000Z</updated>
-    <content type="html"><![CDATA[<p>之前找Lwy童鞋做的主页用的时间太久了，响应速度等方面现在都出现了一定的问题</p>
-<p>正好前段时间搞自己博客的时候看到个带首页的Hexo主题，测试了一下，响应速度各方面都挺适合</p>
-<p>顺手给换上了，顺便博文部分可以作为日常通知什么的</p>
-<p>然后再顺手修复了一堆bug，重装了一下内网映射的虚拟机，目前稳定性更上一个台阶</p>
-<blockquote>
-<p>最近都不崩溃了，花生壳稳定得我想哭。。。</p>
-</blockquote>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>之前找Lwy童鞋做的主页用的时间太久了，响应速度等方面现在都出现了一定的问题</p>
-<p>正好前段时间搞自己博客的时候看到个带首页的Hexo主题，测试了一下，响应速度各方面都挺适合</p>
-<p>顺手给换上了，顺便博文部分可以作为日常通知什么的</p>
-<p>然后再顺手修]]>
-    </summary>
-    
-      <category term="Hexo" scheme="http://jcf94.github.io/tags/Hexo/"/>
-    
-      <category term="OJ" scheme="http://jcf94.github.io/tags/OJ/"/>
-    
-      <category term="网站" scheme="http://jcf94.github.io/categories/%E7%BD%91%E7%AB%99/"/>
     
   </entry>
   
