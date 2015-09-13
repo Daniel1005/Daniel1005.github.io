@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title><![CDATA[Chenfan's blog]]></title>
+  <title><![CDATA[Chenfan Blog]]></title>
   <subtitle><![CDATA[It's the way I choose.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://jcf94.github.io/"/>
-  <updated>2015-09-09T03:12:43.357Z</updated>
+  <updated>2015-09-13T08:17:17.718Z</updated>
   <id>http://jcf94.github.io/</id>
   
   <author>
@@ -15,11 +15,74 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[The 2015 ACM-ICPC Asia Regional Changchun Online]]></title>
+    <link href="http://jcf94.github.io/2015/09/13/2015-09-13-Changchun-Online/"/>
+    <id>http://jcf94.github.io/2015/09/13/2015-09-13-Changchun-Online/</id>
+    <published>2015-09-13T07:09:34.000Z</published>
+    <updated>2015-09-13T08:17:17.718Z</updated>
+    <content type="html"><![CDATA[<p><del>【A】Alisha’s Party 堆模拟</del><br>【B】Ponds<br>【C】Aggregated Counting<br>【D】Clock Adjusting<br><del>【E】Travel 并查集</del><br>【F】Favorite Donut<br>【G】The Water Problem<br>【H】Elven Postman<br>【I】Food Problem<br>【J】Unknown Treasure<br>【K】Good Numbers<br>【L】Marisa’s Cake<br>【M】Robot Dog</p>
+<a id="more"></a>
+<h1 id="【A】HDU_5437_Alisha’s_Party">【A】HDU 5437 Alisha’s Party</h1><p>Time Limit: 3000/2000 MS (Java/Others)    Memory Limit: 131072/131072 K (Java/Others)</p>
+<h2 id="Problem_Description">Problem Description</h2><p>Princess Alisha invites her friends to come to her birthday party. Each of her friends will bring a gift of some value v, and all of them will come at a different time. Because the lobby is not large enough, Alisha can only let a few people in at a time. She decides to let the person whose gift has the highest value enter first.</p>
+<p>Each time when Alisha opens the door, she can decide to let p people enter her castle. If there are less than p people in the lobby, then all of them would enter. And after all of her friends has arrived, Alisha will open the door again and this time every friend who has not entered yet would enter.</p>
+<p>If there are two friends who bring gifts of the same value, then the one who comes first should enter first. Given a query n Please tell Alisha who the n−th person to enter her castle is.</p>
+<h2 id="Input">Input</h2><p>The first line of the input gives the number of test cases, T , where 1≤T≤15.</p>
+<p>In each test case, the first line contains three numbers k,m and q separated by blanks. k is the number of her friends invited where 1≤k≤150,000. The door would open m times before all Alisha’s friends arrive where 0≤m≤k. Alisha will have q queries where 1≤q≤100.</p>
+<p>The i−th of the following k lines gives a string Bi, which consists of no more than 200 English characters, and an integer vi, 1≤vi≤10^8, separated by a blank. Bi is the name of the i−th person coming to Alisha’s party and Bi brings a gift of value vi.</p>
+<p>Each of the following m lines contains two integers t(1≤t≤k) and p(0≤p≤k) separated by a blank. The door will open right after the t−th person arrives, and Alisha will let p friends enter her castle.</p>
+<p>The last line of each test case will contain q numbers n1,…,nq separated by a space, which means Alisha wants to know who are the n1−th,…,nq−th friends to enter her castle.</p>
+<p>Note: there will be at most two test cases containing n&gt;10000.</p>
+<h2 id="Output">Output</h2><p>For each test case, output the corresponding name of Alisha’s query, separated by a space.</p>
+<h2 id="Sample_Input">Sample Input</h2><blockquote>
+<p>1<br>5 2 3<br>Sorey 3<br>Rose 3<br>Maltran  3<br>Lailah 5<br>Mikleo  6<br>1 1<br>4 2<br>1 2 3</p>
+</blockquote>
+<h2 id="Sample_Output">Sample Output</h2><blockquote>
+<p>Sorey Lailah Rose</p>
+</blockquote>
+<h2 id="题意">题意</h2><p>所有的人按照一个队列的顺序到达，但是门只有在特定的时间才打开，且每次打开只能有前p个值最大的才能进入。要求输出第n个进门者的名字。</p>
+<h2 id="分析">分析</h2><p>刚拿到题就觉得这个按照题意要求直接模拟即可。</p>
+<p>然而priority_queue打上去TLE了…</p>
+<p>刚分析觉着是不是一个一个从队列里面删掉太慢了，改用splay这样旋转到位一次性全删掉应该会更快点…然后就听旁边另一队手打堆过了。</p>
+<p>那么事实证明STL的优先队列效率并没有这么高咯。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* ***********************************************</span><br><span class="line">MYID	: Chen Fan</span><br><span class="line">LANG	: G++</span><br><span class="line">PROG	: 1001</span><br><span class="line">************************************************ */</span></span><br><span class="line"></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;iostream&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;cstdio&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;cstring&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;algorithm&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> fri</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">char</span> name[<span class="number">250</span>];</span><br><span class="line">	<span class="keyword">int</span> time,value;</span><br><span class="line">	<span class="keyword">friend</span> <span class="keyword">bool</span> <span class="keyword">operator</span> &lt; (fri a,fri b)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (a.value==b.value) <span class="keyword">return</span> a.time&gt;b.time;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">return</span> a.value&lt;b.value;</span><br><span class="line">	&#125;</span><br><span class="line">&#125; friends;</span><br><span class="line"></span><br><span class="line">friends a[<span class="number">150010</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> ti</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">int</span> t,p;</span><br><span class="line">&#125; tim;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">op_ti</span><span class="params">(tim a,tim b)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> a.t&lt;b.t;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">tim b[<span class="number">150010</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> c,outlist[<span class="number">150010</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> heaptyp</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">int</span> num,key;</span><br><span class="line">&#125; heaptype;</span><br><span class="line">heaptype heap[<span class="number">150010</span>];</span><br><span class="line"><span class="keyword">int</span> heaptail;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">heapadd</span><span class="params">(<span class="keyword">int</span> s,<span class="keyword">int</span> t)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i,j;</span><br><span class="line">	heaptail++;</span><br><span class="line">	heap[heaptail].num=s;</span><br><span class="line">	heap[heaptail].key=t;</span><br><span class="line">	i=heaptail;</span><br><span class="line">	j=i&gt;&gt;<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span> (i&gt;<span class="number">1</span>&amp;&amp;(heap[i].num&gt;heap[j].num||(heap[i].num==heap[j].num&amp;&amp;heap[i].key&lt;heap[j].key)))</span><br><span class="line">	&#123;</span><br><span class="line">		swap(heap[i],heap[j]);</span><br><span class="line">		i=j;</span><br><span class="line">		j=i&gt;&gt;<span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">heaptype <span class="title">heappop</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i,j;</span><br><span class="line">	heaptype x,y;</span><br><span class="line">	y=heap[<span class="number">1</span>];</span><br><span class="line">	x=heap[heaptail];</span><br><span class="line">	heaptail--;</span><br><span class="line">	i=<span class="number">1</span>;</span><br><span class="line">	j=i&lt;&lt;<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span> (j&lt;=heaptail)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (j&lt;heaptail&amp;&amp;(heap[j].num&lt;heap[j+<span class="number">1</span>].num||(heap[j].num==heap[j+<span class="number">1</span>].num&amp;&amp;heap[j].key&gt;heap[j+<span class="number">1</span>].key))) j++;</span><br><span class="line">		<span class="keyword">if</span> (x.num&lt;heap[j].num||(x.num==heap[j].num&amp;&amp;(x.key&gt;heap[j].key)))</span><br><span class="line">		&#123;</span><br><span class="line">			heap[i]=heap[j];</span><br><span class="line">			i=j;</span><br><span class="line">			j=i&lt;&lt;<span class="number">1</span>;</span><br><span class="line">		&#125; <span class="keyword">else</span> j=heaptail+<span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	heap[i]=x;</span><br><span class="line">	<span class="keyword">return</span> y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">	<span class="comment">//freopen("1001.txt","r",stdin);</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> t;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;t);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> tt=<span class="number">1</span>;tt&lt;=t;tt++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> k,m,q;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>,&amp;k,&amp;m,&amp;q);</span><br><span class="line"></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=k;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">"%s%d"</span>,&amp;a[i].name,&amp;a[i].value);</span><br><span class="line">			a[i].time=i;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;i++)<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;b[i].t,&amp;b[i].p);</span><br><span class="line">		b[m+<span class="number">1</span>].t=k;</span><br><span class="line">		b[m+<span class="number">1</span>].p=k;</span><br><span class="line"></span><br><span class="line">		sort(&amp;b[<span class="number">1</span>],&amp;b[m+<span class="number">2</span>],<span class="keyword">op_t</span>i);</span><br><span class="line"></span><br><span class="line">		<span class="keyword">int</span> tail=<span class="number">0</span>;</span><br><span class="line">		heaptail=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=m;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> j=b[i].t+<span class="number">1</span>;j&lt;=b[i+<span class="number">1</span>].t;j++) </span><br><span class="line">			&#123;</span><br><span class="line">				heapadd(a[j].value,a[j].time);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">int</span> temp=<span class="number">0</span>;</span><br><span class="line">			<span class="keyword">while</span> (heaptail&amp;&amp;temp&lt;b[i+<span class="number">1</span>].p)</span><br><span class="line">			&#123;</span><br><span class="line">				heaptype now=heappop();</span><br><span class="line">				tail++;</span><br><span class="line">				temp++;</span><br><span class="line">				outlist[tail]=now.key;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;c);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%s"</span>,a[outlist[c]].name);</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;q;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;c);</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">" %s"</span>,a[outlist[c]].name);</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="【E】HDU_5441_Travel">【E】HDU 5441 Travel</h1><p>Time Limit: 1500/1000 MS (Java/Others)    Memory Limit: 131072/131072 K (Java/Others)</p>
+<h2 id="Problem_Description-1">Problem Description</h2><p>Jack likes to travel around the world, but he doesn’t like to wait. Now, he is traveling in the Undirected Kingdom. There are n cities and m bidirectional roads connecting the cities. Jack hates waiting too long on the bus, but he can rest at every city. Jack can only stand staying on the bus for a limited time and will go berserk after that. Assuming you know the time it takes to go from one city to another and that the time Jack can stand staying on a bus is x minutes, how many pairs of city (a,b) are there that Jack can travel from city a to b without going berserk?</p>
+<h2 id="Input-1">Input</h2><p>The first line contains one integer T,T≤5, which represents the number of test case.</p>
+<p>For each test case, the first line consists of three integers n,m and q where n≤20000,m≤100000,q≤5000. The Undirected Kingdom has n cities and m bidirectional roads, and there are q queries.</p>
+<p>Each of the following m lines consists of three integers a,b and d where a,b∈{1,…,n} and d≤100000. It takes Jack d minutes to travel from city a to city b and vice versa.</p>
+<p>Then q lines follow. Each of them is a query consisting of an integer x where x is the time limit before Jack goes berserk.</p>
+<h2 id="Output-1">Output</h2><p>You should print q lines for each test case. Each of them contains one integer as the number of pair of cities (a,b) which Jack may travel from a to b within the time limit x.</p>
+<p>Note that (a,b) and (b,a) are counted as different pairs and a and b must be different cities.</p>
+<h2 id="Sample_Input-1">Sample Input</h2><blockquote>
+<p>1<br>5 5 3<br>2 3 6334<br>1 5 15724<br>3 5 5705<br>4 3 12382<br>1 3 21726<br>6000<br>10000<br>13000</p>
+</blockquote>
+<h2 id="Sample_Output-1">Sample Output</h2><blockquote>
+<p>2<br>6<br>12</p>
+</blockquote>
+<h2 id="题意-1">题意</h2><p>给了一个无向图。给出一个x作为两点间每一段路径的上限。求从a到b上所有的路径长度都不超过x的（a，b）的点对总数。</p>
+<h2 id="分析-1">分析</h2><p>这样的并查集其实做过很多次了已经。</p>
+<p>对所有边按照长度排序，询问也是按照长度先排序，然后从小到大进行。边长满足条件的两端并进一同一个集中，每合并两个集合，总点对数都增加 $左集合的点数<em>右集合的点数</em>2$ （a,b和b,a算两个不同点对）</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* ***********************************************</span><br><span class="line">MYID	: Chen Fan</span><br><span class="line">LANG	: G++</span><br><span class="line">PROG	: 1005</span><br><span class="line">************************************************ */</span></span><br><span class="line"></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;iostream&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;cstdio&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;cstring&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;algorithm&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> father[<span class="number">20010</span>],ran[<span class="number">20010</span>]; </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">clean_father</span><span class="params">(<span class="keyword">int</span> n)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		father[i]=i;</span><br><span class="line">		ran[i]=<span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getfather</span><span class="params">(<span class="keyword">int</span> x)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (father[x]!=x) father[x]=getfather(father[x]);</span><br><span class="line">	<span class="keyword">return</span> father[x];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">link_ran</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> xx=getfather(x),yy=getfather(y);</span><br><span class="line">	<span class="keyword">if</span> (ran[xx]&gt;ran[yy]) </span><br><span class="line">	&#123;</span><br><span class="line">		father[yy]=xx;</span><br><span class="line">		ran[xx]+=ran[yy];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> </span><br><span class="line">	&#123;</span><br><span class="line">		father[xx]=yy;</span><br><span class="line">		ran[yy]+=ran[xx];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> nod</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">int</span> a,b,c;</span><br><span class="line">&#125; node ;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">op</span><span class="params">(node a,node b)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> a.c&lt;b.c;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">node a[<span class="number">100010</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> nod1</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">int</span> limit,no;</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> ans;</span><br><span class="line">&#125; node1 ;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">op1</span><span class="params">(node1 a,node1 b)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> a.limit&lt;b.limit;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">op2</span><span class="params">(node1 a,node1 b)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> a.no&lt;b.no;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">node1 b[<span class="number">5010</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">bool</span> flag[<span class="number">20010</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">	<span class="comment">//freopen("1005.txt","r",stdin);</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> t;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;t);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> tt=<span class="number">1</span>;tt&lt;=t;tt++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> n,m,q;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>,&amp;n,&amp;m,&amp;q);</span><br><span class="line"></span><br><span class="line">		clean_father(n);</span><br><span class="line"></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;i++)</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>,&amp;a[i].a,&amp;a[i].b,&amp;a[i].c);</span><br><span class="line"></span><br><span class="line">		sort(&amp;a[<span class="number">1</span>],&amp;a[m+<span class="number">1</span>],op);</span><br><span class="line"></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=q;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;b[i].limit);</span><br><span class="line">			b[i].no=i;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		sort(&amp;b[<span class="number">1</span>],&amp;b[q+<span class="number">1</span>],op1);</span><br><span class="line"></span><br><span class="line">		<span class="keyword">int</span> j=<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">long</span> <span class="keyword">long</span> ans=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=q;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">for</span> (;j&lt;=m;j++)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">if</span> (a[j].c&gt;b[i].limit) <span class="keyword">break</span>;</span><br><span class="line">				<span class="keyword">if</span> (getfather(a[j].a)!=getfather(a[j].b))</span><br><span class="line">				&#123;</span><br><span class="line">					ans+=ran[getfather(a[j].a)]*ran[getfather(a[j].b)]*<span class="number">2</span>;</span><br><span class="line">					link_ran(a[j].a,a[j].b);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			b[i].ans=ans;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		sort(&amp;b[<span class="number">1</span>],&amp;b[q+<span class="number">1</span>],op2);</span><br><span class="line"></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=q;i++) <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,b[i].ans);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><del>【A】Alisha’s Party 堆模拟</del><br>【B】Ponds<br>【C】Aggregated Counting<br>【D】Clock Adjusting<br><del>【E】Travel 并查集</del><br>【F】Favorite Donut<br>【G】The Water Problem<br>【H】Elven Postman<br>【I】Food Problem<br>【J】Unknown Treasure<br>【K】Good Numbers<br>【L】Marisa’s Cake<br>【M】Robot Dog</p>]]>
+    
+    </summary>
+    
+      <category term="ACM-ICPC" scheme="http://jcf94.github.io/tags/ACM-ICPC/"/>
+    
+      <category term="ACM" scheme="http://jcf94.github.io/categories/ACM/"/>
+    
+      <category term="比赛" scheme="http://jcf94.github.io/categories/ACM/%E6%AF%94%E8%B5%9B/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[计算机组成与设计.硬件/软件接口]]></title>
     <link href="http://jcf94.github.io/2015/09/09/2015-09-09-cod/"/>
     <id>http://jcf94.github.io/2015/09/09/2015-09-09-cod/</id>
     <published>2015-09-09T02:56:01.000Z</published>
-    <updated>2015-09-09T03:12:43.357Z</updated>
+    <updated>2015-09-09T03:12:43.000Z</updated>
     <content type="html"><![CDATA[<p>《Computer Organization and Design, Hardware/Software Interface》以及《Computer Architecture: A Quantitative Approach》被誉为体系结构界的两本圣经。</p>
 <p>最近除了编译原理外，还在补的就是《硬件/软件接口》这一本了。</p>
 <p>这本书讲解得非常透彻。原本我只是对体系结构、CPU有个模糊的很难学的概念，，，书中由浅至深详细地解释了其中的工作原理，，，，真的好难啊Q_Q…</p>
@@ -44,7 +107,7 @@
     <link href="http://jcf94.github.io/2015/09/07/2015-09-07-nothing/"/>
     <id>http://jcf94.github.io/2015/09/07/2015-09-07-nothing/</id>
     <published>2015-09-07T14:50:58.000Z</published>
-    <updated>2015-09-07T15:14:52.981Z</updated>
+    <updated>2015-09-07T15:14:52.000Z</updated>
     <content type="html"><![CDATA[<blockquote class="blockquote-center"><br>我听过荒芜变成热闹<br>听过尘埃掩埋城堡<br>听过天空拒绝飞鸟<br>没听过你<br></blockquote>
 
 <p>新生的军训喧闹过后，一切终于又步入正常的轨道。</p>
@@ -111,7 +174,7 @@
     <link href="http://jcf94.github.io/2015/08/31/2015-08-31-isca2014/"/>
     <id>http://jcf94.github.io/2015/08/31/2015-08-31-isca2014/</id>
     <published>2015-08-31T14:34:15.000Z</published>
-    <updated>2015-09-01T00:26:20.125Z</updated>
+    <updated>2015-09-01T00:26:20.000Z</updated>
     <content type="html"><![CDATA[<p>即将踏入 Computer Architecture 领域，准备从今年下半年开始把这个方向相关的国际顶级会议论文都下过来看看。</p>
 <p>从 ISCA 2014 开始：</p>
 <p>ISCA 是由 ACM 与 IEEE 共同主办的体系结构领域顶级会议，全名是 International Symposium on Computer Architecture 。</p>
@@ -261,7 +324,7 @@
     <link href="http://jcf94.github.io/2015/08/28/2015-08-28-manufactoria/"/>
     <id>http://jcf94.github.io/2015/08/28/2015-08-28-manufactoria/</id>
     <published>2015-08-28T11:25:48.000Z</published>
-    <updated>2015-09-04T03:31:38.366Z</updated>
+    <updated>2015-09-04T03:31:38.000Z</updated>
     <content type="html"><![CDATA[<p>自从在知乎上发现了这么个有意思的问题：</p>
 <p><a href="http://www.zhihu.com/question/27535591" target="_blank" rel="external">有哪些很有「工程师情怀」的游戏？</a></p>
 <p>，就时不时上去关注一下有没有新的回答。</p>
@@ -364,7 +427,7 @@
     <link href="http://jcf94.github.io/2015/08/27/2015-08-27-multi1/"/>
     <id>http://jcf94.github.io/2015/08/27/2015-08-27-multi1/</id>
     <published>2015-08-27T13:12:43.000Z</published>
-    <updated>2015-08-27T14:06:09.000Z</updated>
+    <updated>2015-08-27T14:06:09.592Z</updated>
     <content type="html"><![CDATA[<p>暑假因为出去参加夏令营和各种事情，没有跟留在学校训练的小伙伴们一起打多校，想想还是挺惭愧的。</p>
 <p>从大一进校开始，ACM已经打了快4年了，如果所有事情都弄完了，下半年可能还有机会最后收个尾…（咳咳，话说我退役贴都早写过了…）</p>
 <p>试看了几题，发现这么长时间没有写题，思路都跟不上了。唉。</p>
@@ -411,7 +474,7 @@
     <link href="http://jcf94.github.io/2015/08/23/2015-08-23-treap/"/>
     <id>http://jcf94.github.io/2015/08/23/2015-08-23-treap/</id>
     <published>2015-08-23T08:45:01.000Z</published>
-    <updated>2015-08-23T12:51:03.000Z</updated>
+    <updated>2015-08-23T12:51:03.556Z</updated>
     <content type="html"><![CDATA[<blockquote class="blockquote-center"><br>据说平衡树界最经典的三大树是<br>SBT、Splay、Treap<br></blockquote>
 
 <h1 id="从一道笔试题开始说起">从一道笔试题开始说起</h1><p>上午帮舍友助攻阿里笔试的时候，遇上这么一道题：</p>
@@ -486,7 +549,7 @@
     <link href="http://jcf94.github.io/2015/08/22/2015-08-22-networkflow/"/>
     <id>http://jcf94.github.io/2015/08/22/2015-08-22-networkflow/</id>
     <published>2015-08-22T00:21:16.000Z</published>
-    <updated>2015-08-22T02:10:31.000Z</updated>
+    <updated>2015-08-22T02:10:31.341Z</updated>
     <content type="html"><![CDATA[<p>今天来整理一下网络流的相关内容。</p>
 <p>首先贴一个博客：<a href="http://mindlee.com/2011/11/19/network-flow/" target="_blank" rel="external">网络流(Network Flow)</a></p>
 <p>关于网络流的介绍，这里都讲得比较详细了。</p>
@@ -540,7 +603,7 @@
     <link href="http://jcf94.github.io/2015/08/19/2015-08-19-biosinit/"/>
     <id>http://jcf94.github.io/2015/08/19/2015-08-19-biosinit/</id>
     <published>2015-08-19T10:20:21.000Z</published>
-    <updated>2015-09-09T03:10:13.086Z</updated>
+    <updated>2015-09-09T03:10:13.000Z</updated>
     <content type="html"><![CDATA[<p>之前花了点时间稍微研究了下系统内核载入，重新翻出来整理一下：</p>
 <h1 id="内核载入之前的工作">内核载入之前的工作</h1><hr>
 <p>1981年IBM PC刚推出时，系统只带有640K的的RAM，内存寻址范围最大也只有1M。现如今基本的32位机都能寻址到4G，经过CPU的新特性更是可以支持到64G的物理内存。但是为了与原来的PC想兼容，系统1M一下物理内存使用分配上仍然保持与原来一致。ROM BIOS都在物理内存能寻址的最高端位置处，所以在大于1M内存的新计算机上，ROM BIOS最后会被映射到1M末尾的 Shadow 区域中。</p>
@@ -686,7 +749,7 @@
     <link href="http://jcf94.github.io/2015/08/16/2015-08-16-compilers/"/>
     <id>http://jcf94.github.io/2015/08/16/2015-08-16-compilers/</id>
     <published>2015-08-16T08:34:00.000Z</published>
-    <updated>2015-09-09T03:09:45.077Z</updated>
+    <updated>2015-09-09T03:09:45.000Z</updated>
     <content type="html"><![CDATA[<p>缺的东西只能自己补上，开始补编译原理。</p>
 <p>刚买了的龙书还在路上，先从 Coursera 上找个公开课看着。</p>
 <a id="more"></a>
@@ -728,7 +791,7 @@
     <link href="http://jcf94.github.io/2015/08/16/2015-08-16-cherry/"/>
     <id>http://jcf94.github.io/2015/08/16/2015-08-16-cherry/</id>
     <published>2015-08-16T07:42:32.000Z</published>
-    <updated>2015-08-16T08:14:40.000Z</updated>
+    <updated>2015-08-16T08:14:40.086Z</updated>
     <content type="html"><![CDATA[<blockquote class="blockquote-center"><br>人生中的第一块原厂红轴<br>0.0<br>默默地入坑了<br></blockquote>
 
 <p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-08-16-cherry-P50816-154734.jpg" alt="cherry"></p>
@@ -754,7 +817,7 @@
     <link href="http://jcf94.github.io/2015/07/27/2015-07-27-sysucmu/"/>
     <id>http://jcf94.github.io/2015/07/27/2015-07-27-sysucmu/</id>
     <published>2015-07-27T07:00:39.000Z</published>
-    <updated>2015-08-01T13:08:04.000Z</updated>
+    <updated>2015-08-01T13:08:04.915Z</updated>
     <content type="html"><![CDATA[<blockquote class="blockquote-center"><br>多图预警！！！<br>千万不要用流量打开本帖！！！<br>0.0<br></blockquote>
 
 <p>26号到的广州，27号报到。</p>
@@ -1039,7 +1102,7 @@
     <link href="http://jcf94.github.io/2015/07/21/2015-07-21-music/"/>
     <id>http://jcf94.github.io/2015/07/21/2015-07-21-music/</id>
     <published>2015-07-21T12:03:39.000Z</published>
-    <updated>2015-08-20T13:08:37.000Z</updated>
+    <updated>2015-08-20T13:08:37.454Z</updated>
     <content type="html"><![CDATA[<p>去年在Coursera上学过一段时间的基础乐理，可惜后来还是没完成…重新整理一下</p>
 <hr>
 <p><a href="http://mooc.guokr.com/course/841/Developing-Your-Musicianship/" target="_blank" rel="external">MOOC课程地址</a></p>
@@ -1282,7 +1345,7 @@
     <link href="http://jcf94.github.io/2015/07/13/2015-07-13-makefile/"/>
     <id>http://jcf94.github.io/2015/07/13/2015-07-13-makefile/</id>
     <published>2015-07-13T12:30:54.000Z</published>
-    <updated>2015-08-19T10:27:54.000Z</updated>
+    <updated>2015-08-19T10:27:54.080Z</updated>
     <content type="html"><![CDATA[<p>之前啃内核的时候就见过这个东西，整理项目的时候正好用到，顺便好好学习一下。</p>
 <p>详见：<a href="http://blog.csdn.net/ruglcc/article/details/7814546/" target="_blank" rel="external">Makefile经典教程(掌握这些足够)</a></p>
 ]]></content>
@@ -1599,308 +1662,6 @@
       <category term="ACM" scheme="http://jcf94.github.io/categories/ACM/"/>
     
       <category term="算法学习" scheme="http://jcf94.github.io/categories/ACM/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[信号相关专业复习]]></title>
-    <link href="http://jcf94.github.io/2015/07/01/2015-07-01-xinhaoxiangguan/"/>
-    <id>http://jcf94.github.io/2015/07/01/2015-07-01-xinhaoxiangguan/</id>
-    <published>2015-07-01T12:36:56.000Z</published>
-    <updated>2015-07-05T08:23:11.000Z</updated>
-    <content type="html"><![CDATA[<p>信号系列是通信工程的重点内容，以<strong>复变函数与积分变换</strong>作为基础的数学课程，主要包含<strong>信号与系统</strong>、升级版<strong>数字信号处理</strong>、然后是以<strong>概率论与数理统计</strong>为数学基础课的<strong>信息论</strong>作为通信方面数学上的理论基础、最后得到<strong>通信原理</strong>、应用方面有<strong>移动通信</strong>。</p>
-<h1 id="复变函数与积分变换">复变函数与积分变换</h1><hr>
-<ul>
-<li>欧拉公式：</li>
-</ul>
-<p>二维平面中点的坐标：$(r\cos\theta,r\sin\theta)$</p>
-<p>$$x=r\cos\theta$$</p>
-<p>$$y=r\sin\theta$$</p>
-<p>$$z=r(\cos\theta+i\sin\theta)=re^{i\theta}$$</p>
-<a id="more"></a>
-<ul>
-<li>傅里叶变换</li>
-</ul>
-<p>$$\mathscr{F}[f(t)]=F(w)=\int_{-\infty}^{+\infty}f(t)e^{-jwt}dt$$</p>
-<p>$$\mathscr{F}^{-1}[F(w)]=f(t)=\frac{1}{2\pi}\int_{-\infty}^{+\infty}F(w)e^{jwt}dw$$</p>
-<ul>
-<li>冲激函数$\delta(t)$</li>
-</ul>
-<p>定义：</p>
-<p>$$\delta(t)=\begin{cases}\infty,&amp;t=0\\0,&amp;t\neq0\end{cases}$$</p>
-<p>$$\int_{-\infty}^{+\infty}\delta(t)dt=1$$</p>
-<p>性质：</p>
-<p>$$\int_{-\infty}^{+\infty}\delta(t-t_0)f(t)dt=f(t_0)$$</p>
-<p>$$\mathscr{F}[\delta(t)]=1$$</p>
-<p>$$\mathscr{F}[1]=2\pi\delta(w)$$</p>
-<ul>
-<li>卷积积分</li>
-</ul>
-<p>$$f_1(t)*f_2(t)=\int_{-\infty}^{+\infty}f_1(\tau)f_2(t-\tau)d\tau$$</p>
-<p>$$\mathscr{F}[f_1(t)*f_2(t)]=F_1(w)F_2(w)$$</p>
-<p>$$\mathscr{F}[f_1(t)f_2(t)]=\frac{1}{2\pi}F_1(w)*F_2(w)$$</p>
-<ul>
-<li>帕塞瓦尔等式</li>
-</ul>
-<p>又作能量积分公式。</p>
-<p>$$\int_{-\infty}^{+\infty}[f(t)]^2dt=\frac{1}{2\pi}|F(w)|^2dw$$</p>
-<ul>
-<li>拉普拉斯变换</li>
-</ul>
-<p>$$\mathscr{L}[f(t)]=F(s)=\int_0^{+\infty}f(t)e^{-st}dt$$</p>
-<p>$$\mathscr{L}^{-1}[F(s)]=f(t)$$</p>
-<ul>
-<li>Z变换</li>
-</ul>
-<p>$$\mathscr{Z}[f(n)]=F(z)=\sum_{i=0}^nf(n)z^{-n}$$</p>
-<h1 id="信号与系统">信号与系统</h1><hr>
-<ul>
-<li>阶跃函数$\epsilon(t)$</li>
-</ul>
-<p>定义：</p>
-<p>$$\epsilon(t)=\begin{cases}0,&amp;t<0\\\frac{1}{2},&t=0\\1,&t>0\end{cases}$$</0\\\frac{1}{2},&t=0\\1,&t></p>
-<p>$$\delta(t)=\frac{d\epsilon(t)}{dt}$$</p>
-<p>$$\epsilon(t)=\int_{-\infty}^{t}\delta(x)dx$$</p>
-<ul>
-<li><p>系统的数学模型：描述连续系统的数学模型是微分方程，描述离散系统的数学模型是差分方程。</p>
-</li>
-<li><p>一个既具有分解特性、又具有零状态线性和零输入线性的系统称为线性系统。</p>
-</li>
-<li><p>如果系统的参数都是常数，不随时间变化，则称该系统为时不变系统。</p>
-</li>
-<li><p>线性时不变系统（LTI系统）用常系数微分方程和差分方程来描述。</p>
-</li>
-</ul>
-<p>微分：</p>
-<p>$$y^{(n)}(t)+a_{n-1}y^{(n-1)}(t)+…+a_1y^{(1)}(t)+a_0y(t)=b_mf^{(m)}(t)+b_{m-1}f^{(m-1)}(t)+…+b_1f^{(1)}(t)+b_0f(t)$$</p>
-<p>或写为：</p>
-<p>$$\sum_{j=0}^na_jy^{(j)}(t)=\sum_{i=0}^mb_if^{(i)}(t)$$</p>
-<p>差分：</p>
-<p>$$y(k)+a_{n-1}y(k-1)+…+a_0y(k-n)=b_mf(k)+b_{m-1}f(k-1)+…+b_0f(k-m)$$</p>
-<p>或写为：</p>
-<p>$$\sum_{j=0}^na_{n-j}y(k-j)=\sum_{i=0}^mb_{m-i}f(k-i)$$</p>
-<ul>
-<li>微分方程的齐次解和特解</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th>函数形式</th>
-<th>系数</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>齐次解</td>
-<td>自由响应、瞬态响应</td>
-<td>系统本身</td>
-<td>激励</td>
-</tr>
-<tr>
-<td>特解</td>
-<td>强迫响应、稳态响应</td>
-<td>激励</td>
-<td>激励</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>零输入响应：激励为零时，仅有系统初始状态引起的响应</li>
-</ul>
-<p>零输入条件下，微分方程右端为零：</p>
-<p>$$\sum_{j=0}^na_jy_{zi}^{(j)}(t)=0$$</p>
-<ul>
-<li><p>零状态响应：系统初始状态为零时，仅由输入信号引起的响应</p>
-</li>
-<li><p>全响应：初始状态不为零时LTI系统的响应</p>
-</li>
-</ul>
-<p>$$\overbrace{y(t)}^{全响应}=\rlap{\overbrace{\phantom{\sum_{j=1}^nC_{zij}e^{\lambda jt}}}^{零输入响应}}\underbrace{\sum_{j=1}^nC_{zij}e^{\lambda jt}+\rlap{\overbrace{\phantom{\sum_{j=1}^nC_{zsj}e^{\lambda jt}+y_p(t)}}^{零状态响应}}\sum_{j=1}^nC_{zsj}e^{\lambda jt}}_{自由响应}+\underbrace{y_p(t)}_{强迫响应}$$</p>
-<ul>
-<li>冲激响应：是激励为单位冲激函数$\delta(t)$时，系统的零状态响应。</li>
-</ul>
-<p>$$h(t)=T[{0},\delta(t)]$$</p>
-<p>激励信号$\delta(t)$的作用是<strong>在$t=0$的瞬间给系统输入了若干能量，储存在系统中</strong>，而<strong>在$t&gt;0$时系统的激励为零，只有冲激引入的那些储能在起作用</strong>，因而系统的冲激响应应由上述储能唯一地确定，因此系统的冲激响应在$t&gt;0$时与该系统的零输入响应具有相同的函数形式。</p>
-<ul>
-<li>阶跃响应：是激励为单位阶跃函数$\epsilon(t)$时，系统的零状态响应。</li>
-</ul>
-<p>$$g(t)=T[{0},\epsilon(t)]$$</p>
-<p>$$h(t)=\frac{dg(t)}{dt}$$</p>
-<p>$$g(t)=\int_{-\infty}^th(x)dx$$</p>
-<ul>
-<li>卷积积分</li>
-</ul>
-<p><strong><u>由于LTI系统的线性性质，可将输入信号分解为一系列的冲激函数之和（或积分），利用冲激函数对LTI系统的冲激响应，求解LTI系统任意激励的零状态响应。</u></strong></p>
-<p>$$f(t-t_1)*\delta(t-t_2)=f(t-t_2)*\delta(t-t_1)=f(t-t1-t2)$$</p>
-<p>$$f_1(t-t_1)*f_2(t-t_2)=f_1(t-t_2)*f_2(t-t_1)=f(t-t1-t2)$$</p>
-<p>$$f^{(i)}(t)=f_1^{(j)}(t)*f_2^{(i-j)}(t)$$</p>
-<ul>
-<li>卷积的物理意义</li>
-</ul>
-<p>从数学上来说卷积就是定义两个函数的一种乘法。</p>
-<p>对离散序列来说就是两个多项式的<strong>乘法</strong>。</p>
-<p>物理意义就是冲激响应的线性叠加，所谓冲激响应可以看作是两个函数，另一个函数按冲激信号正交展开。</p>
-<p>详见知乎：<a href="http://www.zhihu.com/question/21686447" target="_blank" rel="external">卷积的物理意义是什么？</a></p>
-<ul>
-<li>信号的分解</li>
-</ul>
-<p>在信号空间中可以找到若干个相互正交的信号作为基本信号，使得信号空间中任一信号均可表示成它们的线性组合。</p>
-<ul>
-<li>周期信号的傅里叶级数</li>
-</ul>
-<p>对周期信号进行分解：</p>
-<p>$$f(t)=\frac{1}{2}\sum_{n=-\infty}^{\infty}A_ne^{j\psi_n}e^{jn\Omega t}=\sum_{n=-\infty}^{\infty}F_ne^{jn\Omega t}$$</p>
-<p>傅里叶系数：</p>
-<p>$$F_n=\frac{1}{T}\int_{-\frac{2}{T}}^{\frac{2}{T}}f(t)e^{jn\Omega t}dt,n=0,\pm1,\pm2$$</p>
-<p>表明任意周期信号$f(t)$可分解为许多不同频率的虚指数信号$e^{jn\Omega t}$之和，其各分量的复数幅度为$F_n$</p>
-<ul>
-<li>帕塞瓦尔方程：</li>
-</ul>
-<p>$$\int_{t_1}^{t_2}f^2(t)dt=\sum_{j=1}^{\infty}C_j^2K_j$$</p>
-<p>表明在区间$t_1$和$t_2$之间信号所含有的能量恒等于此信号在完备正交函数集中各正交分量能量的总和</p>
-<ul>
-<li>频谱密度与傅里叶变换</li>
-</ul>
-<p>定义频谱密度函数为：</p>
-<p>$$F(j\omega)=\lim_{T\to\infty}F_nT=\int_{-\infty}^{\infty}f(t)e^{-j\omega t}dt$$</p>
-<p>上式称为傅里叶变换。</p>
-<p>$$f(t)=\frac{1}{2\pi}\int_{-\infty}^{\infty}F(j\omega)e^{j\omega t}d\omega$$</p>
-<p>$$F(j\omega)=|F(j\omega)|e^{j\psi(\omega)}=R(\omega)+jX(\omega)$$</p>
-<ul>
-<li>狄里赫利条件</li>
-</ul>
-<p>傅里叶变换存在的<strong>充分条件</strong>：在无限区间内$f(t)$绝对可积，即：</p>
-<p>$$\int_{-\infty}^{\infty}|f(t)|dt&lt;\infty$$</p>
-<ul>
-<li>变换</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>时域</th>
-<th>频域</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>连续</td>
-<td>非周期</td>
-</tr>
-<tr>
-<td>离散</td>
-<td>周期</td>
-</tr>
-<tr>
-<td>周期</td>
-<td>离散</td>
-</tr>
-<tr>
-<td>非周期</td>
-<td>连续</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>频移特性/调制特性</li>
-</ul>
-<p>若：</p>
-<p>$$f(t)\leftrightarrow F(j\omega)$$</p>
-<p>且$\omega_0$为常数，则：</p>
-<p>$$f(t)e^{\pm j\omega_0t}\leftrightarrow F[j(\omega\pm\omega_0)]$$</p>
-<ul>
-<li><p>信号的能量谱与其自相关函数是一对傅里叶变换</p>
-</li>
-<li><p>正余弦函数的傅里叶变换</p>
-</li>
-</ul>
-<p>已知常数1的傅里叶变换：</p>
-<p>$$\mathscr{F}[1]=2\pi\delta(w)$$</p>
-<p>根据频移特性：</p>
-<p>$$\mathscr{F}[e^{j\omega_0t}]=2\pi\delta(\omega-\omega_0)$$</p>
-<p>$$\mathscr{F}[e^{-j\omega_0t}]=2\pi\delta(\omega+\omega_0)$$</p>
-<p>则：</p>
-<p>$$\mathscr{F}[cos(\omega_0t)]=\mathscr{F}[\frac{1}{2}(e^{j\omega_0t}+e^{-j\omega_0t})]=\pi[\delta(\omega-\omega_0)+\delta(\omega+\omega_0)]$$</p>
-<p>$$\mathscr{F}[sin(\omega_0t)]=\mathscr{F}[\frac{1}{2j}(e^{j\omega_0t}-e^{-j\omega_0t})]=j\pi[\delta(\omega+\omega_0)-\delta(\omega-\omega_0)]$$</p>
-<ul>
-<li>冲激串序列的傅里叶变换</li>
-</ul>
-<p>$$\mathscr{F}[\delta_T(t)]=\mathscr{F}[\sum_{m=-\infty}^{\infty}\delta(t-mT)]=\Omega\sum_{n=-\infty}^{\infty}\delta(\omega-n\Omega)=\Omega\delta_{\Omega}(\omega)$$</p>
-<ul>
-<li>LTI系统的频率响应</li>
-</ul>
-<p>$$\begin{matrix}f(t)&amp;*&amp;h(t)&amp;=&amp;y(t)\\ \updownarrow&amp;&amp;\updownarrow&amp;&amp;\updownarrow\\ F(j\omega)&amp;\cdot&amp;H(j\omega)&amp;=&amp;Y(j\omega)\end{matrix}$$</p>
-<ul>
-<li>奈奎斯特采样定理</li>
-</ul>
-<p>采样：</p>
-<p>$$f(t)\times\delta_{T_s}(t)=f_s(t)$$</p>
-<p>$$F(j\omega)*\omega_s\delta_{T_s}(\omega)=F_s(j\omega)$$</p>
-<p>&gt;</p>
-<p>频域上，相当于对原信号进行了无数次搬移，为了防止信号发生混叠，搬移之后的频谱不能重叠。故$\omega_s\geq2\omega_m$。</p>
-<p><strong>但这只是充分条件。</strong></p>
-<p>压缩采样：<br>1.原始信号在某正交基底上是稀疏的；<br>2.利用观测矩阵对该正交基底进行观测，得到观测值；（也可理解为一种采样，但是采样率可以不受奈奎斯特定理约束）<br>3.传输观测之后的数据；<br>4.恢复原始信号。</p>
-<p>类似。。小波变换</p>
-<p>知乎上<a href="http://www.zhihu.com/question/24913651" target="_blank" rel="external">对于压缩感知的问题</a></p>
-<ul>
-<li>拉普拉斯变换与Z变换</li>
-</ul>
-<p>都是傅里叶变换的几种特殊形式。</p>
-<p>拉普拉斯变换-处理连续系统</p>
-<p>Z变换-处理离散系统</p>
-<h1 id="数字信号处理">数字信号处理</h1><hr>
-<ul>
-<li>CTFT</li>
-</ul>
-<p>假设有原始信号：$x(t)$</p>
-<p>频率：$f_0$</p>
-<p>周期：$T_0=\frac{1}{f_0}$</p>
-<p>$\Omega_0=2\pi f_0=\frac{2\pi}{T_0}$</p>
-<p>定义连续傅里叶变换：</p>
-<p>$$X(j\Omega)=\int_{-\infty}^{\infty}x(t)e^{-j\Omega t}dt$$</p>
-<ul>
-<li>DTFT</li>
-</ul>
-<p>令：$x[n]=x(nT_s)$</p>
-<p>采样频率：$f_s$</p>
-<p>采样周期：$T_s=\frac{1}{f_s}$</p>
-<p>$\omega_s=2\pi f_s=\frac{2\pi}{f_s}$</p>
-<p>定义离散时间傅里叶变换：</p>
-<p>$$X(j\omega)=\sum_{n=-\infty}^{\infty}x[n]e^{-j\omega n}$$</p>
-<blockquote>
-<p>不是CTFT乘上冲激串序列采样得到的！！！！DTFT直接是函数值，而$f(t)$乘上冲激串序列后变成了一个冲激串序列和函数</p>
-</blockquote>
-<ul>
-<li>DFT</li>
-</ul>
-<p>把有限长序列看成是周期序列的一个周期，则作N点DFT：</p>
-<p>$$X[K]=\sum_{n=0}^{N-1}x[n]e^{-j\frac{2\pi K}{N}n}$$</p>
-<p>$$\omega=\frac{2\pi K}{N}$$</p>
-<p>$$K=\frac{\omega N}{2\pi}$$</p>
-<ul>
-<li>FFT</li>
-</ul>
-<p>参见 <a href="/2015/07/05/2015-07-05-fft/">快速傅里叶变换FFT算法的用途</a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>信号系列是通信工程的重点内容，以<strong>复变函数与积分变换</strong>作为基础的数学课程，主要包含<strong>信号与系统</strong>、升级版<strong>数字信号处理</strong>、然后是以<strong>概率论与数理统计</strong>为数学基础课的<strong>信息论</strong>作为通信方面数学上的理论基础、最后得到<strong>通信原理</strong>、应用方面有<strong>移动通信</strong>。</p>
-<h1 id="复变函数与积分变换">复变函数与积分变换</h1><hr>
-<ul>
-<li>欧拉公式：</li>
-</ul>
-<p>二维平面中点的坐标：$(r\cos\theta,r\sin\theta)$</p>
-<p>$$x=r\cos\theta$$</p>
-<p>$$y=r\sin\theta$$</p>
-<p>$$z=r(\cos\theta+i\sin\theta)=re^{i\theta}$$</p>]]>
-    
-    </summary>
-    
-      <category term="信号处理" scheme="http://jcf94.github.io/tags/%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/"/>
-    
-      <category term="复习笔记" scheme="http://jcf94.github.io/tags/%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="我的大学" scheme="http://jcf94.github.io/categories/%E6%88%91%E7%9A%84%E5%A4%A7%E5%AD%A6/"/>
     
   </entry>
   
