@@ -4,7 +4,7 @@
   <subtitle><![CDATA[It's the way I choose.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://jcf94.github.io/"/>
-  <updated>2015-09-13T08:30:25.163Z</updated>
+  <updated>2015-09-14T08:37:33.112Z</updated>
   <id>http://jcf94.github.io/</id>
   
   <author>
@@ -19,11 +19,12 @@
     <link href="http://jcf94.github.io/2015/09/13/2015-09-13-Changchun-Online/"/>
     <id>http://jcf94.github.io/2015/09/13/2015-09-13-Changchun-Online/</id>
     <published>2015-09-13T07:09:34.000Z</published>
-    <updated>2015-09-13T08:30:25.163Z</updated>
+    <updated>2015-09-14T08:37:33.112Z</updated>
     <content type="html"><![CDATA[<p><del>【A】Alisha’s Party 堆模拟</del><br>【B】Ponds<br>【C】Aggregated Counting<br>【D】Clock Adjusting<br><del>【E】Travel 并查集</del><br>【F】Favorite Donut<br>【G】The Water Problem<br>【H】Elven Postman<br>【I】Food Problem<br>【J】Unknown Treasure<br>【K】Good Numbers<br>【L】Marisa’s Cake<br>【M】Robot Dog</p>
 <p>题解在此：</p>
 <p><a href="http://acmicpc.info/archives/1896" target="_blank" rel="external">acminfo 结题报告整理页</a></p>
 <p>然后是这个 <a href="http://ahdoc.blog.163.com/blog/static/247281060201581315429783/" target="_blank" rel="external">长春2015的那一场网络赛</a> 让人满头大汗的题解</p>
+<p>可能是最后一次写题解了，今年下半年也不确定是不是还会出去打现场赛了。</p>
 <a id="more"></a>
 <h1 id="【A】HDU_5437_Alisha’s_Party">【A】HDU 5437 Alisha’s Party</h1><p>Time Limit: 3000/2000 MS (Java/Others)    Memory Limit: 131072/131072 K (Java/Others)</p>
 <h2 id="Problem_Description">Problem Description</h2><p>Princess Alisha invites her friends to come to her birthday party. Each of her friends will bring a gift of some value v, and all of them will come at a different time. Because the lobby is not large enough, Alisha can only let a few people in at a time. She decides to let the person whose gift has the highest value enter first.</p>
@@ -71,7 +72,8 @@
     <![CDATA[<p><del>【A】Alisha’s Party 堆模拟</del><br>【B】Ponds<br>【C】Aggregated Counting<br>【D】Clock Adjusting<br><del>【E】Travel 并查集</del><br>【F】Favorite Donut<br>【G】The Water Problem<br>【H】Elven Postman<br>【I】Food Problem<br>【J】Unknown Treasure<br>【K】Good Numbers<br>【L】Marisa’s Cake<br>【M】Robot Dog</p>
 <p>题解在此：</p>
 <p><a href="http://acmicpc.info/archives/1896">acminfo 结题报告整理页</a></p>
-<p>然后是这个 <a href="http://ahdoc.blog.163.com/blog/static/247281060201581315429783/">长春2015的那一场网络赛</a> 让人满头大汗的题解</p>]]>
+<p>然后是这个 <a href="http://ahdoc.blog.163.com/blog/static/247281060201581315429783/">长春2015的那一场网络赛</a> 让人满头大汗的题解</p>
+<p>可能是最后一次写题解了，今年下半年也不确定是不是还会出去打现场赛了。</p>]]>
     
     </summary>
     
@@ -88,11 +90,28 @@
     <link href="http://jcf94.github.io/2015/09/09/2015-09-09-cod/"/>
     <id>http://jcf94.github.io/2015/09/09/2015-09-09-cod/</id>
     <published>2015-09-09T02:56:01.000Z</published>
-    <updated>2015-09-09T03:12:43.000Z</updated>
+    <updated>2015-09-14T03:20:41.000Z</updated>
     <content type="html"><![CDATA[<p>《Computer Organization and Design, Hardware/Software Interface》以及《Computer Architecture: A Quantitative Approach》被誉为体系结构界的两本圣经。</p>
 <p>最近除了编译原理外，还在补的就是《硬件/软件接口》这一本了。</p>
 <p>这本书讲解得非常透彻。原本我只是对体系结构、CPU有个模糊的很难学的概念，，，书中由浅至深详细地解释了其中的工作原理，，，，真的好难啊Q_Q…</p>
-<a id="more"></a>]]></content>
+<a id="more"></a>
+<p>目录整理如下：</p>
+<h1 id="CHAPTER_1-_Computer_Abstractions_and_Technology">CHAPTER 1. Computer Abstractions and Technology</h1><p>计算机概要与技术</p>
+<h2 id="Introduction">Introduction</h2><h2 id="Eight_Great_Ideas_in_Computer_Architecture_11">Eight Great Ideas in Computer Architecture 11</h2><p>计算机体系结构中的八个伟大的想法：</p>
+<h2 id="Below_Your_Program_13">Below Your Program 13</h2><h2 id="Under_the_Covers_16">Under the Covers 16</h2><h2 id="Technologies_for_Building_Processors_and_Memory_24">Technologies for Building Processors and Memory 24</h2><h2 id="Performance_28">Performance 28</h2><h2 id="The_Power_Wall_40">The Power Wall 40</h2><h2 id="The_Sea_Change:_The_Switch_from_Uniprocessors_to_Multiprocessors_43">The Sea Change: The Switch from Uniprocessors to Multiprocessors 43</h2><h2 id="Real_Stuff:_Benchmarking_the_Intel_Core_i7_46">Real Stuff: Benchmarking the Intel Core i7 46</h2><h2 id="Fallacies_and_Pitfalls_49">Fallacies and Pitfalls 49</h2><h2 id="Concluding_Remarks_52">Concluding Remarks 52</h2><h2 id="Historical_Perspective_and_Further_Reading_54">Historical Perspective and Further Reading 54</h2><h2 id="Exercises_54">Exercises 54</h2><hr>
+<h1 id="CHAPTER_2-_Instructions:_Language_of_the_Computer_60">CHAPTER 2. Instructions: Language of the Computer 60</h1><p>指令：计算机的语言</p>
+<h2 id="Introduction_62">Introduction 62</h2><h2 id="Operations_of_the_Computer_Hardware_63">Operations of the Computer Hardware 63</h2><h2 id="Operands_of_the_Computer_Hardware_66">Operands of the Computer Hardware 66</h2><h2 id="Signed_and_Unsigned_Numbers_73">Signed and Unsigned Numbers 73</h2><h2 id="Representing_Instructions_in_the_Computer_80">Representing Instructions in the Computer 80</h2><h2 id="Logical_Operations_87">Logical Operations 87</h2><h2 id="Instructions_for_Making_Decisions_90">Instructions for Making Decisions 90</h2><h2 id="Supporting_Procedures_in_Computer_Hardware_96">Supporting Procedures in Computer Hardware 96</h2><h2 id="MIPS_Addressing_for_32-Bit_Immediates_and_Addresses_106">MIPS Addressing for 32-Bit Immediates and Addresses 106</h2><h2 id="Parallelism_and_Instructions:_Synchronization_116">Parallelism and Instructions: Synchronization 116</h2><h2 id="Translating_and_Starting_a_Program_118">Translating and Starting a Program 118</h2><h2 id="A_C_Sort_Example_to_Put_It_All_Together_126">A C Sort Example to Put It All Together 126</h2><h2 id="Advanced_Material:_Compiling_C_134">Advanced Material: Compiling C 134</h2><h2 id="Real_Stuff:_ARMv7_(32-bit)_Instructions_134">Real Stuff: ARMv7 (32-bit) Instructions 134</h2><h2 id="Real_Stuff:_x86_Instructions_138">Real Stuff: x86 Instructions 138</h2><h2 id="Real_Stuff:_ARMv8_(64-bit)_Instructions_147">Real Stuff: ARMv8 (64-bit) Instructions 147</h2><h2 id="Fallacies_and_Pitfalls_148">Fallacies and Pitfalls 148</h2><h2 id="Concluding_Remarks_150">Concluding Remarks 150</h2><h2 id="Historical_Perspective_and_Further_Reading_152">Historical Perspective and Further Reading 152</h2><h2 id="Exercises_153">Exercises 153</h2><hr>
+<h1 id="CHAPTER_3-_Arithmetic_for_Computers_164">CHAPTER 3. Arithmetic for Computers 164</h1><p>计算机的算术运算</p>
+<h2 id="Introduction_166">Introduction 166</h2><h2 id="Addition_and_Subtraction_166">Addition and Subtraction 166</h2><h2 id="Multiplication_171">Multiplication 171</h2><h2 id="Division_177">Division 177</h2><h2 id="Floating_Point_184">Floating Point 184</h2><h2 id="Parallelism_and_Computer_Arithmetic:_Subword_Parallelism_210">Parallelism and Computer Arithmetic: Subword Parallelism 210</h2><h2 id="Real_Stuff:_Streaming_SIMD_Extensions_and_Advanced_Vector_Extensions_in_x86_212">Real Stuff: Streaming SIMD Extensions and Advanced Vector Extensions in x86 212</h2><h2 id="Going_Faster:_Subword_Parallelism_and_Matrix_Multiply_213">Going Faster: Subword Parallelism and Matrix Multiply 213</h2><h2 id="Fallacies_and_Pitfalls_217">Fallacies and Pitfalls 217</h2><h2 id="Concluding_Remarks_220">Concluding Remarks 220</h2><h2 id="Historical_Perspective_and_Further_Reading_224">Historical Perspective and Further Reading 224</h2><h2 id="Exercises_225">Exercises 225</h2><hr>
+<h1 id="CHAPTER_4-_The_Processor_230">CHAPTER 4. The Processor 230</h1><p>处理器</p>
+<h2 id="Introduction_232">Introduction 232</h2><h2 id="Logic_Design_Conventions_236">Logic Design Conventions 236</h2><h2 id="Building_a_Datapath_239">Building a Datapath 239</h2><h2 id="A_Simple_Implementation_Scheme_247">A Simple Implementation Scheme 247</h2><h2 id="An_Overview_ofPipelining_260">An Overview ofPipelining 260</h2><h2 id="Pipelined_Datapath_and_Control_274">Pipelined Datapath and Control 274</h2><h2 id="Data_Hazards:_Forwarding_versus_Stalling_291">Data Hazards: Forwarding versus Stalling 291</h2><h2 id="Control_Hazards_304">Control Hazards 304</h2><h2 id="Exceptions_313">Exceptions 313</h2><h2 id="Parallelism_via_Instructions_320">Parallelism via Instructions 320</h2><h2 id="Real_Stuff:_The_ARM_Cortex-A8_and_Intel_Core_i7_Pipelines_332">Real Stuff: The ARM Cortex-A8 and Intel Core i7 Pipelines 332</h2><h2 id="Going_Faster:_Instruction-Level_Parallelism_and_Matrix_Multiply_339">Going Faster: Instruction-Level Parallelism and Matrix Multiply 339</h2><h2 id="Advanced_Topic:_An_Introduction_to_Digital_Design_Using_a_Hardware_Design_Language_to_Describe_and_Model_a_Pipeline_and_More_Pipelining_Illustrations_342">Advanced Topic: An Introduction to Digital Design Using a Hardware Design Language to Describe and Model a Pipeline and More Pipelining Illustrations 342</h2><h2 id="Fallacies_and_Pitfalls_343">Fallacies and Pitfalls 343</h2><h2 id="CondudingRemarks_344">CondudingRemarks 344</h2><h2 id="Historical_Perspective_and_Further_Reading_345">Historical Perspective and Further Reading 345</h2><h2 id="Exercises_345">Exercises 345</h2><hr>
+<h1 id="CHAPTER_5-_Large_and_Fast:_Exploiting_Memory_Hierarchy_360">CHAPTER 5. Large and Fast: Exploiting Memory Hierarchy 360</h1><p>大容量和高速度：开发存储器层次结构</p>
+<h2 id="Introduction_362">Introduction 362</h2><h2 id="Memory_Technologies_366">Memory Technologies 366</h2><h2 id="The_Basics_of_Caches_371">The Basics of Caches 371</h2><h2 id="Measuring_and_Improving_Cache_Performance_386">Measuring and Improving Cache Performance 386</h2><h2 id="Dependable_Memory_Hierarchy_406">Dependable Memory Hierarchy 406</h2><h2 id="Virtual_Machines_412">Virtual Machines 412</h2><h2 id="Virtual_Memory_415">Virtual Memory 415</h2><h2 id="A_Common_Framework_for_Memory_Hierarchy_442">A Common Framework for Memory Hierarchy 442</h2><h2 id="Using_a_Finite-State_Machine_to_Control_a_Simple_Cache_449">Using a Finite-State Machine to Control a Simple Cache 449</h2><h2 id="Parallelism_and_Memory_Hierarchies:_Cache_Coherence_454">Parallelism and Memory Hierarchies: Cache Coherence 454</h2><h2 id="Parallelism_and_Memory_Hierarchy:_Redundant_Arrays_of_Inexpensive_Disks_458">Parallelism and Memory Hierarchy: Redundant Arrays of Inexpensive Disks 458</h2><h2 id="Advanced_Material:_Implementing_Cache_Controllers_458">Advanced Material: Implementing Cache Controllers 458</h2><h2 id="Real_Stuff:_The_ARM_Cortex-A8_and_Intel_Core_i7_Memory_Hierarchies_459">Real Stuff: The ARM Cortex-A8 and Intel Core i7 Memory Hierarchies 459</h2><h2 id="Going_Faster:_Cache_Blocking_and_Matrix_Multiply_463">Going Faster: Cache Blocking and Matrix Multiply 463</h2><h2 id="Fallacies_and_Pitfalls_466">Fallacies and Pitfalls 466</h2><h2 id="GoncludingRemarks_470">GoncludingRemarks 470</h2><h2 id="Historical_Perspective_and_Further_Reading_471">Historical Perspective and Further Reading 471</h2><h2 id="Exercises_471">Exercises 471</h2><hr>
+<h1 id="CHAPTER_6-_Parallel_Processors_from_Client_to_Cloud_488">CHAPTER 6. Parallel Processors from Client to Cloud 488</h1><p>从客户端到云端的并行计算</p>
+<h2 id="Introduction_490">Introduction 490</h2><h2 id="The_Difficulty_of_Creating_Parallel_Processing_Programs_492">The Difficulty of Creating Parallel Processing Programs 492</h2><h2 id="SISD,_MIMD,_SIMD,_SPMD,_and_Vector_497">SISD, MIMD, SIMD, SPMD, and Vector 497</h2><h2 id="Hardware_Multithreading_504">Hardware Multithreading 504</h2><h2 id="Multicore_and_Other_Shared_Memory_Multiprocessors_507">Multicore and Other Shared Memory Multiprocessors 507</h2><h2 id="Introduction_to_Graphics_Processing_Units_512">Introduction to Graphics Processing Units 512</h2><h2 id="Clusters,_Warehouse_Scale_Computers,_and_Other_Message-Passing_Multiprocessors_519">Clusters, Warehouse Scale Computers, and Other Message-Passing Multiprocessors 519</h2><h2 id="Introduction_to_Multiprocessor_Network_Topologies_524">Introduction to Multiprocessor Network Topologies 524</h2><h2 id="Communicating_to_the_Outside_World:_Cluster_Networking_527">Communicating to the Outside World: Cluster Networking 527</h2><h2 id="Multiprocessor_Benchmarks_and_Performance_Models_528">Multiprocessor Benchmarks and Performance Models 528</h2><h2 id="Real_Stuff:_Benchmarking_Intel_Core_i7_versus_NVIDIA_Tesla_GPU_538">Real Stuff: Benchmarking Intel Core i7 versus NVIDIA Tesla GPU 538</h2><h2 id="Going_Faster:_Multiple_Processors_and_Matrix_Multiply_543">Going Faster: Multiple Processors and Matrix Multiply 543</h2><h2 id="Fallacies_and_Pitfalls_546">Fallacies and Pitfalls 546</h2><h2 id="Concluding_Remarks_548">Concluding Remarks 548</h2><h2 id="Historical_Perspective_and_Further_Reading_551">Historical Perspective and Further Reading 551</h2><h2 id="Exercises_551">Exercises 551</h2><hr>
+<h1 id="APPENDICES_A-_Assemblers,_Linkers,_and_the_SPiM_Simulator_A-2">APPENDICES A. Assemblers, Linkers, and the SPiM Simulator A-2</h1><h2 id="Introduction_A-3">Introduction A-3</h2><h2 id="Assemblers_A-IO">Assemblers A-IO</h2><h2 id="Linkers_A-18">Linkers A-18</h2><h2 id="Loading_A-19">Loading A-19</h2><h2 id="Memory_Usage_A-20">Memory Usage A-20</h2><h2 id="Procedure_Call_Convention_A-22">Procedure Call Convention A-22</h2><h2 id="Exceptions_and_Interrupts_A-33">Exceptions and Interrupts A-33</h2><h2 id="Input_and_Output_A-38">Input and Output A-38</h2><h2 id="SPIM_A-40">SPIM A-40</h2><h2 id="MIPS_R2000_Assembly_Language_A-45">MIPS R2000 Assembly Language A-45</h2><h2 id="Concluding_Remarks_A-81">Concluding Remarks A-81</h2><h2 id="Exercises_A-82">Exercises A-82</h2><hr>
+<h1 id="APPENDICES_B-_TH-2_High_Performance_Computing_System_B-2">APPENDICES B. TH-2 High Performance Computing System B-2</h1><h2 id="Introduction_B-3">Introduction B-3</h2><h2 id="Compute_Node_B-3">Compute Node B-3</h2><h2 id="The_Frontend_Processors_B-5">The Frontend Processors B-5</h2><h2 id="The_Interconnect_B-6">The Interconnect B-6</h2><h2 id="The_Software_Stack_B-7">The Software Stack B-7</h2><h2 id="LINPACK_Benchmark_Run_(HPL)_B-7">LINPACK Benchmark Run (HPL) B-7</h2><h2 id="Concluding_Remarks_B-8">Concluding Remarks B-8</h2><hr>
+<h1 id="APPENDICES_F-_Networks-on-Chip_F-2">APPENDICES F. Networks-on-Chip F-2</h1>]]></content>
     <summary type="html">
     <![CDATA[<p>《Computer Organization and Design, Hardware/Software Interface》以及《Computer Architecture: A Quantitative Approach》被誉为体系结构界的两本圣经。</p>
 <p>最近除了编译原理外，还在补的就是《硬件/软件接口》这一本了。</p>
@@ -113,7 +132,7 @@
     <link href="http://jcf94.github.io/2015/09/07/2015-09-07-nothing/"/>
     <id>http://jcf94.github.io/2015/09/07/2015-09-07-nothing/</id>
     <published>2015-09-07T14:50:58.000Z</published>
-    <updated>2015-09-07T15:14:52.000Z</updated>
+    <updated>2015-09-14T09:22:47.785Z</updated>
     <content type="html"><![CDATA[<blockquote class="blockquote-center"><br>我听过荒芜变成热闹<br>听过尘埃掩埋城堡<br>听过天空拒绝飞鸟<br>没听过你<br></blockquote>
 
 <p>新生的军训喧闹过后，一切终于又步入正常的轨道。</p>
@@ -138,10 +157,28 @@
 </blockquote>
 <p>很多人都说可以再试试的。</p>
 <p>暑假到处跑的心累了，也真的是因为我懒吧。</p>
-<p>曾经走过好多地方，也曾经在好多学校里留下过足迹。本来也曾有过要去到大洋彼岸的打算，最后…</p>
-<p>这里真的已经没有什么可以挑剔的了。</p>
+<ul>
+<li>一开始最想去的是浙大的软硬件协同实验室，结果假期偏偏惊闻实验室BOSS去世的噩耗，顿时心凉了半截</li>
+<li>然后是想借着中山大学与CMU的联合招生人肉翻墙去往大洋彼岸。遗憾面试时被问得太惨</li>
+<li>北大机试困扰得了别人，却难不住我。遗憾人家只给直博，不要硕士，而我又真心不想再读到Phd。后来一位师姐特地打电话过来要我再投一次信科院下面的微处理器所，那边会要直硕，遗憾面试时间上出现了一些冲突，最后还是选择去了中科大的活动。</li>
+</ul>
+<p>曾经走过好多地方，也曾经在好多学校里留下过足迹。</p>
+<p>曾经想要么去离家最近的高等学府，要么干脆滚远点，在国外奋斗个几年出人头地了再回来，然后清华园、未名湖也是从小就梦想的地方。</p>
+<p>一开始是真的没想到，一路上走的最顺的是中科大，最后真正定下来的地方是中科大。</p>
+<hr>
+<p>这里真的已经没有什么可以挑剔的了：</p>
+<ul>
+<li>是自己喜欢的方向</li>
+<li>找到了一个非常好的导师</li>
+<li>承诺了很好的待遇</li>
+<li>能提供很好的学习环境</li>
+<li>学校也是科研氛围浓厚（夏令营的时候，旁边能听到一顿吃着饭聊着paper的）</li>
+<li>离家高铁也就3小时而已</li>
+</ul>
+<hr>
 <p>现在也已经开始补导师上次提过的缺的科目了。</p>
 <p>虽然《Compilers.Principles,Techniques,&amp;Tools》、《Computer.Organization.and.Design》这两本书看得真的挺头疼的。</p>
+<p>准备全身心地开始投入这个新的领域。</p>
 <hr>
 <p>暑假实习的时候，跟带队去的老师聊了挺久。</p>
 <p>老师说我是我们系这几年里面难得出的一个肯好好钻东西，有好好发展学术的潜力的学生。期望我要么硕博连读，要么读完研考博到国外去深造。</p>
@@ -153,9 +190,9 @@
 <blockquote>
 <p>我曾经说过我一定要离开西安。</p>
 </blockquote>
-<p>并不是觉得这个城市不好或是怎么样，只是单纯地不想留在这里。现在原本的愿望也要达成了。</p>
+<p>并不是觉得这个城市不好或是怎么样，只是单纯地不想留在这里。</p>
 <hr>
-<p>So，各位晚安咯~</p>
+<p>现在原本的愿望终于也要达成了。</p>
 <hr>
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="http://music.163.com/outchain/player?type=2&id=29431066&auto=1&height=66"></iframe>]]></content>
     <summary type="html">
