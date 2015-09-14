@@ -3,9 +3,9 @@
   <title><![CDATA[Chenfan Blog]]></title>
   <subtitle><![CDATA[It's the way I choose.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
-  <link href="http://jcf94.github.io/"/>
+  <link href="http://jcf94.com/"/>
   <updated>2015-09-14T08:37:33.000Z</updated>
-  <id>http://jcf94.github.io/</id>
+  <id>http://jcf94.com/</id>
   
   <author>
     <name><![CDATA[Jcf94]]></name>
@@ -16,8 +16,8 @@
   
   <entry>
     <title><![CDATA[The 2015 ACM-ICPC Asia Regional Changchun Online]]></title>
-    <link href="http://jcf94.github.io/2015/09/13/2015-09-13-Changchun-Online/"/>
-    <id>http://jcf94.github.io/2015/09/13/2015-09-13-Changchun-Online/</id>
+    <link href="http://jcf94.com/2015/09/13/2015-09-13-Changchun-Online/"/>
+    <id>http://jcf94.com/2015/09/13/2015-09-13-Changchun-Online/</id>
     <published>2015-09-13T07:09:34.000Z</published>
     <updated>2015-09-14T08:37:33.000Z</updated>
     <content type="html"><![CDATA[<p><del>【A】Alisha’s Party 堆模拟</del><br>【B】Ponds<br>【C】Aggregated Counting<br>【D】Clock Adjusting<br><del>【E】Travel 并查集</del><br>【F】Favorite Donut<br>【G】The Water Problem<br>【H】Elven Postman<br>【I】Food Problem<br>【J】Unknown Treasure<br>【K】Good Numbers<br>【L】Marisa’s Cake<br>【M】Robot Dog</p>
@@ -77,18 +77,18 @@
     
     </summary>
     
-      <category term="ACM-ICPC" scheme="http://jcf94.github.io/tags/ACM-ICPC/"/>
+      <category term="ACM-ICPC" scheme="http://jcf94.com/tags/ACM-ICPC/"/>
     
-      <category term="ACM" scheme="http://jcf94.github.io/categories/ACM/"/>
+      <category term="ACM" scheme="http://jcf94.com/categories/ACM/"/>
     
-      <category term="比赛" scheme="http://jcf94.github.io/categories/ACM/%E6%AF%94%E8%B5%9B/"/>
+      <category term="比赛" scheme="http://jcf94.com/categories/ACM/%E6%AF%94%E8%B5%9B/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[计算机组成与设计.硬件/软件接口]]></title>
-    <link href="http://jcf94.github.io/2015/09/09/2015-09-09-cod/"/>
-    <id>http://jcf94.github.io/2015/09/09/2015-09-09-cod/</id>
+    <link href="http://jcf94.com/2015/09/09/2015-09-09-cod/"/>
+    <id>http://jcf94.com/2015/09/09/2015-09-09-cod/</id>
     <published>2015-09-09T02:56:01.000Z</published>
     <updated>2015-09-14T03:20:41.000Z</updated>
     <content type="html"><![CDATA[<p>《Computer Organization and Design, Hardware/Software Interface》以及《Computer Architecture: A Quantitative Approach》被誉为体系结构界的两本圣经。</p>
@@ -119,18 +119,18 @@
     
     </summary>
     
-      <category term="体系结构" scheme="http://jcf94.github.io/tags/%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/"/>
+      <category term="体系结构" scheme="http://jcf94.com/tags/%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/"/>
     
-      <category term="学习笔记" scheme="http://jcf94.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+      <category term="学习笔记" scheme="http://jcf94.com/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
-      <category term="计算机系统结构" scheme="http://jcf94.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/"/>
+      <category term="计算机系统结构" scheme="http://jcf94.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[杂记]]></title>
-    <link href="http://jcf94.github.io/2015/09/07/2015-09-07-nothing/"/>
-    <id>http://jcf94.github.io/2015/09/07/2015-09-07-nothing/</id>
+    <link href="http://jcf94.com/2015/09/07/2015-09-07-nothing/"/>
+    <id>http://jcf94.com/2015/09/07/2015-09-07-nothing/</id>
     <published>2015-09-07T14:50:58.000Z</published>
     <updated>2015-09-14T09:22:47.000Z</updated>
     <content type="html"><![CDATA[<blockquote class="blockquote-center"><br>我听过荒芜变成热闹<br>听过尘埃掩埋城堡<br>听过天空拒绝飞鸟<br>没听过你<br></blockquote>
@@ -206,16 +206,16 @@
     
     </summary>
     
-      <category term="随笔" scheme="http://jcf94.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="http://jcf94.com/tags/%E9%9A%8F%E7%AC%94/"/>
     
-      <category term="日常" scheme="http://jcf94.github.io/categories/%E6%97%A5%E5%B8%B8/"/>
+      <category term="日常" scheme="http://jcf94.com/categories/%E6%97%A5%E5%B8%B8/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[ISCA 2014 会议论文整理]]></title>
-    <link href="http://jcf94.github.io/2015/08/31/2015-08-31-isca2014/"/>
-    <id>http://jcf94.github.io/2015/08/31/2015-08-31-isca2014/</id>
+    <link href="http://jcf94.com/2015/08/31/2015-08-31-isca2014/"/>
+    <id>http://jcf94.com/2015/08/31/2015-08-31-isca2014/</id>
     <published>2015-08-31T14:34:15.000Z</published>
     <updated>2015-09-01T00:26:20.000Z</updated>
     <content type="html"><![CDATA[<p>即将踏入 Computer Architecture 领域，准备从今年下半年开始把这个方向相关的国际顶级会议论文都下过来看看。</p>
@@ -354,18 +354,18 @@
     
     </summary>
     
-      <category term="IEEE" scheme="http://jcf94.github.io/tags/IEEE/"/>
+      <category term="IEEE" scheme="http://jcf94.com/tags/IEEE/"/>
     
-      <category term="ISCA" scheme="http://jcf94.github.io/tags/ISCA/"/>
+      <category term="ISCA" scheme="http://jcf94.com/tags/ISCA/"/>
     
-      <category term="论文" scheme="http://jcf94.github.io/categories/%E8%AE%BA%E6%96%87/"/>
+      <category term="论文" scheme="http://jcf94.com/categories/%E8%AE%BA%E6%96%87/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Manufactoria 一个好玩的自动机编程游戏]]></title>
-    <link href="http://jcf94.github.io/2015/08/28/2015-08-28-manufactoria/"/>
-    <id>http://jcf94.github.io/2015/08/28/2015-08-28-manufactoria/</id>
+    <link href="http://jcf94.com/2015/08/28/2015-08-28-manufactoria/"/>
+    <id>http://jcf94.com/2015/08/28/2015-08-28-manufactoria/</id>
     <published>2015-08-28T11:25:48.000Z</published>
     <updated>2015-09-04T03:31:38.000Z</updated>
     <content type="html"><![CDATA[<p>自从在知乎上发现了这么个有意思的问题：</p>
@@ -457,18 +457,18 @@
     
     </summary>
     
-      <category term="Flash" scheme="http://jcf94.github.io/tags/Flash/"/>
+      <category term="Flash" scheme="http://jcf94.com/tags/Flash/"/>
     
-      <category term="自动机" scheme="http://jcf94.github.io/tags/%E8%87%AA%E5%8A%A8%E6%9C%BA/"/>
+      <category term="自动机" scheme="http://jcf94.com/tags/%E8%87%AA%E5%8A%A8%E6%9C%BA/"/>
     
-      <category term="玩玩玩玩" scheme="http://jcf94.github.io/categories/%E7%8E%A9%E7%8E%A9%E7%8E%A9%E7%8E%A9/"/>
+      <category term="玩玩玩玩" scheme="http://jcf94.com/categories/%E7%8E%A9%E7%8E%A9%E7%8E%A9%E7%8E%A9/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[2015 多校联合集训 第一场]]></title>
-    <link href="http://jcf94.github.io/2015/08/27/2015-08-27-multi1/"/>
-    <id>http://jcf94.github.io/2015/08/27/2015-08-27-multi1/</id>
+    <link href="http://jcf94.com/2015/08/27/2015-08-27-multi1/"/>
+    <id>http://jcf94.com/2015/08/27/2015-08-27-multi1/</id>
     <published>2015-08-27T13:12:43.000Z</published>
     <updated>2015-08-27T14:06:09.592Z</updated>
     <content type="html"><![CDATA[<p>暑假因为出去参加夏令营和各种事情，没有跟留在学校训练的小伙伴们一起打多校，想想还是挺惭愧的。</p>
@@ -504,18 +504,18 @@
     
     </summary>
     
-      <category term="Multi-University-Training-Contest" scheme="http://jcf94.github.io/tags/Multi-University-Training-Contest/"/>
+      <category term="Multi-University-Training-Contest" scheme="http://jcf94.com/tags/Multi-University-Training-Contest/"/>
     
-      <category term="ACM" scheme="http://jcf94.github.io/categories/ACM/"/>
+      <category term="ACM" scheme="http://jcf94.com/categories/ACM/"/>
     
-      <category term="比赛" scheme="http://jcf94.github.io/categories/ACM/%E6%AF%94%E8%B5%9B/"/>
+      <category term="比赛" scheme="http://jcf94.com/categories/ACM/%E6%AF%94%E8%B5%9B/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Treap]]></title>
-    <link href="http://jcf94.github.io/2015/08/23/2015-08-23-treap/"/>
-    <id>http://jcf94.github.io/2015/08/23/2015-08-23-treap/</id>
+    <link href="http://jcf94.com/2015/08/23/2015-08-23-treap/"/>
+    <id>http://jcf94.com/2015/08/23/2015-08-23-treap/</id>
     <published>2015-08-23T08:45:01.000Z</published>
     <updated>2015-08-23T12:51:03.556Z</updated>
     <content type="html"><![CDATA[<blockquote class="blockquote-center"><br>据说平衡树界最经典的三大树是<br>SBT、Splay、Treap<br></blockquote>
@@ -577,20 +577,20 @@
     
     </summary>
     
-      <category term="Treap" scheme="http://jcf94.github.io/tags/Treap/"/>
+      <category term="Treap" scheme="http://jcf94.com/tags/Treap/"/>
     
-      <category term="平衡树" scheme="http://jcf94.github.io/tags/%E5%B9%B3%E8%A1%A1%E6%A0%91/"/>
+      <category term="平衡树" scheme="http://jcf94.com/tags/%E5%B9%B3%E8%A1%A1%E6%A0%91/"/>
     
-      <category term="ACM" scheme="http://jcf94.github.io/categories/ACM/"/>
+      <category term="ACM" scheme="http://jcf94.com/categories/ACM/"/>
     
-      <category term="算法学习" scheme="http://jcf94.github.io/categories/ACM/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/"/>
+      <category term="算法学习" scheme="http://jcf94.com/categories/ACM/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[网络流整理]]></title>
-    <link href="http://jcf94.github.io/2015/08/22/2015-08-22-networkflow/"/>
-    <id>http://jcf94.github.io/2015/08/22/2015-08-22-networkflow/</id>
+    <link href="http://jcf94.com/2015/08/22/2015-08-22-networkflow/"/>
+    <id>http://jcf94.com/2015/08/22/2015-08-22-networkflow/</id>
     <published>2015-08-22T00:21:16.000Z</published>
     <updated>2015-08-22T02:10:31.341Z</updated>
     <content type="html"><![CDATA[<p>今天来整理一下网络流的相关内容。</p>
@@ -633,18 +633,18 @@
     
     </summary>
     
-      <category term="网络流" scheme="http://jcf94.github.io/tags/%E7%BD%91%E7%BB%9C%E6%B5%81/"/>
+      <category term="网络流" scheme="http://jcf94.com/tags/%E7%BD%91%E7%BB%9C%E6%B5%81/"/>
     
-      <category term="ACM" scheme="http://jcf94.github.io/categories/ACM/"/>
+      <category term="ACM" scheme="http://jcf94.com/categories/ACM/"/>
     
-      <category term="算法学习" scheme="http://jcf94.github.io/categories/ACM/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/"/>
+      <category term="算法学习" scheme="http://jcf94.com/categories/ACM/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[BIOS内核载入的方式（引导实验）]]></title>
-    <link href="http://jcf94.github.io/2015/08/19/2015-08-19-biosinit/"/>
-    <id>http://jcf94.github.io/2015/08/19/2015-08-19-biosinit/</id>
+    <link href="http://jcf94.com/2015/08/19/2015-08-19-biosinit/"/>
+    <id>http://jcf94.com/2015/08/19/2015-08-19-biosinit/</id>
     <published>2015-08-19T10:20:21.000Z</published>
     <updated>2015-09-09T03:10:13.000Z</updated>
     <content type="html"><![CDATA[<p>之前花了点时间稍微研究了下系统内核载入，重新翻出来整理一下：</p>
@@ -777,20 +777,20 @@
     
     </summary>
     
-      <category term="BIOS" scheme="http://jcf94.github.io/tags/BIOS/"/>
+      <category term="BIOS" scheme="http://jcf94.com/tags/BIOS/"/>
     
-      <category term="内核" scheme="http://jcf94.github.io/tags/%E5%86%85%E6%A0%B8/"/>
+      <category term="内核" scheme="http://jcf94.com/tags/%E5%86%85%E6%A0%B8/"/>
     
-      <category term="引导" scheme="http://jcf94.github.io/tags/%E5%BC%95%E5%AF%BC/"/>
+      <category term="引导" scheme="http://jcf94.com/tags/%E5%BC%95%E5%AF%BC/"/>
     
-      <category term="计算机系统结构" scheme="http://jcf94.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/"/>
+      <category term="计算机系统结构" scheme="http://jcf94.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[编译原理]]></title>
-    <link href="http://jcf94.github.io/2015/08/16/2015-08-16-compilers/"/>
-    <id>http://jcf94.github.io/2015/08/16/2015-08-16-compilers/</id>
+    <link href="http://jcf94.com/2015/08/16/2015-08-16-compilers/"/>
+    <id>http://jcf94.com/2015/08/16/2015-08-16-compilers/</id>
     <published>2015-08-16T08:34:00.000Z</published>
     <updated>2015-09-09T03:09:45.000Z</updated>
     <content type="html"><![CDATA[<p>缺的东西只能自己补上，开始补编译原理。</p>
@@ -809,7 +809,7 @@
 </ol>
 <hr>
 <p>龙书终于到手咯~Hoho~</p>
-<p>在github上发现个整理得挺全的龙书答案，顺手fork下来<a href="http://jcf94.github.io/dragon-book-exercise-answers">做了个gitbook</a></p>
+<p>在github上发现个整理得挺全的龙书答案，顺手fork下来<a href="http://jcf94.github.io/dragon-book-exercise-answers" target="_blank" rel="external">做了个gitbook</a></p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>缺的东西只能自己补上，开始补编译原理。</p>
@@ -817,22 +817,22 @@
     
     </summary>
     
-      <category term="Coursera" scheme="http://jcf94.github.io/tags/Coursera/"/>
+      <category term="Coursera" scheme="http://jcf94.com/tags/Coursera/"/>
     
-      <category term="StandFord" scheme="http://jcf94.github.io/tags/StandFord/"/>
+      <category term="StandFord" scheme="http://jcf94.com/tags/StandFord/"/>
     
-      <category term="公开课" scheme="http://jcf94.github.io/tags/%E5%85%AC%E5%BC%80%E8%AF%BE/"/>
+      <category term="公开课" scheme="http://jcf94.com/tags/%E5%85%AC%E5%BC%80%E8%AF%BE/"/>
     
-      <category term="编译原理" scheme="http://jcf94.github.io/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/"/>
+      <category term="编译原理" scheme="http://jcf94.com/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/"/>
     
-      <category term="计算机系统结构" scheme="http://jcf94.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/"/>
+      <category term="计算机系统结构" scheme="http://jcf94.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[MX-BOARD 3.0 红轴]]></title>
-    <link href="http://jcf94.github.io/2015/08/16/2015-08-16-cherry/"/>
-    <id>http://jcf94.github.io/2015/08/16/2015-08-16-cherry/</id>
+    <link href="http://jcf94.com/2015/08/16/2015-08-16-cherry/"/>
+    <id>http://jcf94.com/2015/08/16/2015-08-16-cherry/</id>
     <published>2015-08-16T07:42:32.000Z</published>
     <updated>2015-08-16T08:14:40.086Z</updated>
     <content type="html"><![CDATA[<blockquote class="blockquote-center"><br>人生中的第一块原厂红轴<br>0.0<br>默默地入坑了<br></blockquote>
@@ -845,20 +845,20 @@
 <p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/]]>
     </summary>
     
-      <category term="cherry" scheme="http://jcf94.github.io/tags/cherry/"/>
+      <category term="cherry" scheme="http://jcf94.com/tags/cherry/"/>
     
-      <category term="机械键盘" scheme="http://jcf94.github.io/tags/%E6%9C%BA%E6%A2%B0%E9%94%AE%E7%9B%98/"/>
+      <category term="机械键盘" scheme="http://jcf94.com/tags/%E6%9C%BA%E6%A2%B0%E9%94%AE%E7%9B%98/"/>
     
-      <category term="随笔" scheme="http://jcf94.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="http://jcf94.com/tags/%E9%9A%8F%E7%AC%94/"/>
     
-      <category term="日常" scheme="http://jcf94.github.io/categories/%E6%97%A5%E5%B8%B8/"/>
+      <category term="日常" scheme="http://jcf94.com/categories/%E6%97%A5%E5%B8%B8/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[中山卡内基in广州]]></title>
-    <link href="http://jcf94.github.io/2015/07/27/2015-07-27-sysucmu/"/>
-    <id>http://jcf94.github.io/2015/07/27/2015-07-27-sysucmu/</id>
+    <link href="http://jcf94.com/2015/07/27/2015-07-27-sysucmu/"/>
+    <id>http://jcf94.com/2015/07/27/2015-07-27-sysucmu/</id>
     <published>2015-07-27T07:00:39.000Z</published>
     <updated>2015-08-01T13:08:04.915Z</updated>
     <content type="html"><![CDATA[<blockquote class="blockquote-center"><br>多图预警！！！<br>千万不要用流量打开本帖！！！<br>0.0<br></blockquote>
@@ -961,24 +961,24 @@
     
     </summary>
     
-      <category term="CMU" scheme="http://jcf94.github.io/tags/CMU/"/>
+      <category term="CMU" scheme="http://jcf94.com/tags/CMU/"/>
     
-      <category term="SYSU" scheme="http://jcf94.github.io/tags/SYSU/"/>
+      <category term="SYSU" scheme="http://jcf94.com/tags/SYSU/"/>
     
-      <category term="保研" scheme="http://jcf94.github.io/tags/%E4%BF%9D%E7%A0%94/"/>
+      <category term="保研" scheme="http://jcf94.com/tags/%E4%BF%9D%E7%A0%94/"/>
     
-      <category term="图集" scheme="http://jcf94.github.io/tags/%E5%9B%BE%E9%9B%86/"/>
+      <category term="图集" scheme="http://jcf94.com/tags/%E5%9B%BE%E9%9B%86/"/>
     
-      <category term="随笔" scheme="http://jcf94.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="http://jcf94.com/tags/%E9%9A%8F%E7%AC%94/"/>
     
-      <category term="日常" scheme="http://jcf94.github.io/categories/%E6%97%A5%E5%B8%B8/"/>
+      <category term="日常" scheme="http://jcf94.com/categories/%E6%97%A5%E5%B8%B8/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[中科大in合肥]]></title>
-    <link href="http://jcf94.github.io/2015/07/22/2015-07-22-ustc/"/>
-    <id>http://jcf94.github.io/2015/07/22/2015-07-22-ustc/</id>
+    <link href="http://jcf94.com/2015/07/22/2015-07-22-ustc/"/>
+    <id>http://jcf94.com/2015/07/22/2015-07-22-ustc/</id>
     <published>2015-07-22T13:12:30.000Z</published>
     <updated>2015-07-31T05:53:26.000Z</updated>
     <content type="html"><![CDATA[<blockquote class="blockquote-center"><br>多图预警！！！<br>千万不要用流量打开本帖！！！<br>0.0<br></blockquote>
@@ -1128,22 +1128,22 @@
     
     </summary>
     
-      <category term="USTC" scheme="http://jcf94.github.io/tags/USTC/"/>
+      <category term="USTC" scheme="http://jcf94.com/tags/USTC/"/>
     
-      <category term="保研" scheme="http://jcf94.github.io/tags/%E4%BF%9D%E7%A0%94/"/>
+      <category term="保研" scheme="http://jcf94.com/tags/%E4%BF%9D%E7%A0%94/"/>
     
-      <category term="图集" scheme="http://jcf94.github.io/tags/%E5%9B%BE%E9%9B%86/"/>
+      <category term="图集" scheme="http://jcf94.com/tags/%E5%9B%BE%E9%9B%86/"/>
     
-      <category term="随笔" scheme="http://jcf94.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="http://jcf94.com/tags/%E9%9A%8F%E7%AC%94/"/>
     
-      <category term="日常" scheme="http://jcf94.github.io/categories/%E6%97%A5%E5%B8%B8/"/>
+      <category term="日常" scheme="http://jcf94.com/categories/%E6%97%A5%E5%B8%B8/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Developing Your Musicianship 学习笔记（未完成）]]></title>
-    <link href="http://jcf94.github.io/2015/07/21/2015-07-21-music/"/>
-    <id>http://jcf94.github.io/2015/07/21/2015-07-21-music/</id>
+    <link href="http://jcf94.com/2015/07/21/2015-07-21-music/"/>
+    <id>http://jcf94.com/2015/07/21/2015-07-21-music/</id>
     <published>2015-07-21T12:03:39.000Z</published>
     <updated>2015-08-20T13:08:37.454Z</updated>
     <content type="html"><![CDATA[<p>去年在Coursera上学过一段时间的基础乐理，可惜后来还是没完成…重新整理一下</p>
@@ -1341,22 +1341,22 @@
     
     </summary>
     
-      <category term="Berklee" scheme="http://jcf94.github.io/tags/Berklee/"/>
+      <category term="Berklee" scheme="http://jcf94.com/tags/Berklee/"/>
     
-      <category term="Coursera" scheme="http://jcf94.github.io/tags/Coursera/"/>
+      <category term="Coursera" scheme="http://jcf94.com/tags/Coursera/"/>
     
-      <category term="乐理" scheme="http://jcf94.github.io/tags/%E4%B9%90%E7%90%86/"/>
+      <category term="乐理" scheme="http://jcf94.com/tags/%E4%B9%90%E7%90%86/"/>
     
-      <category term="公开课" scheme="http://jcf94.github.io/tags/%E5%85%AC%E5%BC%80%E8%AF%BE/"/>
+      <category term="公开课" scheme="http://jcf94.com/tags/%E5%85%AC%E5%BC%80%E8%AF%BE/"/>
     
-      <category term="音乐" scheme="http://jcf94.github.io/categories/%E9%9F%B3%E4%B9%90/"/>
+      <category term="音乐" scheme="http://jcf94.com/categories/%E9%9F%B3%E4%B9%90/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Next]]></title>
-    <link href="http://jcf94.github.io/2015/07/15/2015-07-15-next/"/>
-    <id>http://jcf94.github.io/2015/07/15/2015-07-15-next/</id>
+    <link href="http://jcf94.com/2015/07/15/2015-07-15-next/"/>
+    <id>http://jcf94.com/2015/07/15/2015-07-15-next/</id>
     <published>2015-07-15T13:42:19.000Z</published>
     <updated>2015-07-15T14:07:45.000Z</updated>
     <content type="html"><![CDATA[<blockquote class="blockquote-center"><br>Just as the 26 letters of the English alphabet do not limit how much can be written,<br>the two letters of the computer alphabet do not limit how what computers can do.<br></blockquote>
@@ -1375,18 +1375,18 @@
     
     </summary>
     
-      <category term="保研" scheme="http://jcf94.github.io/tags/%E4%BF%9D%E7%A0%94/"/>
+      <category term="保研" scheme="http://jcf94.com/tags/%E4%BF%9D%E7%A0%94/"/>
     
-      <category term="随笔" scheme="http://jcf94.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="http://jcf94.com/tags/%E9%9A%8F%E7%AC%94/"/>
     
-      <category term="日常" scheme="http://jcf94.github.io/categories/%E6%97%A5%E5%B8%B8/"/>
+      <category term="日常" scheme="http://jcf94.com/categories/%E6%97%A5%E5%B8%B8/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Makefile解析]]></title>
-    <link href="http://jcf94.github.io/2015/07/13/2015-07-13-makefile/"/>
-    <id>http://jcf94.github.io/2015/07/13/2015-07-13-makefile/</id>
+    <link href="http://jcf94.com/2015/07/13/2015-07-13-makefile/"/>
+    <id>http://jcf94.com/2015/07/13/2015-07-13-makefile/</id>
     <published>2015-07-13T12:30:54.000Z</published>
     <updated>2015-08-19T10:27:54.080Z</updated>
     <content type="html"><![CDATA[<p>之前啃内核的时候就见过这个东西，整理项目的时候正好用到，顺便好好学习一下。</p>
@@ -1397,24 +1397,24 @@
 <p>详见：<a href="http://blog.csdn.net/ruglcc/article/details/7814546/" target="_blank" rel="exter]]>
     </summary>
     
-      <category term="Linux" scheme="http://jcf94.github.io/tags/Linux/"/>
+      <category term="Linux" scheme="http://jcf94.com/tags/Linux/"/>
     
-      <category term="Makefile" scheme="http://jcf94.github.io/tags/Makefile/"/>
+      <category term="Makefile" scheme="http://jcf94.com/tags/Makefile/"/>
     
-      <category term="shell" scheme="http://jcf94.github.io/tags/shell/"/>
+      <category term="shell" scheme="http://jcf94.com/tags/shell/"/>
     
-      <category term="内核" scheme="http://jcf94.github.io/tags/%E5%86%85%E6%A0%B8/"/>
+      <category term="内核" scheme="http://jcf94.com/tags/%E5%86%85%E6%A0%B8/"/>
     
-      <category term="Linux" scheme="http://jcf94.github.io/categories/Linux/"/>
+      <category term="Linux" scheme="http://jcf94.com/categories/Linux/"/>
     
-      <category term="工具" scheme="http://jcf94.github.io/categories/Linux/%E5%B7%A5%E5%85%B7/"/>
+      <category term="工具" scheme="http://jcf94.com/categories/Linux/%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Uzebox]]></title>
-    <link href="http://jcf94.github.io/2015/07/12/2015-07-12-uzebox/"/>
-    <id>http://jcf94.github.io/2015/07/12/2015-07-12-uzebox/</id>
+    <link href="http://jcf94.com/2015/07/12/2015-07-12-uzebox/"/>
+    <id>http://jcf94.com/2015/07/12/2015-07-12-uzebox/</id>
     <published>2015-07-12T12:30:40.000Z</published>
     <updated>2015-07-15T13:41:26.000Z</updated>
     <content type="html"><![CDATA[<p>大二开始几个小伙伴一起跟<a href="http://john101.jimdo.com/" target="_blank" rel="external">杨俊</a>做了个单片机的小东西</p>
@@ -1495,16 +1495,16 @@
     
     </summary>
     
-      <category term="单片机" scheme="http://jcf94.github.io/tags/%E5%8D%95%E7%89%87%E6%9C%BA/"/>
+      <category term="单片机" scheme="http://jcf94.com/tags/%E5%8D%95%E7%89%87%E6%9C%BA/"/>
     
-      <category term="项目" scheme="http://jcf94.github.io/categories/%E9%A1%B9%E7%9B%AE/"/>
+      <category term="项目" scheme="http://jcf94.com/categories/%E9%A1%B9%E7%9B%AE/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[我的七月]]></title>
-    <link href="http://jcf94.github.io/2015/07/09/2015-07-09-qiyue/"/>
-    <id>http://jcf94.github.io/2015/07/09/2015-07-09-qiyue/</id>
+    <link href="http://jcf94.com/2015/07/09/2015-07-09-qiyue/"/>
+    <id>http://jcf94.com/2015/07/09/2015-07-09-qiyue/</id>
     <published>2015-07-09T15:12:48.000Z</published>
     <updated>2015-07-15T13:43:34.000Z</updated>
     <content type="html"><![CDATA[<blockquote class="blockquote-center"><br>这是一年中最火热的日子，<br>我将完成这个很大程度上决定我下半生人生走向的选择<br></blockquote>
@@ -1550,18 +1550,18 @@
     
     </summary>
     
-      <category term="保研" scheme="http://jcf94.github.io/tags/%E4%BF%9D%E7%A0%94/"/>
+      <category term="保研" scheme="http://jcf94.com/tags/%E4%BF%9D%E7%A0%94/"/>
     
-      <category term="随笔" scheme="http://jcf94.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="http://jcf94.com/tags/%E9%9A%8F%E7%AC%94/"/>
     
-      <category term="日常" scheme="http://jcf94.github.io/categories/%E6%97%A5%E5%B8%B8/"/>
+      <category term="日常" scheme="http://jcf94.com/categories/%E6%97%A5%E5%B8%B8/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[HDU 1402 A * B Problem Plus 快速高精度乘法（FFT）]]></title>
-    <link href="http://jcf94.github.io/2015/07/06/2015-07-06-HDU-1402/"/>
-    <id>http://jcf94.github.io/2015/07/06/2015-07-06-HDU-1402/</id>
+    <link href="http://jcf94.com/2015/07/06/2015-07-06-HDU-1402/"/>
+    <id>http://jcf94.com/2015/07/06/2015-07-06-HDU-1402/</id>
     <published>2015-07-06T02:50:03.000Z</published>
     <updated>2015-07-13T01:47:14.000Z</updated>
     <content type="html"><![CDATA[<h1 id="A_*_B_Problem_Plus">A * B Problem Plus</h1><p>Time Limit: 2000/1000 MS (Java/Others)    Memory Limit: 65536/32768 K (Java/Others)</p>
@@ -1595,20 +1595,20 @@
     
     </summary>
     
-      <category term="FFT" scheme="http://jcf94.github.io/tags/FFT/"/>
+      <category term="FFT" scheme="http://jcf94.com/tags/FFT/"/>
     
-      <category term="高精度算法" scheme="http://jcf94.github.io/tags/%E9%AB%98%E7%B2%BE%E5%BA%A6%E7%AE%97%E6%B3%95/"/>
+      <category term="高精度算法" scheme="http://jcf94.com/tags/%E9%AB%98%E7%B2%BE%E5%BA%A6%E7%AE%97%E6%B3%95/"/>
     
-      <category term="ACM" scheme="http://jcf94.github.io/categories/ACM/"/>
+      <category term="ACM" scheme="http://jcf94.com/categories/ACM/"/>
     
-      <category term="训练" scheme="http://jcf94.github.io/categories/ACM/%E8%AE%AD%E7%BB%83/"/>
+      <category term="训练" scheme="http://jcf94.com/categories/ACM/%E8%AE%AD%E7%BB%83/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[快速傅里叶变换FFT算法的用途]]></title>
-    <link href="http://jcf94.github.io/2015/07/05/2015-07-05-fft/"/>
-    <id>http://jcf94.github.io/2015/07/05/2015-07-05-fft/</id>
+    <link href="http://jcf94.com/2015/07/05/2015-07-05-fft/"/>
+    <id>http://jcf94.com/2015/07/05/2015-07-05-fft/</id>
     <published>2015-07-05T06:59:09.000Z</published>
     <updated>2015-07-13T01:47:02.000Z</updated>
     <content type="html"><![CDATA[<p>正好复习信号到FFT了，想起来前段时间放了挺久的FFT大数乘法，顺便研究下。</p>
@@ -1698,13 +1698,13 @@
     
     </summary>
     
-      <category term="FFT" scheme="http://jcf94.github.io/tags/FFT/"/>
+      <category term="FFT" scheme="http://jcf94.com/tags/FFT/"/>
     
-      <category term="复习笔记" scheme="http://jcf94.github.io/tags/%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+      <category term="复习笔记" scheme="http://jcf94.com/tags/%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
-      <category term="ACM" scheme="http://jcf94.github.io/categories/ACM/"/>
+      <category term="ACM" scheme="http://jcf94.com/categories/ACM/"/>
     
-      <category term="算法学习" scheme="http://jcf94.github.io/categories/ACM/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/"/>
+      <category term="算法学习" scheme="http://jcf94.com/categories/ACM/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
