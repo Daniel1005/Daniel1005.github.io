@@ -4,7 +4,7 @@
   <subtitle><![CDATA[It's the way I choose.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://jcf94.com/"/>
-  <updated>2015-09-19T08:43:34.323Z</updated>
+  <updated>2015-09-20T12:00:08.013Z</updated>
   <id>http://jcf94.com/</id>
   
   <author>
@@ -15,11 +15,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[开始以及以后]]></title>
+    <title><![CDATA[下阶段学习计划]]></title>
     <link href="http://jcf94.com/2015/09/19/2015-09-18-startandnext/"/>
     <id>http://jcf94.com/2015/09/19/2015-09-18-startandnext/</id>
     <published>2015-09-19T10:32:40.000Z</published>
-    <updated>2015-09-19T08:43:34.323Z</updated>
+    <updated>2015-09-20T12:00:08.013Z</updated>
     <content type="html"><![CDATA[<blockquote class="blockquote-center"><br>看着ACM协会从建立到慢慢壮大<br>1年过去了<br></blockquote>
 
 <h1 id="有关A协">有关A协</h1><p>记得去年写过一篇弱弱的随笔 <a href="/2014/08/13/2014/2014-08-13-xueshu/">浅谈我院学术氛围之我见</a></p>
@@ -41,13 +41,15 @@
 </li>
 <li><p>尝试看一下体系结构方向顶级会议的论文，比如<a href="/2015/08/31/2015-08-31-isca2014/">ISCA 2014 会议论文整理</a>等等。尝试从写综述开始。（还没发过论文啊啊啊，去科大之前希望能够发掉处女文）</p>
 </li>
-<li><p>学Python、学爬虫</p>
+<li><p>学Python、爬虫</p>
 </li>
 <li><p>学并行编程</p>
 </li>
-<li><p>学HDL编程，用HDL写个简单的CPU什么的（看完体系结构bible之后再说）</p>
+<li><p>学HDL编程，目标是用HDL写个简单的CPU什么的（看完体系结构bible之后）</p>
 </li>
-<li><p>学nodejs几个简单库的语法，改或者写一个自己的hexo主题出来</p>
+<li><p>学nodejs中几个简单库的语法，改或者写一个自己的hexo主题出来</p>
+</li>
+<li><p>练成Everyone Piano，学乐理</p>
 </li>
 <li><p>……剩下的想到再补吧。</p>
 </li>
@@ -78,12 +80,13 @@
     <link href="http://jcf94.com/2015/09/13/2015-09-13-Changchun-Online/"/>
     <id>http://jcf94.com/2015/09/13/2015-09-13-Changchun-Online/</id>
     <published>2015-09-13T07:09:34.000Z</published>
-    <updated>2015-09-14T08:37:33.000Z</updated>
+    <updated>2015-09-20T12:04:10.026Z</updated>
     <content type="html"><![CDATA[<p><del>【A】Alisha’s Party 堆模拟</del><br>【B】Ponds<br>【C】Aggregated Counting<br>【D】Clock Adjusting<br><del>【E】Travel 并查集</del><br>【F】Favorite Donut<br>【G】The Water Problem<br>【H】Elven Postman<br>【I】Food Problem<br>【J】Unknown Treasure<br>【K】Good Numbers<br>【L】Marisa’s Cake<br>【M】Robot Dog</p>
 <p>题解在此：</p>
 <p><a href="http://acmicpc.info/archives/1896" target="_blank" rel="external">acminfo 结题报告整理页</a></p>
 <p>然后是这个 <a href="http://ahdoc.blog.163.com/blog/static/247281060201581315429783/" target="_blank" rel="external">长春2015的那一场网络赛</a> 让人满头大汗的题解</p>
-<p>可能是最后一次写题解了，今年下半年也不确定是不是还会出去打现场赛了。</p>
+<p>可能是最后一次写题解了，后面的题目也不会再补了。</p>
+<p>下半年还是希望能够打出现场赛名额，但是我已经不准备再参加了。</p>
 <a id="more"></a>
 <h1 id="【A】HDU_5437_Alisha’s_Party">【A】HDU 5437 Alisha’s Party</h1><p>Time Limit: 3000/2000 MS (Java/Others)    Memory Limit: 131072/131072 K (Java/Others)</p>
 <h2 id="Problem_Description">Problem Description</h2><p>Princess Alisha invites her friends to come to her birthday party. Each of her friends will bring a gift of some value v, and all of them will come at a different time. Because the lobby is not large enough, Alisha can only let a few people in at a time. She decides to let the person whose gift has the highest value enter first.</p>
@@ -132,7 +135,8 @@
 <p>题解在此：</p>
 <p><a href="http://acmicpc.info/archives/1896">acminfo 结题报告整理页</a></p>
 <p>然后是这个 <a href="http://ahdoc.blog.163.com/blog/static/247281060201581315429783/">长春2015的那一场网络赛</a> 让人满头大汗的题解</p>
-<p>可能是最后一次写题解了，今年下半年也不确定是不是还会出去打现场赛了。</p>]]>
+<p>可能是最后一次写题解了，后面的题目也不会再补了。</p>
+<p>下半年还是希望能够打出现场赛名额，但是我已经不准备再参加了。</p>]]>
     
     </summary>
     
@@ -191,7 +195,7 @@
     <link href="http://jcf94.com/2015/09/07/2015-09-07-nothing/"/>
     <id>http://jcf94.com/2015/09/07/2015-09-07-nothing/</id>
     <published>2015-09-07T14:50:58.000Z</published>
-    <updated>2015-09-14T09:22:47.000Z</updated>
+    <updated>2015-09-20T12:04:49.476Z</updated>
     <content type="html"><![CDATA[<blockquote class="blockquote-center"><br>我听过荒芜变成热闹<br>听过尘埃掩埋城堡<br>听过天空拒绝飞鸟<br>没听过你<br></blockquote>
 
 <p>新生的军训喧闹过后，一切终于又步入正常的轨道。</p>
@@ -217,9 +221,12 @@
 <p>很多人都说可以再试试的。</p>
 <p>暑假到处跑的心累了，也真的是因为我懒吧。</p>
 <ul>
-<li>一开始最想去的是浙大的软硬件协同实验室，结果假期偏偏惊闻实验室BOSS去世的噩耗，顿时心凉了半截</li>
-<li>然后是想借着中山大学与CMU的联合招生人肉翻墙去往大洋彼岸。遗憾面试时被问得太惨</li>
-<li>北大机试困扰得了别人，却难不住我。遗憾人家只给直博，不要硕士，而我又真心不想再读到Phd。后来一位师姐特地打电话过来要我再投一次信科院下面的微处理器所，那边会要直硕，遗憾面试时间上出现了一些冲突，最后还是选择去了中科大的活动。</li>
+<li><p>一开始最想去的是浙大的软硬件协同实验室，结果假期偏偏惊闻实验室BOSS去世的噩耗，顿时心凉了半截</p>
+</li>
+<li><p>然后是想借着中山大学与CMU的联合招生人肉翻墙去往大洋彼岸。遗憾面试时被问得太惨</p>
+</li>
+<li><p>北大机试困扰得了别人，却难不住我。遗憾人家只给直博，不要硕士，而我又真心不想再读到Phd。后来一位师姐特地打电话过来要我再投一次信科院下面的微处理器所，那边会要直硕，遗憾面试时间上出现了一些冲突，最后还是选择去了中科大的活动。</p>
+</li>
 </ul>
 <p>曾经走过好多地方，也曾经在好多学校里留下过足迹。</p>
 <p>曾经想要么去离家最近的高等学府，要么干脆滚远点，在国外奋斗个几年出人头地了再回来，然后清华园、未名湖也是从小就梦想的地方。</p>
