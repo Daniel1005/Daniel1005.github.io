@@ -32,7 +32,7 @@
 
 
 
-  <meta name="keywords" content="保研,随笔," />
+  <meta name="keywords" content="Linux,Makefile,shell,内核," />
 
 
 
@@ -43,17 +43,19 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="Just as the 26 letters of the English alphabet do not limit how much can be written,the two letters of the computer alphabet do not limit how what computers can do.">
+<meta name="description" content="之前啃内核的时候就见过这个东西，整理项目的时候正好用到，顺便好好学习一下。
+详见：Makefile经典教程(掌握这些足够)">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Next">
-<meta property="og:url" content="http://jcf94.com/2015/07/15/2015-07-15-next/index.html">
+<meta property="og:title" content="Makefile解析">
+<meta property="og:url" content="http://jcf94.com/2015/07/13/2015/2015-07-13-makefile/index.html">
 <meta property="og:site_name" content="Chenfan Blog">
-<meta property="og:description" content="Just as the 26 letters of the English alphabet do not limit how much can be written,the two letters of the computer alphabet do not limit how what computers can do.">
-<meta property="og:image" content="http://7xjh3j.com1.z0.glb.clouddn.com/2015-07-15-next-jingli.jpg">
-<meta property="og:updated_time" content="2015-07-15T14:07:45.000Z">
+<meta property="og:description" content="之前啃内核的时候就见过这个东西，整理项目的时候正好用到，顺便好好学习一下。
+详见：Makefile经典教程(掌握这些足够)">
+<meta property="og:updated_time" content="2015-08-19T10:27:54.080Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Next">
-<meta name="twitter:description" content="Just as the 26 letters of the English alphabet do not limit how much can be written,the two letters of the computer alphabet do not limit how what computers can do.">
+<meta name="twitter:title" content="Makefile解析">
+<meta name="twitter:description" content="之前啃内核的时候就见过这个东西，整理项目的时候正好用到，顺便好好学习一下。
+详见：Makefile经典教程(掌握这些足够)">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -63,7 +65,7 @@
   };
 </script>
 
-  <title> Next | Chenfan Blog </title>
+  <title> Makefile解析 | Chenfan Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
@@ -209,7 +211,7 @@
           
           
             
-              Next
+              Makefile解析
             
           
         </h1>
@@ -218,8 +220,8 @@
       <div class="post-meta">
         <span class="post-time">
           發表於
-          <time itemprop="dateCreated" datetime="2015-07-15T21:42:19+08:00" content="2015-07-15">
-            2015-07-15
+          <time itemprop="dateCreated" datetime="2015-07-13T20:30:54+08:00" content="2015-07-13">
+            2015-07-13
           </time>
         </span>
 
@@ -228,8 +230,20 @@
             &nbsp; | &nbsp; 分類於
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/日常/" itemprop="url" rel="index">
-                  <span itemprop="name">日常</span>
+                <a href="/categories/Linux/" itemprop="url" rel="index">
+                  <span itemprop="name">Linux</span>
+                </a>
+              </span>
+
+              
+              
+                ， 
+              
+
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/Linux/工具/" itemprop="url" rel="index">
+                  <span itemprop="name">工具</span>
                 </a>
               </span>
 
@@ -244,8 +258,8 @@
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/07/15/2015-07-15-next/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/15/2015-07-15-next/" itemprop="commentsCount"></span>
+              <a href="/2015/07/13/2015/2015-07-13-makefile/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/13/2015/2015-07-13-makefile/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -259,14 +273,8 @@
       
 
       
-        <span itemprop="articleBody"><blockquote class="blockquote-center"><br>Just as the 26 letters of the English alphabet do not limit how much can be written,<br>the two letters of the computer alphabet do not limit how what computers can do.<br></blockquote>
-
-<p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-07-15-next-jingli.jpg" alt="锦鲤"></p>
-<a id="more"></a>
-<p>几天前听说王小豪童鞋已经顺利拿到北大化学直博的offer，简直不能再赞啦~</p>
-<p>转眼今天已经是7月15了，18号晚踏上征程！！</p>
-<p>西安-合肥-广州-回家</p>
-<p>希望走完这一路，8月初回到家时，所有的一切都能达成~！</p>
+        <span itemprop="articleBody"><p>之前啃内核的时候就见过这个东西，整理项目的时候正好用到，顺便好好学习一下。</p>
+<p>详见：<a href="http://blog.csdn.net/ruglcc/article/details/7814546/" target="_blank" rel="external">Makefile经典教程(掌握这些足够)</a></p>
 </span>
       
     </div>
@@ -275,9 +283,13 @@
       
         <div class="post-tags">
           
-            <a href="/tags/保研/" rel="tag">#保研</a>
+            <a href="/tags/Linux/" rel="tag">#Linux</a>
           
-            <a href="/tags/随笔/" rel="tag">#随笔</a>
+            <a href="/tags/Makefile/" rel="tag">#Makefile</a>
+          
+            <a href="/tags/shell/" rel="tag">#shell</a>
+          
+            <a href="/tags/内核/" rel="tag">#内核</a>
           
         </div>
       
@@ -286,13 +298,13 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/07/21/2015-07-21-music/" rel="prev">Developing Your Musicianship 学习笔记（未完成）</a>
+              <a href="/2015/07/15/2015/2015-07-15-next/" rel="prev">Next</a>
             
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/07/13/2015-07-13-makefile/" rel="next">Makefile解析</a>
+              <a href="/2015/07/12/2015/2015-07-12-uzebox/" rel="next">Uzebox</a>
             
           </div>
         </div>
@@ -307,10 +319,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2015/07/15/2015-07-15-next/"
-     data-title="Next"
+        <div class="ds-share flat" data-thread-key="2015/07/13/2015/2015-07-13-makefile/"
+     data-title="Makefile解析"
      data-content=""
-     data-url="http://jcf94.com/2015/07/15/2015-07-15-next/">
+     data-url="http://jcf94.com/2015/07/13/2015/2015-07-13-makefile/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -336,8 +348,8 @@
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="2015/07/15/2015-07-15-next/"
-                   data-title="Next" data-url="http://jcf94.com/2015/07/15/2015-07-15-next/">
+              <div class="ds-thread" data-thread-key="2015/07/13/2015/2015-07-13-makefile/"
+                   data-title="Makefile解析" data-url="http://jcf94.com/2015/07/13/2015/2015-07-13-makefile/">
               </div>
             
           </div>
@@ -377,7 +389,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">83</span>
+              <span class="site-state-item-count">84</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>

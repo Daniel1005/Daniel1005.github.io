@@ -32,7 +32,7 @@
 
 
 
-  <meta name="keywords" content="FFT,复习笔记," />
+  <meta name="keywords" content="单片机," />
 
 
 
@@ -43,31 +43,32 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="正好复习信号到FFT了，想起来前段时间放了挺久的FFT大数乘法，顺便研究下。
-普通的高精度乘法的复杂度需要$O(n^2)$，用了押位之后，一般押4位的话能够达到$O(n^2/16)$，看上去可能效果不错，但仍然是同一个数量级的。
-对付更大一点的变态数据（。。。ACM赛场上很少有卡这货的吧。。。-_-////）就需要用的$O(nlogn)$的FFT大数乘法算法了。
-数学基础
-首先基础是DFT，FFT">
+<meta name="description" content="大二开始几个小伙伴一起跟杨俊做了个单片机的小东西
+最后感觉也就是水过了
+这几天准备重新把资料理出来看看，没准面试可以用一下。
+Orz
+基本原理:">
 <meta property="og:type" content="article">
-<meta property="og:title" content="快速傅里叶变换FFT算法的用途">
-<meta property="og:url" content="http://jcf94.com/2015/07/05/2015-07-05-fft/index.html">
+<meta property="og:title" content="Uzebox">
+<meta property="og:url" content="http://jcf94.com/2015/07/12/2015/2015-07-12-uzebox/index.html">
 <meta property="og:site_name" content="Chenfan Blog">
-<meta property="og:description" content="正好复习信号到FFT了，想起来前段时间放了挺久的FFT大数乘法，顺便研究下。
-普通的高精度乘法的复杂度需要$O(n^2)$，用了押位之后，一般押4位的话能够达到$O(n^2/16)$，看上去可能效果不错，但仍然是同一个数量级的。
-对付更大一点的变态数据（。。。ACM赛场上很少有卡这货的吧。。。-_-////）就需要用的$O(nlogn)$的FFT大数乘法算法了。
-数学基础
-首先基础是DFT，FFT">
-<meta property="og:image" content="http://7xjh3j.com1.z0.glb.clouddn.com/2015-07-05-fft1.png">
-<meta property="og:image" content="http://7xjh3j.com1.z0.glb.clouddn.com/2015-07-05-fft1.gif">
-<meta property="og:image" content="http://7xjh3j.com1.z0.glb.clouddn.com/2015-07-05-fft1.jpg">
-<meta property="og:updated_time" content="2015-07-13T01:47:02.000Z">
+<meta property="og:description" content="大二开始几个小伙伴一起跟杨俊做了个单片机的小东西
+最后感觉也就是水过了
+这几天准备重新把资料理出来看看，没准面试可以用一下。
+Orz
+基本原理:">
+<meta property="og:image" content="http://7xjh3j.com1.z0.glb.clouddn.com/2015-07-12-uzebox-1.jpg">
+<meta property="og:image" content="http://7xjh3j.com1.z0.glb.clouddn.com/2015-07-12-uzebox-2.jpg">
+<meta property="og:image" content="http://7xjh3j.com1.z0.glb.clouddn.com/2015-07-12-uzebox-3.jpg">
+<meta property="og:image" content="http://7xjh3j.com1.z0.glb.clouddn.com/2015-07-12-uzebox-4.jpg">
+<meta property="og:updated_time" content="2015-07-15T13:41:26.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="快速傅里叶变换FFT算法的用途">
-<meta name="twitter:description" content="正好复习信号到FFT了，想起来前段时间放了挺久的FFT大数乘法，顺便研究下。
-普通的高精度乘法的复杂度需要$O(n^2)$，用了押位之后，一般押4位的话能够达到$O(n^2/16)$，看上去可能效果不错，但仍然是同一个数量级的。
-对付更大一点的变态数据（。。。ACM赛场上很少有卡这货的吧。。。-_-////）就需要用的$O(nlogn)$的FFT大数乘法算法了。
-数学基础
-首先基础是DFT，FFT">
+<meta name="twitter:title" content="Uzebox">
+<meta name="twitter:description" content="大二开始几个小伙伴一起跟杨俊做了个单片机的小东西
+最后感觉也就是水过了
+这几天准备重新把资料理出来看看，没准面试可以用一下。
+Orz
+基本原理:">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -77,7 +78,7 @@
   };
 </script>
 
-  <title> 快速傅里叶变换FFT算法的用途 | Chenfan Blog </title>
+  <title> Uzebox | Chenfan Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
@@ -223,7 +224,7 @@
           
           
             
-              快速傅里叶变换FFT算法的用途
+              Uzebox
             
           
         </h1>
@@ -232,8 +233,8 @@
       <div class="post-meta">
         <span class="post-time">
           發表於
-          <time itemprop="dateCreated" datetime="2015-07-05T14:59:09+08:00" content="2015-07-05">
-            2015-07-05
+          <time itemprop="dateCreated" datetime="2015-07-12T20:30:40+08:00" content="2015-07-12">
+            2015-07-12
           </time>
         </span>
 
@@ -242,20 +243,8 @@
             &nbsp; | &nbsp; 分類於
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/ACM/" itemprop="url" rel="index">
-                  <span itemprop="name">ACM</span>
-                </a>
-              </span>
-
-              
-              
-                ， 
-              
-
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/ACM/算法学习/" itemprop="url" rel="index">
-                  <span itemprop="name">算法学习</span>
+                <a href="/categories/项目/" itemprop="url" rel="index">
+                  <span itemprop="name">项目</span>
                 </a>
               </span>
 
@@ -270,8 +259,8 @@
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/07/05/2015-07-05-fft/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/05/2015-07-05-fft/" itemprop="commentsCount"></span>
+              <a href="/2015/07/12/2015/2015-07-12-uzebox/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/12/2015/2015-07-12-uzebox/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -285,82 +274,73 @@
       
 
       
-        <span itemprop="articleBody"><p>正好复习信号到FFT了，想起来前段时间放了挺久的FFT大数乘法，顺便研究下。</p>
-<p>普通的高精度乘法的复杂度需要$O(n^2)$，用了押位之后，一般押4位的话能够达到$O(n^2/16)$，看上去可能效果不错，但仍然是同一个数量级的。</p>
-<p>对付更大一点的变态数据（。。。ACM赛场上很少有卡这货的吧。。。-_-////）就需要用的$O(nlogn)$的FFT大数乘法算法了。</p>
-<h1 id="数学基础">数学基础</h1><hr>
-<p>首先基础是DFT，FFT是DFT的一种快速算法。</p>
-<p>从N点DFT出发：</p>
+        <span itemprop="articleBody"><p>大二开始几个小伙伴一起跟<a href="http://john101.jimdo.com/" target="_blank" rel="external">杨俊</a>做了个单片机的小东西</p>
+<p>最后感觉也就是水过了</p>
+<p>这几天准备重新把资料理出来看看，没准面试可以用一下。</p>
+<p>Orz</p>
+<p>基本原理:</p>
+<p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-07-12-uzebox-1.jpg" alt="基本原理"></p>
 <a id="more"></a>
-<p>$$\begin{align}<br>X[K]&amp;=\sum_{n=0}^{N-1}x[n]e^{-j\frac{2\pi K}{N}n}\\<br>&amp;=\sum_{n=0}^{\frac{N}{2}-1}x[2n]e^{-j\frac{2\pi K}{N}2n}+\sum_{n=0}^{\frac{N}{2}-1}x[2n+1]e^{-j\frac{2\pi K}{N}(2n+1)}\\<br>&amp;=\sum_{n=0}^{\frac{N}{2}-1}x_1[n]e^{-j\frac{2\pi K}{\frac{N}{2}}n}+\sum_{n=0}^{\frac{N}{2}-1}x_2[n]e^{-j\frac{2\pi K}{\frac{N}{2}}n}e^{-j\frac{2\pi K}{N}}\\<br>&amp;=X_1[K]+e^{-j\frac{2\pi K}{N}}X_2[K]<br>\end{align}$$</p>
-<p>也就是说，通过上述变换，我们成功地将一个N点得DFT拆成了2个$\frac{N}{2}$点的DFT</p>
-<p>分析一下复杂度：</p>
-<p>首先N点DFT的结果$X[K]$有N点，每个点的计算都要对$x[n]$的n个序列值乘上负指数求和，复杂度是$O(n^2)$</p>
-<p>如果每一步都采用上面的那种变换方式，那么可以把多出来的一维降掉，变成$O(nlogn)$，这也就是<strong>快速傅里叶变换（FFT）</strong>了！</p>
-<h2 id="更进一步">更进一步</h2><p>然而上面这个式子简化到最后是有问题的。</p>
-<p>我们把一个N点的DFT拆成$\frac{N}{2}$点的DFT之后，下面得到的两个序列$X_1[K]$和$X_2[K]$都只有$\frac{N}{2}$点。</p>
-<p>也就是说直接这么写，当K大于$\frac{N}{2}-1$之后，放在代码里面，后面部分就会出现<u><strong>数组越界</strong></u>的问题！！</p>
-<p>继续分析后面部分：</p>
-<p>$$\begin{align}<br>X_1[K]&amp;=\sum_{n=0}^{\frac{N}{2}-1}x_1[n]e^{-j\frac{2\pi K}{\frac{N}{2}}n}\\<br>X_1[\frac{N}{2}+K]&amp;=\sum_{n=0}^{\frac{N}{2}-1}x_1[n]e^{-j\frac{2\pi}{\frac{N}{2}}(\frac{N}{2}+K)n}\\<br>&amp;=\sum_{n=0}^{\frac{N}{2}-1}x_1[n]e^{-j\frac{2\pi K}{\frac{N}{2}}n}e^{-j2\pi n}\\<br>&amp;=-\sum_{n=0}^{\frac{N}{2}-1}x_1[n]e^{-j\frac{2\pi K}{\frac{N}{2}}n}\\<br>&amp;=-X_1[K]<br>\end{align}$$</p>
-<p>好，这样问题就解决了。</p>
-<p>令：</p>
-<p>$$W_N^K=e^{-j\frac{2\pi K}{N}}$$</p>
-<p>则重新整理上面的运算单元可以得到：</p>
-<p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-07-05-fft1.png" alt="蝶形运算"></p>
-<p>这就是著名的蝶形运算了。</p>
-<p>然后整个图画出来是这样的：</p>
-<p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-07-05-fft1.gif" alt="8"></p>
-<p>8点FFT</p>
-<p>或者：</p>
-<p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-07-05-fft1.jpg" alt="16"></p>
-<p>16点FFT</p>
-<h2 id="FFT的用途">FFT的用途</h2><p>综上，FFT就是专门为计算机快速运算而设计的，1点变2点，2点变4点，4点变8点……这样就能在原始数据（原数组）的基础上不断计算下一层的结果，最终完成整个DFT的快速计算。</p>
-<p>写代码的话，第一步是处理一下最左边一排原始数据的摆放顺序，是按照二进制逆序排过来的，然后一层一层求和迭代即可。</p>
-<h1 id="多项式">多项式</h1><hr>
-<p>讲完FFT之后，下面重点来了。</p>
-<h2 id="多项式的系数表示法">多项式的系数表示法</h2><p>关于变量$x$的多项式可以表示成：</p>
-<p>$$A(x)=a_0+a_1x+a_2x^2+…+a_{n-1}x^{n-1}=\sum_{j=0}^{n-1}a_jx^j$$</p>
-<p>多项式是个广泛的概念，如果把大数对应到多项式上面去那就是类似这样：</p>
-<p>$$1234=4+3*10+2*10^2+1*10^3$$</p>
-<p>若有：</p>
-<p>$$B(x)=\sum_{j=0}^{n-1}b_jx^j$$</p>
-<p>则：</p>
-<p>$$A(x)+B(x)\Rightarrow C(x)=\sum_{j=0}^{n-1}c_jx^j$$</p>
-<p>$$c_j=a_j+b_j$$</p>
-<p>$$A(x)\cdot B(x)\Rightarrow C(x)=\sum_{j=0}^{2n-2}c_jx^j$$</p>
-<p>$$c_j=\sum_{k=0}^{j}a_kb_{j-k}$$</p>
-<p>分别是多项式加法和多项式乘法</p>
-<p>注意：多项式乘法的过程就是<strong>多项式系数卷积</strong></p>
-<h2 id="多项式的点值表示法">多项式的点值表示法</h2><p>令：</p>
-<p>$$y_k=A(x_k)$$</p>
-<p>则一个次数界为n的多项式$A(x)$的点值表示就是n个这样的点值（任意n个）对所形成的集合：</p>
-<p>$$\{(x_0,y_0),(x_1,y_1),…,(x_{n-1},y_{n-1})\}$$</p>
-<p>从系数表示法写成点值表示法就是简单地说找n个不同的$x$代进去求出$y$，然后写在一起就行了。</p>
-<p>然而用点值确定系数就是个线性求解的过程，称为插值，也是可以算的。</p>
-<p>那么点值表示法有什么好处呢？</p>
-<p>设上面的点值表示是$A(x)$的，如果已知$B(x)$的是：</p>
-<p>$$\{(x_0,y’_0),(x_1,y’_1),…,(x_{n-1},y’_{n-1})\}$$</p>
-<p>那么：</p>
-<p>$$A(x)+B(x)\Rightarrow C(x)=\{(x_0,y_0+y’_0),(x_1,y_1+y’_1),…,(x_{n-1},y_{n-1}+y’_{n-1})\}$$</p>
-<p>$$A(x)\cdot B(x)\Rightarrow C(x)=\{(x_0,y_0y’_0),(x_1,y_1y’_1),…,(x_{n-1},y_{n-1}y’_{n-1})\}$$</p>
-<p>分别是多项式加法和多项式乘法</p>
-<p>关键在于，这里的多项式乘法的复杂度是$O(n)$！！！！！</p>
-<blockquote>
-<p>因此只要能够想办法快速地进行两种表示法之间的转换，那么就可以先从系数表示法转换成点值表示法，用$O(n)$相乘之后，再快速转换回去，即可做到快速的多项式相乘</p>
-</blockquote>
-<hr>
-<p>所以！！！！</p>
-<p>转换的关键就是！！！！</p>
-<p>FFT！！！！</p>
-<hr>
-<p>以下是多项式乘法的过程：</p>
+<p>从核心部分开始：</p>
+<p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-07-12-uzebox-2.jpg" alt="总图"></p>
+<h1 id="UZEBOX主机">UZEBOX主机</h1><hr>
+<p><a href="http://uzebox.org/wiki/index.php?title=Main_Page" target="_blank" rel="external">UZEBOX的Wiki页面</a></p>
+<p>具体电路图如上所示，用到的芯片只有两个，单片机和后面的AD转换芯片，剩下的都是一些简单的电路。</p>
+<h2 id="硬件部分">硬件部分</h2><h3 id="CPU">CPU</h3><p>CPU采用了ATmega644，8位的AVR单片机，主要功能是完成所有任务。</p>
 <ol>
-<li>次数界增加一倍：通过加入n个值为0的高阶系数，将整个次数界扩充至$2n$</li>
-<li>求值，两次FFT分别求出$A(x)$和$B(x)$的长度为$2n$的点值表示$A(\omega)$和$B(\omega)$</li>
-<li>逐个相乘得到$C(\omega)$</li>
-<li>再做一次FFT，求逆傅里叶变换得到$C(x)$</li>
+<li>生成视频同步信号</li>
+<li>画面的呈现。这包括滚动和确定精度的透明度来抑制背景</li>
+<li>混合并且输出音乐和声音效果</li>
+<li>读操纵杆按钮状态</li>
+<li>读取和处理通过UART的MIDI数据流</li>
+<li>处理对SD卡的读写操作</li>
+<li>最后也是最重要的一步：运行游戏</li>
 </ol>
-<p>实现代码详见模板题：<a href="/2015/07/06/2015-07-06-HDU-1402/">HDU 1402 A * B Problem Plus 快速高精度乘法（FFT）</a></p>
+<p>这块芯片的标准主频是20MHz，但是使用时需要超频到28.6MHz。</p>
+<p>因为AD725的工作频率是14.3MHz，为了防止视频信号采样发生混叠，MCU和AD725的信号需要同步发生。</p>
+<h3 id="视频信号">视频信号</h3><p>如上图所示，UZEBOX的视频部分主要靠单片机的C口进行输出，以3/3/2的比例向外输出R/G/B视频信号</p>
+<p>红和绿都是用3位表示，蓝色信号2位，经过一个R-2R权电阻网络进行简单的DA转换，可以把三种颜色的数字信号转成0~0.7V的模拟信号，然后继续输入AD725，转换成NTSC格式的视频信号</p>
+<p>AD725的主要输入信号是前面来的RGB，然后再加上单片机的同步信号和时钟信号辅助，就能完成视频信号的转换了</p>
+<h3 id="声音信号">声音信号</h3><p>声音输出只用到了PD7一个口，是单声道信号进行脉冲宽度调制（PWM）产生的。用电阻把输出信号幅值控制在1V的峰峰值即可</p>
+<h3 id="手柄">手柄</h3><p>这里用的是一个简单的SNES（Super Nintendo Entertainment System）的手柄。就是一个触发器和一个移位寄存器，单片机读取移位寄存器里面存储的状态即可。</p>
+<h2 id="软件部分">软件部分</h2><h3 id="内核">内核</h3><p>内核就是烧录进单片机里面的主要内容。单片机上没有操作系统，因此内核里面的所有部分事实上只能顺序执行，但是因为执行速度足够快，可以表现得像多任务同时工作一样进行。单片机需要同时完成多项任务：产生视频信号、读取手柄的控制信息、播放音乐等等。</p>
+<p>主要工作内容是：</p>
+<ol>
+<li>初始化端口，计时器和其他硬件外围设备重置</li>
+<li>生成复合视频AD725所需的同步脉冲</li>
+<li>解码音乐数据，产生声音效果</li>
+<li>混合四种声音样本</li>
+<li>在规律的间隔时间从混合缓冲器中输出声音样本</li>
+<li>对控制器按钮和鼠标移动的读取</li>
+<li>读取UART中的入栈数据并将其存储到缓冲区中</li>
+</ol>
+<h3 id="中断">中断</h3><p>内核使用定时器1，即16位的计数器来触发中断。</p>
+<p>计时器开始为0，计数到1820，此时它会自动回转到0，并且生成一个中断。</p>
+<p>1820的值是由主晶振频率（28.63636MHZ）除以NTSC扫描线率（15.73426KHZ）得到的。</p>
+<p>内核中断负责暂停主程序，进行渲染视频和混合音乐。由于速度和时间要求，需要用汇编语言来写。</p>
+<p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-07-12-uzebox-3.jpg" alt="中断"></p>
+<h3 id="视频引擎">视频引擎</h3><p>内核提供12种不同的工作模式，每种都有不同的特点，用于实现视频绘制</p>
+<h3 id="声音引擎">声音引擎</h3><p>音乐处理涉及到音乐乐谱的读取和波封的处理，这里使用的是MIDI这种紧凑格式的音频，纯软件完成</p>
+<h2 id="游戏载入">游戏载入</h2><p>从<a href="https://github.com/Uzebox/uzebox" target="_blank" rel="external">github</a>上下到完整的包是这样的</p>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">demos         <span class="comment">//各种运行工具以及游戏包</span></span><br><span class="line">gfx           <span class="comment">//颜色以及图像资源等</span></span><br><span class="line">kernel        <span class="comment">//内核，包括初始化、运行主程序、中断、视频/音频引擎等</span></span><br><span class="line">tools         <span class="comment">//编译工具</span></span><br><span class="line">Makefile      <span class="comment">//编译文件</span></span><br></pre></td></tr></table></figure>
+<p>执行make之后，会在Rom目录下生成一些.hex和.uze的文件</p>
+<p>.uze文件是原本生成了.hex文件之后加上首部打包而成</p>
+<p>载入的过程可以有两种：</p>
+<ol>
+<li>直接将游戏包生成好的.hex文件烧录进Atmega644即可</li>
+<li>往单片机中烧录gameloader的.hex文件，之后通过读取SD卡中的.uze文件来载入游戏。gameloader占内存4K，剩下还有60K的内存可供游戏调用</li>
+</ol>
+<h1 id="改进部分">改进部分</h1><hr>
+<p>游戏机制作完成之后，我们对其进行了两方面的改进</p>
+<h2 id="无线传输">无线传输</h2><p><a href="http://anarchy.translocal.jp/radio/micro/howtotx.html" target="_blank" rel="external">参考Tetsuo Kogawa的网站</a></p>
+<p>将视频信号通过一个简易的无线电路发射出去，可以通过一般的CRT电视来接收</p>
+<p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-07-12-uzebox-4.jpg" alt="无线"></p>
+<p>该电路非常简化，制作该电路的时候也是使用双面覆铜板完成</p>
+<p>所有暴露在外面的导线都是尽可能地贴近覆铜板，使高频信号尽可能地衰减掉</p>
+<p>选择一个电视频道，并调节可调电感来使得两个设备相互适配</p>
+<p>当发射机与电视机的距离、频率都调整到一个合适的位置时候，电视机上可以清晰地收到显示的游戏画面</p>
+<h2 id="无线控制">无线控制</h2><p>通过三轴加速度传感器来对感知空间三维姿态，并通过无线的方式将其传递到另一台主机上，主机进一步向外输出控制信号</p>
+<p>这一部分可以代替原始设计中的手柄部分</p>
 </span>
       
     </div>
@@ -369,9 +349,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/FFT/" rel="tag">#FFT</a>
-          
-            <a href="/tags/复习笔记/" rel="tag">#复习笔记</a>
+            <a href="/tags/单片机/" rel="tag">#单片机</a>
           
         </div>
       
@@ -380,13 +358,13 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/07/06/2015-07-06-HDU-1402/" rel="prev">HDU 1402 A * B Problem Plus 快速高精度乘法（FFT）</a>
+              <a href="/2015/07/13/2015/2015-07-13-makefile/" rel="prev">Makefile解析</a>
             
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/07/01/2015-07-01-xinhaoxiangguan/" rel="next">信号相关专业复习</a>
+              <a href="/2015/07/09/2015/2015-07-09-qiyue/" rel="next">我的七月</a>
             
           </div>
         </div>
@@ -401,10 +379,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2015/07/05/2015-07-05-fft/"
-     data-title="快速傅里叶变换FFT算法的用途"
+        <div class="ds-share flat" data-thread-key="2015/07/12/2015/2015-07-12-uzebox/"
+     data-title="Uzebox"
      data-content=""
-     data-url="http://jcf94.com/2015/07/05/2015-07-05-fft/">
+     data-url="http://jcf94.com/2015/07/12/2015/2015-07-12-uzebox/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -430,8 +408,8 @@
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="2015/07/05/2015-07-05-fft/"
-                   data-title="快速傅里叶变换FFT算法的用途" data-url="http://jcf94.com/2015/07/05/2015-07-05-fft/">
+              <div class="ds-thread" data-thread-key="2015/07/12/2015/2015-07-12-uzebox/"
+                   data-title="Uzebox" data-url="http://jcf94.com/2015/07/12/2015/2015-07-12-uzebox/">
               </div>
             
           </div>
@@ -471,7 +449,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">83</span>
+              <span class="site-state-item-count">84</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>
@@ -567,7 +545,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#数学基础"><span class="nav-number">1.</span> <span class="nav-text">数学基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#更进一步"><span class="nav-number">1.1.</span> <span class="nav-text">更进一步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FFT的用途"><span class="nav-number">1.2.</span> <span class="nav-text">FFT的用途</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多项式"><span class="nav-number">2.</span> <span class="nav-text">多项式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#多项式的系数表示法"><span class="nav-number">2.1.</span> <span class="nav-text">多项式的系数表示法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多项式的点值表示法"><span class="nav-number">2.2.</span> <span class="nav-text">多项式的点值表示法</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#UZEBOX主机"><span class="nav-number">1.</span> <span class="nav-text">UZEBOX主机</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#硬件部分"><span class="nav-number">1.1.</span> <span class="nav-text">硬件部分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CPU"><span class="nav-number">1.1.1.</span> <span class="nav-text">CPU</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#视频信号"><span class="nav-number">1.1.2.</span> <span class="nav-text">视频信号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#声音信号"><span class="nav-number">1.1.3.</span> <span class="nav-text">声音信号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#手柄"><span class="nav-number">1.1.4.</span> <span class="nav-text">手柄</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#软件部分"><span class="nav-number">1.2.</span> <span class="nav-text">软件部分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内核"><span class="nav-number">1.2.1.</span> <span class="nav-text">内核</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#中断"><span class="nav-number">1.2.2.</span> <span class="nav-text">中断</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#视频引擎"><span class="nav-number">1.2.3.</span> <span class="nav-text">视频引擎</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#声音引擎"><span class="nav-number">1.2.4.</span> <span class="nav-text">声音引擎</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#游戏载入"><span class="nav-number">1.3.</span> <span class="nav-text">游戏载入</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#改进部分"><span class="nav-number">2.</span> <span class="nav-text">改进部分</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#无线传输"><span class="nav-number">2.1.</span> <span class="nav-text">无线传输</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#无线控制"><span class="nav-number">2.2.</span> <span class="nav-text">无线控制</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>

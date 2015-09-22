@@ -32,7 +32,7 @@
 
 
 
-  <meta name="keywords" content="Linux,Makefile,shell,内核," />
+  <meta name="keywords" content="FFT,复习笔记," />
 
 
 
@@ -43,19 +43,31 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="之前啃内核的时候就见过这个东西，整理项目的时候正好用到，顺便好好学习一下。
-详见：Makefile经典教程(掌握这些足够)">
+<meta name="description" content="正好复习信号到FFT了，想起来前段时间放了挺久的FFT大数乘法，顺便研究下。
+普通的高精度乘法的复杂度需要$O(n^2)$，用了押位之后，一般押4位的话能够达到$O(n^2/16)$，看上去可能效果不错，但仍然是同一个数量级的。
+对付更大一点的变态数据（。。。ACM赛场上很少有卡这货的吧。。。-_-////）就需要用的$O(nlogn)$的FFT大数乘法算法了。
+数学基础
+首先基础是DFT，FFT">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Makefile解析">
-<meta property="og:url" content="http://jcf94.com/2015/07/13/2015-07-13-makefile/index.html">
+<meta property="og:title" content="快速傅里叶变换FFT算法的用途">
+<meta property="og:url" content="http://jcf94.com/2015/07/05/2015/2015-07-05-fft/index.html">
 <meta property="og:site_name" content="Chenfan Blog">
-<meta property="og:description" content="之前啃内核的时候就见过这个东西，整理项目的时候正好用到，顺便好好学习一下。
-详见：Makefile经典教程(掌握这些足够)">
-<meta property="og:updated_time" content="2015-08-19T10:27:54.080Z">
+<meta property="og:description" content="正好复习信号到FFT了，想起来前段时间放了挺久的FFT大数乘法，顺便研究下。
+普通的高精度乘法的复杂度需要$O(n^2)$，用了押位之后，一般押4位的话能够达到$O(n^2/16)$，看上去可能效果不错，但仍然是同一个数量级的。
+对付更大一点的变态数据（。。。ACM赛场上很少有卡这货的吧。。。-_-////）就需要用的$O(nlogn)$的FFT大数乘法算法了。
+数学基础
+首先基础是DFT，FFT">
+<meta property="og:image" content="http://7xjh3j.com1.z0.glb.clouddn.com/2015-07-05-fft1.png">
+<meta property="og:image" content="http://7xjh3j.com1.z0.glb.clouddn.com/2015-07-05-fft1.gif">
+<meta property="og:image" content="http://7xjh3j.com1.z0.glb.clouddn.com/2015-07-05-fft1.jpg">
+<meta property="og:updated_time" content="2015-07-13T01:47:02.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Makefile解析">
-<meta name="twitter:description" content="之前啃内核的时候就见过这个东西，整理项目的时候正好用到，顺便好好学习一下。
-详见：Makefile经典教程(掌握这些足够)">
+<meta name="twitter:title" content="快速傅里叶变换FFT算法的用途">
+<meta name="twitter:description" content="正好复习信号到FFT了，想起来前段时间放了挺久的FFT大数乘法，顺便研究下。
+普通的高精度乘法的复杂度需要$O(n^2)$，用了押位之后，一般押4位的话能够达到$O(n^2/16)$，看上去可能效果不错，但仍然是同一个数量级的。
+对付更大一点的变态数据（。。。ACM赛场上很少有卡这货的吧。。。-_-////）就需要用的$O(nlogn)$的FFT大数乘法算法了。
+数学基础
+首先基础是DFT，FFT">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -65,7 +77,7 @@
   };
 </script>
 
-  <title> Makefile解析 | Chenfan Blog </title>
+  <title> 快速傅里叶变换FFT算法的用途 | Chenfan Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
@@ -211,7 +223,7 @@
           
           
             
-              Makefile解析
+              快速傅里叶变换FFT算法的用途
             
           
         </h1>
@@ -220,8 +232,8 @@
       <div class="post-meta">
         <span class="post-time">
           發表於
-          <time itemprop="dateCreated" datetime="2015-07-13T20:30:54+08:00" content="2015-07-13">
-            2015-07-13
+          <time itemprop="dateCreated" datetime="2015-07-05T14:59:09+08:00" content="2015-07-05">
+            2015-07-05
           </time>
         </span>
 
@@ -230,8 +242,8 @@
             &nbsp; | &nbsp; 分類於
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Linux/" itemprop="url" rel="index">
-                  <span itemprop="name">Linux</span>
+                <a href="/categories/ACM/" itemprop="url" rel="index">
+                  <span itemprop="name">ACM</span>
                 </a>
               </span>
 
@@ -242,8 +254,8 @@
 
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Linux/工具/" itemprop="url" rel="index">
-                  <span itemprop="name">工具</span>
+                <a href="/categories/ACM/算法学习/" itemprop="url" rel="index">
+                  <span itemprop="name">算法学习</span>
                 </a>
               </span>
 
@@ -258,8 +270,8 @@
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/07/13/2015-07-13-makefile/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/13/2015-07-13-makefile/" itemprop="commentsCount"></span>
+              <a href="/2015/07/05/2015/2015-07-05-fft/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/05/2015/2015-07-05-fft/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -273,8 +285,82 @@
       
 
       
-        <span itemprop="articleBody"><p>之前啃内核的时候就见过这个东西，整理项目的时候正好用到，顺便好好学习一下。</p>
-<p>详见：<a href="http://blog.csdn.net/ruglcc/article/details/7814546/" target="_blank" rel="external">Makefile经典教程(掌握这些足够)</a></p>
+        <span itemprop="articleBody"><p>正好复习信号到FFT了，想起来前段时间放了挺久的FFT大数乘法，顺便研究下。</p>
+<p>普通的高精度乘法的复杂度需要$O(n^2)$，用了押位之后，一般押4位的话能够达到$O(n^2/16)$，看上去可能效果不错，但仍然是同一个数量级的。</p>
+<p>对付更大一点的变态数据（。。。ACM赛场上很少有卡这货的吧。。。-_-////）就需要用的$O(nlogn)$的FFT大数乘法算法了。</p>
+<h1 id="数学基础">数学基础</h1><hr>
+<p>首先基础是DFT，FFT是DFT的一种快速算法。</p>
+<p>从N点DFT出发：</p>
+<a id="more"></a>
+<p>$$\begin{align}<br>X[K]&amp;=\sum_{n=0}^{N-1}x[n]e^{-j\frac{2\pi K}{N}n}\\<br>&amp;=\sum_{n=0}^{\frac{N}{2}-1}x[2n]e^{-j\frac{2\pi K}{N}2n}+\sum_{n=0}^{\frac{N}{2}-1}x[2n+1]e^{-j\frac{2\pi K}{N}(2n+1)}\\<br>&amp;=\sum_{n=0}^{\frac{N}{2}-1}x_1[n]e^{-j\frac{2\pi K}{\frac{N}{2}}n}+\sum_{n=0}^{\frac{N}{2}-1}x_2[n]e^{-j\frac{2\pi K}{\frac{N}{2}}n}e^{-j\frac{2\pi K}{N}}\\<br>&amp;=X_1[K]+e^{-j\frac{2\pi K}{N}}X_2[K]<br>\end{align}$$</p>
+<p>也就是说，通过上述变换，我们成功地将一个N点得DFT拆成了2个$\frac{N}{2}$点的DFT</p>
+<p>分析一下复杂度：</p>
+<p>首先N点DFT的结果$X[K]$有N点，每个点的计算都要对$x[n]$的n个序列值乘上负指数求和，复杂度是$O(n^2)$</p>
+<p>如果每一步都采用上面的那种变换方式，那么可以把多出来的一维降掉，变成$O(nlogn)$，这也就是<strong>快速傅里叶变换（FFT）</strong>了！</p>
+<h2 id="更进一步">更进一步</h2><p>然而上面这个式子简化到最后是有问题的。</p>
+<p>我们把一个N点的DFT拆成$\frac{N}{2}$点的DFT之后，下面得到的两个序列$X_1[K]$和$X_2[K]$都只有$\frac{N}{2}$点。</p>
+<p>也就是说直接这么写，当K大于$\frac{N}{2}-1$之后，放在代码里面，后面部分就会出现<u><strong>数组越界</strong></u>的问题！！</p>
+<p>继续分析后面部分：</p>
+<p>$$\begin{align}<br>X_1[K]&amp;=\sum_{n=0}^{\frac{N}{2}-1}x_1[n]e^{-j\frac{2\pi K}{\frac{N}{2}}n}\\<br>X_1[\frac{N}{2}+K]&amp;=\sum_{n=0}^{\frac{N}{2}-1}x_1[n]e^{-j\frac{2\pi}{\frac{N}{2}}(\frac{N}{2}+K)n}\\<br>&amp;=\sum_{n=0}^{\frac{N}{2}-1}x_1[n]e^{-j\frac{2\pi K}{\frac{N}{2}}n}e^{-j2\pi n}\\<br>&amp;=-\sum_{n=0}^{\frac{N}{2}-1}x_1[n]e^{-j\frac{2\pi K}{\frac{N}{2}}n}\\<br>&amp;=-X_1[K]<br>\end{align}$$</p>
+<p>好，这样问题就解决了。</p>
+<p>令：</p>
+<p>$$W_N^K=e^{-j\frac{2\pi K}{N}}$$</p>
+<p>则重新整理上面的运算单元可以得到：</p>
+<p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-07-05-fft1.png" alt="蝶形运算"></p>
+<p>这就是著名的蝶形运算了。</p>
+<p>然后整个图画出来是这样的：</p>
+<p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-07-05-fft1.gif" alt="8"></p>
+<p>8点FFT</p>
+<p>或者：</p>
+<p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-07-05-fft1.jpg" alt="16"></p>
+<p>16点FFT</p>
+<h2 id="FFT的用途">FFT的用途</h2><p>综上，FFT就是专门为计算机快速运算而设计的，1点变2点，2点变4点，4点变8点……这样就能在原始数据（原数组）的基础上不断计算下一层的结果，最终完成整个DFT的快速计算。</p>
+<p>写代码的话，第一步是处理一下最左边一排原始数据的摆放顺序，是按照二进制逆序排过来的，然后一层一层求和迭代即可。</p>
+<h1 id="多项式">多项式</h1><hr>
+<p>讲完FFT之后，下面重点来了。</p>
+<h2 id="多项式的系数表示法">多项式的系数表示法</h2><p>关于变量$x$的多项式可以表示成：</p>
+<p>$$A(x)=a_0+a_1x+a_2x^2+…+a_{n-1}x^{n-1}=\sum_{j=0}^{n-1}a_jx^j$$</p>
+<p>多项式是个广泛的概念，如果把大数对应到多项式上面去那就是类似这样：</p>
+<p>$$1234=4+3*10+2*10^2+1*10^3$$</p>
+<p>若有：</p>
+<p>$$B(x)=\sum_{j=0}^{n-1}b_jx^j$$</p>
+<p>则：</p>
+<p>$$A(x)+B(x)\Rightarrow C(x)=\sum_{j=0}^{n-1}c_jx^j$$</p>
+<p>$$c_j=a_j+b_j$$</p>
+<p>$$A(x)\cdot B(x)\Rightarrow C(x)=\sum_{j=0}^{2n-2}c_jx^j$$</p>
+<p>$$c_j=\sum_{k=0}^{j}a_kb_{j-k}$$</p>
+<p>分别是多项式加法和多项式乘法</p>
+<p>注意：多项式乘法的过程就是<strong>多项式系数卷积</strong></p>
+<h2 id="多项式的点值表示法">多项式的点值表示法</h2><p>令：</p>
+<p>$$y_k=A(x_k)$$</p>
+<p>则一个次数界为n的多项式$A(x)$的点值表示就是n个这样的点值（任意n个）对所形成的集合：</p>
+<p>$$\{(x_0,y_0),(x_1,y_1),…,(x_{n-1},y_{n-1})\}$$</p>
+<p>从系数表示法写成点值表示法就是简单地说找n个不同的$x$代进去求出$y$，然后写在一起就行了。</p>
+<p>然而用点值确定系数就是个线性求解的过程，称为插值，也是可以算的。</p>
+<p>那么点值表示法有什么好处呢？</p>
+<p>设上面的点值表示是$A(x)$的，如果已知$B(x)$的是：</p>
+<p>$$\{(x_0,y’_0),(x_1,y’_1),…,(x_{n-1},y’_{n-1})\}$$</p>
+<p>那么：</p>
+<p>$$A(x)+B(x)\Rightarrow C(x)=\{(x_0,y_0+y’_0),(x_1,y_1+y’_1),…,(x_{n-1},y_{n-1}+y’_{n-1})\}$$</p>
+<p>$$A(x)\cdot B(x)\Rightarrow C(x)=\{(x_0,y_0y’_0),(x_1,y_1y’_1),…,(x_{n-1},y_{n-1}y’_{n-1})\}$$</p>
+<p>分别是多项式加法和多项式乘法</p>
+<p>关键在于，这里的多项式乘法的复杂度是$O(n)$！！！！！</p>
+<blockquote>
+<p>因此只要能够想办法快速地进行两种表示法之间的转换，那么就可以先从系数表示法转换成点值表示法，用$O(n)$相乘之后，再快速转换回去，即可做到快速的多项式相乘</p>
+</blockquote>
+<hr>
+<p>所以！！！！</p>
+<p>转换的关键就是！！！！</p>
+<p>FFT！！！！</p>
+<hr>
+<p>以下是多项式乘法的过程：</p>
+<ol>
+<li>次数界增加一倍：通过加入n个值为0的高阶系数，将整个次数界扩充至$2n$</li>
+<li>求值，两次FFT分别求出$A(x)$和$B(x)$的长度为$2n$的点值表示$A(\omega)$和$B(\omega)$</li>
+<li>逐个相乘得到$C(\omega)$</li>
+<li>再做一次FFT，求逆傅里叶变换得到$C(x)$</li>
+</ol>
+<p>实现代码详见模板题：<a href="/2015/07/06/2015-07-06-HDU-1402/">HDU 1402 A * B Problem Plus 快速高精度乘法（FFT）</a></p>
 </span>
       
     </div>
@@ -283,13 +369,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Linux/" rel="tag">#Linux</a>
+            <a href="/tags/FFT/" rel="tag">#FFT</a>
           
-            <a href="/tags/Makefile/" rel="tag">#Makefile</a>
-          
-            <a href="/tags/shell/" rel="tag">#shell</a>
-          
-            <a href="/tags/内核/" rel="tag">#内核</a>
+            <a href="/tags/复习笔记/" rel="tag">#复习笔记</a>
           
         </div>
       
@@ -298,13 +380,13 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/07/15/2015-07-15-next/" rel="prev">Next</a>
+              <a href="/2015/07/06/2015/2015-07-06-HDU-1402/" rel="prev">HDU 1402 A * B Problem Plus 快速高精度乘法（FFT）</a>
             
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/07/12/2015-07-12-uzebox/" rel="next">Uzebox</a>
+              <a href="/2015/07/01/2015/2015-07-01-xinhaoxiangguan/" rel="next">信号相关专业复习</a>
             
           </div>
         </div>
@@ -319,10 +401,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2015/07/13/2015-07-13-makefile/"
-     data-title="Makefile解析"
+        <div class="ds-share flat" data-thread-key="2015/07/05/2015/2015-07-05-fft/"
+     data-title="快速傅里叶变换FFT算法的用途"
      data-content=""
-     data-url="http://jcf94.com/2015/07/13/2015-07-13-makefile/">
+     data-url="http://jcf94.com/2015/07/05/2015/2015-07-05-fft/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -348,8 +430,8 @@
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="2015/07/13/2015-07-13-makefile/"
-                   data-title="Makefile解析" data-url="http://jcf94.com/2015/07/13/2015-07-13-makefile/">
+              <div class="ds-thread" data-thread-key="2015/07/05/2015/2015-07-05-fft/"
+                   data-title="快速傅里叶变换FFT算法的用途" data-url="http://jcf94.com/2015/07/05/2015/2015-07-05-fft/">
               </div>
             
           </div>
@@ -389,7 +471,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">83</span>
+              <span class="site-state-item-count">84</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>
@@ -485,7 +567,7 @@
           <div class="post-toc">
             
             
-              <p class="post-toc-empty">此文章未包含目錄</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#数学基础"><span class="nav-number">1.</span> <span class="nav-text">数学基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#更进一步"><span class="nav-number">1.1.</span> <span class="nav-text">更进一步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FFT的用途"><span class="nav-number">1.2.</span> <span class="nav-text">FFT的用途</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多项式"><span class="nav-number">2.</span> <span class="nav-text">多项式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#多项式的系数表示法"><span class="nav-number">2.1.</span> <span class="nav-text">多项式的系数表示法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多项式的点值表示法"><span class="nav-number">2.2.</span> <span class="nav-text">多项式的点值表示法</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
