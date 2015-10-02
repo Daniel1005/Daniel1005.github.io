@@ -104,7 +104,7 @@
     <link href="http://jcf94.com/2015/09/19/2015-09-18-startandnext/"/>
     <id>http://jcf94.com/2015/09/19/2015-09-18-startandnext/</id>
     <published>2015-09-19T10:32:40.000Z</published>
-    <updated>2015-09-27T09:02:47.150Z</updated>
+    <updated>2015-10-02T01:43:26.630Z</updated>
     <content type="html"><![CDATA[<blockquote class="blockquote-center"><br>看着一手建立的ACM协会从初生到慢慢壮大<br>1年过去了，很高兴看到的是<br>我们进步得挺好，它也发展得挺好<br></blockquote>
 
 <h1 id="有关A协">有关A协</h1><p>记得去年写过一篇弱弱的随笔 <a href="/2014/08/13/2014/2014-08-13-xueshu/">浅谈我院学术氛围之我见</a></p>
@@ -161,6 +161,8 @@
 <li><p>有机会的话，在Github上参与一下别人的开源项目，积累开发经验</p>
 </li>
 <li><p>继续学习乐理知识，练成Everyone Piano</p>
+</li>
+<li><p>锻炼…</p>
 </li>
 <li><p>……剩下的想到再补吧。</p>
 </li>
@@ -264,19 +266,50 @@
   </entry>
   
   <entry>
-    <title><![CDATA[计算机组成与设计.硬件/软件接口]]></title>
+    <title><![CDATA[计算机组成与设计.硬件/软件接口 学习笔记]]></title>
     <link href="http://jcf94.com/2015/09/09/2015-09-09-cod/"/>
     <id>http://jcf94.com/2015/09/09/2015-09-09-cod/</id>
     <published>2015-09-09T02:56:01.000Z</published>
-    <updated>2015-09-14T03:20:41.000Z</updated>
+    <updated>2015-10-02T02:08:09.695Z</updated>
     <content type="html"><![CDATA[<p>《Computer Organization and Design, Hardware/Software Interface》以及《Computer Architecture: A Quantitative Approach》被誉为体系结构界的两本圣经。</p>
 <p>最近除了编译原理外，还在补的就是《硬件/软件接口》这一本了。</p>
 <p>这本书讲解得非常透彻。原本我只是对体系结构、CPU有个模糊的很难学的概念，，，书中由浅至深详细地解释了其中的工作原理，，，，真的好难啊Q_Q…</p>
 <a id="more"></a>
 <p>目录整理如下：</p>
 <h1 id="CHAPTER_1-_Computer_Abstractions_and_Technology">CHAPTER 1. Computer Abstractions and Technology</h1><p>计算机概要与技术</p>
-<h2 id="Introduction">Introduction</h2><h2 id="Eight_Great_Ideas_in_Computer_Architecture_11">Eight Great Ideas in Computer Architecture 11</h2><p>计算机体系结构中的八个伟大的想法：</p>
-<h2 id="Below_Your_Program_13">Below Your Program 13</h2><h2 id="Under_the_Covers_16">Under the Covers 16</h2><h2 id="Technologies_for_Building_Processors_and_Memory_24">Technologies for Building Processors and Memory 24</h2><h2 id="Performance_28">Performance 28</h2><h2 id="The_Power_Wall_40">The Power Wall 40</h2><h2 id="The_Sea_Change:_The_Switch_from_Uniprocessors_to_Multiprocessors_43">The Sea Change: The Switch from Uniprocessors to Multiprocessors 43</h2><h2 id="Real_Stuff:_Benchmarking_the_Intel_Core_i7_46">Real Stuff: Benchmarking the Intel Core i7 46</h2><h2 id="Fallacies_and_Pitfalls_49">Fallacies and Pitfalls 49</h2><h2 id="Concluding_Remarks_52">Concluding Remarks 52</h2><h2 id="Historical_Perspective_and_Further_Reading_54">Historical Perspective and Further Reading 54</h2><h2 id="Exercises_54">Exercises 54</h2><hr>
+<h2 id="Introduction">Introduction</h2><h2 id="Eight_Great_Ideas_in_Computer_Architecture">Eight Great Ideas in Computer Architecture</h2><p>计算机体系结构中的八个伟大的想法：</p>
+<h3 id="Design_for_Moore’s_Law">Design for Moore’s Law</h3><p>设计遵从摩尔定律</p>
+<h3 id="Use_Abstraction_to_Simplify_Design">Use Abstraction to Simplify Design</h3><p>使用抽象接口来简化设计</p>
+<p>分层次进行设计，上下层的内容相互不透明，只要做好层间接口即可。</p>
+<h3 id="Make_the_Common_Case_Fast">Make the Common Case Fast</h3><p>加速常用的部分</p>
+<h3 id="Performance_via_Parallelism">Performance via Parallelism</h3><p>通过<strong>并行技术</strong>提升性能</p>
+<h3 id="Performance_via_Pipelining">Performance via Pipelining</h3><p>通过<strong>流水线技术</strong>提升性能</p>
+<h3 id="Performance_via_Prediction">Performance via Prediction</h3><p>通过<strong>预测技术</strong>提升性能</p>
+<h3 id="Hierarchy_of_Memories">Hierarchy of Memories</h3><p>存储器分级</p>
+<h3 id="Dependability_via_Redundancy">Dependability via Redundancy</h3><p>通过<strong>冗余技术</strong>来保证系统可靠性</p>
+<p>设计备份部件等等</p>
+<h2 id="Below_Your_Program">Below Your Program</h2><p>程序之下</p>
+<p>程序运行的过程：</p>
+<p>高级语言-&gt;汇编语言（低级语言）-&gt;机器语言-&gt;运行</p>
+<h2 id="Under_the_Covers">Under the Covers</h2><p>打开机箱</p>
+<h2 id="Technologies_for_Building_Processors_and_Memory">Technologies for Building Processors and Memory</h2><p>建造处理器和存储器的技术</p>
+<h2 id="Performance">Performance</h2><p>性能</p>
+<p>性能的定义：</p>
+<p>$$性能_X=\frac{1}{运行时间_X}$$</p>
+<p>X比Y快n倍：</p>
+<p>$$\frac{性能_X}{性能_Y}=\frac{运行时间_Y}{运行时间_X}=n$$</p>
+<p>CPU运行时间/CPU时间：</p>
+<p>$$CPU运行时间=CPU时钟周期数*时钟周期时间=\frac{CPU时钟周期数}{时钟频率（主频）}$$</p>
+<p>CPI（时钟周期/指令）：</p>
+<p>$$CPU时钟周期数=指令数*CPI$$</p>
+<p>$$CPU运行时间=指令数<em>CPI</em>时钟周期时间=\frac{指令数*CPI}{时钟频率}$$</p>
+<h2 id="The_Power_Wall">The Power Wall</h2><p>功耗墙</p>
+<p>功耗与主频几乎是同等上升的，主频越高功耗越高。前期主频提升很快，而最近一个阶段，处理器的主频基本不再提升，因为功耗已经达到了一个相当高的程度，在散热等其他方面还没办法跟上的时候只能限制主频的提升。</p>
+<h3 id="动态功耗">动态功耗</h3><p>CPU功耗主要是动态功耗，来自于晶体管的开关切换，无法避免：</p>
+<p>$$动态功耗=\frac{1}{2}<em>负载电容</em>电压^2*开关频率$$</p>
+<p>可见动态功耗与主频成正比。</p>
+<h3 id="静态功耗">静态功耗</h3><p>静态功耗主要来自于晶体管的漏电流，也几乎是无法避免的，只能通过工艺改进来减少。</p>
+<h2 id="The_Sea_Change:_The_Switch_from_Uniprocessors_to_Multiprocessors_43">The Sea Change: The Switch from Uniprocessors to Multiprocessors 43</h2><h2 id="Real_Stuff:_Benchmarking_the_Intel_Core_i7_46">Real Stuff: Benchmarking the Intel Core i7 46</h2><h2 id="Fallacies_and_Pitfalls_49">Fallacies and Pitfalls 49</h2><h2 id="Concluding_Remarks_52">Concluding Remarks 52</h2><h2 id="Historical_Perspective_and_Further_Reading_54">Historical Perspective and Further Reading 54</h2><h2 id="Exercises_54">Exercises 54</h2><hr>
 <h1 id="CHAPTER_2-_Instructions:_Language_of_the_Computer_60">CHAPTER 2. Instructions: Language of the Computer 60</h1><p>指令：计算机的语言</p>
 <h2 id="Introduction_62">Introduction 62</h2><h2 id="Operations_of_the_Computer_Hardware_63">Operations of the Computer Hardware 63</h2><h2 id="Operands_of_the_Computer_Hardware_66">Operands of the Computer Hardware 66</h2><h2 id="Signed_and_Unsigned_Numbers_73">Signed and Unsigned Numbers 73</h2><h2 id="Representing_Instructions_in_the_Computer_80">Representing Instructions in the Computer 80</h2><h2 id="Logical_Operations_87">Logical Operations 87</h2><h2 id="Instructions_for_Making_Decisions_90">Instructions for Making Decisions 90</h2><h2 id="Supporting_Procedures_in_Computer_Hardware_96">Supporting Procedures in Computer Hardware 96</h2><h2 id="MIPS_Addressing_for_32-Bit_Immediates_and_Addresses_106">MIPS Addressing for 32-Bit Immediates and Addresses 106</h2><h2 id="Parallelism_and_Instructions:_Synchronization_116">Parallelism and Instructions: Synchronization 116</h2><h2 id="Translating_and_Starting_a_Program_118">Translating and Starting a Program 118</h2><h2 id="A_C_Sort_Example_to_Put_It_All_Together_126">A C Sort Example to Put It All Together 126</h2><h2 id="Advanced_Material:_Compiling_C_134">Advanced Material: Compiling C 134</h2><h2 id="Real_Stuff:_ARMv7_(32-bit)_Instructions_134">Real Stuff: ARMv7 (32-bit) Instructions 134</h2><h2 id="Real_Stuff:_x86_Instructions_138">Real Stuff: x86 Instructions 138</h2><h2 id="Real_Stuff:_ARMv8_(64-bit)_Instructions_147">Real Stuff: ARMv8 (64-bit) Instructions 147</h2><h2 id="Fallacies_and_Pitfalls_148">Fallacies and Pitfalls 148</h2><h2 id="Concluding_Remarks_150">Concluding Remarks 150</h2><h2 id="Historical_Perspective_and_Further_Reading_152">Historical Perspective and Further Reading 152</h2><h2 id="Exercises_153">Exercises 153</h2><hr>
 <h1 id="CHAPTER_3-_Arithmetic_for_Computers_164">CHAPTER 3. Arithmetic for Computers 164</h1><p>计算机的算术运算</p>
