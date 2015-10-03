@@ -270,7 +270,7 @@
     <link href="http://jcf94.com/2015/09/09/2015-09-09-cod/"/>
     <id>http://jcf94.com/2015/09/09/2015-09-09-cod/</id>
     <published>2015-09-09T02:56:01.000Z</published>
-    <updated>2015-10-02T02:45:01.349Z</updated>
+    <updated>2015-10-03T06:01:38.890Z</updated>
     <content type="html"><![CDATA[<p>《Computer Organization and Design, Hardware/Software Interface》以及《Computer Architecture: A Quantitative Approach》被誉为体系结构界的两本圣经。</p>
 <p>最近除了编译原理外，还在补的就是《硬件/软件接口》这一本了。</p>
 <p>这本书讲解得非常透彻。原本我只是对体系结构、CPU有个模糊的很难学的概念，，，书中由浅至深详细地解释了其中的工作原理，，，，真的好难啊Q_Q…</p>
@@ -278,16 +278,24 @@
 <p>目录整理如下：</p>
 <h1 id="CHAPTER_1-_Computer_Abstractions_and_Technology">CHAPTER 1. Computer Abstractions and Technology</h1><p>计算机概要与技术</p>
 <h2 id="Eight_Great_Ideas_in_Computer_Architecture">Eight Great Ideas in Computer Architecture</h2><p>计算机体系结构中的八个伟大的想法：</p>
-<h3 id="Design_for_Moore’s_Law">Design for Moore’s Law</h3><p>设计遵从摩尔定律</p>
-<h3 id="Use_Abstraction_to_Simplify_Design">Use Abstraction to Simplify Design</h3><p>使用抽象接口来简化设计</p>
-<p>分层次进行设计，上下层的内容相互不透明，只要做好层间接口即可。</p>
-<h3 id="Make_the_Common_Case_Fast">Make the Common Case Fast</h3><p>加速常用的部分</p>
-<h3 id="Performance_via_Parallelism">Performance via Parallelism</h3><p>通过<strong>并行技术</strong>提升性能</p>
-<h3 id="Performance_via_Pipelining">Performance via Pipelining</h3><p>通过<strong>流水线技术</strong>提升性能</p>
-<h3 id="Performance_via_Prediction">Performance via Prediction</h3><p>通过<strong>预测技术</strong>提升性能</p>
-<h3 id="Hierarchy_of_Memories">Hierarchy of Memories</h3><p>存储器分级</p>
-<h3 id="Dependability_via_Redundancy">Dependability via Redundancy</h3><p>通过<strong>冗余技术</strong>来保证系统可靠性</p>
-<p>设计备份部件等等</p>
+<ul>
+<li><p>Design for Moore’s Law<br>设计遵从摩尔定律</p>
+</li>
+<li><p>Use Abstraction to Simplify Design<br>使用抽象接口来简化设计<br>分层次进行设计，上下层的内容相互不透明，只要做好层间接口即可。</p>
+</li>
+<li><p>Make the Common Case Fast<br>加速常用的部分</p>
+</li>
+<li><p>Performance via Parallelism<br>通过<strong>并行技术</strong>提升性能</p>
+</li>
+<li><p>Performance via Pipelining<br>通过<strong>流水线技术</strong>提升性能</p>
+</li>
+<li><p>Performance via Prediction<br>通过<strong>预测技术</strong>提升性能</p>
+</li>
+<li><p>Hierarchy of Memories<br>存储器分级</p>
+</li>
+<li><p>Dependability via Redundancy<br>通过<strong>冗余技术</strong>来保证系统可靠性<br>设计备份部件等等</p>
+</li>
+</ul>
 <h2 id="Below_Your_Program">Below Your Program</h2><p>程序之下</p>
 <p>程序运行的过程：</p>
 <p>高级语言-&gt;汇编语言（低级语言）-&gt;机器语言-&gt;运行</p>
@@ -327,6 +335,60 @@
 <h2 id="Supporting_Procedures_in_Computer_Hardware">Supporting Procedures in Computer Hardware</h2><p>在计算机硬件中支持过程</p>
 <p>通过跳转和堆栈</p>
 <h2 id="MIPS_Addressing_for_32-Bit_Immediates_and_Addresses">MIPS Addressing for 32-Bit Immediates and Addresses</h2><p>32位立即数和地址的MIPS编址</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>说明</th>
+<th>op</th>
+<th>rs</th>
+<th>rt</th>
+<th>rd</th>
+<th>shamt</th>
+<th>funct</th>
+<th>address</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>R-format</td>
+<td>算术/寄存器操作</td>
+<td>6位</td>
+<td>5位</td>
+<td>5位</td>
+<td>5位</td>
+<td>5位</td>
+<td>6位</td>
+<td></td>
+</tr>
+<tr>
+<td>I-format</td>
+<td>转移/分支/立即数操作</td>
+<td>6位</td>
+<td>5位</td>
+<td>5位</td>
+<td></td>
+<td></td>
+<td></td>
+<td>16位</td>
+</tr>
+<tr>
+<td>J-format</td>
+<td>跳转操作</td>
+<td>6位</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>26位</td>
+</tr>
+</tbody>
+</table>
+<p>条件转移范围：</p>
+<p>16位地址码，但是MIPS中是按4字节寻址，即实际上可以表示18位的地址<br>18位首位为符号位，即可跳转到当前PC位置的$(-32K\sim32K-1)*4=-128K\sim(128K-4)$字节</p>
+<p>跳转指令范围：</p>
+<p>26位地址码，4字节寻址，实际可表示28位地址<br>28位为无符号数地址，可跳转到$(0\sim2^{26}-1)*4=0\sim(256M-4)$字节</p>
 <h2 id="Parallelism_and_Instructions:_Synchronization">Parallelism and Instructions: Synchronization</h2><p>并行与指令：同步</p>
 <p>ll（load link）和sc（store conditional）指令</p>
 <h2 id="Translating_and_Starting_a_Program">Translating and Starting a Program</h2><p>翻译和启动一个程序</p>
