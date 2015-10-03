@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://jcf94.com/about/index.html</loc>
+    <lastmod>2015-10-03T02:29:27.591Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://jcf94.com/2015/09/09/2015-09-09-cod/</loc>
     <lastmod>2015-10-02T02:45:01.349Z</lastmod>
   </url>
@@ -14,11 +19,6 @@
   <url>
     <loc>http://jcf94.com/2015/09/22/2015-09-22-back/</loc>
     <lastmod>2015-09-29T22:59:31.154Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://jcf94.com/about/index.html</loc>
-    <lastmod>2015-09-29T11:18:28.292Z</lastmod>
   </url>
   
   <url>
