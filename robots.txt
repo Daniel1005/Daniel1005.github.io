@@ -1,5 +1,5 @@
 User-agent: *
 
-Allow: /
+Disallow:
 
 Sitemap: http://jcf94.com/sitemap.xml
