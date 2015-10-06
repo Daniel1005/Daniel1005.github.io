@@ -4,7 +4,7 @@
   <subtitle><![CDATA[It's the way I choose.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://jcf94.com/"/>
-  <updated>2015-10-06T08:02:59.499Z</updated>
+  <updated>2015-09-29T22:59:31.154Z</updated>
   <id>http://jcf94.com/</id>
   
   <author>
@@ -13,233 +13,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title></title>
-    <link href="http://jcf94.com/2015/10/06/2015-09-09-cod/"/>
-    <id>http://jcf94.com/2015/10/06/2015-09-09-cod/</id>
-    <published>2015-10-06T08:02:59.499Z</published>
-    <updated>2015-10-06T08:02:59.499Z</updated>
-    <content type="html"><![CDATA[<p>title: 计算机组成与设计.硬件/软件接口 学习笔记<br>date: 2015-09-09 10:56:01<br>tags: [体系结构,学习笔记]</p>
-<h2 id="categories:_计算机系统结构">categories: 计算机系统结构</h2><p>《Computer Organization and Design, Hardware/Software Interface》以及《Computer Architecture: A Quantitative Approach》被誉为体系结构界的两本圣经。</p>
-<p>最近除了编译原理外，还在补的就是《硬件/软件接口》这一本了。</p>
-<p>这本书讲解得非常透彻。原本我只是对体系结构、CPU有个模糊的很难学的概念，，，书中由浅至深详细地解释了其中的工作原理，，，，真的好难啊Q_Q…</p>
-<a id="more"></a>
-<p>目录整理如下：</p>
-<h1 id="CHAPTER_1-_Computer_Abstractions_and_Technology">CHAPTER 1. Computer Abstractions and Technology</h1><p>计算机概要与技术</p>
-<h2 id="Instruction">Instruction</h2><h2 id="Eight_Great_Ideas_in_Computer_Architecture">Eight Great Ideas in Computer Architecture</h2><p>计算机体系结构中的八个伟大的想法：</p>
-<ul>
-<li><p>Design for Moore’s Law<br>设计遵从摩尔定律</p>
-</li>
-<li><p>Use Abstraction to Simplify Design<br>使用抽象接口来简化设计<br>分层次进行设计，上下层的内容相互不透明，只要做好层间接口即可。</p>
-</li>
-<li><p>Make the Common Case Fast<br>加速常用的部分</p>
-</li>
-<li><p>Performance via Parallelism<br>通过<strong>并行技术</strong>提升性能</p>
-</li>
-<li><p>Performance via Pipelining<br>通过<strong>流水线技术</strong>提升性能</p>
-</li>
-<li><p>Performance via Prediction<br>通过<strong>预测技术</strong>提升性能</p>
-</li>
-<li><p>Hierarchy of Memories<br>存储器分级</p>
-</li>
-<li><p>Dependability via Redundancy<br>通过<strong>冗余技术</strong>来保证系统可靠性<br>设计备份部件等等</p>
-</li>
-</ul>
-<h2 id="Below_Your_Program">Below Your Program</h2><p>程序之下</p>
-<p>程序运行的过程：</p>
-<p>高级语言-&gt;汇编语言（低级语言）-&gt;机器语言-&gt;运行</p>
-<h2 id="Under_the_Covers">Under the Covers</h2><p>打开机箱</p>
-<h2 id="Technologies_for_Building_Processors_and_Memory">Technologies for Building Processors and Memory</h2><p>建造处理器和存储器的技术</p>
-<h2 id="Performance">Performance</h2><p>性能</p>
-<p>性能的定义：</p>
-<p>$$性能_X=\frac{1}{运行时间_X}$$</p>
-<p>X比Y快n倍：</p>
-<p>$$\frac{性能_X}{性能_Y}=\frac{运行时间_Y}{运行时间_X}=n$$</p>
-<p>CPU运行时间/CPU时间：</p>
-<p>$$CPU运行时间=CPU时钟周期数*时钟周期时间=\frac{CPU时钟周期数}{时钟频率（主频）}$$</p>
-<p>CPI（时钟周期/指令）：</p>
-<p>$$CPU时钟周期数=指令数*CPI$$</p>
-<p>$$CPU运行时间=指令数*CPI*时钟周期时间=\frac{指令数*CPI}{时钟频率}$$</p>
-<h2 id="The_Power_Wall">The Power Wall</h2><p>功耗墙</p>
-<p>功耗与主频几乎是同等上升的，主频越高功耗越高。前期主频提升很快，而最近一个阶段，处理器的主频基本不再提升，因为功耗已经达到了一个相当高的程度，在散热等其他方面还没办法跟上的时候只能限制主频的提升。</p>
-<h3 id="动态功耗">动态功耗</h3><p>CPU功耗主要是动态功耗，来自于晶体管的开关切换，无法避免：</p>
-<p>$$动态功耗=\frac{1}{2}*负载电容*电压^2*开关频率$$</p>
-<p>可见动态功耗与主频成正比。</p>
-<h3 id="静态功耗">静态功耗</h3><p>静态功耗主要来自于晶体管的漏电流，也几乎是无法避免的，只能通过工艺改进来减少。</p>
-<h2 id="The_Sea_Change:_The_Switch_from_Uniprocessors_to_Multiprocessors">The Sea Change: The Switch from Uniprocessors to Multiprocessors</h2><p>沧海巨变：从单核心到多核心处理器的转变</p>
-<p>受到工艺、功耗等的限制，单纯地提升主频来提高处理器的性能已经是做不到了，因此转向提高处理器的并行能力来继续发展CPU</p>
-<h2 id="Real_Stuff:_Benchmarking_the_Intel_Core_i7">Real Stuff: Benchmarking the Intel Core i7</h2><p>实例：Intel Core i7的基准测试</p>
-<h2 id="Exercises">Exercises</h2><p><a href="http://7xjh3j.com1.z0.glb.clouddn.com/2015-09-09-cod-CH01_Solution.pdf" target="_blank" rel="external">答案</a></p>
-<hr>
-<h1 id="CHAPTER_2-_Instructions:_Language_of_the_Computer">CHAPTER 2. Instructions: Language of the Computer</h1><p>指令：计算机的语言</p>
-<h2 id="Instruction-1">Instruction</h2><h2 id="Operations_of_the_Computer_Hardware">Operations of the Computer Hardware</h2><p>计算机硬件操作</p>
-<p>设计原则1：简单源于规整</p>
-<h2 id="Operands_of_the_Computer_Hardware">Operands of the Computer Hardware</h2><p>计算机硬件操作数</p>
-<p>设计原则2：越少越快</p>
-<h2 id="Signed_and_Unsigned_Numbers">Signed and Unsigned Numbers</h2><p>带符号数和无符号数</p>
-<h2 id="Representing_Instructions_in_the_Computer">Representing Instructions in the Computer</h2><p>计算机中指令的表示</p>
-<p>设计原则3：好的设计需要适宜的折中方案</p>
-<h2 id="Logical_Operations">Logical Operations</h2><p>逻辑操作</p>
-<h2 id="Instructions_for_Making_Decisions">Instructions for Making Decisions</h2><p>决策指令</p>
-<h2 id="Supporting_Procedures_in_Computer_Hardware">Supporting Procedures in Computer Hardware</h2><p>在计算机硬件中支持过程</p>
-<p>通过跳转和堆栈</p>
-<h2 id="MIPS_Addressing_for_32-Bit_Immediates_and_Addresses">MIPS Addressing for 32-Bit Immediates and Addresses</h2><p>32位立即数和地址的MIPS编址</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>说明</th>
-<th>op</th>
-<th>rs</th>
-<th>rt</th>
-<th>rd</th>
-<th>shamt</th>
-<th>funct</th>
-<th>address</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>R-format</td>
-<td>算术/寄存器操作</td>
-<td>6位</td>
-<td>5位</td>
-<td>5位</td>
-<td>5位</td>
-<td>5位</td>
-<td>6位</td>
-<td></td>
-</tr>
-<tr>
-<td>I-format</td>
-<td>转移/分支/立即数操作</td>
-<td>6位</td>
-<td>5位</td>
-<td>5位</td>
-<td></td>
-<td></td>
-<td></td>
-<td>16位</td>
-</tr>
-<tr>
-<td>J-format</td>
-<td>跳转操作</td>
-<td>6位</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>26位</td>
-</tr>
-</tbody>
-</table>
-<p>条件转移范围：<br>16位地址码，但是MIPS中是按4字节寻址，即实际上可以表示18位的地址<br>18位首位为符号位，即可跳转到当前PC位置的$(-32K\sim32K-1)*4=-128K\sim(128K-4)$字节</p>
-<p>立即数范围：<br>与上同理，都属于I-format的指令，因此可表示的立即数范围为$-32K\sim32K-1$</p>
-<p>跳转指令范围：<br>26位地址码，4字节寻址，实际可表示28位地址<br>28位为无符号数地址，可跳转到$(0\sim2^{26}-1)*4=0\sim(256M-4)$字节</p>
-<h2 id="Parallelism_and_Instructions:_Synchronization">Parallelism and Instructions: Synchronization</h2><p>并行与指令：同步</p>
-<p>ll（load link）和sc（store conditional）指令</p>
-<h2 id="Translating_and_Starting_a_Program">Translating and Starting a Program</h2><p>翻译和启动一个程序</p>
-<h2 id="A_C_Sort_Example_to_Put_It_All_Together">A C Sort Example to Put It All Together</h2><p>一个C语言的排序示例</p>
-<h2 id="Advanced_Material:_Compiling_C">Advanced Material: Compiling C</h2><p>提升材料：编译C语言</p>
-<h2 id="Real_Stuff:_ARMv7_(32-bit)_Instructions">Real Stuff: ARMv7 (32-bit) Instructions</h2><p>实例：ARMv7（32位）指令</p>
-<h2 id="Real_Stuff:_x86_Instructions">Real Stuff: x86 Instructions</h2><p>实例：x86指令</p>
-<h2 id="Real_Stuff:_ARMv8_(64-bit)_Instructions">Real Stuff: ARMv8 (64-bit) Instructions</h2><p>实例：ARMv8（64位）指令</p>
-<h2 id="Exercises-1">Exercises</h2><p><a href="http://7xjh3j.com1.z0.glb.clouddn.com/2015-09-09-cod-CH02_Solution.pdf" target="_blank" rel="external">答案</a></p>
-<hr>
-<h1 id="CHAPTER_3-_Arithmetic_for_Computers">CHAPTER 3. Arithmetic for Computers</h1><p>计算机的算术运算</p>
-<h2 id="Instruction-2">Instruction</h2><h2 id="Addition_and_Subtraction">Addition and Subtraction</h2><p>加法和减法</p>
-<h2 id="Multiplication">Multiplication</h2><p>乘法</p>
-<h2 id="Division">Division</h2><p>除法</p>
-<h2 id="Floating_Point">Floating Point</h2><p>浮点数</p>
-<h2 id="Parallelism_and_Computer_Arithmetic:_Subword_Parallelism">Parallelism and Computer Arithmetic: Subword Parallelism</h2><p>并行和计算机运算：结合律</p>
-<h2 id="Real_Stuff:_Streaming_SIMD_Extensions_and_Advanced_Vector_Extensions_in_x86">Real Stuff: Streaming SIMD Extensions and Advanced Vector Extensions in x86</h2><p>实例：x86中的SIMD流扩展和高级向量扩展</p>
-<h2 id="Going_Faster:_Subword_Parallelism_and_Matrix_Multiply">Going Faster: Subword Parallelism and Matrix Multiply</h2><p>更快：结合律和矩阵乘法</p>
-<h2 id="Exercises-2">Exercises</h2><p><a href="http://7xjh3j.com1.z0.glb.clouddn.com/2015-09-09-cod-CH03_Solution.pdf" target="_blank" rel="external">答案</a></p>
-<hr>
-<h1 id="CHAPTER_4-_The_Processor">CHAPTER 4. The Processor</h1><p>处理器</p>
-<h2 id="Instruction-3">Instruction</h2><h2 id="Logic_Design_Conventions">Logic Design Conventions</h2><p>逻辑设计惯例</p>
-<h2 id="Building_a_Datapath">Building a Datapath</h2><p>建立一个数据通路</p>
-<p>首先是处理指令需要的几个基本元素：</p>
-<ol>
-<li>指令存储器<br>用于存储所有的程序指令，并且给它们编上地址</li>
-<li>PC<br>一个地址寄存器，用于存放指令地址，即指向指令存储器中当前正在执行的指令</li>
-<li>加法器<br>用于改变PC的值，指向下一条指令，以使程序可以继续向后执行</li>
-</ol>
-<p>对于寄存器文件的操作：</p>
-<ol>
-<li>读寄存器<br>输入1个寄存器号，输出该寄存器的内容。可随时读取。</li>
-<li>写寄存器<br>输入1个寄存器号，以及要写入写寄存器的值。需要给寄存器文件一个写信号才能写入。</li>
-</ol>
-<p>以R-format指令为例：<br>一般需要读取2个寄存器的内容，经过ALU运算，写入另一个寄存器。<br>结合上面的寄存器操作，则寄存器文件需要<strong>4个输入</strong>（2个要读的寄存器号，1个要写的寄存器号，1个要写入的寄存器值），<strong>2个输出</strong>（分别是输出2个要读的寄存器的内容），以及一个写信号脉冲。<br>寄存器号的3个口需要<strong>5位</strong>的数据宽度（第二章中rs、rt、rd的长度都是5位），写入与读出的3个口则分别需要<strong>32位</strong>的数据宽度。</p>
-<p>再看I-format指令：<br><code>lw $t1,offset($t2)</code><br>存储地址是将\$t2中的内容（32位基地址）加上offset（16位偏移地址）作为目标地址，然后将内容写入寄存器\$t1。<br>这里需要的是一个<strong>地址加法器（加16位和32位的数）</strong>以及<strong>数据存储器</strong>。<br><code>beq $t1,$t2,offset</code><br>首先读取\$t1和\$t2的内容到ALU进行对比，若通过，则将offset（16位偏移地址）加到PC上作为下一次的目标地址。</p>
-<blockquote>
-<p>需要注意的是：lw中目标地址是<strong>直接把offset和$2中的内容相加</strong>，而beq中offset指的是按4字节寻址的地址，PC中存的是完整的地址，<strong>offset要作2位偏移之后再加到PC中去</strong></p>
-</blockquote>
-<p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-09-09-cod-4.3.1.jpg" alt="存储指令与R-format指令的数据通路融合"></p>
-<p>上图中进行R-format指令操作时：<br>多路选择器ALUSrc选0，输入两个寄存器的内容到ALU中；多路选择器MemtoReg选0，将运算结果输出至寄存器文件的写入数据端，写入寄存器。</p>
-<p>进行I-format指令操作时：<br>多路选择器ALUSrc选1，输入一个寄存器的内容以及将offset从16位符号扩展至32位之后的值到ALU中；多路选择器MemtoReg选1，将数据存储器中读到的内容输出至寄存器文件的写入数据端，写入寄存器。</p>
-<p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-09-09-cod-4.3.2.jpg" alt="综合上面所有内容的数据通路"></p>
-<p>在原图的基础上把PC以及指令寄存器的内容加上去就是一个比较完整的数据通路了。</p>
-<p>PC后的两个加法器用于改变PC的地址。将offset从16位符号扩展至32位之后的值作2位左移与地址累加是完成beq这一类的跳转，用PCSrc进行数据选择。</p>
-<h2 id="A_Simple_Implementation_Scheme">A Simple Implementation Scheme</h2><p>一个简单的实现机制</p>
-<p>这一节讲的是模拟实现<strong>一个简单的，只有4.2节里面这些功能</strong>的指令集。</p>
-<p>要实现上面的这些功能，操作数只需要2位：</p>
-<ul>
-<li>00表示lw或者sw，这里对于ALU来说只需要作地址的相加即可。</li>
-<li>01表示beq，需要用ALU对两个寄存器相减。</li>
-<li>10表示R-format操作，需要配合6位的Funct再进行各种情况的选择。</li>
-<li>根据上述的2位ALUOp和6位Funct，生成出真正的4位ALU操作码</li>
-</ul>
-<p>结合第二章表格里面每一种类型的指令的格式，再加上控制单元部分，可以把数据通路图进一步画成：</p>
-<p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-09-09-cod-4.4.1.jpg" alt="标明了所有控制信号与控制单元的数据通路"></p>
-<p>多路选择器RegDst用于区分R-format和I-format中目标寄存器在操作数中的位置（rt在20:16，rd在15:11）</p>
-<p>单独有一个ALUOp用来根据最后的Funct（5:0）来产生真正的ALU控制码，这里其实只是一个真值表的处理。</p>
-<p>指令的31:26位用一个单独的控制器处理，来完成各种控制信号的产生。</p>
-<p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-09-09-cod-4.4.2.jpg" alt="最后加上一个跳转"></p>
-<p>跳转的指令是6位操作数和26位地址，这个地址也是按4字节寻址的。</p>
-<p>则加上跳转就是将原来PC+4的高4位，以及26位地址偏移2位组成新的PC地址，完成跳转。</p>
-<p>至此，单指令周期的数据通路构造完成。</p>
-<p>而由于指令数的庞大，单周期指令实际运行时非常慢，必须等到一条指令运行完毕之后才能跑下一条，而每一条指令其实只占用了数据通路的一部分（这里只是实现了几条简单的指令集，完整的可以想象是更加庞大的），剩下的部分都是空闲没用的。</p>
-<p>因此要用到下一节之后的流水线技术来处理这个矛盾。</p>
-<h2 id="An_Overview_of_Pipelining">An Overview of Pipelining</h2><p>流水线概述</p>
-<p>1个MIPS指令包含5个步骤：</p>
-<ol>
-<li>从指令存储器中读取指令</li>
-<li>指令译码的过程中读取寄存器的内容</li>
-<li>执行操作或者计算地址</li>
-<li>从数据存储器中读取操作数</li>
-<li>将结果写回寄存器</li>
-</ol>
-<p>本章讨论的流水线也是分成5个部分。</p>
-<p>当指令数量<strong>达到一定量级时</strong>，流水线比非流水线要快大约<strong>流水线级数</strong>倍。</p>
-<p>流水线冒险：</p>
-<ol>
-<li>结构冒险：由于硬件结构导致的冒险，比如两条指令在不同的阶段同时访问寄存器。<br>需要从硬件结构上来解决。</li>
-<li>数据冒险：下一条指令需要的数据，上一条指令还在计算中。<br>编译器可以通过改变指令顺序处理掉一部分的数据冒险；另外可以通过增加额外的硬件结构来完成<strong>转发/旁路</strong><br><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-09-09-cod-4.5.1.jpg" alt="两条指令间的转发/旁路"><br>对于某些特别的指令，比如读取数据，就需要给流水线暂停一个时钟周期再转发<br><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-09-09-cod-4.5.2.jpg" alt="插入流水线气泡的转发"><br>为了避免流水线暂停，则需要通过调整代码顺序来解决</li>
-<li>控制冒险/分支冒险：遇到beq这类指令时，指令正在译码时，流水线就要紧接着读入下一条指令，而此时下一条指令的PC还没有确定，因此产生矛盾。<br>比较简单的解决方案是随便预测一个方向先执行，如果不对再忽略前面执行的指令转去执行正确的指令，这样如果预测是正确的，则流水线任然是全速运行，如果是错误的那么与原来不采用预测的方式耗时一样。使用额外的硬件预测器可以把准确率提高到90%以上。另外在MIPS中还有一种方案是将一条不影响分支的指令放到分支之后。</li>
-</ol>
-<h2 id="Pipelined_Datapath_and_Control_274">Pipelined Datapath and Control 274</h2><h2 id="Data_Hazards:_Forwarding_versus_Stalling_291">Data Hazards: Forwarding versus Stalling 291</h2><h2 id="Control_Hazards_304">Control Hazards 304</h2><h2 id="Exceptions_313">Exceptions 313</h2><h2 id="Parallelism_via_Instructions_320">Parallelism via Instructions 320</h2><h2 id="Real_Stuff:_The_ARM_Cortex-A8_and_Intel_Core_i7_Pipelines_332">Real Stuff: The ARM Cortex-A8 and Intel Core i7 Pipelines 332</h2><h2 id="Going_Faster:_Instruction-Level_Parallelism_and_Matrix_Multiply_339">Going Faster: Instruction-Level Parallelism and Matrix Multiply 339</h2><h2 id="Advanced_Topic:_An_Introduction_to_Digital_Design_Using_a_Hardware_Design_Language_to_Describe_and_Model_a_Pipeline_and_More_Pipelining_Illustrations_342">Advanced Topic: An Introduction to Digital Design Using a Hardware Design Language to Describe and Model a Pipeline and More Pipelining Illustrations 342</h2><h2 id="Fallacies_and_Pitfalls_343">Fallacies and Pitfalls 343</h2><h2 id="CondudingRemarks_344">CondudingRemarks 344</h2><h2 id="Historical_Perspective_and_Further_Reading_345">Historical Perspective and Further Reading 345</h2><h2 id="Exercises-3">Exercises</h2><p><a href="http://7xjh3j.com1.z0.glb.clouddn.com/2015-09-09-cod-CH04_Solution.pdf" target="_blank" rel="external">答案</a></p>
-<hr>
-<h1 id="CHAPTER_5-_Large_and_Fast:_Exploiting_Memory_Hierarchy_360">CHAPTER 5. Large and Fast: Exploiting Memory Hierarchy 360</h1><p>大容量和高速度：开发存储器层次结构</p>
-<h2 id="Instruction-4">Instruction</h2><h2 id="Introduction_362">Introduction 362</h2><h2 id="Memory_Technologies_366">Memory Technologies 366</h2><h2 id="The_Basics_of_Caches_371">The Basics of Caches 371</h2><h2 id="Measuring_and_Improving_Cache_Performance_386">Measuring and Improving Cache Performance 386</h2><h2 id="Dependable_Memory_Hierarchy_406">Dependable Memory Hierarchy 406</h2><h2 id="Virtual_Machines_412">Virtual Machines 412</h2><h2 id="Virtual_Memory_415">Virtual Memory 415</h2><h2 id="A_Common_Framework_for_Memory_Hierarchy_442">A Common Framework for Memory Hierarchy 442</h2><h2 id="Using_a_Finite-State_Machine_to_Control_a_Simple_Cache_449">Using a Finite-State Machine to Control a Simple Cache 449</h2><h2 id="Parallelism_and_Memory_Hierarchies:_Cache_Coherence_454">Parallelism and Memory Hierarchies: Cache Coherence 454</h2><h2 id="Parallelism_and_Memory_Hierarchy:_Redundant_Arrays_of_Inexpensive_Disks_458">Parallelism and Memory Hierarchy: Redundant Arrays of Inexpensive Disks 458</h2><h2 id="Advanced_Material:_Implementing_Cache_Controllers_458">Advanced Material: Implementing Cache Controllers 458</h2><h2 id="Real_Stuff:_The_ARM_Cortex-A8_and_Intel_Core_i7_Memory_Hierarchies_459">Real Stuff: The ARM Cortex-A8 and Intel Core i7 Memory Hierarchies 459</h2><h2 id="Going_Faster:_Cache_Blocking_and_Matrix_Multiply_463">Going Faster: Cache Blocking and Matrix Multiply 463</h2><h2 id="Fallacies_and_Pitfalls_466">Fallacies and Pitfalls 466</h2><h2 id="GoncludingRemarks_470">GoncludingRemarks 470</h2><h2 id="Historical_Perspective_and_Further_Reading_471">Historical Perspective and Further Reading 471</h2><h2 id="Exercises-4">Exercises</h2><p><a href="http://7xjh3j.com1.z0.glb.clouddn.com/2015-09-09-cod-CH05_Solution.pdf" target="_blank" rel="external">答案</a></p>
-<hr>
-<h1 id="CHAPTER_6-_Parallel_Processors_from_Client_to_Cloud_488">CHAPTER 6. Parallel Processors from Client to Cloud 488</h1><p>从客户端到云端的并行计算</p>
-<h2 id="Instruction-5">Instruction</h2><h2 id="Introduction_490">Introduction 490</h2><h2 id="The_Difficulty_of_Creating_Parallel_Processing_Programs_492">The Difficulty of Creating Parallel Processing Programs 492</h2><h2 id="SISD,_MIMD,_SIMD,_SPMD,_and_Vector_497">SISD, MIMD, SIMD, SPMD, and Vector 497</h2><h2 id="Hardware_Multithreading_504">Hardware Multithreading 504</h2><h2 id="Multicore_and_Other_Shared_Memory_Multiprocessors_507">Multicore and Other Shared Memory Multiprocessors 507</h2><h2 id="Introduction_to_Graphics_Processing_Units_512">Introduction to Graphics Processing Units 512</h2><h2 id="Clusters,_Warehouse_Scale_Computers,_and_Other_Message-Passing_Multiprocessors_519">Clusters, Warehouse Scale Computers, and Other Message-Passing Multiprocessors 519</h2><h2 id="Introduction_to_Multiprocessor_Network_Topologies_524">Introduction to Multiprocessor Network Topologies 524</h2><h2 id="Communicating_to_the_Outside_World:_Cluster_Networking_527">Communicating to the Outside World: Cluster Networking 527</h2><h2 id="Multiprocessor_Benchmarks_and_Performance_Models_528">Multiprocessor Benchmarks and Performance Models 528</h2><h2 id="Real_Stuff:_Benchmarking_Intel_Core_i7_versus_NVIDIA_Tesla_GPU_538">Real Stuff: Benchmarking Intel Core i7 versus NVIDIA Tesla GPU 538</h2><h2 id="Going_Faster:_Multiple_Processors_and_Matrix_Multiply_543">Going Faster: Multiple Processors and Matrix Multiply 543</h2><h2 id="Fallacies_and_Pitfalls_546">Fallacies and Pitfalls 546</h2><h2 id="Concluding_Remarks_548">Concluding Remarks 548</h2><h2 id="Historical_Perspective_and_Further_Reading_551">Historical Perspective and Further Reading 551</h2><h2 id="Exercises-5">Exercises</h2><p><a href="http://7xjh3j.com1.z0.glb.clouddn.com/2015-09-09-cod-CH06_Solution.pdf" target="_blank" rel="external">答案</a></p>
-<hr>
-<h1 id="APPENDICES_A-_Assemblers,_Linkers,_and_the_SPiM_Simulator_A-2">APPENDICES A. Assemblers, Linkers, and the SPiM Simulator A-2</h1><h2 id="Introduction_A-3">Introduction A-3</h2><h2 id="Assemblers_A-IO">Assemblers A-IO</h2><h2 id="Linkers_A-18">Linkers A-18</h2><h2 id="Loading_A-19">Loading A-19</h2><h2 id="Memory_Usage_A-20">Memory Usage A-20</h2><h2 id="Procedure_Call_Convention_A-22">Procedure Call Convention A-22</h2><h2 id="Exceptions_and_Interrupts_A-33">Exceptions and Interrupts A-33</h2><h2 id="Input_and_Output_A-38">Input and Output A-38</h2><h2 id="SPIM_A-40">SPIM A-40</h2><h2 id="MIPS_R2000_Assembly_Language_A-45">MIPS R2000 Assembly Language A-45</h2><h2 id="Concluding_Remarks_A-81">Concluding Remarks A-81</h2><h2 id="Exercises_A-82">Exercises A-82</h2><hr>
-<h1 id="APPENDICES_B-_TH-2_High_Performance_Computing_System_B-2">APPENDICES B. TH-2 High Performance Computing System B-2</h1><h2 id="Introduction_B-3">Introduction B-3</h2><h2 id="Compute_Node_B-3">Compute Node B-3</h2><h2 id="The_Frontend_Processors_B-5">The Frontend Processors B-5</h2><h2 id="The_Interconnect_B-6">The Interconnect B-6</h2><h2 id="The_Software_Stack_B-7">The Software Stack B-7</h2><h2 id="LINPACK_Benchmark_Run_(HPL)_B-7">LINPACK Benchmark Run (HPL) B-7</h2><h2 id="Concluding_Remarks_B-8">Concluding Remarks B-8</h2><hr>
-<h1 id="APPENDICES_F-_Networks-on-Chip_F-2">APPENDICES F. Networks-on-Chip F-2</h1>]]></content>
-    <summary type="html">
-    <![CDATA[<p>title: 计算机组成与设计.硬件/软件接口 学习笔记<br>date: 2015-09-09 10:56:01<br>tags: [体系结构,学习笔记]</p>
-<h2 id="categories:_计算机系统结构">categories: 计算机系统结构</h2><p>《Computer Organization and Design, Hardware/Software Interface》以及《Computer Architecture: A Quantitative Approach》被誉为体系结构界的两本圣经。</p>
-<p>最近除了编译原理外，还在补的就是《硬件/软件接口》这一本了。</p>
-<p>这本书讲解得非常透彻。原本我只是对体系结构、CPU有个模糊的很难学的概念，，，书中由浅至深详细地解释了其中的工作原理，，，，真的好难啊Q_Q…</p>]]>
-    
-    </summary>
-    
-  </entry>
   
   <entry>
     <title><![CDATA[住院日记]]></title>
@@ -489,6 +262,235 @@
       <category term="ACM" scheme="http://jcf94.com/categories/ACM/"/>
     
       <category term="比赛" scheme="http://jcf94.com/categories/ACM/%E6%AF%94%E8%B5%9B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[计算机组成与设计.硬件/软件接口 学习笔记]]></title>
+    <link href="http://jcf94.com/2015/09/09/2015-09-09-cod/"/>
+    <id>http://jcf94.com/2015/09/09/2015-09-09-cod/</id>
+    <published>2015-09-09T02:56:01.000Z</published>
+    <updated>2015-10-06T08:12:42.510Z</updated>
+    <content type="html"><![CDATA[<p>《Computer Organization and Design, Hardware/Software Interface》以及《Computer Architecture: A Quantitative Approach》被誉为体系结构界的两本圣经。</p>
+<p>最近除了编译原理外，还在补的就是《硬件/软件接口》这一本了。</p>
+<p>这本书讲解得非常透彻。原本我只是对体系结构、CPU有个模糊的很难学的概念，，，书中由浅至深详细地解释了其中的工作原理，，，，真的好难啊Q_Q…</p>
+<a id="more"></a>
+<p>目录整理如下：</p>
+<h1 id="CHAPTER_1-_Computer_Abstractions_and_Technology">CHAPTER 1. Computer Abstractions and Technology</h1><p>计算机概要与技术</p>
+<h2 id="Instruction">Instruction</h2><h2 id="Eight_Great_Ideas_in_Computer_Architecture">Eight Great Ideas in Computer Architecture</h2><p>计算机体系结构中的八个伟大的想法：</p>
+<ul>
+<li>Design for Moore’s Law<br>设计遵从摩尔定律</li>
+<li>Use Abstraction to Simplify Design<br>使用抽象接口来简化设计<br>分层次进行设计，上下层的内容相互不透明，只要做好层间接口即可。</li>
+<li>Make the Common Case Fast<br>加速常用的部分</li>
+<li>Performance via Parallelism<br>通过<strong>并行技术</strong>提升性能</li>
+<li>Performance via Pipelining<br>通过<strong>流水线技术</strong>提升性能</li>
+<li>Performance via Prediction<br>通过<strong>预测技术</strong>提升性能</li>
+<li>Hierarchy of Memories<br>存储器分级</li>
+<li>Dependability via Redundancy<br>通过<strong>冗余技术</strong>来保证系统可靠性<br>设计备份部件等等</li>
+</ul>
+<h2 id="Below_Your_Program">Below Your Program</h2><p>程序之下</p>
+<p>程序运行的过程：</p>
+<p>高级语言-&gt;汇编语言（低级语言）-&gt;机器语言-&gt;运行</p>
+<h2 id="Under_the_Covers">Under the Covers</h2><p>打开机箱</p>
+<h2 id="Technologies_for_Building_Processors_and_Memory">Technologies for Building Processors and Memory</h2><p>建造处理器和存储器的技术</p>
+<h2 id="Performance">Performance</h2><p>性能</p>
+<p>性能的定义：</p>
+<p>$$性能_X=\frac{1}{运行时间_X}$$</p>
+<p>X比Y快n倍：</p>
+<p>$$\frac{性能_X}{性能_Y}=\frac{运行时间_Y}{运行时间_X}=n$$</p>
+<p>CPU运行时间/CPU时间：</p>
+<p>$$CPU运行时间=CPU时钟周期数*时钟周期时间=\frac{CPU时钟周期数}{时钟频率（主频）}$$</p>
+<p>CPI（时钟周期/指令）：</p>
+<p>$$CPU时钟周期数=指令数*CPI$$</p>
+<p>$$CPU运行时间=指令数*CPI*时钟周期时间=\frac{指令数*CPI}{时钟频率}$$</p>
+<h2 id="The_Power_Wall">The Power Wall</h2><p>功耗墙</p>
+<p>功耗与主频几乎是同等上升的，主频越高功耗越高。前期主频提升很快，而最近一个阶段，处理器的主频基本不再提升，因为功耗已经达到了一个相当高的程度，在散热等其他方面还没办法跟上的时候只能限制主频的提升。</p>
+<ul>
+<li>动态功耗</li>
+</ul>
+<p>CPU功耗主要是动态功耗，来自于晶体管的开关切换，无法避免：</p>
+<p>$$动态功耗=\frac{1}{2}*负载电容*电压^2*开关频率$$</p>
+<p>可见动态功耗与主频成正比。</p>
+<ul>
+<li>静态功耗</li>
+</ul>
+<p>静态功耗主要来自于晶体管的漏电流，也几乎是无法避免的，只能通过工艺改进来减少。</p>
+<h2 id="The_Sea_Change:_The_Switch_from_Uniprocessors_to_Multiprocessors">The Sea Change: The Switch from Uniprocessors to Multiprocessors</h2><p>沧海巨变：从单核心到多核心处理器的转变</p>
+<p>受到工艺、功耗等的限制，单纯地提升主频来提高处理器的性能已经是做不到了，因此转向提高处理器的并行能力来继续发展CPU</p>
+<h2 id="Real_Stuff:_Benchmarking_the_Intel_Core_i7">Real Stuff: Benchmarking the Intel Core i7</h2><p>实例：Intel Core i7的基准测试</p>
+<h2 id="Exercises">Exercises</h2><p><a href="http://7xjh3j.com1.z0.glb.clouddn.com/2015-09-09-cod-CH01_Solution.pdf" target="_blank" rel="external">答案</a></p>
+<hr>
+<h1 id="CHAPTER_2-_Instructions:_Language_of_the_Computer">CHAPTER 2. Instructions: Language of the Computer</h1><p>指令：计算机的语言</p>
+<h2 id="Instruction-1">Instruction</h2><h2 id="Operations_of_the_Computer_Hardware">Operations of the Computer Hardware</h2><p>计算机硬件操作</p>
+<p>设计原则1：简单源于规整</p>
+<h2 id="Operands_of_the_Computer_Hardware">Operands of the Computer Hardware</h2><p>计算机硬件操作数</p>
+<p>设计原则2：越少越快</p>
+<h2 id="Signed_and_Unsigned_Numbers">Signed and Unsigned Numbers</h2><p>带符号数和无符号数</p>
+<h2 id="Representing_Instructions_in_the_Computer">Representing Instructions in the Computer</h2><p>计算机中指令的表示</p>
+<p>设计原则3：好的设计需要适宜的折中方案</p>
+<h2 id="Logical_Operations">Logical Operations</h2><p>逻辑操作</p>
+<h2 id="Instructions_for_Making_Decisions">Instructions for Making Decisions</h2><p>决策指令</p>
+<h2 id="Supporting_Procedures_in_Computer_Hardware">Supporting Procedures in Computer Hardware</h2><p>在计算机硬件中支持过程</p>
+<p>通过跳转和堆栈即可完成</p>
+<h2 id="MIPS_Addressing_for_32-Bit_Immediates_and_Addresses">MIPS Addressing for 32-Bit Immediates and Addresses</h2><p>32位立即数和地址的MIPS编址</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>说明</th>
+<th>op</th>
+<th>rs</th>
+<th>rt</th>
+<th>rd</th>
+<th>shamt</th>
+<th>funct</th>
+<th>address</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>R-format</td>
+<td>算术/寄存器操作</td>
+<td>6位</td>
+<td>5位</td>
+<td>5位</td>
+<td>5位</td>
+<td>5位</td>
+<td>6位</td>
+<td></td>
+</tr>
+<tr>
+<td>I-format</td>
+<td>转移/分支/立即数操作</td>
+<td>6位</td>
+<td>5位</td>
+<td>5位</td>
+<td></td>
+<td></td>
+<td></td>
+<td>16位</td>
+</tr>
+<tr>
+<td>J-format</td>
+<td>跳转操作</td>
+<td>6位</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>26位</td>
+</tr>
+</tbody>
+</table>
+<p>条件转移范围：<br>16位地址码，但是MIPS中是按4字节寻址，即实际上可以表示18位的地址<br>18位首位为符号位，即可跳转到当前PC位置的$(-32K\sim32K-1)*4=-128K\sim(128K-4)$字节</p>
+<p>立即数范围：<br>与上同理，都属于I-format的指令，因此可表示的立即数范围为$-32K\sim32K-1$</p>
+<p>跳转指令范围：<br>26位地址码，4字节寻址，实际可表示28位地址<br>28位为无符号数地址，可跳转到$(0\sim2^{26}-1)*4=0\sim(256M-4)$字节</p>
+<h2 id="Parallelism_and_Instructions:_Synchronization">Parallelism and Instructions: Synchronization</h2><p>并行与指令：同步</p>
+<p>ll（load link）和sc（store conditional）指令</p>
+<h2 id="Translating_and_Starting_a_Program">Translating and Starting a Program</h2><p>翻译和启动一个程序</p>
+<h2 id="A_C_Sort_Example_to_Put_It_All_Together">A C Sort Example to Put It All Together</h2><p>一个C语言的排序示例</p>
+<h2 id="Advanced_Material:_Compiling_C">Advanced Material: Compiling C</h2><p>提升材料：编译C语言</p>
+<h2 id="Real_Stuff:_ARMv7_(32-bit)_Instructions">Real Stuff: ARMv7 (32-bit) Instructions</h2><p>实例：ARMv7（32位）指令</p>
+<h2 id="Real_Stuff:_x86_Instructions">Real Stuff: x86 Instructions</h2><p>实例：x86指令</p>
+<h2 id="Real_Stuff:_ARMv8_(64-bit)_Instructions">Real Stuff: ARMv8 (64-bit) Instructions</h2><p>实例：ARMv8（64位）指令</p>
+<h2 id="Exercises-1">Exercises</h2><p><a href="http://7xjh3j.com1.z0.glb.clouddn.com/2015-09-09-cod-CH02_Solution.pdf" target="_blank" rel="external">答案</a></p>
+<hr>
+<h1 id="CHAPTER_3-_Arithmetic_for_Computers">CHAPTER 3. Arithmetic for Computers</h1><p>计算机的算术运算</p>
+<h2 id="Instruction-2">Instruction</h2><h2 id="Addition_and_Subtraction">Addition and Subtraction</h2><p>加法和减法</p>
+<h2 id="Multiplication">Multiplication</h2><p>乘法</p>
+<h2 id="Division">Division</h2><p>除法</p>
+<h2 id="Floating_Point">Floating Point</h2><p>浮点数</p>
+<h2 id="Parallelism_and_Computer_Arithmetic:_Subword_Parallelism">Parallelism and Computer Arithmetic: Subword Parallelism</h2><p>并行和计算机运算：结合律</p>
+<h2 id="Real_Stuff:_Streaming_SIMD_Extensions_and_Advanced_Vector_Extensions_in_x86">Real Stuff: Streaming SIMD Extensions and Advanced Vector Extensions in x86</h2><p>实例：x86中的SIMD流扩展和高级向量扩展</p>
+<h2 id="Going_Faster:_Subword_Parallelism_and_Matrix_Multiply">Going Faster: Subword Parallelism and Matrix Multiply</h2><p>更快：结合律和矩阵乘法</p>
+<h2 id="Exercises-2">Exercises</h2><p><a href="http://7xjh3j.com1.z0.glb.clouddn.com/2015-09-09-cod-CH03_Solution.pdf" target="_blank" rel="external">答案</a></p>
+<hr>
+<h1 id="CHAPTER_4-_The_Processor">CHAPTER 4. The Processor</h1><p>处理器</p>
+<h2 id="Instruction-3">Instruction</h2><h2 id="Logic_Design_Conventions">Logic Design Conventions</h2><p>逻辑设计惯例</p>
+<h2 id="Building_a_Datapath">Building a Datapath</h2><p>建立一个数据通路</p>
+<p>首先是处理指令需要的几个基本元素：</p>
+<ol>
+<li>指令存储器<br>用于存储所有的程序指令，并且给它们编上地址</li>
+<li>PC<br>一个地址寄存器，用于存放指令地址，即指向指令存储器中当前正在执行的指令</li>
+<li>加法器<br>用于改变PC的值，指向下一条指令，以使程序可以继续向后执行</li>
+</ol>
+<p>对于寄存器文件的操作：</p>
+<ol>
+<li>读寄存器<br>输入1个寄存器号，输出该寄存器的内容。可随时读取。</li>
+<li>写寄存器<br>输入1个寄存器号，以及要写入写寄存器的值。需要给寄存器文件一个写信号才能写入。</li>
+</ol>
+<p>以R-format指令为例：<br>一般需要读取2个寄存器的内容，经过ALU运算，写入另一个寄存器。<br>结合上面的寄存器操作，则寄存器文件需要<strong>4个输入</strong>（2个要读的寄存器号，1个要写的寄存器号，1个要写入的寄存器值），<strong>2个输出</strong>（分别是输出2个要读的寄存器的内容），以及一个写信号脉冲。<br>寄存器号的3个口需要<strong>5位</strong>的数据宽度（第二章中rs、rt、rd的长度都是5位），写入与读出的3个口则分别需要<strong>32位</strong>的数据宽度。</p>
+<p>再看I-format指令：<br><code>lw $t1,offset($t2)</code><br>存储地址是将\$t2中的内容（32位基地址）加上offset（16位偏移地址）作为目标地址，然后将内容写入寄存器\$t1。<br>这里需要的是一个<strong>地址加法器（加16位和32位的数）</strong>以及<strong>数据存储器</strong>。<br><code>beq $t1,$t2,offset</code><br>首先读取\$t1和\$t2的内容到ALU进行对比，若通过，则将offset（16位偏移地址）加到PC上作为下一次的目标地址。</p>
+<blockquote>
+<p>需要注意的是：lw中目标地址是<strong>直接把offset和$2中的内容相加</strong>，而beq中offset指的是按4字节寻址的地址，PC中存的是完整的地址，<strong>offset要作2位偏移之后再加到PC中去</strong></p>
+</blockquote>
+<p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-09-09-cod-4.3.1.jpg" alt="存储指令与R-format指令的数据通路融合"></p>
+<p>上图中进行R-format指令操作时：<br>多路选择器ALUSrc选0，输入两个寄存器的内容到ALU中；多路选择器MemtoReg选0，将运算结果输出至寄存器文件的写入数据端，写入寄存器。</p>
+<p>进行I-format指令操作时：<br>多路选择器ALUSrc选1，输入一个寄存器的内容以及将offset从16位符号扩展至32位之后的值到ALU中；多路选择器MemtoReg选1，将数据存储器中读到的内容输出至寄存器文件的写入数据端，写入寄存器。</p>
+<p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-09-09-cod-4.3.2.jpg" alt="综合上面所有内容的数据通路"></p>
+<p>在原图的基础上把PC以及指令寄存器的内容加上去就是一个比较完整的数据通路了。</p>
+<p>PC后的两个加法器用于改变PC的地址。将offset从16位符号扩展至32位之后的值作2位左移与地址累加是完成beq这一类的跳转，用PCSrc进行数据选择。</p>
+<h2 id="A_Simple_Implementation_Scheme">A Simple Implementation Scheme</h2><p>一个简单的实现机制</p>
+<p>这一节讲的是模拟实现<strong>一个简单的，只有4.2节里面这些功能</strong>的指令集。</p>
+<p>要实现上面的这些功能，操作数只需要2位：</p>
+<ul>
+<li>00表示lw或者sw，这里对于ALU来说只需要作地址的相加即可。</li>
+<li>01表示beq，需要用ALU对两个寄存器相减。</li>
+<li>10表示R-format操作，需要配合6位的Funct再进行各种情况的选择。</li>
+<li>根据上述的2位ALUOp和6位Funct，生成出真正的4位ALU操作码</li>
+</ul>
+<p>结合第二章表格里面每一种类型的指令的格式，再加上控制单元部分，可以把数据通路图进一步画成：</p>
+<p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-09-09-cod-4.4.1.jpg" alt="标明了所有控制信号与控制单元的数据通路"></p>
+<p>多路选择器RegDst用于区分R-format和I-format中目标寄存器在操作数中的位置（rt在20:16，rd在15:11）</p>
+<p>单独有一个ALUOp用来根据最后的Funct（5:0）来产生真正的ALU控制码，这里其实只是一个真值表的处理。</p>
+<p>指令的31:26位用一个单独的控制器处理，来完成各种控制信号的产生。</p>
+<p><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-09-09-cod-4.4.2.jpg" alt="最后加上一个跳转"></p>
+<p>跳转的指令是6位操作数和26位地址，这个地址也是按4字节寻址的。</p>
+<p>则加上跳转就是将原来PC+4的高4位，以及26位地址偏移2位组成新的PC地址，完成跳转。</p>
+<p>至此，单指令周期的数据通路构造完成。</p>
+<p>而由于指令数的庞大，单周期指令实际运行时非常慢，必须等到一条指令运行完毕之后才能跑下一条，而每一条指令其实只占用了数据通路的一部分（这里只是实现了几条简单的指令集，完整的可以想象是更加庞大的），剩下的部分都是空闲没用的。</p>
+<p>因此要用到下一节之后的流水线技术来处理这个矛盾。</p>
+<h2 id="An_Overview_of_Pipelining">An Overview of Pipelining</h2><p>流水线概述</p>
+<p>1个MIPS指令包含5个步骤：</p>
+<ol>
+<li>从指令存储器中读取指令</li>
+<li>指令译码的过程中读取寄存器的内容</li>
+<li>执行操作或者计算地址</li>
+<li>从数据存储器中读取操作数</li>
+<li>将结果写回寄存器</li>
+</ol>
+<p>本章讨论的流水线也是分成5个部分。</p>
+<p>当指令数量<strong>达到一定量级时</strong>，流水线比非流水线要快大约<strong>流水线级数</strong>倍。</p>
+<p>流水线冒险：</p>
+<ol>
+<li>结构冒险：由于硬件结构导致的冒险，比如两条指令在不同的阶段同时访问寄存器。<br>需要从硬件结构上来解决。</li>
+<li>数据冒险：下一条指令需要的数据，上一条指令还在计算中。<br>编译器可以通过改变指令顺序处理掉一部分的数据冒险；另外可以通过增加额外的硬件结构来完成<strong>转发/旁路</strong><br><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-09-09-cod-4.5.1.jpg" alt="两条指令间的转发/旁路"><br>对于某些特别的指令，比如读取数据，就需要给流水线暂停一个时钟周期再转发<br><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-09-09-cod-4.5.2.jpg" alt="插入流水线气泡的转发"><br>为了避免流水线暂停，则需要通过调整代码顺序来解决</li>
+<li>控制冒险/分支冒险：遇到beq这类指令时，指令正在译码时，流水线就要紧接着读入下一条指令，而此时下一条指令的PC还没有确定，因此产生矛盾。<br>比较简单的解决方案是随便预测一个方向先执行，如果不对再忽略前面执行的指令转去执行正确的指令，这样如果预测是正确的，则流水线任然是全速运行，如果是错误的那么与原来不采用预测的方式耗时一样。使用额外的硬件预测器可以把准确率提高到90%以上。另外在MIPS中还有一种方案是将一条不影响分支的指令放到分支之后。</li>
+</ol>
+<h2 id="Pipelined_Datapath_and_Control_274">Pipelined Datapath and Control 274</h2><h2 id="Data_Hazards:_Forwarding_versus_Stalling_291">Data Hazards: Forwarding versus Stalling 291</h2><h2 id="Control_Hazards_304">Control Hazards 304</h2><h2 id="Exceptions_313">Exceptions 313</h2><h2 id="Parallelism_via_Instructions_320">Parallelism via Instructions 320</h2><h2 id="Real_Stuff:_The_ARM_Cortex-A8_and_Intel_Core_i7_Pipelines_332">Real Stuff: The ARM Cortex-A8 and Intel Core i7 Pipelines 332</h2><h2 id="Going_Faster:_Instruction-Level_Parallelism_and_Matrix_Multiply_339">Going Faster: Instruction-Level Parallelism and Matrix Multiply 339</h2><h2 id="Advanced_Topic:_An_Introduction_to_Digital_Design_Using_a_Hardware_Design_Language_to_Describe_and_Model_a_Pipeline_and_More_Pipelining_Illustrations_342">Advanced Topic: An Introduction to Digital Design Using a Hardware Design Language to Describe and Model a Pipeline and More Pipelining Illustrations 342</h2><h2 id="Fallacies_and_Pitfalls_343">Fallacies and Pitfalls 343</h2><h2 id="CondudingRemarks_344">CondudingRemarks 344</h2><h2 id="Historical_Perspective_and_Further_Reading_345">Historical Perspective and Further Reading 345</h2><h2 id="Exercises-3">Exercises</h2><p><a href="http://7xjh3j.com1.z0.glb.clouddn.com/2015-09-09-cod-CH04_Solution.pdf" target="_blank" rel="external">答案</a></p>
+<hr>
+<h1 id="CHAPTER_5-_Large_and_Fast:_Exploiting_Memory_Hierarchy_360">CHAPTER 5. Large and Fast: Exploiting Memory Hierarchy 360</h1><p>大容量和高速度：开发存储器层次结构</p>
+<h2 id="Instruction-4">Instruction</h2><h2 id="Introduction_362">Introduction 362</h2><h2 id="Memory_Technologies_366">Memory Technologies 366</h2><h2 id="The_Basics_of_Caches_371">The Basics of Caches 371</h2><h2 id="Measuring_and_Improving_Cache_Performance_386">Measuring and Improving Cache Performance 386</h2><h2 id="Dependable_Memory_Hierarchy_406">Dependable Memory Hierarchy 406</h2><h2 id="Virtual_Machines_412">Virtual Machines 412</h2><h2 id="Virtual_Memory_415">Virtual Memory 415</h2><h2 id="A_Common_Framework_for_Memory_Hierarchy_442">A Common Framework for Memory Hierarchy 442</h2><h2 id="Using_a_Finite-State_Machine_to_Control_a_Simple_Cache_449">Using a Finite-State Machine to Control a Simple Cache 449</h2><h2 id="Parallelism_and_Memory_Hierarchies:_Cache_Coherence_454">Parallelism and Memory Hierarchies: Cache Coherence 454</h2><h2 id="Parallelism_and_Memory_Hierarchy:_Redundant_Arrays_of_Inexpensive_Disks_458">Parallelism and Memory Hierarchy: Redundant Arrays of Inexpensive Disks 458</h2><h2 id="Advanced_Material:_Implementing_Cache_Controllers_458">Advanced Material: Implementing Cache Controllers 458</h2><h2 id="Real_Stuff:_The_ARM_Cortex-A8_and_Intel_Core_i7_Memory_Hierarchies_459">Real Stuff: The ARM Cortex-A8 and Intel Core i7 Memory Hierarchies 459</h2><h2 id="Going_Faster:_Cache_Blocking_and_Matrix_Multiply_463">Going Faster: Cache Blocking and Matrix Multiply 463</h2><h2 id="Fallacies_and_Pitfalls_466">Fallacies and Pitfalls 466</h2><h2 id="GoncludingRemarks_470">GoncludingRemarks 470</h2><h2 id="Historical_Perspective_and_Further_Reading_471">Historical Perspective and Further Reading 471</h2><h2 id="Exercises-4">Exercises</h2><p><a href="http://7xjh3j.com1.z0.glb.clouddn.com/2015-09-09-cod-CH05_Solution.pdf" target="_blank" rel="external">答案</a></p>
+<hr>
+<h1 id="CHAPTER_6-_Parallel_Processors_from_Client_to_Cloud_488">CHAPTER 6. Parallel Processors from Client to Cloud 488</h1><p>从客户端到云端的并行计算</p>
+<h2 id="Instruction-5">Instruction</h2><h2 id="Introduction_490">Introduction 490</h2><h2 id="The_Difficulty_of_Creating_Parallel_Processing_Programs_492">The Difficulty of Creating Parallel Processing Programs 492</h2><h2 id="SISD,_MIMD,_SIMD,_SPMD,_and_Vector_497">SISD, MIMD, SIMD, SPMD, and Vector 497</h2><h2 id="Hardware_Multithreading_504">Hardware Multithreading 504</h2><h2 id="Multicore_and_Other_Shared_Memory_Multiprocessors_507">Multicore and Other Shared Memory Multiprocessors 507</h2><h2 id="Introduction_to_Graphics_Processing_Units_512">Introduction to Graphics Processing Units 512</h2><h2 id="Clusters,_Warehouse_Scale_Computers,_and_Other_Message-Passing_Multiprocessors_519">Clusters, Warehouse Scale Computers, and Other Message-Passing Multiprocessors 519</h2><h2 id="Introduction_to_Multiprocessor_Network_Topologies_524">Introduction to Multiprocessor Network Topologies 524</h2><h2 id="Communicating_to_the_Outside_World:_Cluster_Networking_527">Communicating to the Outside World: Cluster Networking 527</h2><h2 id="Multiprocessor_Benchmarks_and_Performance_Models_528">Multiprocessor Benchmarks and Performance Models 528</h2><h2 id="Real_Stuff:_Benchmarking_Intel_Core_i7_versus_NVIDIA_Tesla_GPU_538">Real Stuff: Benchmarking Intel Core i7 versus NVIDIA Tesla GPU 538</h2><h2 id="Going_Faster:_Multiple_Processors_and_Matrix_Multiply_543">Going Faster: Multiple Processors and Matrix Multiply 543</h2><h2 id="Fallacies_and_Pitfalls_546">Fallacies and Pitfalls 546</h2><h2 id="Concluding_Remarks_548">Concluding Remarks 548</h2><h2 id="Historical_Perspective_and_Further_Reading_551">Historical Perspective and Further Reading 551</h2><h2 id="Exercises-5">Exercises</h2><p><a href="http://7xjh3j.com1.z0.glb.clouddn.com/2015-09-09-cod-CH06_Solution.pdf" target="_blank" rel="external">答案</a></p>
+<hr>
+<h1 id="APPENDICES_A-_Assemblers,_Linkers,_and_the_SPiM_Simulator_A-2">APPENDICES A. Assemblers, Linkers, and the SPiM Simulator A-2</h1><h2 id="Introduction_A-3">Introduction A-3</h2><h2 id="Assemblers_A-IO">Assemblers A-IO</h2><h2 id="Linkers_A-18">Linkers A-18</h2><h2 id="Loading_A-19">Loading A-19</h2><h2 id="Memory_Usage_A-20">Memory Usage A-20</h2><h2 id="Procedure_Call_Convention_A-22">Procedure Call Convention A-22</h2><h2 id="Exceptions_and_Interrupts_A-33">Exceptions and Interrupts A-33</h2><h2 id="Input_and_Output_A-38">Input and Output A-38</h2><h2 id="SPIM_A-40">SPIM A-40</h2><h2 id="MIPS_R2000_Assembly_Language_A-45">MIPS R2000 Assembly Language A-45</h2><h2 id="Concluding_Remarks_A-81">Concluding Remarks A-81</h2><h2 id="Exercises_A-82">Exercises A-82</h2><hr>
+<h1 id="APPENDICES_B-_TH-2_High_Performance_Computing_System_B-2">APPENDICES B. TH-2 High Performance Computing System B-2</h1><h2 id="Introduction_B-3">Introduction B-3</h2><h2 id="Compute_Node_B-3">Compute Node B-3</h2><h2 id="The_Frontend_Processors_B-5">The Frontend Processors B-5</h2><h2 id="The_Interconnect_B-6">The Interconnect B-6</h2><h2 id="The_Software_Stack_B-7">The Software Stack B-7</h2><h2 id="LINPACK_Benchmark_Run_(HPL)_B-7">LINPACK Benchmark Run (HPL) B-7</h2><h2 id="Concluding_Remarks_B-8">Concluding Remarks B-8</h2><hr>
+<h1 id="APPENDICES_F-_Networks-on-Chip_F-2">APPENDICES F. Networks-on-Chip F-2</h1>]]></content>
+    <summary type="html">
+    <![CDATA[<p>《Computer Organization and Design, Hardware/Software Interface》以及《Computer Architecture: A Quantitative Approach》被誉为体系结构界的两本圣经。</p>
+<p>最近除了编译原理外，还在补的就是《硬件/软件接口》这一本了。</p>
+<p>这本书讲解得非常透彻。原本我只是对体系结构、CPU有个模糊的很难学的概念，，，书中由浅至深详细地解释了其中的工作原理，，，，真的好难啊Q_Q…</p>]]>
+    
+    </summary>
+    
+      <category term="体系结构" scheme="http://jcf94.com/tags/%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="学习笔记" scheme="http://jcf94.com/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="计算机系统结构" scheme="http://jcf94.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
