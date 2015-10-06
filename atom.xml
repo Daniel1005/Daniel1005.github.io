@@ -270,7 +270,7 @@
     <link href="http://jcf94.com/2015/09/09/2015-09-09-cod/"/>
     <id>http://jcf94.com/2015/09/09/2015-09-09-cod/</id>
     <published>2015-09-09T02:56:01.000Z</published>
-    <updated>2015-10-04T09:41:05.237Z</updated>
+    <updated>2015-10-06T03:34:42.476Z</updated>
     <content type="html"><![CDATA[<p>《Computer Organization and Design, Hardware/Software Interface》以及《Computer Architecture: A Quantitative Approach》被誉为体系结构界的两本圣经。</p>
 <p>最近除了编译原理外，还在补的就是《硬件/软件接口》这一本了。</p>
 <p>这本书讲解得非常透彻。原本我只是对体系结构、CPU有个模糊的很难学的概念，，，书中由浅至深详细地解释了其中的工作原理，，，，真的好难啊Q_Q…</p>
@@ -454,6 +454,22 @@
 <p>而由于指令数的庞大，单周期指令实际运行时非常慢，必须等到一条指令运行完毕之后才能跑下一条，而每一条指令其实只占用了数据通路的一部分（这里只是实现了几条简单的指令集，完整的可以想象是更加庞大的），剩下的部分都是空闲没用的。</p>
 <p>因此要用到下一节之后的流水线技术来处理这个矛盾。</p>
 <h2 id="An_Overview_of_Pipelining">An Overview of Pipelining</h2><p>流水线概述</p>
+<p>1个MIPS指令包含5个步骤：</p>
+<ol>
+<li>从指令存储器中读取指令</li>
+<li>指令译码的过程中读取寄存器的内容</li>
+<li>执行操作或者计算地址</li>
+<li>从数据存储器中读取操作数</li>
+<li>将结果写回寄存器</li>
+</ol>
+<p>本章讨论的流水线也是分成5个部分。</p>
+<p>当指令数量<strong>达到一定量级时</strong>，流水线比非流水线要快大约<strong>流水线级数</strong>倍。</p>
+<p>流水线冒险：</p>
+<ol>
+<li>结构冒险：由于硬件结构导致的冒险，比如两条指令在不同的阶段同时访问寄存器。<br>需要从硬件结构上来解决。</li>
+<li>数据冒险：下一条指令需要的数据，上一条指令还在计算中。<br>编译器可以通过改变指令顺序处理掉一部分的数据冒险；另外可以通过增加额外的硬件结构来完成<strong>转发/旁路</strong><br><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-09-09-cod-4.5.1.jpg" alt="两条指令间的转发/旁路"><br>对于某些特别的指令，比如读取数据，就需要给流水线暂停一个时钟周期再转发<br><img src="http://7xjh3j.com1.z0.glb.clouddn.com/2015-09-09-cod-4.5.2.jpg" alt="插入流水线气泡的转发"><br>为了避免流水线暂停，则需要通过调整代码顺序来解决</li>
+<li>控制冒险：</li>
+</ol>
 <h2 id="Pipelined_Datapath_and_Control_274">Pipelined Datapath and Control 274</h2><h2 id="Data_Hazards:_Forwarding_versus_Stalling_291">Data Hazards: Forwarding versus Stalling 291</h2><h2 id="Control_Hazards_304">Control Hazards 304</h2><h2 id="Exceptions_313">Exceptions 313</h2><h2 id="Parallelism_via_Instructions_320">Parallelism via Instructions 320</h2><h2 id="Real_Stuff:_The_ARM_Cortex-A8_and_Intel_Core_i7_Pipelines_332">Real Stuff: The ARM Cortex-A8 and Intel Core i7 Pipelines 332</h2><h2 id="Going_Faster:_Instruction-Level_Parallelism_and_Matrix_Multiply_339">Going Faster: Instruction-Level Parallelism and Matrix Multiply 339</h2><h2 id="Advanced_Topic:_An_Introduction_to_Digital_Design_Using_a_Hardware_Design_Language_to_Describe_and_Model_a_Pipeline_and_More_Pipelining_Illustrations_342">Advanced Topic: An Introduction to Digital Design Using a Hardware Design Language to Describe and Model a Pipeline and More Pipelining Illustrations 342</h2><h2 id="Fallacies_and_Pitfalls_343">Fallacies and Pitfalls 343</h2><h2 id="CondudingRemarks_344">CondudingRemarks 344</h2><h2 id="Historical_Perspective_and_Further_Reading_345">Historical Perspective and Further Reading 345</h2><h2 id="Exercises-3">Exercises</h2><p><a href="http://7xjh3j.com1.z0.glb.clouddn.com/2015-09-09-cod-CH04_Solution.pdf" target="_blank" rel="external">答案</a></p>
 <hr>
 <h1 id="CHAPTER_5-_Large_and_Fast:_Exploiting_Memory_Hierarchy_360">CHAPTER 5. Large and Fast: Exploiting Memory Hierarchy 360</h1><p>大容量和高速度：开发存储器层次结构</p>
@@ -573,10 +589,11 @@
     <link href="http://jcf94.com/2015/08/31/2015-08-31-isca2014/"/>
     <id>http://jcf94.com/2015/08/31/2015-08-31-isca2014/</id>
     <published>2015-08-31T14:34:15.000Z</published>
-    <updated>2015-09-01T00:26:20.125Z</updated>
+    <updated>2015-10-06T02:09:13.602Z</updated>
     <content type="html"><![CDATA[<p>即将踏入 Computer Architecture 领域，准备从今年下半年开始把这个方向相关的国际顶级会议论文都下过来看看。</p>
 <p>从 ISCA 2014 开始：</p>
-<p>ISCA 是由 ACM 与 IEEE 共同主办的体系结构领域顶级会议，全名是 International Symposium on Computer Architecture 。</p>
+<p>ISCA 是由 ACM 与 IEEE 共同主办的体系结构领域顶级会议，全名是 International Symposium on Computer Architecture。</p>
+<p>然后搜到了这个..<a href="http://www.sigma.me/isca/" target="_blank" rel="external">ISCA2000-2011所有论文的摘要</a></p>
 <blockquote>
 <p>话说，学校买了 IEEE 的刊文版权就是好哇~~~数字图书馆登上去直接就能下了，怀抱这么一个大金库，真是爽啊！！</p>
 </blockquote>
@@ -703,7 +720,8 @@
     <summary type="html">
     <![CDATA[<p>即将踏入 Computer Architecture 领域，准备从今年下半年开始把这个方向相关的国际顶级会议论文都下过来看看。</p>
 <p>从 ISCA 2014 开始：</p>
-<p>ISCA 是由 ACM 与 IEEE 共同主办的体系结构领域顶级会议，全名是 International Symposium on Computer Architecture 。</p>
+<p>ISCA 是由 ACM 与 IEEE 共同主办的体系结构领域顶级会议，全名是 International Symposium on Computer Architecture。</p>
+<p>然后搜到了这个..<a href="http://www.sigma.me/isca/">ISCA2000-2011所有论文的摘要</a></p>
 <blockquote>
 <p>话说，学校买了 IEEE 的刊文版权就是好哇~~~数字图书馆登上去直接就能下了，怀抱这么一个大金库，真是爽啊！！</p>
 </blockquote>]]>
