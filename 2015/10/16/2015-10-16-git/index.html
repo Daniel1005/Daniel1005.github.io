@@ -46,12 +46,11 @@
 <meta name="description" content="Git — The stupid content tracker.Linus Torvalds
 
 使用git已经有一段时间了，从刚开始的陌生到慢慢熟悉
-掌握基本的用法之后，会让人对开发、尤其是多人合作开发有了新的理解
-…甚至于写文档的时候都想用了
+掌握基本的用法之后，会让人对开发、尤其是多人合作开发有了新的理解……甚至于平时写文档的时候都想用了
 
 脑海中出现这么个画面
 毕业论文.doc毕业论文修改版.doc毕业论文完结版.doc毕业论文最终版.doc毕业论文再也不改了版.doc…
-这时候要是有g">
+这时候要是">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git使用小结">
 <meta property="og:url" content="http://jcf94.com/2015/10/16/2015-10-16-git/index.html">
@@ -59,24 +58,22 @@
 <meta property="og:description" content="Git — The stupid content tracker.Linus Torvalds
 
 使用git已经有一段时间了，从刚开始的陌生到慢慢熟悉
-掌握基本的用法之后，会让人对开发、尤其是多人合作开发有了新的理解
-…甚至于写文档的时候都想用了
+掌握基本的用法之后，会让人对开发、尤其是多人合作开发有了新的理解……甚至于平时写文档的时候都想用了
 
 脑海中出现这么个画面
 毕业论文.doc毕业论文修改版.doc毕业论文完结版.doc毕业论文最终版.doc毕业论文再也不改了版.doc…
-这时候要是有g">
-<meta property="og:updated_time" content="2015-10-16T09:03:52.113Z">
+这时候要是">
+<meta property="og:updated_time" content="2015-10-16T11:10:28.527Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git使用小结">
 <meta name="twitter:description" content="Git — The stupid content tracker.Linus Torvalds
 
 使用git已经有一段时间了，从刚开始的陌生到慢慢熟悉
-掌握基本的用法之后，会让人对开发、尤其是多人合作开发有了新的理解
-…甚至于写文档的时候都想用了
+掌握基本的用法之后，会让人对开发、尤其是多人合作开发有了新的理解……甚至于平时写文档的时候都想用了
 
 脑海中出现这么个画面
 毕业论文.doc毕业论文修改版.doc毕业论文完结版.doc毕业论文最终版.doc毕业论文再也不改了版.doc…
-这时候要是有g">
+这时候要是">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -291,14 +288,63 @@
         <span itemprop="articleBody"><blockquote class="blockquote-center"><br>Git — The stupid content tracker.<br>Linus Torvalds<br></blockquote>
 
 <p>使用git已经有一段时间了，从刚开始的陌生到慢慢熟悉</p>
-<p>掌握基本的用法之后，会让人对开发、尤其是多人合作开发有了新的理解</p>
-<p>…甚至于写文档的时候都想用了</p>
+<p>掌握基本的用法之后，会让人对开发、尤其是多人合作开发有了新的理解……甚至于平时写文档的时候都想用了</p>
 <blockquote>
 <p>脑海中出现这么个画面</p>
 <p>毕业论文.doc<br>毕业论文修改版.doc<br>毕业论文完结版.doc<br>毕业论文最终版.doc<br>毕业论文再也不改了版.doc<br>…</p>
-<p>这时候要是有git在，一个文件，管理方便逼格又高，想想都爽~~哈哈</p>
+<p>这时候要是有git在，一个文件，管理方便逼格又高~~哈哈</p>
 </blockquote>
+<p>把平时常用的一些操作做一下整理。</p>
 <a id="more"></a>
+<h1 id="开始一个项目">开始一个项目</h1><p>一般开始项目有2种情况：复制一个现成的git项目或者创建新项目</p>
+<p>复制：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> [<span class="built_in">source</span>] [destination]</span><br></pre></td></tr></table></figure>
+<p>[source]里面是项目的位置，可以是本地/服务器上的某个目录，也可以是远程库（例如github）中项目的地址（HTTPS或者SSH地址）</p>
+<p>[destination]是拷到本地存放的位置，不加就是默认当前目录下</p>
+<p>事实上……这个命令就是复制粘贴，尤其是如果是从本地clone到本地的时候。当然，只有git项目可以clone，对一个普通的文件夹调用clone命令还是不行的</p>
+<p>创建:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git init [name]</span><br></pre></td></tr></table></figure>
+<p>[name]是项目的名字，不加就是把当前目录初始化成git库</p>
+<p>初始化之后，目录下面会多出一个隐藏的.git文件夹，里面保存了git库需要的各种信息文件</p>
+<h2 id="示例">示例</h2><p>就拿一开始的论文脑洞来举例吧，我这里是装好git之后，配好运行环境，然后就可以在cmd里面操作git了</p>
+<p>命令行到桌面，然后：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\lenovo\Desktop&gt;git init <span class="built_in">test</span></span><br><span class="line">Initialized empty Git repository <span class="keyword">in</span> C:/Users/lenovo/Desktop/<span class="built_in">test</span>/.git/</span><br></pre></td></tr></table></figure>
+<p>clone一下试试</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\lenovo\Desktop&gt;git <span class="built_in">clone</span> <span class="built_in">test</span> lunwen</span><br><span class="line">Cloning into <span class="string">'lunwen'</span>...</span><br><span class="line">warning: You appear to have cloned an empty repository.</span><br><span class="line">done.</span><br></pre></td></tr></table></figure>
+<p>然后就可以开始工作啦，接下来的操作都会在这个名字叫做lunwen的目录（库）下面完成</p>
+<h1 id="开始工作">开始工作</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git status</span><br></pre></td></tr></table></figure>
+<p>这条命令是显示当前库中（其实就是当前目录中）需要被跟踪的文件的状态。</p>
+<p>文件的状态有三种，一开始新文件的状态是“Untracked”或者“Changes not staged for commit”，表示是刚创建的新文件还没有被git所追踪，或者是库中原本已有的文件发生了修改还没有被git所追踪，添加跟踪需要用到下面的这条add指令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git add [file]</span><br><span class="line">$ git add -A</span><br></pre></td></tr></table></figure>
+<p>-A 是默认把当前目录下所有需要追踪的文件都添加追踪，或者手动输入文件名进行各个文件的单独追踪</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git reset [file]</span><br></pre></td></tr></table></figure>
+<p>什么参数都不带表示把刚刚add上去的文件取消追踪，或者手动输入文件名进行各个文件的单独取消</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git diff</span><br></pre></td></tr></table></figure>
+<p>对库中原本已有的修改文件进行新旧版本对比，显示文件的区别</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git diff --staged</span><br></pre></td></tr></table></figure>
+<p>跟上一条指令类似，区别是这个是对已add进库中的文件进行新旧版本对比</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git commit -m <span class="string">"[descriptive message]"</span></span><br></pre></td></tr></table></figure>
+<p>当把所有文件都add进来之后，文件的状态变成了“Changes to be committed”，表示所有修改都已经被追踪，等待提交</p>
+<p>然后就需要上面这条命令，descriptive message是对本次提交的描述，如果不加-m和描述，git会打开一个编辑器要求输入描述</p>
+<h2 id="示例-1">示例</h2><p>现在库里面是空的，新建个文本文档lunwen.txt，里面写上test1，然后查看一下状态：</p>
+<blockquote>
+<p>lunwen.txt<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">test</span>1</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\lenovo\Desktop\lunwen&gt;git status</span><br><span class="line">On branch master</span><br><span class="line"></span><br><span class="line">Initial commit</span><br><span class="line"></span><br><span class="line">Untracked files:</span><br><span class="line">  (use <span class="string">"git add &lt;file&gt;..."</span> to include <span class="keyword">in</span> what will be committed)</span><br><span class="line"></span><br><span class="line">        lunwen.txt</span><br><span class="line"></span><br><span class="line">nothing added to commit but untracked files present (use <span class="string">"git add"</span> to track)</span><br></pre></td></tr></table></figure>
+<p>显示新的文件还没有被追踪过，先提交一下第一个版本：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\lenovo\Desktop\lunwen&gt;git add -A</span><br><span class="line"></span><br><span class="line">C:\Users\lenovo\Desktop\lunwen&gt;git status</span><br><span class="line">On branch master</span><br><span class="line"></span><br><span class="line">Initial commit</span><br><span class="line"></span><br><span class="line">Changes to be committed:</span><br><span class="line">  (use <span class="string">"git rm --cached &lt;file&gt;..."</span> to unstage)</span><br><span class="line"></span><br><span class="line">        new file:   lunwen.txt</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">C:\Users\lenovo\Desktop\lunwen&gt;git commit -m <span class="string">"first"</span></span><br><span class="line">[master (root-commit) <span class="number">2561997</span>] first</span><br><span class="line"> <span class="number">1</span> file changed, <span class="number">1</span> insertion(+)</span><br><span class="line"> create mode <span class="number">100644</span> lunwen.txt</span><br><span class="line"></span><br><span class="line">C:\Users\lenovo\Desktop\lunwen&gt;git status</span><br><span class="line">On branch master</span><br><span class="line">nothing to commit, working directory clean</span><br></pre></td></tr></table></figure>
+<p>提交完成，接下来对lunwen.txt稍微做点修改，然后再创建个新的文件test.txt：</p>
+<blockquote>
+<p>lunwen.txt<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">test</span>2</span><br><span class="line"><span class="built_in">test</span>3</span><br></pre></td></tr></table></figure></p>
+<p>test.txt<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">test</span>2</span><br><span class="line"><span class="built_in">test</span>3</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\lenovo\Desktop\lunwen&gt;git status</span><br><span class="line">On branch master</span><br><span class="line">Changes not staged <span class="keyword">for</span> commit:</span><br><span class="line">  (use <span class="string">"git add &lt;file&gt;..."</span> to update what will be committed)</span><br><span class="line">  (use <span class="string">"git checkout -- &lt;file&gt;..."</span> to discard changes <span class="keyword">in</span> working directory)</span><br><span class="line"></span><br><span class="line">        modified:   lunwen.txt</span><br><span class="line"></span><br><span class="line">Untracked files:</span><br><span class="line">  (use <span class="string">"git add &lt;file&gt;..."</span> to include <span class="keyword">in</span> what will be committed)</span><br><span class="line"></span><br><span class="line">        test.txt</span><br><span class="line"></span><br><span class="line">no changes added to commit (use <span class="string">"git add"</span> and/or <span class="string">"git commit -a"</span>)</span><br></pre></td></tr></table></figure>
+<p>status里面清楚地显示了库中文件的改变情况，接下来试一下diff这个命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\lenovo\Desktop\lunwen&gt;git diff</span><br><span class="line">diff --git a/lunwen.txt b/lunwen.txt</span><br><span class="line">index f079749..<span class="number">66</span>bb064 <span class="number">100644</span></span><br><span class="line">--- a/lunwen.txt</span><br><span class="line">+++ b/lunwen.txt</span><br><span class="line">@@ -<span class="number">1</span> +<span class="number">1</span>,<span class="number">2</span> @@</span><br><span class="line">-test1</span><br><span class="line">\ No newline at end of file</span><br><span class="line">+<span class="built_in">test</span>2</span><br><span class="line">+<span class="built_in">test</span>3</span><br><span class="line">\ No newline at end of file</span><br><span class="line"></span><br><span class="line">C:\Users\lenovo\Desktop\lunwen&gt;git add -A</span><br><span class="line"></span><br><span class="line">C:\Users\lenovo\Desktop\lunwen&gt;git diff --staged</span><br><span class="line">diff --git a/lunwen.txt b/lunwen.txt</span><br><span class="line">index f079749..<span class="number">66</span>bb064 <span class="number">100644</span></span><br><span class="line">--- a/lunwen.txt</span><br><span class="line">+++ b/lunwen.txt</span><br><span class="line">@@ -<span class="number">1</span> +<span class="number">1</span>,<span class="number">2</span> @@</span><br><span class="line">-test1</span><br><span class="line">\ No newline at end of file</span><br><span class="line">+<span class="built_in">test</span>2</span><br><span class="line">+<span class="built_in">test</span>3</span><br><span class="line">\ No newline at end of file</span><br><span class="line">diff --git a/test.txt b/test.txt</span><br><span class="line">new file mode <span class="number">100644</span></span><br><span class="line">index <span class="number">0000000</span>..<span class="number">66</span>bb064</span><br><span class="line">--- /dev/null</span><br><span class="line">+++ b/test.txt</span><br><span class="line">@@ -<span class="number">0</span>,<span class="number">0</span> +<span class="number">1</span>,<span class="number">2</span> @@</span><br><span class="line">+<span class="built_in">test</span>2</span><br><span class="line">+<span class="built_in">test</span>3</span><br><span class="line">\ No newline at end of file</span><br><span class="line"></span><br><span class="line">C:\Users\lenovo\Desktop\lunwen&gt;git commit -m <span class="string">"second"</span></span><br><span class="line">[master <span class="number">50</span>e143b] second</span><br><span class="line"> <span class="number">2</span> files changed, <span class="number">4</span> insertions(+), <span class="number">1</span> deletion(-)</span><br><span class="line"> create mode <span class="number">100644</span> test.txt</span><br><span class="line"></span><br><span class="line">C:\Users\lenovo\Desktop\lunwen&gt;git status</span><br><span class="line">On branch master</span><br><span class="line">nothing to commit, working directory clean</span><br></pre></td></tr></table></figure>
+<p>diff显示的只有lunwen.txt这个文件的变化，因为这个文件本来就在库里面，也是一直都被追踪着的。a/显示的是旧版本，b/显示的是新版本</p>
+<p>diff —staged显示的则是所有被add过的文件的差异，test.txt由于是新创建的，所有没有旧版本</p>
+<h1 id="版本保存和恢复">版本保存和恢复</h1><p>重点来了，git保存了库中所有文件完整的演变过程，以每一次commit作为一个保存点，如果发生问题，可以直接回滚到之前的任何一个版本</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git reset</span><br></pre></td></tr></table></figure>
 </span>
       
     </div>
@@ -505,7 +551,7 @@
           <div class="post-toc">
             
             
-              <p class="post-toc-empty">此文章未包含目錄</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#开始一个项目"><span class="nav-number">1.</span> <span class="nav-text">开始一个项目</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#示例"><span class="nav-number">1.1.</span> <span class="nav-text">示例</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#开始工作"><span class="nav-number">2.</span> <span class="nav-text">开始工作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#示例-1"><span class="nav-number">2.1.</span> <span class="nav-text">示例</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#版本保存和恢复"><span class="nav-number">3.</span> <span class="nav-text">版本保存和恢复</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
