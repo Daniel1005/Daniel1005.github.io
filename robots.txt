@@ -1,5 +1,0 @@
-User-agent: *
-
-Disallow:
-
-Sitemap: http://jcf94.com/sitemap.xml
