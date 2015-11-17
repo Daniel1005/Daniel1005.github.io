@@ -37,7 +37,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="linux," />
+  <meta name="keywords" content="c," />
 
 
 
@@ -55,25 +55,19 @@
 
 
 
-<meta name="description" content="Linux网络连接解决方法因为linux网络编程实验需要，需要对linux虚拟机进行联网。但是其中遇到了各种问题，尝试了很多解决方法。拿出来总结、分享一下。
-
-1、基本指令与配置：
-ifconfig     查看网卡信息route -n     显示现在所有路由ping IP地址（或者域名）     测试网络连接状况sudo /etc/init.d/network restart     重启网络">
+<meta name="description" content="因为之前面试的时候遇见这样的题，今天又遇到了，才想起来，所以拿出来总结一下。
+12345678//strcpy不合格实现char *my_strcpy(char* dst, const char* src) &amp;#123;	assert(dst != NULL);    assert(src != NULL);    char* ret = dst;    while((*dst++ = *src+">
 <meta property="og:type" content="article">
-<meta property="og:title" content="linux网络连接">
-<meta property="og:url" content="http://hetaotao.net/2015/11/05/linux断网急救/index.html">
+<meta property="og:title" content="strcpy与memcpy的实现">
+<meta property="og:url" content="http://hetaotao.net/2015/11/17/strcpy与memcpy的实现/index.html">
 <meta property="og:site_name" content="Daniel Blog">
-<meta property="og:description" content="Linux网络连接解决方法因为linux网络编程实验需要，需要对linux虚拟机进行联网。但是其中遇到了各种问题，尝试了很多解决方法。拿出来总结、分享一下。
-
-1、基本指令与配置：
-ifconfig     查看网卡信息route -n     显示现在所有路由ping IP地址（或者域名）     测试网络连接状况sudo /etc/init.d/network restart     重启网络">
-<meta property="og:updated_time" content="2015-11-05T18:16:26.514Z">
+<meta property="og:description" content="因为之前面试的时候遇见这样的题，今天又遇到了，才想起来，所以拿出来总结一下。
+12345678//strcpy不合格实现char *my_strcpy(char* dst, const char* src) &amp;#123;	assert(dst != NULL);    assert(src != NULL);    char* ret = dst;    while((*dst++ = *src+">
+<meta property="og:updated_time" content="2015-11-17T16:04:00.826Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="linux网络连接">
-<meta name="twitter:description" content="Linux网络连接解决方法因为linux网络编程实验需要，需要对linux虚拟机进行联网。但是其中遇到了各种问题，尝试了很多解决方法。拿出来总结、分享一下。
-
-1、基本指令与配置：
-ifconfig     查看网卡信息route -n     显示现在所有路由ping IP地址（或者域名）     测试网络连接状况sudo /etc/init.d/network restart     重启网络">
+<meta name="twitter:title" content="strcpy与memcpy的实现">
+<meta name="twitter:description" content="因为之前面试的时候遇见这样的题，今天又遇到了，才想起来，所以拿出来总结一下。
+12345678//strcpy不合格实现char *my_strcpy(char* dst, const char* src) &amp;#123;	assert(dst != NULL);    assert(src != NULL);    char* ret = dst;    while((*dst++ = *src+">
 
 
 
@@ -85,7 +79,7 @@ ifconfig     查看网卡信息route -n     显示现在所有路由ping IP地�
   };
 </script>
 
-  <title> linux网络连接 | Daniel Blog </title>
+  <title> strcpy与memcpy的实现 | Daniel Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh_Hans">
@@ -221,7 +215,7 @@ ifconfig     查看网卡信息route -n     显示现在所有路由ping IP地�
             
             
               
-                linux网络连接
+                strcpy与memcpy的实现
               
             
           </h1>
@@ -230,8 +224,8 @@ ifconfig     查看网卡信息route -n     显示现在所有路由ping IP地�
         <div class="post-meta">
           <span class="post-time">
             發表於
-            <time itemprop="dateCreated" datetime="2015-11-05T13:22:48+08:00" content="2015-11-05">
-              2015-11-05
+            <time itemprop="dateCreated" datetime="2015-11-17T23:37:27+08:00" content="2015-11-17">
+              2015-11-17
             </time>
           </span>
 
@@ -240,8 +234,8 @@ ifconfig     查看网卡信息route -n     显示现在所有路由ping IP地�
               &nbsp; | &nbsp; 分類於
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/linux/" itemprop="url" rel="index">
-                    <span itemprop="name">linux</span>
+                  <a href="/categories/c/" itemprop="url" rel="index">
+                    <span itemprop="name">c</span>
                   </a>
                 </span>
 
@@ -269,21 +263,15 @@ ifconfig     查看网卡信息route -n     显示现在所有路由ping IP地�
       
 
       
-        <span itemprop="articleBody"><h1 id="Linux网络连接解决方法">Linux网络连接解决方法</h1><p>因为linux网络编程实验需要，需要对linux虚拟机进行联网。但是其中遇到了各种问题，尝试了很多解决方法。拿出来总结、分享一下。</p>
-<hr>
-<p><strong>1、基本指令与配置：</strong></p>
-<p>ifconfig     查看网卡信息<br>route -n     显示现在所有路由<br>ping IP地址（或者域名）     测试网络连接状况<br>sudo /etc/init.d/network restart     重启网络</p>
-<p>网关配置：增加网关<br>前提是网关出现在route -n 的结果中，否则报错，进程不存在<br>sudo route add default gw 169.254.0.1</p>
-<p>dns服务器配置<br>/etc/resolv.conf</p>
-<p>dns生效优先级配置<br>dns 与 files（指/etc/hosts）顺序，让dns在前面的优先生效<br>grep hosts /etc/nsswitch.conf<br>/etc/nsswitch.conf<br>/etc/hosts</p>
-<a id="more"></a>
-<p><strong>2、配置文件</strong></p>
-<p> /etc/network/interfaces</p>
-<p>默认的环回地址<br>auto lo<br>iface lo inet loopback<br>静态配置<br>auto eth0<br>iface eth0 inet static<br>address 192.168.2.120（例子）<br>gateway 192.168.2.1<br>netmask 255.255.255.0<br>动态配置<br>auto eth0<br>iface eth0 inet dhcp</p>
-<p><strong>3、网络不通的基本排错步骤（从上往下）</strong></p>
-<p>ping 127.0.0.1　　　　　　　ping的通说明tcp协议栈没有问题<br>ping 主机地址　　　　　　　ping的通说明网卡没有问题<br>ping 路由器默认网关 　　　　ping的通说明包可以到达路由器<br>ping DNS服务器地址<br>卡在那一步，就补哪里</p>
-<p><strong>4、说明</strong></p>
-<p>调试的最后发现，插上网线，即使没有联网，都会使虚拟机IP识别为网线的IP，所以导致ping不通主机和外网。兼职是奇怪！！另外，本人对这方面也是新手，发现问题多多交流，欢迎在本人博客或者微博留言。</p>
+        <span itemprop="articleBody"><p>因为之前面试的时候遇见这样的题，今天又遇到了，才想起来，所以拿出来总结一下。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//strcpy不合格实现</span></span><br><span class="line"><span class="keyword">char</span> *my_strcpy(<span class="keyword">char</span>* dst, <span class="keyword">const</span> <span class="keyword">char</span>* src) &#123;</span><br><span class="line">	assert(dst != NULL);</span><br><span class="line">    assert(src != NULL);</span><br><span class="line">    <span class="keyword">char</span>* ret = dst;</span><br><span class="line">    <span class="keyword">while</span>((*dst++ = *src++) != <span class="string">'\0'</span>) ;</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>考虑特殊情况：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> a[] = <span class="string">"abc"</span>;</span><br><span class="line">my_strcpy(a+<span class="number">1</span>, a);</span><br></pre></td></tr></table></figure>
+<p>这时程序会崩溃！！</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//strcpy正确实现（考虑到内存重叠问题）</span></span><br><span class="line"><span class="keyword">char</span> *my_strcpy(<span class="keyword">char</span>* dst, <span class="keyword">const</span> <span class="keyword">char</span>* src) &#123;</span><br><span class="line">	assert(dst != NULL);</span><br><span class="line">    assert(src != NULL);</span><br><span class="line">    <span class="keyword">char</span>* ret = dst;</span><br><span class="line">    <span class="built_in">memcpy</span>(dst, src, <span class="built_in">strlen</span>(src)+<span class="number">1</span>);</span><br><span class="line">	<span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>同理，memcpy函数的实现也需要考虑内存重叠问题。实现如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//memcpy的实现</span></span><br><span class="line"><span class="keyword">void</span> * my_memcpy(<span class="keyword">void</span> *dst,<span class="keyword">const</span> <span class="keyword">void</span> *src,<span class="keyword">unsigned</span> <span class="keyword">int</span> count)</span><br><span class="line">&#123;</span><br><span class="line">     assert(dst);</span><br><span class="line">     assert(src);</span><br><span class="line">     <span class="keyword">void</span> * ret = dst;</span><br><span class="line">     <span class="comment">//源地址和目的地址不重叠，低字节向高字节拷贝</span></span><br><span class="line">     <span class="keyword">if</span> (dst &lt;= src || (<span class="keyword">char</span> *)dst &gt;= ((<span class="keyword">char</span> *)src + count))</span><br><span class="line">	 &#123;</span><br><span class="line">		 <span class="keyword">while</span>(count--)</span><br><span class="line">		 &#123;</span><br><span class="line">			 *(<span class="keyword">char</span> *)dst = *(<span class="keyword">char</span> *)src;</span><br><span class="line">			 dst = (<span class="keyword">char</span> *)dst + <span class="number">1</span>;</span><br><span class="line">			 src = (<span class="keyword">char</span> *)src + <span class="number">1</span>;</span><br><span class="line">		 &#125;</span><br><span class="line">	 &#125;</span><br><span class="line">     <span class="comment">//源地址和目的地址重叠，高字节向低字节拷贝</span></span><br><span class="line">	 <span class="keyword">else</span>						</span><br><span class="line">	 &#123; </span><br><span class="line">		 dst = (<span class="keyword">char</span> *)dst + count - <span class="number">1</span>;</span><br><span class="line">		 src = (<span class="keyword">char</span> *)src + count - <span class="number">1</span>; </span><br><span class="line">		 <span class="keyword">while</span>(count--) </span><br><span class="line">		 &#123;</span><br><span class="line">			 *(<span class="keyword">char</span> *)dst = *(<span class="keyword">char</span> *)src;</span><br><span class="line">			 dst = (<span class="keyword">char</span> *)dst - <span class="number">1</span>;</span><br><span class="line">			 src = (<span class="keyword">char</span> *)src - <span class="number">1</span>;</span><br><span class="line">		 &#125;</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>即便是strcpy、memcpy这样的c函数也还是有一些讲究的！学无止境！</p>
 </span>
       
     </div>
@@ -292,7 +280,7 @@ ifconfig     查看网卡信息route -n     显示现在所有路由ping IP地�
       
         <div class="post-tags">
           
-            <a href="/tags/linux/" rel="tag">#linux</a>
+            <a href="/tags/c/" rel="tag">#c</a>
           
         </div>
       
@@ -301,17 +289,13 @@ ifconfig     查看网卡信息route -n     显示现在所有路由ping IP地�
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/10/29/2015-10-29-first/" rel="next" title="我的第一个 markdown 文档">
-                <i class="fa fa-chevron-left"></i> 我的第一个 markdown 文档
+              <a href="/2015/11/13/资料整理/" rel="next" title="资料整理">
+                <i class="fa fa-chevron-left"></i> 资料整理
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2015/11/13/资料整理/" rel="prev" title="资料整理">
-                资料整理 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -448,7 +432,7 @@ ifconfig     查看网卡信息route -n     显示现在所有路由ping IP地�
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux网络连接解决方法"><span class="nav-number">1.</span> <span class="nav-text">Linux网络连接解决方法</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目錄</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
