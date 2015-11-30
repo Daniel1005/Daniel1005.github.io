@@ -63,7 +63,7 @@
 <meta property="og:site_name" content="Daniel Blog">
 <meta property="og:description" content="因为之前面试的时候遇见这样的题，今天又遇到了，才想起来，所以拿出来总结一下。
 12345678//strcpy不合格实现char *my_strcpy(char* dst, const char* src) &amp;#123;	assert(dst != NULL);    assert(src != NULL);    char* ret = dst;    while((*dst++ = *src+">
-<meta property="og:updated_time" content="2015-11-17T16:04:00.826Z">
+<meta property="og:updated_time" content="2015-11-19T16:34:34.949Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="strcpy与memcpy的实现">
 <meta name="twitter:description" content="因为之前面试的时候遇见这样的题，今天又遇到了，才想起来，所以拿出来总结一下。
@@ -271,6 +271,9 @@
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//strcpy正确实现（考虑到内存重叠问题）</span></span><br><span class="line"><span class="keyword">char</span> *my_strcpy(<span class="keyword">char</span>* dst, <span class="keyword">const</span> <span class="keyword">char</span>* src) &#123;</span><br><span class="line">	assert(dst != NULL);</span><br><span class="line">    assert(src != NULL);</span><br><span class="line">    <span class="keyword">char</span>* ret = dst;</span><br><span class="line">    <span class="built_in">memcpy</span>(dst, src, <span class="built_in">strlen</span>(src)+<span class="number">1</span>);</span><br><span class="line">	<span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>同理，memcpy函数的实现也需要考虑内存重叠问题。实现如下：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//memcpy的实现</span></span><br><span class="line"><span class="keyword">void</span> * my_memcpy(<span class="keyword">void</span> *dst,<span class="keyword">const</span> <span class="keyword">void</span> *src,<span class="keyword">unsigned</span> <span class="keyword">int</span> count)</span><br><span class="line">&#123;</span><br><span class="line">     assert(dst);</span><br><span class="line">     assert(src);</span><br><span class="line">     <span class="keyword">void</span> * ret = dst;</span><br><span class="line">     <span class="comment">//源地址和目的地址不重叠，低字节向高字节拷贝</span></span><br><span class="line">     <span class="keyword">if</span> (dst &lt;= src || (<span class="keyword">char</span> *)dst &gt;= ((<span class="keyword">char</span> *)src + count))</span><br><span class="line">	 &#123;</span><br><span class="line">		 <span class="keyword">while</span>(count--)</span><br><span class="line">		 &#123;</span><br><span class="line">			 *(<span class="keyword">char</span> *)dst = *(<span class="keyword">char</span> *)src;</span><br><span class="line">			 dst = (<span class="keyword">char</span> *)dst + <span class="number">1</span>;</span><br><span class="line">			 src = (<span class="keyword">char</span> *)src + <span class="number">1</span>;</span><br><span class="line">		 &#125;</span><br><span class="line">	 &#125;</span><br><span class="line">     <span class="comment">//源地址和目的地址重叠，高字节向低字节拷贝</span></span><br><span class="line">	 <span class="keyword">else</span>						</span><br><span class="line">	 &#123; </span><br><span class="line">		 dst = (<span class="keyword">char</span> *)dst + count - <span class="number">1</span>;</span><br><span class="line">		 src = (<span class="keyword">char</span> *)src + count - <span class="number">1</span>; </span><br><span class="line">		 <span class="keyword">while</span>(count--) </span><br><span class="line">		 &#123;</span><br><span class="line">			 *(<span class="keyword">char</span> *)dst = *(<span class="keyword">char</span> *)src;</span><br><span class="line">			 dst = (<span class="keyword">char</span> *)dst - <span class="number">1</span>;</span><br><span class="line">			 src = (<span class="keyword">char</span> *)src - <span class="number">1</span>;</span><br><span class="line">		 &#125;</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<p>调用char *strcpy(char *dst, char *src)函数时，当dst = NULL 或者 src = NULL时，程序崩溃，正是由于assert()函数使程序终止。</p>
+<p>但是深入一点就有疑惑了，为什么内存拷贝当src&lt;dst&lt;src+count 时会出错呢？为什么要单独考虑这种情况呢？欢迎交流！</p>
 <p>即便是strcpy、memcpy这样的c函数也还是有一些讲究的！学无止境！</p>
 </span>
       
@@ -296,6 +299,10 @@
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/11/30/校招总结/" rel="prev" title="校招总结">
+                校招总结 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -363,7 +370,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-count">6</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>
@@ -377,7 +384,7 @@
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-count">5</span>
               <span class="site-state-item-name">標籤</span>
               </a>
           </div>
