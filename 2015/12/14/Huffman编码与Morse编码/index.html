@@ -37,7 +37,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="编码、Huffman," />
 
 
 
@@ -55,15 +55,21 @@
 
 
 
-<meta name="description" content="Choice-Ability-Opportunity">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Daniel Blog">
-<meta property="og:url" content="http://hetaotao.net/index.html">
+<meta name="description" content="最近做课程设计，接触到了Huffman编码与Morse编码。在此总结，分享。之前认为编码是个很神奇的存在，现在能够用代码实现，感觉还是很开心的！
+一、Huffman编码1、概念（摘自wikipedia）　　霍夫曼编码（Huffman Coding）是一种编码方式，是一种用于无损数据压缩的熵编码（权编码）演算法。也称“哈夫曼编码”，“赫夫曼编码”。1952年，David A. Huffman在麻省理">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Huffman编码与Morse编码">
+<meta property="og:url" content="http://hetaotao.net/2015/12/14/Huffman编码与Morse编码/index.html">
 <meta property="og:site_name" content="Daniel Blog">
-<meta property="og:description" content="Choice-Ability-Opportunity">
+<meta property="og:description" content="最近做课程设计，接触到了Huffman编码与Morse编码。在此总结，分享。之前认为编码是个很神奇的存在，现在能够用代码实现，感觉还是很开心的！
+一、Huffman编码1、概念（摘自wikipedia）　　霍夫曼编码（Huffman Coding）是一种编码方式，是一种用于无损数据压缩的熵编码（权编码）演算法。也称“哈夫曼编码”，“赫夫曼编码”。1952年，David A. Huffman在麻省理">
+<meta property="og:image" content="http://hetaotao.net/C:\Users\htt\hexo\source\uploads\HuffmanTree.png">
+<meta property="og:image" content="http://hetaotao.net/C:\Users\htt\hexo\source\uploads\Morse code.png">
+<meta property="og:updated_time" content="2015-12-14T02:52:18.708Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Daniel Blog">
-<meta name="twitter:description" content="Choice-Ability-Opportunity">
+<meta name="twitter:title" content="Huffman编码与Morse编码">
+<meta name="twitter:description" content="最近做课程设计，接触到了Huffman编码与Morse编码。在此总结，分享。之前认为编码是个很神奇的存在，现在能够用代码实现，感觉还是很开心的！
+一、Huffman编码1、概念（摘自wikipedia）　　霍夫曼编码（Huffman Coding）是一种编码方式，是一种用于无损数据压缩的熵编码（权编码）演算法。也称“哈夫曼编码”，“赫夫曼编码”。1952年，David A. Huffman在麻省理">
 
 
 
@@ -75,7 +81,7 @@
   };
 </script>
 
-  <title> Daniel Blog </title>
+  <title> Huffman编码与Morse编码 | Daniel Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh_Hans">
@@ -96,9 +102,7 @@
 
 
 
-  <div class="container one-column 
-   page-home 
-">
+  <div class="container one-column page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -195,9 +199,9 @@
       <div class="main-inner">
         <div id="content" class="content">
           
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -213,9 +217,7 @@
             
             
               
-                <a class="post-title-link" href="/2015/12/14/Huffman编码与Morse编码/" itemprop="url">
-                  Huffman编码与Morse编码
-                </a>
+                Huffman编码与Morse编码
               
             
           </h1>
@@ -263,10 +265,7 @@
       
 
       
-        
-          <span itemprop="articleBody">
-            
-              <p>最近做课程设计，接触到了Huffman编码与Morse编码。在此总结，分享。之前认为编码是个很神奇的存在，现在能够用代码实现，感觉还是很开心的！</p>
+        <span itemprop="articleBody"><p>最近做课程设计，接触到了Huffman编码与Morse编码。在此总结，分享。之前认为编码是个很神奇的存在，现在能够用代码实现，感觉还是很开心的！</p>
 <h1 id="一、Huffman编码">一、Huffman编码</h1><h2 id="1、概念（摘自wikipedia）">1、概念（摘自<a href="https://zh.wikipedia.org/wiki/%E9%9C%8D%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81" target="_blank" rel="external">wikipedia</a>）</h2><p>　　霍夫曼编码（Huffman Coding）是一种编码方式，是一种用于无损数据压缩的熵编码（权编码）演算法。也称“哈夫曼编码”，“赫夫曼编码”。1952年，David A. Huffman在麻省理工攻读博士时所发明的，并发表于《一种构建极小多馀编码的方法》（A Method for the Construction of Minimum-Redundancy Codes）一文。</p>
 <p>　　在计算机资料处理中，霍夫曼编码使用变长编码表对源符号（如文件中的一个字母）进行编码，其中变长编码表是通过一种评估来源符号出现机率的方法得到的，出现机率高的字母使用较短的编码，反之出现机率低的则使用较长的编码，这便使编码之后的字符串的平均长度、期望值降低，从而达到无损压缩数据的目的。</p>
 <p>　　例如，在英文中，e的出现机率最高，而z的出现概率则最低。当利用霍夫曼编码对一篇英文进行压缩时，e极有可能用一个位元来表示，而z则可能花去25个位元（不是26）。用普通的表示方法时，每个英文字母均占用一个字节，即8个位元。二者相比，e使用了一般编码的1/8的长度，z则使用了3倍多。倘若我们能实现对于英文中各个字母出现概率的较准确的估算，就可以大幅度提高无损压缩的比例。</p>
@@ -283,587 +282,46 @@
 <h2 id="2、算法-1">2、算法</h2><p>即将每个英文字母转化为对应的Morse码，在一个字母的内部、字母之间、单词之间都需要添加特定个数的空格。</p>
 <h2 id="3、实现-1">3、实现</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span><br><span class="line">	说明：</span><br><span class="line">    1、根据英文字母a-z的Morse码表，对指定文段进行Morse编码，并计算编码总长度和平均码长；</span><br><span class="line">    3、IDE为Dev C++ 5.4.1</span><br><span class="line">*/</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;iostream&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;string.h&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;fstream&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;stdlib.h&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">string</span> str;</span><br><span class="line">	<span class="built_in">string</span> code_str;</span><br><span class="line">	<span class="built_in">string</span> MC[<span class="number">26</span>];</span><br><span class="line">	<span class="keyword">double</span> total_len=<span class="number">0.0</span>;</span><br><span class="line">	<span class="keyword">double</span> average_len=<span class="number">0.0</span>;</span><br><span class="line">	<span class="keyword">int</span> i=<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//按行读取文件</span></span><br><span class="line">	<span class="function">ifstream <span class="title">fin</span><span class="params">( "Morsecode.txt" )</span></span>;  </span><br><span class="line">	<span class="keyword">while</span> ( getline(fin, MC[i]) ) i++;</span><br><span class="line">	fin.close(); </span><br><span class="line">	<span class="comment">//输出morse码表 </span></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"The MorseCode of a to z:\n"</span>; </span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>; i&lt;<span class="number">26</span>; i++)</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; (<span class="keyword">char</span>)(<span class="string">'a'</span>+i) &lt;&lt; <span class="string">" : "</span> &lt;&lt; MC[i] &lt;&lt; endl;</span><br><span class="line">	<span class="comment">//输出重定向并统计文段morse码总长度 </span></span><br><span class="line">	i=<span class="number">0</span>;</span><br><span class="line">	freopen(<span class="string">"test_without_punctuation.txt"</span>, <span class="string">"r"</span>, stdin);</span><br><span class="line">	<span class="keyword">char</span> c;</span><br><span class="line">	<span class="keyword">while</span>( <span class="built_in">scanf</span>(<span class="string">"%c"</span>, &amp;c) != EOF) &#123;</span><br><span class="line">		str+=c;</span><br><span class="line">		<span class="keyword">if</span>(str[i] &gt;= <span class="string">'a'</span> &amp;&amp; str[i] &lt;= <span class="string">'z'</span>)</span><br><span class="line">			total_len += MC[str[i]-<span class="string">'a'</span>].length();</span><br><span class="line">		<span class="comment">//	cout &lt;&lt; total_len &lt;&lt; ' ' &lt;&lt; i &lt;&lt; endl;</span></span><br><span class="line">		++i;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//输出 </span></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"Total length of MorseCoding is: "</span> &lt;&lt; total_len &lt;&lt; endl;</span><br><span class="line">	average_len = total_len / i;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"Average length of MorseCoding is: "</span> &lt;&lt; average_len &lt;&lt; endl; </span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>Reference:<br>[1].<a href="https://zh.wikipedia.org/wiki/%E9%9C%8D%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81" target="_blank" rel="external">https://zh.wikipedia.org/wiki/%E9%9C%8D%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81</a><br>[2].<a href="http://blog.csdn.net/qyee16/article/details/6664377" target="_blank" rel="external">http://blog.csdn.net/qyee16/article/details/6664377</a><br>[3].<a href="https://zh.wikipedia.org/wiki/%E6%91%A9%E5%B0%94%E6%96%AF%E7%94%B5%E7%A0%81" target="_blank" rel="external">https://zh.wikipedia.org/wiki/%E6%91%A9%E5%B0%94%E6%96%AF%E7%94%B5%E7%A0%81</a></p>
-
-            
-          </span>
-        
+</span>
       
     </div>
 
     <footer class="post-footer">
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                <a class="post-title-link" href="/2015/11/30/校招总结/" itemprop="url">
-                  校招总结
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            發表於
-            <time itemprop="dateCreated" datetime="2015-11-30T15:48:21+08:00" content="2015-11-30">
-              2015-11-30
-            </time>
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分類於
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/杂谈/" itemprop="url" rel="index">
-                    <span itemprop="name">杂谈</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
+            <a href="/tags/编码、Huffman/" rel="tag">#编码、Huffman</a>
           
-
-          
-            
-          
-
-          
-
         </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
       
 
       
-        
-          <h1 id="校招总结"><center>校招总结</cencer></h1><p>　　先说一下我的基本情况。<br>　　8月底，开始投简历，开始投的都是一线互联网企业以及一些公司的内推（虽然并没有收到任何面试通知）。<br>　　9月初，一大波企业都发布了招聘通知，是投简历的高峰期。记得我最多的时候一天投了十几个简历，然后还有各种笔试和网测。<br>　　9月11号，开始参加面试。<br>　　9月24号，拿到深圳平安科技的special offer。<br>　　个人是个技术控，所以在找工作之前就确定自己要找研发类的工作，硬件研发或者软件研发。大学里虽然学的课程里软件和硬件都有，但是在硬件方面的动手太少了，所以也是基本果断的选择了走软件方向。<br>我喜欢提前准备，而且对自己的定位是一二线互联网或者软件公司，所以在找工作的前几个月（2014年11月）就开始准备一些基础的知识，包括：数据结构与算法、C++编程、linux下C编程，oracle数据库，计算机网络。学习的形式是看书、看视频、与同学讨论。然后还有参加数学建模竞赛。我想自己能比较早的找到这份比较满意的工作，很大程度归功于这接近十个月的努力。当然，我想说的是，也是很重要的一方面，从找工作的过程中学习。<br>　　为什么说在找工作的过程中学习？</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/11/30/校招总结/#more" rel="contents">
-              閱讀全文 &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/11/30/校招总结/" rel="next" title="校招总结">
+                <i class="fa fa-chevron-left"></i> 校招总结
+              </a>
+            
           </div>
-        
-      
-    </div>
 
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+          <div class="post-nav-prev post-nav-item">
             
-            
-              
-                <a class="post-title-link" href="/2015/11/17/strcpy与memcpy的实现/" itemprop="url">
-                  strcpy与memcpy的实现
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            發表於
-            <time itemprop="dateCreated" datetime="2015-11-17T23:37:27+08:00" content="2015-11-17">
-              2015-11-17
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分類於
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/c/" itemprop="url" rel="index">
-                    <span itemprop="name">c</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <p>因为之前面试的时候遇见这样的题，今天又遇到了，才想起来，所以拿出来总结一下。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//strcpy不合格实现</span></span><br><span class="line"><span class="keyword">char</span> *my_strcpy(<span class="keyword">char</span>* dst, <span class="keyword">const</span> <span class="keyword">char</span>* src) &#123;</span><br><span class="line">	assert(dst != NULL);</span><br><span class="line">    assert(src != NULL);</span><br><span class="line">    <span class="keyword">char</span>* ret = dst;</span><br><span class="line">    <span class="keyword">while</span>((*dst++ = *src++) != <span class="string">'\0'</span>) ;</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>考虑特殊情况：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> a[] = <span class="string">"abc"</span>;</span><br><span class="line">my_strcpy(a+<span class="number">1</span>, a);</span><br></pre></td></tr></table></figure>
-<p>这时程序会崩溃！！</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/11/17/strcpy与memcpy的实现/#more" rel="contents">
-              閱讀全文 &raquo;
-            </a>
           </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                <a class="post-title-link" href="/2015/11/13/资料整理/" itemprop="url">
-                  资料整理
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            發表於
-            <time itemprop="dateCreated" datetime="2015-11-13T11:15:41+08:00" content="2015-11-13">
-              2015-11-13
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分類於
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/杂谈/" itemprop="url" rel="index">
-                    <span itemprop="name">杂谈</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
         </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
       
 
       
-        
-          <span itemprop="articleBody">
-            
-              <p>今天整理电脑，断舍离，然后发现自己在之前的三年还真是接触了很多东西。从大一到大四，包罗万象！包括但不限于：大一时研究过<a href="http://www.baidu.com" target="_blank" rel="external">PPT动画</a>、自学过HTML、PS、C语言编程；大二做过微信公众号的维护，参加数学建模培训与比赛；大三上过党课、考过商务英语、参加青马班、物流设计大赛、电子设计大赛；大四刚刚开始，学习网络编程……<br>我是觉得涉及的面真的挺广的！其实最早从刚进大学开始，就是想既然是大学就应该多接触一些各方面的东西，然后选择自己真的感兴趣和擅长的方面，然后一直走下去，培养自己的核心竞争力！<br>接下来，准备把一些有心得的经历写出来分享给大家。</p>
-
-            
-          </span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-      
 
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                <a class="post-title-link" href="/2015/11/05/linux断网急救/" itemprop="url">
-                  linux网络连接
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            發表於
-            <time itemprop="dateCreated" datetime="2015-11-05T13:22:48+08:00" content="2015-11-05">
-              2015-11-05
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分類於
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/linux/" itemprop="url" rel="index">
-                    <span itemprop="name">linux</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <h1 id="Linux网络连接解决方法">Linux网络连接解决方法</h1><p>因为linux网络编程实验需要，需要对linux虚拟机进行联网。但是其中遇到了各种问题，尝试了很多解决方法。拿出来总结、分享一下。</p>
-<hr>
-<p><strong>1、基本指令与配置：</strong></p>
-<p>ifconfig     查看网卡信息<br>route -n     显示现在所有路由<br>ping IP地址（或者域名）     测试网络连接状况<br>sudo /etc/init.d/network restart     重启网络</p>
-<p>网关配置：增加网关<br>前提是网关出现在route -n 的结果中，否则报错，进程不存在<br>sudo route add default gw 169.254.0.1</p>
-<p>dns服务器配置<br>/etc/resolv.conf</p>
-<p>dns生效优先级配置<br>dns 与 files（指/etc/hosts）顺序，让dns在前面的优先生效<br>grep hosts /etc/nsswitch.conf<br>/etc/nsswitch.conf<br>/etc/hosts</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/11/05/linux断网急救/#more" rel="contents">
-              閱讀全文 &raquo;
-            </a>
-          </div>
-        
+    <div class="post-spread">
       
     </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                <a class="post-title-link" href="/2015/10/29/2015-10-29-first/" itemprop="url">
-                  我的第一个 markdown 文档
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            發表於
-            <time itemprop="dateCreated" datetime="2015-10-29T17:07:01+08:00" content="2015-10-29">
-              2015-10-29
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分類於
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/未分类/" itemprop="url" rel="index">
-                    <span itemprop="name">未分类</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <p>据说这是一个很好用的标记型的<strong>文本编辑器</strong>，能够很好地提高<em>写博客、写代码文档</em>的速率，所以拿来玩玩。<br>以下是测试：</p>
-<hr>
-<h3 id="1-_这是公式">1. 这是公式</h3><h4 id="质能守恒公式">　　<strong>质能守恒公式</strong></h4><p>$$E = mc^2$$</p>
-<h4 id="其他公式">　　<strong>其他公式</strong></h4><blockquote>
-<ul>
-<li><strong>自然数求和公式</strong><br>$$ \sum_{i=1}^n n = 1+2+3+…+n = n(n-1)/2$$ </li>
-<li><strong>自然数平方求和公式</strong><br>$$ \sum_{i=1}^n n^2 = 1^2+2^2+3^2+…+n^2 = \frac{n(2n-1)(n-1)}{6}$$</li>
-</ul>
-</blockquote>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/10/29/2015-10-29-first/#more" rel="contents">
-              閱讀全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                <a class="post-title-link" href="/2015/10/16/hello-world/" itemprop="url">
-                  Hello World
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            發表於
-            <time itemprop="dateCreated" datetime="2015-10-16T21:16:58+08:00" content="2015-10-16">
-              2015-10-16
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
-            
-              <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-            
-          </span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-  </section>
-
-  
+  </div>
 
 
         </div>
@@ -872,6 +330,10 @@
 
 
         
+  <div class="comments" id="comments">
+    
+  </div>
+
 
       </div>
 
@@ -892,8 +354,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            本站概覽
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" src="/uploads/avatar.jpg" alt="Daniel He" itemprop="image"/>
           <p class="site-author-name" itemprop="name">Daniel He</p>
@@ -964,6 +435,19 @@
       </section>
 
       
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、Huffman编码"><span class="nav-number">1.</span> <span class="nav-text">一、Huffman编码</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、概念（摘自wikipedia）"><span class="nav-number">1.1.</span> <span class="nav-text">1、概念（摘自wikipedia）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、算法"><span class="nav-number">1.2.</span> <span class="nav-text">2、算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、实现"><span class="nav-number">1.3.</span> <span class="nav-text">3、实现</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、Morse编码"><span class="nav-number">2.</span> <span class="nav-text">二、Morse编码</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、概念(摘自wikipedia)"><span class="nav-number">2.1.</span> <span class="nav-text">1、概念(摘自wikipedia)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、算法-1"><span class="nav-number">2.2.</span> <span class="nav-text">2、算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、实现-1"><span class="nav-number">2.3.</span> <span class="nav-text">3、实现</span></a></li></ol></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </section>
+      
 
     </div>
   </aside>
@@ -1033,6 +517,167 @@
   <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
 
   
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.2" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 0.4 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    motionMiddleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+      if (CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
 
   <script type="text/javascript" src="/js/bootstrap.js"></script>
 
