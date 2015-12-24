@@ -37,7 +37,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="linux," />
+  <meta name="keywords" content="string类型," />
 
 
 
@@ -55,25 +55,22 @@
 
 
 
-<meta name="description" content="Linux网络连接解决方法因为linux网络编程实验需要，需要对linux虚拟机进行联网。但是其中遇到了各种问题，尝试了很多解决方法。拿出来总结、分享一下。
-
-1、基本指令与配置：
-ifconfig     查看网卡信息route -n     显示现在所有路由ping IP地址（或者域名）     测试网络连接状况sudo /etc/init.d/network restart     重启网络">
+<meta name="description" content="$$ string 类型使用小结 $$
+c++在c的char类型基础上引入了string类，从而更加方便地对字符串进行操作。但是如果是不会使用string类也会带来很多麻烦。在自己编码的基础上总结了几点误区。
+1、char*类型与string类型的相互转换从char*到string，需要调用string类的构造函数　　如：char* a; string s(a);从string到char*，需要使">
 <meta property="og:type" content="article">
-<meta property="og:title" content="linux网络连接">
-<meta property="og:url" content="http://hetaotao.net/2015/11/05/linux断网急救/index.html">
+<meta property="og:title" content="string类型使用小结">
+<meta property="og:url" content="http://hetaotao.net/2015/12/14/string类型使用小结/index.html">
 <meta property="og:site_name" content="Daniel Blog">
-<meta property="og:description" content="Linux网络连接解决方法因为linux网络编程实验需要，需要对linux虚拟机进行联网。但是其中遇到了各种问题，尝试了很多解决方法。拿出来总结、分享一下。
-
-1、基本指令与配置：
-ifconfig     查看网卡信息route -n     显示现在所有路由ping IP地址（或者域名）     测试网络连接状况sudo /etc/init.d/network restart     重启网络">
-<meta property="og:updated_time" content="2015-11-05T18:16:26.514Z">
+<meta property="og:description" content="$$ string 类型使用小结 $$
+c++在c的char类型基础上引入了string类，从而更加方便地对字符串进行操作。但是如果是不会使用string类也会带来很多麻烦。在自己编码的基础上总结了几点误区。
+1、char*类型与string类型的相互转换从char*到string，需要调用string类的构造函数　　如：char* a; string s(a);从string到char*，需要使">
+<meta property="og:updated_time" content="2015-12-24T08:58:21.756Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="linux网络连接">
-<meta name="twitter:description" content="Linux网络连接解决方法因为linux网络编程实验需要，需要对linux虚拟机进行联网。但是其中遇到了各种问题，尝试了很多解决方法。拿出来总结、分享一下。
-
-1、基本指令与配置：
-ifconfig     查看网卡信息route -n     显示现在所有路由ping IP地址（或者域名）     测试网络连接状况sudo /etc/init.d/network restart     重启网络">
+<meta name="twitter:title" content="string类型使用小结">
+<meta name="twitter:description" content="$$ string 类型使用小结 $$
+c++在c的char类型基础上引入了string类，从而更加方便地对字符串进行操作。但是如果是不会使用string类也会带来很多麻烦。在自己编码的基础上总结了几点误区。
+1、char*类型与string类型的相互转换从char*到string，需要调用string类的构造函数　　如：char* a; string s(a);从string到char*，需要使">
 
 
 
@@ -85,7 +82,7 @@ ifconfig     查看网卡信息route -n     显示现在所有路由ping IP地�
   };
 </script>
 
-  <title> linux网络连接 | Daniel Blog </title>
+  <title> string类型使用小结 | Daniel Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh_Hans">
@@ -221,7 +218,7 @@ ifconfig     查看网卡信息route -n     显示现在所有路由ping IP地�
             
             
               
-                linux网络连接
+                string类型使用小结
               
             
           </h1>
@@ -230,8 +227,8 @@ ifconfig     查看网卡信息route -n     显示现在所有路由ping IP地�
         <div class="post-meta">
           <span class="post-time">
             發表於
-            <time itemprop="dateCreated" datetime="2015-11-05T13:22:48+08:00" content="2015-11-05">
-              2015-11-05
+            <time itemprop="dateCreated" datetime="2015-12-14T11:00:56+08:00" content="2015-12-14">
+              2015-12-14
             </time>
           </span>
 
@@ -240,8 +237,8 @@ ifconfig     查看网卡信息route -n     显示现在所有路由ping IP地�
               &nbsp; | &nbsp; 分類於
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/linux/" itemprop="url" rel="index">
-                    <span itemprop="name">linux</span>
+                  <a href="/categories/c/" itemprop="url" rel="index">
+                    <span itemprop="name">c++</span>
                   </a>
                 </span>
 
@@ -269,21 +266,14 @@ ifconfig     查看网卡信息route -n     显示现在所有路由ping IP地�
       
 
       
-        <span itemprop="articleBody"><h1 id="Linux网络连接解决方法">Linux网络连接解决方法</h1><p>因为linux网络编程实验需要，需要对linux虚拟机进行联网。但是其中遇到了各种问题，尝试了很多解决方法。拿出来总结、分享一下。</p>
-<hr>
-<p><strong>1、基本指令与配置：</strong></p>
-<p>ifconfig     查看网卡信息<br>route -n     显示现在所有路由<br>ping IP地址（或者域名）     测试网络连接状况<br>sudo /etc/init.d/network restart     重启网络</p>
-<p>网关配置：增加网关<br>前提是网关出现在route -n 的结果中，否则报错，进程不存在<br>sudo route add default gw 169.254.0.1</p>
-<p>dns服务器配置<br>/etc/resolv.conf</p>
-<p>dns生效优先级配置<br>dns 与 files（指/etc/hosts）顺序，让dns在前面的优先生效<br>grep hosts /etc/nsswitch.conf<br>/etc/nsswitch.conf<br>/etc/hosts</p>
+        <span itemprop="articleBody"><p>$$ string 类型使用小结 $$</p>
+<p>c++在c的char类型基础上引入了string类，从而更加方便地对字符串进行操作。但是如果是不会使用string类也会带来很多麻烦。在自己编码的基础上总结了几点误区。</p>
+<h2 id="1、char*类型与string类型的相互转换">1、char*类型与string类型的相互转换</h2><p>从char*到string，需要调用string类的构造函数<br>　　如：char* a; string s(a);<br>从string到char*，需要使用string类的c_str()函数<br>　　如：string s = “hello”,  const char* c = s.c_str();</p>
 <a id="more"></a>
-<p><strong>2、配置文件</strong></p>
-<p> /etc/network/interfaces</p>
-<p>默认的环回地址<br>auto lo<br>iface lo inet loopback<br>静态配置<br>auto eth0<br>iface eth0 inet static<br>address 192.168.2.120（例子）<br>gateway 192.168.2.1<br>netmask 255.255.255.0<br>动态配置<br>auto eth0<br>iface eth0 inet dhcp</p>
-<p><strong>3、网络不通的基本排错步骤（从上往下）</strong></p>
-<p>ping 127.0.0.1　　　　　　　ping的通说明tcp协议栈没有问题<br>ping 主机地址　　　　　　　ping的通说明网卡没有问题<br>ping 路由器默认网关 　　　　ping的通说明包可以到达路由器<br>ping DNS服务器地址<br>卡在那一步，就补哪里</p>
-<p><strong>4、说明</strong></p>
-<p>调试的最后发现，插上网线，即使没有联网，都会使虚拟机IP识别为网线的IP，所以导致ping不通主机和外网。兼职是奇怪！！另外，本人对这方面也是新手，发现问题多多交流，欢迎在本人博客或者微博留言。</p>
+<h2 id="2、一个特殊错误">2、一个特殊错误</h2><p>单步调试没问题，但是一运行就崩溃</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//编译通过，运行崩溃</span></span><br><span class="line">	<span class="built_in">string</span> str;</span><br><span class="line">	i=<span class="number">0</span>;</span><br><span class="line">	freopen(<span class="string">"test_without_punctuation.txt"</span>, <span class="string">"r"</span>, stdin);</span><br><span class="line">	<span class="keyword">char</span> c;</span><br><span class="line">	<span class="keyword">while</span>( <span class="built_in">scanf</span>(<span class="string">"%c"</span>, &amp;str[i]) != EOF) &#123;</span><br><span class="line">		<span class="keyword">if</span>(str[i] &gt;= <span class="string">'a'</span> &amp;&amp; str[i] &lt;= <span class="string">'z'</span>)</span><br><span class="line">			total_len += MC[str[i]-<span class="string">'a'</span>].length();</span><br><span class="line">		<span class="comment">//	cout &lt;&lt; total_len &lt;&lt; ' ' &lt;&lt; i &lt;&lt; endl;</span></span><br><span class="line">		++i;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//编译通过，运行正确！</span></span><br><span class="line">	<span class="built_in">string</span> str;</span><br><span class="line">	i=<span class="number">0</span>;</span><br><span class="line">	freopen(<span class="string">"test_without_punctuation.txt"</span>, <span class="string">"r"</span>, stdin);</span><br><span class="line">	<span class="keyword">char</span> c;</span><br><span class="line">	<span class="keyword">while</span>( <span class="built_in">scanf</span>(<span class="string">"%c"</span>, &amp;c) != EOF) &#123;</span><br><span class="line">		str+=c;</span><br><span class="line">		<span class="keyword">if</span>(str[i] &gt;= <span class="string">'a'</span> &amp;&amp; str[i] &lt;= <span class="string">'z'</span>)</span><br><span class="line">			total_len += MC[str[i]-<span class="string">'a'</span>].length();</span><br><span class="line">		<span class="comment">//	cout &lt;&lt; total_len &lt;&lt; ' ' &lt;&lt; i &lt;&lt; endl;</span></span><br><span class="line">		++i;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<p>原因可能在于对string类型进行读入的时候，即使用scanf()时，string不支持对单个字符的读入！</p>
 </span>
       
     </div>
@@ -292,7 +282,7 @@ ifconfig     查看网卡信息route -n     显示现在所有路由ping IP地�
       
         <div class="post-tags">
           
-            <a href="/tags/linux/" rel="tag">#linux</a>
+            <a href="/tags/string类型/" rel="tag">#string类型</a>
           
         </div>
       
@@ -301,16 +291,16 @@ ifconfig     查看网卡信息route -n     显示现在所有路由ping IP地�
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/10/29/2015-10-29-first/" rel="next" title="我的第一个 markdown 文档">
-                <i class="fa fa-chevron-left"></i> 我的第一个 markdown 文档
+              <a href="/2015/12/14/Huffman编码与Morse编码/" rel="next" title="Huffman编码与Morse编码">
+                <i class="fa fa-chevron-left"></i> Huffman编码与Morse编码
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/11/13/资料整理/" rel="prev" title="资料整理">
-                资料整理 <i class="fa fa-chevron-right"></i>
+              <a href="/2015/12/24/签约平安/" rel="prev" title="签约平安">
+                签约平安 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -448,7 +438,7 @@ ifconfig     查看网卡信息route -n     显示现在所有路由ping IP地�
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux网络连接解决方法"><span class="nav-number">1.</span> <span class="nav-text">Linux网络连接解决方法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、char*类型与string类型的相互转换"><span class="nav-number">1.</span> <span class="nav-text">1、char*类型与string类型的相互转换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、一个特殊错误"><span class="nav-number">2.</span> <span class="nav-text">2、一个特殊错误</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>

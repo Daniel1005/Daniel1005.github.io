@@ -65,7 +65,7 @@
 一、Huffman编码1、概念（摘自wikipedia）　　霍夫曼编码（Huffman Coding）是一种编码方式，是一种用于无损数据压缩的熵编码（权编码）演算法。也称“哈夫曼编码”，“赫夫曼编码”。1952年，David A. Huffman在麻省理">
 <meta property="og:image" content="http://hetaotao.net/C:\Users\htt\hexo\source\uploads\HuffmanTree.png">
 <meta property="og:image" content="http://hetaotao.net/C:\Users\htt\hexo\source\uploads\Morse code.png">
-<meta property="og:updated_time" content="2015-12-14T02:52:18.708Z">
+<meta property="og:updated_time" content="2015-12-24T08:58:00.973Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Huffman编码与Morse编码">
 <meta name="twitter:description" content="最近做课程设计，接触到了Huffman编码与Morse编码。在此总结，分享。之前认为编码是个很神奇的存在，现在能够用代码实现，感觉还是很开心的！
@@ -268,6 +268,7 @@
         <span itemprop="articleBody"><p>最近做课程设计，接触到了Huffman编码与Morse编码。在此总结，分享。之前认为编码是个很神奇的存在，现在能够用代码实现，感觉还是很开心的！</p>
 <h1 id="一、Huffman编码">一、Huffman编码</h1><h2 id="1、概念（摘自wikipedia）">1、概念（摘自<a href="https://zh.wikipedia.org/wiki/%E9%9C%8D%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81" target="_blank" rel="external">wikipedia</a>）</h2><p>　　霍夫曼编码（Huffman Coding）是一种编码方式，是一种用于无损数据压缩的熵编码（权编码）演算法。也称“哈夫曼编码”，“赫夫曼编码”。1952年，David A. Huffman在麻省理工攻读博士时所发明的，并发表于《一种构建极小多馀编码的方法》（A Method for the Construction of Minimum-Redundancy Codes）一文。</p>
 <p>　　在计算机资料处理中，霍夫曼编码使用变长编码表对源符号（如文件中的一个字母）进行编码，其中变长编码表是通过一种评估来源符号出现机率的方法得到的，出现机率高的字母使用较短的编码，反之出现机率低的则使用较长的编码，这便使编码之后的字符串的平均长度、期望值降低，从而达到无损压缩数据的目的。</p>
+<a id="more"></a>
 <p>　　例如，在英文中，e的出现机率最高，而z的出现概率则最低。当利用霍夫曼编码对一篇英文进行压缩时，e极有可能用一个位元来表示，而z则可能花去25个位元（不是26）。用普通的表示方法时，每个英文字母均占用一个字节，即8个位元。二者相比，e使用了一般编码的1/8的长度，z则使用了3倍多。倘若我们能实现对于英文中各个字母出现概率的较准确的估算，就可以大幅度提高无损压缩的比例。</p>
 <p>　　霍夫曼树又称最优二叉树，是一种带权路径长度最短的二叉树。所谓树的带权路径长度，就是树中所有的叶结点的权值乘上其到根结点的路径长度（若根结点为0层，叶结点到根结点的路径长度为叶结点的层数）。树的路径长度是从树根到每一结点的路径长度之和，记为WPL=（W1<em>L1+W2</em>L2+W3<em>L3+…+Wn</em>Ln），N个权值Wi（i=1,2,…n）构成一棵有N个叶结点的二叉树，相应的叶结点的路径长度为Li（i=1,2,…n）。可以证明霍夫曼树的WPL是最小的。<br>  <div align="center"><br>  <img src="C:\Users\htt\hexo\source\uploads\HuffmanTree.png"><br>  </div></p>
 <h2 id="2、算法">2、算法</h2><p>构造huffman树的哈夫曼算法如下：</p>
@@ -306,6 +307,10 @@
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/12/14/string类型使用小结/" rel="prev" title="string类型使用小结">
+                string类型使用小结 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -373,21 +378,21 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-count">9</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-count">6</span>
               <span class="site-state-item-name">分類</span>
               </a>
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-count">8</span>
               <span class="site-state-item-name">標籤</span>
               </a>
           </div>
