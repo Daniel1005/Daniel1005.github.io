@@ -37,7 +37,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="未分类," />
+  <meta name="keywords" content="ceph," />
 
 
 
@@ -55,35 +55,16 @@
 
 
 
-<meta name="description" content="据说这是一个很好用的标记型的文本编辑器，能够很好地提高写博客、写代码文档的速率，所以拿来玩玩。以下是测试：
-
-1. 这是公式　　质能守恒公式$$E = mc^2$$
-　　其他公式
-
-自然数求和公式$$ \sum_{i=1}^n n = 1+2+3+…+n = n(n-1)/2$$ 
-自然数平方求和公式$$ \sum_{i=1}^n n^2 = 1^2+2^2+3^2+…+n^2 = \frac{n">
+<meta name="description" content="ceph集群中的心跳机制研究基于Ceph 0.94.5版本，进行Ceph集群中的心跳机制进行研究。在ceph中，心跳机制通过ping来实现，用来作为集群中故障检测的方法。分为两类：osd与osd之间的心跳，osd与mon之间的心跳。下面去一探究竟。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="我的第一个 markdown 文档">
-<meta property="og:url" content="http://hetaotao.net/2015/10/29/2015-10-29-first/index.html">
+<meta property="og:title" content="ceph heartbeat">
+<meta property="og:url" content="http://hetaotao.net/2017/09/06/ceph-heartbeat/index.html">
 <meta property="og:site_name" content="Daniel Blog">
-<meta property="og:description" content="据说这是一个很好用的标记型的文本编辑器，能够很好地提高写博客、写代码文档的速率，所以拿来玩玩。以下是测试：
-
-1. 这是公式　　质能守恒公式$$E = mc^2$$
-　　其他公式
-
-自然数求和公式$$ \sum_{i=1}^n n = 1+2+3+…+n = n(n-1)/2$$ 
-自然数平方求和公式$$ \sum_{i=1}^n n^2 = 1^2+2^2+3^2+…+n^2 = \frac{n">
-<meta property="og:image" content="https://www.zybuluo.com/static/img/file-list.png">
-<meta property="og:updated_time" content="2015-10-31T04:56:34.640Z">
+<meta property="og:description" content="ceph集群中的心跳机制研究基于Ceph 0.94.5版本，进行Ceph集群中的心跳机制进行研究。在ceph中，心跳机制通过ping来实现，用来作为集群中故障检测的方法。分为两类：osd与osd之间的心跳，osd与mon之间的心跳。下面去一探究竟。">
+<meta property="og:updated_time" content="2017-09-10T17:34:30.999Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我的第一个 markdown 文档">
-<meta name="twitter:description" content="据说这是一个很好用的标记型的文本编辑器，能够很好地提高写博客、写代码文档的速率，所以拿来玩玩。以下是测试：
-
-1. 这是公式　　质能守恒公式$$E = mc^2$$
-　　其他公式
-
-自然数求和公式$$ \sum_{i=1}^n n = 1+2+3+…+n = n(n-1)/2$$ 
-自然数平方求和公式$$ \sum_{i=1}^n n^2 = 1^2+2^2+3^2+…+n^2 = \frac{n">
+<meta name="twitter:title" content="ceph heartbeat">
+<meta name="twitter:description" content="ceph集群中的心跳机制研究基于Ceph 0.94.5版本，进行Ceph集群中的心跳机制进行研究。在ceph中，心跳机制通过ping来实现，用来作为集群中故障检测的方法。分为两类：osd与osd之间的心跳，osd与mon之间的心跳。下面去一探究竟。">
 
 
 
@@ -95,7 +76,7 @@
   };
 </script>
 
-  <title> 我的第一个 markdown 文档 | Daniel Blog </title>
+  <title> ceph heartbeat | Daniel Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh_Hans">
@@ -231,7 +212,7 @@
             
             
               
-                我的第一个 markdown 文档
+                ceph heartbeat
               
             
           </h1>
@@ -240,8 +221,8 @@
         <div class="post-meta">
           <span class="post-time">
             發表於
-            <time itemprop="dateCreated" datetime="2015-10-29T17:07:01+08:00" content="2015-10-29">
-              2015-10-29
+            <time itemprop="dateCreated" datetime="2017-09-06T23:25:17+08:00" content="2017-09-06">
+              2017-09-06
             </time>
           </span>
 
@@ -250,8 +231,8 @@
               &nbsp; | &nbsp; 分類於
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/未分类/" itemprop="url" rel="index">
-                    <span itemprop="name">未分类</span>
+                  <a href="/categories/ceph/" itemprop="url" rel="index">
+                    <span itemprop="name">ceph</span>
                   </a>
                 </span>
 
@@ -279,53 +260,16 @@
       
 
       
-        <span itemprop="articleBody"><p>据说这是一个很好用的标记型的<strong>文本编辑器</strong>，能够很好地提高<em>写博客、写代码文档</em>的速率，所以拿来玩玩。<br>以下是测试：</p>
-<hr>
-<h3 id="1-_这是公式">1. 这是公式</h3><h4 id="质能守恒公式">　　<strong>质能守恒公式</strong></h4><p>$$E = mc^2$$</p>
-<h4 id="其他公式">　　<strong>其他公式</strong></h4><blockquote>
-<ul>
-<li><strong>自然数求和公式</strong><br>$$ \sum_{i=1}^n n = 1+2+3+…+n = n(n-1)/2$$ </li>
-<li><strong>自然数平方求和公式</strong><br>$$ \sum_{i=1}^n n^2 = 1^2+2^2+3^2+…+n^2 = \frac{n(2n-1)(n-1)}{6}$$</li>
-</ul>
-</blockquote>
+        <span itemprop="articleBody"><h1 id="ceph集群中的心跳机制研究">ceph集群中的心跳机制研究</h1><p>基于Ceph 0.94.5版本，进行Ceph集群中的心跳机制进行研究。<br>在ceph中，心跳机制通过ping来实现，用来作为集群中故障检测的方法。分为两类：osd与osd之间的心跳，osd与mon之间的心跳。下面去一探究竟。</p>
 <a id="more"></a>
-<h3 id="2-_这是表格">2. 这是表格</h3><table>
-<thead>
-<tr>
-<th style="text-align:center">公司</th>
-<th>宣讲会</th>
-<th>笔试</th>
-<th>面试</th>
-<th>状态</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">腾讯</td>
-<td></td>
-<td></td>
-<td>$\alpha$</td>
-</tr>
-<tr>
-<td style="text-align:center">百度</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align:center">平安科技</td>
-<td>2015年10月25日 西电</td>
-<td>2015年10月29日</td>
-</tr>
-</tbody>
-</table>
-<h3 id="3-_这是代码">3. 这是代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;iostream&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;vector&gt;</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a[] = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; data(a, a+<span class="number">5</span>);</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;::iterator iter = data.begin();</span><br><span class="line">    <span class="keyword">for</span>(; iter != data.end(); ++iter)</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; *iter &lt;&lt; <span class="string">' '</span>;</span><br><span class="line">    cont &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="4-_这是图片">4. 这是图片</h3><p><img src="https://www.zybuluo.com/static/img/file-list.png" alt="pic 1"></p>
-<h3 id="5-_这是待办事项">5. 这是待办事项</h3><ul>
-<li>熟悉markdowna编辑工具</li>
-<li>熟悉Github上代码的push/pull等操作</li>
-<li>查看Github上的项目，找出自己感兴趣的</li>
-</ul>
+<h2 id="osd与osd之间的心跳">osd与osd之间的心跳</h2><p>1、相邻osd之间会维持心跳，默认情况下，时间间隔是6s。<br>2、一个osd上面的pg所关联的osd之间存在着心跳。<br>所谓相邻，即根据osd的ID，该osd前一个活着的osd和后一个活着的osd。</p>
+<p>如果一个osd在20s的grace时间内，没有收到来自邻居osd的heartbeat，那么它认为这个邻居osd down，并且汇报给monitor。<br>如果来自不同主机的2个osd报告同一个osd down，那么monitor承认这个osd down。</p>
+<p>如下，从update_heartbeat_peers这个函数可以看出第2个选peers的方式。即有效的acting_set和up_set中出现的osd将被加入peers，但是涉及到 map pg_shard_t,pg_info_t &gt; 的加入方式并没有看懂，进一步研究。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> PG::update_heartbeat_peers()</span><br><span class="line">&#123;</span><br><span class="line">  assert(is_locked());</span><br><span class="line"></span><br><span class="line">  <span class="built_in">set</span>&lt;<span class="keyword">int</span>&gt; new_peers;</span><br><span class="line">  <span class="keyword">if</span> (is_primary()) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">unsigned</span> i=<span class="number">0</span>; i&lt;acting.size(); i++) &#123;</span><br><span class="line">      <span class="keyword">if</span> (acting[i] != CRUSH_ITEM_NONE)</span><br><span class="line">	new_peers.insert(acting[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">unsigned</span> i=<span class="number">0</span>; i&lt;up.size(); i++) &#123;</span><br><span class="line">      <span class="keyword">if</span> (up[i] != CRUSH_ITEM_NONE)</span><br><span class="line">	new_peers.insert(up[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">map</span>&lt;<span class="keyword">pg_shard_t</span>,<span class="keyword">pg_info_t</span>&gt;::iterator p = peer_info.begin();</span><br><span class="line">	 p != peer_info.end();</span><br><span class="line">	 ++p)</span><br><span class="line">      new_peers.insert(p-&gt;first.osd);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">bool</span> need_update = <span class="keyword">false</span>;</span><br><span class="line">  heartbeat_peer_lock.Lock();</span><br><span class="line">  <span class="keyword">if</span> (new_peers == heartbeat_peers) &#123;</span><br><span class="line">    dout(<span class="number">10</span>) &lt;&lt; <span class="string">"update_heartbeat_peers "</span> &lt;&lt; heartbeat_peers &lt;&lt; <span class="string">" unchanged"</span> &lt;&lt; dendl;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    dout(<span class="number">10</span>) &lt;&lt; <span class="string">"update_heartbeat_peers "</span> &lt;&lt; heartbeat_peers &lt;&lt; <span class="string">" -&gt; "</span> &lt;&lt; new_peers &lt;&lt; dendl;</span><br><span class="line">    heartbeat_peers.swap(new_peers);</span><br><span class="line">    need_update = <span class="keyword">true</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  heartbeat_peer_lock.Unlock();</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (need_update)</span><br><span class="line">    osd-&gt;need_heartbeat_peer_update();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="osd与mon之间的心跳">osd与mon之间的心跳</h2><p>如果一个osd无法peer其他所有的osd，osd每30s ping一次monitor，并且获取最新的cluster map信息。<br>如果osd没有主动报告monitor，那么monitor会在mon_osd_report_time时间后认为osd down。对应2个时间mon_osd_report_interval_min, mon_osd_report_interval_max。在达到interval_max的时候，不管有没有改变，osd都会主动上报给monitor。</p>
+<p>osd在如下几种情况下会主动上报monitor：<br>有失效的情况，pg状态的改变，up_thru的改变，osd在boot的5s时间以内。<br>如果osd发现他的peers为空的时候，也会主动发送hb给monitor，并且获取新的osdmap（osdmap_subscribe）。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> HeartbeatInfo &#123;</span><br><span class="line">    <span class="keyword">int</span> peer;           <span class="comment">///&lt; peer</span></span><br><span class="line">    ConnectionRef con_front;   <span class="comment">///&lt; peer connection (front)</span></span><br><span class="line">    ConnectionRef con_back;    <span class="comment">///&lt; peer connection (back)</span></span><br><span class="line">    <span class="keyword">utime_t</span> <span class="keyword">first_t</span>x;   <span class="comment">///&lt; time we sent our first ping request</span></span><br><span class="line">    <span class="keyword">utime_t</span> <span class="keyword">last_t</span>x;    <span class="comment">///&lt; last time we sent a ping request</span></span><br><span class="line">    <span class="keyword">utime_t</span> last_rx_front;  <span class="comment">///&lt; last time we got a ping reply on the front side</span></span><br><span class="line">    <span class="keyword">utime_t</span> last_rx_back;   <span class="comment">///&lt; last time we got a ping reply on the back side</span></span><br><span class="line">    <span class="keyword">epoch_t</span> epoch;      <span class="comment">///&lt; most recent epoch we wanted this peer</span></span><br><span class="line">   ......</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>HeartbeatInfo结构体中包括：con_front表示前向的连接，即public network的连接，con_back表示后向连接，即cluster network的连接。当一个osd发送ping心跳报文的时候，会通过后向连接发送，如果前向连接有效，也通过前向连接发送，就是说正常情况下会同时发2个ping。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">i-&gt;second.con_back-&gt;send_message(<span class="keyword">new</span> MOSDPing(monc-&gt;get_fsid(),</span><br><span class="line">				  service.get_osdmap()-&gt;get_epoch(),</span><br><span class="line">				  MOSDPing::PING,</span><br><span class="line">				  now));</span><br><span class="line"></span><br><span class="line">   <span class="keyword">if</span> (i-&gt;second.con_front)</span><br><span class="line">     i-&gt;second.con_front-&gt;send_message(<span class="keyword">new</span> MOSDPing(monc-&gt;get_fsid(),</span><br><span class="line">				     service.get_osdmap()-&gt;get_epoch(),</span><br><span class="line">					     MOSDPing::PING,</span><br><span class="line">					     now));</span><br></pre></td></tr></table></figure></p>
+<p>未完待续~ ~ ~<br>2017年9月11日01:32:24</p>
 </span>
       
     </div>
@@ -334,7 +278,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/未分类/" rel="tag">#未分类</a>
+            <a href="/tags/ceph/" rel="tag">#ceph</a>
           
         </div>
       
@@ -343,13 +287,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/09/03/storage/" rel="next" title="storage">
+                <i class="fa fa-chevron-left"></i> storage
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2015/11/05/linux断网急救/" rel="prev" title="linux网络连接">
-                linux网络连接 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -486,7 +430,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-_这是公式"><span class="nav-number">1.</span> <span class="nav-text">1. 这是公式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#质能守恒公式"><span class="nav-number">1.1.</span> <span class="nav-text">　　质能守恒公式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其他公式"><span class="nav-number">1.2.</span> <span class="nav-text">　　其他公式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-_这是表格"><span class="nav-number">2.</span> <span class="nav-text">2. 这是表格</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-_这是代码"><span class="nav-number">3.</span> <span class="nav-text">3. 这是代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-_这是图片"><span class="nav-number">4.</span> <span class="nav-text">4. 这是图片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-_这是待办事项"><span class="nav-number">5.</span> <span class="nav-text">5. 这是待办事项</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ceph集群中的心跳机制研究"><span class="nav-number">1.</span> <span class="nav-text">ceph集群中的心跳机制研究</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#osd与osd之间的心跳"><span class="nav-number">1.1.</span> <span class="nav-text">osd与osd之间的心跳</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#osd与mon之间的心跳"><span class="nav-number">1.2.</span> <span class="nav-text">osd与mon之间的心跳</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
