@@ -55,22 +55,22 @@
 
 
 
-<meta name="description" content="Linux网络连接解决方法因为linux网络编程实验需要，需要对linux虚拟机进行联网。但是其中遇到了各种问题，尝试了很多解决方法。拿出来总结、分享一下。
+<meta name="description" content="Linux网络连接问题解决因为linux网络编程实验需要，需要对linux虚拟机进行联网。但是其中遇到了各种问题，尝试了很多解决方法。拿出来总结、分享一下。
 
 1、基本指令与配置：
 ifconfig     查看网卡信息route -n     显示现在所有路由ping IP地址（或者域名）     测试网络连接状况sudo /etc/init.d/network restart     重启网络">
 <meta property="og:type" content="article">
-<meta property="og:title" content="linux网络连接">
+<meta property="og:title" content="linux网络连接问题解决">
 <meta property="og:url" content="http://hetaotao.net/2015/11/05/linux断网急救/index.html">
 <meta property="og:site_name" content="Daniel Blog">
-<meta property="og:description" content="Linux网络连接解决方法因为linux网络编程实验需要，需要对linux虚拟机进行联网。但是其中遇到了各种问题，尝试了很多解决方法。拿出来总结、分享一下。
+<meta property="og:description" content="Linux网络连接问题解决因为linux网络编程实验需要，需要对linux虚拟机进行联网。但是其中遇到了各种问题，尝试了很多解决方法。拿出来总结、分享一下。
 
 1、基本指令与配置：
 ifconfig     查看网卡信息route -n     显示现在所有路由ping IP地址（或者域名）     测试网络连接状况sudo /etc/init.d/network restart     重启网络">
-<meta property="og:updated_time" content="2015-11-05T18:16:26.514Z">
+<meta property="og:updated_time" content="2017-10-15T05:29:04.300Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="linux网络连接">
-<meta name="twitter:description" content="Linux网络连接解决方法因为linux网络编程实验需要，需要对linux虚拟机进行联网。但是其中遇到了各种问题，尝试了很多解决方法。拿出来总结、分享一下。
+<meta name="twitter:title" content="linux网络连接问题解决">
+<meta name="twitter:description" content="Linux网络连接问题解决因为linux网络编程实验需要，需要对linux虚拟机进行联网。但是其中遇到了各种问题，尝试了很多解决方法。拿出来总结、分享一下。
 
 1、基本指令与配置：
 ifconfig     查看网卡信息route -n     显示现在所有路由ping IP地址（或者域名）     测试网络连接状况sudo /etc/init.d/network restart     重启网络">
@@ -85,7 +85,7 @@ ifconfig     查看网卡信息route -n     显示现在所有路由ping IP地�
   };
 </script>
 
-  <title> linux网络连接 | Daniel Blog </title>
+  <title> linux网络连接问题解决 | Daniel Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh_Hans">
@@ -221,7 +221,7 @@ ifconfig     查看网卡信息route -n     显示现在所有路由ping IP地�
             
             
               
-                linux网络连接
+                linux网络连接问题解决
               
             
           </h1>
@@ -269,7 +269,7 @@ ifconfig     查看网卡信息route -n     显示现在所有路由ping IP地�
       
 
       
-        <span itemprop="articleBody"><h1 id="Linux网络连接解决方法">Linux网络连接解决方法</h1><p>因为linux网络编程实验需要，需要对linux虚拟机进行联网。但是其中遇到了各种问题，尝试了很多解决方法。拿出来总结、分享一下。</p>
+        <span itemprop="articleBody"><h1 id="Linux网络连接问题解决">Linux网络连接问题解决</h1><p>因为linux网络编程实验需要，需要对linux虚拟机进行联网。但是其中遇到了各种问题，尝试了很多解决方法。拿出来总结、分享一下。</p>
 <hr>
 <p><strong>1、基本指令与配置：</strong></p>
 <p>ifconfig     查看网卡信息<br>route -n     显示现在所有路由<br>ping IP地址（或者域名）     测试网络连接状况<br>sudo /etc/init.d/network restart     重启网络</p>
@@ -281,9 +281,9 @@ ifconfig     查看网卡信息route -n     显示现在所有路由ping IP地�
 <p> /etc/network/interfaces</p>
 <p>默认的环回地址<br>auto lo<br>iface lo inet loopback<br>静态配置<br>auto eth0<br>iface eth0 inet static<br>address 192.168.2.120（例子）<br>gateway 192.168.2.1<br>netmask 255.255.255.0<br>动态配置<br>auto eth0<br>iface eth0 inet dhcp</p>
 <p><strong>3、网络不通的基本排错步骤（从上往下）</strong></p>
-<p>ping 127.0.0.1　　　　　　　ping的通说明tcp协议栈没有问题<br>ping 主机地址　　　　　　　ping的通说明网卡没有问题<br>ping 路由器默认网关 　　　　ping的通说明包可以到达路由器<br>ping DNS服务器地址<br>卡在那一步，就补哪里</p>
+<p>ping 127.0.0.1　　　　　　　ping的通说明tcp协议栈没有问题<br>ping 主机地址　　　　　　　ping的通说明网卡没有问题<br>ping 路由器默认网关 　　　　ping的通说明包可以到达路由器<br>ping DNS服务器地址<br>卡在哪一步，就补哪里</p>
 <p><strong>4、说明</strong></p>
-<p>调试的最后发现，插上网线，即使没有联网，都会使虚拟机IP识别为网线的IP，所以导致ping不通主机和外网。兼职是奇怪！！另外，本人对这方面也是新手，发现问题多多交流，欢迎在本人博客或者微博留言。</p>
+<p>本人对这方面也是新手，发现问题多多交流，欢迎在本人博客或者微博留言。</p>
 </span>
       
     </div>
@@ -309,8 +309,8 @@ ifconfig     查看网卡信息route -n     显示现在所有路由ping IP地�
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/11/13/资料整理/" rel="prev" title="资料整理">
-                资料整理 <i class="fa fa-chevron-right"></i>
+              <a href="/2015/11/17/strcpy与memcpy的实现/" rel="prev" title="strcpy与memcpy的实现">
+                strcpy与memcpy的实现 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -379,21 +379,21 @@ ifconfig     查看网卡信息route -n     显示现在所有路由ping IP地�
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-count">10</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-count">10</span>
               <span class="site-state-item-name">分類</span>
               </a>
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-count">12</span>
               <span class="site-state-item-name">標籤</span>
               </a>
           </div>
@@ -448,7 +448,7 @@ ifconfig     查看网卡信息route -n     显示现在所有路由ping IP地�
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux网络连接解决方法"><span class="nav-number">1.</span> <span class="nav-text">Linux网络连接解决方法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux网络连接问题解决"><span class="nav-number">1.</span> <span class="nav-text">Linux网络连接问题解决</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
