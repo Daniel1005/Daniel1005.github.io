@@ -135,7 +135,7 @@
             
               <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
             
-            首页
+            首頁
           </a>
         </li>
       
@@ -145,7 +145,7 @@
             
               <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
             
-            分类
+            分類
           </a>
         </li>
       
@@ -155,7 +155,7 @@
             
               <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
             
-            关于
+            關於
           </a>
         </li>
       
@@ -165,7 +165,7 @@
             
               <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
             
-            归档
+            歸檔
           </a>
         </li>
       
@@ -175,7 +175,7 @@
             
               <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
             
-            标签
+            標籤
           </a>
         </li>
       
@@ -213,6 +213,103 @@
             
             
               
+                <a class="post-title-link" href="/2015/11/05/linux断网急救/" itemprop="url">
+                  linux网络连接问题解决
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            發表於
+            <time itemprop="dateCreated" datetime="2015-11-05T13:22:48+08:00" content="2015-11-05">
+              2015-11-05
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分類於
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <h1 id="Linux网络连接问题解决">Linux网络连接问题解决</h1><p>因为linux网络编程实验需要，需要对linux虚拟机进行联网。但是其中遇到了各种问题，尝试了很多解决方法。拿出来总结、分享一下。</p>
+<hr>
+<p><strong>1、基本指令与配置：</strong></p>
+<p>ifconfig     查看网卡信息<br>route -n     显示现在所有路由<br>ping IP地址（或者域名）     测试网络连接状况<br>sudo /etc/init.d/network restart     重启网络</p>
+<p>网关配置：增加网关<br>前提是网关出现在route -n 的结果中，否则报错，进程不存在<br>sudo route add default gw 169.254.0.1</p>
+<p>dns服务器配置<br>/etc/resolv.conf</p>
+<p>dns生效优先级配置<br>dns 与 files（指/etc/hosts）顺序，让dns在前面的优先生效<br>grep hosts /etc/nsswitch.conf<br>/etc/nsswitch.conf<br>/etc/hosts</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/11/05/linux断网急救/#more" rel="contents">
+              閱讀全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
                 <a class="post-title-link" href="/2015/10/29/2015-10-29-first/" itemprop="url">
                   我的第一个 markdown 文档
                 </a>
@@ -223,7 +320,7 @@
 
         <div class="post-meta">
           <span class="post-time">
-            发表于
+            發表於
             <time itemprop="dateCreated" datetime="2015-10-29T17:07:01+08:00" content="2015-10-29">
               2015-10-29
             </time>
@@ -231,7 +328,7 @@
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
+              &nbsp; | &nbsp; 分類於
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/其他/" itemprop="url" rel="index">
@@ -275,7 +372,7 @@
 </blockquote>
           <div class="post-more-link text-center">
             <a class="btn" href="/2015/10/29/2015-10-29-first/#more" rel="contents">
-              阅读全文 &raquo;
+              閱讀全文 &raquo;
             </a>
           </div>
         
@@ -341,22 +438,22 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">11</span>
-              <span class="site-state-item-name">日志</span>
+              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-name">文章</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
               <span class="site-state-item-count">9</span>
-              <span class="site-state-item-name">分类</span>
+              <span class="site-state-item-name">分類</span>
               </a>
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
               <span class="site-state-item-count">10</span>
-              <span class="site-state-item-name">标签</span>
+              <span class="site-state-item-name">標籤</span>
               </a>
           </div>
 
@@ -416,7 +513,7 @@
         <div class="copyright" >
   
   &copy;  2015 - 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="icon-next-heart fa fa-heart"></i>
   </span>
@@ -424,11 +521,11 @@
 </div>
 
 <div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 強力驅動
 </div>
 
 <div class="theme-info">
-  主题 -
+  主題 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Mist
   </a>

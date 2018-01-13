@@ -135,7 +135,7 @@
             
               <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
             
-            首页
+            首頁
           </a>
         </li>
       
@@ -145,7 +145,7 @@
             
               <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
             
-            分类
+            分類
           </a>
         </li>
       
@@ -155,7 +155,7 @@
             
               <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
             
-            关于
+            關於
           </a>
         </li>
       
@@ -165,7 +165,7 @@
             
               <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
             
-            归档
+            歸檔
           </a>
         </li>
       
@@ -175,7 +175,7 @@
             
               <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
             
-            标签
+            標籤
           </a>
         </li>
       
@@ -213,6 +213,97 @@
             
             
               
+                <a class="post-title-link" href="/2017/12/20/ceph-heartbeat3/" itemprop="url">
+                  ceph-heartbeat3
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            發表於
+            <time itemprop="dateCreated" datetime="2017-12-20T21:30:58+08:00" content="2017-12-20">
+              2017-12-20
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分類於
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/ceph/" itemprop="url" rel="index">
+                    <span itemprop="name">ceph</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <h1 id="ceph集群中的心跳机制研究3">ceph集群中的心跳机制研究3</h1><p>之前研究了Ceph集群的心跳机制和故障检测机制，那从心跳机制到故障判断的过程又是什么样的？因为涉及多个源代码文件，并且函数调用嵌套很多层，这里看起来不是那么清晰，所以这也是我最后要讲的地方。</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/12/20/ceph-heartbeat3/#more" rel="contents">
+              閱讀全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
                 <a class="post-title-link" href="/2017/11/24/ceph-heartbeat2/" itemprop="url">
                   ceph-heartbeat2
                 </a>
@@ -223,7 +314,7 @@
 
         <div class="post-meta">
           <span class="post-time">
-            发表于
+            發表於
             <time itemprop="dateCreated" datetime="2017-11-24T20:09:50+08:00" content="2017-11-24">
               2017-11-24
             </time>
@@ -231,7 +322,7 @@
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
+              &nbsp; | &nbsp; 分類於
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/ceph/" itemprop="url" rel="index">
@@ -267,7 +358,7 @@
           <h1 id="ceph集群中的心跳机制研究2">ceph集群中的心跳机制研究2</h1><p>我知道Ceph的基石是RADOS，而RADOS的含义是Reliable Autonomic Distributed Object Storage，而Autonomic（自治）的实现则依赖于Ceph中很好的故障检测机制。<br>下面进入正题。</p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2017/11/24/ceph-heartbeat2/#more" rel="contents">
-              阅读全文 &raquo;
+              閱讀全文 &raquo;
             </a>
           </div>
         
@@ -314,7 +405,7 @@
 
         <div class="post-meta">
           <span class="post-time">
-            发表于
+            發表於
             <time itemprop="dateCreated" datetime="2017-09-06T23:25:17+08:00" content="2017-09-06">
               2017-09-06
             </time>
@@ -322,7 +413,7 @@
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
+              &nbsp; | &nbsp; 分類於
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/ceph/" itemprop="url" rel="index">
@@ -358,7 +449,7 @@
           <h1 id="ceph集群中的心跳机制研究">ceph集群中的心跳机制研究</h1><p>基于Ceph 0.94.5版本，进行Ceph集群中的心跳机制进行研究。<br>在ceph中，心跳机制通过ping来实现，用来作为集群中故障检测的方法。分为两类：osd与osd之间的心跳，osd与mon之间的心跳。下面去一探究竟。</p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2017/09/06/ceph-heartbeat/#more" rel="contents">
-              阅读全文 &raquo;
+              閱讀全文 &raquo;
             </a>
           </div>
         
@@ -405,7 +496,7 @@
 
         <div class="post-meta">
           <span class="post-time">
-            发表于
+            發表於
             <time itemprop="dateCreated" datetime="2017-09-03T11:02:43+08:00" content="2017-09-03">
               2017-09-03
             </time>
@@ -413,7 +504,7 @@
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
+              &nbsp; | &nbsp; 分類於
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/storage/" itemprop="url" rel="index">
@@ -449,7 +540,7 @@
           <h1 id="A_mind_map_about_storage">A mind map about storage</h1><p>我个人现在的工作方向是云存储，这要求我既对目前接触的分布式存储方案、技术（<a href="http://docs.ceph.com">Ceph</a>）有深入的研究，对于存储这个较大的领域的一些基本原理、通用性、本质性的东西也很需要有所了解。先贴一张自己总结的思维导图，以后会基于此图进行补充或者细化。</p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2017/09/03/storage/#more" rel="contents">
-              阅读全文 &raquo;
+              閱讀全文 &raquo;
             </a>
           </div>
         
@@ -496,7 +587,7 @@
 
         <div class="post-meta">
           <span class="post-time">
-            发表于
+            發表於
             <time itemprop="dateCreated" datetime="2017-08-27T15:24:38+08:00" content="2017-08-27">
               2017-08-27
             </time>
@@ -504,7 +595,7 @@
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
+              &nbsp; | &nbsp; 分類於
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/algorithm/" itemprop="url" rel="index">
@@ -540,7 +631,7 @@
           <p>日常工作中经常会遇到哈希算法，出于好奇想多了解一些关于哈希的理论。<br>在Ceph中（一种分布式存储系统），从Object到PG的映射就是采用了一种哈希算法，名为“rjenkins”。所以就是从这里作为切入点，看了一些资料。</p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2017/08/27/hash-function/#more" rel="contents">
-              阅读全文 &raquo;
+              閱讀全文 &raquo;
             </a>
           </div>
         
@@ -587,7 +678,7 @@
 
         <div class="post-meta">
           <span class="post-time">
-            发表于
+            發表於
             <time itemprop="dateCreated" datetime="2015-12-24T16:38:47+08:00" content="2015-12-24">
               2015-12-24
             </time>
@@ -595,7 +686,7 @@
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
+              &nbsp; | &nbsp; 分類於
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/杂谈/" itemprop="url" rel="index">
@@ -631,7 +722,7 @@
           <p>　　9月24号，成功签约平安科技，也算是我个人的一个里程碑吧。个人对这个offer比较满意，不管是公司前景、发展机会或者是薪资待遇。这个总结很早就写好了，但是一直在等待公司的确认信，所以也没有发出来。现在和大家分享一下。<br>　　最早知道平安科技是在本专业的新老生交流会上，有直系的学长签到了那里。因为关注比较早，后来查了资料又觉得不错，所以在九月初校招信息一出来就通过邮箱投了简历。说句心里话，其实，刚开始投简历的时候心里挺没底，就很担心一份简历出去了就再也没有消息了，尤其是自己还比较喜欢的公司。接下来，网测-一面-二面-HR面。</p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2015/12/24/签约平安/#more" rel="contents">
-              阅读全文 &raquo;
+              閱讀全文 &raquo;
             </a>
           </div>
         
@@ -678,7 +769,7 @@
 
         <div class="post-meta">
           <span class="post-time">
-            发表于
+            發表於
             <time itemprop="dateCreated" datetime="2015-12-14T11:00:56+08:00" content="2015-12-14">
               2015-12-14
             </time>
@@ -686,7 +777,7 @@
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
+              &nbsp; | &nbsp; 分類於
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/c/" itemprop="url" rel="index">
@@ -724,7 +815,7 @@
 <h2 id="1、char*类型与string类型的相互转换">1、char*类型与string类型的相互转换</h2><p>从char*到string，需要调用string类的构造函数<br>　　如：char* a; string s(a);<br>从string到char*，需要使用string类的c_str()函数<br>　　如：string s = “hello”,  const char* c = s.c_str();</p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2015/12/14/string类型使用小结/#more" rel="contents">
-              阅读全文 &raquo;
+              閱讀全文 &raquo;
             </a>
           </div>
         
@@ -771,7 +862,7 @@
 
         <div class="post-meta">
           <span class="post-time">
-            发表于
+            發表於
             <time itemprop="dateCreated" datetime="2015-12-14T09:31:44+08:00" content="2015-12-14">
               2015-12-14
             </time>
@@ -779,7 +870,7 @@
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
+              &nbsp; | &nbsp; 分類於
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/编码/" itemprop="url" rel="index">
@@ -817,7 +908,7 @@
 <p>　　在计算机资料处理中，霍夫曼编码使用变长编码表对源符号（如文件中的一个字母）进行编码，其中变长编码表是通过一种评估来源符号出现机率的方法得到的，出现机率高的字母使用较短的编码，反之出现机率低的则使用较长的编码，这便使编码之后的字符串的平均长度、期望值降低，从而达到无损压缩数据的目的。</p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2015/12/14/Huffman编码与Morse编码/#more" rel="contents">
-              阅读全文 &raquo;
+              閱讀全文 &raquo;
             </a>
           </div>
         
@@ -864,7 +955,7 @@
 
         <div class="post-meta">
           <span class="post-time">
-            发表于
+            發表於
             <time itemprop="dateCreated" datetime="2015-11-30T15:48:21+08:00" content="2015-11-30">
               2015-11-30
             </time>
@@ -872,7 +963,7 @@
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
+              &nbsp; | &nbsp; 分類於
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/杂谈/" itemprop="url" rel="index">
@@ -908,7 +999,7 @@
           <h1 id="校招总结"><center>校招总结</cencer></h1><p>　　先说一下我的基本情况。<br>　　8月底，开始投简历，开始投的都是一线互联网企业以及一些公司的内推（虽然并没有收到任何面试通知）。<br>　　9月初，一大波企业都发布了招聘通知，是投简历的高峰期。记得我最多的时候一天投了十几个简历，然后还有各种笔试和网测。<br>　　9月11号，开始参加面试。<br>　　9月24号，拿到深圳平安科技的special offer。<br>　　个人是个技术控，所以在找工作之前就确定自己要找研发类的工作，硬件研发或者软件研发。大学里虽然学的课程里软件和硬件都有，但是在硬件方面的动手太少了，所以也是基本果断的选择了走软件方向。<br>我喜欢提前准备，而且对自己的定位是一二线互联网或者软件公司，所以在找工作的前几个月（2014年11月）就开始准备一些基础的知识，包括：数据结构与算法、C++编程、linux下C编程，oracle数据库，计算机网络。学习的形式是看书、看视频、与同学讨论。然后还有参加数学建模竞赛。我想自己能比较早的找到这份比较满意的工作，很大程度归功于这接近十个月的努力。当然，我想说的是，也是很重要的一方面，从找工作的过程中学习。<br>　　为什么说在找工作的过程中学习？</p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2015/11/30/校招总结/#more" rel="contents">
-              阅读全文 &raquo;
+              閱讀全文 &raquo;
             </a>
           </div>
         
@@ -955,7 +1046,7 @@
 
         <div class="post-meta">
           <span class="post-time">
-            发表于
+            發表於
             <time itemprop="dateCreated" datetime="2015-11-17T23:37:27+08:00" content="2015-11-17">
               2015-11-17
             </time>
@@ -963,7 +1054,7 @@
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
+              &nbsp; | &nbsp; 分類於
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/c/" itemprop="url" rel="index">
@@ -1003,104 +1094,7 @@
 <p>这时程序会崩溃！！</p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2015/11/17/strcpy与memcpy的实现/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                <a class="post-title-link" href="/2015/11/05/linux断网急救/" itemprop="url">
-                  linux网络连接问题解决
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            发表于
-            <time itemprop="dateCreated" datetime="2015-11-05T13:22:48+08:00" content="2015-11-05">
-              2015-11-05
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/linux/" itemprop="url" rel="index">
-                    <span itemprop="name">linux</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <h1 id="Linux网络连接问题解决">Linux网络连接问题解决</h1><p>因为linux网络编程实验需要，需要对linux虚拟机进行联网。但是其中遇到了各种问题，尝试了很多解决方法。拿出来总结、分享一下。</p>
-<hr>
-<p><strong>1、基本指令与配置：</strong></p>
-<p>ifconfig     查看网卡信息<br>route -n     显示现在所有路由<br>ping IP地址（或者域名）     测试网络连接状况<br>sudo /etc/init.d/network restart     重启网络</p>
-<p>网关配置：增加网关<br>前提是网关出现在route -n 的结果中，否则报错，进程不存在<br>sudo route add default gw 169.254.0.1</p>
-<p>dns服务器配置<br>/etc/resolv.conf</p>
-<p>dns生效优先级配置<br>dns 与 files（指/etc/hosts）顺序，让dns在前面的优先生效<br>grep hosts /etc/nsswitch.conf<br>/etc/nsswitch.conf<br>/etc/hosts</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/11/05/linux断网急救/#more" rel="contents">
-              阅读全文 &raquo;
+              閱讀全文 &raquo;
             </a>
           </div>
         
@@ -1166,22 +1160,22 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">11</span>
-              <span class="site-state-item-name">日志</span>
+              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-name">文章</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
               <span class="site-state-item-count">9</span>
-              <span class="site-state-item-name">分类</span>
+              <span class="site-state-item-name">分類</span>
               </a>
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
               <span class="site-state-item-count">10</span>
-              <span class="site-state-item-name">标签</span>
+              <span class="site-state-item-name">標籤</span>
               </a>
           </div>
 
@@ -1241,7 +1235,7 @@
         <div class="copyright" >
   
   &copy;  2015 - 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="icon-next-heart fa fa-heart"></i>
   </span>
@@ -1249,11 +1243,11 @@
 </div>
 
 <div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 強力驅動
 </div>
 
 <div class="theme-info">
-  主题 -
+  主題 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Mist
   </a>
