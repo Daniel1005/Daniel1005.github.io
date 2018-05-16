@@ -55,19 +55,18 @@
 
 
 
-<meta name="description" content="因为之前面试的时候遇见这样的题，今天又遇到了，才想起来，所以拿出来总结一下。
-12345678//strcpy不合格实现char *my_strcpy(char* dst, const char* src) &amp;#123;	assert(dst != NULL);    assert(src != NULL);    char* ret = dst;    while((*dst++ = *src+">
+<meta name="description" content="因为之前面试的时候遇见这样的题，今天又遇到了，才想起来，所以拿出来总结一下。 12345678//strcpy不合格实现char *my_strcpy(char* dst, const char* src) &amp;#123;	assert(dst != NULL);    assert(src != NULL);    char* ret = dst;    while((*dst++ = *src+">
+<meta name="keywords" content="c">
 <meta property="og:type" content="article">
 <meta property="og:title" content="strcpy与memcpy的实现">
 <meta property="og:url" content="http://hetaotao.net/2015/11/17/strcpy与memcpy的实现/index.html">
 <meta property="og:site_name" content="Daniel Blog">
-<meta property="og:description" content="因为之前面试的时候遇见这样的题，今天又遇到了，才想起来，所以拿出来总结一下。
-12345678//strcpy不合格实现char *my_strcpy(char* dst, const char* src) &amp;#123;	assert(dst != NULL);    assert(src != NULL);    char* ret = dst;    while((*dst++ = *src+">
+<meta property="og:description" content="因为之前面试的时候遇见这样的题，今天又遇到了，才想起来，所以拿出来总结一下。 12345678//strcpy不合格实现char *my_strcpy(char* dst, const char* src) &amp;#123;	assert(dst != NULL);    assert(src != NULL);    char* ret = dst;    while((*dst++ = *src+">
+<meta property="og:locale" content="zh_Hans">
 <meta property="og:updated_time" content="2015-11-30T08:14:05.178Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="strcpy与memcpy的实现">
-<meta name="twitter:description" content="因为之前面试的时候遇见这样的题，今天又遇到了，才想起来，所以拿出来总结一下。
-12345678//strcpy不合格实现char *my_strcpy(char* dst, const char* src) &amp;#123;	assert(dst != NULL);    assert(src != NULL);    char* ret = dst;    while((*dst++ = *src+">
+<meta name="twitter:description" content="因为之前面试的时候遇见这样的题，今天又遇到了，才想起来，所以拿出来总结一下。 12345678//strcpy不合格实现char *my_strcpy(char* dst, const char* src) &amp;#123;	assert(dst != NULL);    assert(src != NULL);    char* ret = dst;    while((*dst++ = *src+">
 
 
 
@@ -137,7 +136,7 @@
             
               <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
             
-            首頁
+            Home
           </a>
         </li>
       
@@ -147,7 +146,7 @@
             
               <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
             
-            分類
+            Categories
           </a>
         </li>
       
@@ -157,7 +156,7 @@
             
               <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
             
-            關於
+            About
           </a>
         </li>
       
@@ -167,7 +166,7 @@
             
               <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
             
-            歸檔
+            Archives
           </a>
         </li>
       
@@ -177,7 +176,7 @@
             
               <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
             
-            標籤
+            Tags
           </a>
         </li>
       
@@ -223,7 +222,7 @@
 
         <div class="post-meta">
           <span class="post-time">
-            發表於
+            Posted on
             <time itemprop="dateCreated" datetime="2015-11-17T23:37:27+08:00" content="2015-11-17">
               2015-11-17
             </time>
@@ -231,7 +230,7 @@
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp; 分類於
+              &nbsp; | &nbsp; In
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/c/" itemprop="url" rel="index">
@@ -264,14 +263,14 @@
 
       
         <span itemprop="articleBody"><p>因为之前面试的时候遇见这样的题，今天又遇到了，才想起来，所以拿出来总结一下。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//strcpy不合格实现</span></span><br><span class="line"><span class="keyword">char</span> *my_strcpy(<span class="keyword">char</span>* dst, <span class="keyword">const</span> <span class="keyword">char</span>* src) &#123;</span><br><span class="line">	assert(dst != NULL);</span><br><span class="line">    assert(src != NULL);</span><br><span class="line">    <span class="keyword">char</span>* ret = dst;</span><br><span class="line">    <span class="keyword">while</span>((*dst++ = *src++) != <span class="string">'\0'</span>) ;</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//strcpy不合格实现</span></span><br><span class="line"><span class="function"><span class="keyword">char</span> *<span class="title">my_strcpy</span><span class="params">(<span class="keyword">char</span>* dst, <span class="keyword">const</span> <span class="keyword">char</span>* src)</span> </span>&#123;</span><br><span class="line">	assert(dst != <span class="literal">NULL</span>);</span><br><span class="line">    assert(src != <span class="literal">NULL</span>);</span><br><span class="line">    <span class="keyword">char</span>* ret = dst;</span><br><span class="line">    <span class="keyword">while</span>((*dst++ = *src++) != <span class="string">'\0'</span>) ;</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>考虑特殊情况：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> a[] = <span class="string">"abc"</span>;</span><br><span class="line">my_strcpy(a+<span class="number">1</span>, a);</span><br></pre></td></tr></table></figure>
 <p>这时程序会崩溃！！</p>
 <a id="more"></a>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//strcpy正确实现（考虑到内存重叠问题）</span></span><br><span class="line"><span class="keyword">char</span> *my_strcpy(<span class="keyword">char</span>* dst, <span class="keyword">const</span> <span class="keyword">char</span>* src) &#123;</span><br><span class="line">	assert(dst != NULL);</span><br><span class="line">    assert(src != NULL);</span><br><span class="line">    <span class="keyword">char</span>* ret = dst;</span><br><span class="line">    <span class="built_in">memcpy</span>(dst, src, <span class="built_in">strlen</span>(src)+<span class="number">1</span>);</span><br><span class="line">	<span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//strcpy正确实现（考虑到内存重叠问题）</span></span><br><span class="line"><span class="function"><span class="keyword">char</span> *<span class="title">my_strcpy</span><span class="params">(<span class="keyword">char</span>* dst, <span class="keyword">const</span> <span class="keyword">char</span>* src)</span> </span>&#123;</span><br><span class="line">	assert(dst != <span class="literal">NULL</span>);</span><br><span class="line">    assert(src != <span class="literal">NULL</span>);</span><br><span class="line">    <span class="keyword">char</span>* ret = dst;</span><br><span class="line">    <span class="built_in">memcpy</span>(dst, src, <span class="built_in">strlen</span>(src)+<span class="number">1</span>);</span><br><span class="line">	<span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>同理，memcpy函数的实现也需要考虑内存重叠问题。实现如下：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//memcpy的实现</span></span><br><span class="line"><span class="keyword">void</span> * my_memcpy(<span class="keyword">void</span> *dst,<span class="keyword">const</span> <span class="keyword">void</span> *src,<span class="keyword">unsigned</span> <span class="keyword">int</span> count)</span><br><span class="line">&#123;</span><br><span class="line">     assert(dst);</span><br><span class="line">     assert(src);</span><br><span class="line">     <span class="keyword">void</span> * ret = dst;</span><br><span class="line">     <span class="comment">//源地址和目的地址不重叠，低字节向高字节拷贝</span></span><br><span class="line">     <span class="keyword">if</span> (dst &lt;= src || (<span class="keyword">char</span> *)dst &gt;= ((<span class="keyword">char</span> *)src + count))</span><br><span class="line">	 &#123;</span><br><span class="line">		 <span class="keyword">while</span>(count--)</span><br><span class="line">		 &#123;</span><br><span class="line">			 *(<span class="keyword">char</span> *)dst = *(<span class="keyword">char</span> *)src;</span><br><span class="line">			 dst = (<span class="keyword">char</span> *)dst + <span class="number">1</span>;</span><br><span class="line">			 src = (<span class="keyword">char</span> *)src + <span class="number">1</span>;</span><br><span class="line">		 &#125;</span><br><span class="line">	 &#125;</span><br><span class="line">     <span class="comment">//源地址和目的地址重叠，高字节向低字节拷贝</span></span><br><span class="line">	 <span class="keyword">else</span>						</span><br><span class="line">	 &#123; </span><br><span class="line">		 dst = (<span class="keyword">char</span> *)dst + count - <span class="number">1</span>;</span><br><span class="line">		 src = (<span class="keyword">char</span> *)src + count - <span class="number">1</span>; </span><br><span class="line">		 <span class="keyword">while</span>(count--) </span><br><span class="line">		 &#123;</span><br><span class="line">			 *(<span class="keyword">char</span> *)dst = *(<span class="keyword">char</span> *)src;</span><br><span class="line">			 dst = (<span class="keyword">char</span> *)dst - <span class="number">1</span>;</span><br><span class="line">			 src = (<span class="keyword">char</span> *)src - <span class="number">1</span>;</span><br><span class="line">		 &#125;</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//memcpy的实现</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> * <span class="title">my_memcpy</span><span class="params">(<span class="keyword">void</span> *dst,<span class="keyword">const</span> <span class="keyword">void</span> *src,<span class="keyword">unsigned</span> <span class="keyword">int</span> count)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">     assert(dst);</span><br><span class="line">     assert(src);</span><br><span class="line">     <span class="keyword">void</span> * ret = dst;</span><br><span class="line">     <span class="comment">//源地址和目的地址不重叠，低字节向高字节拷贝</span></span><br><span class="line">     <span class="keyword">if</span> (dst &lt;= src || (<span class="keyword">char</span> *)dst &gt;= ((<span class="keyword">char</span> *)src + count))</span><br><span class="line">	 &#123;</span><br><span class="line">		 <span class="keyword">while</span>(count--)</span><br><span class="line">		 &#123;</span><br><span class="line">			 *(<span class="keyword">char</span> *)dst = *(<span class="keyword">char</span> *)src;</span><br><span class="line">			 dst = (<span class="keyword">char</span> *)dst + <span class="number">1</span>;</span><br><span class="line">			 src = (<span class="keyword">char</span> *)src + <span class="number">1</span>;</span><br><span class="line">		 &#125;</span><br><span class="line">	 &#125;</span><br><span class="line">     <span class="comment">//源地址和目的地址重叠，高字节向低字节拷贝</span></span><br><span class="line">	 <span class="keyword">else</span>						</span><br><span class="line">	 &#123; </span><br><span class="line">		 dst = (<span class="keyword">char</span> *)dst + count - <span class="number">1</span>;</span><br><span class="line">		 src = (<span class="keyword">char</span> *)src + count - <span class="number">1</span>; </span><br><span class="line">		 <span class="keyword">while</span>(count--) </span><br><span class="line">		 &#123;</span><br><span class="line">			 *(<span class="keyword">char</span> *)dst = *(<span class="keyword">char</span> *)src;</span><br><span class="line">			 dst = (<span class="keyword">char</span> *)dst - <span class="number">1</span>;</span><br><span class="line">			 src = (<span class="keyword">char</span> *)src - <span class="number">1</span>;</span><br><span class="line">		 &#125;</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr>
 <p>调用char *strcpy(char *dst, char *src)函数时，当dst = NULL 或者 src = NULL时，程序崩溃，正是由于assert()函数使程序终止。</p>
 <p>但是深入一点就有疑惑了，为什么内存拷贝当src&lt;dst&lt;src+count 时会出错呢？为什么要单独考虑这种情况呢？欢迎交流！</p>
@@ -354,10 +353,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目錄
+            Table Of Contents
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            本站概覽
+            Overview
           </li>
         </ul>
       
@@ -371,22 +370,22 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">13</span>
-              <span class="site-state-item-name">文章</span>
+              <span class="site-state-item-count">14</span>
+              <span class="site-state-item-name">posts</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">9</span>
-              <span class="site-state-item-name">分類</span>
+              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-name">categories</span>
               </a>
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">10</span>
-              <span class="site-state-item-name">標籤</span>
+              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-name">tags</span>
               </a>
           </div>
 
@@ -440,7 +439,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目錄</p>
+              <p class="post-toc-empty">This post does not have a Table Of Contents</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
@@ -467,11 +466,11 @@
 </div>
 
 <div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 強力驅動
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
-  主題 -
+  Theme -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Mist
   </a>

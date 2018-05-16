@@ -56,12 +56,14 @@
 
 
 <meta name="description" content="日常工作中经常会遇到哈希算法，出于好奇想多了解一些关于哈希的理论。在Ceph中（一种分布式存储系统），从Object到PG的映射就是采用了一种哈希算法，名为“rjenkins”。所以就是从这里作为切入点，看了一些资料。">
+<meta name="keywords" content="hash, algorithm">
 <meta property="og:type" content="article">
 <meta property="og:title" content="About hash function">
 <meta property="og:url" content="http://hetaotao.net/2017/08/27/hash-function/index.html">
 <meta property="og:site_name" content="Daniel Blog">
 <meta property="og:description" content="日常工作中经常会遇到哈希算法，出于好奇想多了解一些关于哈希的理论。在Ceph中（一种分布式存储系统），从Object到PG的映射就是采用了一种哈希算法，名为“rjenkins”。所以就是从这里作为切入点，看了一些资料。">
-<meta property="og:updated_time" content="2017-08-27T08:34:33.376Z">
+<meta property="og:locale" content="zh_Hans">
+<meta property="og:updated_time" content="2017-08-27T08:34:33.377Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="About hash function">
 <meta name="twitter:description" content="日常工作中经常会遇到哈希算法，出于好奇想多了解一些关于哈希的理论。在Ceph中（一种分布式存储系统），从Object到PG的映射就是采用了一种哈希算法，名为“rjenkins”。所以就是从这里作为切入点，看了一些资料。">
@@ -134,7 +136,7 @@
             
               <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
             
-            首頁
+            Home
           </a>
         </li>
       
@@ -144,7 +146,7 @@
             
               <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
             
-            分類
+            Categories
           </a>
         </li>
       
@@ -154,7 +156,7 @@
             
               <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
             
-            關於
+            About
           </a>
         </li>
       
@@ -164,7 +166,7 @@
             
               <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
             
-            歸檔
+            Archives
           </a>
         </li>
       
@@ -174,7 +176,7 @@
             
               <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
             
-            標籤
+            Tags
           </a>
         </li>
       
@@ -220,7 +222,7 @@
 
         <div class="post-meta">
           <span class="post-time">
-            發表於
+            Posted on
             <time itemprop="dateCreated" datetime="2017-08-27T15:24:38+08:00" content="2017-08-27">
               2017-08-27
             </time>
@@ -228,7 +230,7 @@
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp; 分類於
+              &nbsp; | &nbsp; In
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/algorithm/" itemprop="url" rel="index">
@@ -263,12 +265,12 @@
         <span itemprop="articleBody"><p>日常工作中经常会遇到哈希算法，出于好奇想多了解一些关于哈希的理论。<br>在Ceph中（一种分布式存储系统），从Object到PG的映射就是采用了一种哈希算法，名为“rjenkins”。所以就是从这里作为切入点，看了一些资料。</p>
 <a id="more"></a>
 <h1 id="哈希算法的作用">哈希算法的作用</h1><p>哈希，也称作散列，它的作用其实就是通过一个函数（hash function），将输入值映射为一个输出的值，并且尽量保证这个映射是一对一的。</p>
-<h1 id="哈希算法的好坏">哈希算法的好坏</h1><p>怎样的哈希算法才是一个好的哈希算法？从他的作用或者说目的上看，它最重要的衡量标准是是否有碰撞（collision），或者是否有尽可能少的碰撞。这里有个概念 funneling，翻译成中文是“漏斗效应”[注1]，其实就是很多input被映射到少量的几个output上，产生了大量的碰撞。好的hash算法应该是可以通过测试或者<a href="http://burtleburtle.net/bob/hash/funnels.html" target="_blank" rel="external">理论证明</a>这个算法是no funnel的。<br>这里有两个概念：完美哈希函数（PHF，Perfect Hash Function）和最小完美哈希函数（MPHF，Minimal Perfect Hash Function）。完美哈希函数，就是没有冲突的哈希函数，也就是将N个KEY值映射到M个整数上，这里M&gt;=N，并且对于任意的KEY1，KEY2，H(KEY1)！=H(KEY2)。当M==N，则H是最小完美哈希函数。<br>当然它的另一个衡量标准是速度快，前提是在相同硬件条件下。也就是说每次哈希的运算次数少或者消耗的CPU指令周期少。</p>
+<h1 id="哈希算法的好坏">哈希算法的好坏</h1><p>怎样的哈希算法才是一个好的哈希算法？从他的作用或者说目的上看，它最重要的衡量标准是是否有碰撞（collision），或者是否有尽可能少的碰撞。这里有个概念 funneling，翻译成中文是“漏斗效应”[注1]，其实就是很多input被映射到少量的几个output上，产生了大量的碰撞。好的hash算法应该是可以通过测试或者<a href="http://burtleburtle.net/bob/hash/funnels.html" target="_blank" rel="noopener">理论证明</a>这个算法是no funnel的。<br>这里有两个概念：完美哈希函数（PHF，Perfect Hash Function）和最小完美哈希函数（MPHF，Minimal Perfect Hash Function）。完美哈希函数，就是没有冲突的哈希函数，也就是将N个KEY值映射到M个整数上，这里M&gt;=N，并且对于任意的KEY1，KEY2，H(KEY1)！=H(KEY2)。当M==N，则H是最小完美哈希函数。<br>当然它的另一个衡量标准是速度快，前提是在相同硬件条件下。也就是说每次哈希的运算次数少或者消耗的CPU指令周期少。</p>
 <h1 id="哈希模型">哈希模型</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">initialize the internal state;</span><br><span class="line">  <span class="keyword">for</span> (each block of the input)</span><br><span class="line">  &#123;</span><br><span class="line">    combine (the internal state, the current input block);</span><br><span class="line">    mix( the internal state);</span><br><span class="line">  &#125;</span><br><span class="line">  value = postprocess( the internal state );</span><br><span class="line">  <span class="keyword">return</span> (value);</span><br></pre></td></tr></table></figure>
 <p>也就是说一个hash过程主要包括：initialize, combine, mix, postprocess这几个过程。</p>
 <h1 id="参考">参考</h1><ol>
-<li>Jenkins关于他新的hash算法以及相关理论的介绍<br> <a href="http://burtleburtle.net/bob/hash/evahash.html" target="_blank" rel="external">http://burtleburtle.net/bob/hash/evahash.html</a> </li>
-<li>几种hash算法的对比<br> <a href="http://burtleburtle.net/bob/hash/examhash.html" target="_blank" rel="external">http://burtleburtle.net/bob/hash/examhash.html</a> </li>
+<li>Jenkins关于他新的hash算法以及相关理论的介绍<br> <a href="http://burtleburtle.net/bob/hash/evahash.html" target="_blank" rel="noopener">http://burtleburtle.net/bob/hash/evahash.html</a> </li>
+<li>几种hash算法的对比<br> <a href="http://burtleburtle.net/bob/hash/examhash.html" target="_blank" rel="noopener">http://burtleburtle.net/bob/hash/examhash.html</a> </li>
 </ol>
 <p>附言：<br>好长时间没写东西了，今天来这里扫扫灰：）</p>
 </span>
@@ -349,10 +351,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目錄
+            Table Of Contents
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            本站概覽
+            Overview
           </li>
         </ul>
       
@@ -366,22 +368,22 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">13</span>
-              <span class="site-state-item-name">文章</span>
+              <span class="site-state-item-count">14</span>
+              <span class="site-state-item-name">posts</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">9</span>
-              <span class="site-state-item-name">分類</span>
+              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-name">categories</span>
               </a>
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">10</span>
-              <span class="site-state-item-name">標籤</span>
+              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-name">tags</span>
               </a>
           </div>
 
@@ -462,11 +464,11 @@
 </div>
 
 <div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 強力驅動
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
-  主題 -
+  Theme -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Mist
   </a>

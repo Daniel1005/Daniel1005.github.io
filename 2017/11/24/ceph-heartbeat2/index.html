@@ -56,11 +56,13 @@
 
 
 <meta name="description" content="ceph集群中的心跳机制研究2我知道Ceph的基石是RADOS，而RADOS的含义是Reliable Autonomic Distributed Object Storage，而Autonomic（自治）的实现则依赖于Ceph中很好的故障检测机制。下面进入正题。">
+<meta name="keywords" content="ceph">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ceph-heartbeat2">
 <meta property="og:url" content="http://hetaotao.net/2017/11/24/ceph-heartbeat2/index.html">
 <meta property="og:site_name" content="Daniel Blog">
 <meta property="og:description" content="ceph集群中的心跳机制研究2我知道Ceph的基石是RADOS，而RADOS的含义是Reliable Autonomic Distributed Object Storage，而Autonomic（自治）的实现则依赖于Ceph中很好的故障检测机制。下面进入正题。">
+<meta property="og:locale" content="zh_Hans">
 <meta property="og:updated_time" content="2018-01-13T08:47:57.579Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ceph-heartbeat2">
@@ -134,7 +136,7 @@
             
               <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
             
-            首頁
+            Home
           </a>
         </li>
       
@@ -144,7 +146,7 @@
             
               <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
             
-            分類
+            Categories
           </a>
         </li>
       
@@ -154,7 +156,7 @@
             
               <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
             
-            關於
+            About
           </a>
         </li>
       
@@ -164,7 +166,7 @@
             
               <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
             
-            歸檔
+            Archives
           </a>
         </li>
       
@@ -174,7 +176,7 @@
             
               <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
             
-            標籤
+            Tags
           </a>
         </li>
       
@@ -220,7 +222,7 @@
 
         <div class="post-meta">
           <span class="post-time">
-            發表於
+            Posted on
             <time itemprop="dateCreated" datetime="2017-11-24T20:09:50+08:00" content="2017-11-24">
               2017-11-24
             </time>
@@ -228,7 +230,7 @@
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp; 分類於
+              &nbsp; | &nbsp; In
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/ceph/" itemprop="url" rel="index">
@@ -265,7 +267,7 @@
 <p>Ceph在故障检测的时候有两个函数：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">OSDMonitor::check_failure</span><br><span class="line">OSDMonitor::prepare_failure</span><br></pre></td></tr></table></figure></p>
 <p>他们之间的关系是，prepare_failure做了一些fail前的report过程，然后再调用check_failure。</p>
 <h2 id="grace_time">grace time</h2><p>对于osd的故障判断有个grace time，相当于一个容错值，当fail time大于grace time时基本可以断定osd fail。当配置项g_conf-&gt;mon_osd_adjust_heartbeat_grace为true的时候，grace的计算有个过程，并且这个过程让人难以理解，先贴一下代码。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//my_grace计算</span></span><br><span class="line">    <span class="keyword">double</span> halflife = (<span class="keyword">double</span>)g_conf-&gt;mon_osd_laggy_halflife;</span><br><span class="line">    <span class="keyword">double</span> decay_k = ::<span class="built_in">log</span>(.<span class="number">5</span>) / halflife;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// scale grace period based on historical probability of 'lagginess'</span></span><br><span class="line">    <span class="comment">// (false positive failures due to slowness).</span></span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">osd_xinfo_t</span>&amp; xi = osdmap.get_xinfo(target_osd);</span><br><span class="line">    <span class="keyword">double</span> decay = <span class="built_in">exp</span>((<span class="keyword">double</span>)failed_for * decay_k);</span><br><span class="line">    dout(<span class="number">20</span>) &lt;&lt; <span class="string">" halflife "</span> &lt;&lt; halflife &lt;&lt; <span class="string">" decay_k "</span> &lt;&lt; decay_k</span><br><span class="line">	     &lt;&lt; <span class="string">" failed_for "</span> &lt;&lt; failed_for &lt;&lt; <span class="string">" decay "</span> &lt;&lt; decay &lt;&lt; dendl;</span><br><span class="line">    my_grace = decay * (<span class="keyword">double</span>)xi.laggy_interval * xi.laggy_probability;</span><br><span class="line">    grace += my_grace;</span><br><span class="line"></span><br><span class="line"><span class="comment">//peer_grace计算</span></span><br><span class="line">    assert(fi.reporters.size());</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">map</span>&lt;<span class="keyword">int</span>,<span class="keyword">failure_reporter_t</span>&gt;::iterator p = fi.reporters.begin();</span><br><span class="line">	 p != fi.reporters.end();</span><br><span class="line">	 ++p) &#123;</span><br><span class="line">      <span class="keyword">const</span> <span class="keyword">osd_xinfo_t</span>&amp; xi = osdmap.get_xinfo(p-&gt;first);</span><br><span class="line">      <span class="keyword">utime_t</span> elapsed = now - xi.down_stamp;</span><br><span class="line">      <span class="keyword">double</span> decay = <span class="built_in">exp</span>((<span class="keyword">double</span>)elapsed * decay_k);</span><br><span class="line">      peer_grace += decay * (<span class="keyword">double</span>)xi.laggy_interval * xi.laggy_probability;</span><br><span class="line">    &#125;</span><br><span class="line">    peer_grace /= (<span class="keyword">double</span>)fi.reporters.size();</span><br><span class="line">    grace += peer_grace;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//my_grace计算</span></span><br><span class="line">    <span class="keyword">double</span> halflife = (<span class="keyword">double</span>)g_conf-&gt;mon_osd_laggy_halflife;</span><br><span class="line">    <span class="keyword">double</span> decay_k = ::<span class="built_in">log</span>(<span class="number">.5</span>) / halflife;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// scale grace period based on historical probability of 'lagginess'</span></span><br><span class="line">    <span class="comment">// (false positive failures due to slowness).</span></span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">osd_xinfo_t</span>&amp; xi = osdmap.get_xinfo(target_osd);</span><br><span class="line">    <span class="keyword">double</span> decay = <span class="built_in">exp</span>((<span class="keyword">double</span>)failed_for * decay_k);</span><br><span class="line">    dout(<span class="number">20</span>) &lt;&lt; <span class="string">" halflife "</span> &lt;&lt; halflife &lt;&lt; <span class="string">" decay_k "</span> &lt;&lt; decay_k</span><br><span class="line">	     &lt;&lt; <span class="string">" failed_for "</span> &lt;&lt; failed_for &lt;&lt; <span class="string">" decay "</span> &lt;&lt; decay &lt;&lt; dendl;</span><br><span class="line">    my_grace = decay * (<span class="keyword">double</span>)xi.laggy_interval * xi.laggy_probability;</span><br><span class="line">    grace += my_grace;</span><br><span class="line"></span><br><span class="line"><span class="comment">//peer_grace计算</span></span><br><span class="line">    assert(fi.reporters.size());</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">map</span>&lt;<span class="keyword">int</span>,<span class="keyword">failure_reporter_t</span>&gt;::iterator p = fi.reporters.begin();</span><br><span class="line">	 p != fi.reporters.end();</span><br><span class="line">	 ++p) &#123;</span><br><span class="line">      <span class="keyword">const</span> <span class="keyword">osd_xinfo_t</span>&amp; xi = osdmap.get_xinfo(p-&gt;first);</span><br><span class="line">      <span class="keyword">utime_t</span> elapsed = now - xi.down_stamp;</span><br><span class="line">      <span class="keyword">double</span> decay = <span class="built_in">exp</span>((<span class="keyword">double</span>)elapsed * decay_k);</span><br><span class="line">      peer_grace += decay * (<span class="keyword">double</span>)xi.laggy_interval * xi.laggy_probability;</span><br><span class="line">    &#125;</span><br><span class="line">    peer_grace /= (<span class="keyword">double</span>)fi.reporters.size();</span><br><span class="line">    grace += peer_grace;</span><br></pre></td></tr></table></figure>
 <h2 id="失效条件">失效条件</h2><p>重点在这里，最终check_failure的成功条件是：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">failed_for &gt;= grace &amp;&amp; </span><br><span class="line">((<span class="keyword">int</span>)fi.reporters.size() &gt;= g_conf-&gt;mon_osd_min_down_reporters) &amp;&amp;</span><br><span class="line">(fi.num_reports &gt;= g_conf-&gt;mon_osd_min_down_reports)</span><br></pre></td></tr></table></figure></p>
 <p>即失效时间大于grace(g_conf中设置的值)，并且reporters大于配置的reporters，reports大于配置的reports。<br>当这3个条件同时满足后osd会被标记为down,并输出类似如下这样的日志：<br>osd.3 failed 3 reports from 1 peers after 21.666000 &gt;= grace 20</p>
 <h3 id="注(2018年1月13日)：">注(2018年1月13日)：</h3><p>以上对于Ceph 0.94.5版本，对于Ceph10.2.10 Jewel版本，mark down的机制有所不同，条件从3个变成两个了，代码如下：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (failed_for &gt;= grace &amp;&amp;</span><br><span class="line">    (<span class="keyword">int</span>)reporters_by_subtree.size() &gt;= g_conf-&gt;mon_osd_min_down_reporters)</span><br></pre></td></tr></table></figure></p>
@@ -350,10 +352,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目錄
+            Table Of Contents
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            本站概覽
+            Overview
           </li>
         </ul>
       
@@ -367,22 +369,22 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">13</span>
-              <span class="site-state-item-name">文章</span>
+              <span class="site-state-item-count">14</span>
+              <span class="site-state-item-name">posts</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">9</span>
-              <span class="site-state-item-name">分類</span>
+              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-name">categories</span>
               </a>
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">10</span>
-              <span class="site-state-item-name">標籤</span>
+              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-name">tags</span>
               </a>
           </div>
 
@@ -463,11 +465,11 @@
 </div>
 
 <div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 強力驅動
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
-  主題 -
+  Theme -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Mist
   </a>

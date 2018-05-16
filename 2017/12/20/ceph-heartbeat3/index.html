@@ -56,11 +56,13 @@
 
 
 <meta name="description" content="ceph集群中的心跳机制研究3之前研究了Ceph集群的心跳机制和故障检测机制，那从心跳机制到故障判断的过程又是什么样的？因为涉及多个源代码文件，并且函数调用嵌套很多层，这里看起来不是那么清晰，所以这也是我最后要讲的地方。">
+<meta name="keywords" content="ceph">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ceph-heartbeat3">
 <meta property="og:url" content="http://hetaotao.net/2017/12/20/ceph-heartbeat3/index.html">
 <meta property="og:site_name" content="Daniel Blog">
 <meta property="og:description" content="ceph集群中的心跳机制研究3之前研究了Ceph集群的心跳机制和故障检测机制，那从心跳机制到故障判断的过程又是什么样的？因为涉及多个源代码文件，并且函数调用嵌套很多层，这里看起来不是那么清晰，所以这也是我最后要讲的地方。">
+<meta property="og:locale" content="zh_Hans">
 <meta property="og:updated_time" content="2018-01-13T08:48:19.971Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ceph-heartbeat3">
@@ -134,7 +136,7 @@
             
               <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
             
-            首頁
+            Home
           </a>
         </li>
       
@@ -144,7 +146,7 @@
             
               <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
             
-            分類
+            Categories
           </a>
         </li>
       
@@ -154,7 +156,7 @@
             
               <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
             
-            關於
+            About
           </a>
         </li>
       
@@ -164,7 +166,7 @@
             
               <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
             
-            歸檔
+            Archives
           </a>
         </li>
       
@@ -174,7 +176,7 @@
             
               <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
             
-            標籤
+            Tags
           </a>
         </li>
       
@@ -220,7 +222,7 @@
 
         <div class="post-meta">
           <span class="post-time">
-            發表於
+            Posted on
             <time itemprop="dateCreated" datetime="2017-12-20T21:30:58+08:00" content="2017-12-20">
               2017-12-20
             </time>
@@ -228,7 +230,7 @@
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp; 分類於
+              &nbsp; | &nbsp; In
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/ceph/" itemprop="url" rel="index">
@@ -264,7 +266,7 @@
 <a id="more"></a>
 <h2 id="从heartbeat_check_no_reply到最终确定osd_failure的过程">从heartbeat check no reply到最终确定osd failure的过程</h2><p>heartbeat的相关实现在源文件OSD.cc中。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">OSD::heartbeat() </span><br><span class="line">(send heartbeats) -&gt; OSD::heartbeat_check()</span><br><span class="line">...</span><br><span class="line">(省略一些中间过程)</span><br><span class="line">OSD::send_failures() -&gt; 依据failure_queue计算failed_for -&gt; 带上failed_for，通过MOSDFailure包装(带上标志MSG_OSD_FAILURE)，然后发送msg给mon，failed_for是OSD failed的时间长度。如下：</span><br><span class="line">monc-&gt;send_mon_message(<span class="keyword">new</span> MOSDFailure(monc-&gt;get_fsid(), i, failed_for,</span><br><span class="line">					     osdmap-&gt;get_epoch()));</span><br></pre></td></tr></table></figure></p>
 <p>然后在源文件OSDMonitor.cc中进行处理。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">OSDMonitor::prepare_update() -&gt; <span class="keyword">case</span> MSG_OSD_FAILURE ，它接受一个op参数，然后进入<span class="keyword">switch</span>，如下：</span><br><span class="line"><span class="keyword">bool</span> OSDMonitor::prepare_update(MonOpRequestRef op)</span><br><span class="line">&#123;</span><br><span class="line">  op-&gt;mark_osdmon_event(__func__);</span><br><span class="line">  PaxosServiceMessage *m = <span class="keyword">static_cast</span>&lt;PaxosServiceMessage*&gt;(op-&gt;get_req());</span><br><span class="line">  dout(<span class="number">7</span>) &lt;&lt; <span class="string">"prepare_update "</span> &lt;&lt; *m &lt;&lt; <span class="string">" from "</span> &lt;&lt; m-&gt;get_orig_source_inst() &lt;&lt; dendl;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">switch</span> (m-&gt;<span class="keyword">get_t</span>ype()) &#123;</span><br><span class="line">    <span class="comment">// damp updates</span></span><br><span class="line">  <span class="keyword">case</span> MSG_OSD_MARK_ME_DOWN:</span><br><span class="line">    <span class="keyword">return</span> prepare_mark_me_down(op);</span><br><span class="line">  <span class="keyword">case</span> MSG_OSD_FAILURE:</span><br><span class="line">    <span class="keyword">return</span> prepare_failure(op);</span><br><span class="line">...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">OSDMonitor::prepare_update() -&gt; <span class="keyword">case</span> MSG_OSD_FAILURE ，它接受一个op参数，然后进入<span class="keyword">switch</span>，如下：</span><br><span class="line"><span class="keyword">bool</span> OSDMonitor::prepare_update(MonOpRequestRef op)</span><br><span class="line">&#123;</span><br><span class="line">  op-&gt;mark_osdmon_event(__func__);</span><br><span class="line">  PaxosServiceMessage *m = <span class="keyword">static_cast</span>&lt;PaxosServiceMessage*&gt;(op-&gt;get_req());</span><br><span class="line">  dout(<span class="number">7</span>) &lt;&lt; <span class="string">"prepare_update "</span> &lt;&lt; *m &lt;&lt; <span class="string">" from "</span> &lt;&lt; m-&gt;get_orig_source_inst() &lt;&lt; dendl;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">switch</span> (m-&gt;get_type()) &#123;</span><br><span class="line">    <span class="comment">// damp updates</span></span><br><span class="line">  <span class="keyword">case</span> MSG_OSD_MARK_ME_DOWN:</span><br><span class="line">    <span class="keyword">return</span> prepare_mark_me_down(op);</span><br><span class="line">  <span class="keyword">case</span> MSG_OSD_FAILURE:</span><br><span class="line">    <span class="keyword">return</span> prepare_failure(op);</span><br><span class="line">...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>最后在进入以下故障判定的两个阶段：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">OSDMonitor::prepare_failure()</span><br><span class="line">OSDMinitor::check_failure()</span><br></pre></td></tr></table></figure>
 <p>2017年12月20日</p>
@@ -346,10 +348,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目錄
+            Table Of Contents
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            本站概覽
+            Overview
           </li>
         </ul>
       
@@ -363,22 +365,22 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">13</span>
-              <span class="site-state-item-name">文章</span>
+              <span class="site-state-item-count">14</span>
+              <span class="site-state-item-name">posts</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">9</span>
-              <span class="site-state-item-name">分類</span>
+              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-name">categories</span>
               </a>
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">10</span>
-              <span class="site-state-item-name">標籤</span>
+              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-name">tags</span>
               </a>
           </div>
 
@@ -459,11 +461,11 @@
 </div>
 
 <div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 強力驅動
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
-  主題 -
+  Theme -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Mist
   </a>
