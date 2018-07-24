@@ -37,7 +37,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="其他," />
+  <meta name="keywords" content="分布式," />
 
 
 
@@ -55,20 +55,18 @@
 
 
 
-<meta name="description" content="好友推荐Markdown，说这是一个很好用的标记型的文本编辑器，能够很好地提高写博客、写代码文档的效率，所以拿来玩玩。这里我们可以先感受一下它的效果，具体的语法在网上有很多资料，自行搜索即可。以下是部分效果：  1. 这是公式　　质能守恒公式$$E = mc^2$$ 　　其他公式  自然数求和公式$$ \sum_{i=1}^n n = 1+2+3+…+n = n(n-1)/2$$  自然数平方求和">
-<meta name="keywords" content="其他">
+<meta name="description" content="1 What首先，Paxos 是个什么东东？ 我们思考一种场景： 现在我们要写一条记录保存下来，最简单的，写到一个主机上。大部分情况下没有什么问题，但是可能存在 1% 的可能性，这个主机 down 了，并且是磁盘坏道等无法修复的故障。对于我们非常重要的数据，这件事就是不能容忍的。所以需要改进这个问题。 我们现在使用两台主机，这样如果一个主机的故障是 1% ，两台主机同时故障的比例就降到了 0.01">
+<meta name="keywords" content="分布式">
 <meta property="og:type" content="article">
-<meta property="og:title" content="我的第一个 markdown 文档">
-<meta property="og:url" content="http://hetaotao.net/2015/10/29/2015-10-29-first/index.html">
+<meta property="og:title" content="小议Paoxs-Chapter1">
+<meta property="og:url" content="http://hetaotao.net/2018/05/17/小议Paoxs/index.html">
 <meta property="og:site_name" content="Daniel Blog">
-<meta property="og:description" content="好友推荐Markdown，说这是一个很好用的标记型的文本编辑器，能够很好地提高写博客、写代码文档的效率，所以拿来玩玩。这里我们可以先感受一下它的效果，具体的语法在网上有很多资料，自行搜索即可。以下是部分效果：  1. 这是公式　　质能守恒公式$$E = mc^2$$ 　　其他公式  自然数求和公式$$ \sum_{i=1}^n n = 1+2+3+…+n = n(n-1)/2$$  自然数平方求和">
+<meta property="og:description" content="1 What首先，Paxos 是个什么东东？ 我们思考一种场景： 现在我们要写一条记录保存下来，最简单的，写到一个主机上。大部分情况下没有什么问题，但是可能存在 1% 的可能性，这个主机 down 了，并且是磁盘坏道等无法修复的故障。对于我们非常重要的数据，这件事就是不能容忍的。所以需要改进这个问题。 我们现在使用两台主机，这样如果一个主机的故障是 1% ，两台主机同时故障的比例就降到了 0.01">
 <meta property="og:locale" content="zh_Hans">
-<meta property="og:image" content="https://www.zybuluo.com/static/img/file-list.png">
-<meta property="og:updated_time" content="2017-10-15T06:11:43.704Z">
+<meta property="og:updated_time" content="2018-05-31T17:18:51.225Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我的第一个 markdown 文档">
-<meta name="twitter:description" content="好友推荐Markdown，说这是一个很好用的标记型的文本编辑器，能够很好地提高写博客、写代码文档的效率，所以拿来玩玩。这里我们可以先感受一下它的效果，具体的语法在网上有很多资料，自行搜索即可。以下是部分效果：  1. 这是公式　　质能守恒公式$$E = mc^2$$ 　　其他公式  自然数求和公式$$ \sum_{i=1}^n n = 1+2+3+…+n = n(n-1)/2$$  自然数平方求和">
-<meta name="twitter:image" content="https://www.zybuluo.com/static/img/file-list.png">
+<meta name="twitter:title" content="小议Paoxs-Chapter1">
+<meta name="twitter:description" content="1 What首先，Paxos 是个什么东东？ 我们思考一种场景： 现在我们要写一条记录保存下来，最简单的，写到一个主机上。大部分情况下没有什么问题，但是可能存在 1% 的可能性，这个主机 down 了，并且是磁盘坏道等无法修复的故障。对于我们非常重要的数据，这件事就是不能容忍的。所以需要改进这个问题。 我们现在使用两台主机，这样如果一个主机的故障是 1% ，两台主机同时故障的比例就降到了 0.01">
 
 
 
@@ -80,7 +78,7 @@
   };
 </script>
 
-  <title> 我的第一个 markdown 文档 | Daniel Blog </title>
+  <title> 小议Paoxs-Chapter1 | Daniel Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh_Hans">
@@ -216,7 +214,7 @@
             
             
               
-                我的第一个 markdown 文档
+                小议Paoxs-Chapter1
               
             
           </h1>
@@ -225,8 +223,8 @@
         <div class="post-meta">
           <span class="post-time">
             Posted on
-            <time itemprop="dateCreated" datetime="2015-10-29T17:07:01+08:00" content="2015-10-29">
-              2015-10-29
+            <time itemprop="dateCreated" datetime="2018-05-17T21:26:03+08:00" content="2018-05-17">
+              2018-05-17
             </time>
           </span>
 
@@ -235,8 +233,8 @@
               &nbsp; | &nbsp; In
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/其他/" itemprop="url" rel="index">
-                    <span itemprop="name">其他</span>
+                  <a href="/categories/分布式/" itemprop="url" rel="index">
+                    <span itemprop="name">分布式</span>
                   </a>
                 </span>
 
@@ -264,58 +262,20 @@
       
 
       
-        <span itemprop="articleBody"><p>好友推荐Markdown，说这是一个很好用的标记型的<strong>文本编辑器</strong>，能够很好地提高<em>写博客、写代码文档</em>的效率，所以拿来玩玩。这里我们可以先感受一下它的效果，具体的语法在网上有很多资料，自行搜索即可。<br>以下是部分效果：</p>
-<hr>
-<h3 id="1-_这是公式">1. 这是公式</h3><h4 id="质能守恒公式">　　<strong>质能守恒公式</strong></h4><p>$$E = mc^2$$</p>
-<h4 id="其他公式">　　<strong>其他公式</strong></h4><blockquote>
-<ul>
-<li><strong>自然数求和公式</strong><br>$$ \sum_{i=1}^n n = 1+2+3+…+n = n(n-1)/2$$ </li>
-<li><strong>自然数平方求和公式</strong><br>$$ \sum_{i=1}^n n^2 = 1^2+2^2+3^2+…+n^2 = \frac{n(2n-1)(n-1)}{6}$$</li>
-</ul>
-</blockquote>
-<a id="more"></a>
-<h3 id="2-_这是表格">2. 这是表格</h3><table>
-<thead>
-<tr>
-<th style="text-align:center">公司</th>
-<th>宣讲会</th>
-<th>笔试</th>
-<th>面试</th>
-<th>状态</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">腾讯</td>
-<td></td>
-<td></td>
-<td>$\alpha$</td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align:center">百度</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align:center">平安科技</td>
-<td>2015年10月25日 西电</td>
-<td>2015年10月29日</td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h3 id="3-_这是代码">3. 这是代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a[] = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; data(a, a+<span class="number">5</span>);</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;::iterator iter = data.begin();</span><br><span class="line">    <span class="keyword">for</span>(; iter != data.end(); ++iter)</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; *iter &lt;&lt; <span class="string">' '</span>;</span><br><span class="line">    cont &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="4-_这是图片">4. 这是图片</h3><p><img src="https://www.zybuluo.com/static/img/file-list.png" alt="pic 1"></p>
-<h3 id="5-_这是待办事项">5. 这是待办事项</h3><ul>
-<li>熟悉markdown编辑工具</li>
-<li>熟悉Github上代码的push/pull等操作</li>
-<li>查看Github上的项目，找出自己感兴趣的</li>
-</ul>
-<h3 id="6-_参考链接">6. 参考链接</h3><p><a href="http://www.jianshu.com/p/q81RER" target="_blank" rel="noopener">Markdown语法</a></p>
+        <span itemprop="articleBody"><h1 id="1_What">1 What</h1><p>首先，Paxos 是个什么东东？</p>
+<p>我们思考一种场景：</p>
+<p>现在我们要写一条记录保存下来，最简单的，写到一个主机上。大部分情况下没有什么问题，但是可能存在 1% 的可能性，这个主机 down 了，并且是磁盘坏道等无法修复的故障。对于我们非常重要的数据，这件事就是不能容忍的。所以需要改进这个问题。</p>
+<p>我们现在使用两台主机，这样如果一个主机的故障是 1% ，两台主机同时故障的比例就降到了 0.01% （万分之一）。但是两台主机就带来了一致性的问题，即：我们需要保证数据任何时候在这两台主机上都是相同的。然后这里就需要协商的机制了。两个主机很明显的问题，但凡两个主机出现不一致的问题，到底该以谁为准。出现了“脑裂”问题。需要继续优化。</p>
+<p>我们使用三台主机，三台主机同时故障的概率进一步降低，但带来的复杂性进一步提高。如何在三台主机上完成一致性的写入？更多的主机呢？Paoxs 就是用来解决这个问题。</p>
+<h1 id="2_Why">2 Why</h1><p>为什么有 Paxos ？</p>
+<p>为什么要这样实现？</p>
+<h1 id="3_Where">3 Where</h1><p>哪些系统使用了 Paxos ？</p>
+<p>在哪些场景下使用 Paoxs ？</p>
+<p>下面偷点懒将最近分享的 PPT 贴一下。这里讲的是 Classic/Basic Paxos。顺便分享一个在线 PPT 制作网站（ <a href="https://ppt.baomitu.com" target="_blank" rel="noopener">https://ppt.baomitu.com</a> ），个人觉得还是不错的，现在不论什么，在线化都是一种趋势。</p>
+<iframe src="https://ppt.baomitu.com/embed/37d0a1b4?style=dark" width="576" height="420" scrolling="no" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen></iframe>
+
+
+
 </span>
       
     </div>
@@ -324,7 +284,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/其他/" rel="tag">#其他</a>
+            <a href="/tags/分布式/" rel="tag">#分布式</a>
           
         </div>
       
@@ -333,12 +293,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/04/11/osd故障检测机制小结/" rel="next" title="osd故障检测机制小结">
+                <i class="fa fa-chevron-left"></i> osd故障检测机制小结
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/11/05/linux断网急救/" rel="prev" title="linux网络连接问题解决">
-                linux网络连接问题解决 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/06/10/SRE/" rel="prev" title="SRE">
+                SRE <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -407,21 +371,21 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-count">14</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-count">12</span>
               <span class="site-state-item-name">categories</span>
               </a>
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-count">12</span>
               <span class="site-state-item-name">tags</span>
               </a>
           </div>
@@ -483,7 +447,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-_这是公式"><span class="nav-number">1.</span> <span class="nav-text">1. 这是公式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#质能守恒公式"><span class="nav-number">1.1.</span> <span class="nav-text">　　质能守恒公式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其他公式"><span class="nav-number">1.2.</span> <span class="nav-text">　　其他公式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-_这是表格"><span class="nav-number">2.</span> <span class="nav-text">2. 这是表格</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-_这是代码"><span class="nav-number">3.</span> <span class="nav-text">3. 这是代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-_这是图片"><span class="nav-number">4.</span> <span class="nav-text">4. 这是图片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-_这是待办事项"><span class="nav-number">5.</span> <span class="nav-text">5. 这是待办事项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-_参考链接"><span class="nav-number">6.</span> <span class="nav-text">6. 参考链接</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1_What"><span class="nav-number">1.</span> <span class="nav-text">1 What</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2_Why"><span class="nav-number">2.</span> <span class="nav-text">2 Why</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3_Where"><span class="nav-number">3.</span> <span class="nav-text">3 Where</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
