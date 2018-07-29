@@ -683,7 +683,7 @@ body {
   background: #222;
 }
 .header {
-  background: #fff;
+  background: #222;
 }
 .header-inner {
   position: relative;
@@ -961,7 +961,7 @@ body {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff1dff;
+  background: #031873;
 }
 .sidebar-nav {
   margin: 0 0 20px;

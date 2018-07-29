@@ -27,7 +27,7 @@
 
 
   
-    <link href='//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href='//fonts.lug.ustc.edu.cn/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
   
 
 
@@ -48,7 +48,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon-20180728101700397.ico?v=0.4.5.2" />
 
 
 
@@ -62,7 +62,7 @@
 <meta property="og:url" content="http://hetaotao.net/2017/08/27/hash-function/index.html">
 <meta property="og:site_name" content="Daniel Blog">
 <meta property="og:description" content="日常工作中经常会遇到哈希算法，出于好奇想多了解一些关于哈希的理论。在Ceph中（一种分布式存储系统），从Object到PG的映射就是采用了一种哈希算法，名为“rjenkins”。所以就是从这里作为切入点，看了一些资料。">
-<meta property="og:locale" content="zh_Hans">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2017-08-27T08:34:33.377Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="About hash function">
@@ -81,7 +81,7 @@
   <title> About hash function | Daniel Blog </title>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh_Hans">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   <!--[if lte IE 8]>
   <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
@@ -94,15 +94,6 @@
 <![endif]-->
   
 
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  ga('create', 'true', 'auto');
-  ga('send', 'pageview');
-</script>
 
 
 
@@ -145,7 +136,7 @@
             
               <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
             
-            Home
+            首页
           </a>
         </li>
       
@@ -155,7 +146,7 @@
             
               <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
             
-            Categories
+            分类
           </a>
         </li>
       
@@ -165,7 +156,7 @@
             
               <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
             
-            About
+            关于
           </a>
         </li>
       
@@ -175,7 +166,7 @@
             
               <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
             
-            Archives
+            归档
           </a>
         </li>
       
@@ -185,7 +176,7 @@
             
               <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
             
-            Tags
+            标签
           </a>
         </li>
       
@@ -231,7 +222,7 @@
 
         <div class="post-meta">
           <span class="post-time">
-            Posted on
+            发表于
             <time itemprop="dateCreated" datetime="2017-08-27T15:24:38+08:00" content="2017-08-27">
               2017-08-27
             </time>
@@ -239,13 +230,19 @@
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp; In
+              &nbsp; | &nbsp; 分类于
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/algorithm/" itemprop="url" rel="index">
                     <span itemprop="name">algorithm</span>
                   </a>
                 </span>
+            <span title="post.wordcount">
+                |   字数统计 543 字   
+            </span>
+    	    <span title="post.min2read">
+                |   阅读时长 2 分钟   
+            </span>
 
                 
                 
@@ -288,9 +285,9 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
+	<div class="post-tags">
           
-            <a href="/tags/hash-algorithm/" rel="tag">#hash, algorithm</a>
+            <a href="/tags/hash-algorithm/" rel="tag"><i class="fa fa-tag"></i>hash, algorithm</a>
           
         </div>
       
@@ -360,10 +357,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Table Of Contents
+            文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            Overview
+            站点概览
           </li>
         </ul>
       
@@ -378,21 +375,21 @@
           <div class="site-state-item site-state-posts">
             <a href="/archives">
               <span class="site-state-item-count">15</span>
-              <span class="site-state-item-name">posts</span>
+              <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
               <span class="site-state-item-count">11</span>
-              <span class="site-state-item-name">categories</span>
+              <span class="site-state-item-name">分类</span>
               </a>
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
               <span class="site-state-item-count">11</span>
-              <span class="site-state-item-name">tags</span>
+              <span class="site-state-item-name">标签</span>
               </a>
           </div>
 
@@ -469,7 +466,8 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright" >
   
   &copy;  2015 - 
   <span itemprop="copyrightYear">2018</span>
@@ -480,14 +478,23 @@
 </div>
 
 <div class="powered-by">
-  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_pv">
+  本站访客数:<span id="busuanzi_value_site_pv"></span>
+</span>
+</div>
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
-  Theme -
+  主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Mist
   </a>
+</div>
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共8.6k字</span>
 </div>
 
 
@@ -714,7 +721,8 @@
   </script>
 
   
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/MathJax.js"></script>
+    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/config/TeX-AMS-MML_HTMLorMML.js"></script>
   
 
 
