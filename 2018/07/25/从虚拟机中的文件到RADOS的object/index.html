@@ -27,7 +27,7 @@
 
 
   
-    <link href='//fonts.lug.ustc.edu.cn/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
   
 
 
@@ -62,7 +62,7 @@
 <meta property="og:url" content="http://hetaotao.net/2018/07/25/从虚拟机中的文件到RADOS的object/index.html">
 <meta property="og:site_name" content="Daniel Blog">
 <meta property="og:description" content="从虚拟机中的文件到RADOS的objectCeph将虚拟机的卷映射到最终的OSD，经过了两次映射。第一次，从object名到PG做简单hash，并结合pool_id作为前缀，第二次，从PG到OSD通过CRUSH算法计算得到。我们想知道卷最终被映射到哪些主机、哪些OSD、哪些object还是比较麻烦的。我这里摸索出了，从虚拟机的某个文件找到该文件所在rados的object, osd, host的方">
-<meta property="og:locale" content="zh-Hans">
+<meta property="og:locale" content="zh_Hans">
 <meta property="og:updated_time" content="2018-07-24T19:50:51.221Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="从虚拟机中的文件到RADOS的object">
@@ -81,7 +81,7 @@
   <title> 从虚拟机中的文件到RADOS的object | Daniel Blog </title>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh_Hans">
 
   <!--[if lte IE 8]>
   <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
@@ -136,7 +136,7 @@
             
               <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
             
-            首页
+            Home
           </a>
         </li>
       
@@ -146,7 +146,7 @@
             
               <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
             
-            分类
+            Categories
           </a>
         </li>
       
@@ -156,7 +156,7 @@
             
               <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
             
-            关于
+            About
           </a>
         </li>
       
@@ -166,7 +166,7 @@
             
               <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
             
-            归档
+            Archives
           </a>
         </li>
       
@@ -176,7 +176,7 @@
             
               <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
             
-            标签
+            Tags
           </a>
         </li>
       
@@ -222,7 +222,7 @@
 
         <div class="post-meta">
           <span class="post-time">
-            发表于
+            Posted on
             <time itemprop="dateCreated" datetime="2018-07-25T03:17:40+08:00" content="2018-07-25">
               2018-07-25
             </time>
@@ -230,19 +230,13 @@
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
+              &nbsp; | &nbsp; In
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/ceph/" itemprop="url" rel="index">
                     <span itemprop="name">ceph</span>
                   </a>
                 </span>
-            <span title="post.wordcount">
-                |   字数统计 575 字   
-            </span>
-    	    <span title="post.min2read">
-                |   阅读时长 3 分钟   
-            </span>
 
                 
                 
@@ -287,9 +281,9 @@
 
     <footer class="post-footer">
       
-	<div class="post-tags">
+        <div class="post-tags">
           
-            <a href="/tags/ceph/" rel="tag"><i class="fa fa-tag"></i>ceph</a>
+            <a href="/tags/ceph/" rel="tag">#ceph</a>
           
         </div>
       
@@ -359,10 +353,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
+            Table Of Contents
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
+            Overview
           </li>
         </ul>
       
@@ -377,21 +371,21 @@
           <div class="site-state-item site-state-posts">
             <a href="/archives">
               <span class="site-state-item-count">15</span>
-              <span class="site-state-item-name">日志</span>
+              <span class="site-state-item-name">posts</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
               <span class="site-state-item-count">11</span>
-              <span class="site-state-item-name">分类</span>
+              <span class="site-state-item-name">categories</span>
               </a>
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
               <span class="site-state-item-count">11</span>
-              <span class="site-state-item-name">标签</span>
+              <span class="site-state-item-name">tags</span>
               </a>
           </div>
 
@@ -485,11 +479,11 @@
 </span>
 </div>
 <div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
-  主题 -
+  Theme -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Mist
   </a>
@@ -723,8 +717,7 @@
   </script>
 
   
-    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/MathJax.js"></script>
-    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/config/TeX-AMS-MML_HTMLorMML.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
 

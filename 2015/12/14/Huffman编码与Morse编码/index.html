@@ -27,7 +27,7 @@
 
 
   
-    <link href='//fonts.lug.ustc.edu.cn/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
   
 
 
@@ -62,7 +62,7 @@
 <meta property="og:url" content="http://hetaotao.net/2015/12/14/Huffman编码与Morse编码/index.html">
 <meta property="og:site_name" content="Daniel Blog">
 <meta property="og:description" content="最近做课程设计，接触到了Huffman编码与Morse编码。在此总结，分享。之前认为编码是个很神奇的存在，现在能够用代码实现，感觉还是很开心的！ 一、Huffman编码1、概念（摘自wikipedia）　　霍夫曼编码（Huffman Coding）是一种编码方式，是一种用于无损数据压缩的熵编码（权编码）演算法。也称“哈夫曼编码”，“赫夫曼编码”。1952年，David A. Huffman在麻省理">
-<meta property="og:locale" content="zh-Hans">
+<meta property="og:locale" content="zh_Hans">
 <meta property="og:image" content="http://hetaotao.net/uploads/HuffmanTree.png">
 <meta property="og:image" content="http://hetaotao.net/uploads/Morse%20code.png">
 <meta property="og:updated_time" content="2016-06-17T06:23:14.357Z">
@@ -84,7 +84,7 @@
   <title> Huffman编码与Morse编码 | Daniel Blog </title>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh_Hans">
 
   <!--[if lte IE 8]>
   <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
@@ -139,7 +139,7 @@
             
               <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
             
-            首页
+            Home
           </a>
         </li>
       
@@ -149,7 +149,7 @@
             
               <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
             
-            分类
+            Categories
           </a>
         </li>
       
@@ -159,7 +159,7 @@
             
               <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
             
-            关于
+            About
           </a>
         </li>
       
@@ -169,7 +169,7 @@
             
               <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
             
-            归档
+            Archives
           </a>
         </li>
       
@@ -179,7 +179,7 @@
             
               <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
             
-            标签
+            Tags
           </a>
         </li>
       
@@ -225,7 +225,7 @@
 
         <div class="post-meta">
           <span class="post-time">
-            发表于
+            Posted on
             <time itemprop="dateCreated" datetime="2015-12-14T09:31:44+08:00" content="2015-12-14">
               2015-12-14
             </time>
@@ -233,19 +233,13 @@
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
+              &nbsp; | &nbsp; In
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/编码/" itemprop="url" rel="index">
                     <span itemprop="name">编码</span>
                   </a>
                 </span>
-            <span title="post.wordcount">
-                |   字数统计 2,246 字   
-            </span>
-    	    <span title="post.min2read">
-                |   阅读时长 11 分钟   
-            </span>
 
                 
                 
@@ -297,9 +291,9 @@
 
     <footer class="post-footer">
       
-	<div class="post-tags">
+        <div class="post-tags">
           
-            <a href="/tags/编码、Huffman/" rel="tag"><i class="fa fa-tag"></i>编码、Huffman</a>
+            <a href="/tags/编码、Huffman/" rel="tag">#编码、Huffman</a>
           
         </div>
       
@@ -369,10 +363,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
+            Table Of Contents
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
+            Overview
           </li>
         </ul>
       
@@ -387,21 +381,21 @@
           <div class="site-state-item site-state-posts">
             <a href="/archives">
               <span class="site-state-item-count">15</span>
-              <span class="site-state-item-name">日志</span>
+              <span class="site-state-item-name">posts</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
               <span class="site-state-item-count">11</span>
-              <span class="site-state-item-name">分类</span>
+              <span class="site-state-item-name">categories</span>
               </a>
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
               <span class="site-state-item-count">11</span>
-              <span class="site-state-item-name">标签</span>
+              <span class="site-state-item-name">tags</span>
               </a>
           </div>
 
@@ -495,11 +489,11 @@
 </span>
 </div>
 <div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
-  主题 -
+  Theme -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Mist
   </a>
@@ -733,8 +727,7 @@
   </script>
 
   
-    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/MathJax.js"></script>
-    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/config/TeX-AMS-MML_HTMLorMML.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
 

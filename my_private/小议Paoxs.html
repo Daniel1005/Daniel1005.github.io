@@ -27,7 +27,7 @@
 
 
   
-    <link href='//fonts.lug.ustc.edu.cn/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
   
 
 
@@ -62,7 +62,7 @@
 <meta property="og:url" content="http://hetaotao.net/my_private/小议Paoxs.html">
 <meta property="og:site_name" content="Daniel Blog">
 <meta property="og:description" content="1 What首先，Paxos 是个什么东东？ 我们思考一种场景： 现在我们要写一条记录保存下来，最简单的，写到一个主机上。大部分情况下没有什么问题，但是可能存在 1% 的可能性，这个主机 down 了，并且是磁盘坏道等无法修复的故障。对于我们非常重要的数据，这件事就是不能容忍的。所以需要改进这个问题。 我们现在使用两台主机，这样如果一个主机的故障是 1% ，两台主机同时故障的比例就降到了 0.01">
-<meta property="og:locale" content="zh-Hans">
+<meta property="og:locale" content="zh_Hans">
 <meta property="og:updated_time" content="2018-05-31T17:18:51.225Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="小议Paoxs-Chapter1">
@@ -87,7 +87,7 @@
 </title>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh_Hans">
 
   <!--[if lte IE 8]>
   <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
@@ -142,7 +142,7 @@
             
               <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
             
-            首页
+            Home
           </a>
         </li>
       
@@ -152,7 +152,7 @@
             
               <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
             
-            分类
+            Categories
           </a>
         </li>
       
@@ -162,7 +162,7 @@
             
               <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
             
-            关于
+            About
           </a>
         </li>
       
@@ -172,7 +172,7 @@
             
               <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
             
-            归档
+            Archives
           </a>
         </li>
       
@@ -182,7 +182,7 @@
             
               <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
             
-            标签
+            Tags
           </a>
         </li>
       
@@ -266,21 +266,21 @@
           <div class="site-state-item site-state-posts">
             <a href="/archives">
               <span class="site-state-item-count">15</span>
-              <span class="site-state-item-name">日志</span>
+              <span class="site-state-item-name">posts</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
               <span class="site-state-item-count">11</span>
-              <span class="site-state-item-name">分类</span>
+              <span class="site-state-item-name">categories</span>
               </a>
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
               <span class="site-state-item-count">11</span>
-              <span class="site-state-item-name">标签</span>
+              <span class="site-state-item-name">tags</span>
               </a>
           </div>
 
@@ -361,11 +361,11 @@
 </span>
 </div>
 <div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
-  主题 -
+  Theme -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Mist
   </a>
@@ -438,8 +438,7 @@
   </script>
 
   
-    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/MathJax.js"></script>
-    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/config/TeX-AMS-MML_HTMLorMML.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
 

@@ -27,7 +27,7 @@
 
 
   
-    <link href='//fonts.lug.ustc.edu.cn/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
   
 
 
@@ -61,7 +61,7 @@
 <meta property="og:url" content="http://hetaotao.net/index.html">
 <meta property="og:site_name" content="Daniel Blog">
 <meta property="og:description" content="Choice-Ability-Opportunity">
-<meta property="og:locale" content="zh-Hans">
+<meta property="og:locale" content="zh_Hans">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Daniel Blog">
 <meta name="twitter:description" content="Choice-Ability-Opportunity">
@@ -79,7 +79,7 @@
   <title> Daniel Blog </title>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh_Hans">
 
   <!--[if lte IE 8]>
   <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
@@ -136,7 +136,7 @@
             
               <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
             
-            首页
+            Home
           </a>
         </li>
       
@@ -146,7 +146,7 @@
             
               <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
             
-            分类
+            Categories
           </a>
         </li>
       
@@ -156,7 +156,7 @@
             
               <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
             
-            关于
+            About
           </a>
         </li>
       
@@ -166,7 +166,7 @@
             
               <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
             
-            归档
+            Archives
           </a>
         </li>
       
@@ -176,7 +176,7 @@
             
               <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
             
-            标签
+            Tags
           </a>
         </li>
       
@@ -224,7 +224,7 @@
 
         <div class="post-meta">
           <span class="post-time">
-            发表于
+            Posted on
             <time itemprop="dateCreated" datetime="2018-07-28T13:56:52+08:00" content="2018-07-28">
               2018-07-28
             </time>
@@ -232,19 +232,13 @@
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
+              &nbsp; | &nbsp; In
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/分布式/" itemprop="url" rel="index">
                     <span itemprop="name">分布式</span>
                   </a>
                 </span>
-            <span title="post.wordcount">
-                |   字数统计 256 字   
-            </span>
-    	    <span title="post.min2read">
-                |   阅读时长 1 分钟   
-            </span>
 
                 
                 
@@ -274,7 +268,7 @@
           <p>最近在网上搜到一些分布式相关的很好的资料，在这里汇总，方便学习和查找。以后不断更新~~</p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2018/07/28/分布式相关学习资料/#more" rel="contents">
-              阅读全文 &raquo;
+              Read more &raquo;
             </a>
           </div>
         
@@ -321,7 +315,7 @@
 
         <div class="post-meta">
           <span class="post-time">
-            发表于
+            Posted on
             <time itemprop="dateCreated" datetime="2018-07-25T03:17:40+08:00" content="2018-07-25">
               2018-07-25
             </time>
@@ -329,19 +323,13 @@
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
+              &nbsp; | &nbsp; In
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/ceph/" itemprop="url" rel="index">
                     <span itemprop="name">ceph</span>
                   </a>
                 </span>
-            <span title="post.wordcount">
-                |   字数统计 575 字   
-            </span>
-    	    <span title="post.min2read">
-                |   阅读时长 3 分钟   
-            </span>
 
                 
                 
@@ -371,7 +359,7 @@
           <h1 id="从虚拟机中的文件到RADOS的object">从虚拟机中的文件到RADOS的object</h1><p>Ceph将虚拟机的卷映射到最终的OSD，经过了两次映射。第一次，从object名到PG做简单hash，并结合pool_id作为前缀，第二次，从PG到OSD通过CRUSH算法计算得到。我们想知道卷最终被映射到哪些主机、哪些OSD、哪些object还是比较麻烦的。<br>我这里摸索出了，从虚拟机的某个文件找到该文件所在rados的object, osd, host的方法 (基于J版Ceph) 。如下：</p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2018/07/25/从虚拟机中的文件到RADOS的object/#more" rel="contents">
-              阅读全文 &raquo;
+              Read more &raquo;
             </a>
           </div>
         
@@ -418,7 +406,7 @@
 
         <div class="post-meta">
           <span class="post-time">
-            发表于
+            Posted on
             <time itemprop="dateCreated" datetime="2018-07-24T12:52:57+08:00" content="2018-07-24">
               2018-07-24
             </time>
@@ -426,19 +414,13 @@
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
+              &nbsp; | &nbsp; In
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/开发工具/" itemprop="url" rel="index">
                     <span itemprop="name">开发工具</span>
                   </a>
                 </span>
-            <span title="post.wordcount">
-                |   字数统计 213 字   
-            </span>
-    	    <span title="post.min2read">
-                |   阅读时长 1 分钟   
-            </span>
 
                 
                 
@@ -468,7 +450,7 @@
           <h1 id="Git_入门之同步上游代码">Git 入门之同步上游代码</h1><p>作为开源社区的贡献者，我们经常需要将自己的Github仓库从社区同步。这里从网上查，加上自己实践总结一下方法。</p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2018/07/24/Git入门之同步上游代码/#more" rel="contents">
-              阅读全文 &raquo;
+              Read more &raquo;
             </a>
           </div>
         
@@ -515,7 +497,7 @@
 
         <div class="post-meta">
           <span class="post-time">
-            发表于
+            Posted on
             <time itemprop="dateCreated" datetime="2018-06-22T12:40:37+08:00" content="2018-06-22">
               2018-06-22
             </time>
@@ -523,19 +505,13 @@
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
+              &nbsp; | &nbsp; In
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/编程/" itemprop="url" rel="index">
                     <span itemprop="name">编程</span>
                   </a>
                 </span>
-            <span title="post.wordcount">
-                |   字数统计 235 字   
-            </span>
-    	    <span title="post.min2read">
-                |   阅读时长 1 分钟   
-            </span>
 
                 
                 
@@ -565,7 +541,7 @@
           <h1 id="Shell_学习">Shell 学习</h1><p>因为平时写 Shell 脚本比较多，并且 Shell 的语法规则比较零散，这里做一些学习和实践总结。</p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2018/06/22/shell学习/#more" rel="contents">
-              阅读全文 &raquo;
+              Read more &raquo;
             </a>
           </div>
         
@@ -612,7 +588,7 @@
 
         <div class="post-meta">
           <span class="post-time">
-            发表于
+            Posted on
             <time itemprop="dateCreated" datetime="2018-06-10T10:01:19+08:00" content="2018-06-10">
               2018-06-10
             </time>
@@ -620,19 +596,13 @@
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
+              &nbsp; | &nbsp; In
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/运维/" itemprop="url" rel="index">
                     <span itemprop="name">运维</span>
                   </a>
                 </span>
-            <span title="post.wordcount">
-                |   字数统计 1,510 字   
-            </span>
-    	    <span title="post.min2read">
-                |   阅读时长 5 分钟   
-            </span>
 
                 
                 
@@ -662,7 +632,7 @@
           <p>从 2016 年底就开始阅读 《SRE Google 运维解密》 这本书，断断续续看得差不多。对于 Google 这种超大规模的互联网公司，他的运维体系在相当长的时间内都是领先业界很多，虽然说其公开的资料已经是 Google 几年前的事情了，但是其体系还是有很大的研究和实践价值。<br>这本书的重点是指导思想+具体实践，其中的关键词是分布式。众所周知，Google 在分布式系统方面的理论和实践相当先进，其分布式存储 GFS、分布式计算 MapReduce，分布式数据库 BigTable 也是被广泛地研究与学习。</p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2018/06/10/SRE/#more" rel="contents">
-              阅读全文 &raquo;
+              Read more &raquo;
             </a>
           </div>
         
@@ -709,7 +679,7 @@
 
         <div class="post-meta">
           <span class="post-time">
-            发表于
+            Posted on
             <time itemprop="dateCreated" datetime="2018-04-11T20:27:40+08:00" content="2018-04-11">
               2018-04-11
             </time>
@@ -717,19 +687,13 @@
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
+              &nbsp; | &nbsp; In
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/ceph/" itemprop="url" rel="index">
                     <span itemprop="name">ceph</span>
                   </a>
                 </span>
-            <span title="post.wordcount">
-                |   字数统计 26 字   
-            </span>
-    	    <span title="post.min2read">
-                |   阅读时长 1 分钟   
-            </span>
 
                 
                 
@@ -759,7 +723,7 @@
           <h1 id="osd故障检测机制小结">osd故障检测机制小结</h1><p>从3条简要的代码线看osd的故障检测机制。</p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2018/04/11/osd故障检测机制小结/#more" rel="contents">
-              阅读全文 &raquo;
+              Read more &raquo;
             </a>
           </div>
         
@@ -806,7 +770,7 @@
 
         <div class="post-meta">
           <span class="post-time">
-            发表于
+            Posted on
             <time itemprop="dateCreated" datetime="2017-12-20T21:30:58+08:00" content="2017-12-20">
               2017-12-20
             </time>
@@ -814,19 +778,13 @@
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
+              &nbsp; | &nbsp; In
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/ceph/" itemprop="url" rel="index">
                     <span itemprop="name">ceph</span>
                   </a>
                 </span>
-            <span title="post.wordcount">
-                |   字数统计 300 字   
-            </span>
-    	    <span title="post.min2read">
-                |   阅读时长 1 分钟   
-            </span>
 
                 
                 
@@ -856,7 +814,7 @@
           <h1 id="ceph集群中的心跳机制研究3">ceph集群中的心跳机制研究3</h1><p>之前研究了Ceph集群的心跳机制和故障检测机制，那从心跳机制到故障判断的过程又是什么样的？因为涉及多个源代码文件，并且函数调用嵌套很多层，这里看起来不是那么清晰，所以这也是我最后要讲的地方。</p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2017/12/20/ceph-heartbeat3/#more" rel="contents">
-              阅读全文 &raquo;
+              Read more &raquo;
             </a>
           </div>
         
@@ -903,7 +861,7 @@
 
         <div class="post-meta">
           <span class="post-time">
-            发表于
+            Posted on
             <time itemprop="dateCreated" datetime="2017-11-24T20:09:50+08:00" content="2017-11-24">
               2017-11-24
             </time>
@@ -911,19 +869,13 @@
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
+              &nbsp; | &nbsp; In
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/ceph/" itemprop="url" rel="index">
                     <span itemprop="name">ceph</span>
                   </a>
                 </span>
-            <span title="post.wordcount">
-                |   字数统计 724 字   
-            </span>
-    	    <span title="post.min2read">
-                |   阅读时长 3 分钟   
-            </span>
 
                 
                 
@@ -953,7 +905,7 @@
           <h1 id="ceph集群中的心跳机制研究2">ceph集群中的心跳机制研究2</h1><p>我知道Ceph的基石是RADOS，而RADOS的含义是Reliable Autonomic Distributed Object Storage，而Autonomic（自治）的实现则依赖于Ceph中很好的故障检测机制。<br>下面进入正题。</p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2017/11/24/ceph-heartbeat2/#more" rel="contents">
-              阅读全文 &raquo;
+              Read more &raquo;
             </a>
           </div>
         
@@ -1000,7 +952,7 @@
 
         <div class="post-meta">
           <span class="post-time">
-            发表于
+            Posted on
             <time itemprop="dateCreated" datetime="2017-09-06T23:25:17+08:00" content="2017-09-06">
               2017-09-06
             </time>
@@ -1008,19 +960,13 @@
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
+              &nbsp; | &nbsp; In
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/ceph/" itemprop="url" rel="index">
                     <span itemprop="name">ceph</span>
                   </a>
                 </span>
-            <span title="post.wordcount">
-                |   字数统计 766 字   
-            </span>
-    	    <span title="post.min2read">
-                |   阅读时长 3 分钟   
-            </span>
 
                 
                 
@@ -1050,7 +996,7 @@
           <h1 id="ceph集群中的心跳机制研究">ceph集群中的心跳机制研究</h1><p>基于Ceph 0.94.5版本，进行Ceph集群中的心跳机制进行研究。<br>在ceph中，心跳机制通过ping来实现，用来作为集群中故障检测的方法。分为两类：osd与osd之间的心跳，osd与mon之间的心跳。下面去一探究竟。</p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2017/09/06/ceph-heartbeat/#more" rel="contents">
-              阅读全文 &raquo;
+              Read more &raquo;
             </a>
           </div>
         
@@ -1097,7 +1043,7 @@
 
         <div class="post-meta">
           <span class="post-time">
-            发表于
+            Posted on
             <time itemprop="dateCreated" datetime="2017-09-03T11:02:43+08:00" content="2017-09-03">
               2017-09-03
             </time>
@@ -1105,19 +1051,13 @@
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
+              &nbsp; | &nbsp; In
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/storage/" itemprop="url" rel="index">
                     <span itemprop="name">storage</span>
                   </a>
                 </span>
-            <span title="post.wordcount">
-                |   字数统计 109 字   
-            </span>
-    	    <span title="post.min2read">
-                |   阅读时长 1 分钟   
-            </span>
 
                 
                 
@@ -1147,7 +1087,7 @@
           <h1 id="A_mind_map_about_storage">A mind map about storage</h1><p>我个人现在的工作方向是云存储，这要求我既对目前接触的分布式存储方案、技术（<a href="http://docs.ceph.com" target="_blank" rel="noopener">Ceph</a>）有深入的研究，对于存储这个较大的领域的一些基本原理、通用性、本质性的东西也很需要有所了解。先贴一张自己总结的思维导图，以后会基于此图进行补充或者细化。</p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2017/09/03/storage/#more" rel="contents">
-              阅读全文 &raquo;
+              Read more &raquo;
             </a>
           </div>
         
@@ -1214,21 +1154,21 @@
           <div class="site-state-item site-state-posts">
             <a href="/archives">
               <span class="site-state-item-count">15</span>
-              <span class="site-state-item-name">日志</span>
+              <span class="site-state-item-name">posts</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
               <span class="site-state-item-count">11</span>
-              <span class="site-state-item-name">分类</span>
+              <span class="site-state-item-name">categories</span>
               </a>
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
               <span class="site-state-item-count">11</span>
-              <span class="site-state-item-name">标签</span>
+              <span class="site-state-item-name">tags</span>
               </a>
           </div>
 
@@ -1309,11 +1249,11 @@
 </span>
 </div>
 <div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
-  主题 -
+  Theme -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Mist
   </a>
@@ -1386,8 +1326,7 @@
   </script>
 
   
-    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/MathJax.js"></script>
-    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/config/TeX-AMS-MML_HTMLorMML.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
 
