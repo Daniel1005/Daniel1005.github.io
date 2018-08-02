@@ -37,7 +37,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="ceph," />
+  <meta name="keywords" content="存储," />
 
 
 
@@ -55,18 +55,20 @@
 
 
 
-<meta name="description" content="从虚拟机中的文件到RADOS的objectCeph将虚拟机的卷映射到最终的OSD，经过了两次映射。第一次，从object名到PG做简单hash，并结合pool_id作为前缀，第二次，从PG到OSD通过CRUSH算法计算得到。我们想知道卷最终被映射到哪些主机、哪些OSD、哪些object还是比较麻烦的。我这里摸索出了，从虚拟机的某个文件找到该文件所在rados的object, osd, host的方">
-<meta name="keywords" content="ceph">
+<meta name="description" content="这段时间在学习 LevelDB 这个经典的 KV 存储系统，先扔一张自己总结的图，后面有时间主机补充细节。">
+<meta name="keywords" content="存储">
 <meta property="og:type" content="article">
-<meta property="og:title" content="从虚拟机中的文件到RADOS的object">
-<meta property="og:url" content="http://hetaotao.net/2018/07/25/从虚拟机中的文件到RADOS的object/index.html">
+<meta property="og:title" content="leveldb学习总结">
+<meta property="og:url" content="http://hetaotao.net/2018/08/02/leveldb学习总结/index.html">
 <meta property="og:site_name" content="Daniel Blog">
-<meta property="og:description" content="从虚拟机中的文件到RADOS的objectCeph将虚拟机的卷映射到最终的OSD，经过了两次映射。第一次，从object名到PG做简单hash，并结合pool_id作为前缀，第二次，从PG到OSD通过CRUSH算法计算得到。我们想知道卷最终被映射到哪些主机、哪些OSD、哪些object还是比较麻烦的。我这里摸索出了，从虚拟机的某个文件找到该文件所在rados的object, osd, host的方">
+<meta property="og:description" content="这段时间在学习 LevelDB 这个经典的 KV 存储系统，先扔一张自己总结的图，后面有时间主机补充细节。">
 <meta property="og:locale" content="zh_Hans">
-<meta property="og:updated_time" content="2018-07-24T19:50:51.221Z">
+<meta property="og:image" content="http://hetaotao.net/uploads/leveldb学习总结.png">
+<meta property="og:updated_time" content="2018-08-02T14:01:46.584Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="从虚拟机中的文件到RADOS的object">
-<meta name="twitter:description" content="从虚拟机中的文件到RADOS的objectCeph将虚拟机的卷映射到最终的OSD，经过了两次映射。第一次，从object名到PG做简单hash，并结合pool_id作为前缀，第二次，从PG到OSD通过CRUSH算法计算得到。我们想知道卷最终被映射到哪些主机、哪些OSD、哪些object还是比较麻烦的。我这里摸索出了，从虚拟机的某个文件找到该文件所在rados的object, osd, host的方">
+<meta name="twitter:title" content="leveldb学习总结">
+<meta name="twitter:description" content="这段时间在学习 LevelDB 这个经典的 KV 存储系统，先扔一张自己总结的图，后面有时间主机补充细节。">
+<meta name="twitter:image" content="http://hetaotao.net/uploads/leveldb学习总结.png">
 
 
 
@@ -78,7 +80,7 @@
   };
 </script>
 
-  <title> 从虚拟机中的文件到RADOS的object | Daniel Blog </title>
+  <title> leveldb学习总结 | Daniel Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh_Hans">
@@ -214,7 +216,7 @@
             
             
               
-                从虚拟机中的文件到RADOS的object
+                leveldb学习总结
               
             
           </h1>
@@ -223,8 +225,8 @@
         <div class="post-meta">
           <span class="post-time">
             Posted on
-            <time itemprop="dateCreated" datetime="2018-07-25T03:17:40+08:00" content="2018-07-25">
-              2018-07-25
+            <time itemprop="dateCreated" datetime="2018-08-02T21:58:23+08:00" content="2018-08-02">
+              2018-08-02
             </time>
           </span>
 
@@ -233,8 +235,8 @@
               &nbsp; | &nbsp; In
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/ceph/" itemprop="url" rel="index">
-                    <span itemprop="name">ceph</span>
+                  <a href="/categories/存储/" itemprop="url" rel="index">
+                    <span itemprop="name">存储</span>
                   </a>
                 </span>
 
@@ -262,19 +264,9 @@
       
 
       
-        <span itemprop="articleBody"><h1 id="从虚拟机中的文件到RADOS的object">从虚拟机中的文件到RADOS的object</h1><p>Ceph将虚拟机的卷映射到最终的OSD，经过了两次映射。第一次，从object名到PG做简单hash，并结合pool_id作为前缀，第二次，从PG到OSD通过CRUSH算法计算得到。我们想知道卷最终被映射到哪些主机、哪些OSD、哪些object还是比较麻烦的。<br>我这里摸索出了，从虚拟机的某个文件找到该文件所在rados的object, osd, host的方法 (基于J版Ceph) 。如下：</p>
+        <span itemprop="articleBody"><p>这段时间在学习 LevelDB 这个经典的 KV 存储系统，先扔一张自己总结的图，后面有时间主机补充细节。</p>
 <a id="more"></a>
-<p>查看文件的磁盘设备偏移地址<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@vmhost]<span class="meta"># filefrag -v test</span></span><br><span class="line">Filesystem type is: <span class="number">58465342</span></span><br><span class="line">File size of test is <span class="number">35052</span> (<span class="number">9</span> blocks of <span class="number">4096</span> bytes)</span><br><span class="line">ext: logical_offset: physical_offset: length: expected: flags:</span><br><span class="line"><span class="number">0</span>: <span class="number">0.</span>. <span class="number">8</span>: <span class="number">268435473.</span>. <span class="number">268435481</span>: <span class="number">9</span>: eof</span><br></pre></td></tr></table></figure></p>
-<p>根据physical_offset的起始地址 268435473 计算所在的object编号（磁盘设备是顺序切分成object的）<br>268435473/1024 = 262144.0166015625<br>即此从第262144个object开始的,<br>object名字是由prefix和后缀组成的，其中后缀是16进制的，262144转化成16进制为40000。</p>
-<p>查看object的名字<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[root@server]<span class="meta"># rbd info efs-nfsd-test/quotatest18.img</span></span><br><span class="line">rbd image 'quotatest18.img':</span><br><span class="line">size <span class="number">8192</span> GB in <span class="number">2097152</span> objects</span><br><span class="line">order <span class="number">22</span> (<span class="number">4096</span> kB objects)</span><br><span class="line">block_name_prefix: rbd_data<span class="number">.4</span>d79a4238e1f29</span><br><span class="line">format: <span class="number">2</span></span><br><span class="line">features: layering, exclusive-lock</span><br><span class="line">flags:</span><br></pre></td></tr></table></figure></p>
-<p>找到对应的object prefix为: rbd_data.4d79a4238e1f29 </p>
-<p>通过下面这个命令找到该卷对应的所有的object：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rados -p efs-nfsd-test ls |grep 'rbd_data.4d79a4238e1f29' &gt;&gt; efs-nfsd-test-objects.txt</span><br></pre></td></tr></table></figure></p>
-<p>在这里面可以找到我们需要的object：rbd_data.4d79a4238e1f29.0000000000040000</p>
-<p>找到对应的object映射到的osd<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@server]<span class="meta"># ceph osd map efs-nfsd-test rbd_data.4d79a4238e1f29.0000000000040000</span></span><br><span class="line"></span><br><span class="line">osdmap e188415 pool 'efs-nfsd-test' (16) object 'rbd_data.4d79a4238e1f29.0000000000040000' -&gt; pg 16.4fa43842 (16.42) -&gt; up ([0,20,13], p0) acting ([0,20,13], p0)</span><br></pre></td></tr></table></figure></p>
-<p>从osd找到对应的主机<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@server]<span class="meta"># ceph osd tree</span></span><br></pre></td></tr></table></figure></p>
-<p>如果需要可以对object的内容进行验证，导出对应object的内容<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rados -p efs-nfsd-test get rbd_data<span class="number">.4</span>d79a4238e1f29<span class="number">.0000000000040000</span> rbd_data<span class="number">.4</span>d79a4238e1f29<span class="number">.0000000000040000</span>.txt</span><br></pre></td></tr></table></figure></p>
-<p>用dd可以定位到对应位置的文件内容<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@vmhost]<span class="meta"># dd <span class="meta-keyword">if</span>=rbd_data.4d79a4238e1f29.0000000000040000.txt of=rbd_data.4d79a4238e1f29.0000000000040000_2.txt bs=4k count=9 skip=17</span></span><br><span class="line"><span class="number">9</span>+<span class="number">0</span> records in</span><br><span class="line"><span class="number">9</span>+<span class="number">0</span> records out</span><br><span class="line"><span class="number">36864</span> bytes (<span class="number">37</span> kB) copied, <span class="number">0.000475126</span> s, <span class="number">77.6</span> MB/s</span><br></pre></td></tr></table></figure></p>
-<p>其中skip的数目是以4k为单位的，可以从开始的filefrag -v test的数字计算出来<br>268435473-262144*1024=17<br>可以看到从object导出的文件内容和实际的文件内容是一致的。</p>
+<p><img src="/uploads/leveldb学习总结.png" alt="LevelDB"></p>
 </span>
       
     </div>
@@ -283,7 +275,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/ceph/" rel="tag">#ceph</a>
+            <a href="/tags/存储/" rel="tag">#存储</a>
           
         </div>
       
@@ -292,17 +284,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/07/24/Git入门之同步上游代码/" rel="next" title="Git入门之同步上游代码">
-                <i class="fa fa-chevron-left"></i> Git入门之同步上游代码
+              <a href="/2018/07/28/分布式相关学习资料/" rel="next" title="分布式相关学习资料">
+                <i class="fa fa-chevron-left"></i> 分布式相关学习资料
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/07/28/分布式相关学习资料/" rel="prev" title="分布式相关学习资料">
-                分布式相关学习资料 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -446,7 +434,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#从虚拟机中的文件到RADOS的object"><span class="nav-number">1.</span> <span class="nav-text">从虚拟机中的文件到RADOS的object</span></a></li></ol></div>
+              <p class="post-toc-empty">This post does not have a Table Of Contents</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>

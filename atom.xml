@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://hetaotao.net/"/>
-  <updated>2018-07-28T08:41:02.181Z</updated>
+  <updated>2018-08-02T14:01:46.584Z</updated>
   <id>http://hetaotao.net/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>leveldb学习总结</title>
+    <link href="http://hetaotao.net/2018/08/02/leveldb%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/"/>
+    <id>http://hetaotao.net/2018/08/02/leveldb学习总结/</id>
+    <published>2018-08-02T13:58:23.000Z</published>
+    <updated>2018-08-02T14:01:46.584Z</updated>
+    
+    <content type="html"><![CDATA[<p>这段时间在学习 LevelDB 这个经典的 KV 存储系统，先扔一张自己总结的图，后面有时间主机补充细节。</p><a id="more"></a><p><img src="/uploads/leveldb学习总结.png" alt="LevelDB"></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这段时间在学习 LevelDB 这个经典的 KV 存储系统，先扔一张自己总结的图，后面有时间主机补充细节。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="存储" scheme="http://hetaotao.net/categories/%E5%AD%98%E5%82%A8/"/>
+    
+    
+      <category term="存储" scheme="http://hetaotao.net/tags/%E5%AD%98%E5%82%A8/"/>
+    
+  </entry>
   
   <entry>
     <title>分布式相关学习资料</title>
