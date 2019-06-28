@@ -55,18 +55,18 @@
 
 
 
-<meta name="description" content="ceph集群中的心跳机制研究2我知道Ceph的基石是RADOS，而RADOS的含义是Reliable Autonomic Distributed Object Storage，而Autonomic（自治）的实现则依赖于Ceph中很好的故障检测机制。下面进入正题。">
+<meta name="description" content="#ceph集群中的心跳机制研究2 我知道Ceph的基石是RADOS，而RADOS的含义是Reliable Autonomic Distributed Object Storage，而Autonomic（自治）的实现则依赖于Ceph中很好的故障检测机制。下面进入正题。">
 <meta name="keywords" content="ceph">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ceph-heartbeat2">
 <meta property="og:url" content="http://hetaotao.net/2017/11/24/ceph-heartbeat2/index.html">
 <meta property="og:site_name" content="Daniel Blog">
-<meta property="og:description" content="ceph集群中的心跳机制研究2我知道Ceph的基石是RADOS，而RADOS的含义是Reliable Autonomic Distributed Object Storage，而Autonomic（自治）的实现则依赖于Ceph中很好的故障检测机制。下面进入正题。">
+<meta property="og:description" content="#ceph集群中的心跳机制研究2 我知道Ceph的基石是RADOS，而RADOS的含义是Reliable Autonomic Distributed Object Storage，而Autonomic（自治）的实现则依赖于Ceph中很好的故障检测机制。下面进入正题。">
 <meta property="og:locale" content="zh_Hans">
 <meta property="og:updated_time" content="2018-01-13T08:47:57.579Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ceph-heartbeat2">
-<meta name="twitter:description" content="ceph集群中的心跳机制研究2我知道Ceph的基石是RADOS，而RADOS的含义是Reliable Autonomic Distributed Object Storage，而Autonomic（自治）的实现则依赖于Ceph中很好的故障检测机制。下面进入正题。">
+<meta name="twitter:description" content="#ceph集群中的心跳机制研究2 我知道Ceph的基石是RADOS，而RADOS的含义是Reliable Autonomic Distributed Object Storage，而Autonomic（自治）的实现则依赖于Ceph中很好的故障检测机制。下面进入正题。">
 
 
 
@@ -262,17 +262,18 @@
       
 
       
-        <span itemprop="articleBody"><h1 id="ceph集群中的心跳机制研究2">ceph集群中的心跳机制研究2</h1><p>我知道Ceph的基石是RADOS，而RADOS的含义是Reliable Autonomic Distributed Object Storage，而Autonomic（自治）的实现则依赖于Ceph中很好的故障检测机制。<br>下面进入正题。</p>
+        <span itemprop="articleBody"><p>#ceph集群中的心跳机制研究2</p>
+<p>我知道Ceph的基石是RADOS，而RADOS的含义是Reliable Autonomic Distributed Object Storage，而Autonomic（自治）的实现则依赖于Ceph中很好的故障检测机制。<br>下面进入正题。</p>
 <a id="more"></a>
 <p>Ceph在故障检测的时候有两个函数：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">OSDMonitor::check_failure</span><br><span class="line">OSDMonitor::prepare_failure</span><br></pre></td></tr></table></figure></p>
 <p>他们之间的关系是，prepare_failure做了一些fail前的report过程，然后再调用check_failure。</p>
-<h2 id="grace_time">grace time</h2><p>对于osd的故障判断有个grace time，相当于一个容错值，当fail time大于grace time时基本可以断定osd fail。当配置项g_conf-&gt;mon_osd_adjust_heartbeat_grace为true的时候，grace的计算有个过程，并且这个过程让人难以理解，先贴一下代码。</p>
+<p>##grace time<br>对于osd的故障判断有个grace time，相当于一个容错值，当fail time大于grace time时基本可以断定osd fail。当配置项g_conf-&gt;mon_osd_adjust_heartbeat_grace为true的时候，grace的计算有个过程，并且这个过程让人难以理解，先贴一下代码。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//my_grace计算</span></span><br><span class="line">    <span class="keyword">double</span> halflife = (<span class="keyword">double</span>)g_conf-&gt;mon_osd_laggy_halflife;</span><br><span class="line">    <span class="keyword">double</span> decay_k = ::<span class="built_in">log</span>(<span class="number">.5</span>) / halflife;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// scale grace period based on historical probability of 'lagginess'</span></span><br><span class="line">    <span class="comment">// (false positive failures due to slowness).</span></span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">osd_xinfo_t</span>&amp; xi = osdmap.get_xinfo(target_osd);</span><br><span class="line">    <span class="keyword">double</span> decay = <span class="built_in">exp</span>((<span class="keyword">double</span>)failed_for * decay_k);</span><br><span class="line">    dout(<span class="number">20</span>) &lt;&lt; <span class="string">" halflife "</span> &lt;&lt; halflife &lt;&lt; <span class="string">" decay_k "</span> &lt;&lt; decay_k</span><br><span class="line">	     &lt;&lt; <span class="string">" failed_for "</span> &lt;&lt; failed_for &lt;&lt; <span class="string">" decay "</span> &lt;&lt; decay &lt;&lt; dendl;</span><br><span class="line">    my_grace = decay * (<span class="keyword">double</span>)xi.laggy_interval * xi.laggy_probability;</span><br><span class="line">    grace += my_grace;</span><br><span class="line"></span><br><span class="line"><span class="comment">//peer_grace计算</span></span><br><span class="line">    assert(fi.reporters.size());</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">map</span>&lt;<span class="keyword">int</span>,<span class="keyword">failure_reporter_t</span>&gt;::iterator p = fi.reporters.begin();</span><br><span class="line">	 p != fi.reporters.end();</span><br><span class="line">	 ++p) &#123;</span><br><span class="line">      <span class="keyword">const</span> <span class="keyword">osd_xinfo_t</span>&amp; xi = osdmap.get_xinfo(p-&gt;first);</span><br><span class="line">      <span class="keyword">utime_t</span> elapsed = now - xi.down_stamp;</span><br><span class="line">      <span class="keyword">double</span> decay = <span class="built_in">exp</span>((<span class="keyword">double</span>)elapsed * decay_k);</span><br><span class="line">      peer_grace += decay * (<span class="keyword">double</span>)xi.laggy_interval * xi.laggy_probability;</span><br><span class="line">    &#125;</span><br><span class="line">    peer_grace /= (<span class="keyword">double</span>)fi.reporters.size();</span><br><span class="line">    grace += peer_grace;</span><br></pre></td></tr></table></figure>
-<h2 id="失效条件">失效条件</h2><p>重点在这里，最终check_failure的成功条件是：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">failed_for &gt;= grace &amp;&amp; </span><br><span class="line">((<span class="keyword">int</span>)fi.reporters.size() &gt;= g_conf-&gt;mon_osd_min_down_reporters) &amp;&amp;</span><br><span class="line">(fi.num_reports &gt;= g_conf-&gt;mon_osd_min_down_reports)</span><br></pre></td></tr></table></figure></p>
+<p>##失效条件<br>重点在这里，最终check_failure的成功条件是：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">failed_for &gt;= grace &amp;&amp; </span><br><span class="line">((<span class="keyword">int</span>)fi.reporters.size() &gt;= g_conf-&gt;mon_osd_min_down_reporters) &amp;&amp;</span><br><span class="line">(fi.num_reports &gt;= g_conf-&gt;mon_osd_min_down_reports)</span><br></pre></td></tr></table></figure></p>
 <p>即失效时间大于grace(g_conf中设置的值)，并且reporters大于配置的reporters，reports大于配置的reports。<br>当这3个条件同时满足后osd会被标记为down,并输出类似如下这样的日志：<br>osd.3 failed 3 reports from 1 peers after 21.666000 &gt;= grace 20</p>
-<h3 id="注(2018年1月13日)：">注(2018年1月13日)：</h3><p>以上对于Ceph 0.94.5版本，对于Ceph10.2.10 Jewel版本，mark down的机制有所不同，条件从3个变成两个了，代码如下：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (failed_for &gt;= grace &amp;&amp;</span><br><span class="line">    (<span class="keyword">int</span>)reporters_by_subtree.size() &gt;= g_conf-&gt;mon_osd_min_down_reporters)</span><br></pre></td></tr></table></figure></p>
+<p>###注(2018年1月13日)：<br>以上对于Ceph 0.94.5版本，对于Ceph10.2.10 Jewel版本，mark down的机制有所不同，条件从3个变成两个了，代码如下：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (failed_for &gt;= grace &amp;&amp;</span><br><span class="line">    (<span class="keyword">int</span>)reporters_by_subtree.size() &gt;= g_conf-&gt;mon_osd_min_down_reporters)</span><br></pre></td></tr></table></figure></p>
 <p>即grace time超时，并且来自不同subtree的reporters达到了配置的数目。<br>相关的两个集群配置为：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mon_osd_min_down_reporters，默认<span class="number">2</span></span><br><span class="line">mon_osd_reporter_subtree_level，默认为host</span><br></pre></td></tr></table></figure></p>
-<h2 id="grace值的tradeoff">grace值的tradeoff</h2><p>这个值可以在集群动态配置，默认是20s。如果值设置地过大，那么当集群出现节点故障时，集群的故障判断时间势必会很长，这直接导致客户端的IO相应地阻塞很长时间。如果值设置的过小也是可能会出问题的，因为分布式集群不可避免地会遇到节点之间的网络问题，当网络出现短时间的丢包或者阻塞的时候，过小的grace设置会导致集群很快认为osd down，尽管网络只是暂时的抖动。从这里可以看出来，对于分布式系统的3个状态：成功，失败和超时，其中失败和超时之间并没有严格的界限，需要我们自己去权衡。</p>
+<p>##grace值的tradeoff<br>这个值可以在集群动态配置，默认是20s。如果值设置地过大，那么当集群出现节点故障时，集群的故障判断时间势必会很长，这直接导致客户端的IO相应地阻塞很长时间。如果值设置的过小也是可能会出问题的，因为分布式集群不可避免地会遇到节点之间的网络问题，当网络出现短时间的丢包或者阻塞的时候，过小的grace设置会导致集群很快认为osd down，尽管网络只是暂时的抖动。从这里可以看出来，对于分布式系统的3个状态：成功，失败和超时，其中失败和超时之间并没有严格的界限，需要我们自己去权衡。</p>
 <p>2017年11月24日</p>
 </span>
       
@@ -369,21 +370,21 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">16</span>
+              <span class="site-state-item-count">17</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-count">15</span>
               <span class="site-state-item-name">categories</span>
               </a>
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-count">17</span>
               <span class="site-state-item-name">tags</span>
               </a>
           </div>
@@ -445,7 +446,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ceph集群中的心跳机制研究2"><span class="nav-number">1.</span> <span class="nav-text">ceph集群中的心跳机制研究2</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#grace_time"><span class="nav-number">1.1.</span> <span class="nav-text">grace time</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#失效条件"><span class="nav-number">1.2.</span> <span class="nav-text">失效条件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#注(2018年1月13日)："><span class="nav-number">1.2.1.</span> <span class="nav-text">注(2018年1月13日)：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#grace值的tradeoff"><span class="nav-number">1.3.</span> <span class="nav-text">grace值的tradeoff</span></a></li></ol></li></ol></div>
+              <p class="post-toc-empty">This post does not have a Table Of Contents</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
@@ -465,7 +466,7 @@
 <div class="copyright" >
   
   &copy;  2015 - 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="icon-next-heart fa fa-heart"></i>
   </span>
@@ -489,7 +490,7 @@
 </div>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共8.6k字</span>
+  <span class="post-count">博客全站共8.7k字</span>
 </div>
 
 

@@ -55,18 +55,18 @@
 
 
 
-<meta name="description" content="$$ string 类型使用小结 $$ c++在c的char类型基础上引入了string类，从而更加方便地对字符串进行操作。但是如果是不会使用string类也会带来很多麻烦。在自己编码的基础上总结了几点误区。 1、char*类型与string类型的相互转换从char*到string，需要调用string类的构造函数　　如：char* a; string s(a);从string到char*，需要使">
+<meta name="description" content="$$ string 类型使用小结 $$ c++在c的char类型基础上引入了string类，从而更加方便地对字符串进行操作。但是如果是不会使用string类也会带来很多麻烦。在自己编码的基础上总结了几点误区。 ##1、char*类型与string类型的相互转换从char*到string，需要调用string类的构造函数　　如：char* a; string s(a);从string到char*，需">
 <meta name="keywords" content="string类型">
 <meta property="og:type" content="article">
 <meta property="og:title" content="string类型使用小结">
 <meta property="og:url" content="http://hetaotao.net/2015/12/14/string类型使用小结/index.html">
 <meta property="og:site_name" content="Daniel Blog">
-<meta property="og:description" content="$$ string 类型使用小结 $$ c++在c的char类型基础上引入了string类，从而更加方便地对字符串进行操作。但是如果是不会使用string类也会带来很多麻烦。在自己编码的基础上总结了几点误区。 1、char*类型与string类型的相互转换从char*到string，需要调用string类的构造函数　　如：char* a; string s(a);从string到char*，需要使">
+<meta property="og:description" content="$$ string 类型使用小结 $$ c++在c的char类型基础上引入了string类，从而更加方便地对字符串进行操作。但是如果是不会使用string类也会带来很多麻烦。在自己编码的基础上总结了几点误区。 ##1、char*类型与string类型的相互转换从char*到string，需要调用string类的构造函数　　如：char* a; string s(a);从string到char*，需">
 <meta property="og:locale" content="zh_Hans">
 <meta property="og:updated_time" content="2015-12-24T08:58:21.756Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="string类型使用小结">
-<meta name="twitter:description" content="$$ string 类型使用小结 $$ c++在c的char类型基础上引入了string类，从而更加方便地对字符串进行操作。但是如果是不会使用string类也会带来很多麻烦。在自己编码的基础上总结了几点误区。 1、char*类型与string类型的相互转换从char*到string，需要调用string类的构造函数　　如：char* a; string s(a);从string到char*，需要使">
+<meta name="twitter:description" content="$$ string 类型使用小结 $$ c++在c的char类型基础上引入了string类，从而更加方便地对字符串进行操作。但是如果是不会使用string类也会带来很多麻烦。在自己编码的基础上总结了几点误区。 ##1、char*类型与string类型的相互转换从char*到string，需要调用string类的构造函数　　如：char* a; string s(a);从string到char*，需">
 
 
 
@@ -264,9 +264,10 @@
       
         <span itemprop="articleBody"><p>$$ string 类型使用小结 $$</p>
 <p>c++在c的char类型基础上引入了string类，从而更加方便地对字符串进行操作。但是如果是不会使用string类也会带来很多麻烦。在自己编码的基础上总结了几点误区。</p>
-<h2 id="1、char*类型与string类型的相互转换">1、char*类型与string类型的相互转换</h2><p>从char*到string，需要调用string类的构造函数<br>　　如：char* a; string s(a);<br>从string到char*，需要使用string类的c_str()函数<br>　　如：string s = “hello”,  const char* c = s.c_str();</p>
+<p>##1、char*类型与string类型的相互转换<br>从char*到string，需要调用string类的构造函数<br>　　如：char* a; string s(a);<br>从string到char*，需要使用string类的c_str()函数<br>　　如：string s = “hello”,  const char* c = s.c_str();</p>
 <a id="more"></a>
-<h2 id="2、一个特殊错误">2、一个特殊错误</h2><p>单步调试没问题，但是一运行就崩溃</p>
+<p>##2、一个特殊错误</p>
+<p>单步调试没问题，但是一运行就崩溃</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//编译通过，运行崩溃</span></span><br><span class="line">	<span class="built_in">string</span> str;</span><br><span class="line">	i=<span class="number">0</span>;</span><br><span class="line">	freopen(<span class="string">"test_without_punctuation.txt"</span>, <span class="string">"r"</span>, <span class="built_in">stdin</span>);</span><br><span class="line">	<span class="keyword">char</span> c;</span><br><span class="line">	<span class="keyword">while</span>( <span class="built_in">scanf</span>(<span class="string">"%c"</span>, &amp;str[i]) != EOF) &#123;</span><br><span class="line">		<span class="keyword">if</span>(str[i] &gt;= <span class="string">'a'</span> &amp;&amp; str[i] &lt;= <span class="string">'z'</span>)</span><br><span class="line">			total_len += MC[str[i]-<span class="string">'a'</span>].length();</span><br><span class="line">		<span class="comment">//	cout &lt;&lt; total_len &lt;&lt; ' ' &lt;&lt; i &lt;&lt; endl;</span></span><br><span class="line">		++i;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//编译通过，运行正确！</span></span><br><span class="line">	<span class="built_in">string</span> str;</span><br><span class="line">	i=<span class="number">0</span>;</span><br><span class="line">	freopen(<span class="string">"test_without_punctuation.txt"</span>, <span class="string">"r"</span>, <span class="built_in">stdin</span>);</span><br><span class="line">	<span class="keyword">char</span> c;</span><br><span class="line">	<span class="keyword">while</span>( <span class="built_in">scanf</span>(<span class="string">"%c"</span>, &amp;c) != EOF) &#123;</span><br><span class="line">		str+=c;</span><br><span class="line">		<span class="keyword">if</span>(str[i] &gt;= <span class="string">'a'</span> &amp;&amp; str[i] &lt;= <span class="string">'z'</span>)</span><br><span class="line">			total_len += MC[str[i]-<span class="string">'a'</span>].length();</span><br><span class="line">		<span class="comment">//	cout &lt;&lt; total_len &lt;&lt; ' ' &lt;&lt; i &lt;&lt; endl;</span></span><br><span class="line">		++i;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
 <p>原因可能在于对string类型进行读入的时候，即使用scanf()时，string不支持对单个字符的读入！</p>
@@ -365,21 +366,21 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">16</span>
+              <span class="site-state-item-count">17</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-count">15</span>
               <span class="site-state-item-name">categories</span>
               </a>
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-count">17</span>
               <span class="site-state-item-name">tags</span>
               </a>
           </div>
@@ -441,7 +442,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、char*类型与string类型的相互转换"><span class="nav-number">1.</span> <span class="nav-text">1、char*类型与string类型的相互转换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、一个特殊错误"><span class="nav-number">2.</span> <span class="nav-text">2、一个特殊错误</span></a></li></ol></div>
+              <p class="post-toc-empty">This post does not have a Table Of Contents</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
@@ -461,7 +462,7 @@
 <div class="copyright" >
   
   &copy;  2015 - 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="icon-next-heart fa fa-heart"></i>
   </span>
@@ -485,7 +486,7 @@
 </div>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共8.6k字</span>
+  <span class="post-count">博客全站共8.7k字</span>
 </div>
 
 

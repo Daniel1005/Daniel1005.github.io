@@ -214,6 +214,97 @@
             
             
               
+                <a class="post-title-link" href="/2018/08/28/gdb常用命令备忘/" itemprop="url">
+                  gdb常用命令备忘
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            Posted on
+            <time itemprop="dateCreated" datetime="2018-08-28T12:01:58+08:00" content="2018-08-28">
+              2018-08-28
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; In
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/开发工具/" itemprop="url" rel="index">
+                    <span itemprop="name">开发工具</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <p>1、 暂停方式<br>断点 breakpoint / b<br>观察点 watchpoint<br>捕捉点 catchpoint<br>信号 signals<br>线程停止 thread stops<br>恢复程序 continue / c</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2018/08/28/gdb常用命令备忘/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
                 <a class="post-title-link" href="/2018/08/02/leveldb学习总结/" itemprop="url">
                   leveldb学习总结
                 </a>
@@ -447,7 +538,7 @@
 
       
         
-          <h1 id="从虚拟机中的文件到RADOS的object">从虚拟机中的文件到RADOS的object</h1><p>Ceph将虚拟机的卷映射到最终的OSD，经过了两次映射。第一次，从object名到PG做简单hash，并结合pool_id作为前缀，第二次，从PG到OSD通过CRUSH算法计算得到。我们想知道卷最终被映射到哪些主机、哪些OSD、哪些object还是比较麻烦的。<br>我这里摸索出了，从虚拟机的某个文件找到该文件所在rados的object, osd, host的方法 (基于J版Ceph) 。如下：</p>
+          <p>#从虚拟机中的文件到RADOS的object<br>Ceph将虚拟机的卷映射到最终的OSD，经过了两次映射。第一次，从object名到PG做简单hash，并结合pool_id作为前缀，第二次，从PG到OSD通过CRUSH算法计算得到。我们想知道卷最终被映射到哪些主机、哪些OSD、哪些object还是比较麻烦的。<br>我这里摸索出了，从虚拟机的某个文件找到该文件所在rados的object, osd, host的方法 (基于J版Ceph) 。如下：</p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2018/07/25/从虚拟机中的文件到RADOS的object/#more" rel="contents">
               Read more &raquo;
@@ -538,7 +629,7 @@
 
       
         
-          <h1 id="Git_入门之同步上游代码">Git 入门之同步上游代码</h1><p>作为开源社区的贡献者，我们经常需要将自己的Github仓库从社区同步。这里从网上查，加上自己实践总结一下方法。</p>
+          <p>#Git 入门之同步上游代码<br>作为开源社区的贡献者，我们经常需要将自己的Github仓库从社区同步。这里从网上查，加上自己实践总结一下方法。</p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2018/07/24/Git入门之同步上游代码/#more" rel="contents">
               Read more &raquo;
@@ -629,7 +720,7 @@
 
       
         
-          <h1 id="Shell_学习">Shell 学习</h1><p>因为平时写 Shell 脚本比较多，并且 Shell 的语法规则比较零散，这里做一些学习和实践总结。</p>
+          <p>#Shell 学习<br>因为平时写 Shell 脚本比较多，并且 Shell 的语法规则比较零散，这里做一些学习和实践总结。</p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2018/06/22/shell学习/#more" rel="contents">
               Read more &raquo;
@@ -811,7 +902,7 @@
 
       
         
-          <h1 id="osd故障检测机制小结">osd故障检测机制小结</h1><p>从3条简要的代码线看osd的故障检测机制。</p>
+          <p>#osd故障检测机制小结<br>从3条简要的代码线看osd的故障检测机制。</p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2018/04/11/osd故障检测机制小结/#more" rel="contents">
               Read more &raquo;
@@ -902,7 +993,7 @@
 
       
         
-          <h1 id="ceph集群中的心跳机制研究3">ceph集群中的心跳机制研究3</h1><p>之前研究了Ceph集群的心跳机制和故障检测机制，那从心跳机制到故障判断的过程又是什么样的？因为涉及多个源代码文件，并且函数调用嵌套很多层，这里看起来不是那么清晰，所以这也是我最后要讲的地方。</p>
+          <p>#ceph集群中的心跳机制研究3<br>之前研究了Ceph集群的心跳机制和故障检测机制，那从心跳机制到故障判断的过程又是什么样的？因为涉及多个源代码文件，并且函数调用嵌套很多层，这里看起来不是那么清晰，所以这也是我最后要讲的地方。</p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2017/12/20/ceph-heartbeat3/#more" rel="contents">
               Read more &raquo;
@@ -993,100 +1084,10 @@
 
       
         
-          <h1 id="ceph集群中的心跳机制研究2">ceph集群中的心跳机制研究2</h1><p>我知道Ceph的基石是RADOS，而RADOS的含义是Reliable Autonomic Distributed Object Storage，而Autonomic（自治）的实现则依赖于Ceph中很好的故障检测机制。<br>下面进入正题。</p>
+          <p>#ceph集群中的心跳机制研究2</p>
+<p>我知道Ceph的基石是RADOS，而RADOS的含义是Reliable Autonomic Distributed Object Storage，而Autonomic（自治）的实现则依赖于Ceph中很好的故障检测机制。<br>下面进入正题。</p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2017/11/24/ceph-heartbeat2/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                <a class="post-title-link" href="/2017/09/06/ceph-heartbeat/" itemprop="url">
-                  ceph heartbeat
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            Posted on
-            <time itemprop="dateCreated" datetime="2017-09-06T23:25:17+08:00" content="2017-09-06">
-              2017-09-06
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; In
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/ceph/" itemprop="url" rel="index">
-                    <span itemprop="name">ceph</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <h1 id="ceph集群中的心跳机制研究">ceph集群中的心跳机制研究</h1><p>基于Ceph 0.94.5版本，进行Ceph集群中的心跳机制进行研究。<br>在ceph中，心跳机制通过ping来实现，用来作为集群中故障检测的方法。分为两类：osd与osd之间的心跳，osd与mon之间的心跳。下面去一探究竟。</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2017/09/06/ceph-heartbeat/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -1153,21 +1154,21 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">16</span>
+              <span class="site-state-item-count">17</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-count">15</span>
               <span class="site-state-item-name">categories</span>
               </a>
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-count">17</span>
               <span class="site-state-item-name">tags</span>
               </a>
           </div>
@@ -1236,7 +1237,7 @@
 <div class="copyright" >
   
   &copy;  2015 - 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="icon-next-heart fa fa-heart"></i>
   </span>
@@ -1260,7 +1261,7 @@
 </div>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共8.6k字</span>
+  <span class="post-count">博客全站共8.7k字</span>
 </div>
 
 

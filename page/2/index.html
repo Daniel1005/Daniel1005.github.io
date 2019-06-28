@@ -214,6 +214,98 @@
             
             
               
+                <a class="post-title-link" href="/2017/09/06/ceph-heartbeat/" itemprop="url">
+                  ceph heartbeat
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            Posted on
+            <time itemprop="dateCreated" datetime="2017-09-06T23:25:17+08:00" content="2017-09-06">
+              2017-09-06
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; In
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/ceph/" itemprop="url" rel="index">
+                    <span itemprop="name">ceph</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <p>#ceph集群中的心跳机制研究</p>
+<p>基于Ceph 0.94.5版本，进行Ceph集群中的心跳机制进行研究。<br>在ceph中，心跳机制通过ping来实现，用来作为集群中故障检测的方法。分为两类：osd与osd之间的心跳，osd与mon之间的心跳。下面去一探究竟。</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/09/06/ceph-heartbeat/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
                 <a class="post-title-link" href="/2017/09/03/storage/" itemprop="url">
                   storage
                 </a>
@@ -265,7 +357,7 @@
 
       
         
-          <h1 id="A_mind_map_about_storage">A mind map about storage</h1><p>我个人现在的工作方向是云存储，这要求我既对目前接触的分布式存储方案、技术（<a href="http://docs.ceph.com" target="_blank" rel="noopener">Ceph</a>）有深入的研究，对于存储这个较大的领域的一些基本原理、通用性、本质性的东西也很需要有所了解。先贴一张自己总结的思维导图，以后会基于此图进行补充或者细化。</p>
+          <p>#A mind map about storage<br>我个人现在的工作方向是云存储，这要求我既对目前接触的分布式存储方案、技术（<a href="http://docs.ceph.com" target="_blank" rel="noopener">Ceph</a>）有深入的研究，对于存储这个较大的领域的一些基本原理、通用性、本质性的东西也很需要有所了解。先贴一张自己总结的思维导图，以后会基于此图进行补充或者细化。</p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2017/09/03/storage/#more" rel="contents">
               Read more &raquo;
@@ -449,7 +541,7 @@
         
           <p>$$ string 类型使用小结 $$</p>
 <p>c++在c的char类型基础上引入了string类，从而更加方便地对字符串进行操作。但是如果是不会使用string类也会带来很多麻烦。在自己编码的基础上总结了几点误区。</p>
-<h2 id="1、char*类型与string类型的相互转换">1、char*类型与string类型的相互转换</h2><p>从char*到string，需要调用string类的构造函数<br>　　如：char* a; string s(a);<br>从string到char*，需要使用string类的c_str()函数<br>　　如：string s = “hello”,  const char* c = s.c_str();</p>
+<p>##1、char*类型与string类型的相互转换<br>从char*到string，需要调用string类的构造函数<br>　　如：char* a; string s(a);<br>从string到char*，需要使用string类的c_str()函数<br>　　如：string s = “hello”,  const char* c = s.c_str();</p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2015/12/14/string类型使用小结/#more" rel="contents">
               Read more &raquo;
@@ -541,7 +633,8 @@
       
         
           <p>最近做课程设计，接触到了Huffman编码与Morse编码。在此总结，分享。之前认为编码是个很神奇的存在，现在能够用代码实现，感觉还是很开心的！</p>
-<h1 id="一、Huffman编码">一、Huffman编码</h1><h2 id="1、概念（摘自wikipedia）">1、概念（摘自<a href="https://zh.wikipedia.org/wiki/%E9%9C%8D%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81" target="_blank" rel="noopener">wikipedia</a>）</h2><p>　　霍夫曼编码（Huffman Coding）是一种编码方式，是一种用于无损数据压缩的熵编码（权编码）演算法。也称“哈夫曼编码”，“赫夫曼编码”。1952年，David A. Huffman在麻省理工攻读博士时所发明的，并发表于《一种构建极小多馀编码的方法》（A Method for the Construction of Minimum-Redundancy Codes）一文。</p>
+<p>#一、Huffman编码</p>
+<p>##1、概念（摘自<a href="https://zh.wikipedia.org/wiki/%E9%9C%8D%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81" target="_blank" rel="noopener">wikipedia</a>）<br>　　霍夫曼编码（Huffman Coding）是一种编码方式，是一种用于无损数据压缩的熵编码（权编码）演算法。也称“哈夫曼编码”，“赫夫曼编码”。1952年，David A. Huffman在麻省理工攻读博士时所发明的，并发表于《一种构建极小多馀编码的方法》（A Method for the Construction of Minimum-Redundancy Codes）一文。</p>
 <p>　　在计算机资料处理中，霍夫曼编码使用变长编码表对源符号（如文件中的一个字母）进行编码，其中变长编码表是通过一种评估来源符号出现机率的方法得到的，出现机率高的字母使用较短的编码，反之出现机率低的则使用较长的编码，这便使编码之后的字符串的平均长度、期望值降低，从而达到无损压缩数据的目的。</p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2015/12/14/Huffman编码与Morse编码/#more" rel="contents">
@@ -728,7 +821,8 @@
 
       
         
-          <h1 id="Linux网络连接问题解决">Linux网络连接问题解决</h1><p>因为linux网络编程实验需要，需要对linux虚拟机进行联网。但是其中遇到了各种问题，尝试了很多解决方法。拿出来总结、分享一下。</p>
+          <p>#Linux网络连接问题解决</p>
+<p>因为linux网络编程实验需要，需要对linux虚拟机进行联网。但是其中遇到了各种问题，尝试了很多解决方法。拿出来总结、分享一下。</p>
 <hr>
 <p><strong>1、基本指令与配置：</strong></p>
 <p>ifconfig     查看网卡信息<br>route -n     显示现在所有路由<br>ping IP地址（或者域名）     测试网络连接状况<br>sudo /etc/init.d/network restart     重启网络</p>
@@ -803,21 +897,21 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">16</span>
+              <span class="site-state-item-count">17</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-count">15</span>
               <span class="site-state-item-name">categories</span>
               </a>
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-count">17</span>
               <span class="site-state-item-name">tags</span>
               </a>
           </div>
@@ -886,7 +980,7 @@
 <div class="copyright" >
   
   &copy;  2015 - 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="icon-next-heart fa fa-heart"></i>
   </span>
@@ -910,7 +1004,7 @@
 </div>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共8.6k字</span>
+  <span class="post-count">博客全站共8.7k字</span>
 </div>
 
 
