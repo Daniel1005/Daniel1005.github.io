@@ -265,8 +265,7 @@
 
       
         
-          <p>#ceph集群中的心跳机制研究2</p>
-<p>我知道Ceph的基石是RADOS，而RADOS的含义是Reliable Autonomic Distributed Object Storage，而Autonomic（自治）的实现则依赖于Ceph中很好的故障检测机制。<br>下面进入正题。</p>
+          <h1 id="ceph集群中的心跳机制研究2">ceph集群中的心跳机制研究2</h1><p>我知道Ceph的基石是RADOS，而RADOS的含义是Reliable Autonomic Distributed Object Storage，而Autonomic（自治）的实现则依赖于Ceph中很好的故障检测机制。<br>下面进入正题。</p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2017/11/24/ceph-heartbeat2/#more" rel="contents">
               Read more &raquo;
@@ -448,7 +447,7 @@
 
       
         
-          <p>#A mind map about storage<br>我个人现在的工作方向是云存储，这要求我既对目前接触的分布式存储方案、技术（<a href="http://docs.ceph.com" target="_blank" rel="noopener">Ceph</a>）有深入的研究，对于存储这个较大的领域的一些基本原理、通用性、本质性的东西也很需要有所了解。先贴一张自己总结的思维导图，以后会基于此图进行补充或者细化。</p>
+          <h1 id="A_mind_map_about_storage">A mind map about storage</h1><p>我个人现在的工作方向是云存储，这要求我既对目前接触的分布式存储方案、技术（<a href="http://docs.ceph.com" target="_blank" rel="noopener">Ceph</a>）有深入的研究，对于存储这个较大的领域的一些基本原理、通用性、本质性的东西也很需要有所了解。先贴一张自己总结的思维导图，以后会基于此图进行补充或者细化。</p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2017/09/03/storage/#more" rel="contents">
               Read more &raquo;
@@ -630,9 +629,8 @@
 
       
         
-          <p>$$ string 类型使用小结 $$</p>
-<p>c++在c的char类型基础上引入了string类，从而更加方便地对字符串进行操作。但是如果是不会使用string类也会带来很多麻烦。在自己编码的基础上总结了几点误区。</p>
-<p>##1、char*类型与string类型的相互转换<br>从char*到string，需要调用string类的构造函数<br>　　如：char* a; string s(a);<br>从string到char*，需要使用string类的c_str()函数<br>　　如：string s = “hello”,  const char* c = s.c_str();</p>
+          <p>c++在c的char类型基础上引入了string类，从而更加方便地对字符串进行操作。但是如果是不会使用string类也会带来很多麻烦。在自己编码的基础上总结了几点误区。</p>
+<h2 id="1、char*类型与string类型的相互转换">1、char*类型与string类型的相互转换</h2><p>从char*到string，需要调用string类的构造函数<br>　　如：char* a; string s(a);<br>从string到char*，需要使用string类的c_str()函数<br>　　如：string s = “hello”,  const char* c = s.c_str();</p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2015/12/14/string类型使用小结/#more" rel="contents">
               Read more &raquo;
@@ -724,8 +722,7 @@
       
         
           <p>最近做课程设计，接触到了Huffman编码与Morse编码。在此总结，分享。之前认为编码是个很神奇的存在，现在能够用代码实现，感觉还是很开心的！</p>
-<p>#一、Huffman编码</p>
-<p>##1、概念（摘自<a href="https://zh.wikipedia.org/wiki/%E9%9C%8D%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81" target="_blank" rel="noopener">wikipedia</a>）<br>　　霍夫曼编码（Huffman Coding）是一种编码方式，是一种用于无损数据压缩的熵编码（权编码）演算法。也称“哈夫曼编码”，“赫夫曼编码”。1952年，David A. Huffman在麻省理工攻读博士时所发明的，并发表于《一种构建极小多馀编码的方法》（A Method for the Construction of Minimum-Redundancy Codes）一文。</p>
+<h1 id="一、Huffman编码">一、Huffman编码</h1><h2 id="1、概念（摘自wikipedia）">1、概念（摘自<a href="https://zh.wikipedia.org/wiki/%E9%9C%8D%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81" target="_blank" rel="noopener">wikipedia</a>）</h2><p>　　霍夫曼编码（Huffman Coding）是一种编码方式，是一种用于无损数据压缩的熵编码（权编码）演算法。也称“哈夫曼编码”，“赫夫曼编码”。1952年，David A. Huffman在麻省理工攻读博士时所发明的，并发表于《一种构建极小多馀编码的方法》（A Method for the Construction of Minimum-Redundancy Codes）一文。</p>
 <p>　　在计算机资料处理中，霍夫曼编码使用变长编码表对源符号（如文件中的一个字母）进行编码，其中变长编码表是通过一种评估来源符号出现机率的方法得到的，出现机率高的字母使用较短的编码，反之出现机率低的则使用较长的编码，这便使编码之后的字符串的平均长度、期望值降低，从而达到无损压缩数据的目的。</p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2015/12/14/Huffman编码与Morse编码/#more" rel="contents">

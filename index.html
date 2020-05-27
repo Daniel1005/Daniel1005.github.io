@@ -629,7 +629,7 @@
 
       
         
-          <p>#从虚拟机中的文件到RADOS的object<br>Ceph将虚拟机的卷映射到最终的OSD，经过了两次映射。第一次，从object名到PG做简单hash，并结合pool_id作为前缀，第二次，从PG到OSD通过CRUSH算法计算得到。我们想知道卷最终被映射到哪些主机、哪些OSD、哪些object还是比较麻烦的。<br>我这里摸索出了，从虚拟机的某个文件找到该文件所在rados的object, osd, host的方法 (基于J版Ceph) 。如下：</p>
+          <h1 id="从虚拟机中的文件到RADOS的object">从虚拟机中的文件到RADOS的object</h1><p>Ceph将虚拟机的卷映射到最终的OSD，经过了两次映射。第一次，从object名到PG做简单hash，并结合pool_id作为前缀，第二次，从PG到OSD通过CRUSH算法计算得到。我们想知道卷最终被映射到哪些主机、哪些OSD、哪些object还是比较麻烦的。<br>我这里摸索出了，从虚拟机的某个文件找到该文件所在rados的object, osd, host的方法 (基于J版Ceph) 。如下：</p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2018/07/25/从虚拟机中的文件到RADOS的object/#more" rel="contents">
               Read more &raquo;
@@ -720,7 +720,7 @@
 
       
         
-          <p>#Git 入门之同步上游代码<br>作为开源社区的贡献者，我们经常需要将自己的Github仓库从社区同步。这里从网上查，加上自己实践总结一下方法。</p>
+          <h1 id="Git_入门之同步上游代码">Git 入门之同步上游代码</h1><p>作为开源社区的贡献者，我们经常需要将自己的Github仓库从社区同步。这里从网上查，加上自己实践总结一下方法。</p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2018/07/24/Git入门之同步上游代码/#more" rel="contents">
               Read more &raquo;
@@ -811,7 +811,7 @@
 
       
         
-          <p>#Shell 学习<br>因为平时写 Shell 脚本比较多，并且 Shell 的语法规则比较零散，这里做一些学习和实践总结。</p>
+          <h1 id="Shell_学习">Shell 学习</h1><p>因为平时写 Shell 脚本比较多，并且 Shell 的语法规则比较零散，这里做一些学习和实践总结。</p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2018/06/22/shell学习/#more" rel="contents">
               Read more &raquo;
@@ -993,7 +993,7 @@
 
       
         
-          <p>#osd故障检测机制小结<br>从3条简要的代码线看osd的故障检测机制。</p>
+          <h1 id="osd故障检测机制小结">osd故障检测机制小结</h1><p>从3条简要的代码线看osd的故障检测机制。</p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2018/04/11/osd故障检测机制小结/#more" rel="contents">
               Read more &raquo;
@@ -1084,7 +1084,7 @@
 
       
         
-          <p>#ceph集群中的心跳机制研究3<br>之前研究了Ceph集群的心跳机制和故障检测机制，那从心跳机制到故障判断的过程又是什么样的？因为涉及多个源代码文件，并且函数调用嵌套很多层，这里看起来不是那么清晰，所以这也是我最后要讲的地方。</p>
+          <h1 id="ceph集群中的心跳机制研究3">ceph集群中的心跳机制研究3</h1><p>之前研究了Ceph集群的心跳机制和故障检测机制，那从心跳机制到故障判断的过程又是什么样的？因为涉及多个源代码文件，并且函数调用嵌套很多层，这里看起来不是那么清晰，所以这也是我最后要讲的地方。</p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2017/12/20/ceph-heartbeat3/#more" rel="contents">
               Read more &raquo;

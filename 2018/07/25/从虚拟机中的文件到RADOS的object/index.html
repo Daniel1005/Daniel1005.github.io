@@ -55,18 +55,18 @@
 
 
 
-<meta name="description" content="#从虚拟机中的文件到RADOS的objectCeph将虚拟机的卷映射到最终的OSD，经过了两次映射。第一次，从object名到PG做简单hash，并结合pool_id作为前缀，第二次，从PG到OSD通过CRUSH算法计算得到。我们想知道卷最终被映射到哪些主机、哪些OSD、哪些object还是比较麻烦的。我这里摸索出了，从虚拟机的某个文件找到该文件所在rados的object, osd, host的">
+<meta name="description" content="从虚拟机中的文件到RADOS的objectCeph将虚拟机的卷映射到最终的OSD，经过了两次映射。第一次，从object名到PG做简单hash，并结合pool_id作为前缀，第二次，从PG到OSD通过CRUSH算法计算得到。我们想知道卷最终被映射到哪些主机、哪些OSD、哪些object还是比较麻烦的。我这里摸索出了，从虚拟机的某个文件找到该文件所在rados的object, osd, host的方">
 <meta name="keywords" content="ceph">
 <meta property="og:type" content="article">
 <meta property="og:title" content="从虚拟机中的文件到RADOS的object">
 <meta property="og:url" content="http://hetaotao.net/2018/07/25/从虚拟机中的文件到RADOS的object/index.html">
 <meta property="og:site_name" content="Daniel Blog">
-<meta property="og:description" content="#从虚拟机中的文件到RADOS的objectCeph将虚拟机的卷映射到最终的OSD，经过了两次映射。第一次，从object名到PG做简单hash，并结合pool_id作为前缀，第二次，从PG到OSD通过CRUSH算法计算得到。我们想知道卷最终被映射到哪些主机、哪些OSD、哪些object还是比较麻烦的。我这里摸索出了，从虚拟机的某个文件找到该文件所在rados的object, osd, host的">
+<meta property="og:description" content="从虚拟机中的文件到RADOS的objectCeph将虚拟机的卷映射到最终的OSD，经过了两次映射。第一次，从object名到PG做简单hash，并结合pool_id作为前缀，第二次，从PG到OSD通过CRUSH算法计算得到。我们想知道卷最终被映射到哪些主机、哪些OSD、哪些object还是比较麻烦的。我这里摸索出了，从虚拟机的某个文件找到该文件所在rados的object, osd, host的方">
 <meta property="og:locale" content="zh_Hans">
-<meta property="og:updated_time" content="2018-07-24T19:50:51.221Z">
+<meta property="og:updated_time" content="2020-05-27T07:50:12.867Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="从虚拟机中的文件到RADOS的object">
-<meta name="twitter:description" content="#从虚拟机中的文件到RADOS的objectCeph将虚拟机的卷映射到最终的OSD，经过了两次映射。第一次，从object名到PG做简单hash，并结合pool_id作为前缀，第二次，从PG到OSD通过CRUSH算法计算得到。我们想知道卷最终被映射到哪些主机、哪些OSD、哪些object还是比较麻烦的。我这里摸索出了，从虚拟机的某个文件找到该文件所在rados的object, osd, host的">
+<meta name="twitter:description" content="从虚拟机中的文件到RADOS的objectCeph将虚拟机的卷映射到最终的OSD，经过了两次映射。第一次，从object名到PG做简单hash，并结合pool_id作为前缀，第二次，从PG到OSD通过CRUSH算法计算得到。我们想知道卷最终被映射到哪些主机、哪些OSD、哪些object还是比较麻烦的。我这里摸索出了，从虚拟机的某个文件找到该文件所在rados的object, osd, host的方">
 
 
 
@@ -262,7 +262,7 @@
       
 
       
-        <span itemprop="articleBody"><p>#从虚拟机中的文件到RADOS的object<br>Ceph将虚拟机的卷映射到最终的OSD，经过了两次映射。第一次，从object名到PG做简单hash，并结合pool_id作为前缀，第二次，从PG到OSD通过CRUSH算法计算得到。我们想知道卷最终被映射到哪些主机、哪些OSD、哪些object还是比较麻烦的。<br>我这里摸索出了，从虚拟机的某个文件找到该文件所在rados的object, osd, host的方法 (基于J版Ceph) 。如下：</p>
+        <span itemprop="articleBody"><h1 id="从虚拟机中的文件到RADOS的object">从虚拟机中的文件到RADOS的object</h1><p>Ceph将虚拟机的卷映射到最终的OSD，经过了两次映射。第一次，从object名到PG做简单hash，并结合pool_id作为前缀，第二次，从PG到OSD通过CRUSH算法计算得到。我们想知道卷最终被映射到哪些主机、哪些OSD、哪些object还是比较麻烦的。<br>我这里摸索出了，从虚拟机的某个文件找到该文件所在rados的object, osd, host的方法 (基于J版Ceph) 。如下：</p>
 <a id="more"></a>
 <p>查看文件的磁盘设备偏移地址<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@vmhost]<span class="meta"># filefrag -v test</span></span><br><span class="line">Filesystem type is: <span class="number">58465342</span></span><br><span class="line">File size of test is <span class="number">35052</span> (<span class="number">9</span> blocks of <span class="number">4096</span> bytes)</span><br><span class="line">ext: logical_offset: physical_offset: length: expected: flags:</span><br><span class="line"><span class="number">0</span>: <span class="number">0.</span>. <span class="number">8</span>: <span class="number">268435473.</span>. <span class="number">268435481</span>: <span class="number">9</span>: eof</span><br></pre></td></tr></table></figure></p>
 <p>根据physical_offset的起始地址 268435473 计算所在的object编号（磁盘设备是顺序切分成object的）<br>268435473/1024 = 262144.0166015625<br>即此从第262144个object开始的,<br>object名字是由prefix和后缀组成的，其中后缀是16进制的，262144转化成16进制为40000。</p>
@@ -446,7 +446,7 @@
               
             
             
-              <p class="post-toc-empty">This post does not have a Table Of Contents</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#从虚拟机中的文件到RADOS的object"><span class="nav-number">1.</span> <span class="nav-text">从虚拟机中的文件到RADOS的object</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
