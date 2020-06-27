@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[《思维方式》读书笔记]]></title>
+    <url>%2F2020%2F06%2F27%2F%E3%80%8A%E6%80%9D%E7%BB%B4%E6%96%B9%E5%BC%8F%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%2F</url>
+    <content type="text"><![CDATA[这几天读完了稻盛和夫著、曹寓刚译的《思维方式》，作为一本关于指导或者重塑人生观书籍，这本书还是相当给予启发的。我觉得可以用一个词总结本书重点： 利他主义 ，这个也是我印象最深的一点，另外胸怀目标，并不断诉说，同样令我印象深刻。有趣的是，今天听了马云在上海纽约大学毕业典礼上的演讲中说到了“我们需要三商，需要有IQ（智商），需要EQ（情商），需要LQ（爱商），the Q of Love“。这里的LQ和稻盛和夫先生的利他主义观念可谓英雄所见略同呀。本书的重点总结如下： 稻盛哲学方程式 12人生·工作的结果 = 思维方式 x 热情 (努力) x 能力 取值范围分别是： -100~100， 0~100， 0~100 从9个方面说明美好人生的思维方式包括：胸怀大志、积极向上、不惜努力、诚实正直、钻研创新、愈挫愈勇、心灵纯粹、保持谦虚、利人利世。我觉得这本书应该改名叫《人生观》。 具体的9个方面我影响比较深的原文或者总结如下：胸怀大志：不断诉说公司的宏伟目标，任何事物都需要创造两遍，第一遍是在思想上创造，第二遍是实际创造。积极向上：相信自己的无限的可能性付出不亚于任何人的努力，专注于一件事。人点燃人，人大致可分为三类：自己就能燃烧的自然型的人、接近火源就能被点燃的可燃型的人、即使点火也无法燃烧的不燃型的人，我们要成为自燃型的人，即很有能量、积极主动的人。必须在工作的间隙，寻找出喜悦和乐趣，以便持续努力。不惜努力：在人生的旅途中，请大家一定不要选择轻松安逸的道路，一定要迸发热情，付出不亚于任何人的努力，认认真真度过每一天。诚实正直：坚守正道。钻研创新：倾注全力于今天，不断从事创造性的工作。愈挫愈勇：人生不如意十之八九，常想一二。（消业了，应该庆祝）心灵纯粹： 保持谦虚：人有108种烦恼，其中最厉害的有三种：”欲望” “愚痴” “恼怒”，被称为“三毒”。不忘谦虚，时时反省，兢兢业业，诚实的度过人生。只有反复学习正确地“哲学”，并将其融入自己的血肉的时候，才能提高“人格”，并将其维持在高水准上。利人利世：人生观第一条：“为世人、为社会尽力，是人最高贵的行为”。一般而言，人往往有限考虑自己，但实际上，每一个人都拥有把“帮助他人，让对方喜悦”作为最高幸福的利他之心。人的本性就是这样美好的东西。]]></content>
+      <categories>
+        <category>人生观</category>
+      </categories>
+      <tags>
+        <tag>人生观</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[分布式系统MIT6.824学习总结-LECTURE1]]></title>
     <url>%2F2020%2F06%2F27%2F%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9FMIT6.824%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93-LECTURE1%2F</url>
     <content type="text"><![CDATA[1.分布式系统工程分布式系统的目标 parallelism (并行，提高性能) fault tolerance (容错) physical (物理分布，根据实际跨地域的需要) security / isolated (安全和隔离) 挑战 concurrency (并发控制) patial failure (部分失败) performance (性能) 2.MIT 6.824 课程介绍 lectures papers exams labs project (optional) 实验项目介绍 lab1: MapReduce lab2: Raft for fault tolerance lab3: k/v server lab4: sharded k/v server 3.主要课题涉及到的基础设施 Storage (存储) Communication (网络) Computation (计算) 课题 实现： PRC, threads, concurrency control 性能： 可扩展性，性能随节点数按比例提高 容错： 追求可用性和可恢复性 一致性： 强一致性和弱一致性 4.MapReduceMapReduce概览MapReduce是2004年Google开发，用来建立搜索索引、排序、网页结构分析。这个是大规模分布式计算的代表，目的是提供给用户直接使用分布式计算，而不需要关注底层的分布式实现。MapReduce主要分为 Map 和 Reduce 2个环节，例如对于统计单词出现次数的应用，示例如下： Map环节：输入数据是上千个text文件，可以从GFS获取，输出是放在本地的k/v数据。1234Map(k,v) split v into words for each word w emit(w,"1") Reduce环节：输入数据是通过RPC从各个map server上获取的map result，输出是最终统计结果，一般放到GFS。12Reduce(k,v) emit(len(v)) MapReduce的优化在2004年，当时的系统瓶颈是网络带宽，为了解决网络带宽的瓶颈做了一些优化，包括： 将MapReduce部署在GFS的服务器上，将map调度到有输入数据的节点的map worker，通过本地访问数据减少网络传输 通过Combiner 在map worker node进行局部合并，然后再通过网络发送给 reduce worker(MapReduce论文上的)]]></content>
