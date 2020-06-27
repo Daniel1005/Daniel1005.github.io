@@ -214,6 +214,139 @@
             
             
               
+                <a class="post-title-link" href="/2020/06/27/分布式系统MIT6.824学习总结-LECTURE1/" itemprop="url">
+                  分布式系统MIT6.824学习总结-LECTURE1
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            Posted on
+            <time itemprop="dateCreated" datetime="2020-06-27T13:12:50+08:00" content="2020-06-27">
+              2020-06-27
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; In
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/分布式/" itemprop="url" rel="index">
+                    <span itemprop="name">分布式</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <h1 id="1-分布式系统工程">1.分布式系统工程</h1><h2 id="分布式系统的目标">分布式系统的目标</h2><ul>
+<li>parallelism (并行，提高性能)</li>
+<li>fault tolerance (容错)</li>
+<li>physical (物理分布，根据实际跨地域的需要)</li>
+<li>security / isolated (安全和隔离)</li>
+</ul>
+<h2 id="挑战">挑战</h2><ul>
+<li>concurrency (并发控制)</li>
+<li>patial failure (部分失败)</li>
+<li>performance (性能)</li>
+</ul>
+<h1 id="2-MIT_6-824_课程介绍">2.MIT 6.824 课程介绍</h1><ul>
+<li>lectures</li>
+<li>papers</li>
+<li>exams</li>
+<li>labs</li>
+<li>project (optional)</li>
+</ul>
+<h2 id="实验项目介绍">实验项目介绍</h2><ul>
+<li>lab1: MapReduce</li>
+<li>lab2: Raft for fault tolerance</li>
+<li>lab3: k/v server</li>
+<li>lab4: sharded k/v server</li>
+</ul>
+<h1 id="3-主要课题">3.主要课题</h1><h2 id="涉及到的基础设施">涉及到的基础设施</h2><ul>
+<li>Storage (存储)</li>
+<li>Communication (网络)</li>
+<li>Computation (计算)</li>
+</ul>
+<h2 id="课题">课题</h2><ul>
+<li>实现： PRC, threads, concurrency control</li>
+<li>性能： 可扩展性，性能随节点数按比例提高</li>
+<li>容错： 追求可用性和可恢复性</li>
+<li>一致性： 强一致性和弱一致性</li>
+</ul>
+<h1 id="4-MapReduce">4.MapReduce</h1><h2 id="MapReduce概览">MapReduce概览</h2><p>MapReduce是2004年Google开发，用来建立搜索索引、排序、网页结构分析。<br>这个是大规模分布式计算的代表，目的是提供给用户直接使用分布式计算，而不需要关注底层的分布式实现。<br>MapReduce主要分为 Map 和 Reduce 2个环节，例如对于统计单词出现次数的应用，示例如下：</p>
+<p>Map环节：<br>输入数据是上千个text文件，可以从GFS获取，输出是放在本地的k/v数据。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Map(k,v)</span><br><span class="line">	split v into words</span><br><span class="line">    <span class="keyword">for</span> each word w</span><br><span class="line">    	emit(w,<span class="string">"1"</span>)</span><br></pre></td></tr></table></figure></p>
+<p>Reduce环节：<br>输入数据是通过RPC从各个map server上获取的map result，输出是最终统计结果，一般放到GFS。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Reduce(k,v)</span><br><span class="line">	emit(len(v))</span><br></pre></td></tr></table></figure></p>
+<h2 id="MapReduce的优化">MapReduce的优化</h2><p>在2004年，当时的系统瓶颈是网络带宽，为了解决网络带宽的瓶颈做了一些优化，包括：</p>
+<ul>
+<li>将MapReduce部署在GFS的服务器上，将map调度到有输入数据的节点的map worker，通过本地访问数据减少网络传输</li>
+<li>通过Combiner 在map worker node进行局部合并，然后再通过网络发送给 reduce worker(MapReduce论文上的)</li>
+</ul>
+
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
                 <a class="post-title-link" href="/2020/03/02/IT人都应该了解的存储知识/" itemprop="url">
                   IT人都应该了解的存储知识
                 </a>
@@ -1017,97 +1150,6 @@
 
 
     
-      
-
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                <a class="post-title-link" href="/2017/12/20/ceph-heartbeat3/" itemprop="url">
-                  ceph-heartbeat3
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            Posted on
-            <time itemprop="dateCreated" datetime="2017-12-20T21:30:58+08:00" content="2017-12-20">
-              2017-12-20
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; In
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/ceph/" itemprop="url" rel="index">
-                    <span itemprop="name">ceph</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <h1 id="ceph集群中的心跳机制研究3">ceph集群中的心跳机制研究3</h1><p>之前研究了Ceph集群的心跳机制和故障检测机制，那从心跳机制到故障判断的过程又是什么样的？因为涉及多个源代码文件，并且函数调用嵌套很多层，这里看起来不是那么清晰，所以这也是我最后要讲的地方。</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2017/12/20/ceph-heartbeat3/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1153,7 +1195,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">18</span>
+              <span class="site-state-item-count">19</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -1261,7 +1303,7 @@
 </div>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共9.8k字</span>
+  <span class="post-count">博客全站共10.3k字</span>
 </div>
 
 
