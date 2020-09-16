@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://hetaotao.net/"/>
-  <updated>2020-08-11T14:29:10.094Z</updated>
+  <updated>2020-09-16T14:58:26.936Z</updated>
   <id>http://hetaotao.net/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>优秀技术博客汇总</title>
+    <link href="http://hetaotao.net/2020/09/16/%E4%BC%98%E7%A7%80%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2%E6%B1%87%E6%80%BB/"/>
+    <id>http://hetaotao.net/2020/09/16/优秀技术博客汇总/</id>
+    <published>2020-09-16T13:54:00.000Z</published>
+    <updated>2020-09-16T14:58:26.936Z</updated>
+    
+    <content type="html"><![CDATA[<p>到目前看到的我感兴趣的方面比较好的技术博客，不断更新~~<br>主要涉及 Ceph，分布式，运维等方面。</p><a id="more"></a><h1 id="1_Ceph">1 Ceph</h1><p>[1] <a href="https://bean-li.github.io/" target="_blank" rel="noopener">bean-li</a><br>[2] <a href="https://www.cnblogs.com/zphj1987/" target="_blank" rel="noopener">zphj1987</a><br>[3] <a href="http://www.xuxiaopang.com/" target="_blank" rel="noopener">徐小胖</a><br>[4] <a href="http://www.yangguanjun.com/" target="_blank" rel="noopener">ictfox blog</a><br>[5] <a href="https://www.xsky.com/tec/" target="_blank" rel="noopener">XSKY技术文章</a><br>[6] <a href="https://zhuanlan.zhihu.com/p/41909971" target="_blank" rel="noopener">Ceph写放大和性能估算</a></p><h1 id="2_分布式">2 分布式</h1><p>[1] <a href="http://drmingdrmer.github.io/" target="_blank" rel="noopener">drdr.xp blog</a><br>[2] <a href="https://www.v2ex.com/t/574537" target="_blank" rel="noopener">v2ex</a></p><h1 id="3_运维">3 运维</h1><p>[1] <a href="https://www.voidking.com/dev-aiops-summary/" target="_blank" rel="noopener">VoidKing-AIOps</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;到目前看到的我感兴趣的方面比较好的技术博客，不断更新~~&lt;br&gt;主要涉及 Ceph，分布式，运维等方面。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="其他" scheme="http://hetaotao.net/categories/%E5%85%B6%E4%BB%96/"/>
+    
+    
+      <category term="其他" scheme="http://hetaotao.net/tags/%E5%85%B6%E4%BB%96/"/>
+    
+  </entry>
   
   <entry>
     <title>《思维方式》读书笔记</title>
@@ -448,35 +470,6 @@
     
     
       <category term="c" scheme="http://hetaotao.net/tags/c/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>linux网络连接问题解决</title>
-    <link href="http://hetaotao.net/2015/11/05/linux%E6%96%AD%E7%BD%91%E6%80%A5%E6%95%91/"/>
-    <id>http://hetaotao.net/2015/11/05/linux断网急救/</id>
-    <published>2015-11-05T05:22:48.000Z</published>
-    <updated>2017-10-15T05:29:04.301Z</updated>
-    
-    <content type="html"><![CDATA[<p>#Linux网络连接问题解决</p><p>因为linux网络编程实验需要，需要对linux虚拟机进行联网。但是其中遇到了各种问题，尝试了很多解决方法。拿出来总结、分享一下。</p><hr><p><strong>1、基本指令与配置：</strong></p><p>ifconfig     查看网卡信息<br>route -n     显示现在所有路由<br>ping IP地址（或者域名）     测试网络连接状况<br>sudo /etc/init.d/network restart     重启网络</p><p>网关配置：增加网关<br>前提是网关出现在route -n 的结果中，否则报错，进程不存在<br>sudo route add default gw 169.254.0.1</p><p>dns服务器配置<br>/etc/resolv.conf</p><p>dns生效优先级配置<br>dns 与 files（指/etc/hosts）顺序，让dns在前面的优先生效<br>grep hosts /etc/nsswitch.conf<br>/etc/nsswitch.conf<br>/etc/hosts</p><a id="more"></a><p><strong>2、配置文件</strong></p><p> /etc/network/interfaces</p><p>默认的环回地址<br>auto lo<br>iface lo inet loopback<br>静态配置<br>auto eth0<br>iface eth0 inet static<br>address 192.168.2.120（例子）<br>gateway 192.168.2.1<br>netmask 255.255.255.0<br>动态配置<br>auto eth0<br>iface eth0 inet dhcp</p><p><strong>3、网络不通的基本排错步骤（从上往下）</strong></p><p>ping 127.0.0.1　　　　　　　ping的通说明tcp协议栈没有问题<br>ping 主机地址　　　　　　　ping的通说明网卡没有问题<br>ping 路由器默认网关 　　　　ping的通说明包可以到达路由器<br>ping DNS服务器地址<br>卡在哪一步，就补哪里</p><p><strong>4、说明</strong></p><p>本人对这方面也是新手，发现问题多多交流，欢迎在本人博客或者微博留言。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;#Linux网络连接问题解决&lt;/p&gt;
-&lt;p&gt;因为linux网络编程实验需要，需要对linux虚拟机进行联网。但是其中遇到了各种问题，尝试了很多解决方法。拿出来总结、分享一下。&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;&lt;strong&gt;1、基本指令与配置：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;ifconfig     查看网卡信息&lt;br&gt;route -n     显示现在所有路由&lt;br&gt;ping IP地址（或者域名）     测试网络连接状况&lt;br&gt;sudo /etc/init.d/network restart     重启网络&lt;/p&gt;
-&lt;p&gt;网关配置：增加网关&lt;br&gt;前提是网关出现在route -n 的结果中，否则报错，进程不存在&lt;br&gt;sudo route add default gw 169.254.0.1&lt;/p&gt;
-&lt;p&gt;dns服务器配置&lt;br&gt;/etc/resolv.conf&lt;/p&gt;
-&lt;p&gt;dns生效优先级配置&lt;br&gt;dns 与 files（指/etc/hosts）顺序，让dns在前面的优先生效&lt;br&gt;grep hosts /etc/nsswitch.conf&lt;br&gt;/etc/nsswitch.conf&lt;br&gt;/etc/hosts&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="linux" scheme="http://hetaotao.net/categories/linux/"/>
-    
-    
-      <category term="linux" scheme="http://hetaotao.net/tags/linux/"/>
     
   </entry>
   
