@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[优秀技术博客汇总]]></title>
     <url>%2F2020%2F09%2F16%2F%E4%BC%98%E7%A7%80%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2%E6%B1%87%E6%80%BB%2F</url>
-    <content type="text"><![CDATA[到目前看到的我感兴趣的方面比较好的技术博客，不断更新~~主要涉及 Ceph，分布式，运维等方面。 1 Ceph[1] bean-li[2] zphj1987[3] 徐小胖[4] ictfox blog[5] XSKY技术文章[6] Ceph写放大和性能估算 2 分布式[1] drdr.xp blog[2] v2ex 3 运维[1] VoidKing-AIOps]]></content>
+    <content type="text"><![CDATA[到目前看到的我感兴趣的方面比较好的技术博客，不断更新~~主要涉及 Ceph，分布式，运维等方面。 1 Ceph[1] bean-li[2] zphj1987[3] 徐小胖[4] ictfox blog[5] XSKY技术文章[6] Ceph写放大和性能估算[7] Ceph集群整体迁移 2 分布式[1] drdr.xp blog[2] v2ex[3] xp-可靠分布式系统-paxos的直观解释 3 运维[1] VoidKing-AIOps 4 数据结构和算法[1] LSM tree]]></content>
       <categories>
         <category>其他</category>
       </categories>

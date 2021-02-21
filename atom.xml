@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://hetaotao.net/"/>
-  <updated>2020-09-16T14:58:26.936Z</updated>
+  <updated>2021-02-21T17:06:32.621Z</updated>
   <id>http://hetaotao.net/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://hetaotao.net/2020/09/16/%E4%BC%98%E7%A7%80%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2%E6%B1%87%E6%80%BB/"/>
     <id>http://hetaotao.net/2020/09/16/优秀技术博客汇总/</id>
     <published>2020-09-16T13:54:00.000Z</published>
-    <updated>2020-09-16T14:58:26.936Z</updated>
+    <updated>2021-02-21T17:06:32.621Z</updated>
     
-    <content type="html"><![CDATA[<p>到目前看到的我感兴趣的方面比较好的技术博客，不断更新~~<br>主要涉及 Ceph，分布式，运维等方面。</p><a id="more"></a><h1 id="1_Ceph">1 Ceph</h1><p>[1] <a href="https://bean-li.github.io/" target="_blank" rel="noopener">bean-li</a><br>[2] <a href="https://www.cnblogs.com/zphj1987/" target="_blank" rel="noopener">zphj1987</a><br>[3] <a href="http://www.xuxiaopang.com/" target="_blank" rel="noopener">徐小胖</a><br>[4] <a href="http://www.yangguanjun.com/" target="_blank" rel="noopener">ictfox blog</a><br>[5] <a href="https://www.xsky.com/tec/" target="_blank" rel="noopener">XSKY技术文章</a><br>[6] <a href="https://zhuanlan.zhihu.com/p/41909971" target="_blank" rel="noopener">Ceph写放大和性能估算</a></p><h1 id="2_分布式">2 分布式</h1><p>[1] <a href="http://drmingdrmer.github.io/" target="_blank" rel="noopener">drdr.xp blog</a><br>[2] <a href="https://www.v2ex.com/t/574537" target="_blank" rel="noopener">v2ex</a></p><h1 id="3_运维">3 运维</h1><p>[1] <a href="https://www.voidking.com/dev-aiops-summary/" target="_blank" rel="noopener">VoidKing-AIOps</a></p>]]></content>
+    <content type="html"><![CDATA[<p>到目前看到的我感兴趣的方面比较好的技术博客，不断更新~~<br>主要涉及 Ceph，分布式，运维等方面。</p><a id="more"></a><h1 id="1_Ceph">1 Ceph</h1><p>[1] <a href="https://bean-li.github.io/" target="_blank" rel="noopener">bean-li</a><br>[2] <a href="https://www.cnblogs.com/zphj1987/" target="_blank" rel="noopener">zphj1987</a><br>[3] <a href="http://www.xuxiaopang.com/" target="_blank" rel="noopener">徐小胖</a><br>[4] <a href="http://www.yangguanjun.com/" target="_blank" rel="noopener">ictfox blog</a><br>[5] <a href="https://www.xsky.com/tec/" target="_blank" rel="noopener">XSKY技术文章</a><br>[6] <a href="https://zhuanlan.zhihu.com/p/41909971" target="_blank" rel="noopener">Ceph写放大和性能估算</a><br>[7] <a href="http://www.xuxiaopang.com/2018/03/29/exp-move-ceph-to-new-hosts/#more" target="_blank" rel="noopener">Ceph集群整体迁移</a></p><h1 id="2_分布式">2 分布式</h1><p>[1] <a href="http://drmingdrmer.github.io/" target="_blank" rel="noopener">drdr.xp blog</a><br>[2] <a href="https://www.v2ex.com/t/574537" target="_blank" rel="noopener">v2ex</a><br>[3] <a href="https://blog.openacid.com/algo/paxos/" target="_blank" rel="noopener">xp-可靠分布式系统-paxos的直观解释</a></p><h1 id="3_运维">3 运维</h1><p>[1] <a href="https://www.voidking.com/dev-aiops-summary/" target="_blank" rel="noopener">VoidKing-AIOps</a></p><h1 id="4_数据结构和算法">4 数据结构和算法</h1><p>[1] <a href="https://zhuanlan.zhihu.com/p/98751989" target="_blank" rel="noopener">LSM tree</a></p>]]></content>
     
     <summary type="html">
     
