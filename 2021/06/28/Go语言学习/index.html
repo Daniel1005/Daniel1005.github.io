@@ -37,7 +37,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="c," />
+  <meta name="keywords" content="编程语言," />
 
 
 
@@ -55,18 +55,18 @@
 
 
 
-<meta name="description" content="因为之前面试的时候遇见这样的题，今天又遇到了，才想起来，所以拿出来总结一下。 12345678//strcpy不合格实现char *my_strcpy(char* dst, const char* src) &amp;#123;	assert(dst != NULL);    assert(src != NULL);    char* ret = dst;    while((*dst++ = *src+">
-<meta name="keywords" content="c">
+<meta name="description" content="一、Go语言基础 基础知识   Go语言规范 Go语言命令 Go语言基础编程 Go语言并发编程   推荐资源   Go语言规范文档（英文）：https://golang.google.cn/ref/spec Go语言命令文档（英文）：https://golang.google.cn/cmd/go/ Go程序编辑器和IDE（英文）：https://golang.google.cn/doc/edito">
+<meta name="keywords" content="编程语言">
 <meta property="og:type" content="article">
-<meta property="og:title" content="strcpy与memcpy的实现">
-<meta property="og:url" content="http://hetaotao.net/2015/11/17/strcpy与memcpy的实现/index.html">
+<meta property="og:title" content="Go语言学习">
+<meta property="og:url" content="http://hetaotao.net/2021/06/28/Go语言学习/index.html">
 <meta property="og:site_name" content="Daniel Blog">
-<meta property="og:description" content="因为之前面试的时候遇见这样的题，今天又遇到了，才想起来，所以拿出来总结一下。 12345678//strcpy不合格实现char *my_strcpy(char* dst, const char* src) &amp;#123;	assert(dst != NULL);    assert(src != NULL);    char* ret = dst;    while((*dst++ = *src+">
+<meta property="og:description" content="一、Go语言基础 基础知识   Go语言规范 Go语言命令 Go语言基础编程 Go语言并发编程   推荐资源   Go语言规范文档（英文）：https://golang.google.cn/ref/spec Go语言命令文档（英文）：https://golang.google.cn/cmd/go/ Go程序编辑器和IDE（英文）：https://golang.google.cn/doc/edito">
 <meta property="og:locale" content="zh_Hans">
-<meta property="og:updated_time" content="2015-11-30T08:14:05.178Z">
+<meta property="og:updated_time" content="2021-06-28T10:17:29.883Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="strcpy与memcpy的实现">
-<meta name="twitter:description" content="因为之前面试的时候遇见这样的题，今天又遇到了，才想起来，所以拿出来总结一下。 12345678//strcpy不合格实现char *my_strcpy(char* dst, const char* src) &amp;#123;	assert(dst != NULL);    assert(src != NULL);    char* ret = dst;    while((*dst++ = *src+">
+<meta name="twitter:title" content="Go语言学习">
+<meta name="twitter:description" content="一、Go语言基础 基础知识   Go语言规范 Go语言命令 Go语言基础编程 Go语言并发编程   推荐资源   Go语言规范文档（英文）：https://golang.google.cn/ref/spec Go语言命令文档（英文）：https://golang.google.cn/cmd/go/ Go程序编辑器和IDE（英文）：https://golang.google.cn/doc/edito">
 
 
 
@@ -78,7 +78,7 @@
   };
 </script>
 
-  <title> strcpy与memcpy的实现 | Daniel Blog </title>
+  <title> Go语言学习 | Daniel Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh_Hans">
@@ -214,7 +214,7 @@
             
             
               
-                strcpy与memcpy的实现
+                Go语言学习
               
             
           </h1>
@@ -223,8 +223,8 @@
         <div class="post-meta">
           <span class="post-time">
             Posted on
-            <time itemprop="dateCreated" datetime="2015-11-17T23:37:27+08:00" content="2015-11-17">
-              2015-11-17
+            <time itemprop="dateCreated" datetime="2021-06-28T18:15:07+08:00" content="2021-06-28">
+              2021-06-28
             </time>
           </span>
 
@@ -233,8 +233,8 @@
               &nbsp; | &nbsp; In
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/c/" itemprop="url" rel="index">
-                    <span itemprop="name">c</span>
+                  <a href="/categories/编程语言/" itemprop="url" rel="index">
+                    <span itemprop="name">编程语言</span>
                   </a>
                 </span>
 
@@ -262,19 +262,69 @@
       
 
       
-        <span itemprop="articleBody"><p>因为之前面试的时候遇见这样的题，今天又遇到了，才想起来，所以拿出来总结一下。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//strcpy不合格实现</span></span><br><span class="line"><span class="function"><span class="keyword">char</span> *<span class="title">my_strcpy</span><span class="params">(<span class="keyword">char</span>* dst, <span class="keyword">const</span> <span class="keyword">char</span>* src)</span> </span>&#123;</span><br><span class="line">	assert(dst != <span class="literal">NULL</span>);</span><br><span class="line">    assert(src != <span class="literal">NULL</span>);</span><br><span class="line">    <span class="keyword">char</span>* ret = dst;</span><br><span class="line">    <span class="keyword">while</span>((*dst++ = *src++) != <span class="string">'\0'</span>) ;</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>考虑特殊情况：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> a[] = <span class="string">"abc"</span>;</span><br><span class="line">my_strcpy(a+<span class="number">1</span>, a);</span><br></pre></td></tr></table></figure>
-<p>这时程序会崩溃！！</p>
+        <span itemprop="articleBody"><h1 id="一、Go语言基础">一、Go语言基础</h1><ol>
+<li><p>基础知识</p>
+</li>
+<li><ol>
+<li>Go语言规范</li>
+<li>Go语言命令</li>
+<li>Go语言基础编程</li>
+<li>Go语言并发编程</li>
+</ol>
+</li>
+<li><p>推荐资源</p>
+</li>
+<li><ol>
+<li>Go语言规范文档（英文）：<a href="https://golang.google.cn/ref/spec" target="_blank" rel="noopener">https://golang.google.cn/ref/spec</a></li>
+<li>Go语言命令文档（英文）：<a href="https://golang.google.cn/cmd/go/" target="_blank" rel="noopener">https://golang.google.cn/cmd/go/</a></li>
+<li>Go程序编辑器和IDE（英文）：<a href="https://golang.google.cn/doc/editors" target="_blank" rel="noopener">https://golang.google.cn/doc/editors</a></li>
+<li>Go语言wiki（英文）：<a href="https://github.com/golang/go/wiki" target="_blank" rel="noopener">https://github.com/golang/go/wiki</a></li>
+<li>《Go语言核心技术36讲》：</li>
+<li>《Go并发编程实战》第一版</li>
+<li>《Go命令教程》：</li>
+<li>《Go语言第一课》：<a href="https://www.imooc.com/learn/345" target="_blank" rel="noopener">https://www.imooc.com/learn/345</a></li>
+</ol>
+</li>
+<li><p>更进一步学习</p>
+</li>
+</ol>
 <a id="more"></a>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//strcpy正确实现（考虑到内存重叠问题）</span></span><br><span class="line"><span class="function"><span class="keyword">char</span> *<span class="title">my_strcpy</span><span class="params">(<span class="keyword">char</span>* dst, <span class="keyword">const</span> <span class="keyword">char</span>* src)</span> </span>&#123;</span><br><span class="line">	assert(dst != <span class="literal">NULL</span>);</span><br><span class="line">    assert(src != <span class="literal">NULL</span>);</span><br><span class="line">    <span class="keyword">char</span>* ret = dst;</span><br><span class="line">    <span class="built_in">memcpy</span>(dst, src, <span class="built_in">strlen</span>(src)+<span class="number">1</span>);</span><br><span class="line">	<span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>同理，memcpy函数的实现也需要考虑内存重叠问题。实现如下：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//memcpy的实现</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> * <span class="title">my_memcpy</span><span class="params">(<span class="keyword">void</span> *dst,<span class="keyword">const</span> <span class="keyword">void</span> *src,<span class="keyword">unsigned</span> <span class="keyword">int</span> count)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">     assert(dst);</span><br><span class="line">     assert(src);</span><br><span class="line">     <span class="keyword">void</span> * ret = dst;</span><br><span class="line">     <span class="comment">//源地址和目的地址不重叠，低字节向高字节拷贝</span></span><br><span class="line">     <span class="keyword">if</span> (dst &lt;= src || (<span class="keyword">char</span> *)dst &gt;= ((<span class="keyword">char</span> *)src + count))</span><br><span class="line">	 &#123;</span><br><span class="line">		 <span class="keyword">while</span>(count--)</span><br><span class="line">		 &#123;</span><br><span class="line">			 *(<span class="keyword">char</span> *)dst = *(<span class="keyword">char</span> *)src;</span><br><span class="line">			 dst = (<span class="keyword">char</span> *)dst + <span class="number">1</span>;</span><br><span class="line">			 src = (<span class="keyword">char</span> *)src + <span class="number">1</span>;</span><br><span class="line">		 &#125;</span><br><span class="line">	 &#125;</span><br><span class="line">     <span class="comment">//源地址和目的地址重叠，高字节向低字节拷贝</span></span><br><span class="line">	 <span class="keyword">else</span>						</span><br><span class="line">	 &#123; </span><br><span class="line">		 dst = (<span class="keyword">char</span> *)dst + count - <span class="number">1</span>;</span><br><span class="line">		 src = (<span class="keyword">char</span> *)src + count - <span class="number">1</span>; </span><br><span class="line">		 <span class="keyword">while</span>(count--) </span><br><span class="line">		 &#123;</span><br><span class="line">			 *(<span class="keyword">char</span> *)dst = *(<span class="keyword">char</span> *)src;</span><br><span class="line">			 dst = (<span class="keyword">char</span> *)dst - <span class="number">1</span>;</span><br><span class="line">			 src = (<span class="keyword">char</span> *)src - <span class="number">1</span>;</span><br><span class="line">		 &#125;</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<p>调用char *strcpy(char *dst, char *src)函数时，当dst = NULL 或者 src = NULL时，程序崩溃，正是由于assert()函数使程序终止。</p>
-<p>但是深入一点就有疑惑了，为什么内存拷贝当src&lt;dst&lt;src+count 时会出错呢？为什么要单独考虑这种情况呢？欢迎交流！</p>
-<p>即便是strcpy、memcpy这样的c函数也还是有一些讲究的！学无止境！</p>
+<h1 id="二、Go语言进阶">二、Go语言进阶</h1><ol>
+<li><p>进阶知识</p>
+</li>
+<li><ol>
+<li>Go语言数据类型使用进阶</li>
+<li>Go语言标准库使用进阶</li>
+<li>Go语言并发编程进阶</li>
+<li>与前述的各种基础知识融会贯通</li>
+</ol>
+</li>
+<li><p>推荐资源</p>
+</li>
+<li><ol>
+<li>Effective      Go（英文）：</li>
+<li>Go语言内存模型（英文）：</li>
+<li>Go程序诊断（英文）：</li>
+<li>《Go语言核心技术36讲》：</li>
+<li>《Go并发编程实战》第二版</li>
+<li>《Go语言实战》</li>
+</ol>
+</li>
+<li><p>进阶方法</p>
+</li>
+<li><ol>
+<li>打好基础，不断补充知识缺漏</li>
+<li>研读Go语言官方文档和源码</li>
+<li>学习明星项目中的代码和文档</li>
+<li>多读书，读好书（所有相关技术书，不知Go语言）</li>
+<li>积极练习、积极讨论、积极加入技术组织和社区</li>
+<li>积极发布和开源自己的程序，积极通过代码和软件项目交友</li>
+<li>积极公开自己的想法，并拥抱和吸纳不同的想法</li>
+<li>尽量多的在公开场合发声，包括公开讨论、演讲、培训和咨询</li>
+</ol>
+</li>
+</ol>
+<p>来自郝林的Go语言课程。</p>
 </span>
       
     </div>
@@ -283,7 +333,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/c/" rel="tag">#c</a>
+            <a href="/tags/编程语言/" rel="tag">#编程语言</a>
           
         </div>
       
@@ -292,17 +342,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/11/05/linux断网急救/" rel="next" title="linux网络连接问题解决">
-                <i class="fa fa-chevron-left"></i> linux网络连接问题解决
+              <a href="/2020/09/16/优秀技术博客汇总/" rel="next" title="优秀技术博客汇总">
+                <i class="fa fa-chevron-left"></i> 优秀技术博客汇总
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2015/12/14/Huffman编码与Morse编码/" rel="prev" title="Huffman编码与Morse编码">
-                Huffman编码与Morse编码 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -446,7 +492,7 @@
               
             
             
-              <p class="post-toc-empty">This post does not have a Table Of Contents</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、Go语言基础"><span class="nav-number">1.</span> <span class="nav-text">一、Go语言基础</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、Go语言进阶"><span class="nav-number">2.</span> <span class="nav-text">二、Go语言进阶</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
