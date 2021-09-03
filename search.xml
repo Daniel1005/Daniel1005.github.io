@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[test]]></title>
+    <url>%2F2021%2F09%2F03%2Ftest%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
     <title><![CDATA[Go语言学习]]></title>
     <url>%2F2021%2F06%2F28%2FGo%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%2F</url>
     <content type="text"><![CDATA[一、Go语言基础 基础知识 Go语言规范 Go语言命令 Go语言基础编程 Go语言并发编程 推荐资源 Go语言规范文档（英文）：https://golang.google.cn/ref/spec Go语言命令文档（英文）：https://golang.google.cn/cmd/go/ Go程序编辑器和IDE（英文）：https://golang.google.cn/doc/editors Go语言wiki（英文）：https://github.com/golang/go/wiki 《Go语言核心技术36讲》： 《Go并发编程实战》第一版 《Go命令教程》： 《Go语言第一课》：https://www.imooc.com/learn/345 更进一步学习 二、Go语言进阶 进阶知识 Go语言数据类型使用进阶 Go语言标准库使用进阶 Go语言并发编程进阶 与前述的各种基础知识融会贯通 推荐资源 Effective Go（英文）： Go语言内存模型（英文）： Go程序诊断（英文）： 《Go语言核心技术36讲》： 《Go并发编程实战》第二版 《Go语言实战》 进阶方法 打好基础，不断补充知识缺漏 研读Go语言官方文档和源码 学习明星项目中的代码和文档 多读书，读好书（所有相关技术书，不知Go语言） 积极练习、积极讨论、积极加入技术组织和社区 积极发布和开源自己的程序，积极通过代码和软件项目交友 积极公开自己的想法，并拥抱和吸纳不同的想法 尽量多的在公开场合发声，包括公开讨论、演讲、培训和咨询 来自郝林的Go语言课程。]]></content>
