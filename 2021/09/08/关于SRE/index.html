@@ -37,7 +37,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="linux," />
+  <meta name="keywords" content="SRE," />
 
 
 
@@ -55,18 +55,20 @@
 
 
 
-<meta name="description" content="#Linux网络连接问题解决 因为linux网络编程实验需要，需要对linux虚拟机进行联网。但是其中遇到了各种问题，尝试了很多解决方法。拿出来总结、分享一下。  1、基本指令与配置： ifconfig     查看网卡信息route -n     显示现在所有路由ping IP地址（或者域名）     测试网络连接状况sudo /etc/init.d/network restart     重启">
-<meta name="keywords" content="linux">
+<meta name="description" content="关于SRE，最近发现写得比较好的文章： 文章主要是作者对SRE的一些理解，其中系统稳定性评估checklist值得借鉴： https://zhuanlan.zhihu.com/p/346943846">
+<meta name="keywords" content="SRE">
 <meta property="og:type" content="article">
-<meta property="og:title" content="linux网络连接问题解决">
-<meta property="og:url" content="http://hetaotao.net/2015/11/05/linux断网急救/index.html">
+<meta property="og:title" content="关于SRE">
+<meta property="og:url" content="http://hetaotao.net/2021/09/08/关于SRE/index.html">
 <meta property="og:site_name" content="Daniel Blog">
-<meta property="og:description" content="#Linux网络连接问题解决 因为linux网络编程实验需要，需要对linux虚拟机进行联网。但是其中遇到了各种问题，尝试了很多解决方法。拿出来总结、分享一下。  1、基本指令与配置： ifconfig     查看网卡信息route -n     显示现在所有路由ping IP地址（或者域名）     测试网络连接状况sudo /etc/init.d/network restart     重启">
+<meta property="og:description" content="关于SRE，最近发现写得比较好的文章： 文章主要是作者对SRE的一些理解，其中系统稳定性评估checklist值得借鉴： https://zhuanlan.zhihu.com/p/346943846">
 <meta property="og:locale" content="zh_Hans">
-<meta property="og:updated_time" content="2017-10-15T05:29:04.301Z">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-e90546fc4f8f0da41a7d52ab2d998060_r.jpg">
+<meta property="og:updated_time" content="2021-09-08T15:30:28.618Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="linux网络连接问题解决">
-<meta name="twitter:description" content="#Linux网络连接问题解决 因为linux网络编程实验需要，需要对linux虚拟机进行联网。但是其中遇到了各种问题，尝试了很多解决方法。拿出来总结、分享一下。  1、基本指令与配置： ifconfig     查看网卡信息route -n     显示现在所有路由ping IP地址（或者域名）     测试网络连接状况sudo /etc/init.d/network restart     重启">
+<meta name="twitter:title" content="关于SRE">
+<meta name="twitter:description" content="关于SRE，最近发现写得比较好的文章： 文章主要是作者对SRE的一些理解，其中系统稳定性评估checklist值得借鉴： https://zhuanlan.zhihu.com/p/346943846">
+<meta name="twitter:image" content="https://pic1.zhimg.com/v2-e90546fc4f8f0da41a7d52ab2d998060_r.jpg">
 
 
 
@@ -78,7 +80,7 @@
   };
 </script>
 
-  <title> linux网络连接问题解决 | Daniel Blog </title>
+  <title> 关于SRE | Daniel Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh_Hans">
@@ -214,7 +216,7 @@
             
             
               
-                linux网络连接问题解决
+                关于SRE
               
             
           </h1>
@@ -223,8 +225,8 @@
         <div class="post-meta">
           <span class="post-time">
             Posted on
-            <time itemprop="dateCreated" datetime="2015-11-05T13:22:48+08:00" content="2015-11-05">
-              2015-11-05
+            <time itemprop="dateCreated" datetime="2021-09-08T23:18:49+08:00" content="2021-09-08">
+              2021-09-08
             </time>
           </span>
 
@@ -233,8 +235,8 @@
               &nbsp; | &nbsp; In
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/linux/" itemprop="url" rel="index">
-                    <span itemprop="name">linux</span>
+                  <a href="/categories/SRE/" itemprop="url" rel="index">
+                    <span itemprop="name">SRE</span>
                   </a>
                 </span>
 
@@ -262,22 +264,10 @@
       
 
       
-        <span itemprop="articleBody"><p>#Linux网络连接问题解决</p>
-<p>因为linux网络编程实验需要，需要对linux虚拟机进行联网。但是其中遇到了各种问题，尝试了很多解决方法。拿出来总结、分享一下。</p>
-<hr>
-<p><strong>1、基本指令与配置：</strong></p>
-<p>ifconfig     查看网卡信息<br>route -n     显示现在所有路由<br>ping IP地址（或者域名）     测试网络连接状况<br>sudo /etc/init.d/network restart     重启网络</p>
-<p>网关配置：增加网关<br>前提是网关出现在route -n 的结果中，否则报错，进程不存在<br>sudo route add default gw 169.254.0.1</p>
-<p>dns服务器配置<br>/etc/resolv.conf</p>
-<p>dns生效优先级配置<br>dns 与 files（指/etc/hosts）顺序，让dns在前面的优先生效<br>grep hosts /etc/nsswitch.conf<br>/etc/nsswitch.conf<br>/etc/hosts</p>
-<a id="more"></a>
-<p><strong>2、配置文件</strong></p>
-<p> /etc/network/interfaces</p>
-<p>默认的环回地址<br>auto lo<br>iface lo inet loopback<br>静态配置<br>auto eth0<br>iface eth0 inet static<br>address 192.168.2.120（例子）<br>gateway 192.168.2.1<br>netmask 255.255.255.0<br>动态配置<br>auto eth0<br>iface eth0 inet dhcp</p>
-<p><strong>3、网络不通的基本排错步骤（从上往下）</strong></p>
-<p>ping 127.0.0.1　　　　　　　ping的通说明tcp协议栈没有问题<br>ping 主机地址　　　　　　　ping的通说明网卡没有问题<br>ping 路由器默认网关 　　　　ping的通说明包可以到达路由器<br>ping DNS服务器地址<br>卡在哪一步，就补哪里</p>
-<p><strong>4、说明</strong></p>
-<p>本人对这方面也是新手，发现问题多多交流，欢迎在本人博客或者微博留言。</p>
+        <span itemprop="articleBody"><p>关于SRE，最近发现写得比较好的文章：</p>
+<p>文章主要是作者对SRE的一些理解，其中系统稳定性评估checklist值得借鉴：</p>
+<p><a href="https://zhuanlan.zhihu.com/p/346943846" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/346943846</a></p>
+<p><img src="https://pic1.zhimg.com/v2-e90546fc4f8f0da41a7d52ab2d998060_r.jpg" alt="preview"></p>
 </span>
       
     </div>
@@ -286,7 +276,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/linux/" rel="tag">#linux</a>
+            <a href="/tags/SRE/" rel="tag">#SRE</a>
           
         </div>
       
@@ -295,13 +285,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2021/06/28/Go语言学习/" rel="next" title="Go语言学习">
+                <i class="fa fa-chevron-left"></i> Go语言学习
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2015/11/17/strcpy与memcpy的实现/" rel="prev" title="strcpy与memcpy的实现">
-                strcpy与memcpy的实现 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
