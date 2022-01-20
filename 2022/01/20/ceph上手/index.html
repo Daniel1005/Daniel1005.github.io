@@ -37,7 +37,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="分布式," />
+  <meta name="keywords" content="ceph," />
 
 
 
@@ -55,18 +55,18 @@
 
 
 
-<meta name="description" content="最近在网上搜到一些分布式相关的很好的资料，在这里汇总，方便学习和查找。以后不断更新~~">
-<meta name="keywords" content="分布式">
+<meta name="description" content="对于ceph的学习，需要原理和实践结合，不断滚动提升，对于高阶玩家可以更多的看看代码，了解更多细节和加深理解。这里整理下对于ceph入门的一些建议和学习资料，希望能够对你有帮助。">
+<meta name="keywords" content="ceph">
 <meta property="og:type" content="article">
-<meta property="og:title" content="分布式相关学习资料">
-<meta property="og:url" content="http://hetaotao.net/2018/07/28/分布式相关学习资料/index.html">
+<meta property="og:title" content="ceph上手">
+<meta property="og:url" content="http://hetaotao.net/2022/01/20/ceph上手/index.html">
 <meta property="og:site_name" content="Daniel Blog">
-<meta property="og:description" content="最近在网上搜到一些分布式相关的很好的资料，在这里汇总，方便学习和查找。以后不断更新~~">
+<meta property="og:description" content="对于ceph的学习，需要原理和实践结合，不断滚动提升，对于高阶玩家可以更多的看看代码，了解更多细节和加深理解。这里整理下对于ceph入门的一些建议和学习资料，希望能够对你有帮助。">
 <meta property="og:locale" content="zh_Hans">
-<meta property="og:updated_time" content="2020-06-20T08:56:56.261Z">
+<meta property="og:updated_time" content="2022-01-20T16:23:46.676Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="分布式相关学习资料">
-<meta name="twitter:description" content="最近在网上搜到一些分布式相关的很好的资料，在这里汇总，方便学习和查找。以后不断更新~~">
+<meta name="twitter:title" content="ceph上手">
+<meta name="twitter:description" content="对于ceph的学习，需要原理和实践结合，不断滚动提升，对于高阶玩家可以更多的看看代码，了解更多细节和加深理解。这里整理下对于ceph入门的一些建议和学习资料，希望能够对你有帮助。">
 
 
 
@@ -78,7 +78,7 @@
   };
 </script>
 
-  <title> 分布式相关学习资料 | Daniel Blog </title>
+  <title> ceph上手 | Daniel Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh_Hans">
@@ -214,7 +214,7 @@
             
             
               
-                分布式相关学习资料
+                ceph上手
               
             
           </h1>
@@ -223,8 +223,8 @@
         <div class="post-meta">
           <span class="post-time">
             Posted on
-            <time itemprop="dateCreated" datetime="2018-07-28T13:56:52+08:00" content="2018-07-28">
-              2018-07-28
+            <time itemprop="dateCreated" datetime="2022-01-20T23:20:26+08:00" content="2022-01-20">
+              2022-01-20
             </time>
           </span>
 
@@ -233,8 +233,8 @@
               &nbsp; | &nbsp; In
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/分布式/" itemprop="url" rel="index">
-                    <span itemprop="name">分布式</span>
+                  <a href="/categories/ceph/" itemprop="url" rel="index">
+                    <span itemprop="name">ceph</span>
                   </a>
                 </span>
 
@@ -262,10 +262,24 @@
       
 
       
-        <span itemprop="articleBody"><p>最近在网上搜到一些分布式相关的很好的资料，在这里汇总，方便学习和查找。以后不断更新~~</p>
+        <span itemprop="articleBody"><p>对于ceph的学习，需要原理和实践结合，不断滚动提升，对于高阶玩家可以更多的看看代码，了解更多细节和加深理解。这里整理下对于ceph入门的一些建议和学习资料，希望能够对你有帮助。</p>
 <a id="more"></a>
-<h1 id="Part-1_分布式存储相关">Part-1 分布式存储相关</h1><p><a href="http://www.open-open.com/lib/view/open1436496725020.html" target="_blank" rel="noopener">分布式存储必读论文</a>，作为一个必读论文清单记录。其中的部分论文我做了下载和整理。如下：<br>[1] <a href="/download/distributed/gfs-sosp2003.pdf">The Google File System. Sanjay Ghemawat, Howard Gobioff, and Shun-Tak Leung</a><br>[2] <a href="/download/distributed/bigtable-osdi06.pdf">Bigtable: A Distributed Storage System for Structured Data. Fay Chang, Jeffrey Dean, Sanjay Ghemawat, et</a><br>[3] <a href="/download/distributed/spanner-osdi2012.pdf">Spanner: Google’s Globally-Distributed Database. James C. Corbett, Jeffrey Dean, et</a><br>[4] <a href="/download/distributed/tr-2008-25.pdf">PacificA: Replication in Log-Based Distributed Storage Systems. Wei Lin, Mao Yang, et</a><br>[5] <a href="/download/distributed/Object-Storage-on-CRAQ.pdf">Object Storage on CRAQ, High-throughput chain replication for read-mostly workloads. Jeff Terrace and Michael J. Freedman</a><br>[6] <a href="/download/distributed/weil-thesis.pdf">Ceph: Reliable, Scalable, and High-Performance Distributed Storage. Sage A. Weil</a><br>[7] <a href="/download/distributed/Finding-a-needle-in-Haystack-Beaver.pdf">Finding a needle in Haystack: Facebook’s photo storage. Doug Beaver, Sanjeev Kumar, Harry C. Li, Jason Sobel, Peter Vajgel</a><br>[8] <a href="/download/distributed/ds-presentation-06-mon-12-windows-azure.pdf">Windows Azure Storage: A Highly Available Cloud Storage Service with Strong Consistency. Brad Calder, Ju Wang, Aaron Ogus, Niranjan Nilakantan, et</a><br>[9] <a href="/download/distributed/chubby-osdi06.pdf">The Chubby lock service for loosely-coupled distributed systems. Mike Burrows</a><br>[10] <a href="/download/distributed/paxos_made_live.pdf">Paxos Made Live – An Engineering Perspective. Tushar Chandra, Robert Griesemer，Joshua Redstone</a><br>[11] <a href="/download/distributed/amazon-dynamo-sosp2007.pdf">Dynamo: Amazon’s Highly Available Key-Value Store。 Giuseppe DeCandia, Deniz Hastorun, Madan Jampani, et</a></p>
-<h1 id="Part-2_分布式系统学习课程">Part-2 分布式系统学习课程</h1><p>MIT 6.824： <a href="https://pdos.csail.mit.edu/6.824/" target="_blank" rel="noopener">https://pdos.csail.mit.edu/6.824/</a></p>
+<h1 id="实践">实践</h1><p>实践带动学习是一个更好的方式，否则可能看文档、书本能够看睡着的。可以从搭建一套ceph集群开始，建议选择当前比较稳定的主流版本，在<a href="https://docs.ceph.com/en/pacific/" target="_blank" rel="noopener">搭建</a>过程中遇到的大部分问题应该都可以在网上找到答案，如果找不到可以先记录下来，通过查询文档、书籍，或者请教有经验的人。</p>
+<h1 id="文档">文档</h1><ol>
+<li><p>最好的文档当然是官方文档了，<a href="https://docs.ceph.com/en/pacific/architecture/" target="_blank" rel="noopener">链接</a>，可以在网页右下角选择相应的版本，建议从Architecture开始。ceph的官方文档可以说是非常详细，而且随着代码不断迭代更新，所以强烈推荐。</p>
+</li>
+<li><p>红帽的文档，分门别类，有架构、安装、配置、监控、排障等文档，推荐看看，也可以选择版本，但是这个版本是红帽商业版本的版本号，但是从代码上社区版和商业版没有太大的区别，<a href="https://access.redhat.com/documentation/en-us/red_hat_ceph_storage/5" target="_blank" rel="noopener">链接</a>。</p>
+</li>
+<li><p>另外就是一些个人认为挺不错的一些技术博客：</p>
+<p>[1] <a href="https://bean-li.github.io/" target="_blank" rel="noopener">bean-li</a><br>[2] <a href="https://www.cnblogs.com/zphj1987/" target="_blank" rel="noopener">zphj1987</a><br>[3] <a href="http://www.xuxiaopang.com/" target="_blank" rel="noopener">徐小胖</a><br>[4] <a href="http://www.yangguanjun.com/" target="_blank" rel="noopener">ictfox blog</a><br>[5] <a href="https://www.xsky.com/tec/" target="_blank" rel="noopener">XSKY技术文章</a><br>[6] <a href="https://zhuanlan.zhihu.com/p/41909971" target="_blank" rel="noopener">Ceph写放大和性能估算</a><br>[7] <a href="http://www.xuxiaopang.com/2018/03/29/exp-move-ceph-to-new-hosts/#more" target="_blank" rel="noopener">Ceph集群整体迁移</a></p>
+</li>
+</ol>
+<h1 id="书籍">书籍</h1><p>从2016年刚开始搞ceph开始，我也陆续买了好几本ceph的书，基本是刚出来就买了。但是因为ceph社区迭代还是很快的，所以太早的书可能已经落后很多了，还是不做推荐了。</p>
+<ol>
+<li>《Ceph值RADOS设计原理与实现》，2019年谢型果写的，这本书的技术性比较强，很多技术细节描述比较多，对于新手可以先简单地看主要概念、基本原理，不必刚开始就陷入到很多细节里面</li>
+<li>《Learning_Ceph(2nd)》，2017年，第二版，稍有落后，入门可以简单看看</li>
+<li>其他的可以看看如果有新书可以下手</li>
+</ol>
 </span>
       
     </div>
@@ -274,7 +288,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/分布式/" rel="tag">#分布式</a>
+            <a href="/tags/ceph/" rel="tag">#ceph</a>
           
         </div>
       
@@ -283,17 +297,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/07/25/从虚拟机中的文件到RADOS的object/" rel="next" title="从虚拟机中的文件到RADOS的object">
-                <i class="fa fa-chevron-left"></i> 从虚拟机中的文件到RADOS的object
+              <a href="/2021/09/08/关于SRE/" rel="next" title="关于SRE">
+                <i class="fa fa-chevron-left"></i> 关于SRE
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/08/02/leveldb学习总结/" rel="prev" title="leveldb学习总结">
-                leveldb学习总结 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -437,7 +447,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Part-1_分布式存储相关"><span class="nav-number">1.</span> <span class="nav-text">Part-1 分布式存储相关</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Part-2_分布式系统学习课程"><span class="nav-number">2.</span> <span class="nav-text">Part-2 分布式系统学习课程</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#实践"><span class="nav-number">1.</span> <span class="nav-text">实践</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文档"><span class="nav-number">2.</span> <span class="nav-text">文档</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#书籍"><span class="nav-number">3.</span> <span class="nav-text">书籍</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
