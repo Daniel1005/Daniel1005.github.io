@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://hetaotao.net/"/>
-  <updated>2022-01-20T16:23:46.676Z</updated>
+  <updated>2025-05-27T12:51:18.684Z</updated>
   <id>http://hetaotao.net/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>AI Homepage</title>
+    <link href="http://hetaotao.net/2025/05/27/AI-homepage/"/>
+    <id>http://hetaotao.net/2025/05/27/AI-homepage/</id>
+    <published>2025-05-27T12:37:51.000Z</published>
+    <updated>2025-05-27T12:51:18.684Z</updated>
+    
+    <content type="html"><![CDATA[<p>工欲善其事，必先利其器</p><p>[1] <a href="https://chatgpt.com/" target="_blank" rel="noopener">ChatGPT</a></p><p>[2] <a href="https://www.deepseek.com/" target="_blank" rel="noopener">DeepSeek</a></p><p>[3] <a href="https://www.doubao.com/chat/" target="_blank" rel="noopener">Doubao</a></p><p>[4] <a href="https://www.kimi.com/" target="_blank" rel="noopener">Kimi</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;工欲善其事，必先利其器&lt;/p&gt;
+&lt;p&gt;[1] &lt;a href=&quot;https://chatgpt.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;ChatGPT&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[2] &lt;a href=&quot;https://www.deepseek
+      
+    
+    </summary>
+    
+      <category term="AI" scheme="http://hetaotao.net/categories/AI/"/>
+    
+    
+      <category term="AI" scheme="http://hetaotao.net/tags/AI/"/>
+    
+  </entry>
   
   <entry>
     <title>ceph上手</title>
@@ -466,28 +493,6 @@
     
     
       <category term="storage, mind map" scheme="http://hetaotao.net/tags/storage-mind-map/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>About hash function</title>
-    <link href="http://hetaotao.net/2017/08/27/hash-function/"/>
-    <id>http://hetaotao.net/2017/08/27/hash-function/</id>
-    <published>2017-08-27T07:24:38.000Z</published>
-    <updated>2017-08-27T08:34:33.377Z</updated>
-    
-    <content type="html"><![CDATA[<p>日常工作中经常会遇到哈希算法，出于好奇想多了解一些关于哈希的理论。<br>在Ceph中（一种分布式存储系统），从Object到PG的映射就是采用了一种哈希算法，名为“rjenkins”。所以就是从这里作为切入点，看了一些资料。</p><a id="more"></a><h1 id="哈希算法的作用">哈希算法的作用</h1><p>哈希，也称作散列，它的作用其实就是通过一个函数（hash function），将输入值映射为一个输出的值，并且尽量保证这个映射是一对一的。</p><h1 id="哈希算法的好坏">哈希算法的好坏</h1><p>怎样的哈希算法才是一个好的哈希算法？从他的作用或者说目的上看，它最重要的衡量标准是是否有碰撞（collision），或者是否有尽可能少的碰撞。这里有个概念 funneling，翻译成中文是“漏斗效应”[注1]，其实就是很多input被映射到少量的几个output上，产生了大量的碰撞。好的hash算法应该是可以通过测试或者<a href="http://burtleburtle.net/bob/hash/funnels.html" target="_blank" rel="noopener">理论证明</a>这个算法是no funnel的。<br>这里有两个概念：完美哈希函数（PHF，Perfect Hash Function）和最小完美哈希函数（MPHF，Minimal Perfect Hash Function）。完美哈希函数，就是没有冲突的哈希函数，也就是将N个KEY值映射到M个整数上，这里M&gt;=N，并且对于任意的KEY1，KEY2，H(KEY1)！=H(KEY2)。当M==N，则H是最小完美哈希函数。<br>当然它的另一个衡量标准是速度快，前提是在相同硬件条件下。也就是说每次哈希的运算次数少或者消耗的CPU指令周期少。</p><h1 id="哈希模型">哈希模型</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">initialize the internal state;</span><br><span class="line">  <span class="keyword">for</span> (each block of the input)</span><br><span class="line">  &#123;</span><br><span class="line">    combine (the internal state, the current input block);</span><br><span class="line">    mix( the internal state);</span><br><span class="line">  &#125;</span><br><span class="line">  value = postprocess( the internal state );</span><br><span class="line">  <span class="keyword">return</span> (value);</span><br></pre></td></tr></table></figure><p>也就是说一个hash过程主要包括：initialize, combine, mix, postprocess这几个过程。</p><h1 id="参考">参考</h1><ol><li>Jenkins关于他新的hash算法以及相关理论的介绍<br> <a href="http://burtleburtle.net/bob/hash/evahash.html" target="_blank" rel="noopener">http://burtleburtle.net/bob/hash/evahash.html</a> </li><li>几种hash算法的对比<br> <a href="http://burtleburtle.net/bob/hash/examhash.html" target="_blank" rel="noopener">http://burtleburtle.net/bob/hash/examhash.html</a> </li></ol><p>附言：<br>好长时间没写东西了，今天来这里扫扫灰：）</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;日常工作中经常会遇到哈希算法，出于好奇想多了解一些关于哈希的理论。&lt;br&gt;在Ceph中（一种分布式存储系统），从Object到PG的映射就是采用了一种哈希算法，名为“rjenkins”。所以就是从这里作为切入点，看了一些资料。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="algorithm" scheme="http://hetaotao.net/categories/algorithm/"/>
-    
-    
-      <category term="hash, algorithm" scheme="http://hetaotao.net/tags/hash-algorithm/"/>
     
   </entry>
   
